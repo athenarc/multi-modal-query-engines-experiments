@@ -15,7 +15,7 @@ lm = LM(model="ollama/gemma3:12b")
 helper_lm = LM(model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", api_base="http://localhost:5001/v1", api_key="dummy")
 
 lotus.settings.configure(lm=lm, helper_lm=helper_lm)
-df_reviews = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/development/datasets/imdb_dataset.csv").head(100)
+df_reviews = pd.read_csv("development/datasets/imdb_dataset.csv").head(100)
 
 user_instruction = "{review} is positive"
 

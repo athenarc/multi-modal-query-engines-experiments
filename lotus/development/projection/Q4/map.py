@@ -15,7 +15,7 @@ pd.set_option('display.max_colwidth', None)
 lm = LM(model="ollama/llama3.3:70b")
 lotus.settings.configure(lm=lm)
 
-df_reports = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/development/datasets/player_evidence_mine.csv")
+df_reports = pd.read_csv("development/datasets/player_evidence_mine.csv")
 df = df_reports['Player Name'].to_frame(name='Player Name')
 
 start = time.time()

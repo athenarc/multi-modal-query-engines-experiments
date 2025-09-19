@@ -21,7 +21,7 @@ lm = LM(
 # lm = LM(model="ollama/llama3.3:70b")
 lotus.settings.configure(lm=lm)
 
-df_reports = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/reports_table.csv").head(100)
+df_reports = pd.read_csv("develpment/datasets/reports_table.csv").head(100)
 
 elapsed_times = []
 

@@ -14,7 +14,7 @@ wandb.init(
 lm = LM(model="ollama/gemma3:12b")
 
 lotus.settings.configure(lm=lm)
-df_teams = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/development/datasets/team_evidence.csv")
+df_teams = pd.read_csv("development/datasets/team_evidence.csv")
 df_teams = pd.DataFrame(df_teams['Team Name']).rename(columns={'Team Name' : 'team_name'})
 
 user_instruction = "{team_name} founded before 1970."

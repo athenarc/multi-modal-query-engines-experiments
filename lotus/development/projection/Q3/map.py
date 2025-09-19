@@ -15,7 +15,7 @@ pd.set_option('display.max_colwidth', None)
 lm = LM(model="ollama/gemma3:12b")
 lotus.settings.configure(lm=lm)
 
-df_players = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/development/datasets/player_evidence_mine.csv")
+df_players = pd.read_csv("development/datasets/player_evidence_mine.csv")
 df_players.dropna(subset=['nationality'], inplace=True)
 df = df_players['Player Name'].to_frame(name='Player Name')
 

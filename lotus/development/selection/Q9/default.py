@@ -14,7 +14,7 @@ wandb.init(
 lm = LM(model="ollama/gemma3:12b")
 
 lotus.settings.configure(lm=lm)
-df_players = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/development/datasets/player_evidence_mine.csv").head(100)
+df_players = pd.read_csv("development/datasets/player_evidence_mine.csv").head(100)
 df_players = pd.DataFrame(df_players['Player Name']).rename(columns={'Player Name' : 'player_name'})
 
 user_instruction = "{player_name} is from America."

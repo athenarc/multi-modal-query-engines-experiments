@@ -15,7 +15,7 @@ lm = LM(model="ollama/gemma3:12b")
 helper_lm = LM(model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", api_base="http://localhost:5001/v1", api_key="dummy")
 
 lotus.settings.configure(lm=lm, helper_lm=helper_lm)
-df_teams = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/development/datasets/team_evidence.csv")
+df_teams = pd.read_csv("development/datasets/team_evidence.csv")
 df_teams = pd.DataFrame(df_teams['Team Name']).rename(columns={'Team Name' : 'team_name'})
 
 user_instruction = "{team_name} founded before 1970."

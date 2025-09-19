@@ -14,7 +14,7 @@ wandb.init(
 lm = LM(model="ollama/gemma3:12b")
 
 lotus.settings.configure(lm=lm)
-df_reviews = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/development/imdb_dataset.csv").head(100)
+df_reviews = pd.read_csv("development/imdb_dataset.csv").head(100)
 df_reviews = pd.DataFrame(df_reviews['review'])
 
 user_instruction = "{review} is positive"

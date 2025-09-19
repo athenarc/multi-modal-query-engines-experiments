@@ -17,7 +17,7 @@ lm = LM(
     api_key="dummy")
 
 lotus.settings.configure(lm=lm)
-df_reports = pd.read_csv("/data/hdd1/users/jzerv/reproduced-systems/Lotus/reports_table.csv").head(100)
+df_reports = pd.read_csv("datasets/reports_table.csv").head(100)
 
 input_cols = ["Report"]
 
