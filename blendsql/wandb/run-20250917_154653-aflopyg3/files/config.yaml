@@ -1,0 +1,51 @@
+_wandb:
+    value:
+        cli_version: 0.21.1
+        e:
+            nf3o5pa1b2z1s0dzan8htr1mc3owo3qz:
+                codePath: development/queries/projection/Q4/q4.py
+                codePathLocal: development/queries/projection/Q4/q4.py
+                cpu_count: 48
+                cpu_count_logical: 96
+                cudaVersion: "12.2"
+                disk:
+                    /:
+                        total: "316464824320"
+                        used: "299713261568"
+                email: jzervakis@hotmail.com
+                executable: /home/jzerv/miniconda3/envs/blendsql/bin/python
+                gpu: NVIDIA RTX A6000
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "48305799168"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-f938a88e-b487-e2a3-1527-1ef495ea56d3
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "48305799168"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-e72e0e85-e8ec-b2d3-31b6-ca7b1cd9e0a3
+                host: gaia-superg-2
+                memory:
+                    total: "405318529024"
+                os: Linux-5.15.0-139-generic-x86_64-with-glibc2.35
+                program: /data/hdd1/users/jzerv/thesis_repo/blendsql/development/queries/projection/Q4/q4.py
+                python: CPython 3.11.13
+                root: /data/hdd1/users/jzerv/thesis_repo/blendsql
+                startedAt: "2025-09-17T15:46:53.288433Z"
+                writerId: nf3o5pa1b2z1s0dzan8htr1mc3owo3qz
+        m: []
+        python_version: 3.11.13
+        t:
+            "1":
+                - 95
+            "2":
+                - 95
+            "3":
+                - 13
+            "4": 3.11.13
+            "5": 0.21.1
+            "12": 0.21.1
+            "13": linux-x86_64

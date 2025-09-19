@@ -1,0 +1,11 @@
+{"time":"2025-09-17T15:46:53.502245598Z","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-09-17T15:46:53.926372372Z","level":"INFO","msg":"stream: created new stream","id":"aflopyg3"}
+{"time":"2025-09-17T15:46:53.926413298Z","level":"INFO","msg":"stream: started","id":"aflopyg3"}
+{"time":"2025-09-17T15:46:53.926495312Z","level":"INFO","msg":"writer: started","stream_id":"aflopyg3"}
+{"time":"2025-09-17T15:46:53.926589411Z","level":"INFO","msg":"sender: started","stream_id":"aflopyg3"}
+{"time":"2025-09-17T15:46:53.926609378Z","level":"INFO","msg":"handler: started","stream_id":"aflopyg3"}
+{"time":"2025-09-17T15:46:54.592137915Z","level":"INFO","msg":"stream: closing","id":"aflopyg3"}
+{"time":"2025-09-17T15:46:55.340463116Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-17T15:46:55.63412282Z","level":"INFO","msg":"handler: closed","stream_id":"aflopyg3"}
+{"time":"2025-09-17T15:46:55.634330648Z","level":"INFO","msg":"sender: closed","stream_id":"aflopyg3"}
+{"time":"2025-09-17T15:46:55.634386921Z","level":"INFO","msg":"stream: closed","id":"aflopyg3"}

@@ -1,0 +1,12 @@
+{"time":"2025-09-19T13:00:56.746509035Z","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-09-19T13:00:57.170554191Z","level":"INFO","msg":"stream: created new stream","id":"z430jfxm"}
+{"time":"2025-09-19T13:00:57.170617891Z","level":"INFO","msg":"stream: started","id":"z430jfxm"}
+{"time":"2025-09-19T13:00:57.170641484Z","level":"INFO","msg":"handler: started","stream_id":"z430jfxm"}
+{"time":"2025-09-19T13:00:57.170660446Z","level":"INFO","msg":"writer: started","stream_id":"z430jfxm"}
+{"time":"2025-09-19T13:00:57.17067776Z","level":"INFO","msg":"sender: started","stream_id":"z430jfxm"}
+{"time":"2025-09-19T13:01:09.642648016Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-z430jfxm-result_table","runtime_seconds":1.9552227979999999}],"total_operations":1}}
+{"time":"2025-09-19T13:01:09.861372333Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-19T13:01:10.231150842Z","level":"INFO","msg":"stream: closing","id":"z430jfxm"}
+{"time":"2025-09-19T13:01:10.231195931Z","level":"INFO","msg":"handler: closed","stream_id":"z430jfxm"}
+{"time":"2025-09-19T13:01:10.231304248Z","level":"INFO","msg":"sender: closed","stream_id":"z430jfxm"}
+{"time":"2025-09-19T13:01:10.231334599Z","level":"INFO","msg":"stream: closed","id":"z430jfxm"}

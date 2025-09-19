@@ -1,0 +1,43 @@
+{
+  "os": "Linux-5.15.0-139-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.10.16",
+  "startedAt": "2025-09-19T13:01:24.165190Z",
+  "program": "/data/hdd1/users/jzerv/thesis_repo/lotus/development/selection/Q10/default.py",
+  "codePath": "development/selection/Q10/default.py",
+  "codePathLocal": "development/selection/Q10/default.py",
+  "email": "jzervakis@hotmail.com",
+  "root": "/data/hdd1/users/jzerv/thesis_repo/lotus",
+  "host": "gaia-superg-2",
+  "executable": "/home/jzerv/miniconda3/envs/lotus/bin/python",
+  "cpu_count": 48,
+  "cpu_count_logical": 96,
+  "gpu": "NVIDIA RTX A6000",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "316464824320",
+      "used": "301470326784"
+    }
+  },
+  "memory": {
+    "total": "405318529024"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "48305799168",
+      "cudaCores": 10752,
+      "architecture": "Ampere",
+      "uuid": "GPU-f938a88e-b487-e2a3-1527-1ef495ea56d3"
+    },
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "48305799168",
+      "cudaCores": 10752,
+      "architecture": "Ampere",
+      "uuid": "GPU-e72e0e85-e8ec-b2d3-31b6-ca7b1cd9e0a3"
+    }
+  ],
+  "cudaVersion": "12.2",
+  "writerId": "nrlawfd78f5wifw7qf7hcyga2hgdd0q8"
+}
