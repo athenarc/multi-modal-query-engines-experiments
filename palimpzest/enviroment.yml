@@ -1,0 +1,7 @@
+name: palimpzest
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - pip
+prefix: /home/jzerv/miniconda3/envs/palimpzest
