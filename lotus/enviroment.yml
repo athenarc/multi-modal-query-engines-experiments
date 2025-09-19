@@ -5,4 +5,7 @@ channels:
 dependencies:
   - python=3.10
   - ipykernel
+  - pip
+  - pip:
+    - -r file:requirements.txt
 prefix: /home/jzerv/miniconda3/envs/lotus
