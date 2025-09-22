@@ -49,9 +49,8 @@ if __name__ == '__main__':
     tn = count_true_negatives(df)
     fn = count_false_negatives(df)
 
-    print("\n\n--- Optimized Implementation ---")
     print(f"True Positives: {tp}"
     f"\nFalse Positives: {fp}"
     f"\nTrue Negatives: {tn}"
     f"\nFalse Negatives: {fn}")
-    print(f"Accuracy for optimized implementation: {(tp + tn) / (tp + tn + fp + fn):.2f}")
+    print(f"Accuracy: {(tp + tn) / (tp + tn + fp + fn):.2f}")
