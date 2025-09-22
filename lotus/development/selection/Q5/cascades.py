@@ -5,17 +5,18 @@ from lotus.types import CascadeArgs
 import time
 import wandb
 
-# wandb.init(
-#     project="semantic_operations",
-#     name="lotus_Q5_filter_cascades_gemma3_12B_ollama",
-#     group="semantic selection",
-# )
+wandb.init(
+    project="semantic_operations",
+    name="lotus_Q5_filter_cascades_gemma3_12B_ollama",
+    group="semantic selection",
+)
 
 lm = LM(model="ollama/gemma3:12b")
 helper_lm = LM(model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", api_base="http://localhost:5001/v1", api_key="dummy")
 
 lotus.settings.configure(lm=lm, helper_lm=helper_lm)
 df_reviews = pd.read_csv("development/datasets/imdb_dataset.csv").head(100)
+df_reviews = pd.DataFrame(df_reviews['review'])
 
 user_instruction = "{review} is positive"
 
@@ -28,8 +29,8 @@ exec_time = time.time() - start
 # print(df)
 # print(exec_time)
 
-# wandb.log({
-#     "result_table": wandb.Table(dataframe=df),
-#     "execution_time": exec_time
-# })
-# wandb.finish()
+wandb.log({
+    "result_table": wandb.Table(dataframe=df),
+    "execution_time": exec_time
+})
+wandb.finish()
