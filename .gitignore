@@ -1,1 +1,3 @@
 .vsocde/
+wandb/
+*.logs
