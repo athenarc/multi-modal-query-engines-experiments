@@ -12,7 +12,6 @@ wandb.init(
     group="semantic join",
 )
 
-# Load reports dataset
 players_df = pd.read_csv('development/datasets/rotowire/player_evidence_mine.csv').head(50)[['Player Name']].rename(columns={'Player Name' : 'player_name'})
 
 teams_df = pd.read_csv('development/datasets/rotowire/team_evidence.csv')[['Team Name']].rename(columns={'Team Name' : 'team_name'})
@@ -46,7 +45,7 @@ smoothie = bsql.execute(
 
 exec_time = time.time()-start
 
-# print(df)
+# print(smoothie.df)
 # print(exec_time)
 
 wandb.log({

@@ -10,8 +10,8 @@ wandb.init(
     group="semantic join",
 )
 
-df_players = pd.read_csv("datasets/player_evidence_mine.csv").head(50)[['Player Name']]
-df_teams = pd.read_csv("datasets/team_evidence.csv")[['Team Name']]
+df_players = pd.read_csv("development/datasets/player_evidence_mine.csv").head(50)[['Player Name']]
+df_teams = pd.read_csv("development/datasets/team_evidence.csv")[['Team Name']]
 
 lm = LM(model="ollama/llama3.3:70b")
 lotus.settings.configure(lm=lm)
