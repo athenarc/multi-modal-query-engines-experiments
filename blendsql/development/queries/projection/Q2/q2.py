@@ -37,7 +37,7 @@ bsql = BlendSQL(
 
 exec_times = []
 start = time.time()
-# bsql.model.cache.clear()
+
 smoothie = bsql.execute(
    """
     SELECT Reports.Game_ID, Reports.Report, {{

@@ -13,7 +13,7 @@ wandb.init(
 df_players = pd.read_csv("development/datasets/player_evidence_mine.csv").head(50)[['Player Name']]
 df_teams = pd.read_csv("development/datasets/team_evidence.csv")[['Team Name']]
 
-lm = LM(model="ollama/llama3.3:70b")
+lm = LM(model="ollama/gemma3:12b")
 lotus.settings.configure(lm=lm)
 
 instruction = "The player {Player Name:left} was playing for team {Team Name:right} in 2015."

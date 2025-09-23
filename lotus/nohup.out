@@ -1,0 +1,22 @@
+wandb: Currently logged in as: yannis-zervakis (darelab) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/lotus/wandb/run-20250923_125856-yz976gdv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_Q11_join_default_gemma3_12b_ollama
+wandb: ⭐️ View project at https://wandb.ai/darelab/semantic_operations
+wandb: 🚀 View run at https://wandb.ai/darelab/semantic_operations/runs/yz976gdv
+Join comparisons:   0%|           0/1500 LM Calls [00:00<?, ?it/s]Join comparisons: 100%|██████████ 1500/1500 LM Calls [02:24<00:00, 10.34it/s]Join comparisons: 100%|██████████ 1500/1500 LM Calls [02:25<00:00, 10.34it/s]
+wandb: uploading artifact run-yz976gdv-result_table
+wandb: uploading history steps 0-0, summary, console lines 0-0
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: execution_time ▁
+wandb: 
+wandb: Run summary:
+wandb: execution_time 145.02356
+wandb: 
+wandb: 🚀 View run lotus_Q11_join_default_gemma3_12b_ollama at: https://wandb.ai/darelab/semantic_operations/runs/yz976gdv
+wandb: ⭐️ View project at: https://wandb.ai/darelab/semantic_operations
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250923_125856-yz976gdv/logs
