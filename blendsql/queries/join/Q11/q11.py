@@ -14,7 +14,7 @@ args = parser.parse_args()
 if args.wandb:
     wandb.init(
         project="semantic_operations",
-        name="blendsql_q11_gemma3_12b_ollama",
+        name="blendsql_q11_join_gemma3_12b_ollama",
         group="semantic join",
     )
 
