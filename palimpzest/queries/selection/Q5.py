@@ -1,0 +1,43 @@
+import palimpzest as pz
+from palimpzest.constants import Model
+import pandas as pd
+from dotenv import load_dotenv
+import wandb
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
+args = parser.parse_args()
+
+load_dotenv()
+
+if args.wandb:
+    wandb.init(
+        project="semantic_operations",
+        name="palimpzest_Q5_gemma3_12b_ollama",
+        group="semantic selection",
+    )
+
+
+dataset = pz.TextFileDataset(id='imdb_reviews', path="datasets/imdb_reviews/imdb_reviews_100/")
+dataset = dataset.sem_filter("The review is positive")
+
+config = pz.QueryProcessorConfig(available_models=[Model.OLLAMA_GEMMA_3_12B])
+
+output = dataset.run(config)
+
+output_df = output.to_df()
+
+if args.wandb:
+    wandb.log({
+        "result_table": wandb.Table(dataframe=output_df),
+        "execution_time": output.execution_stats.total_execution_time,
+        "total_tokens": output.execution_stats.total_tokens
+    })
+
+    wandb.finish()
+else:
+    print("Result:\n\n", output_df)
+    print("Execution time: ", output.executions_stats.total_execution_time)
+
+
