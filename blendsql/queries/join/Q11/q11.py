@@ -29,7 +29,7 @@ db = {
 
 bsql = BlendSQL(
     db=db,
-    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}),
+    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}, caching=False),
     ingredients={LLMJoin}
 )
 
@@ -40,9 +40,9 @@ smoothie = bsql.execute(
         FROM Players p
         JOIN Teams t ON {{
             LLMJoin(
-                'p.player_name',
-                't.team_name',
-                question='The player was playing for the team in 2015.',
+                p.player_name,
+                t.team_name,
+                join_criteria='The player was playing for the team in 2015.',
             )
         }} 
     """,

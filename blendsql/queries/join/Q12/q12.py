@@ -30,8 +30,8 @@ db = {
 
 bsql = BlendSQL(
     db=db,
-    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}),
-    ingredients={LLMJoin}
+    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}, caching=False),
+    ingredients={LLMJoin},
 )
 
 start = time.time()
@@ -41,9 +41,9 @@ smoothie = bsql.execute(
         FROM Movies m
         JOIN Directors d ON {{
             LLMJoin(
-                'm.title',
-                'd.director_name',
-                question='The movie is directed from the director.',
+                m.title,
+                d.director_name,
+                join_criteria='The movie is directed from the director.',
             )
         }} 
     """,

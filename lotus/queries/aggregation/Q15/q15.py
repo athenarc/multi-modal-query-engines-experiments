@@ -12,17 +12,17 @@ args = parser.parse_args()
 if args.wandb:
     wandb.init(
         project="semantic_operations",
-        name="lotus_Q14_aggregation_gemma3_12b_ollama_10000",
+        name="lotus_Q15_aggregation_gemma3_12b_ollama",
         group="semantic aggregation",
     )
 
 lm = LM(model="ollama/gemma3:12b")
 lotus.settings.configure(lm=lm)
 
-df_reviews = pd.read_csv("datasets/enron_emails/enron_emails_shuffled_10000.csv")[['Message']]
+df_reviews = pd.read_csv("datasets/rotowire/reports_table.csv")
 
 start = time.time()
-df = df_reviews.sem_agg("Do spam or non-spam emails prevail? from all {Message}. Return 1 for spam or 0 for non-spam **and only that**.")
+df = df_reviews.sem_agg("Which player had the most triple-doubles across all the games described from all {Report}. **Return only the name**.")
 exec_time = time.time() - start
 
 if args.wandb:

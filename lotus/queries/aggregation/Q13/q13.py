@@ -12,7 +12,7 @@ args = parser.parse_args()
 if args.wandb:
     wandb.init(
         project="semantic_operations",
-        name="lotus_Q13_aggregation_gemma3_12b_ollama",
+        name="lotus_Q13_aggregation_gemma3_12b_ollama_10000",
         group="semantic aggregation",
     )
 

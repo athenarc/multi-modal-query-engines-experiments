@@ -14,14 +14,14 @@ args = parser.parse_args()
 if args.wandb:
     wandb.init(
         project="semantic_operations",
-        name="blendsql_q14_aggregation_gemma3_12b_ollama 10000",
+        name="blendsql_q15_aggregation_gemma3_12b_ollama",
         group="semantic aggregation",
     )
 
-df_emails = pd.read_csv("datasets/enron_emails/enron_emails_shuffled_10000.csv")[['Subject', 'Message']]
+df_reports = pd.read_csv("datasets/rotowire/reports_table.csv")
 
 db = {
-    "Emails": df_emails
+    "Reports": df_reports
 }
 
 bsql = BlendSQL(
@@ -35,8 +35,8 @@ smoothie = bsql.execute(
     """
         SELECT {{
             LLMQA(
-                'Do spam or non-spam emails prevail? from all emails? Return 1 for spam or 0 for non-spam **and only that**.',
-                context=Emails.Message
+                'Which player had the most triple-doubles across all the games described from all reports? **Return only the name**.',
+                context=Reports.Report
             )
         }} AS Answer
     """,
