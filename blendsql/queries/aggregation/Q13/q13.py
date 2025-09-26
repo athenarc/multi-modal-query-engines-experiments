@@ -18,7 +18,7 @@ if args.wandb:
         group="semantic aggregation",
     )
 
-df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(10000)[['review']]
+df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(10)[['review']]
 
 db = {
     "Reviews": pd.DataFrame(df_reviews)
@@ -26,7 +26,12 @@ db = {
 
 bsql = BlendSQL(
     db=db,
-    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}),
+    # model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}),
+    model=TransformersLLM(
+        "/data/hdd1/users/jzerv/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659",
+        config={"device_map": "auto"},
+        caching=False,
+    ),
     ingredients={LLMQA}
 )
 
@@ -36,7 +41,8 @@ smoothie = bsql.execute(
         SELECT {{
             LLMQA(
                 'Do positive or negative reviews prevail? Return 1 for positive or 0 for negative **and only that**.',
-                context=Reviews.review
+                context=Reviews.review,
+                return_type='int'
             )
         }} AS Answer
     """,
