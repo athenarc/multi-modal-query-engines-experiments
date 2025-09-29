@@ -1,6 +1,12 @@
 import pandas as pd
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-s", "--size", nargs='?', default=728, const=728, type=int, help="The input size")
+args = parser.parse_args()
 
 player_labels = pd.read_csv("datasets/rotowire/player_labels.csv")
+player_labels = player_labels[player_labels['Game ID'] < args.size]
 
 stats = ["Points", "Assists", "Total rebounds", "Steals", "Blocks"]
 
