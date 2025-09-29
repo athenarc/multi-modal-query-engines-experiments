@@ -1,8 +1,8 @@
 #!/bin/bash
 
-models=("gemma3:12b") # more models to add
+models=("gemma3:12b" "llama3.1:8b") # + gemma3:12b
 
 for model in "${models[@]}"; do
     echo "Running with -s $size and -m $model"
-    python lotus/queries/aggregation/Q16/q16.py  --wandb -s $size -m $model -p ollama
+    python lotus/queries/aggregation/Q16/q16.py  --wandb -m $model -p ollama
 done

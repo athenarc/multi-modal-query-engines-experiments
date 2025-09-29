@@ -7,7 +7,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
-parser.add_argument("-s", "--size", nargs='?', default=1000, const=1000, type=int, help="The input size")
+parser.add_argument("-s", "--size", nargs='?', default=728, const=728, type=int, help="The input size")
 parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()

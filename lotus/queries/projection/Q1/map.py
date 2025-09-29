@@ -7,27 +7,35 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
+parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
+parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
+parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
 if args.wandb:
+    run_name = f"lotus_Q1_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+
     wandb.init(
         project="semantic_operations",
-        name="lotus_NER_TE_Q1_map_gemma3_12b_ollama",
+        name=run_name,
         group="semantic projection",
     )
 
-lm = LM(
-    # model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
-    # api_base="http://localhost:5001/v1",
-    # api_key="dummy",
-    # model="ollama/gemma3:12b",
-    model="qwen3:30b-a3b-instruct-2507-q4_K_M",
-    timeout=None,
-)
-# lm = LM(model="ollama/llama3.3:70b")
-lotus.settings.configure(lm=lm)
+if args.provider == 'ollama':
+    model = LM(model=args.provider + '/' + args.model, timeout=50000)
 
-df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(100)
+# lm = LM(
+#     # model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
+#     # api_base="http://localhost:5001/v1",
+#     # api_key="dummy",
+#     # model="ollama/gemma3:12b",
+#     model="qwen3:30b-a3b-instruct-2507-q4_K_M",
+#     timeout=None,
+# )
+
+lotus.settings.configure(lm=model)
+
+df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size)
 
 elapsed_times = []
 

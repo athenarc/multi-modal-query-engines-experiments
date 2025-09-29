@@ -12,11 +12,11 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 if args.wandb:
-    wandb.init(
-        run_name = f"lotus_Q16_aggregation_{args.model.replace(':', '_')}_{args.provider}"
+    run_name = f"lotus_Q16_aggregation_{args.model.replace(':', '_')}_{args.provider}"
 
+    wandb.init(
         project="semantic_operations",
-        name="lotus_Q16_aggregation_gemma3_12b_ollama",
+        name=run_name,
         group="semantic aggregation",
     )
 
