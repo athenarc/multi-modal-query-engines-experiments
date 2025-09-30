@@ -28,16 +28,16 @@ reports = {
 # Prepare our BlendSQL connection
 bsql = BlendSQL(
     db=reports,
-    model=TransformersLLM(
-        "/data/hdd1/users/jzerv/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659",
-        config={"device_map": "auto"},
-        caching=False,
-    ),
-    # model=LiteLLM("ollama/gemma3:1b"),
-    # model=LiteLLM(
-    #     "hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
-    #     config={"api_base": "http://localhost:5001/v1"},
+    # model=TransformersLLM(
+    #     "/data/hdd1/users/jzerv/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659",
+    #     config={"device_map": "auto"},
+    #     caching=False,
     # ),
+    # model=LiteLLM("ollama/gemma3:1b"),
+    model=LiteLLM(
+        "hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
+        config={"api_base": "http://localhost:5001/v1"},
+    ),
     # model=LiteLLM("ollama/llama3.3:70b", config={"timeout": 50000}),
     # model=LiteLLM("ollama/qwen3:30b-a3b-instruct-2507-q4_K_M", config={"timeout": 50000}),
     verbose=True,

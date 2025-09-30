@@ -25,10 +25,11 @@ df_movies = pd.read_csv("datasets/movies_directors/movies.csv").head(args.size)[
 df_directors = pd.read_csv("datasets/movies_directors/directors.csv")[['director_name']]
 
 if args.provider == 'ollama':
-    model = args.provider + '/' + args.model
+    model = LM(args.provider + '/' + args.model)
+elif args.provider == 'vllm':
+    model = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
-lm = LM(model=model)
-lotus.settings.configure(lm=lm)
+lotus.settings.configure(lm=model)
 
 instruction = "The movie {title:left} is directed by {director_name:right}."
 start = time.time()

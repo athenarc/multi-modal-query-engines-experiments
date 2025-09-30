@@ -25,10 +25,11 @@ df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args
 df_teams = pd.read_csv("datasets/rotowire/team_evidence.csv")[['Team Name']]
 
 if args.provider == 'ollama':
-    model = args.provider + '/' + args.model
+    model = LM(args.provider + '/' + args.model)
+elif args.provider == 'vllm':
+    model = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
-lm = LM(model=model)
-lotus.settings.configure(lm=lm)
+lotus.settings.configure(lm=model)
 
 instruction = "The player {Player Name:left} was playing for team {Team Name:right} in 2015."
 start = time.time()

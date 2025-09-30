@@ -33,7 +33,13 @@ db = {
 }
 
 if args.provider == 'ollama':
-    model = LiteLLM(args.provider + '/' + args.model, config={"timeout": 50000}, caching=False)
+    model = LiteLLM(args.provider + '/' + args.model, 
+                    config={"timeout" : 50000, "cache": False},
+                    caching=False)
+elif args.provider == 'vllm':
+    model = LiteLLM("hosted_vllm/" + args.model, 
+                    config={"api_base": "http://localhost/5001/v1", "timeout": 50000, "cache": False}, 
+                    caching=False)
 
 bsql = BlendSQL(
     db=db,
