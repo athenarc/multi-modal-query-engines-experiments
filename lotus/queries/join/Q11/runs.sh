@@ -5,7 +5,7 @@ models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 
 for size in "${sizes[@]}"; do
   for model in "${models_ollama[@]}"; do
-    echo "Running with -s $size and -m $model"
+    echo "Running with -s $size and -m ollama/$model"
     python lotus/queries/join/Q11/default.py  --wandb -s $size -m $model -p ollama
   done
 

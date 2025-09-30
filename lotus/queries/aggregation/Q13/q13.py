@@ -21,11 +21,12 @@ if args.wandb:
         group="semantic aggregation",
     )
 
-if (args.provider == "ollama"):
-    model = args.provider + "/" + args.model
+if args.provider == 'ollama':
+    model = LM(args.provider + '/' + args.model)
+elif args.provider == 'vllm':
+    model = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
-lm = LM(model=model)
-lotus.settings.configure(lm=lm)
+lotus.settings.configure(lm=model)
 
 df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)[['review']]
 
