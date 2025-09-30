@@ -38,7 +38,7 @@ if args.provider == 'ollama':
                     caching=False)
 elif args.provider == 'vllm':
     model = LiteLLM("hosted_vllm/" + args.model, 
-                    config={"api_base": "http://localhost/5001/v1", "timeout": 50000, "cache": False}, 
+                    config={"api_base": "http://localhost:5001/v1", "timeout": 50000, "cache": False}, 
                     caching=False)
 
 bsql = BlendSQL(
@@ -66,6 +66,8 @@ smoothie = bsql.execute(
 exec_time = time.time()-start
 
 if args.wandb:
+    smoothie.df.to_csv(f"evaluation/join/Q11/results/blendsql_Q11_join_{args.model.replace('/', ':')}_{args.provider}_{args.size}.csv")
+
     wandb.log({
         "result_table": wandb.Table(dataframe=smoothie.df),
         "execution_time": exec_time

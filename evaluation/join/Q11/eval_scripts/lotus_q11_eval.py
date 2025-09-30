@@ -23,7 +23,11 @@ players_evi = players_evi.explode("Team Name")
 players_evi['Team Name'] = players_evi['Team Name'].str.strip()
 players_evi.fillna('None', inplace=True)
 
-results_file = f"evaluation/join/Q11/results/lotus_Q11_join_default_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+if args.provider == 'ollama':
+    results_file = f"evaluation/join/Q11/results/lotus_Q11_join_default_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+elif args.provider == 'vllm':
+    results_file = f"evaluation/join/Q11/results/lotus_Q11_join_default_{args.model.replace('/', ':')}_{args.provider}_{args.size}.csv"
+
 lotus_res = pd.read_csv(results_file)
 
 lotus_res['Team Name'] = lotus_res['Team Name'].apply(match_team_names)
