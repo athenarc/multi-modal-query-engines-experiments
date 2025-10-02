@@ -1,4 +1,11 @@
 import pandas as pd
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
+parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
+parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
+args = parser.parse_args()
 
 def count_true_positives(df):
     true_positives = df[(df['sentiment_gt'] == 'positive') & (df['sentiment_pred'] == 'positive')]
@@ -18,8 +25,13 @@ def count_false_negatives(df):
 
 
 if __name__ == "__main__":
-    imdb_dataset = pd.read_csv("datasets/imdb_dataset.csv").head(100)
-    lotus_res_default = pd.read_csv("selection/Q5/results/lotus_Q5_default_gemma3_12b_ollama.csv")
+    if args.provider == 'ollama':
+        results_file = f"evaluation/selection/Q5/results/lotus_Q5_filter_default_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    elif args.provider == 'vllm':
+        results_file = f"evaluation/selection/Q5/results/lotus_Q5_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+
+    imdb_dataset = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
+    lotus_res_default = pd.read_csv(results_file)
 
     lotus_res_default["sentiment"] = "positive"
 
@@ -38,7 +50,14 @@ if __name__ == "__main__":
 
     print(f"Accuracy for default implementation: {(tp + tn) / (tp + tn + fp + fn):.2f}")
 
-    lotus_res_opt = pd.read_csv("selection/Q5/results/lotus_Q5_cascades_gemma3_12b_olllama_llama8b_vllm.csv")
+    if args.provider == 'ollama':
+        results_file = f"evaluation/selection/Q5/results/lotus_Q5_filter_default_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    elif args.provider == 'vllm':
+        exit(0)
+        # results_file = f"evaluation/selection/Q5/results/lotus_Q9_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+
+
+    lotus_res_opt = pd.read_csv(results_file)
 
     lotus_res_opt["sentiment"] = "positive"
 
