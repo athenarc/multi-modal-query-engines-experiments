@@ -20,7 +20,7 @@ def count_false_negatives(df):
     return len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] == 17.0)])
 
 if __name__ == "__main__":
-    player_labels = pd.read_csv("datasets/player_labels.csv")
+    player_labels = pd.read_csv("datasets/rotowire/player_labels.csv")
     player_labels = player_labels[player_labels['Game ID'] < args.size]
     player_labels = player_labels[['Player Name', 'Points']]
 

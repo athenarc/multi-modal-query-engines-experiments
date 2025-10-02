@@ -1,5 +1,12 @@
 import pandas as pd
 from rapidfuzz import process, fuzz
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
+parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
+parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
+args = parser.parse_args()
 
 def match_name(name, choices, scorer=fuzz.ratio, threshold=60):
     if not choices:
@@ -26,11 +33,16 @@ def count_false_negatives(df):
     return len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] == 17.0)])
 
 if __name__ == "__main__":
-    df_player_labels = pd.read_csv("datasets/players_labels_100.csv")
-    df_player_labels = df_player_labels[df_player_labels['Game ID'] < 14]
+    if args.provider == 'ollama':
+        results_file = f"evaluation/selection/Q6/results/palimpzest_Q6_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    elif args.provider == 'vllm':
+        results_file = f"evaluation/selection/Q6/results/lotus_Q6_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+
+    df_player_labels = pd.read_csv("datasets/rotowire/player_labels.csv")
+    df_player_labels = df_player_labels[df_player_labels['Game ID'] < args.size]
     df_player_labels = df_player_labels[['Game ID', 'Player Name', 'Points']]
 
-    pz_res = pd.read_csv("selection/Q6/results/pz_Q6_gemma3_12b_ollama.csv")
+    pz_res = pd.read_csv(results_file)
     pz_res['Game ID'] = pz_res['filename'].str.extract(r'report_(\d+)\.txt').astype(int)
     pz_res.sort_values(by=['Game ID'], inplace=True)
     pz_res['Game ID'] = pz_res['Game ID'] - 1
