@@ -13,45 +13,43 @@ args = parser.parse_args()
 
 model = f"{args.provider.upper()}_{args.model.replace(':', '_').replace('/', '_').replace('.', '_').replace('-', '_').upper()}"
 
-print(model)
+load_dotenv()
 
-# load_dotenv()
+if args.wandb:
+    run_name=f"palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
-# if args.wandb:
-#     run_name=f"palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    wandb.init(
+        project="semantic_operations",
+        name=run_name,
+        group="semantic selection",
+    )
 
-#     wandb.init(
-#         project="semantic_operations",
-#         name=run_name,
-#         group="semantic selection",
-#     )
+reports = pz.TextFileDataset(id="team_names", path="datasets/rotowire/team_names/")
 
-# reports = pz.TextFileDataset(id="team_names", path="datasets/rotowire/team_names/")
+reports = reports.sem_filter("The team was founded before 1970.")
 
-# reports = reports.sem_filter("The team was founded before 1970.")
+config = pz.QueryProcessorConfig(
+    available_models=[Model.model],
+)
 
-# config = pz.QueryProcessorConfig(
-#     available_models=[Model.model],
-# )
+output = reports.run(config=config)
+output_df = output.to_df()
 
-# output = reports.run(config=config)
-# output_df = output.to_df()
-
-# if args.wandb:
-#     if args.provider == 'ollama':
-#         output_file = f"evaluation/selection/Q10/results/palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}.csv"
-#     elif args.provider == 'vllm':
-#         output_file = f"evalution/selection/Q10/results/palimpzest_Q10_filter_{args.model.replace('/', '_')}_{args.provider}.csv"
+if args.wandb:
+    if args.provider == 'ollama':
+        output_file = f"evaluation/selection/Q10/results/palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}.csv"
+    elif args.provider == 'vllm':
+        output_file = f"evalution/selection/Q10/results/palimpzest_Q10_filter_{args.model.replace('/', '_')}_{args.provider}.csv"
     
-#     output_df.to_csv(output_file)
+    output_df.to_csv(output_file)
     
-#     wandb.log({
-#         "result_table": wandb.Table(dataframe=output_df),
-#         "execution_time": output.execution_stats.total_execution_time,
-#         "total_tokens": output.execution_stats.total_tokens
-#     })
+    wandb.log({
+        "result_table": wandb.Table(dataframe=output_df),
+        "execution_time": output.execution_stats.total_execution_time,
+        "total_tokens": output.execution_stats.total_tokens
+    })
 
-#     wandb.finish()
-# else:
-#     print("Result:\n\n", output_df)
-#     print("Execution time: ", output.executions_stats.total_execution_time)
+    wandb.finish()
+else:
+    print("Result:\n\n", output_df)
+    print("Execution time: ", output.executions_stats.total_execution_time)
