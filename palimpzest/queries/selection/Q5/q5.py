@@ -29,7 +29,6 @@ dataset = pz.TextFileDataset(id='imdb_reviews', path=f"datasets/imdb_reviews/{ar
 dataset = dataset.sem_filter("The review is positive")
 
 config = pz.QueryProcessorConfig(available_models=[model])
-
 output = dataset.run(config)
 
 output_df = output.to_df()
@@ -51,6 +50,6 @@ if args.wandb:
     wandb.finish()
 else:
     print("Result:\n\n", output_df)
-    print("Execution time: ", output.executions_stats.total_execution_time)
+    print("Execution time: ", output.execution_stats.total_execution_time)
 
 

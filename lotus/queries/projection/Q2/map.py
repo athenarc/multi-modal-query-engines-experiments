@@ -8,22 +8,27 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
+parser.add_argument("-s", "--size", nargs='?', default=50, const=50, type=int, help="The input size")
+parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
+parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
 if args.wandb:
+    run_name = f"lotus_Q2_map_{args.model.replcae(':', '_')}_{args.provider}_{args.size}"
+
     wandb.init(
         project="semantic_operations",
-        name="lotus_NER_TE_Q2_extract_llama_3.1_8B_instruct_vllm",
+        name=run_name,
         group="semantic projection",
     )
 
-lm = LM(
-    model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", 
-    api_base="http://localhost:5001/v1",
-    api_key="dummy")
+if args.provider == 'ollama':
+    lm = LM(args.provider + '/' + args.model)
+elif args.provider == 'vllm':
+    lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
 lotus.settings.configure(lm=lm)
-df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(100)
+df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size)
 elapsed_times = []
 
 # Retrieve team names from the reports
@@ -97,6 +102,13 @@ df = df_total_points.rename(columns={"_map": "total_points"})
 exec_time = sum(elapsed_times)
 
 if args.wandb:
+    if args.provider == 'ollama':
+        output_file = f"evaluation/selection/Q2/results/lotus_Q2_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    elif args.provider =='vllm':
+        output_file = f"evaluation/selection/Q2/results/lotus_Q2_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+        
+    df.to_csv(output_file)
+
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
         "execution_time": exec_time

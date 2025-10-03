@@ -3,7 +3,7 @@ input_file = "datasets/rotowire/reports/reports.txt"
 with open(input_file, 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
-sizes = [8, 14, 30]
+sizes = [8, 14, 30, 50, 100, 200]
 
 for size in sizes:
     for i, line in enumerate(lines[:size]):

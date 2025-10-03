@@ -7,7 +7,12 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
+parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
+parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
+parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
+
+model = getattr(Model, f"{args.provider.upper()}_{args.model.replace(':', '_').replace('/', '_').replace('.', '_').replace('-', '_').upper()}")
 
 load_dotenv()
 
@@ -24,13 +29,15 @@ def explode_player_list(record: dict):
     return records
 
 if args.wandb:
+    run_name=f"palimpzest_Q1_project_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+
     wandb.init(
         project="semantic_operations",
-        name="palimpzest_Q1_gemma3_12b_ollama",
+        name=run_name,
         group="semantic projection",
 )
 
-reports = pz.TextFileDataset(id="rotowire_reports", path="datasets/rotowire/reports_100/")
+reports = pz.TextFileDataset(id="rotowire_reports", path=f"datasets/rotowire/reports/{args.size}/")
 reports = reports.sem_add_columns([
     {"name": "player_name_list", "type": list[str], "desc": "Names of players who played the game, excluding those who are mentioned but did not play."},
 ])
@@ -66,8 +73,8 @@ reports = reports.sem_add_columns(
     depends_on=["contents", "player_name"],
 )
 config = pz.QueryProcessorConfig(
-    available_models=[Model.OLLAMA_GEMMA_3_12B],
-    timeout=None,
+    available_models=[model],
+    timeout=50000,
 )
 
 output = reports.run(config=config)
@@ -75,6 +82,13 @@ output_df = output.to_df()
 output_df.drop(columns=["player_name_list"], inplace=True)
 
 if args.wandb:
+    if args.provider == 'ollama':
+        output_file = f"evaluation/selection/Q5/results/palimpzest_Q5_project_{args.model.replace(':', '_')}_{args.provider}.csv"
+    elif args.provider == 'vllm':
+        output_file = f"evalution/selection/Q5/results/palimpzest_Q5_project_{args.model.replace('/', '_')}_{args.provider}.csv"
+    
+    output_df.to_csv(output_file)
+
     wandb.log({
         "result_table": wandb.Table(dataframe=output_df),
         "execution_time": output.execution_stats.total_execution_time,
@@ -84,4 +98,4 @@ if args.wandb:
     wandb.finish()
 else:
     print("Result:\n\n", output_df)
-    print("Execution time: ", output.executions_stats.total_execution_time)
+    print("Execution time: ", output.execution_stats.total_execution_time)
