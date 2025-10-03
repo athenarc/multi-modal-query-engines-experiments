@@ -28,7 +28,7 @@ elif args.provider == 'vllm':
 
 lotus.settings.configure(lm=lm)
 
-df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size)
+df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size).rename(columns={'Game_ID' : 'Game ID'})
 
 elapsed_times = []
 
