@@ -30,7 +30,7 @@ if __name__ == "__main__":
     elif args.provider == 'vllm':
         results_file = f"evaluation/selection/Q5/results/palimpzest_Q5_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
-    imdb_dataset = pd.read_csv("datasets/imdb_dataset.csv").head(args.size)
+    imdb_dataset = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
     pz_results = pd.read_csv(results_file)
 
     pz_results["sentiment"] = "positive"

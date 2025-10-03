@@ -12,7 +12,7 @@ parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gem
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
-model = f"{args.provider.upper()}_{args.model.replace(':', '_').replace('/', '_').replace('.', '_').replace('-', '_').upper()}"
+model = getattr(Model, f"{args.provider.upper()}_{args.model.replace(':', '_').replace('/', '_').replace('.', '_').replace('-', '_').upper()}")
 
 load_dotenv()
 
@@ -28,7 +28,7 @@ if args.wandb:
 dataset = pz.TextFileDataset(id='imdb_reviews', path=f"datasets/imdb_reviews/{args.size}/")
 dataset = dataset.sem_filter("The review is positive")
 
-config = pz.QueryProcessorConfig(available_models=[Model.model])
+config = pz.QueryProcessorConfig(available_models=[model])
 
 output = dataset.run(config)
 

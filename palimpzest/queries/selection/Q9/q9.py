@@ -12,7 +12,7 @@ parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gem
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
-model = f"{args.provider.upper()}_{args.model.replace(':', '_').replace('/', '_').replace('.', '_').replace('-', '_').upper()}"
+model = getattr(Model, f"{args.provider.upper()}_{args.model.replace(':', '_').replace('/', '_').replace('.', '_').replace('-', '_').upper()}")
 
 load_dotenv()
 
@@ -29,7 +29,7 @@ reports = pz.TextFileDataset(id="player_names", path=f"datasets/rotowire/player_
 reports = reports.sem_filter("The player is from America.")
 
 config = pz.QueryProcessorConfig(
-    available_models=[Model.model],
+    available_models=[model],
 )
 
 output = reports.run(config=config)

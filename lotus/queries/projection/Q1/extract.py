@@ -23,14 +23,11 @@ if args.wandb:
     )
 
 if args.provider == 'ollama':
-    model = LM(model=args.provider + '/' + args.model, timeout=50000)
-# lm = LM(
-#     model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", 
-#     api_base="http://localhost:5001/v1",
-#     api_key="dummy")
+    lm = LM(args.provider + '/' + args.model)
+elif args.provider == 'vllm':
+    lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
-
-lotus.settings.configure(lm=model)
+lotus.settings.configure(lm=lm)
 df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size)
 
 input_cols = ["Report"]
@@ -85,6 +82,13 @@ df = new_df[['Game ID', 'player_name', 'points', 'assists', 'rebounds', 'steals'
 exec_time = time.time() - start
 
 if args.wandb:
+    if args.provider == 'ollama':
+        output_file = f"evaluation/selection/Q1/results/lotus_Q1_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    elif args.provider =='vllm':
+        output_file = f"evaluation/selection/Q1/results/lotus_Q1_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+        
+    df.to_csv(output_file)
+
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
         "execution_time": exec_time

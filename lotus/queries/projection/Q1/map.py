@@ -22,18 +22,11 @@ if args.wandb:
     )
 
 if args.provider == 'ollama':
-    model = LM(model=args.provider + '/' + args.model, timeout=50000)
+    lm = LM(args.provider + '/' + args.model)
+elif args.provider == 'vllm':
+    lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
-# lm = LM(
-#     # model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
-#     # api_base="http://localhost:5001/v1",
-#     # api_key="dummy",
-#     # model="ollama/gemma3:12b",
-#     model="qwen3:30b-a3b-instruct-2507-q4_K_M",
-#     timeout=None,
-# )
-
-lotus.settings.configure(lm=model)
+lotus.settings.configure(lm=lm)
 
 df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size)
 
@@ -283,6 +276,13 @@ df = df_steals.rename(columns={"_map": "steals"})
 exec_time = sum(elapsed_times)
 
 if args.wandb:
+    if args.provider == 'ollama':
+        output_file = f"evaluation/selection/Q1/results/lotus_Q1_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    elif args.provider =='vllm':
+        output_file = f"evaluation/selection/Q1/results/lotus_Q1_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+        
+    df.to_csv(output_file)
+
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
         "execution_time": exec_time
