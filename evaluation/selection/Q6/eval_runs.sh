@@ -1,5 +1,5 @@
 #!/bin/bash
-sizes=(7 14 29)
+sizes=(8 14 30)
 models_ollama=("gemma3:12b" "llama3.3:70b")
 models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 
@@ -8,17 +8,17 @@ for size in "${sizes[@]}"; do
         echo "Evaluating with -s $size and -m $model"
         echo -n "Lotus "
         python evaluation/selection/Q6/eval_scripts/lotus_q6_eval.py -s $size -m $model -p ollama
-        echo -n "Palimpzest "
-        python evaluation/selection/Q6/eval_scripts/pz_q6_eval.py -s $size -m $model -p ollama
-        echo ""
+    #     echo -n "Palimpzest "
+    #     python evaluation/selection/Q6/eval_scripts/pz_q6_eval.py -s $size -m $model -p ollama
+    #     echo ""
     done
 
     for model in "${models_vllm[@]}"; do
         echo "Evaluating with -s $size and -m $model"
         echo -n "Lotus "
         python evaluation/selection/Q6/eval_scripts/lotus_q6_eval.py -s $size -m $model -p vllm
-        echo -n "Palimpzest "
-        python evaluation/selection/Q6/eval_scripts/pz_q6_eval.py -s $size -m $model -p vllm
-        echo ""
+        # echo -n "Palimpzest "
+        # python evaluation/selection/Q6/eval_scripts/pz_q6_eval.py -s $size -m $model -p vllm
+        # echo ""
     done
 done

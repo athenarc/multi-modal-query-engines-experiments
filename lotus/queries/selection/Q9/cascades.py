@@ -6,7 +6,6 @@ import time
 import wandb
 import argparse
 import litellm
-litellm.set_verbose=True
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")

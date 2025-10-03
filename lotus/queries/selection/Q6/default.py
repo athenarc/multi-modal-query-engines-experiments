@@ -28,7 +28,7 @@ elif args.provider == 'vllm':
     lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
 lotus.settings.configure(lm=lm)
-df_players = pd.read_csv("datasets/rotowire/player_labels.csv")
+df_players = pd.read_csv(f"datasets/rotowire/reports_with_player_names/reports_with_players_{args.size}.csv")
 df_players = df_players[df_players["Game ID"] < args.size]
 
 user_instruction = "{Player Name} had 17 points in game {Report}."

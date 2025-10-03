@@ -25,7 +25,7 @@ if __name__ == "__main__":
     elif args.provider == 'vllm':
         results_file = f"evaluation/selection/Q9/results/palimpzest_Q9_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
-    df_player_labels = pd.read_csv("datasets/player_evidence_mine.csv").head(args.size)
+    df_player_labels = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
     df_player_labels = df_player_labels[['Player Name', 'nationality']]
 
     pz_res = pd.read_csv(results_file)

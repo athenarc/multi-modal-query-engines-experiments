@@ -30,7 +30,7 @@ elif args.provider == 'vllm':
 helper_lm = LM(model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", api_base="http://localhost:5001/v1", api_key="dummy")
 
 lotus.settings.configure(lm=lm, helper_lm=helper_lm)
-df_players = pd.read_csv("datasets/rotowire/player_labels.csv")
+df_players = pd.read_csv(f"datasets/rotowire/reports_with_player_names/reports_with_players_{args.size}.csv")
 df_players = df_players[df_players["Game ID"] < args.size] # Keep total of ~100 entries
 
 user_instruction = "{Player Name} had 17 points in game {Report}."

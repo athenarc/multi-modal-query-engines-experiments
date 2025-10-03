@@ -83,9 +83,9 @@ exec_time = time.time() - start
 
 if args.wandb:
     if args.provider == 'ollama':
-        output_file = f"evaluation/selection/Q1/results/lotus_Q1_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+        output_file = f"evaluation/projection/Q1/results/lotus_Q1_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
     elif args.provider =='vllm':
-        output_file = f"evaluation/selection/Q1/results/lotus_Q1_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+        output_file = f"evaluation/projection/Q1/results/lotus_Q1_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
         
     df.to_csv(output_file)
 

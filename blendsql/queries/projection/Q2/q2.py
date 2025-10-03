@@ -9,21 +9,35 @@ from blendsql.ingredients import LLMMap, LLMQA, LLMJoin
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
+parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
+parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
+parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
 if args.wandb:
+    run_name = f"blendsql_Q2_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+
     wandb.init(
         project="semantic_operations",
-        name="blendsql_NER_TE_Q2_gemma3_12b_ollama",
+        name=run_name,
         group="semantic projection",
 
 )
 
 # Load reports dataset
-reports_table = pd.read_csv('datasets/rotowire/reports_table.csv').head(100)
+reports_table = pd.read_csv('datasets/rotowire/reports_table.csv').head(args.size)
 reports = {
     "Reports" : pd.DataFrame(reports_table)
 }
+
+if args.provider == 'ollama':
+    model = LiteLLM(args.provider + '/' + args.model, 
+                    config={"timeout" : 50000, "cache": False},
+                    caching=False)
+elif args.provider == 'vllm':
+    model = LiteLLM("hosted_vllm/" + args.model, 
+                    config={"api_base": "http://localhost:5001/v1", "timeout": 50000, "cache": False}, 
+                    caching=False)
 
 # Prepare our BlendSQL connection
 bsql = BlendSQL(
@@ -33,11 +47,7 @@ bsql = BlendSQL(
     #     config={"device_map": "auto"},
     #     caching=False,
     # ),
-    # model=LiteLLM(
-    #     "hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
-    #     config={"api_base": "http://localhost:5001/v1"},
-    # ),
-    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}),
+    model=model,
     verbose=True,
     ingredients={LLMMap},
 )
@@ -75,11 +85,7 @@ bsql = BlendSQL(
     #     config={"device_map": "auto"},
     #     caching=False,
     # ),
-    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}),
-    # model=LiteLLM(
-    #     "hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
-    #     config={"api_base": "http://localhost:5001/v1"},
-    # ),
+    model=model,
     verbose=True,
     ingredients={LLMMap},
 )
@@ -107,11 +113,7 @@ bsql = BlendSQL(
     #     config={"device_map": "auto"},
     #     caching=False,
     # ),
-    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}),
-    # model=LiteLLM(
-    #     "hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
-    #     config={"api_base": "http://localhost:5001/v1"},
-    # ),
+    model=model,
     verbose=True,
     ingredients={LLMMap},
 )
@@ -139,11 +141,7 @@ bsql = BlendSQL(
     #     config={"device_map": "auto"},
     #     caching=False,
     # ),
-    model=LiteLLM("ollama/gemma3:12b", config={"timeout": 50000}),
-    # model=LiteLLM(
-    #     "hosted_vllm/meta-llama/Llama-3.1-8B-Instruct",
-    #     config={"api_base": "http://localhost:5001/v1"},
-    # ),
+    model=model,
     verbose=True,
     ingredients={LLMMap},
 )
@@ -163,6 +161,8 @@ smoothie = bsql.execute(
 exec_times.append(time.time() - start)
 
 if args.wandb:
+    smoothie.df.to_csv(f"evaluation/projection/Q1/results/blendsql_Q1_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
+
     wandb.log({
         "result_table": wandb.Table(dataframe=smoothie.df),
         "execution_time": sum(exec_times)

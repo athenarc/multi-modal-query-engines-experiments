@@ -7,10 +7,7 @@
 7,Deron Williams
 8,Glen Davis
 10,Kevin Martin
-11,Rudy Gay
-12,Marquese Chriss
 13,Justise Winslow
-15,Erick Green
 16,E'Twaun Moore
 17,Josh Richardson
 19,Evan Turner
@@ -23,7 +20,7 @@
 29,Jarell Eddie
 30,A.J. Price
 31,Sebastian Telfair
-35,Kawhi Leonard
+32,Francisco Garcia
 36,Denzel Valentine
 37,Quincy Miller
 38,DeAndre Liggins
@@ -33,7 +30,7 @@
 42,Gary Harris
 44,John Henson
 45,Kendall Marshall
-47,Adreian Payne
+46,PJ Tucker
 50,Chase Budinger
 52,Kevon Looney
 53,Rajon Rondo
@@ -49,10 +46,8 @@
 67,CJ Watson
 68,Terry Rozier
 69,Carl Landry
-71,Reggie Williams
 72,Robin Lopez
 73,Russ Smith
-74,J.J. Barea
 75,Troy Daniels
 76,Marcus Smart
 77,Briante Weber
@@ -69,24 +64,19 @@
 89,Jason Terry
 90,Patrick McCaw
 92,Jordan McRae
-93,Jeff Taylor
-95,Jon Leuer
 97,Jodie Meeks
 98,Larry Drew II
 99,Jerian Grant
 100,Yogi Ferrell
-101,Tristan Thompson
 102,Kyle Anderson
 103,Markel Brown
 104,Austin Daye
-105,Malachi Richardson
 106,Spencer Hawes
 107,Marcus Morris
 108,Shawn Marion
 110,Taj Gibson
 112,Larry Sanders
 113,Allen Crabbe
-115,Joey Dorsey
 116,Kelly Oubre Jr.
 118,Will Barton
 119,Rashad Vaughn
@@ -95,9 +85,7 @@
 125,Rodney Hood
 126,Anthony Morrow
 127,Karl-Anthony Towns
-128,Jordan Hamilton
 129,Corey Brewer
-130,Sonny Weems
 131,Eric Bledsoe
 132,Ryan Hollins
 133,Jason Richardson
@@ -111,7 +99,6 @@
 143,Tony Wroten
 144,Kyrie Irving
 145,Stephen Curry
-149,Ryan Kelly
 150,Jae Crowder
 151,Festus Ezeli
 152,James Harden
@@ -126,34 +113,28 @@
 166,Darrun Hilliard
 169,Eric Gordon
 170,James Michael McAdoo
-172,Pierre Jackson
-173,Hassan Whiteside
 175,Cory Jefferson
 178,Elijah Millsap
-179,Greg Monroe
 180,Dejounte Murray
 181,Sheldon McClellan
-182,Jonathon Simmons
 186,Kent Bazemore
-187,Chandler Parsons
 188,Tobias Harris
 190,Reggie Bullock
 191,Will Bynum
 192,Norris Cole
+195,Tony Allen
 196,Jeremy Lin
 197,Marcus Thornton
 198,Wesley Matthews
 199,Darren Collison
 200,Jerami Grant
 202,Tyus Jones
-203,Willie Green
 204,Reggie Evans
 205,Larry Nance Jr.
 206,Austin Rivers
 207,T.J. McConnell
 208,Sean Kilpatrick
 209,Fred VanVleet
-210,Vince Carter
 211,Jabari Parker
 212,Paul George
 213,Amar'e Stoudemire
@@ -171,7 +152,6 @@
 230,Dewayne Dedmon
 232,Shawne Williams
 235,Cole Aldrich
-236,Brandon Rush
 238,Ronnie Price
 239,Chris Paul
 240,Willie Cauley-Stein
@@ -179,16 +159,13 @@
 242,Johnny O'Bryant III
 243,DeMar DeRozan
 244,Andre Iguodala
-246,Dwight Buycks
 247,Elton Brand
 248,Cleanthony Early
 249,Gordon Hayward
 250,Mike Scott
 251,Gary Neal
-252,Ben Gordon
 253,Miles Plumlee
 254,Sam Dekker
-257,Jordan Hill
 258,Tyler Ulis
 259,Meyers Leonard
 260,Kirk Hinrich
@@ -197,18 +174,14 @@
 265,Klay Thompson
 266,Kosta Koufos
 267,Dorell Wright
-268,Mike Muscala
 270,Kobe Bryant
 272,Courtney Lee
-274,Terrence Ross
 275,Jarell Martin
 276,Randy Foye
-278,Brandon Bass
 279,Anthony Tolliver
 280,Jimmy Butler
 281,JJ Redick
 282,DeJuan Blair
-284,Lance Thomas
 285,Nate Wolters
 286,Michael Kidd-Gilchrist
 288,JJ Hickson
@@ -217,9 +190,7 @@
 292,Aaron Gordon
 293,Ben McLemore
 294,Rodney Stuckey
-295,Robert Sacre
 296,Landry Fields
-297,Trey Lyles
 299,James Ennis III
 300,Tim Hardaway Jr.
 302,Lance Stephenson
@@ -230,13 +201,10 @@
 315,LeBron James
 316,Trevor Ariza
 317,Gerald Henderson
-318,Buddy Hield
 319,CJ Miles
 320,Tyson Chandler
-321,Wilson Chandler
 322,Justin Anderson
 323,Kris Humphries
-324,Bernard James
 325,Tim Duncan
 326,Mario Chalmers
 327,Gerald Green
@@ -254,14 +222,13 @@
 343,Andrew Harrison
 344,Thaddeus Young
 345,Travis Wear
+346,James Young
 348,Ricky Ledo
-349,Chris Andersen
 350,Marreese Speights
 351,Dahntay Jones
 353,Steve Blake
 354,Darrell Arthur
 355,John Lucas III
-356,Noah Vonleh
 357,TJ Warren
 359,Jordan Clarkson
 361,Julius Randle
@@ -273,10 +240,8 @@
 369,Maurice Harkless
 370,Dorian Finney-Smith
 371,Nick Young
-372,Semaj Christon
 373,Kris Dunn
 374,Iman Shumpert
-375,Andrew Nicholson
 376,Otto Porter
 377,Alex Stepheson
 378,Kyle Singler
@@ -285,7 +250,6 @@
 381,Jrue Holiday
 383,JaVale McGee
 384,Marvin Williams
-385,Carlos Boozer
 386,Trevor Booker
 387,Norman Powell
 388,Rondae Hollis-Jefferson
@@ -297,7 +261,6 @@
 396,Spencer Dinwiddie
 397,Kemba Walker
 398,Steve Novak
-399,Malcolm Delaney
 400,Jaylen Brown
 401,Shabazz Muhammad
 403,Andre Drummond
@@ -311,7 +274,6 @@
 411,Jarrett Jack
 413,Markieff Morris
 414,Victor Oladipo
-415,Tony Snell
 417,Anthony Davis
 418,Kevin Love
 419,Wesley Johnson
@@ -326,6 +288,7 @@
 432,Devyn Marble
 434,Ron Baker
 435,Josh Smith
+437,Patrick Patterson
 438,Metta World Peace
 439,Ramon Sessions
 443,Jeff Teague
@@ -333,18 +296,15 @@
 446,Carmelo Anthony
 447,Zach Randolph
 448,Avery Bradley
-450,Alan Williams
 453,Elliot Williams
 455,Danny Green
 456,Monta Ellis
 457,Al Horford
 458,DeMarcus Cousins
 459,George Hill
-461,DeMarre Carroll
 462,Trey Burke
 463,Jahlil Okafor
 464,Richaun Holmes
-465,Jason Smith
 466,Derrick Favors
 467,Zach LaVine
 469,Rakeem Christmas
@@ -359,16 +319,13 @@
 480,JR Smith
 481,Jordan Farmar
 482,Alonzo Gee
-483,Jeremy Evans
+485,Henry Walker
 488,Jeremy Lamb
-489,Dwight Powell
 490,JaMychal Green
 491,Udonis Haslem
 492,Nick Collison
 493,Shelvin Mack
 494,Roy Hibbert
 495,Nate Robinson
-496,Joakim Noah
 497,Shabazz Napier
 498,Dion Waiters
-499,James Johnson

@@ -62,7 +62,7 @@ if args.wandb:
     if args.provider == 'ollama':
         output_file = f"evaluation/selection/Q6/results/palimpzest_Q6_filter_{args.model.replace(':', '_')}_{args.provider}.csv"
     elif args.provider == 'vllm':
-        output_file = f"evalution/selection/Q6/results/palimpzest_Q6_filter_{args.model.replace('/', '_')}_{args.provider}.csv"
+        output_file = f"evaluation/selection/Q6/results/palimpzest_Q6_filter_{args.model.replace('/', '_')}_{args.provider}.csv"
     
     output_df.to_csv(output_file)
 

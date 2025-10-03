@@ -21,7 +21,7 @@ def count_false_negatives(df):
     return len(df[(df['_merge'] == 'left_only') & (df['founded_gt'] < 1970)])
 
 if __name__ == "__main__":
-    team_evidence = pd.read_csv("datasets/team_evidence.csv")
+    team_evidence = pd.read_csv("datasets/rotowire/team_evidence.csv")
     team_evidence = team_evidence[['Team Name', 'founded']]
 
     if args.provider == 'ollama':
