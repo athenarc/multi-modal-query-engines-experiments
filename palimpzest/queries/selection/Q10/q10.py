@@ -16,7 +16,7 @@ model = getattr(Model, f"{args.provider.upper()}_{args.model.replace(':', '_').r
 load_dotenv()
 
 if args.wandb:
-    run_name=f"palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name=f"palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}"
 
     wandb.init(
         project="semantic_operations",

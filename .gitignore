@@ -3,3 +3,4 @@ wandb/
 *.logs
 *.out
 .env
+parse-answer-errors/

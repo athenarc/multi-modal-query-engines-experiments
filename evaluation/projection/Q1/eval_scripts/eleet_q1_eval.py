@@ -1,10 +1,10 @@
 import pandas as pd
 from rapidfuzz import process, fuzz
 
-df_labels = pd.read_csv('datasets/players_labels_100.csv')
+df_labels = pd.read_csv('datasets/rotowire/players_labels_100.csv')
 df_eleet = pd.read_csv('projection/Q1/results/eleet.csv')
 
-def match_name(name, choices, scorer=fuzz.ratio, threshold=50):
+def match_name(name, choices, scorer=fuzz.ratio, threshold=60):
     if not choices:
         return None
     match = process.extractOne(name, choices, scorer=scorer, score_cutoff=threshold)

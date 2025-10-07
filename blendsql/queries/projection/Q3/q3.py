@@ -24,7 +24,7 @@ if args.wandb:
 )
 
 # Load reports
-reports = pd.read_csv('datasets/rotowire/player_evidence_mine.csv').head(args.size).dropna(subset=['nationality'])
+reports = pd.read_csv('datasets/rotowire/player_evidence_mine.csv').dropna(subset=['nationality']).head(args.size)
 reports.rename(columns={"Player Name": "player_name"}, inplace=True)
 players = {
     "Players" : pd.DataFrame(reports['player_name'])

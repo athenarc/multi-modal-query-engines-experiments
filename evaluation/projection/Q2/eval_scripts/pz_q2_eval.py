@@ -1,13 +1,26 @@
 import pandas as pd
 from rapidfuzz import process, fuzz
+import argparse
 
-df_labels = pd.read_csv('datasets/team_labels_100.csv')
-pz_labels = pd.read_csv("projection/Q2/results/pz_q2_gemma3_12b.csv")
+parser = argparse.ArgumentParser()
+parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
+parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
+parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
+parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
+args = parser.parse_args()
+
+df_labels = pd.read_csv('datasets/rotowire/team_labels.csv')
+df_labels = df_labels[df_labels['Game ID'] < args.size]
+
+if args.provider == 'ollama':
+    results_file = f"evaluation/projection/Q2/results/palimpzest_Q2_project_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+elif args.provider == 'vllm':
+    results_file = f"evaluation/projection/Q2/results/palimpzest_Q2_project_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+
+pz_labels = pd.read_csv(results_file)
 pz_labels['Game ID'] = pz_labels['filename'].str.extract(r'report_(\d+)\.txt').astype(int)
 pz_labels.sort_values(['Game ID'], inplace=True)
-pz_labels['Game ID'] = pz_labels['Game ID'] - 1
-
-print(pz_labels)
+# pz_labels['Game ID'] = pz_labels['Game ID'] - 1
 
 def match_name(name, choices, scorer=fuzz.ratio, threshold=30):
     if not choices:
@@ -24,15 +37,10 @@ def match_group(group):
 pz_labels = pz_labels.groupby('Game ID', group_keys=False).apply(match_group)
 pz_labels.rename(columns={'Total Points': 'Total points'}, inplace=True)
 
-print(pz_labels)
-
-
 df = df_labels.merge(pz_labels, left_on=['Game ID', 'Team Name'], right_on=['Game ID', 'matched_team'], how='left', indicator=True)
 
 df.drop(columns=["Points in 4th quarter", "Percentage of field goals", "Rebounds", "Number of team assists", "Points in 3rd quarter", "Turnovers", "Percentage of 3 points", "Points in 1st quarter", "Points in 2nd quarter"], inplace=True)
 cols = ["Wins", "Losses", "Total points"]
-
-print(df)
 
 for col in cols:
     xcol, ycol = f"{col}_x", f"{col}_y"

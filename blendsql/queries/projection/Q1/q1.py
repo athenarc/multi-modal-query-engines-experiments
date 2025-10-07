@@ -97,7 +97,7 @@ smoothie = bsql.execute(
         SELECT *,
         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
         FROM Reports
-    ) SELECT Game_ID, Report, player_name, {{LLMMap('How many points did the player have in the game? Return -1 if there are no mentions for points.', context, return_type='int')}} AS points
+    ) SELECT Game_ID, Report, player_name, {{LLMMap('How many points did the player have in the game? Return -1 if there are no mentions for points.', context)}} AS points
     FROM joined_context
     """,
     infer_gen_constraints=True,
@@ -125,7 +125,7 @@ smoothie = bsql.execute(
         SELECT *,
         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
         FROM Reports
-    ) SELECT Game_ID, Report, player_name, points, {{LLMMap('How many assists did the player have in the game? Return -1 if there are no mentions for assists.', context, return_type='int')}} AS assists
+    ) SELECT Game_ID, Report, player_name, points, {{LLMMap('How many assists did the player have in the game? Return -1 if there are no mentions for assists.', context)}} AS assists
     FROM joined_context
     """,
     infer_gen_constraints=True,
@@ -153,7 +153,7 @@ smoothie = bsql.execute(
     SELECT *,
     'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
     FROM Reports
-    ) SELECT Game_ID, Report, player_name, points, assists, {{LLMMap('How many total rebounds did the player have in the game? Return -1 if there are no mentions for total rebounds.', context, return_type='int')}} AS total_rebounds
+    ) SELECT Game_ID, Report, player_name, points, assists, {{LLMMap('How many total rebounds did the player have in the game? Return -1 if there are no mentions for total rebounds.', context)}} AS total_rebounds
     FROM joined_context
     """,
     infer_gen_constraints=True,
@@ -181,7 +181,7 @@ smoothie = bsql.execute(
         SELECT *,
         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
         FROM Reports
-    ) SELECT Game_ID, Report, player_name, points, assists, total_rebounds, {{LLMMap('How many steals did the player have in the game? Return -1 if there are no mentions for steals.', context, return_type='int')}} AS steals
+    ) SELECT Game_ID, Report, player_name, points, assists, total_rebounds, {{LLMMap('How many steals did the player have in the game? Return -1 if there are no mentions for steals.', context)}} AS steals
     FROM joined_context
     """,
     infer_gen_constraints=True,
@@ -209,7 +209,7 @@ smoothie = bsql.execute(
         SELECT *,
         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
         FROM Reports
-    ) SELECT Game_ID, Report, player_name, points, assists, total_rebounds, steals, {{LLMMap('How many blocks did the player have in the game? Return -1 if there are no mentions for blocks.', context, return_type='int')}} AS blocks
+    ) SELECT Game_ID, Report, player_name, points, assists, total_rebounds, steals, {{LLMMap('How many blocks did the player have in the game? Return -1 if there are no mentions for blocks.', context)}} AS blocks
     FROM joined_context
     """,
     
@@ -239,7 +239,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, {{LLMMap('How many defensive rebounds did the player have in the game?', context, return_type='int')}} AS defensive_rebounds
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, {{LLMMap('How many defensive rebounds did the player have in the game?', context)}} AS defensive_rebounds
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -266,7 +266,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, {{LLMMap('How many offensive rebounds did the player have in the game?', context, return_type='int')}} AS offensive_rebounds
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, {{LLMMap('How many offensive rebounds did the player have in the game?', context)}} AS offensive_rebounds
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -293,7 +293,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, {{LLMMap('How many personal fouls did the player have in the game?', context, return_type='int')}} AS personal_fouls
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, {{LLMMap('How many personal fouls did the player have in the game?', context)}} AS personal_fouls
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -320,7 +320,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, {{LLMMap('How many turnovers did the player have in the game?', context, return_type='int')}} AS turnovers
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, {{LLMMap('How many turnovers did the player have in the game?', context)}} AS turnovers
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -347,7 +347,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, {{LLMMap('How many field goals did the player make in the game?', context, return_type='int')}} AS field_goals_made
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, {{LLMMap('How many field goals did the player make in the game?', context)}} AS field_goals_made
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -374,7 +374,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, {{LLMMap('How many field goals did the player attempt in the game?', context, return_type='int')}} AS field_goals_attempted
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, {{LLMMap('How many field goals did the player attempt in the game?', context)}} AS field_goals_attempted
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -401,7 +401,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, {{LLMMap('What was the field goal percentage of player in the game?', context, return_type='int')}} AS field_goals_percentage
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, {{LLMMap('What was the field goal percentage of player in the game?', context)}} AS field_goals_percentage
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -428,7 +428,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, {{LLMMap('How many free throws did the player make in the game?', context, return_type='int')}} AS free_throws_made
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, {{LLMMap('How many free throws did the player make in the game?', context)}} AS free_throws_made
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -455,7 +455,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, {{LLMMap('How many free throws did the player attempt in the game?', context, return_type='int')}} AS free_throws_attempted
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, {{LLMMap('How many free throws did the player attempt in the game?', context)}} AS free_throws_attempted
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -482,7 +482,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, {{LLMMap('What was the free throw percentage of player in the game?', context, return_type='int')}} AS free_throw_percentage
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, {{LLMMap('What was the free throw percentage of player in the game?', context)}} AS free_throw_percentage
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -511,7 +511,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, {{LLMMap('How many 3-pointers did the player make in the game?', context, return_type='int')}} AS three_pointers_made
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, {{LLMMap('How many 3-pointers did the player make in the game?', context)}} AS three_pointers_made
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -539,7 +539,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, three_pointers_made, {{LLMMap('How many 3-pointers did the player attempt in the game?', context, return_type='int')}} AS three_pointers_attempted
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, three_pointers_made, {{LLMMap('How many 3-pointers did the player attempt in the game?', context)}} AS three_pointers_attempted
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -566,7 +566,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, three_pointers_made, three_pointers_attempted, {{LLMMap('What was the 3-pointers percentage for player in the game?', context, return_type='int')}} AS three_pointers_percentage
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, three_pointers_made, three_pointers_attempted, {{LLMMap('What was the 3-pointers percentage for player in the game?', context)}} AS three_pointers_percentage
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,
@@ -593,7 +593,7 @@ print(smoothie.df)
 #         SELECT *,
 #         'Player: ' || CAST(player_name AS VARCHAR) || '\nReport: ' || Report AS context
 #         FROM Reports
-#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, three_pointers_made, three_pointers_attempted, three_pointers_percentage, {{LLMMap('How many minutes did the player play in the game?', context, return_type='int')}} AS minutes_played
+#     ) SELECT Report, player_name, points, assists, total_rebounds, blocks, defensive_rebounds, offensive_rebounds, personal_fouls, turnovers, field_goals_made, field_goals_attempted, field_goals_percentage, free_throws_made, free_throws_attempted, free_throw_percentage, three_pointers_made, three_pointers_attempted, three_pointers_percentage, {{LLMMap('How many minutes did the player play in the game?', context)}} AS minutes_played
 #     FROM joined_context
 #     """,
 #     infer_gen_constraints=True,

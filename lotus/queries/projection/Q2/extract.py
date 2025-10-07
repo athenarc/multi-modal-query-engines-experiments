@@ -14,7 +14,7 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 if args.wandb:
-    run_name = f"lotus_Q2_extract_{args.model.replcae(':', '_')}_{args.provider}_{args.size}"
+    run_name = f"lotus_Q2_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="semantic_operations",
@@ -28,7 +28,7 @@ elif args.provider == 'vllm':
     lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
 lotus.settings.configure(lm=lm)
-df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size)
+df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size).rename(columns={'Game_ID' : 'Game ID'})
 
 input_cols = ["Report"]
 
@@ -64,9 +64,9 @@ exec_time = time.time() - start
 
 if args.wandb:
     if args.provider == 'ollama':
-        output_file = f"evaluation/selection/Q2/results/lotus_Q2_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+        output_file = f"evaluation/projection/Q2/results/lotus_Q2_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
     elif args.provider =='vllm':
-        output_file = f"evaluation/selection/Q2/results/lotus_Q2_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+        output_file = f"evaluation/projection/Q2/results/lotus_Q2_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
         
     df.to_csv(output_file)
 

@@ -33,16 +33,19 @@ def count_false_negatives(df):
     return len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] == 17.0)])
 
 if __name__ == "__main__":
+
+
     if args.provider == 'ollama':
         results_file = f"evaluation/selection/Q6/results/palimpzest_Q6_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
     elif args.provider == 'vllm':
-        results_file = f"evaluation/selection/Q6/results/lotus_Q6_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+        results_file = f"evaluation/selection/Q6/results/palimpzest_Q6_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
     df_player_labels = pd.read_csv("datasets/rotowire/player_labels.csv")
     df_player_labels = df_player_labels[df_player_labels['Game ID'] < args.size]
     df_player_labels = df_player_labels[['Game ID', 'Player Name', 'Points']]
 
     pz_res = pd.read_csv(results_file)
+
     pz_res['Game ID'] = pz_res['filename'].str.extract(r'report_(\d+)\.txt').astype(int)
     pz_res.sort_values(by=['Game ID'], inplace=True)
     pz_res['Game ID'] = pz_res['Game ID'] - 1

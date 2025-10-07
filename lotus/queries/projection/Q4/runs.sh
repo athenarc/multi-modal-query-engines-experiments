@@ -1,4 +1,4 @@
-a#!/bin/bash
+#!/bin/bash
 sizes=(50 100 200)
 models_ollama=("gemma3:12b" "llama3.3:70b")
 models_vllm=("meta-llama/Llama-3.1-8B-Instruct")

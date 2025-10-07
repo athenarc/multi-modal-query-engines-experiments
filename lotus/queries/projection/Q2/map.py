@@ -14,7 +14,7 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 if args.wandb:
-    run_name = f"lotus_Q2_map_{args.model.replcae(':', '_')}_{args.provider}_{args.size}"
+    run_name = f"lotus_Q2_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="semantic_operations",
@@ -28,7 +28,7 @@ elif args.provider == 'vllm':
     lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
 lotus.settings.configure(lm=lm)
-df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size)
+df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size).rename(columns={'Game_ID' : 'Game ID'})
 elapsed_times = []
 
 # Retrieve team names from the reports
@@ -39,14 +39,14 @@ examples = {
 examples_df = pd.DataFrame(examples)
 
 user_instruction = "What are the teams that played in the game {Report}? Please list them in a comma-separated format."
-start = time()
+start = time.time()
 df = df_reports.sem_map(user_instruction, examples=examples_df)
-end = time()
+end = time.time()
 elapsed_times.append(end-start)
 
-df_players = df[['Game ID', 'masked']].copy()
+df_players = df[['Game ID', '_map']].copy()
 
-df_players['team_name'] = df_players['masked'].str.split(", ")
+df_players['team_name'] = df_players['_map'].str.split(", ")
 
 df_exploded = df_players.explode('team_name', ignore_index=True)
 
@@ -62,9 +62,9 @@ examples = {
     "Answer": [18]
 }
 user_instruction = "What is the number of wins for {team_name} in the game {Report} if they are mentioned. Return only the number (only an integer) of Wins or -1 if there are no mentions for Wins for {team_name} (without explanation)."
-start = time()
+start = time.time()
 df_wins = df_merged.sem_map(user_instruction)
-end = time()
+end = time.time()
 elapsed_times.append(end-start)
 print(" Extraction, Elapsed Time: ", end-start, '\n')
 df = df_wins.rename(columns={"_map": "wins"})
@@ -77,9 +77,9 @@ examples = {
     "Answer": [17]
 }
 user_instruction = "What is the number of Losses for {team_name} in the game {Report} if they are mentioned. Return only the number (only an integer) of Losses or -1 if there are no mentions for Losses for {team_name} (without explanation)."
-start = time()
-df_losses = df_merged.sem_map(user_instruction)
-end = time()
+start = time.time()
+df_losses = df.sem_map(user_instruction)
+end = time.time()
 elapsed_times.append(end-start)
 print(" Extraction, Elapsed Time: ", end-start, '\n')
 df = df_losses.rename(columns={"_map": "losses"})
@@ -92,9 +92,9 @@ examples = {
     "Answer": [95]
 }
 user_instruction = "What is the number of total points for {team_name} in the game {Report} if they are mentioned. Return only the number (only an integer) of total points or -1 if there are no mentions for total points for {team_name} (without explanation)."
-start = time()
-df_total_points = df_merged.sem_map(user_instruction)
-end = time()
+start = time.time()
+df_total_points = df.sem_map(user_instruction)
+end = time.time()
 elapsed_times.append(end-start)
 print(" Extraction, Elapsed Time: ", end-start, '\n')
 df = df_total_points.rename(columns={"_map": "total_points"})

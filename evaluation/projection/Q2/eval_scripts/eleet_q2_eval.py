@@ -4,7 +4,7 @@ from rapidfuzz import process, fuzz
 df_labels = pd.read_csv('datasets/team_labels_100.csv')[['Game ID', 'Team Name', 'Wins', 'Losses', 'Total points']]
 df_eleet = pd.read_csv('projection/Q2/results/eleet_q2.csv')
 
-def match_name(name, choices, scorer=fuzz.ratio, threshold=50):
+def match_name(name, choices, scorer=fuzz.ratio, threshold=30):
     if not choices:
         return None
     match = process.extractOne(name, choices, scorer=scorer, score_cutoff=threshold)

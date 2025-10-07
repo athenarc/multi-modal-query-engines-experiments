@@ -68,9 +68,9 @@ output_df.drop(columns=["team_name_list"], inplace=True)
 
 if args.wandb:
     if args.provider == 'ollama':
-        output_file = f"evaluation/projection/Q2/results/palimpzest_Q2_project_{args.model.replace(':', '_')}_{args.provider}.csv"
+        output_file = f"evaluation/projection/Q2/results/palimpzest_Q2_project_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
     elif args.provider == 'vllm':
-        output_file = f"evaluation/projection/Q2/results/palimpzest_Q2_project_{args.model.replace('/', '_')}_{args.provider}.csv"
+        output_file = f"evaluation/projection/Q2/results/palimpzest_Q2_project_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
     
     output_df.to_csv(output_file)
     wandb.log({

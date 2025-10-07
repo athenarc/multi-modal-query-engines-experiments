@@ -28,8 +28,7 @@ elif args.provider == 'vllm':
 
 lotus.settings.configure(lm=lm)
 
-df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-df_players.dropna(subset=['nationality'], inplace=True)
+df_players =pd.read_csv('datasets/rotowire/player_evidence_mine.csv').dropna(subset=['nationality']).head(args.size)
 df = df_players['Player Name'].to_frame(name='Player Name')
 
 start = time.time()
