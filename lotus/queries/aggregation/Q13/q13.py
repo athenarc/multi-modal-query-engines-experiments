@@ -16,9 +16,9 @@ if args.wandb:
     run_name = f"lotus_Q13_aggregation_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
-        project="semantic_operations",
+        project="SQE_experiments",
         name=run_name,
-        group="semantic aggregation",
+        group="Aggregation",
     )
     
 if args.provider == 'ollama':

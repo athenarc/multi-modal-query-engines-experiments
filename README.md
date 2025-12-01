@@ -7,7 +7,7 @@ The systems that this experimentation suite aims to evaluate are Lotus, Palimpze
 
 
 Our suite consists of query scripts per query for Lotus, BlendSQL and Palimpzest, and the corresponding evaluation scripts for all the systems.
-Query scripts are divided into four categories: projection, selection, join and aggregation.
+Query scripts are divided into four categories: derivation, selection, join and aggregation.
 Note that not every system can handle all queries.
 Additionally, for each query there is a bash script for creating different experimental runs, alternating different variants (i.e., the model, the provider and the input size).
 A similar structure is also followed for the evaluation.
@@ -20,7 +20,7 @@ The steps to create an enviroment and run a query is the following:
 ```
 conda env create -f environment.yml
 conda activate palimpzest
-./palimpzest/queries/projection/Q1/runs.sh
+./palimpzest/queries/derivation/Q1/runs.sh
 ```
 
 Similarly all experimental run can be reproduced.

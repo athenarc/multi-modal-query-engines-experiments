@@ -18,9 +18,9 @@ if args.wandb:
     run_name = f"blendsql_Q9_join_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
-        project="semantic_operations",
+        project="SQE_experiments",
         name=run_name,
-        group="semantic join",
+        group="Join",
     )
 
 players_df = pd.read_csv('datasets/rotowire/player_evidence_mine.csv').head(args.size)[['Player Name']].rename(columns={'Player Name' : 'player_name'})

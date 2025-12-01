@@ -17,9 +17,9 @@ if args.wandb:
     run_name = f"lotus_Q1_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
-        project="semantic_operations",
+        project="SQE_experiments",
         name= run_name,
-        group="semantic derivation",
+        group="Derivation",
     )
 
 if args.provider == 'ollama':

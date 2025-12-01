@@ -19,9 +19,9 @@ if args.wandb:
     run_name=f"palimpzest_Q8_filter_{args.model.replace(':', '_')}_{args.provider}"
 
     wandb.init(
-        project="semantic_operations",
+        project="SQE_experiments",
         name=run_name,
-        group="semantic selection",
+        group="Selection",
     )
 
 reports = pz.TextFileDataset(id="team_names", path="datasets/rotowire/team_names/")

@@ -18,9 +18,9 @@ if args.wandb:
     run_name = f"blendsql_Q12_aggregation_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
-        project="semantic_operations",
+        project="SQE_experiments",
         name=run_name,
-        group="semantic aggregation",
+        group="Aggregation",
     )
 
 df_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Subject', 'Message']]

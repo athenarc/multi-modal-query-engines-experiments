@@ -17,9 +17,9 @@ if args.wandb:
     run_name = f"blendsql_Q14_aggregation_{args.model.replace(':', '_')}_{args.provider}"
 
     wandb.init(
-        project="semantic_operations",
+        project="SQE_experiments",
         name=run_name,
-        group="semantic aggregation",
+        group="Aggregation",
     )
 
 df_reports = pd.read_csv("datasets/rotowire/reports_table.csv")

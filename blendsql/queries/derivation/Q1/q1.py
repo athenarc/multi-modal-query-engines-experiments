@@ -18,9 +18,9 @@ if args.wandb:
     run_name = f"blendsql_Q1_map_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
-        project="semantic_operations",
+        project="SQE_experiments",
         name=run_name,
-        group="semantic projection",
+        group="Derivation",
     )
 
 # Load reports dataset
@@ -578,7 +578,7 @@ print(smoothie.df)
 # exec_times.append(time.time() - start)
 
 if args.wandb:
-    smoothie.df.to_csv(f"evaluation/projection/Q1/results/blendsql_Q1_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
+    smoothie.df.to_csv(f"evaluation/derivation/Q1/results/blendsql_Q1_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
     print("Execution time: ", sum(exec_times))
     
     wandb.log({

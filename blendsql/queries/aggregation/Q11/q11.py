@@ -18,9 +18,9 @@ if args.wandb:
     run_name = f"blendsql_Q11_aggregation_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
-        project="semantic_operations",
+        project="SQE_experiments",
         name=run_name,
-        group="semantic aggregation",
+        group="Aggregation",
     )
 
 df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)[['review']]
