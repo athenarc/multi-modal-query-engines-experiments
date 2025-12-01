@@ -1,3 +1,4 @@
+import datetime
 import pandas as pd
 import lotus
 from lotus.models import LM
@@ -13,7 +14,7 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 if args.wandb:
-    run_name = f"lotus_Q1_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name = f"lotus_Q1_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
@@ -31,6 +32,7 @@ lotus.settings.configure(lm=lm)
 df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size).rename(columns={'Game_ID' : 'Game ID'})
 
 elapsed_times = []
+num_extraction_attributes = 5  # points, assists, total_rebounds, blocks, steals
 
 # Retrieve player names from the reports
 examples = {
@@ -45,6 +47,7 @@ df = df_reports.sem_map(user_instruction, examples=examples_df)
 end = time()
 elapsed_times.append(end-start)
 print("Player Name Extraction, Elapsed Time: ", end-start)
+
 
 # Post processing step
 df_players = df[['Game ID', '_map']].copy()
@@ -275,22 +278,32 @@ df = df_steals.rename(columns={"_map": "steals"})
 
 exec_time = sum(elapsed_times)
 
-if args.wandb:
-    if args.provider == 'ollama':
-        output_file = f"evaluation/derivation/Q1/results/lotus_Q1_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider =='vllm':
-        output_file = f"evaluation/derivation/Q1/results/lotus_Q1_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
-        
-    df.to_csv(output_file)
+if args.provider == 'ollama':
+    output_file = f"evaluation/derivation/Q1/results/lotus_Q1_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+elif args.provider =='vllm':
+    output_file = f"evaluation/derivation/Q1/results/lotus_Q1_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+df.to_csv(output_file)
 
+LLM_calls_for_rows = df_reports.shape[0]
+LLM_calls_for_columns = df_merged.shape[0] * num_extraction_attributes
+total_LLM_calls = LLM_calls_for_rows + LLM_calls_for_columns
+
+with open('statistics/derivation/Q1.txt', 'a') as file:
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write("Execution Time: " + str(exec_time) + "\n\n\n")
+    file.write("LLM calls for rows: " + str(LLM_calls_for_rows) + "\n")
+    file.write("LLM calls for columns: " + str(LLM_calls_for_columns) + "\n")
+    file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
+    file.write("------------------------------------------------------\n\n\n")
+
+if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
-        "execution_time": exec_time
+        "execution_time": exec_time,
+        "LLM_calls_for_rows": LLM_calls_for_rows,
+        "LLM_calls_for_columns": LLM_calls_for_columns,
+        "total_LLM_calls": total_LLM_calls
     })
 
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)
-
-
