@@ -135,25 +135,26 @@ def create_eval_dir(idx: int, target_class: str):
 	runs_file.chmod(0o755)
 	print(f"Created file: {runs_file}")
 
-def add_query(base: Path, system: str, new_idx: int, target_class: str = None):
-	system_base = base / system
-	query_dirs = find_eval_dirs(system_base)
+def add_query(base: Path, systems: list[str], new_idx: int, target_class: str = None):
+	for system in systems:
+		system_base = base / system
+		query_dirs = find_query_dirs(system_base)
 
-	# Shift existing directories and update contents
-	for dirpath, idx in query_dirs:
-		if not dirpath.name.startswith("Q"):
-			continue  # Only process Q directories
+		# Shift existing directories and update contents
+		for dirpath, idx in query_dirs:
+			if not dirpath.name.startswith("Q"):
+				continue  # Only process Q directories
 
-		if idx >= new_idx:
-			update_query_content(dirpath, idx, idx + 1)
+			if idx >= new_idx:
+				update_query_content(dirpath, idx, idx + 1)
 
-			new_dir = dirpath.with_name(f"Q{idx + 1}")
-			print(f"Renaming directory: {dirpath} -> {new_dir}")
-			dirpath.rename(new_dir)
-	
-	# Create new query directory if target_class is provided
-	if target_class:
-		create_query_dir(system_base, new_idx, target_class)
+				new_dir = dirpath.with_name(f"Q{idx + 1}")
+				print(f"Renaming directory: {dirpath} -> {new_dir}")
+				dirpath.rename(new_dir)
+		
+		# Create new query directory if target_class is provided
+		if target_class:
+			create_query_dir(system_base, new_idx, target_class)
 
 	eval_base = base / "evaluation"
 	eval_dirs = find_eval_dirs(eval_base)
@@ -171,27 +172,28 @@ def add_query(base: Path, system: str, new_idx: int, target_class: str = None):
 	if target_class:
 		create_eval_dir(new_idx, target_class)
 
-def remove_query(base: Path, system: str, idx: int):
-	system_base = base / system
-	query_dirs = find_query_dirs(system_base, reverse=False)
+def remove_query(base: Path, systems: list[str], idx: int):
+	for system in systems:
+		system_base = base / system
+		query_dirs = find_query_dirs(system_base, reverse=False)
 
-	# Remove the specified directory and update contents
-	for dirpath, current_idx in query_dirs:
-		if not dirpath.name.startswith("Q"):
-			continue  # Only process Q directories
+		# Remove the specified directory and update contents
+		for dirpath, current_idx in query_dirs:
+			if not dirpath.name.startswith("Q"):
+				continue  # Only process Q directories
 
-		if current_idx == idx:
-			print(f"Removing directory: {dirpath}")
-			for item in dirpath.rglob("*"):
-				if item.is_file():
-					item.unlink()
-			dirpath.rmdir()
-		elif current_idx > idx:
-			update_query_content(dirpath, current_idx, current_idx - 1)
+			if current_idx == idx:
+				print(f"Removing directory: {dirpath}")
+				for item in dirpath.rglob("*"):
+					if item.is_file():
+						item.unlink()
+				dirpath.rmdir()
+			elif current_idx > idx:
+				update_query_content(dirpath, current_idx, current_idx - 1)
 
-			new_dir = dirpath.with_name(f"Q{current_idx - 1}")
-			print(f"Renaming directory: {dirpath} -> {new_dir}")
-			dirpath.rename(new_dir)
+				new_dir = dirpath.with_name(f"Q{current_idx - 1}")
+				print(f"Renaming directory: {dirpath} -> {new_dir}")
+				dirpath.rename(new_dir)
 
 	remove_eval(base / "evaluation", idx)
 
@@ -246,11 +248,7 @@ if __name__ == "__main__":
 
 	args = parser.parse_args()
 
-	# for system in [Path("lotus"), Path("palimpzest"), Path("blendsql")]:
 	if (args.remove):
-		remove_query(Path("."), "lotus", args.index)
+		remove_query(Path("."), ["blendsql", "palimpzest", "lotus"], args.index)
 	else:
-		add_query(Path("."), "lotus", args.index, args.target_class)
-
-
-	# remove_eval(Path("evaluation"), args.index)
+		add_query(Path("."), ["blendsql", "palimpzest", "lotus"], args.index, args.target_class)
