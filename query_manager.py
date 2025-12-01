@@ -93,6 +93,9 @@ def update_eval_content(dirpath: Path, old_idx: int, new_idx: int):
 					new_file = filepath.with_name(new_name)
 					print(f"Renaming the file: {filepath} -> {new_file}")
 					filepath.rename(new_file)
+
+	if (dirpath.exists()): 
+		print("dirpath exists!!!!!!", dirpath)
 	
 def create_query_dir(system: Path, idx: int, target_class: str):
 	"""Create a new query directory with Q{idx}.py and runs.sh files."""
@@ -132,8 +135,9 @@ def create_eval_dir(idx: int, target_class: str):
 	runs_file.chmod(0o755)
 	print(f"Created file: {runs_file}")
 
-def add_query(base: Path, new_idx: int, target_class: str = None):
-	query_dirs = find_query_dirs(base)
+def add_query(base: Path, system: str, new_idx: int, target_class: str = None):
+	system_base = base / system
+	query_dirs = find_eval_dirs(system_base)
 
 	# Shift existing directories and update contents
 	for dirpath, idx in query_dirs:
@@ -149,9 +153,10 @@ def add_query(base: Path, new_idx: int, target_class: str = None):
 	
 	# Create new query directory if target_class is provided
 	if target_class:
-		create_query_dir(base, new_idx, target_class)
+		create_query_dir(system_base, new_idx, target_class)
 
-	eval_dirs = find_eval_dirs(base)
+	eval_base = base / "evaluation"
+	eval_dirs = find_eval_dirs(eval_base)
 
 	# Shift evaluation directories as well
 	for dirpath, idx in eval_dirs:
@@ -166,8 +171,9 @@ def add_query(base: Path, new_idx: int, target_class: str = None):
 	if target_class:
 		create_eval_dir(new_idx, target_class)
 
-def remove_query(system: Path, idx: int):
-	query_dirs = find_query_dirs(system, reverse=False)
+def remove_query(base: Path, system: str, idx: int):
+	system_base = base / system
+	query_dirs = find_query_dirs(system_base, reverse=False)
 
 	# Remove the specified directory and update contents
 	for dirpath, current_idx in query_dirs:
@@ -187,20 +193,64 @@ def remove_query(system: Path, idx: int):
 			print(f"Renaming directory: {dirpath} -> {new_dir}")
 			dirpath.rename(new_dir)
 
+	remove_eval(base / "evaluation", idx)
+
+def remove_eval(base: Path, idx: int):
+	eval_dirs = find_eval_dirs(base, reverse=False)
+
+	print("Dirs", eval_dirs)
+	
+	# Remove the specified directory and update contents
+	for dirpath, current_idx in eval_dirs:
+		print("Dirpath:", dirpath, "Current_idx:", current_idx)
+		if current_idx == idx:
+			print(f"Removing eval_scripts: {dirpath / "eval_scripts"}")
+			for item in Path(dirpath / "eval_scripts").iterdir():
+				if item.is_file():
+					item.unlink()
+			Path(dirpath / "eval_scripts").rmdir()
+			
+			print(f"Removing eval run: {dirpath / "eval_runs.sh"}")
+			if (Path(dirpath/"eval_runs.sh").exists()):
+				Path(dirpath/"eval_runs.sh").unlink()
+
+			print(f"Removing results: {dirpath / "results"}")
+			if (dirpath / "results").exists():
+				for item in Path(dirpath / "results").iterdir():
+					if item.is_file():
+						item.unlink()
+				Path(dirpath / "results").rmdir()
+
+			print(f"Removing directory: {dirpath}")
+			dirpath.rmdir()
+		if current_idx > idx:
+			if dirpath.exists():
+				print("Exists!!!")
+
+			print("Dirpath to update:", dirpath)
+			update_eval_content(dirpath, current_idx, current_idx - 1)
+
+			new_dir = dirpath.with_name(f"Q{current_idx - 1}")
+			print("updated dirname to:", new_dir)
+			
+			print(f"Renaming evaluation directory: {dirpath} -> {new_dir}")
+			dirpath.rename(new_dir)
+
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="Manage System query indices by inserting and shifting Q directories.")
 
 	parser.add_argument("--target_class", required=True, type=str, help="Class subfolder (e.g., aggregation, derivation)")
 	parser.add_argument("--index", required=True, type=int, help="Index of the query to add (e.g., 2)")
-	# parser.add_argument("--remove", action="store_true", help="If set, remove the query at the specified index instead of adding.")
+	parser.add_argument("--remove", action="store_true", help="If set, remove the query at the specified index instead of adding.")
 
 	args = parser.parse_args()
 
 	# for system in [Path("lotus"), Path("palimpzest"), Path("blendsql")]:
-	# 	if (args.remove):
-	# 		remove_query(system, args.index)
-	# 	else:
-	# 		add_query(system, args.index, args.target_class)
+	if (args.remove):
+		remove_query(Path("."), "lotus", args.index)
+	else:
+		add_query(Path("."), "lotus", args.index, args.target_class)
 
-	add_query(Path("evaluation"), args.index, args.target_class)
+
+	# remove_eval(Path("evaluation"), args.index)
