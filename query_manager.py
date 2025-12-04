@@ -135,7 +135,7 @@ class QueryManager:
         print(f"Created directory: {results_dir}")
         
         # Create eval_runs.sh file
-        runs_file = scripts_dir / "eval_runs.sh"
+        runs_file = eval_dir / "eval_runs.sh"
         runs_file.write_text("#!/bin/bash\n# Evaluation Runs for Q{}\n".format(idx))
         runs_file.chmod(0o755)
         print(f"Created file: {runs_file}")

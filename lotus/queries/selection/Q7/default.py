@@ -8,7 +8,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
-parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
+parser.add_argument("-s", "--size", nargs='?', default=14, const=14, type=int, help="The input size")
 parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
@@ -28,10 +28,10 @@ elif args.provider == 'vllm':
     lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
 lotus.settings.configure(lm=lm)
-df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-df_players = pd.DataFrame(df_players['Player Name']).rename(columns={'Player Name' : 'player_name'})
+df_players = pd.read_csv(f"datasets/rotowire/reports_with_player_names/reports_with_players_{args.size}.csv")
+df_players = df_players[df_players["Game ID"] < args.size]
 
-user_instruction = "{player_name} is from America."
+user_instruction = "{Player Name} had 17 points in game {Report}."
 
 start = time.time()
 df = df_players.sem_filter(user_instruction)

@@ -2,27 +2,11 @@ import pandas as pd
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-s", "--size", nargs='?', default=728, const=728, type=int, help="The input size")
+parser.add_argument("-s", "--size", nargs='?', default=1000, const=1000, type=int, help="The input size")
 args = parser.parse_args()
 
-player_labels = pd.read_csv("datasets/rotowire/player_labels.csv")
-player_labels = player_labels[player_labels['Game ID'] < args.size]
+enron_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")
 
-stats = ["Points", "Assists", "Total rebounds", "Steals", "Blocks"]
+enron_emails = pd.DataFrame(enron_emails['Spam/Ham'].value_counts())
 
-def is_triple_double(row):
-    count = sum(row[stat] >= 10 for stat in stats if stat in row)
-    return count >= 3
-
-
-player_labels["Triple Double"] = player_labels.apply(is_triple_double, axis=1)
-
-triple_double_counts = player_labels[player_labels["Triple Double"]] \
-    .groupby("Player Name") \
-    .size() \
-    .reset_index(name="Triple Double Count")
-
-best_player = triple_double_counts.sort_values("Triple Double Count", ascending=False).iloc[0]
-
-print("Most triple doubles:", best_player["Player Name"])
-print("Count:", best_player["Triple Double Count"])
+print(enron_emails.loc[enron_emails['count'].idxmax()])

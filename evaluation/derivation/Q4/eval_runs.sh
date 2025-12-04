@@ -18,14 +18,14 @@ for size in "${sizes[@]}"; do
         echo "Evaluating Lotus with -s $size and -m $model"
         python evaluation/derivation/Q4/eval_scripts/lotus_q4_eval.py -s $size -m $model -p vllm
         echo ""
-        echo -n "Evaluating BlendSQL with -s $size -m $model"
+        echo  "Evaluating BlendSQL with -s $size -m $model "
         python evaluation/derivation/Q4/eval_scripts/blendsql_q4_eval.py -s $size -m $model -p vllm
         echo ""
     done
 
     for model in "${models_transformers[@]}"; do
-        echo "Evaluating BlendSQL with -s $size -m $model (Transformers)"
+        echo "Evaluating BlendSQL -s $size and -m $model (Transformers)"
         python evaluation/derivation/Q4/eval_scripts/blendsql_q4_eval.py -s $size -m $model -p transformers
+        echo ""
     done
-
 done

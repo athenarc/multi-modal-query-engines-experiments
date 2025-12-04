@@ -28,14 +28,14 @@ elif args.provider == 'vllm':
 
 lotus.settings.configure(lm=lm)
 
-df_reports = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-df = df_reports['Player Name'].to_frame(name='Player Name')
+df_players =pd.read_csv('datasets/rotowire/player_evidence_mine.csv').dropna(subset=['nationality']).head(args.size)
+df = df_players['Player Name'].to_frame(name='Player Name')
 
 start = time.time()
 
-user_instruction = "What is the birthdate of player {Player Name}? Please return only the birthdate in format DD/MM/YYYY."
-df_birthdate = df.sem_map(user_instruction)
-df['birthdate'] = df_birthdate['_map']
+user_instruction = "What is the nationality of player {Player Name}? Please return only the nationality."
+df_nationality = df.sem_map(user_instruction)
+df['nationality'] = df_nationality['_map']
 
 exec_time = time.time() - start
 
