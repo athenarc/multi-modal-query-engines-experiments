@@ -1,7 +1,7 @@
 #!/bin/bash
 sizes=(10 20 50)
-# models_ollama=("gemma3:12b" "llama3.3:70b")
-# models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
+models_ollama=("gemma3:12b" "llama3.3:70b")
+models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 models_dev=("gemma3:12b")
 sizes_dev=(10)
 
