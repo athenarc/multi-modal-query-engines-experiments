@@ -1,0 +1,19 @@
+System: Lotus (sem_extrat)
+Timestamp: 2025-12-04T12:31:06.672355
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Total LLM calls: 10
+Execution Time: 4.09
+System: Lotus (sem_extrat)
+Timestamp: 2025-12-04T12:35:27.591049
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Total LLM calls: 10
+Execution Time: 2.21
+System: Lotus (sem_extrat)
+Timestamp: 2025-12-04T12:35:51.106130
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Total LLM calls: 10
+Execution Time: 1.91
+Accuracy: 100.00%
+------------------------------------------------------
+
+

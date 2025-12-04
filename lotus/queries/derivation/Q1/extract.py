@@ -1,10 +1,11 @@
-from datetime import datetime
 import pandas as pd
 import lotus
 from lotus.models import LM
-import time
+import os
 import wandb
+import time
 import argparse
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -14,7 +15,7 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 if args.wandb:
-    run_name = f"lotus_Q1_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name = f"lotus_Q1_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
@@ -29,39 +30,43 @@ elif args.provider == 'vllm':
 
 lotus.settings.configure(lm=lm)
 
-df_reports = pd.read_csv('datasets/rotowire/reports_table.csv').rename(columns={'Game_ID': 'Game ID'})
-df_player_names = pd.read_csv('datasets/rotowire/player_labels.csv')[['Player Name', 'Game ID']].head(args.size)
-df = pd.merge(df_player_names, df_reports, on='Game ID')
+df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size).rename(columns={'Game_ID' : 'Game ID'})
+df_players = pd.read_csv('datasets/rotowire/player_labels.csv')[['Player Name', 'Game ID']].head(args.size)
+df = pd.merge(df_players, df_reports, on='Game ID')
+
+input_cols = ["Report", "Player Name"]
 
 start = time.time()
+# A description can be specified for each output column
+output_cols = {
+    "masked": "The number of Points that the player specified by the {Player Name} field scored in the game described by the {Report} field. Return **only** an integer.",
+}
 
-user_instruction = "Return the number of points scored by the {Player Name} in the game described by {Report}. Return **only** an integer."
-df_points = df.sem_map(user_instruction)
-df['points'] = df_points['_map']
-
+new_df = df.sem_extract(input_cols, output_cols)
 exec_time = time.time() - start
 
+
+new_df = new_df.rename(columns={"masked": "points"})
+df = new_df[['Game ID', 'Player Name', 'points']]
+
 if args.provider == 'ollama':
-    output_file = f"evaluation/derivation/Q1/results/lotus_Q1_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    output_file = f"evaluation/derivation/Q1/results/lotus_Q1_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider =='vllm':
-    output_file = f"evaluation/derivation/Q1/results/lotus_Q1_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+    output_file = f"evaluation/derivation/Q1/results/lotus_Q1_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
     
 df.to_csv(output_file)
 
-total_LLM_calls = args.size
-
 with open('statistics/derivation/Q1.txt', 'a') as file:
-    file.write(f"System: Lotus (sem_map)\n")
+    file.write(f"System: Lotus (sem_extrat)\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
     file.write(f"Model: {args.model}\n")
+    file.write(f"Total LLM calls: " + str(args.size) + "\n")
     file.write(f"Execution Time: {exec_time:.2f}\n")
-    file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
 
 if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
-        "execution_time": exec_time,
-        "total_LLM_calls": total_LLM_calls
+        "execution_time": exec_time
     })
 
     wandb.finish()
