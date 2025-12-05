@@ -17,11 +17,9 @@ elif args.provider == 'vllm':
 
 
 winners = team_labels.loc[team_labels.groupby("Game ID")["Total points"].idxmax(), ["Game ID", "Total points"]].rename(columns={"Total points": "points"})
-print(winners)
 
-df_blendsql = pd.read_csv(results_file, index_col=0)[['Game ID', 'points']]
+df_blendsql = pd.read_csv(results_file, index_col=0)[['Game ID', 'points']].fillna(-1)
 df = df_blendsql.merge(winners, on='Game ID', how='outer')
-print(df)
 
 df["match"] = df.apply(
     lambda row: (

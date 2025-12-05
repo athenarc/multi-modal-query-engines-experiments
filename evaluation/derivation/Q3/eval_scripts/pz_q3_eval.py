@@ -11,20 +11,20 @@ args = parser.parse_args()
 team_labels = pd.read_csv("datasets/rotowire/team_labels.csv")[['Game ID', 'Team Name', 'Total points']].head(args.size * 2).fillna(-1)
 
 if args.provider == 'ollama' or args.provider == 'transformers':
-    results_file = f"evaluation/derivation/Q3/results/lotus_Q3_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q3/results/palimpzest_Q3_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider == 'vllm':
-    results_file = f"evaluation/derivation/Q3/results/lotus_Q3_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q3/results/palimpzest_Q3_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
 
 winners = team_labels.loc[team_labels.groupby("Game ID")["Total points"].idxmax(), ["Game ID", "Total points"]].rename(columns={"Total points": "points"})
 
-df_lotus = pd.read_csv(results_file, index_col=0)[['Game ID', 'points']].fillna(-1)
-print(df_lotus)
-df = df_lotus.merge(winners, on='Game ID', how='outer')
+df_pz = pd.read_csv(results_file, index_col=0)[['Game ID', 'points']].fillna(-1)
+df = df_pz.merge(winners, on='Game ID', how='outer', suffixes=('_pred', '_gt'))
+print(df)
 
 df["match"] = df.apply(
     lambda row: (
-        row["points_x"] == row["points_y"]
+        row["points_pred"] == row["points_gt"]
     ),
     axis=1
 )

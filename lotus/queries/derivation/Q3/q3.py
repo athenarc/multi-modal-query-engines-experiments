@@ -32,8 +32,9 @@ lotus.settings.configure(lm=lm)
 df_reports = pd.read_csv('datasets/rotowire/reports_table.csv').rename(columns={'Game_ID': 'Game ID'})
 
 missing_game_ids = [8, 39, 68, 82, 122, 123, 150, 155, 192, 199, 211, 214, 255, 267, 274, 290, 294, 313, 330, 343, 345, 363, 379, 391, 398, 423, 439, 472, 499, 500, 534, 558, 562, 565, 568, 570, 644, 645, 668, 681, 721]
-df_reports = df_reports[df_reports['Game ID'] not in missing_game_ids]  # Remove Game IDs that are not present in the team labels file
-df_reports = df_reports.head(args.size)
+df = df_reports[~df_reports['Game ID'].isin(missing_game_ids)]  # Remove Game IDs that are not present in the team labels file
+df = df.head(args.size)
+
 
 start = time.time()
 
