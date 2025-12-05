@@ -56,10 +56,11 @@ elif args.provider =='vllm':
     
 df.to_csv(output_file)
 
-with open('statistics/derivation/Q1.txt', 'a') as file:
+with open('statistics/derivation/Q1.log', 'a') as file:
     file.write(f"System: Lotus (sem_extrat)\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
     file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
     file.write(f"Total LLM calls: " + str(args.size) + "\n")
     file.write(f"Execution Time: {exec_time:.2f}\n")
 

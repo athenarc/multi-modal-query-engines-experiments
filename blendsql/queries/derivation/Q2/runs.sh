@@ -1,26 +1,34 @@
 #!/bin/bash
 sizes=(10 20 50)
-models_ollama=("llama3.3:70b")
+models_ollama=("gemma3:12b" "llama3.3:70b")
 models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
-transformers=("llama3.1:8b")
+models_dev=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
+sizes_dev=(200)
 
-for size in "${sizes[@]}"; do
-    for model in "${models_ollama[@]}"; do
-        echo "Running Q2 with -s $size and m $model"
-        python blendsql/queries/derivation/Q2/q2.py --wandb -s $size -m $model -p ollama
-    done
-done
+dev="${1:-}"
 
-for size in "${sizes[@]}"; do
-    for model in "${models_vllm[@]}"; do
-        echo "Running Q2 with -s $size and m $model"
-        python blendsql/queries/derivation/Q2/q2.py --wandb -s $size -m $model -p vllm
-    done
-done
 
-for size in "${sizes[@]}"; do
-    for model in "${transformers[@]}"; do
-        echo "Running Q2 with -s $size and m $model"
-        python blendsql/queries/derivation/Q2/q2.py --wandb -s $size -m $model -p transformers
+if [ "$dev" != "dev" ]; then
+    for size in "${sizes[@]}"; do
+        for model in "${models_ollama[@]}"; do
+            echo "Running Q2 with -s $size and m $model"
+            python blendsql/queries/derivation/Q1/q1.py --wandb -s $size -m $model -p ollama
+        done
     done
-done
+
+    for size in "${sizes[@]}"; do
+        for model in "${models_vllm[@]}"; do
+            echo "Running Q2 with -s $size and m $model"
+            python blendsql/queries/derivation/Q1/q1.py --wandb -s $size -m $model -p vllm
+        done
+    done
+else
+    for size in "${sizes_dev[@]}"; do
+        for model in "${models_dev[@]}"; do
+            echo "Running Q2 with -s $size and m $model"
+            python blendsql/queries/derivation/Q2/q2.py  -s $size -m $model -p vllm
+            echo "Evaluating Q2 with -s $size and m $model executed from blendsql"
+            python evaluation/derivation/Q2/eval_scripts/blendsql_q2_eval.py  -s $size -m $model -p vllm
+        done
+    done
+fi

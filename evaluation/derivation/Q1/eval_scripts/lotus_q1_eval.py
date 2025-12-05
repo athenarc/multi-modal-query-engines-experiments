@@ -31,6 +31,6 @@ elif args.provider == 'vllm':
     )
 
     accuracy = df['match'].mean()
-    with open('statistics/derivation/Q1.txt', 'a') as file:
+    with open('statistics/derivation/Q1.log', 'a') as file:
         file.write(f"Accuracy: {df['match'].mean():.2%}" + "\n")
         file.write("------------------------------------------------------\n\n\n")

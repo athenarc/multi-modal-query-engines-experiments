@@ -56,10 +56,11 @@ elif args.provider == 'vllm':
 
 output_df.to_csv(output_file)
 
-with open('statistics/derivation/Q1.txt', 'a') as file:
+with open('statistics/derivation/Q1.log', 'a') as file:
     file.write(f"System: Palimpzest\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
     file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
     file.write(f"Execution Time: {output.execution_stats.total_execution_time:.2f}\n")
 
 if args.wandb:

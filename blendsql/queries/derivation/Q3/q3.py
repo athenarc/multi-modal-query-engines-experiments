@@ -2,6 +2,7 @@ import pandas as pd
 import time
 import wandb
 import argparse
+from datetime import datetime
 
 from blendsql import BlendSQL
 from blendsql.models import TransformersLLM, LiteLLM
@@ -15,19 +16,22 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 if args.wandb:
-    run_name = f"blendsql_Q3_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name = f"blendsql_Q3_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
         name=run_name,
         group="Derivation",
-
 )
 
-# Load reports dataset
-reports_table = pd.read_csv('datasets/rotowire/reports_table.csv').head(args.size)
+# Load reports
+reports = pd.read_csv('datasets/rotowire/reports_table.csv')
+missing_game_ids = [8, 39, 68, 82, 122, 123, 150, 155, 192, 199, 211, 214, 255, 267, 274, 290, 294, 313, 330, 343, 345, 363, 379, 391, 398, 423, 439, 472, 499, 500, 534, 558, 562, 565, 568, 570, 644, 645, 668, 681, 721]
+df = reports[~reports['Game_ID'].isin(missing_game_ids)]  # Remove Game IDs that are not present in the team labels file
+df = df.head(args.size)
+
 reports = {
-    "Reports" : pd.DataFrame(reports_table)
+    "Reports" : pd.DataFrame(df)
 }
 
 if args.provider == 'ollama':
@@ -53,16 +57,15 @@ bsql = BlendSQL(
     ingredients={LLMMap},
 )
 
-exec_times = []
 start = time.time()
 
 smoothie = bsql.execute(
    """
-    SELECT Game_ID, Reports.Report, {{
+    SELECT Reports.Game_ID, {{
         LLMMAP(
-            'Return a list of strings with team names that did play in the game. Please ignore the teams who are mentioned and did not play.',
+            'Return the number of total points scored by the winner team in the game described by the report (or -1 if not mentioned). Return **only** an integer.',
+            return_type=int,
             Reports.Report,
-            return_type='List[str]'
         )
     }}
     FROM Reports
@@ -70,94 +73,23 @@ smoothie = bsql.execute(
     infer_gen_constraints=True,
 )
 
-exec_times.append(time.time()-start)
+exec_time = time.time() - start
 
-df = smoothie.df
-df['team_name'] = df['_col_2'].str.split(",")
-df_exploded = df.explode('team_name', ignore_index=True)
-df = df_exploded.copy().drop(columns=['_col_2'])
+final_df = smoothie.df.rename(columns={"Game_ID": "Game ID", "_col_1": "points"})
 
-# Points
-reports = {'Reports': df.copy() }
-bsql = BlendSQL(
-    db=reports,
-    model=model,
-    verbose=True,
-    ingredients={LLMMap},
-)
+final_df.to_csv(f"evaluation/derivation/Q3/results/blendsql_Q3_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
 
-start = time.time()
-smoothie = bsql.execute(
-   """
-    WITH joined_context AS (
-        SELECT *,
-        'Team: ' || CAST(team_name AS VARCHAR) || '\nReport: ' || Report AS context
-        FROM Reports
-    ) SELECT Game_ID, Report, team_name, {{LLMMap('How many Wins has the team?', context, return_type='int')}} AS wins
-    FROM joined_context
-    """,
-    infer_gen_constraints=True,
-)
-exec_times.append(time.time() - start)
-
-# Assists
-reports = { 'Reports': smoothie.df }
-bsql = BlendSQL(
-    db=reports,
-    model=model,
-    verbose=True,
-    ingredients={LLMMap},
-)
-
-start = time.time()
-smoothie = bsql.execute(
-   """
-    WITH joined_context AS (
-        SELECT *,
-        'Team: ' || CAST(team_name AS VARCHAR) || '\nReport: ' || Report AS context
-        FROM Reports
-    ) SELECT Game_ID, Report, team_name, wins, {{LLMMap('How many Losses has the team?', context, return_type='int')}} AS losses
-    FROM joined_context
-    """,
-    infer_gen_constraints=True,
-)
-exec_times.append(time.time() - start)
-
-# Total Rebounds
-reports = {'Reports': smoothie.df }
-bsql = BlendSQL(
-    db=reports,
-    model=model,
-    verbose=True,
-    ingredients={LLMMap},
-)
-
-start = time.time()
-smoothie = bsql.execute(
-   """
-    WITH joined_context AS (
-    SELECT *,
-    'Team: ' || CAST(team_name AS VARCHAR) || '\nReport: ' || Report AS context
-    FROM Reports
-    ) SELECT Game_ID, Report, team_name, wins, losses, {{LLMMap('What is the number of total points the team scored?', context, return_type='int')}} AS total_points
-    FROM joined_context
-    """,
-    infer_gen_constraints=True,
-)
-exec_times.append(time.time() - start)
+with open('statistics/derivation/Q3.log', 'a') as file:
+    file.write(f"System: BlendSQL\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write("Total LLM calls: " + str(args.size) + "\n")
 
 if args.wandb:
-    smoothie.df.to_csv(f"evaluation/derivation/Q3/results/blendsql_Q3_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
-    print("Execution time: ", sum(exec_times))
-    
     wandb.log({
-        "result_table": wandb.Table(dataframe=smoothie.df.fillna("-1")),
-        "execution_time": sum(exec_times)
+        "result_table": wandb.Table(dataframe=final_df),
+        "execution_time": exec_time
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", smoothie.df)
-    print("Execution time: ", sum(exec_times))
-
-

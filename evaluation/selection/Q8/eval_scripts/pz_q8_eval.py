@@ -8,16 +8,21 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 def count_true_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['nationality_gt'] == df['nationality_pred']) & (df['nationality_gt'] == "American")])
+    true_positives = df[(df['sentiment_gt'] == 'positive') & (df['sentiment_pred'] == 'positive')]
+    return len(true_positives)
 
 def count_false_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['nationality_gt'] != df['nationality_pred']) & (df['nationality_pred'] == "American")])
+    false_positives = df[(df['sentiment_gt'] == 'negative') & (df['sentiment_pred'] == 'positive')]
+    return len(false_positives)
 
 def count_true_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['nationality_gt'] != "American")])
+    true_negatives = df[(df['_merge'] == 'left_only') & (df['sentiment_gt'] == 'negative')]
+    return len(true_negatives)
 
 def count_false_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['nationality_gt'] == "American")])
+    false_negatives = df[(df['_merge'] == 'left_only') & (df['sentiment_gt'] == 'positive')]
+    return len(false_negatives)
+
 
 if __name__ == "__main__":
     if args.provider == 'ollama':
@@ -25,14 +30,13 @@ if __name__ == "__main__":
     elif args.provider == 'vllm':
         results_file = f"evaluation/selection/Q8/results/palimpzest_Q8_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
-    df_player_labels = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-    df_player_labels = df_player_labels[['Player Name', 'nationality']]
+    imdb_dataset = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
+    pz_results = pd.read_csv(results_file)
 
-    pz_res = pd.read_csv(results_file)
-    pz_res = pz_res.drop(columns=['filename']).rename(columns={'contents' : 'Player Name'})
-    pz_res['nationality'] = 'American'
+    pz_results["sentiment"] = "positive"
+    pz_results = pz_results.drop(columns=["filename"]).rename(columns={"contents": "review"})
 
-    df = df_player_labels.merge(pz_res, on='Player Name', how='outer', suffixes=('_gt', '_pred'), indicator=True)
+    df = imdb_dataset.merge(pz_results, on="review", how="outer", suffixes=('_gt', '_pred'), indicator=True)
 
     tp = count_true_positives(df)
     fp = count_false_positives(df)

@@ -50,10 +50,11 @@ df.to_csv(output_file)
 
 total_LLM_calls = args.size
 
-with open('statistics/derivation/Q1.txt', 'a') as file:
+with open('statistics/derivation/Q1.log', 'a') as file:
     file.write(f"System: Lotus (sem_map)\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
     file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
     file.write(f"Execution Time: {exec_time:.2f}\n")
     file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
 

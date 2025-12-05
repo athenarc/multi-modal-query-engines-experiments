@@ -89,10 +89,11 @@ output_df.to_csv(f"evaluation/derivation/Q1/results/blendsql_Q1_{args.model.repl
 
 total_LLM_calls = args.size
 
-with open('statistics/derivation/Q1.txt', 'a') as file:
+with open('statistics/derivation/Q1.log', 'a') as file:
     file.write(f"System: BlendSQL\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
     file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
     file.write(f"Execution Time: {exec_time:.2f}\n")
     file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
 
@@ -103,5 +104,4 @@ if args.wandb:
         "execution_time": exec_time,
         "total_LLM_calls": total_LLM_calls,
     })
-
     wandb.finish()
