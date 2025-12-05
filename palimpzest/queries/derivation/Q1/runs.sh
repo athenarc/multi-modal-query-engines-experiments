@@ -12,14 +12,14 @@ dev="${1:-}"
 if [ "$dev" != "dev" ]; then
     for size in "${sizes[@]}"; do
         for model in "${models_ollama[@]}"; do
-            echo "Running Q2 with -s $size and m $model"
+            echo "Running Q1 with -s $size and m $model"
             python palimpzest/queries/derivation/Q1/q1.py --wandb -s $size -m $model -p ollama
         done
     done
 
     for size in "${sizes[@]}"; do
         for model in "${models_vllm[@]}"; do
-            echo "Running Q2 with -s $size and m $model"
+            echo "Running Q1 with -s $size and m $model"
             python palimpzest/queries/derivation/Q1/q1.py --wandb -s $size -m $model -p vllm
         done
     done
