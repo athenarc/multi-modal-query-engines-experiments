@@ -23,7 +23,7 @@ if args.wandb:
         group="Aggregation",
     )
 
-df_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Subject', 'Message']]
+df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)[['review']]
 
 if args.provider == 'ollama':
     model=LiteLLM(args.provider + '/' + args.model, config={"timeout": 50000}, caching=False)
@@ -31,13 +31,19 @@ elif args.provider == 'vllm':
      model = LiteLLM("hosted_vllm/" + args.model, 
                     config={"api_base": "http://localhost:5001/v1", "timeout": 50000, "cache": False}, 
                     caching=False)
+
 db = {
-    "Emails": df_emails
+    "Reviews": pd.DataFrame(df_reviews)
 }
 
 bsql = BlendSQL(
     db=db,
     model=model,
+    # model=TransformersLLM(
+    #     "/data/hdd1/users/jzerv/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659",
+    #     config={"device_map": "auto"},
+    #     caching=False,
+    # ),
     ingredients={LLMQA}
 )
 
@@ -46,8 +52,8 @@ smoothie = bsql.execute(
     """
         SELECT {{
             LLMQA(
-                'Do spam or non-spam emails prevail? from all emails? Return 1 for spam or 0 for non-spam **and only that**.',
-                context=Emails.Message
+                'Do positive or negative reviews prevail? Return 1 for positive or 0 for negative **and only that**.',
+                context=Reviews.review,
             )
         }} AS Answer
     """,

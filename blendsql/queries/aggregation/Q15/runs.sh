@@ -1,6 +1,6 @@
 #!/bin/bash
-sizes=(1000 10000 30000)
-models_ollama=("gemma3-32k:latest" "llama8-32k:latest")
+sizes=(1000 10000 50000)
+models_ollama=("llama8-32k:latest")
 models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 
 for size in "${sizes[@]}"; do
@@ -10,7 +10,7 @@ for size in "${sizes[@]}"; do
   done
 
   for model in "${models_vllm[@]}"; do
-    echo "Running with -s $size and -m $model"
+    echo "Running with -s $size and -m ollama/$model"
     python blendsql/queries/aggregation/Q15/q15.py  --wandb -s $size -m $model -p vllm
   done
 done
