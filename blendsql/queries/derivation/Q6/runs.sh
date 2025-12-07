@@ -30,7 +30,7 @@ else
             # echo "Running BlendSQL, Q6 with -s $size and m $model"
             # python blendsql/queries/derivation/Q6/q6.py  -s $size -m $model -p ollama
             echo "Evaluating BlendSQL, Q6 with -s $size and m $model executed from blendsql"
-            python evaluation/derivation/Q6/eval_scripts/blendsql_q6_eval.py  -s $size -m $model -p ollama
+            python evaluation/derivation/Q6/eval_scripts/q6_eval.py --system blendsql -s $size -m $model -p ollama
         done
     done
 fi

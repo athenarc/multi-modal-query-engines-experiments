@@ -31,7 +31,7 @@ else
             # echo "Running Lotus-map, Q6 with -s $size and m $model"
             # python lotus/queries/derivation/Q6/q6.py  -s $size -m $model -p ollama
             echo "Evaluating Lotus-map, Q6 with -s $size and m $model executed from Lotus"
-            python evaluation/derivation/Q6/eval_scripts/lotus_q6_eval.py  -s $size -m $model -p ollama
+            python evaluation/derivation/Q6/eval_scripts/q6_eval.py --system lotus -s $size -m $model -p ollama
         done
     done
 fi
