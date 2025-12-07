@@ -4,6 +4,7 @@ import pandas as pd
 from dotenv import load_dotenv
 import wandb
 import argparse
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -29,7 +30,7 @@ def explode_player_list(record: dict):
     return records
 
 if args.wandb:
-    run_name=f"palimpzest_Q7_project_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name=f"palimpzest_Q7__{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
@@ -81,14 +82,22 @@ output = reports.run(config=config)
 output_df = output.to_df()
 output_df.drop(columns=["player_name_list"], inplace=True)
 
-if args.wandb:
-    if args.provider == 'ollama':
-        output_file = f"evaluation/derivation/Q7/results/palimpzest_Q7_project_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider == 'vllm':
-        output_file = f"evaluation/derivation/Q7/results/palimpzest_Q7_project_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
-    
-    output_df.to_csv(output_file)
+if args.provider == 'ollama':
+    output_file = f"evaluation/derivation/Q7/results/palimpzest_Q7_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+elif args.provider == 'vllm':
+    output_file = f"evaluation/derivation/Q7/results/palimpzest_Q7_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
+output_df.to_csv(output_file)
+
+with open('statistics/derivation/Q7.log', 'a') as file:
+    file.write(f"System: Palimpzest\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {output.execution_stats.total_execution_time:.2f}\n")
+    #TODO: Add processed rows
+
+if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=output_df),
         "execution_time": output.execution_stats.total_execution_time,

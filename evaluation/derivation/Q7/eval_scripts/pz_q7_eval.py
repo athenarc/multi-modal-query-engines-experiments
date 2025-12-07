@@ -25,9 +25,9 @@ df_labels = pd.read_csv('datasets/rotowire/player_labels.csv')
 df_labels = df_labels[df_labels['Game ID'] < args.size]
 
 if args.provider == 'ollama':
-    results_file = f"evaluation/derivation/Q7/results/palimpzest_Q7_derivation_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q7/results/palimpzest_Q7_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider == 'vllm':
-    results_file = f"evaluation/derivation/Q7/results/palimpzest_Q7_derivation_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q7/results/palimpzest_Q7_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
 pz_labels = pd.read_csv(results_file)
 pz_labels['Game ID'] = pz_labels['filename'].str.extract(r'report_(\d+)\.txt').astype(int)
@@ -39,7 +39,7 @@ df.rename(columns={'Total rebounds': 'Total rebounds_x', 'Total Rebounds': 'Tota
 
 df.drop(columns=["Defensive rebounds", "Offensive rebounds", "3-pointers attempted", "3-pointers made", "Field goals attempted", "Field goals made", "Free throws attempted", "Free throws made", "Minutes played", "Personal fouls", "Turnovers", "Field goal percentage", "Free throw percentage", "3-pointer percentage"], inplace=True)
 
-df_both = df[df['_merged'] == 'both']
+df_both = df[df['_merge'] == 'both']
 
 cols = ["Points", "Assists", "Total rebounds", "Blocks", "Steals"]
 
@@ -47,26 +47,28 @@ for col in cols:
     xcol, ycol = f"{col}_x", f"{col}_y"
     df_both[f"{col}_match"] = (df_both[xcol].fillna(-1) == df_both[ycol].fillna(-1))
 
-for col in cols:
-    acc = df_both[f"{col}_match"].mean()
-    print(f"{col} accuracy: {acc:.2%}")
+with open('statistics/derivation/Q7.log', 'a') as file:
+    for col in cols:
+        acc = df_both[f"{col}_match"].mean()
+        file.write(f"{col} accuracy: {acc:.2%}" + "\n")
 
-total_accuracy = df_both[[f"{col}_match" for col in cols]].stack().mean()
-print(f"Total accuracy: {total_accuracy:.2%}")
+    total_accuracy = df_both[[f"{col}_match" for col in cols]].stack().mean()
+    file.write(f"Total accuracy: {total_accuracy:.2%}" + "\n\n")
 
-df_gtrue = df_labels[['Game ID', 'Player Name']]
-df_pred = df[['Game ID', 'matched_player']].rename(columns={'matched_player': 'Player Name'})
+    df_gtrue = df_labels[['Game ID', 'Player Name']]
+    df_pred = df[['Game ID', 'matched_player']].rename(columns={'matched_player': 'Player Name'})
 
-merged = df_gtrue.merge(df_pred, on=['Game ID', 'Player Name'], how='outer', indicator=True)
+    merged = df_gtrue.merge(df_pred, on=['Game ID', 'Player Name'], how='outer', indicator=True)
 
-TP = len(merged[merged['_merge'] == 'both'])
-FP = len(merged[merged['_merge'] == 'right_only'])
-FN = len(merged[merged['_merge'] == 'left_only'])
+    TP = len(merged[merged['_merge'] == 'both'])
+    FP = len(merged[merged['_merge'] == 'right_only'])
+    FN = len(merged[merged['_merge'] == 'left_only'])
 
-precision = TP / (TP + FP) if (TP + FP) > 0 else 0
-recall = TP / (TP + FN) if (TP + FN) > 0 else 0
-f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+    precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+    recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
 
-print(f"Precision: {precision:.2f}")
-print(f"Recall: {recall:.2f}")
-print(f"\nF1-score: {f1:.2f}\n")
+    file.write(f"Precision: {precision:.2f}" + "\n")
+    file.write(f"Recall: {recall:.2f}" + "\n")
+    file.write(f"\nF1-score: {f1:.10f}" + "\n")
+    file.write("------------------------------------------------------\n\n\n")
