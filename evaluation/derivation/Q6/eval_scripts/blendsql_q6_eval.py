@@ -11,15 +11,15 @@ args = parser.parse_args()
 team_labels = pd.read_csv("datasets/rotowire/team_labels.csv")[['Game ID', 'Total points', 'Team Name', 'Wins', 'Losses']].head(args.size * 2).fillna(-1)
 
 if args.provider == 'ollama' or args.provider == 'transformers':
-    results_file = f"evaluation/derivation/Q6/results/lotus_Q6_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q6/results/blendsql_Q6_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider == 'vllm':
-    results_file = f"evaluation/derivation/Q6/results/lotus_Q6_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q6/results/blendsql_Q6_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
 
 winners = team_labels.loc[team_labels.groupby("Game ID")["Total points"].idxmin(), ["Game ID", "Wins", "Losses"]]
 
-df_lotus = pd.read_csv(results_file, index_col=0)[['Game ID', 'Wins', "Losses"]].fillna(-1)
-df = df_lotus.merge(winners, on='Game ID', how='outer')
+df_blendsql = pd.read_csv(results_file, index_col=0)[['Game ID', 'Wins', "Losses"]].fillna(-1)
+df = df_blendsql.merge(winners, on='Game ID', how='outer')
 
 df["match_wins"] = df.apply(
     lambda row: (

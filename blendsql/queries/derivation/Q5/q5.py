@@ -98,7 +98,7 @@ smoothie = bsql.execute(
     infer_gen_constraints=True,
 )
 
-exec_time = time.time() - start
+exec_time += time.time() - start
 
 smoothie.df.to_csv(f"evaluation/derivation/Q5/results/blendsql_Q5_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
 
