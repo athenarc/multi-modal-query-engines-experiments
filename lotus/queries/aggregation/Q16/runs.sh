@@ -1,5 +1,5 @@
 #!/bin/bash
-sizes=(10000 30000)
+sizes=(100 1000 5000)
 models_ollama=("gemma3:12b" "llama3.1:8b")
 models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 

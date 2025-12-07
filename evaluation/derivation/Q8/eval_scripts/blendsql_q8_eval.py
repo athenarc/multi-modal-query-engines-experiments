@@ -9,28 +9,29 @@ parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gem
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
-player_evi = pd.read_csv("datasets/rotowire/player_evidence_mine.csv")[['Player Name', 'birth_date']].head(args.size)
+player_evi = pd.read_csv("datasets/rotowire/player_evidence_mine.csv")[['Player Name', 'nationality']].dropna(subset=['nationality']).head(args.size)
+
 if args.provider == 'ollama' or args.provider == 'transformers':
     results_file = f"evaluation/derivation/Q8/results/blendsql_Q8_map_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider == 'vllm':
     results_file = f"evaluation/derivation/Q8/results/blendsql_Q8_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
 blendsql_evi = pd.read_csv(results_file)
-
-blendsql_evi.rename(columns={'player_name': 'Player Name', '_col_1' : 'birth_date'}, inplace=True)
-
-blendsql_evi['birth_date'] = blendsql_evi['birth_date'].str.replace('/', '.')
+blendsql_evi.rename(columns={'player_name': 'Player Name', '_col_1': 'nationality'}, inplace=True)
 
 df = player_evi.merge(blendsql_evi, left_on='Player Name', right_on='Player Name', how='outer')
 
 df["match"] = df.apply(
     lambda row: (
-        str(row["birth_date_y"]) in str(row["birth_date_x"])
-        or str(row["birth_date_x"]) in str(row["birth_date_y"])
-    )
-    if not (pd.isna(row["birth_date_x"]) or pd.isna(row["birth_date_y"]))
-    else False,
+        isinstance(row["nationality_x"], str)
+        and isinstance(row["nationality_y"], str)
+        and len(row["nationality_y"]) <= 30
+        and (
+            row["nationality_y"].lower() in row["nationality_x"].lower()
+            or row["nationality_x"].lower() in row["nationality_y"].lower()
+            or fuzz.ratio(row["nationality_x"], row["nationality_y"]) >= 70
+        )
+    ),
     axis=1
 )
-
 print(f"Accuracy: {df['match'].mean():.2%}")

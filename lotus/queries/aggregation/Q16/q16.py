@@ -28,11 +28,10 @@ elif args.provider == 'vllm':
 
 lotus.settings.configure(lm=model)
 
-input_filename = f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv"
-df_reviews = pd.read_csv(input_filename)[['Message']]
+df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)[['review']]
 
 start = time.time()
-df = df_reviews.sem_agg("Do spam or non-spam emails prevail? from all {Message}. Return 1 for spam or 0 for non-spam **and only that**.")
+df = df_reviews.sem_agg("Do positive or negative reviews prevail? from all {review}. Return 1 for positive or 0 for negative **and only that**.")
 exec_time = time.time() - start
 
 if args.wandb:

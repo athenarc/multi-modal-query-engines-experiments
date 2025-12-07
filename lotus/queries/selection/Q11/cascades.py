@@ -5,11 +5,10 @@ from lotus.types import CascadeArgs
 import time
 import wandb
 import argparse
-import litellm
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
-parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
+parser.add_argument("-s", "--size", nargs='?', default=14, const=14, type=int, help="The input size")
 parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
@@ -31,10 +30,10 @@ elif args.provider == 'vllm':
 helper_lm = LM(model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", api_base="http://localhost:5001/v1", api_key="dummy")
 
 lotus.settings.configure(lm=lm, helper_lm=helper_lm)
-df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-df_players = pd.DataFrame(df_players['Player Name']).rename(columns={'Player Name' : 'player_name'})
+df_players = pd.read_csv(f"datasets/rotowire/reports_with_player_names/reports_with_players_{args.size}.csv")
+df_players = df_players[df_players["Game ID"] < args.size] # Keep total of ~100 entries
 
-user_instruction = "{player_name} is from America."
+user_instruction = "{Player Name} had 17 points in game {Report}."
 
 cascade_args = CascadeArgs(recall_target=0.9, precision_target=0.9, sampling_percentage=0.2, failure_probability=0.1)
 
