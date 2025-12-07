@@ -21,10 +21,10 @@ if args.wandb:
         project="SQE_experiments",
         name=run_name,
         group="Derivation",
-    )
+)
 
 # Load reports
-reports = pd.read_csv('datasets/rotowire/player_evidence_mine.csv').head(args.size)
+reports = pd.read_csv('datasets/rotowire/player_evidence_mine.csv').dropna(subset=['nationality']).head(args.size)
 reports.rename(columns={"Player Name": "player_name"}, inplace=True)
 players = {
     "Players" : pd.DataFrame(reports['player_name'])
@@ -60,9 +60,9 @@ smoothie = bsql.execute(
    """
     SELECT Players.player_name, {{
         LLMMAP(
-            'Return the birthdate of the player in format: DD/MM/YYYY.',
+            'Return the nationality of the player.',
+            return_type='str',
             Players.player_name,
-            return_type='str'
         )
     }}
     FROM Players
@@ -71,6 +71,7 @@ smoothie = bsql.execute(
 )
 
 exec_time = time.time() - start
+print(smoothie.df)
 
 if args.wandb:
     smoothie.df.to_csv(f"evaluation/derivation/Q9/results/blendsql_Q9_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")

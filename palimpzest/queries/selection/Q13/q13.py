@@ -7,6 +7,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
+parser.add_argument("-s", "--size", nargs='?', default=100, const=100, type=int, help="The input size")
 parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gemma3:12b', type=str, help="The model to use")
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
@@ -16,7 +17,7 @@ model = getattr(Model, f"{args.provider.upper()}_{args.model.replace(':', '_').r
 load_dotenv()
 
 if args.wandb:
-    run_name=f"palimpzest_Q13_filter_{args.model.replace(':', '_')}_{args.provider}"
+    run_name=f"palimpzest_Q13_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
@@ -24,9 +25,8 @@ if args.wandb:
         group="Selection",
     )
 
-reports = pz.TextFileDataset(id="team_names", path="datasets/rotowire/team_names/")
-
-reports = reports.sem_filter("The team was founded before 1970.")
+reports = pz.TextFileDataset(id="player_names", path=f"datasets/rotowire/player_names/{args.size}/")
+reports = reports.sem_filter("The player is from America.")
 
 config = pz.QueryProcessorConfig(
     available_models=[model],
@@ -37,12 +37,12 @@ output_df = output.to_df()
 
 if args.wandb:
     if args.provider == 'ollama':
-        output_file = f"evaluation/selection/Q13/results/palimpzest_Q13_filter_{args.model.replace(':', '_')}_{args.provider}.csv"
+        output_file = f"evaluation/selection/Q13/results/palimpzest_Q13_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
     elif args.provider == 'vllm':
-        output_file = f"evaluation/selection/Q13/results/palimpzest_Q13_filter_{args.model.replace('/', '_')}_{args.provider}.csv"
+        output_file = f"evaluation/selection/Q13/results/palimpzest_Q13_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
     
     output_df.to_csv(output_file)
-    
+
     wandb.log({
         "result_table": wandb.Table(dataframe=output_df),
         "execution_time": output.execution_stats.total_execution_time,

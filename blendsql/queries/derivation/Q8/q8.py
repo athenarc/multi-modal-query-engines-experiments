@@ -21,13 +21,13 @@ if args.wandb:
         project="SQE_experiments",
         name=run_name,
         group="Derivation",
+
 )
 
-# Load reports
-reports = pd.read_csv('datasets/rotowire/player_evidence_mine.csv').dropna(subset=['nationality']).head(args.size)
-reports.rename(columns={"Player Name": "player_name"}, inplace=True)
-players = {
-    "Players" : pd.DataFrame(reports['player_name'])
+# Load reports dataset
+reports_table = pd.read_csv('datasets/rotowire/reports_table.csv').head(args.size)
+reports = {
+    "Reports" : pd.DataFrame(reports_table)
 }
 
 if args.provider == 'ollama':
@@ -45,43 +45,119 @@ elif args.provider == 'transformers':
         caching=False,
     )
 
-
 # Prepare our BlendSQL connection
 bsql = BlendSQL(
-    db=players,
+    db=reports,
+    model=model,
+    verbose=True,
+    ingredients={LLMMap},
+)
+
+exec_times = []
+start = time.time()
+
+smoothie = bsql.execute(
+   """
+    SELECT Game_ID, Reports.Report, {{
+        LLMMAP(
+            'Return a list of strings with team names that did play in the game. Please ignore the teams who are mentioned and did not play.',
+            Reports.Report,
+            return_type='List[str]'
+        )
+    }}
+    FROM Reports
+    """,
+    infer_gen_constraints=True,
+)
+
+exec_times.append(time.time()-start)
+
+df = smoothie.df
+df['team_name'] = df['_col_2'].str.split(",")
+df_exploded = df.explode('team_name', ignore_index=True)
+df = df_exploded.copy().drop(columns=['_col_2'])
+
+# Points
+reports = {'Reports': df.copy() }
+bsql = BlendSQL(
+    db=reports,
     model=model,
     verbose=True,
     ingredients={LLMMap},
 )
 
 start = time.time()
-
 smoothie = bsql.execute(
    """
-    SELECT Players.player_name, {{
-        LLMMAP(
-            'Return the nationality of the player.',
-            return_type='str',
-            Players.player_name,
-        )
-    }}
-    FROM Players
+    WITH joined_context AS (
+        SELECT *,
+        'Team: ' || CAST(team_name AS VARCHAR) || '\nReport: ' || Report AS context
+        FROM Reports
+    ) SELECT Game_ID, Report, team_name, {{LLMMap('How many Wins has the team?', context, return_type='int')}} AS wins
+    FROM joined_context
     """,
     infer_gen_constraints=True,
 )
+exec_times.append(time.time() - start)
 
-exec_time = time.time() - start
-print(smoothie.df)
+# Assists
+reports = { 'Reports': smoothie.df }
+bsql = BlendSQL(
+    db=reports,
+    model=model,
+    verbose=True,
+    ingredients={LLMMap},
+)
+
+start = time.time()
+smoothie = bsql.execute(
+   """
+    WITH joined_context AS (
+        SELECT *,
+        'Team: ' || CAST(team_name AS VARCHAR) || '\nReport: ' || Report AS context
+        FROM Reports
+    ) SELECT Game_ID, Report, team_name, wins, {{LLMMap('How many Losses has the team?', context, return_type='int')}} AS losses
+    FROM joined_context
+    """,
+    infer_gen_constraints=True,
+)
+exec_times.append(time.time() - start)
+
+# Total Rebounds
+reports = {'Reports': smoothie.df }
+bsql = BlendSQL(
+    db=reports,
+    model=model,
+    verbose=True,
+    ingredients={LLMMap},
+)
+
+start = time.time()
+smoothie = bsql.execute(
+   """
+    WITH joined_context AS (
+    SELECT *,
+    'Team: ' || CAST(team_name AS VARCHAR) || '\nReport: ' || Report AS context
+    FROM Reports
+    ) SELECT Game_ID, Report, team_name, wins, losses, {{LLMMap('What is the number of total points the team scored?', context, return_type='int')}} AS total_points
+    FROM joined_context
+    """,
+    infer_gen_constraints=True,
+)
+exec_times.append(time.time() - start)
 
 if args.wandb:
     smoothie.df.to_csv(f"evaluation/derivation/Q8/results/blendsql_Q8_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
-
+    print("Execution time: ", sum(exec_times))
+    
     wandb.log({
-        "result_table": wandb.Table(dataframe=smoothie.df),
-        "execution_time": exec_time
+        "result_table": wandb.Table(dataframe=smoothie.df.fillna("-1")),
+        "execution_time": sum(exec_times)
     })
 
     wandb.finish()
 else:
     print("Result:\n\n", smoothie.df)
-    print("Execution time: ", exec_time)
+    print("Execution time: ", sum(exec_times))
+
+

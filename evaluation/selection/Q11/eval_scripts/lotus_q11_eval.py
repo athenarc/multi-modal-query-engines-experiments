@@ -8,32 +8,34 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 def count_true_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['Points_gt'] == df['Points_pred']) & (df['Points_gt'] == 17.0)])
+    true_positives = df[(df['sentiment_gt'] == 'positive') & (df['sentiment_pred'] == 'positive')]
+    return len(true_positives)
 
 def count_false_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['Points_gt'] != df['Points_pred']) & (df['Points_pred'] == 17.0)])
+    false_positives = df[(df['sentiment_gt'] == 'negative') & (df['sentiment_pred'] == 'positive')]
+    return len(false_positives)
 
 def count_true_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] != 17.0)])
+    true_negatives = df[(df['_merge'] == 'left_only') & (df['sentiment_gt'] == 'negative')]
+    return len(true_negatives)
 
 def count_false_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] == 17.0)])
+    false_negatives = df[(df['_merge'] == 'left_only') & (df['sentiment_gt'] == 'positive')]
+    return len(false_negatives)
+
 
 if __name__ == "__main__":
-    player_labels = pd.read_csv("datasets/rotowire/player_labels.csv")
-    player_labels = player_labels[player_labels['Game ID'] < args.size]
-    player_labels = player_labels[['Player Name', 'Points']]
-
     if args.provider == 'ollama':
         results_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_default_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
     elif args.provider == 'vllm':
         results_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
+    imdb_dataset = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
     lotus_res_default = pd.read_csv(results_file)
-    lotus_res_default = lotus_res_default.drop(columns=["Report", "Game ID"])
-    lotus_res_default['Points'] = 17.0
 
-    df = player_labels.merge(lotus_res_default, on=["Player Name"], how="outer", suffixes=('_gt', '_pred'), indicator=True)
+    lotus_res_default["sentiment"] = "positive"
+
+    df = imdb_dataset.merge(lotus_res_default, on="review", how="outer", suffixes=('_gt', '_pred'), indicator=True)
 
     tp = count_true_positives(df)
     fp = count_false_positives(df)
@@ -49,17 +51,17 @@ if __name__ == "__main__":
     print(f"Accuracy for default implementation: {(tp + tn) / (tp + tn + fp + fn):.2f}")
 
     if args.provider == 'ollama':
-        results_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_cascades_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+        results_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_default_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
     elif args.provider == 'vllm':
         exit(0)
-        # results_file = f"evaluation/selection/Q5/results/lotus_Q11_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+        # results_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+
 
     lotus_res_opt = pd.read_csv(results_file)
 
-    lotus_res_opt = lotus_res_opt.drop(columns=["Report", "Game ID"])
-    lotus_res_opt['Points'] = 17.0
+    lotus_res_opt["sentiment"] = "positive"
 
-    df = player_labels.merge(lotus_res_opt, on=["Player Name"], how="outer", suffixes=('_gt', '_pred'), indicator=True)
+    df = imdb_dataset.merge(lotus_res_opt, on="review", how="outer", suffixes=('_gt', '_pred'), indicator=True)
 
     tp = count_true_positives(df)
     fp = count_false_positives(df)
@@ -71,4 +73,5 @@ if __name__ == "__main__":
         f"\nFalse Positives: {fp}"
         f"\nTrue Negatives: {tn}"
         f"\nFalse Negatives: {fn}")
+    
     print(f"Accuracy for optimized implementation: {(tp + tn) / (tp + tn + fp + fn):.2f}")
