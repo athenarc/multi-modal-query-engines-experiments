@@ -5,6 +5,7 @@ import os
 import wandb
 import time
 import argparse
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -42,21 +43,21 @@ new_df = df_reports.sem_extract(input_cols, output_cols)
 
 df_players = new_df[['Game ID', 'masked']].copy()
 
-df_players['player_name'] = df_players['masked'].str.split(", ")
+df_players['Player Name'] = df_players['masked'].str.split(", ")
 
-df_exploded = df_players.explode('player_name', ignore_index=True)
+df_exploded = df_players.explode('Player Name', ignore_index=True)
 
-df_players = df_exploded[['Game ID', 'player_name']].copy()
+df_players = df_exploded[['Game ID', 'Player Name']].copy()
 
 df_merged = pd.merge(df_players, new_df[['Game ID', 'Report']], on='Game ID', how='left')
 
-input_cols = ["Report", "player_name"]
+input_cols = ["Report", "Player Name"]
 output_cols = {
-    "masked_col2": "The number of Points that the {player_name} scored or -1 if not mentioned.",
-    "masked_col3": "The number of Assists that the {player_name} scored or -1 if not mentioned.",
-    "masked_col4": "The total number of rebounds that the {player_name} had or -1 if not mentioned",
-    "masked_col5": "The steals that the {player_name} had or -1 if not mentioned",
-    "masked_col6": "The blocks that the {player_name} had or -1 if not mentioned",
+    "masked_col2": "The number of Points that the {Player Name} scored or -1 if not mentioned.",
+    "masked_col3": "The number of Assists that the {Player Name} scored or -1 if not mentioned.",
+    "masked_col4": "The total number of rebounds that the {Player Name} had or -1 if not mentioned",
+    "masked_col5": "The steals that the {Player Name} had or -1 if not mentioned",
+    "masked_col6": "The blocks that the {Player Name} had or -1 if not mentioned",
     # "masked_col7": "The defensive rebounds that the {player_name} had or 0 if not mentioned",
     # "masked_col8": "The offensive rebounds that the {player_name} had or 0 if not mentioned",
     # "masked_col9": "The personal fouls that the {player_name} had or 0 if not mentioned.",
@@ -73,29 +74,38 @@ output_cols = {
 }
 new_df = df_merged.sem_extract(input_cols, output_cols, extract_quotes=False)
 
-# new_df.rename({"masked_col2": "points", "masked_col3": "assists", "masked_col4": "rebounds", "masked_col5": "steals", "masked_col6": "blocks", "masked_col7": "defensive_rebounds", "masked_col8": "offensive_rebounds", "masked_col9": "personal_fouls", "masked_col10": "turnovers", "masked_col11": "field_goals_made", "masked_col12": "field_goals_attempted", "masked_col13": "field_goal_percentage", "masked_col14": "free_throws_made", "masked_col15": "free_throws_attempted", "masked_col16": "free_throw_percentage", "masked_col17": "three_pointers_attempted", "masked_col18": "three_pointers_made", "masked_col19": "minutes_played"}, inplace=True)
-# new_df = new_df.rename(columns={"masked_col2": "points", "masked_col3": "assists", "masked_col4": "rebounds", "masked_col5": "steals", "masked_col6": "blocks", "masked_col7": "defensive_rebounds", "masked_col8": "offensive_rebounds", "masked_col9": "personal_fouls", "masked_col10": "turnovers", "masked_col11": "field_goals_made", "masked_col12": "field_goals_attempted", "masked_col13": "field_goal_percentage", "masked_col14": "free_throws_made", "masked_col15": "free_throws_attempted", "masked_col16": "free_throw_percentage", "masked_col17": "three_pointers_attempted", "masked_col18": "three_pointers_made", "masked_col19": "minutes_played"})
-# df = new_df[['Game ID', 'points', 'assists', 'rebounds', 'steals', 'blocks', 'defensive_rebounds', 'offensive_rebounds', 'personal_fouls', 'turnovers', 'field_goals_made', 'field_goals_attempted', 'field_goal_percentage', 'free_throws_made', 'free_throws_attempted', 'free_throw_percentage', 'three_pointers_attempted', 'three_pointers_made', 'minutes_played']]
-new_df.rename({"masked_col2": "points", "masked_col3": "assists", "masked_col4": "rebounds", "masked_col5": "steals", "masked_col6": "blocks"}, inplace=True)
-new_df = new_df.rename(columns={"masked_col2": "points", "masked_col3": "assists", "masked_col4": "rebounds", "masked_col5": "steals", "masked_col6": "blocks"})
-df = new_df[['Game ID', 'player_name', 'points', 'assists', 'rebounds', 'steals', 'blocks']]
+new_df = new_df.rename(columns={"masked_col2": "points", "masked_col3": "assists", "masked_col4": "Total rebounds", "masked_col5": "steals", "masked_col6": "blocks"})
+df = new_df[['Game ID', 'Player Name', 'points', 'assists', 'Total rebounds', 'steals', 'blocks']]
 exec_time = time.time() - start
 
-if args.wandb:
-    if args.provider == 'ollama':
-        output_file = f"evaluation/derivation/Q7/results/lotus_Q7_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider =='vllm':
-        output_file = f"evaluation/derivation/Q7/results/lotus_Q7_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
-        
-    df.to_csv(output_file)
+if args.provider == 'ollama':
+    output_file = f"evaluation/derivation/Q7/results/lotus_Q7_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+elif args.provider =='vllm':
+    output_file = f"evaluation/derivation/Q7/results/lotus_Q7_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+df.to_csv(output_file)
+    
+num_extraction_attributes = 5  # points, assists, total_rebounds, blocks, steals
 
+LLM_calls_for_rows = df_reports.shape[0]
+LLM_calls_for_columns = df_reports.shape[0] * num_extraction_attributes
+total_LLM_calls = LLM_calls_for_rows + LLM_calls_for_columns
+
+with open('statistics/derivation/Q7.log', 'a') as file:
+    file.write(f"System: Lotus (sem_extract)\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write("Execution Time: " + str(exec_time) + "\n\n\n")
+    file.write("LLM calls for rows: " + str(LLM_calls_for_rows) + "\n")
+    file.write("LLM calls for columns: " + str(LLM_calls_for_columns) + "\n")
+    file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
+
+
+if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
-        "execution_time": exec_time
+        "execution_time": exec_time,
+        "LLM_calls_for_rows": LLM_calls_for_rows,
+        "LLM_calls_for_columns": LLM_calls_for_columns,
+        "total_LLM_calls": total_LLM_calls
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)
-

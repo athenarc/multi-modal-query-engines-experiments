@@ -32,7 +32,6 @@ lotus.settings.configure(lm=lm)
 df_reports = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size).rename(columns={'Game_ID' : 'Game ID'})
 
 elapsed_times = []
-num_extraction_attributes = 5  # points, assists, total_rebounds, blocks, steals
 
 # Retrieve player names from the reports
 examples = {
@@ -284,18 +283,20 @@ elif args.provider =='vllm':
     output_file = f"evaluation/derivation/Q7/results/lotus_Q7_map_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 df.to_csv(output_file)
 
+num_extraction_attributes = 5  # points, assists, total_rebounds, blocks, steals
+
 LLM_calls_for_rows = df_reports.shape[0]
 LLM_calls_for_columns = df_merged.shape[0] * num_extraction_attributes
 total_LLM_calls = LLM_calls_for_rows + LLM_calls_for_columns
 
 with open('statistics/derivation/Q7.log', 'a') as file:
+    file.write(f"System: Lotus (sem_map)\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
     file.write(f"Model: {args.model}\n")
     file.write("Execution Time: " + str(exec_time) + "\n\n\n")
     file.write("LLM calls for rows: " + str(LLM_calls_for_rows) + "\n")
     file.write("LLM calls for columns: " + str(LLM_calls_for_columns) + "\n")
     file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
-    file.write("------------------------------------------------------\n\n\n")
 
 if args.wandb:
     wandb.log({

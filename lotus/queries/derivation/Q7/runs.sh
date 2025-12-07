@@ -3,7 +3,8 @@ sizes=(10 20 50)
 # models_ollama=("gemma3:12b" "llama3.3:70b")
 # models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 models_dev=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
-sizes_dev=(200)
+# models_dev=("gemma3:12b")
+sizes_dev=(10)
 
 dev="${1:-}"
 
@@ -26,8 +27,17 @@ if [ "$dev" != "dev" ]; then
 else
     for size in "${sizes_dev[@]}"; do
         for model in "${models_dev[@]}"; do
-            echo "Running Q7 with -s $size and m $model"
-            python lotus/queries/derivation/Q7/map.py --wandb -s $size -m $model -p vllm
+            echo "Running Lotus-map, Q7 with -s $size and m $model"
+            python lotus/queries/derivation/Q7/map.py  -s $size -m $model -p ollama
+            echo "Evaluating Lotus-map, Q7 with -s $size and m $model executed from Lotus"
+            python evaluation/derivation/Q7/eval_scripts/lotus_q7_eval.py -s $size -m $model -p ollama
+
+            echo "Running Lotus-extract, Q7 with -s $size and m $model"
+            python lotus/queries/derivation/Q7/extract.py  -s $size -m $model -p vllm
+            echo "Evaluating Lotus-extract, Q7 with -s $size and m $model executed from Lotus"
+            python evaluation/derivation/Q7/eval_scripts/lotus_q7_eval.py -e -s $size -m $model -p vllm
+
+            
         done
     done
 fi

@@ -14,7 +14,6 @@ df = pd.merge(df_player_names, df_reports, on='Game ID')
 
 operator = "extract" if args.extract else "map"
 
-# -------- Map --------
 if args.provider == 'ollama':
     results_file = f"evaluation/derivation/Q1/results/lotus_Q1_{operator}_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider == 'vllm':
