@@ -226,7 +226,7 @@ class QueryManager:
                             item.unlink()
                     Path(dirpath / "results").rmdir()
 
-                print(f"Removing directory: {dirpath}")
+                print(f"Removing evaluation directory: {dirpath}")
                 dirpath.rmdir()
             if current_idx > idx:
                 self.update_eval_content(dirpath, current_idx, current_idx - 1)
@@ -240,7 +240,7 @@ class QueryManager:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Manage System query indices by inserting and shifting Q directories.")
 
-    parser.add_argument("--target_class", required=True, type=str, help="Class subfolder (e.g., aggregation, derivation)")
+    parser.add_argument("--target_class", type=str, help="Class subfolder (e.g., aggregation, derivation)")
     parser.add_argument("--index", required=True, type=int, help="Index of the query to add (e.g., 2)")
     parser.add_argument("--remove", action="store_true", help="If set, remove the query at the specified index instead of adding.")
 

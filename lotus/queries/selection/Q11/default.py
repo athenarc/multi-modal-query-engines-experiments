@@ -28,13 +28,13 @@ elif args.provider == 'vllm':
     lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
 lotus.settings.configure(lm=lm)
-df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
-df_reviews = pd.DataFrame(df_reviews['review'])
+df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
+df_players = pd.DataFrame(df_players['Player Name']).rename(columns={'Player Name' : 'player_name'})
 
-user_instruction = "{review} is positive"
+user_instruction = "{player_name} is from America."
 
 start = time.time()
-df = df_reviews.sem_filter(user_instruction)
+df = df_players.sem_filter(user_instruction)
 exec_time = time.time() - start
 
 if args.wandb:

@@ -25,12 +25,14 @@ if args.wandb:
         group="Selection",
     )
 
-dataset = pz.TextFileDataset(id='imdb_reviews', path=f"datasets/imdb_reviews/{args.size}/")
-dataset = dataset.sem_filter("The review is positive")
+reports = pz.TextFileDataset(id="player_names", path=f"datasets/rotowire/player_names/{args.size}/")
+reports = reports.sem_filter("The player is from America.")
 
-config = pz.QueryProcessorConfig(available_models=[model])
-output = dataset.run(config)
+config = pz.QueryProcessorConfig(
+    available_models=[model],
+)
 
+output = reports.run(config=config)
 output_df = output.to_df()
 
 if args.wandb:
@@ -40,7 +42,7 @@ if args.wandb:
         output_file = f"evaluation/selection/Q11/results/palimpzest_Q11_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
     
     output_df.to_csv(output_file)
-    
+
     wandb.log({
         "result_table": wandb.Table(dataframe=output_df),
         "execution_time": output.execution_stats.total_execution_time,
@@ -50,6 +52,4 @@ if args.wandb:
     wandb.finish()
 else:
     print("Result:\n\n", output_df)
-    print("Execution time: ", output.execution_stats.total_execution_time)
-
-
+    print("Execution time: ", output.executions_stats.total_execution_time)
