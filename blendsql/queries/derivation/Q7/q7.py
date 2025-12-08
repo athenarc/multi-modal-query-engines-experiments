@@ -591,6 +591,7 @@ with open('statistics/derivation/Q7.log', 'a') as file:
     file.write(f"System: BlendSQL\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
     file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
     file.write("Execution Time: " + str(sum(exec_times)) + "\n")
     # file.write("LLM calls for rows: " + str(LLM_calls_for_rows) + "\n")
     # file.write("LLM calls for columns: " + str(LLM_calls_for_columns) + "\n")

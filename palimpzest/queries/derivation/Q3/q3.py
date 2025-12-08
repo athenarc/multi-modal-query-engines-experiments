@@ -31,8 +31,6 @@ missing_game_ids = [8, 39, 68, 82, 122, 123, 150, 155, 192, 199, 211, 214, 255, 
 df = df_reports[~df_reports['Game ID'].isin(missing_game_ids)]  # Remove Game IDs that are not present in the team labels file
 df = df.head(args.size)
 
-
-
 reports = pz.MemoryDataset(id="rotowire_reports_players", vals=df)
 reports = reports.sem_add_columns(
     cols=[

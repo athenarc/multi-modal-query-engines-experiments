@@ -58,19 +58,19 @@ output_cols = {
     "masked_col4": "The total number of rebounds that the {Player Name} had or -1 if not mentioned",
     "masked_col5": "The steals that the {Player Name} had or -1 if not mentioned",
     "masked_col6": "The blocks that the {Player Name} had or -1 if not mentioned",
-    # "masked_col7": "The defensive rebounds that the {player_name} had or 0 if not mentioned",
-    # "masked_col8": "The offensive rebounds that the {player_name} had or 0 if not mentioned",
-    # "masked_col9": "The personal fouls that the {player_name} had or 0 if not mentioned.",
-    # "masked_col10": "The turnovers that the {player_name} had or 0 if not mentioned.",
-    # "masked_col11": "The field goals made by {player_name} or 0 if not mentioned",
-    # "masked_col12": "The field goals attempted by {player_name} or 0 if not mentioned",
-    # "masked_col13": "The field goal percentage of {player_name} or 0 if not mentioned",
-    # "masked_col14": "The free throws made by {player_name} or 0 if not mentioned",
-    # "masked_col15": "The free throws attempted by {player_name} or 0 if not mentioned",
-    # "masked_col16": "The free throw percentage of {player_name} or 0 if not mentioned",
-    # "masked_col17": "The three pointers attempted by {player_name} or 0 if not mentioned",
-    # "masked_col18": "The three pointers made by {player_name} or 0 if not mentioned",
-    # "masked_col19": "The minutes played that the {player_name} had or 0 if not mentioned."
+    # "masked_col7": "The defensive rebounds that the {Player Name} had or 0 if not mentioned",
+    # "masked_col8": "The offensive rebounds that the {Player Name} had or 0 if not mentioned",
+    # "masked_col9": "The personal fouls that the {Player Name} had or 0 if not mentioned.",
+    # "masked_col10": "The turnovers that the {Player Name} had or 0 if not mentioned.",
+    # "masked_col11": "The field goals made by {Player Name} or 0 if not mentioned",
+    # "masked_col12": "The field goals attempted by {Player Name} or 0 if not mentioned",
+    # "masked_col13": "The field goal percentage of {Player Name} or 0 if not mentioned",
+    # "masked_col14": "The free throws made by {Player Name} or 0 if not mentioned",
+    # "masked_col15": "The free throws attempted by {Player Name} or 0 if not mentioned",
+    # "masked_col16": "The free throw percentage of {Player Name} or 0 if not mentioned",
+    # "masked_col17": "The three pointers attempted by {Player Name} or 0 if not mentioned",
+    # "masked_col18": "The three pointers made by {Player Name} or 0 if not mentioned",
+    # "masked_col19": "The minutes played that the {Player Name} had or 0 if not mentioned."
 }
 new_df = df_merged.sem_extract(input_cols, output_cols, extract_quotes=False)
 
@@ -94,7 +94,8 @@ with open('statistics/derivation/Q7.log', 'a') as file:
     file.write(f"System: Lotus (sem_extract)\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
     file.write(f"Model: {args.model}\n")
-    file.write("Execution Time: " + str(exec_time) + "\n\n\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write("Execution Time: " + str(exec_time) + "\n\n")
     file.write("LLM calls for rows: " + str(LLM_calls_for_rows) + "\n")
     file.write("LLM calls for columns: " + str(LLM_calls_for_columns) + "\n")
     file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")

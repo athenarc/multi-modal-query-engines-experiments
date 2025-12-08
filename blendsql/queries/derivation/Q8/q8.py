@@ -2,6 +2,7 @@ import pandas as pd
 import time
 import wandb
 import argparse
+from datetime import datetime
 
 from blendsql import BlendSQL
 from blendsql.models import TransformersLLM, LiteLLM
@@ -25,9 +26,12 @@ if args.wandb:
 )
 
 # Load reports dataset
-reports_table = pd.read_csv('datasets/rotowire/reports_table.csv').head(args.size)
+reports_table = pd.read_csv('datasets/rotowire/reports_table.csv')
+missing_game_ids = [8, 39, 68, 82, 122, 123, 150, 155, 192, 199, 211, 214, 255, 267, 274, 290, 294, 313, 330, 343, 345, 363, 379, 391, 398, 423, 439, 472, 499, 500, 534, 558, 562, 565, 568, 570, 644, 645, 668, 681, 721]
+df_reports = reports_table[~reports_table['Game_ID'].isin(missing_game_ids)].head(args.size)  # Remove Game IDs that are not present in the team labels file
+
 reports = {
-    "Reports" : pd.DataFrame(reports_table)
+    "Reports" : pd.DataFrame(df_reports)
 }
 
 if args.provider == 'ollama':
@@ -146,18 +150,22 @@ smoothie = bsql.execute(
 )
 exec_times.append(time.time() - start)
 
-if args.wandb:
-    smoothie.df.to_csv(f"evaluation/derivation/Q8/results/blendsql_Q8_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
-    print("Execution time: ", sum(exec_times))
-    
-    wandb.log({
-        "result_table": wandb.Table(dataframe=smoothie.df.fillna("-1")),
-        "execution_time": sum(exec_times)
-    })
+smoothie.df.to_csv(f"evaluation/derivation/Q8/results/blendsql_Q8_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
 
+with open('statistics/derivation/Q8.log', 'a') as file:
+    file.write(f"System: BlendSQL\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write("Execution Time: " + str(sum(exec_times)) + "\n")
+    # file.write("Processed Rows: " + str(processed_rows) + "\n")
+
+if args.wandb:    
+    wandb.log({
+        "result_table": wandb.Table(dataframe=smoothie.df.fillna(-1)),
+        "execution_time": sum(exec_times),
+        # "processed_rows": processed_rows
+    })
     wandb.finish()
-else:
-    print("Result:\n\n", smoothie.df)
-    print("Execution time: ", sum(exec_times))
 
 

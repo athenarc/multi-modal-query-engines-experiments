@@ -44,26 +44,28 @@ if __name__ == '__main__':
         xcol, ycol = f"{col}_x", f"{col}_y"
         df[f"{col}_match"] = (df[xcol].fillna(-1) == df[ycol].fillna(-1))
 
-    for col in cols:
-        acc = df[f"{col}_match"].mean()
-        print(f"{col} accuracy: {acc:.2%}")
+    with open('statistics/derivation/Q8.log', 'a') as file:
+        for col in cols:
+            acc = df[f"{col}_match"].mean()
+            file.write(f"{col} accuracy: {acc:.2%}" + "\n")
 
-    total_accuracy = df[[f"{col}_match" for col in cols]].stack().mean()
-    print(f"Total accuracy: {total_accuracy:.2%}")
+        total_accuracy = df[[f"{col}_match" for col in cols]].stack().mean()
+        file.write(f"Total accuracy: {total_accuracy:.2%}" + "\n\n")
 
-    df_gtrue = df_labels[['Game ID', 'Team Name']]
-    df_pred = df[['Game ID', 'matched_team']].rename(columns={'matched_team': 'Team Name'})
+        df_gtrue = df_labels[['Game ID', 'Team Name']]
+        df_pred = df[['Game ID', 'matched_team']].rename(columns={'matched_team': 'Team Name'})
 
-    merged = df_gtrue.merge(df_pred, on=['Game ID', 'Team Name'], how='outer', indicator=True)
+        merged = df_gtrue.merge(df_pred, on=['Game ID', 'Team Name'], how='outer', indicator=True)
 
-    TP = len(merged[merged['_merge'] == 'both'])
-    FP = len(merged[merged['_merge'] == 'right_only'])
-    FN = len(merged[merged['_merge'] == 'left_only'])
+        TP = len(merged[merged['_merge'] == 'both'])
+        FP = len(merged[merged['_merge'] == 'right_only'])
+        FN = len(merged[merged['_merge'] == 'left_only'])
 
-    precision = TP / (TP + FP) if (TP + FP) > 0 else 0
-    recall = TP / (TP + FN) if (TP + FN) > 0 else 0
-    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+        precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+        recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
 
-    print(f"Precision: {precision:.2f}")
-    print(f"Recall: {recall:.2f}")
-    print(f"\nF1-score: {f1:.2f}\n")
+        file.write(f"Precision: {precision:.2f}" + "\n")
+        file.write(f"Recall: {recall:.2f}" + "\n")
+        file.write(f"\nF1-score: {f1:.10f}" + "\n")
+        file.write("------------------------------------------------------\n\n\n")

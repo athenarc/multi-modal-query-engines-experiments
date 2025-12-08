@@ -8,5 +8,5 @@ sizes = [8, 10, 14, 20, 30, 50, 100, 200]
 for size in sizes:
     for i, line in enumerate(lines[:size]):
         if line:  # Only save non-empty lines
-            with open(f"datasets/rotowire/reports/{size}/report_{i}.txt", 'w', encoding='utf-8') as output_file:
+            with open(f"datasets/rotowire/reports/for_player_queries/{size}/report_{i}.txt", 'w', encoding='utf-8') as output_file:
                 output_file.write(line)

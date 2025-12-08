@@ -21,7 +21,6 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 parser.add_argument("-e", "--extract", action='store_true', help="Evaluate extract instead of map")
 args = parser.parse_args()
 
-  
 df_labels = pd.read_csv('datasets/rotowire/player_labels.csv')
 df_labels = df_labels[df_labels['Game ID'] < args.size]
 

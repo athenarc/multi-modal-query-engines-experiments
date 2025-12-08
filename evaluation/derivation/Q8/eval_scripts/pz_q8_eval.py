@@ -13,14 +13,13 @@ df_labels = pd.read_csv('datasets/rotowire/team_labels.csv')
 df_labels = df_labels[df_labels['Game ID'] < args.size]
 
 if args.provider == 'ollama':
-    results_file = f"evaluation/derivation/Q8/results/palimpzest_Q8_derivation_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q8/results/palimpzest_Q8_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider == 'vllm':
-    results_file = f"evaluation/derivation/Q8/results/palimpzest_Q8_derivation_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q8/results/palimpzest_Q8_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
 pz_labels = pd.read_csv(results_file)
 pz_labels['Game ID'] = pz_labels['filename'].str.extract(r'report_(\d+)\.txt').astype(int)
 pz_labels.sort_values(['Game ID'], inplace=True)
-# pz_labels['Game ID'] = pz_labels['Game ID'] - 1
 
 def match_name(name, choices, scorer=fuzz.ratio, threshold=40):
     if not choices:
@@ -31,7 +30,7 @@ def match_name(name, choices, scorer=fuzz.ratio, threshold=40):
 def match_group(group):
     game_id = group.name
     choices = df_labels.loc[df_labels['Game ID'] == game_id, 'Team Name'].tolist()
-    group['matched_team'] = group['team_name'].apply(lambda x: match_name(x, choices))
+    group['matched_team'] = group['Team Name'].apply(lambda x: match_name(x, choices))
     return group
 
 pz_labels = pz_labels.groupby('Game ID', group_keys=False).apply(match_group)
@@ -46,26 +45,28 @@ for col in cols:
     xcol, ycol = f"{col}_x", f"{col}_y"
     df[f"{col}_match"] = (df[xcol].fillna(-1) == df[ycol].fillna(-1))
 
-for col in cols:
-    acc = df[f"{col}_match"].mean()
-    print(f"{col} accuracy: {acc:.2%}")
+with open('statistics/derivation/Q8.log', 'a') as file:
+    for col in cols:
+        acc = df[f"{col}_match"].mean()
+        file.write(f"{col} accuracy: {acc:.2%}" + "\n")
 
-total_accuracy = df[[f"{col}_match" for col in cols]].stack().mean()
-print(f"Total accuracy: {total_accuracy:.2%}")
+    total_accuracy = df[[f"{col}_match" for col in cols]].stack().mean()
+    file.write(f"Total accuracy: {total_accuracy:.2%}" + "\n\n")
 
-df_gtrue = df_labels[['Game ID', 'Team Name']]
-df_pred = df[['Game ID', 'matched_team']].rename(columns={'matched_team': 'Team Name'})
+    df_gtrue = df_labels[['Game ID', 'Team Name']]
+    df_pred = df[['Game ID', 'matched_team']].rename(columns={'matched_team': 'Team Name'})
 
-merged = df_gtrue.merge(df_pred, on=['Game ID', 'Team Name'], how='outer', indicator=True)
+    merged = df_gtrue.merge(df_pred, on=['Game ID', 'Team Name'], how='outer', indicator=True)
 
-TP = len(merged[merged['_merge'] == 'both'])
-FP = len(merged[merged['_merge'] == 'right_only'])
-FN = len(merged[merged['_merge'] == 'left_only'])
+    TP = len(merged[merged['_merge'] == 'both'])
+    FP = len(merged[merged['_merge'] == 'right_only'])
+    FN = len(merged[merged['_merge'] == 'left_only'])
 
-precision = TP / (TP + FP) if (TP + FP) > 0 else 0
-recall = TP / (TP + FN) if (TP + FN) > 0 else 0
-f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+    precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+    recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
 
-print(f"Precision: {precision:.2f}")
-print(f"Recall: {recall:.2f}")
-print(f"\nF1-score: {f1:.2f}\n")
+    file.write(f"Precision: {precision:.2f}" + "\n")
+    file.write(f"Recall: {recall:.2f}" + "\n")
+    file.write(f"\nF1-score: {f1:.10f}" + "\n")
+    file.write("------------------------------------------------------\n\n\n")

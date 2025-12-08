@@ -30,7 +30,7 @@ def explode_player_list(record: dict):
     return records
 
 if args.wandb:
-    run_name=f"palimpzest_Q7__{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name=f"palimpzest_Q7_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
@@ -38,7 +38,7 @@ if args.wandb:
         group="Derivation",
 )
 
-reports = pz.TextFileDataset(id="rotowire_reports", path=f"datasets/rotowire/reports/{args.size}/")
+reports = pz.TextFileDataset(id="rotowire_reports", path=f"datasets/rotowire/reports/for_player_queries/{args.size}/")
 reports = reports.sem_add_columns([
     {"name": "player_name_list", "type": list[str], "desc": "Names of players who played the game, excluding those who are mentioned but did not play."},
 ])
@@ -105,6 +105,3 @@ if args.wandb:
     })
 
     wandb.finish()
-else:
-    print("Result:\n\n", output_df)
-    print("Execution time: ", output.execution_stats.total_execution_time)
