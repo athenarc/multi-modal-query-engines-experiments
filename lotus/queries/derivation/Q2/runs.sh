@@ -5,7 +5,7 @@ models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 # models_dev=("gemma3:12b")
 models_dev=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
 # models_dev=("Qwen/Qwen3-8B")
-sizes_dev=(500)
+sizes_dev=(50 100 200 300 500)
 
 dev="${1:-}"
 
@@ -29,9 +29,9 @@ else
     for size in "${sizes_dev[@]}"; do
         for model in "${models_dev[@]}"; do
             echo "Running Lotus-map, Q2 with -s $size and m $model"
-            python lotus/queries/derivation/Q2/q2.py  -s $size -m $model -p vllm
+            python lotus/queries/derivation/Q2/q2.py --wandb -s $size -m $model -p vllm
             echo "Evaluating Lotus-map, Q2 with -s $size and m $model executed from Lotus"
-            python evaluation/derivation/Q2/eval_scripts/lotus_q2_eval.py  -s $size -m $model -p vllm
+            python evaluation/derivation/Q2/eval_scripts/lotus_q2_eval.py -s $size -m $model -p vllm
         done
     done
 fi

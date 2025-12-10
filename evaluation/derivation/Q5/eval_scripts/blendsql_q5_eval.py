@@ -21,10 +21,18 @@ df_blendsql = pd.read_csv(results_file, index_col=0)
 df = player_evi.merge(df_blendsql, left_on='Player Name', right_on='Player Name', how='outer')
 
 df["match_birthdate"] = df.apply(
-    lambda row: (row["birth_date_y"] in row["birth_date_x"]) or 
-                (row["birth_date_x"] in row["birth_date_y"]),
+    lambda row: (
+        isinstance(row["birth_date_x"], str)
+        and isinstance(row["birth_date_y"], str)
+        and len(row["birth_date_y"]) <= 30
+        and (
+            (row["birth_date_y"] in row["birth_date_x"])
+            or (row["birth_date_x"] in row["birth_date_y"])
+        )
+    ),
     axis=1
 )
+
 acc_birthdate = df["match_birthdate"].mean()
 
 df["match_nationality"] = df.apply(

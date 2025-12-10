@@ -4,9 +4,9 @@
 sizes=(10 20 50)
 models_ollama=("gemma3:12b" "llama3.3:70b")
 models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
-# models_dev=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
-models_dev=("Qwen/Qwen3-8B")
-sizes_dev=(10)
+models_dev=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
+# models_dev=("Qwen/Qwen3-8B")
+sizes_dev=(50 100 200 300 500)
 
 dev="${1:-}"
 

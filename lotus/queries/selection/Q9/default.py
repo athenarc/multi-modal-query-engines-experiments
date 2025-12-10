@@ -5,6 +5,7 @@ from lotus.types import CascadeArgs
 import time
 import wandb
 import argparse
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -37,20 +38,21 @@ start = time.time()
 df = df_reviews.sem_filter(user_instruction)
 exec_time = time.time() - start
 
-if args.wandb:
-    if args.provider == 'ollama':
-        output_file = f"evaluation/selection/Q9/results/lotus_Q9_filter_default_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider =='vllm':
-        output_file = f"evaluation/selection/Q9/results/lotus_Q9_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
-        
-    df.to_csv(output_file)
+output_file = f"evaluation/selection/Q9/results/lotus_Q9_filter_default_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
+df.to_csv(output_file)
 
+with open('statistics/selection/Q9.log', 'a') as file:
+    file.write(f"System: Lotus (sem_filter -- default)\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write("Total LLM calls: " + str(args.size) + "\n")
+
+if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
-        "execution_time": exec_time
+        "execution_time": exec_time,
+        "total_LLM_calls": args.size
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)

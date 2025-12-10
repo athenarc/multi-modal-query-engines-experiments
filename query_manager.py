@@ -228,7 +228,8 @@ class QueryManager:
 
                 print(f"Removing evaluation directory: {dirpath}")
                 dirpath.rmdir()
-            if current_idx > idx:
+        
+            elif current_idx > idx:
                 self.update_eval_content(dirpath, current_idx, current_idx - 1)
 
                 new_dir = dirpath.with_name(f"Q{current_idx - 1}")

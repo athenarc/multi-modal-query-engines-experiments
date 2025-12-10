@@ -1,5 +1,6 @@
 import pandas as pd
 import argparse
+import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -20,12 +21,11 @@ winners = team_labels.loc[team_labels.groupby("Game ID")["Total points"].idxmax(
 
 df_pz = pd.read_csv(results_file, index_col=0)[['Game ID', 'points']].fillna(-1)
 df = df_pz.merge(winners, on='Game ID', how='outer', suffixes=('_pred', '_gt'))
-print(df)
 
 df["match"] = df.apply(
     lambda row: (
-        row["points_pred"] == row["points_gt"]
-    ),
+        pd.to_numeric(row["points_pred"], errors='coerce') == pd.to_numeric(row["points_gt"], errors='coerce')
+    ) if (pd.to_numeric(row["points_pred"], errors='coerce') is not np.nan and pd.to_numeric(row["points_gt"], errors='coerce') is not np.nan) else False,
     axis=1
 )
 

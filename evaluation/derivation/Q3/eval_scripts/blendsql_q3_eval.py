@@ -1,5 +1,6 @@
 import pandas as pd
 import argparse
+import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -23,8 +24,8 @@ df = df_blendsql.merge(winners, on='Game ID', how='outer')
 
 df["match"] = df.apply(
     lambda row: (
-        row["points_x"] == row["points_y"]
-    ),
+        pd.to_numeric(row["points_x"], errors='coerce') == pd.to_numeric(row["points_y"], errors='coerce')
+    ) if (pd.to_numeric(row["points_x"], errors='coerce') is not np.nan and pd.to_numeric(row["points_y"], errors='coerce') is not np.nan) else False,
     axis=1
 )
 

@@ -73,7 +73,7 @@ smoothie = bsql.execute(
 
 exec_time = time.time() - start
 
-smoothie.df.to_csv(f"evaluation/derivation/Q2/results/blendsql_Q2_map_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
+smoothie.df.to_csv(f"evaluation/derivation/Q2/results/blendsql_Q2_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
 
 with open('statistics/derivation/Q2.log', 'a') as file:
     file.write(f"System: BlendSQL\n")
