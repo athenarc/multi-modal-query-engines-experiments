@@ -1,11 +1,15 @@
 import pandas as pd
 import numpy as np
 
-df_enron_emails = pd.read_csv("datasets/enron_emails/enron_spam_data.csv")
+df_enron_emails = pd.read_csv("datasets/enron_emails/enron_spam_data.csv").dropna(subset=['Message'])
+df_enron_emails = df_enron_emails[df_enron_emails['Message'].str.len() < 10000]
 
-indicies = df_enron_emails.index.to_list()
-np.random.shuffle(indicies)
+indices = df_enron_emails.index.to_list()
+np.random.shuffle(indices)
+df_shuffled = df_enron_emails.loc[indices].reset_index(drop=True)
 
-shuffled_1000 = df_enron_emails.loc[indicies].reset_index(drop=True).head(30000)
+sizes = [500, 1000, 2000, 4000]
 
-shuffled_1000.to_csv("datasets/enron_emails/enron_emails_shuffled_30000.csv")
+for size in sizes:
+    out_df = df_shuffled.head(size)
+    out_df.to_csv(f"datasets/enron_emails/enron_emails_shuffled_{size}.csv", index=False)

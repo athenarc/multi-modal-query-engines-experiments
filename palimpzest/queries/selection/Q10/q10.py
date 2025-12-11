@@ -4,6 +4,7 @@ import pandas as pd
 from dotenv import load_dotenv
 import wandb
 import argparse
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -17,7 +18,7 @@ model = getattr(Model, f"{args.provider.upper()}_{args.model.replace(':', '_').r
 load_dotenv()
 
 if args.wandb:
-    run_name=f"palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name=f"palimpzest_Q10_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
@@ -25,31 +26,29 @@ if args.wandb:
         group="Selection",
     )
 
-reports = pz.TextFileDataset(id="player_names", path=f"datasets/rotowire/player_names/{args.size}/")
-reports = reports.sem_filter("The player is from America.")
+dataset = pz.TextFileDataset(id='enron_emails', path=f"datasets/enron_emails/enron_emails_shuffled_{args.size}/")
+dataset = dataset.sem_filter("The email is spam")
 
-config = pz.QueryProcessorConfig(
-    available_models=[model],
-)
+config = pz.QueryProcessorConfig(available_models=[model])
+output = dataset.run(config)
 
-output = reports.run(config=config)
 output_df = output.to_df()
 
-if args.wandb:
-    if args.provider == 'ollama':
-        output_file = f"evaluation/selection/Q10/results/palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider == 'vllm':
-        output_file = f"evaluation/selection/Q10/results/palimpzest_Q10_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
-    
-    output_df.to_csv(output_file)
+output_file = f"evaluation/selection/Q10/results/palimpzest_Q10_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
+output_df.to_csv(output_file)
 
+with open('statistics/selection/Q10.log', 'a') as file:
+    file.write(f"System: Palimpzest\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {output.execution_stats.total_execution_time:.2f}\n")
+    # file.write(f"Total tokens: {output.execution_stats.total_tokens}")
+
+if args.wandb:    
     wandb.log({
         "result_table": wandb.Table(dataframe=output_df),
         "execution_time": output.execution_stats.total_execution_time,
-        "total_tokens": output.execution_stats.total_tokens
+        # "total_tokens": output.execution_stats.total_tokens
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", output_df)
-    print("Execution time: ", output.executions_stats.total_execution_time)

@@ -8,40 +8,43 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 def count_true_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['nationality_gt'] == df['nationality_pred']) & (df['nationality_gt'] == "American")])
+    true_positives = df[(df['Spam/Ham_gt'] == 'spam') & (df['sentiment_pred'] == 'spam')]
+    return len(true_positives)
 
 def count_false_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['nationality_gt'] != df['nationality_pred']) & (df['nationality_pred'] == "American")])
+    false_positives = df[(df['Spam/Ham_gt'] == 'ham') & (df['sentiment_pred'] == 'spam')]
+    return len(false_positives)
 
 def count_true_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['nationality_gt'] != "American")])
+    true_negatives = df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'ham')]
+    return len(true_negatives)
 
 def count_false_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['nationality_gt'] == "American")])
+    false_negatives = df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'spam')]
+    return len(false_negatives)
+
 
 if __name__ == "__main__":
-    if args.provider == 'ollama':
-        results_file = f"evaluation/selection/Q10/results/palimpzest_Q10_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider == 'vllm':
-        results_file = f"evaluation/selection/Q10/results/palimpzest_Q10_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
-    df_player_labels = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-    df_player_labels = df_player_labels[['Player Name', 'nationality']]
+    results_file = f"evaluation/selection/Q10/results/palimpzest_Q10_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
 
-    pz_res = pd.read_csv(results_file)
-    pz_res = pz_res.drop(columns=['filename']).rename(columns={'contents' : 'Player Name'})
-    pz_res['nationality'] = 'American'
+    enron_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Message ID', 'Message', 'Spam/Ham']]
+    pz_results = pd.read_csv(results_file)
 
-    df = df_player_labels.merge(pz_res, on='Player Name', how='outer', suffixes=('_gt', '_pred'), indicator=True)
+    pz_results["Spam/Ham"] = "spam"
+    pz_results = pz_results.drop(columns=["filename"]).rename(columns={"contents": "Message"})
+
+    df = enron_emails.merge(pz_results, on="Message", how="outer", suffixes=('_gt', '_pred'), indicator=True)
 
     tp = count_true_positives(df)
     fp = count_false_positives(df)
     tn = count_true_negatives(df)
     fn = count_false_negatives(df)
 
-    print(f"True Positives: {tp}"
-        f"\nFalse Positives: {fp}"
-        f"\nTrue Negatives: {tn}"
-        f"\nFalse Negatives: {fn}")
-
-    print(f"Accuracy: {(tp + tn) / (tp + tn + fp + fn):.2f}")
+    with open('statistics/selection/Q10.log', 'a') as file:
+        file.write(f"True Positives: {tp}\n")
+        file.write(f"False Positives: {fp}\n")
+        file.write(f"True Negatives: {tn}\n")
+        file.write(f"False Negatives: {fn}\n")
+        file.write(f"Accuracy: {(tp+tn) / (tp+tn+fp+fn):.2f}\n")
+        file.write("------------------------------------------------------\n\n\n")

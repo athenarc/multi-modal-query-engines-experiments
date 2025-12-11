@@ -5,7 +5,7 @@ models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 # models_dev=("gemma3:12b")
 models_dev=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
 # models_dev=("Qwen/Qwen3-8B")
-sizes_dev=(50 100 200 300 500)
+sizes_dev=(100)
 
 dev="${1:-}"
 

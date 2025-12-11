@@ -25,10 +25,8 @@ def count_false_negatives(df):
 
 
 if __name__ == "__main__":
-    if args.provider == 'ollama':
-        results_file = f"evaluation/selection/Q9/results/palimpzest_Q9_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider == 'vllm':
-        results_file = f"evaluation/selection/Q9/results/palimpzest_Q9_filter_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+
+    results_file = f"evaluation/selection/Q9/results/palimpzest_Q9_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
 
     imdb_dataset = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
     pz_results = pd.read_csv(results_file)
@@ -43,9 +41,10 @@ if __name__ == "__main__":
     tn = count_true_negatives(df)
     fn = count_false_negatives(df)
 
-    print(f"True Positives: {tp}"
-        f"\nFalse Positives: {fp}"
-        f"\nTrue Negatives: {tn}"
-        f"\nFalse Negatives: {fn}")
-
-    print(f"Accuracy: {(tp + tn) / (tp + tn + fp + fn):.2f}")
+    with open('statistics/selection/Q9.log', 'a') as file:
+        file.write(f"True Positives: {tp}\n")
+        file.write(f"False Positives: {fp}\n")
+        file.write(f"True Negatives: {tn}\n")
+        file.write(f"False Negatives: {fn}\n")
+        file.write(f"Accuracy: {(tp+tn) / (tp+tn+fp+fn):.2f}\n")
+        file.write("------------------------------------------------------\n\n\n")

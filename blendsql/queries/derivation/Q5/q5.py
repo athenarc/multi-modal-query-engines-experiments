@@ -61,7 +61,7 @@ smoothie = bsql.execute(
    """
     SELECT Players.player_name, {{
         LLMMAP(
-            'What is the birthdate of the player? Please return a string containing **only** the birth date in format DD.MM.YYY (no think/reasoning).',
+            'What is the birthdate of the player? Please return a string containing **only** the birth date in format DD.MM.YYYY (no think/reasoning).',
             return_type='str',
             Players.player_name,
         ) 
