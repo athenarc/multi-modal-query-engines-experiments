@@ -5,6 +5,7 @@ from lotus.types import CascadeArgs
 import time
 import wandb
 import argparse
+from datateime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -29,28 +30,29 @@ elif args.provider == 'vllm':
 
 lotus.settings.configure(lm=lm)
 df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-df_players = pd.DataFrame(df_players['Player Name']).rename(columns={'Player Name' : 'player_name'})
+df_players = pd.DataFrame(df_players['Player Name'])
 
-user_instruction = "{player_name} is from America."
+user_instruction = "{Player Name} is from America."
 
 start = time.time()
 df = df_players.sem_filter(user_instruction)
 exec_time = time.time() - start
 
-if args.wandb:
-    if args.provider == 'ollama':
-        output_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_default_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider =='vllm':
-        output_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_default_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
-        
-    df.to_csv(output_file)
+output_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_default_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
+df.to_csv(output_file)
 
+with open('statistics/selection/Q11.log', 'a') as file:
+    file.write(f"System: Lotus (sem_filter -- default)\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write("Total LLM calls: " + str(args.size) + "\n")
+
+if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
-        "execution_time": exec_time
+        "execution_time": exec_time,
+        "total_LLM_calls": args.size
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)

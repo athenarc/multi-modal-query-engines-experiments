@@ -32,9 +32,9 @@ helper_lm = LM(model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", api_base="h
 
 lotus.settings.configure(lm=lm, helper_lm=helper_lm)
 df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-df_players = pd.DataFrame(df_players['Player Name']).rename(columns={'Player Name' : 'player_name'})
+df_players = pd.DataFrame(df_players['Player Name'])
 
-user_instruction = "{player_name} is from America."
+user_instruction = "{Player Name} is from America."
 
 cascade_args = CascadeArgs(recall_target=0.9, precision_target=0.9, sampling_percentage=0.2, failure_probability=0.1)
 

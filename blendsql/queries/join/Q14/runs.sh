@@ -1,16 +1,16 @@
 #!/bin/bash
-sizes=(20 50 100)
-model_ollama=("llama3.1:8b" "gemma3:12b")
+sizes=(5 10 20)
+models_ollama=("gemma3-32k:latest")
 models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 
 for size in "${sizes[@]}"; do
   for model in "${models_ollama[@]}"; do
     echo "Running with -s $size and -m $model"
-    python blendsql/queries/join/Q12/q12.py  --wandb -s $size -m $model -p ollama
+    python blendsql/queries/join/Q14/q14.py  --wandb -s $size -m $model -p ollama
   done
 
   for model in "${models_vllm[@]}"; do
     echo "Running with -s $size and -m $model"
-    python blendsql/queries/join/Q12/q12.py  --wandb -s $size -m $model -p vllm
+    python blendsql/queries/join/Q14/q14.py  --wandb -s $size -m $model -p vllm
   done
 done

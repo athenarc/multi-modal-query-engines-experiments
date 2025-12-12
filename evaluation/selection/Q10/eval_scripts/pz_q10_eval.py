@@ -8,11 +8,11 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 def count_true_positives(df):
-    true_positives = df[(df['Spam/Ham_gt'] == 'spam') & (df['sentiment_pred'] == 'spam')]
+    true_positives = df[(df['Spam/Ham_gt'] == 'spam') & (df['Spam/Ham_pred'] == 'spam')]
     return len(true_positives)
 
 def count_false_positives(df):
-    false_positives = df[(df['Spam/Ham_gt'] == 'ham') & (df['sentiment_pred'] == 'spam')]
+    false_positives = df[(df['Spam/Ham_gt'] == 'ham') & (df['Spam/Ham_pred'] == 'spam')]
     return len(false_positives)
 
 def count_true_negatives(df):
@@ -29,7 +29,8 @@ if __name__ == "__main__":
     results_file = f"evaluation/selection/Q10/results/palimpzest_Q10_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
 
     enron_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Message ID', 'Message', 'Spam/Ham']]
-    pz_results = pd.read_csv(results_file)
+    pz_results = pd.read_csv(results_file, index_col=0)
+    print(pz_results['contents'])
 
     pz_results["Spam/Ham"] = "spam"
     pz_results = pz_results.drop(columns=["filename"]).rename(columns={"contents": "Message"})

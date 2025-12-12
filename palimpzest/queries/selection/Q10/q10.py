@@ -26,7 +26,8 @@ if args.wandb:
         group="Selection",
     )
 
-dataset = pz.TextFileDataset(id='enron_emails', path=f"datasets/enron_emails/enron_emails_shuffled_{args.size}/")
+dataset = pz.TextFileDataset(id='enron_emails', path=f"datasets/enron_emails/{args.size}/")
+
 dataset = dataset.sem_filter("The email is spam")
 
 config = pz.QueryProcessorConfig(available_models=[model])
