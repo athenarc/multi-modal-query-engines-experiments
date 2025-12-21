@@ -1,18 +1,23 @@
-hello all !
-thanks again to everyone who participated in our enron elves event ! we were able to provide each family a number of gifts for the children as well as a gift certificate to fred meyer .
-we will be holding the drawing for the blazer tickets next monday ( january 7 th ) , when more employees are likely to be present . for your reference , here is some additional information about the games :
-package 1 : blazers vs . cleveland cavaliers
-sunday , january 13 th - 7 : 00 pm
-4 tickets in the lower level , parking included
-package 2 : blazers vs . minnesota timberwolves
-wednesday , march 6 th - 7 : 00 pm
-4 tickets in the lower level , parking included
-if you donated money or a gift and were not able to enter your name into the drawing , please us know - - we would be more than happy to add your name .
-also , we have requested receipts from the salvation army for the cash donations that were received . if you would like a receipt for your donation , please contact grace directly .
-please note : many employees who are no longer with the company took part in our enron elves efforts . recognizing their contributions , we will be including them in the drawing .
-if you have any questions , please let us know .
-thanks !
-the enron elves team
-- - - - - - - - - - - - - - - - - -
-grace , x 8321
-julie , x 7404
+louise ,
+please see below for the gtv ii project weekly status update and the attached file for the updated project timelines .
+gtv status meeting attendees : zhiyong wei , karima husain , francis lim , jeremy wong , bill fortney , nayan dattani , dave nommensen , russ severson , narasim kasaru , jay krish .
+accomplishments :
+? incorporating physcial deal positions in tds :
+o changes to cpr reader process & its unit testing have been completed .
+o changes for the view aggregation has been completed .
+o changes for the position manager are in progress and on schedule ( please see the attached project timeline ) .
+? single point of deal entry for term deals :
+o establishing communication between tds client & sitara server & its testing has been completed .
+o other it items are in progress and on schedule ( please see the attached project timeline ) .
+? gas daily deals :
+o changes to tds deal valuation are in progress and on schedule ( please see the attached project timeline ) .
+o creating gdi calc in erms is in progress and on schedule ( please see the attached project timeline ) .
+? live feeds for gas daily / intra - month curves :
+o development of live feeds has been completed and handed over to the user for testing .
+plans for the week ending 4 / 6 / 01 :
+? continue the development of gtv - ii phase 1 .
+? finalize the requirements for gtv - ii , phase 2 .
+issues :
+none
+regards .
+zhiyong

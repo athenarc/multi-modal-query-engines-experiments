@@ -1,5 +1,9 @@
-i have one more thing to add to the list of enpower requests :
-deals done under the epmi short term west hourly desk do not need to be confirmed . the real time traders know they need to check " no " in the confirmation box in deal entry ; however , it ' s one detail amidst many that sometimes gets overlooked . it occurred to me that we could avoid the problem of real time deals getting unnecessarily confirmed - and unnecessarily confusing counterparties - if we could make " no confirmation " an automatic default for all deals entered under the short term west hourly book .
-i can ' t think of any other groups which would be adversely impacted by this change , but let ' s discuss that during the next enpower meeting . please let me know what we can do to get this implemented .
-thanks for your help ,
-kate
+darren , i will be meeting with sandi in the morning to get a download . i will get with you after that to assess where we need to go . thanks .
+- - - - - original message - - - - -
+from : farmer , daren j .
+sent : tuesday , june 19 , 2001 1 : 43 pm
+to : nemec , gerald
+subject : tenaska iv - cleburne plant
+gerald ,
+i understand that you will be taking on some of sandi ' s projects since she left the company . i have been working with sandi on an agency agreemtent between ena and tenaska iv partners , related to the gas supply for the cleburne plant . has she brought you up to speed on what we need ? we are looking into selling our stake in the plant and need to finalize the agreement as soon as we can . please let me know what you need to finish this . thanks .
+daren

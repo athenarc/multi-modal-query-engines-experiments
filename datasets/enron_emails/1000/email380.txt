@@ -1,27 +1,31 @@
-jennifer . n . stewart @ enron . com
-i don ' t know her or anything about it . i sent her an email asking what she
-needs .
-- - stinson
-vince j kaminski
-01 / 11 / 2001 08 : 22 am
-to : stinson gibner / hou / ect @ ect
-cc :
-subject : request submitted : access request for jennifer . n . stewart @ enron . com
-stinson ,
-do you know anything about it ?
-vince
-- - - - - - - - - - - - - - - - - - - - - - forwarded by vince j kaminski / hou / ect on 01 / 11 / 2001
-08 : 24 am - - - - - - - - - - - - - - - - - - - - - - - - - - -
-arsystem on 01 / 10 / 2001 08 : 59 : 24 am
-to : " vince . j . kaminski @ enron . com "
-cc :
-subject : request submitted : access request for jennifer . n . stewart @ enron . com
-you have received this email because you are listed as an alternate data
-approver . please click
-approval to review and act upon this request .
-request id : 000000000013085
-approver : stinson . gibner @ enron . com
-request create date : 1 / 10 / 01 8 : 59 : 14 am
-requested for : jennifer . n . stewart @ enron . com
-resource name : \ \ enehou \ houston \ common \ research - [ read ]
-resource type : directory
+vance ,
+deals # 348725 ( 6 / 10 - 6 / 30 ) and # 348729 ( 7 / 1 - 7 / 31 ) have been created and
+entered in sitara for hesco .
+hillary ,
+do not confirm .
+bob
+vance l taylor
+07 / 28 / 2000 01 : 24 pm
+to : robert cotten / hou / ect @ ect
+cc : lisa hesse / hou / ect @ ect , trisha hughes / hou / ect @ ect , heidi
+withers / hou / ect @ ect , hillary mack / corp / enron @ enron , susan smith / hou / ect @ ect ,
+donald p reinhardt / hou / ect @ ect , melissa graves / hou / ect @ ect
+subject : new production - sitara deals needed
+bob ,
+the following production is now on - line and a ticket should be created and
+entered into sitara based on the following :
+counterparty meter volumes price period
+hesco gathering oil co 9835 600 mmbtu / d 96 % gas daily less $ 0 . 14
+6 / 10 - 7 / 31
+samson lone star limited 9845 3000 mmbtu / d 100 % gas daily less $ 0 . 10 7 / 21 -
+7 / 31
+winn exploration co . , inc . 9847 800 mmbtu / d 100 % gas daily less $ 0 . 13 7 / 25
+- 7 / 31
+( for fuel use less 3 . 35 % of del vols )
+fyi , susan has created and submitted committed reserves firm tickets for the
+remaining term of the deal beginning with the month of august . additionally ,
+these are producer svcs . deals and should be tracked in the im wellhead
+portfolio . . . attached to the gathering contract .
+thanks ,
+vlt
+x 3 - 6353

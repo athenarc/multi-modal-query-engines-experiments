@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df_enron_emails = pd.read_csv("datasets/enron_emails/enron_spam_data.csv").dropna(subset=['Message'])
+df_enron_emails = pd.read_csv("datasets/enron_emails/enron_spam_data.csv").dropna(subset=['Message']).drop_duplicates(subset=['Message'])
 df_enron_emails = df_enron_emails[df_enron_emails['Message'].str.len() < 10000]
 
 indices = df_enron_emails.index.to_list()

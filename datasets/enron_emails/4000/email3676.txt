@@ -1,7 +1,3 @@
-read about the recent ees reorganization in the latest ebiz .
-also in this issue :
-clickpaper . com hits the internet
-alberta holds internet - based power auction
-pipeline competition in florida
-it ' s all in the latest ebiz . go to home . enron . com , click publications , then
-click ebiz , and " ebiz september 8 , 2000 . "
+start date : 1 / 23 / 02 ; hourahead hour : 15 ; no ancillary schedules awarded . no variances detected .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2002012315 . txt

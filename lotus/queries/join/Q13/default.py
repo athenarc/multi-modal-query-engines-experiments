@@ -1,3 +1,4 @@
+from datetime import datetime
 import pandas as pd
 import lotus
 from lotus.models import LM
@@ -21,8 +22,8 @@ if args.wandb:
         group="Join",
     )
 
-df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)[['Player Name']]
-df_teams = pd.read_csv("datasets/rotowire/team_evidence.csv")[['Team Name']]
+df_papers = pd.read_csv("datasets/deepscholar-bench/paper_content.csv")[['arxiv_id', 'paper_title', 'related_works_section']].head(args.size)
+df_cited_papers = pd.read_csv("datasets/deepscholar-bench/cited_papers_63.csv")
 
 if args.provider == 'ollama':
     model = LM(args.provider + '/' + args.model)
@@ -31,18 +32,28 @@ elif args.provider == 'vllm':
 
 lotus.settings.configure(lm=model)
 
-instruction = "The player {Player Name:left} was playing for team {Team Name:right} in 2015."
+instruction = "The paper {paper_title:left} cites the paper {cited_paper_title:right} in its related work section {related_works_section:left}."
 start = time.time()
-df = df_players.sem_join(df_teams, instruction)
+df = df_papers.sem_join(df_cited_papers, instruction)
 exec_time = time.time() - start
+
+output_file = f"evaluation/join/Q13/results/lotus_Q13_join_default_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
+df.to_csv(output_file)
+
+with open('statistics/join/Q13.log', 'a') as file:
+    file.write(f"System: Lotus (sem_join -- default)\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write("Total LLM calls: " + str(args.size * 63) + "\n")
+
 
 if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
-        "execution_time": exec_time
+        "execution_time": exec_time,
+        "total_LLM_calls": args.size*63
     })
 
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)

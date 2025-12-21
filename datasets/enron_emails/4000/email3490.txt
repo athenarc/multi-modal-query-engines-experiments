@@ -1,11 +1,7 @@
-hi ,
-finally i got rid of the ' p . p . t . v ' bills that my kids generate .
-with this new tech , you can get rid too
-you ' d need to copy the below address and check it in your explorer :
-check 4 channel . info
-once who don ' t like such mails , plz . add slash and ' r ' to above address .
-and plz . give upt 10 days .
-did debbie love jumping in front of the restaurant ? .
-toren came to me at age 32 months . he had 2 words : ma ma and bye bye . he could not focus , but ran around the room . his mother was convinced i was going to have him cured by his third birthday . i told her i was no miracle worker , but we ' d do what we could during the next 4 months . immediately we started structuring toren ' s day . i went home and worked up a program called ' toren ' s nouns ' . the first day i showed toren the program , he looked at it for 10 - 15 seconds and then left the computer . the next day he stayed about 30 seconds . each day he built up more time at the computer . by the second week , he would sit on my lap for 10 minutes pressing whichever word he wanted to hear . but he spoke no sounds , no words . three weeks passed . i began berating myself . ' see , jo , you thought this noun program was so great . look at toren , he ' s not learning anything . ' the fourth week toren walked over to the computer , picked up the overlay from the intellikeys keyboard , pointed to 10 different words and approximated each word . that day , i cried . .
-thanks ,
-john donne
+enrononline started to see message delivery slow down drastically at 8 : 40 am . at 8 : 50 updates were so slow that all products were suspended from trading . at 8 : 56 we brought the site offline to insure that trading would not continue , as our traders could not manage their products .
+at 9 : 10 we were able to isolate the issue to a single disk , in a brick of storage , that was responding extremely slowly , but not failing over like it should . we removed the storage from the configuration and brought the database back online . once we verified the database was healthy we brought eol back online at approximately 9 : 28 am . at this point all our users , both internal and external , started logging back in .
+the issue was caused by a bug in the firmware on the disk . the vendor of the disk has already provided us with a patch for this bug . we will be applying this patch to all of our storage , one brick at a time starting this evening .
+we had to take eol offline for a second time at 11 : 17 am due to a failure on another brick of storage . this failure was caused while we were verifying the root cause of the issue we experienced earlier . we brought the site back online at 11 : 56 . during this outage we verified that there was no corruption or loss of data , due to either of the outages .
+regards ,
+bob hillier
+e - commerce operations

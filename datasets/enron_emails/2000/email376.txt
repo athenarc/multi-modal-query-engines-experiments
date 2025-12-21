@@ -1,21 +1,14 @@
-- - - - - original message - - - - -
-from : mitchell , david
-sent : wednesday , september 19 , 2001 5 : 57 pm
-to : deffner , joseph
-subject : fw : im 1 & 2 dash
-joe ,
-the following is the language from the dash which ben signed . . . " acceptable to rac "
-? a $ 100 million guaranty by enron corporate of epmi ' s obligations under the ppa has been put in place . as a condition to closing the financing for the project , the lender ( clarica life ) has required a mac provision stating that in the event that enron ' s credit rating falls below investment grade , enron is required to provide alternative means , acceptable to rac , to cover its guaranty obligation .
-- - - - - original message - - - - -
-from : pollock , adam
-sent : wednesday , september 19 , 2001 5 : 51 pm
-to : mitchell , david
-subject : im 1 & 2 dash
-here ' s the dash . . let me know if you need anything else .
-ap
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-adam pollock
-rac - underwriting
-ecn 2858 f
-713 . 345 - 8763
-adam . pollock @ enron . com
+after the day ahead market ran , the coi branch group ttc in the ( n - s )
+direction was changed from 4100 mw to 4000 mw ; and path 15 in the ( s - n )
+direction was reduced by 500 mw each hour , and in the ( n - s ) direction was
+changed from 1275 mw to 1100 mw ; and path 26 in the ( n - s ) direction was
+changed from 3000 mw to 2500 mw for he ' s 1100 through 2100 for operating day
+7 / 30 / 01 . the reason for the change is they are forced out for emergency
+maintenance . the first applicable hour ahead market to run with these
+values is he 1500 . the iso will update you of any changes in line rating
+status . sent by market operations , inquiries please call the hour ahead
+desk .
+the system conditions described in this communication are dynamic and
+subject to change . while the iso has attempted to reflect the most current ,
+accurate information available in preparing this notice , system conditions
+may change suddenly with little or no notice .

@@ -1,60 +1,34 @@
-fyi ,
-my message to risk .
-vince
-- - - - - - - - - - - - - - - - - - - - - - forwarded by vince j kaminski / hou / ect on 06 / 28 / 2000
-05 : 44 pm - - - - - - - - - - - - - - - - - - - - - - - - - - -
-vince j kaminski
-06 / 05 / 2000 08 : 04 am
-to : conrad gardner @ enron
-cc : vince j kaminski / hou / ect @ ect , mike a roberts / hou / ect @ ect , daniel
-diamond / hou / ect @ ect
-subject : re : enron site / mepr 2
-conrad ,
-thanks for your message .
-there are 3 papers enron contributed to the last mepr .
-there is also another paper on electricity i contributed to the " red book " on
-us
-power markets , as well as a paper or credit risk management , and a paper
-on weather derivatives . all these papers included in other risk books were
-written by enron
-employees .
-we would like them included as well , if technically possible .
-i think that offering other energy related books through our site , in
-addition to mepr 2 ,
-is fine , but i would leave the decision to dan diamond , who is responsible
-for the project .
-vince
-conrad gardner on 06 / 05 / 2000 07 : 08 : 36 am
-to : vince . j . kaminski @ enron . com
-cc :
-subject : enron site / mepr 2
-> date : mon , 05 jun 2000 13 : 02 : 02
-> to : vince kaminski
-> from : conrad gardner
->
-> dear vince
->
-> thanks for the call and email on friday . i will contact masuyuki and follow
-it from there .
->
-> regarding the enron site , i think it is absolutely fine to put up the two
-enron chapters ( i ' ll provide pdfs ) , and prevent any customer leakages from
-your site by the use of " submit " buttons . as mentioned , i ' ll offer a 20 %
-discount on mepr 2 to customers but would you be interested in some of other
-energy titles ? - please let me know .
->
-> many thanks
->
-> conrad gardner
->
-head of book publishing
-risk books
-haymarket house
-28 - 29 haymarket
-london
-swly 4 rx
-direct tel : + 44 ( 020 ) 7 484 9750
-main tel : + 44 ( 020 ) 7 484 9700
-fax : + 44 ( 020 ) 7 484 9758
-e - mail : conrad @ risk . co . uk
-www . riskpublications . com
+this message was created automatically by mail delivery software ( exim ) .
+a message that you sent could not be delivered to one or more of its
+recipients . this is a permanent error . the following address ( es ) failed :
+info @ markenweine . info
+smtp error from remote mailer after rcpt to : :
+host a . mx . markenweine . info [ 194 . 180 . 104 . 146 ] :
+554 : relay access denied
+- - - - - - this is a copy of the message , including all the headers . - - - - - -
+return - path :
+received : from aji 232 . neoplus . adsl . tpnet . pl ( [ 83 . 25 . 242 . 232 ] helo = mailwisconsin . com )
+by mail . work . de with smtp ( exim 3 . 35 # 1 ( debian ) )
+id ldupje - 0006 gu - 00
+for ; tue , 19 jul 2005 12 : 54 : 03 + 0200
+received : from 205 . 214 . 42 . 66
+( squirrelmail authenticated user projecthoneypot @ projecthoneypot . org ) ;
+by mailwisconsin . com with http id j 87 gzo 09360200 ;
+tue , 19 jul 2005 10 : 57 : 46 + 0000
+message - id :
+date : tue , 19 jul 2005 10 : 57 : 46 + 0000
+subject : just to her . . .
+from : " barry castillo "
+to : info @ markenweine . info
+user - agent : squirrelmail / 1 . 4 . 3 a
+x - mailer : squirrelmail / 1 . 4 . 3 a
+mime - version : 1 . 0
+content - type : text / html ; charset = iso - 8859 - 1
+content - transfer - encoding : 8 bit
+x - priority : 3 ( normal )
+importance : normal
+soft viagra at $ 1 . 62 per dose
+ready to boost your sex life ? positive ?
+time to do it right now !
+order soft viagra at incredibly low prices
+starting at $ 1 . 99 per dose ! unbelivabie !

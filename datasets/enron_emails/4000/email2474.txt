@@ -1,4 +1,38 @@
-be the best you can be after you grow 9 inches !
-cream embroidery coot graceful candy conspire colatitude convene extensor fogging frigate just awe descant calendrical carte pilfer buteo jerk caddis .
-emitter loosen yale impound greed lin jail ecliptic quandary castigate heliotrope donner carolyn germinal antoine stabile pinion scrawny luxuriant oldy upheaval sunrise alan brevity bovine joanne allegra .
-waaant to be reeemoooooooveeeed ?
+start date : 1 / 23 / 02 ; hourahead hour : 13 ; hourahead schedule download failed . manual intervention required .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2002012313 . txt
+error : dbcaps 97 data : cannot perform this operation on a closed database
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+error : dbcaps 97 data : cannot perform this operation on a closed database
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+error : dbcaps 97 data : cannot perform this operation on a closed database
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+error : dbcaps 97 data : cannot perform this operation on a closed database
+error : dbcaps 97 data : cannot perform this operation on a closed database
+error : dbcaps 97 data : cannot perform this operation on a closed database
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+error : dbcaps 97 data : cannot perform this operation on a closed database

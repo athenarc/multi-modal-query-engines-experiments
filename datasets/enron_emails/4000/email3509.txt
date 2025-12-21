@@ -1,7 +1,3 @@
-your
-friend and personal mentor , lou vukas
-you are
-receiving this email because you requested to receive info and updates via
-email .
-to unsubscribe , reply to this email with " unsubscribe " in the subject or
-simply click on the following link : unsubscribe
+start date : 1 / 12 / 02 ; hourahead hour : 15 ; no ancillary schedules awarded . no variances detected .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2002011215 . txt

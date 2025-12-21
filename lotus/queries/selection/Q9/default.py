@@ -29,7 +29,7 @@ elif args.provider == 'vllm':
     lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
 lotus.settings.configure(lm=lm)
-df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
+df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").drop_duplicates().head(args.size)
 df_reviews = pd.DataFrame(df_reviews['review'])
 
 user_instruction = "{review} is positive"

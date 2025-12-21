@@ -3,7 +3,7 @@ import pandas as pd
 sizes = [500, 1000, 2000, 4000]
 
 for size in sizes:
-    input_csv = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(size)
+    input_csv = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").drop_duplicates().head(size)
 
     for i, line in enumerate(input_csv["review"]):
         if line:  # Only save non-empty lines

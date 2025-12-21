@@ -1,12 +1,8 @@
-start date : 1 / 6 / 02 ; hourahead hour : 2 ; no ancillary schedules awarded . variances detected .
-variances detected in load schedule .
-log messages :
-parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2002010602 . txt
-- - - - load schedule - - - -
-$ $ $ variance found in table tblloads .
-details : ( hour : 2 / preferred : 471 . 55 / final : 471 . 52 )
-trans _ type : final
-load _ id : scel
-mkt _ type : 2
-trans _ date : 1 / 6 / 02
-sc _ id : enrj
+bsa
+our art team creates a custom logo for you , based on your needs . years of experience have taught us how to create a logo that makes a statement that is unique to you .
+in a profe ssional manner we learn about your image and how you would like the world to perceive you and your company . with this information we then create a logo that is not only unique but reflects the purpose of you and your company .
+for value and a logo that reflects your image , take a few minutes and visit try logos !
+http : / / cuddly . biz . fresh - cds . biz
+sincerely ,
+logo design team
+ammerman bleak cytolysis

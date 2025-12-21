@@ -1,4 +1,9 @@
-start date : 12 / 16 / 01 ; hourahead hour : 6 ; no ancillary schedules awarded . no variances detected .
-log messages :
-parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2001121606 . txt
-# # # cannot locate a preferred or revised _ preferred schedule that matches the final individual interchange schedule . unable to assign deal number .
+do i detect a shot here ? ? ? ? ? ? ( chuckle )
+- - - - - - - - - - - - - - - - - - - - - - forwarded by kenneth seaman / hou / ect on 01 / 31 / 2000
+10 : 58 am - - - - - - - - - - - - - - - - - - - - - - - - - - -
+from : robert e lloyd 01 / 31 / 2000 10 : 46 am
+to : kenneth seaman / hou / ect @ ect
+cc : george grant / hou / ect @ ect , pat clynes / corp / enron @ enron
+subject : mobil february , 2000 activity
+fyi . . . . only ! i changed a path you created for meter # : 1040 for 90 , 000 / d to
+an incorrect contract { k # : 218 } .

@@ -1,5 +1,15 @@
-difficult played burst particular stop .
-super cheaap softwares & shiiip to all countrieswe have every popular softwares u need ! you name it normal : $ 299 . oo ; you saave $ 249 . oo
-adobe acrobat v 6 . o professional pc - my price : $ 1 oo ; normal : $ 449 . 95 ; you saave $ 349 . 95 & more more more softwares to choose from read
-we do have full range softwares : adobe , alias maya , autodesk , borland , corel , crystal reports . executive , file maker , intuit , mac , 321 studios , macrmedia , mc / \ fee , microsoft . nero , pinnacle systems , powerquest , quark , red hat , riverdeep , roxio , symantec , vmware softwares & 315 more popular titles for youcheckk out 315 more popular softwares on our siteguaaranteed super low prlce = = = ciick here to check out = = =
-car whom benefit shut big control real recess fixed
+dear all ,
+as promised , i cleaned up the data and put it into 6 spreadsheet files ( we
+will do gold and cocoa separately ) . i also ran 10 , 20 , 30 and 60 day fwd fwd
+volatility calculations based on historical log return data - you can see the
+results at the bottom of the sheet called " log returns " for each of the six
+spreadsheets attached below .
+the data in the files is ready for pca analysis . we can use either the fwd
+fwd vols from recent history or implied option quotes to complete the
+analysis .
+regards ,
+anjam
+p . s . we have already done the pca on aluminum h ( high grade , so please don ' t
+repeat the analysis for that one )
+final files :
+al _ h :

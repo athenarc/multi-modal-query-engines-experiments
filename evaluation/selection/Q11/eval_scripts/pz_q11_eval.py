@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import argparse
 
@@ -7,36 +8,32 @@ parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gem
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
-def count_true_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['nationality_gt'] == df['nationality_pred']) & (df['nationality_gt'] == "American")])
+def compute_metrics(df):
+    negative_gt = df['label_gt'].isin(['NOT ENOUGH INFO', 'REFUTES'])
 
-def count_false_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['nationality_gt'] != df['nationality_pred']) & (df['nationality_pred'] == "American")])
+    tp = len(df[(df['label_gt'] == 'SUPPORTS') & (df['label_pred'] == 'SUPPORTS')])
+    fp = len(df[negative_gt & (df['label_pred'] == 'SUPPORTS')])
+    tn = len(df[negative_gt &(df['label_pred'] != 'SUPPORTS')])
+    fn = len(df[(df['label_gt'] == 'SUPPORTS') &(df['label_pred'] != 'SUPPORTS')])
 
-def count_true_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['nationality_gt'] != "American")])
-
-def count_false_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['nationality_gt'] == "American")])
+    return tp, fp, tn, fn
 
 if __name__ == "__main__":
-    if args.provider == 'ollama':
-        results_file = f"evaluation/selection/Q11/results/palimpzest_Q11_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider == 'vllm':
-        results_file = f"evaluation/selection/Q11/results/palimpzest_Q11_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/selection/Q11/results/palimpzest_Q11_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
 
-    df_player_labels = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-    df_player_labels = df_player_labels[['Player Name', 'nationality']]
+    claims = pd.read_csv("datasets/fever/fever.csv")[['id', 'claim', 'label']].head(args.size)
 
-    pz_res = pd.read_csv(results_file)
-    pz_res['nationality'] = 'American'
+    pz_res = pd.read_csv(results_file, index_col=0)
 
-    df = df_player_labels.merge(pz_res, on='Player Name', how='outer', suffixes=('_gt', '_pred'), indicator=True)
+    if (pz_res.empty):
+        pz_res = pd.DataFrame(columns=['id', 'claim', 'label'])
+    else:
+        pz_res['label'] = "SUPPORTS"
 
-    tp = count_true_positives(df)
-    fp = count_false_positives(df)
-    tn = count_true_negatives(df)
-    fn = count_false_negatives(df)
+    df = claims.merge(pz_res, on='id', how='outer', suffixes=('_gt', '_pred'), indicator=True)
+
+    tp, fp, tn, fn = compute_metrics(df)
+    assert(tp+tn+fp+fn == args.size)
 
     with open('statistics/selection/Q11.log', 'a') as file:
         file.write(f"True Positives: {tp}\n")

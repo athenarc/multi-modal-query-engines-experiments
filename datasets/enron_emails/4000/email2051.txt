@@ -1,30 +1,36 @@
-comments from rick jones on the credit reserve model . anita dupont is setting
-up a meet with rick jones to discuss these . vince & bill - if you want to
-join the meeting , please let me or anita know .
-regards ,
-krishna .
-- - - - - - - - - - - - - - - - - - - - - - forwarded by pinnamaneni krishnarao / hou / ect on
-04 / 11 / 2001 09 : 04 am - - - - - - - - - - - - - - - - - - - - - - - - - - -
-richard b jones @ ees
-04 / 10 / 2001 04 : 16 pm
-to : pinnamaneni krishnarao / hou / ect @ ect
-cc :
-subject : credit risk model comments - at this point .
-- - - - - - - - - - - - - - - - - - - - - - forwarded by richard b jones / hou / ees on 04 / 10 / 2001
-04 : 16 pm - - - - - - - - - - - - - - - - - - - - - - - - - - -
-richard b jones
-03 / 23 / 2001 05 : 53 pm
-to : cheryl lipshutz / hou / ees @ ees , trushar patel / corp / enron @ enron ,
-michelle . wenz @ enron . com , gayle muench / enron @ enronxgate , jeremy
-blachman / hou / ees @ ees
-cc :
-subject : credit risk model comments - at this point .
-hi everyone ,
-i have run the model and , along with the contract briefs i have some
-questions the number of trials , numerical roundoff , and random number
-generator randomness statistical properties . the first two are not a problem
-in this application but the last one could be . has anyone examined the effect
-of using different random number generators on enron  , s aggregate credit risk ?
-7 ) there is one last point here . for most of the above points , the " improved "
-analysis could make the credit risk be higher .
-rick
+this message was created automatically by mail delivery software .
+a message that you sent could not be delivered to one or more of its
+recipients . this is a permanent error . the following address ( es ) failed :
+stcelebrate 2002 @ aol . com
+( ultimately generated from info @ something - to - celebrate . com )
+smtp error from remote mailer after end of data :
+host mailin - 01 . mx . aol . com [ 64 . 12 . 137 . 89 ] : 554 - :
+( hvu : bl ) http : / / postmaster . info . aol . com / errors / 554 hvubl . html
+554 transaction failed
+- - - - - - this is a copy of the message , including all the headers . - - - - - -
+return - path :
+received : from [ 218 . 23 . 38 . 202 ] ( helo = mailwisconsin . com )
+by discostu . angelsonoccasion . com with smtp ( exim 4 . 43 )
+id ldupmn - 0001 st - jh
+for info @ something - to - celebrate . com ; tue , 19 jul 2005 06 : 57 : 18 - 0400
+received : from 205 . 214 . 42 . 66
+( squirrelmail authenticated user projecthoneypot @ projecthoneypot . org ) ;
+by mailwisconsin . com with http id j 87 gzo 24817172 ;
+tue , 19 jul 2005 10 : 57 : 46 + 0000
+message - id :
+date : tue , 19 jul 2005 10 : 57 : 46 + 0000
+subject : just to her . . .
+from : " barry castillo "
+to : info @ something - to - celebrate . com
+user - agent : squirrelmail / 1 . 4 . 3 a
+x - mailer : squirrelmail / 1 . 4 . 3 a
+mime - version : 1 . 0
+content - type : text / html ; charset = iso - 8859 - 1
+content - transfer - encoding : 8 bit
+x - priority : 3 ( normal )
+importance : normal
+soft viagra at $ 1 . 62 per dose
+ready to boost your sex life ? positive ?
+time to do it right now !
+order soft viagra at incredibly low prices
+starting at $ 1 . 99 per dose ! unbeiivable !

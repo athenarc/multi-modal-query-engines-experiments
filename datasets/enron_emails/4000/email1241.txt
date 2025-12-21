@@ -1,31 +1,28 @@
-hi . this is the qmail - send program at host 334 . ipowerweb . com .
-i ' m afraid i wasn ' t able to deliver your message to the following addresses .
-this is a permanent error ; i ' ve given up . sorry it didn ' t work out .
-:
-vdeliver : invalid or unknown virtual user ' antonio _ schiavon '
-- - - below this line is a copy of the message .
-return - path :
-received : ( qmail 75462 invoked from network ) ; 19 jul 2005 10 : 56 : 59 - 0000
-received : from unknown ( helo mailwisconsin . com ) ( 61 . 77 . 34 . 140 )
-by host 334 . ipowerweb . com with smtp ; 19 jul 2005 10 : 56 : 59 - 0000
-received : from 205 . 214 . 42 . 66
-( squirrelmail authenticated user projecthoneypot @ projecthoneypot . org ) ;
-by mailwisconsin . com with http id j 87 gzo 30516375 ;
-tue , 19 jul 2005 10 : 57 : 46 + 0000
-message - id :
-date : tue , 19 jul 2005 10 : 57 : 46 + 0000
-subject : just to her . . .
-from : " barry castillo "
-to : antonio _ schiavon @ davkar . com
-user - agent : squirrelmail / 1 . 4 . 3 a
-x - mailer : squirrelmail / 1 . 4 . 3 a
-mime - version : 1 . 0
-content - type : text / html ; charset = iso - 8859 - 1
-content - transfer - encoding : 8 bit
-x - priority : 3 ( normal )
-importance : normal
-soft viagra at $ 1 . 62 per dose
-ready to boost your sex life ? positive ?
-time to do it right now !
-order soft viagra at incredibly low prices
-starting at $ 1 . 99 per dose ! unbeiivabie !
+hi bruceg !
+looking to buy a car or truck ? try a free search to find the best price quote !
+you select the car or truck you want - and greatnewcars will find you the best price !
+takes 2 minutes - and you could save thousands on your new vehicle !
+good luck !
+linda evans
+greatnewcars
+to unsubscribe , go :
+here
+or contact us at ,
+122 n . 2 nd st . ste a - 408
+phoenix , az 85004
+if 7 - 11 is open 24 hours a day , 365 days a year , why are there locks on the doors ?
+if 75 % of all accidents happen within 5 miles of home , why not move 10 miles away ?
+if a book about failures doesn ' t sell , is it a success ?
+if a bus station is where a bus stops , and a train station is where a train stops , why do i have a work station on my desk ?
+if a case of the clap spreads , is it then considered a case of the applause ?
+if a cat always lands on its feet , and buttered bread always lands butter side down , what would happen if you tied buttered bread on top of a cat ?
+if a chronic liar tells you he is a chronic liar do you believe him ?
+if a dog sweats through his tongue , why does he have armpits ?
+if you were traveling at the speed of sound and you turned on your radio would you be able to hear it ?
+if a mute child swears , does his mother make him wash his hands with soap ?
+if a turtle doesn ' t have a shell , is he homeless or naked ?
+if all those psychics know the winning lottery numbers , why are they all still working ?
+if fed ex and ups were to merge , would they call it fed up ?
+if inert is to be stationary , what is ert ?
+if jimmy cracks corn and no one cares , why does he keep doing it ?
+jumud zeshi csvdfh quidaxese fn - db kafeng xihujaco vajathube thajih zolafidi mewuqu omawav

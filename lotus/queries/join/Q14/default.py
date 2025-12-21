@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import datetime
 import lotus
 from lotus.models import LM
 import wandb
@@ -21,8 +22,9 @@ if args.wandb:
         group="Join",
     )
 
-df_movies = pd.read_csv("datasets/movies_directors/movies.csv").head(args.size)[['title']]
-df_directors = pd.read_csv("datasets/movies_directors/directors.csv")[['director_name']]
+df_movies = pd.read_csv(f"datasets/movies_directors/movies_directors_split_{args.size}.csv")[['title']]
+
+df_directors = pd.DataFrame(pd.read_csv("datasets/movies_directors/directors_63.csv"))
 
 if args.provider == 'ollama':
     model = LM(args.provider + '/' + args.model)
@@ -36,13 +38,21 @@ start = time.time()
 df = df_movies.sem_join(df_directors, instruction)
 exec_time = time.time() - start
 
+output_file = f"evaluation/join/Q14/results/lotus_Q14_join_default_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
+df.to_csv(output_file)
+
+with open('statistics/join/Q14.log', 'a') as file:
+    file.write(f"System: Lotus (sem_join -- default)\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write("Total LLM calls: " + str(args.size * 63) + "\n")
+
 if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
-        "execution_time": exec_time
+        "execution_time": exec_time,
+        "total_LLM_calls": args.size*63
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)

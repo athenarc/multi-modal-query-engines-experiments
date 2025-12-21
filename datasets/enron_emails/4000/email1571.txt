@@ -1,34 +1,36 @@
-hi . this is the qmail - send program at vhost . bizcn . com .
-i ' m afraid i wasn ' t able to deliver your message to the following addresses .
-this is a permanent error ; i ' ve given up . sorry it didn ' t work out .
-:
-sorry , no mailbox here by that name . vpopmail ( # 5 . 1 . 1 )
-- - - below this line is a copy of the message .
-return - path :
-received : ( qmail 9814 invoked by uid 500 ) ; 19 jul 2005 10 : 57 : 33 - 0000
-received : from projecthoneypot @ projecthoneypot . org by vhost . bizcn . com by uid 107 with qmail - scanner - 1 . 20
-( clear : rc : 0 ( 220 . 176 . 120 . 47 ) : .
-processed in 0 . 436948 secs ) ; 19 jul 2005 10 : 57 : 33 - 0000
-received : from unknown ( helo mailwisconsin . com ) ( 220 . 176 . 120 . 47 )
-by 0 with smtp ; 19 jul 2005 10 : 57 : 33 - 0000
-received : from 205 . 214 . 42 . 66
-( squirrelmail authenticated user projecthoneypot @ projecthoneypot . org ) ;
-by mailwisconsin . com with http id j 87 gzo 24817135 ;
-tue , 19 jul 2005 10 : 57 : 46 + 0000
-message - id :
-date : tue , 19 jul 2005 10 : 57 : 46 + 0000
-subject : just to her . . .
-from : " barry castillo "
-to : info @ jiayetang . com
-user - agent : squirrelmail / 1 . 4 . 3 a
-x - mailer : squirrelmail / 1 . 4 . 3 a
-mime - version : 1 . 0
-content - type : text / html ; charset = iso - 8859 - 1
-content - transfer - encoding : 8 bit
-x - priority : 3 ( normal )
-importance : normal
-soft viagra at $ 1 . 62 per dose
-ready to boost your sex life ? positive ?
-time to do it right now !
-order soft viagra at incredibly low prices
-starting at $ 1 . 99 per dose ! unbeiivable !
+thank you for joining spinner . com : the web ' s largest source of free streaming
+music
+just wanted to confirm your registration with spinner - - you now have
+complete access to spinner ' s 150 + professionally programmed music channels
+and the entire spinner . com website . and just to remind you , the player , the
+website , and ( most importantly ! ) the music are all totally free .
+* your user name is : junglo
+we have omitted your password for your privacy . please hang on to this email
+so you can easily retrieve your user name if you forget it .
+* forget your password ? enter your user name and email address at our
+password retrieval page and we ' ll email it to you :
+* you can also change your email address from your my profile page :
+http : / / www . spinner . com / profile /
+* for download / installation assistance , visit our help pages :
+http : / / www . spinner . com / help / download /
+* if you have any questions or any problems at all , please email us at :
+feedback @ spinner . com
+our users listen to 20 million songs a week , from almost every genre of music
+you can imagine . they also learn more about everything they hear by clicking
+on the player :
+* get bios on every artist you hear by clicking " artist info , " and purchase
+their cds by clicking " buy this cd " .
+* click " rate song " to let our djs know what you think of each song you hear
+- - they ' ll use your feedback to determine song play .
+* click " channel " to see this week ' s top 25 songs on the channel you ' re
+playing , ranked in order of popularity .
+* for even more great info on our channels and music , visit spinner . com . you
+can find out what channels play your favorite artists , download great free
+songs , and take part in cool promotions and contests .
+thanks again for registering . if you like what you hear , tell a friend about
+spinner .
+enjoy the music !
+the spinner crew
+if you received this email in error , you can unsubscribe from our service
+here :
+http : / / www . spinner . com / unsubscribe /

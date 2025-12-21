@@ -1,28 +1,21 @@
-kim , i know you have been interested in the development of a long term
-natural gas model for use in the ets revenue management effort . i agree that
-the ability to model various supply / demand scenarios for north america
-should prove useful in ets business development efforts , and in particular ,
-in predicting the impact of the new , large alaskan gas supplies on the n . a .
-pipeline grid .
-as you know , vince kaminski feels that a software product developed by dale
-nesbitt ( marketpoint , inc . ) of los altos hills , ca . may be a good choice , and
-one readily available in a relatively short time . marketpoint has proposed
-that they work with us in our offices for a week of intensive training and
-testing , so we can make a more informed decision before ordering the
-software . they have proposed a charge of $ 12 , 000 , plus expenses , for the
-one - week session , with that cost applied to the first year ' s subscription
-price ( approx . $ 55 - 60 m / yr ) should we decide to go forward . the other
-details ( timing , ene resources required , necessary it interface , etc ) still
-need to be worked out , but i believe there is generally a consensus to
-proceed with the test .
-with my recent relocation to the clean fuels group , i will no longer be
-responsible for the alaskan pipeline development . however , danny mccarty is
-pulling together a team consisting of people from nng , nbp and elsewhere in
-ets to push the project forward . i believe eric gadd will be playing a key
-role as well . the decision on the long term gas model should appropriately
-be made by the new project team .
-i have attached a draft of the proposed marketpoint license agreement . it
-has not yet been fully reviewed by legal ( or by shelley c . for the
-" affiliate " issues ) .
-let me know if i can provide any other background or assistance .
-jng
+vince - please ask your associate to contact laura valencia in my group - she
+can give you the recent lq anaylst slides and the enron . com year end
+presentation on the web ( these two should give you enough for a " basic " ene
+pitch . mark
+vince j kaminski @ ect
+04 / 14 / 2000 08 : 54 am
+to : mark koenig / corp / enron @ enron , m rajgopal / corp / enron @ enron
+cc : stinson gibner / hou / ect @ ect , vince j kaminski / hou / ect @ ect
+subject : power point slides about enron
+mark ,
+i want to ask you for a favor .
+one of my associates , stinson gibner , is making a presentation to the mba
+students at
+texas a & m university next week .
+do you have a power point general presentation about enron , emphasizing our
+growth ,
+creativity and employment opportunities ? we could use it for presentations
+we make on campuses to business and science students . there are many
+presentations available on our intranet site , but the are outdated .
+it was nice meeting you in san antonio .
+vince

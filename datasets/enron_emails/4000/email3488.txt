@@ -1,9 +1,3 @@
-hello ,
-we sent you an email a while ago , because you now qualify
-for a much lower rate based on the biggest rate drop in years .
-you can now get $ 325 , 000 for as little as $ 615 a month !
-bad credit ? doesn ' t matter , low rates are fixed no matter what !
-follow this link to process your application and a 24 hour approval :
-best regards ,
-young nixon
-http : / / www . droppedr 8 z . com / x / st . html
+start date : 1 / 11 / 02 ; hourahead hour : 13 ; no ancillary schedules awarded . no variances detected .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2002011113 . txt

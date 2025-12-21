@@ -1,13 +1,20 @@
-- - - - - - - - - - - - - - - - - - - - - - forwarded by carey m metz / hou / ect on 06 / 13 / 2000 08 : 13
-am - - - - - - - - - - - - - - - - - - - - - - - - - - -
-" maillet , lisa " on 06 / 13 / 2000 07 : 42 : 32 am
-to : enron - carey metz , peter ash ,
-" pg & e - biggs , brian " , sally manning
-, trey christensen ,
-txu - david avila , vivian liedtke
-cc :
-subject : midlothian forecast
->
-13 th = 57 , 000
-14 th = 59 , 000
-- 061300 short . xls
+keith ,
+both power and emrs use a c library provided ( also implemented ) by research
+group . the methodology of greek calculations in power portcalc has not
+changed for more than 6 years since i joined enron 6 years ago . vince
+kaminski , stinson gibner or grant masson should be able to help you with both
+questions .
+zhiyong
+keith bowie
+06 / 28 / 2000 04 : 22 am
+to : zhiyong wei / hou / ect @ ect
+cc : brian hudson / lon / ect @ ect
+subject : portcalc methodology
+zi
+i ' ve been asked by risk management :
+a ) who in research originally signed off the portcalc formulae
+b ) for a copy of the documentation of the methodology ( greek calculations ,
+etc . )
+hope you can help on both counts .
+thanks
+keith

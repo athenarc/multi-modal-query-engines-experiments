@@ -1,44 +1,16 @@
-agreement
-houston and new york  ) enron energy services , a subsidiary of enron corp . ,
-and the chase manhattan corporation ( nyse : cmb ) announced today a ten - year ,
-$ 750 million energy management agreement . enron will provide energy
-management services for 860 of chase  , s facilities nationwide , including
-office buildings , retail branches and operations centers .
-as part of this agreement , enron will provide commodity management , including
-analysis and consolidation of approximately 30 , 000 annual utility invoices
-currently processed through multiple operating groups , as well as overall
-project management for energy infrastructure upgrades , designed to make
-material improvements in the energy efficiency of many chase facilities .
-" chase has taken a leadership position among financial institutions by
-recognizing the financial and administrative benefits of working with enron
-to consolidate its energy management processes ,  8 said lou pai , ceo of enron
-energy services .  & our agreement effectively takes chase out of the energy
-management business and enables them to focus more time and resources on
-growing their successful financial services business . "
- & this transaction is another great example of chase  , s discipline and
-initiative in creating significant value for our shareholders ,  8 said liz
-flynn , head of chase business services .  & it again demonstrates the
-effectiveness of chase business services , a shared services organization
-created to improve service and lower costs for all of chase  , s operating
-groups .  8
-the chase manhattan corporation , with $ 406 billion in assets , is one of the
-world  , s premier financial services institutions , with operations in 48
-countries around the globe . chase has a top - tier ranking in all areas of
-investment banking , private banking , trading and global markets activities as
-well as information and transaction processing . chase is a leading provider
-of financial solutions to large corporations , financial institutions ,
-government entities , middle market firms , small businesses and individuals ,
-and has relationships with more than 30 million consumers across the united
-states through products and services such as credit cards , mortgages , online
-banking , debit cards , deposit products and auto loans . through its newly
-formed business unit , chase . com , chase is successfully creating new business
-models for the internet economy . chase can be reached on the web at
-www . chase . com .
-enron is one of the world  , s leading electricity , natural gas and
-communications companies . the company , which owns approximately $ 34 billion
-in energy and communications assets , produces electricity and natural gas ,
-develops , constructs and operates energy facilities worldwide , delivers
-physical commodities and financial and risk management services to customers
-around the world , and is developing an intelligent network platform to
-facilitate online business . enron  , s internet address is www . enron . com , and
-the stock is traded under the ticker symbol  & ene .  8
+preparations are continuing for our simulation on thursday , feb . 7 from 9 - 11 am .
+during the simulation , you will be able to use your normal , " live " stack manager user id and password , which will be emailed to you separately .
+the attached word document below provides a basic review on accessing the stack manager . you should manage the same products as you normally would , even if those products are not expected to be going live on our initial launch day . if you have products that need to be created , please contact kevin meredith ( 3 - 9555 ) or chris walker ( 3 - 7533 ) with ubswenergy . com immediately .
+trading goals - for all traders participating in the simulation .
+log into the stack manager on wednesday afternoon and ensure that your products are ready to be activated on thursday morning . we will send you a reminder on wednesday to advise you of the time when the application will be available .
+start and end with a flat position
+make markets in your respective products
+maintain tight spreads in the products you manage
+non - ubs personnel will not be able to see or transact on products during the simulation .
+internal originators will be playing the roles of customers and will be hitting your stacks throughout the simulation . you will also be able to trade book to book via the website with your website user id and password which will also be emailed separately .
+market " news " events may be emailed to you at certain points throughout the simulation ( e . g . " storm in the gulf " ) .
+immediately after the simulation , the website will be inactivated , so that the operations group can test the mid / back - office systems , while the it groups clean - up the transaction data from the simulation .
+the system will be made available again for live , internal trading ( book to book ) between traders on friday , february 8 , 2002 . friday ' s trades are for real .
+if you can ' t log into any application on the day or are having trouble with your systems , please contact the ubswenergy . com help desk immediately at 713 . 584 . 4444
+regards ,
+ubswenergy . com

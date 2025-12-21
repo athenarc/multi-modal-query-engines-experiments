@@ -1,79 +1,111 @@
-in the controllers ' position
-sally
-james new mentioned a ginny latham is an experienced power person who may
-have an interest in coming to london - but did not give me any details prior
-to disappearing on holiday this week !
-thoughts ?
-mike
-- - - - - - - - - - - - - - - - - - - - - - forwarded by mike jordan / lon / ect on 19 / 06 / 2000 13 : 23
+fyi
+- - - - - - - - - - - - - - - - - - - - - - forwarded by doug leach / hou / ect on 08 / 17 / 2000 09 : 59 am
 - - - - - - - - - - - - - - - - - - - - - - - - - - -
-mike jordan
-19 / 06 / 2000 11 : 19
-to : sally beck / hou / ect @ ect
-cc : fernley dyson / lon / ect @ ect
-subject : continental power - the case for greater experience / breadth of view
-in the controllers ' position
-sally
-further to our discussion on friday i summarise my view of joe gold ' s issues
-with the mo control process
-joe expressed some frustration with the current status as follows : -
-the dpr has historically been ' filled with noise ' around adjustments for
-edits on trades , provision restatements etc which negates it ' s effectiveness
-for him as a control / supervisory report
-the risk team appear to have been reacting to p & l ' noise ' - particularly
-around transmission adjustments rather than proactively finding booking
-solutions - or instructing it to flex enpower
-settlements have gained a perception in the market place for ' errors ' such
-that originators are informing joe that business is being ' lost ' due to our
-perceived inability to support transactions - ( must be careful here as no
-specifics on errors have been provided )
-the risk team ( post neil tarling ' s transfer to ebs ) is relatively junior
-and does not possess many ' years ' of experience of power support
-james new as power , gas and credit controller has ( necessarily ) too broad a
-role for him to focus on these detailed issues
-in mitigation
-the recent continental book split ( which is only now being ' settled ' in to
-the daily process ) and the clean up of historic provisions / reserves prior to
-neil tarling ' s transfer has exaggerated the base issue around certainty of
-daily p & l
-designing an approximate booking process for transmission has not been a top
-priority for the risk team in the recent past ( this was either wrong or the
-prioritisation call was not effectively communicated to joe ) - and it is
-felt that there are no it resources to code these solutions to enpower (
-also london struggles to influence houston it resource prioritisation )
-the settlements infrastructure has been supporting a business volume growth
-it is not designed for and supporting acitivity on this platform requires
-' skilled ' staff ( we are down on resources for continental power ) -
-continuing growth in volumes are expected along with junior settlement staff
-being asked to join commercial groups
-we are experiencing generational change as a result of barry ' s move to ebs
-- resourcing is james and my top priority
-i believe what joe is asking for , is what we are trying to provide - namely :
-upgrade in resourcing in the risk group where we are insisting that the lead
-individual has full responsibility , end to end , for the business including
-the assessment of operational risk and effectiveness of the business process ,
-focus on identifying and implementing the necessary quick hit solutions that
-eliminates ' manual workarounds ' and consequently ' noise ' in the process
-more proactive communication with commercial - especially to manage
-expectations
-a definitive plan for how the strategic upgrade in applications architecture
-for mo will benefit / change his business support
-however , we are behind in finding the ' right ' replacement for neil ( one with
-experience and breadth of view potential ) , we have found a continental power
-settlemetns manager but he does not arrive until july 3 rd , we have been
-struggling with book split when that should have been completed a month ago
-and it is taking time to get all the ducks lined up re our plans for
-enlighten / dtl / envoice / autoconfirms / dcaf - hence his frustration about lost
-business opportunities now ! !
-hence i would love to find someone who could deliver the above ( ie be neil
-tarling ' s replacement ) or could assist us in
-providing and communicating the judgement calls on transmission and other
-adjustments - so improving perception of c . p . dpr
-prioritising and influencing enpower development agenda ( along with others )
-project manage issues around ' unstable ' documentation and settlement process
-vis a vis client sensitivity
-provide leadership in changing expectations / perceptions
-i ' m sorry for the length of the note but it may help you in determining a
-' best fit ' person
-please call if any of the above is unclear .
-mike
+douglas s parsons @ enron _ development
+08 / 15 / 2000 09 : 30 am
+to : doug leach / hou / ect @ ect
+cc : marc de la roche / hou / ect @ ect
+subject : re : cairn gas purchase bid
+i can appreciate and share your objective . earlier today i sent a separate
+note to vince forwarding your concerns and asking again for his assistance .
+i ' ll start there and if needed i ' ll contact michael popkin ' s structuring
+group . however , before getting too many people involved i want to see what
+feedback we get from cairn after they ' ve discussed the offers internally this
+week .
+doug leach @ ect
+08 / 15 / 2000 08 : 37 am
+to : douglas s parsons / enron _ development @ enron _ development
+cc : marc de la roche / hou / ect @ ect
+subject : re : cairn gas purchase bid
+i gave you several clear alternatives such as contacting vince ' s structuring
+group , michael popkin ' s southern cone structuring group and a long discussion
+regarding the pricing and suggested " collar . " i also asked if you had spoken
+to your customer about what they were willing to pay , but that was a non
+starter . trust me , i have seen almost every bad deal enron has entered into
+or attempted to enter into and i am trying to get metgas to objectively
+relook at their offer to cairn become it becomes another bad deal .
+douglas s parsons @ enron _ development
+08 / 15 / 2000 08 : 31 am
+to : doug leach / hou / ect @ ect
+cc :
+subject : re : cairn gas purchase bid
+that ' s fine , but don ' t you think i would also prefer not receiving criticism
+that assumes i didn ' t do something and provides no clear alternative .
+doug leach @ ect
+08 / 15 / 2000 07 : 52 am
+to : douglas s parsons / enron _ development @ enron _ development
+cc : marc de la roche / hou / ect @ ect , bobby
+subject : re : cairn gas purchase bid
+you spoke to me once and i gave you my opinions which were contrary to your
+resultant offer to cairn . currently , i have better things to do with my time .
+douglas s parsons @ enron _ development
+08 / 15 / 2000 12 : 10 am
+to : doug leach / hou / ect @ ect
+cc : marc de la roche / hou / ect @ ect , bobby
+subject : re : cairn gas purchase bid
+i talked to vince after we hung up and his only suggestion was to call
+sandeep kohli . i spoke with marc and yourself four times on this matter over
+a 3 day period and given the timing , i put forth a non - binding offer , after
+discussing it further with bobby , based on the information i had that appears
+to position us close to our competitors offers . we haven ' t committed
+ourselves and should we be selected for negotiations there are numerous
+variables to affect the outcome . if you ' ve got any suggestions for a better
+deal , please advise .
+doug leach @ ect
+08 / 14 / 2000 07 : 45 am
+to : douglas s parsons / enron _ development @ enron _ development
+cc : marc de la roche / hou / ect @ ect , bobby
+subject : re : cairn gas purchase bid
+i strongly disagree with the pricing and structure of your non - binding offer
+to cairn . this reminds me of the debacle in brazil . you should have contacted
+vince kaminski ' s research group as we talked about before an offer was made .
+this is a bad deal .
+douglas s parsons @ enron _ development
+08 / 12 / 2000 01 : 51 am
+to : doug leach @ ect , marc de la roche @ ect
+cc :
+subject : cairn gas purchase bid
+doug & marc ,
+fyi , please let me know if you think we ' re totally off base . i appreciate
+your help .
+regards ,
+doug
+- - - - - - - - - - - - - - - - - - - - - - forwarded by douglas s parsons / enron _ development on
+08 / 12 / 2000 01 : 48 am - - - - - - - - - - - - - - - - - - - - - - - - - - -
+douglas s parsons
+08 / 11 / 2000 06 : 24 am
+to : bobby farris / enron _ development @ enron _ development
+cc : f b virani / enron _ development @ enron _ development , ujjwal
+dey / enron _ development @ enron _ development , nilesh
+subject : cairn gas purchase bid
+bobby ,
+after meeting with cairn today in delhi , my perception is that our offer was
+received well . they were more open and relaxed then they were on wed .
+morning and made several encouraging comments about our price range , ( once we
+talked through the price movements ) , and the seriousness of our gas related
+activities on the west coast of india , in light of the ioc agreement . i
+think the overall package is attractive to them and no serious objections
+were raised . we did talk to some extent about the guarantees , but we didn ' t
+get too far and they ' re willing to accept at this point that what ' s
+acceptable to the lng suppliers , should be suitable for their needs .
+however , they would like to understand the corporate structure and assets of
+enron energy marketing a little better and i told them i would get back to
+them on that point .
+david and ajay were up in hazira yesterday looking at some property for their
+gas treatment facility , which apparently is across the road from pipeline
+access . while there they went and looked at shell ' s proposed lng site after
+walking the last 1 km , inaccessible to their 4 wd vehicle and not surprisingly
+found a beach .
+in summary , here is what we offered on a non - binding basis :
+six year production plateau
+85 % top
+$ 3 . 67 / mmbtu net , at a base of $ 18 / bbl brent , with point of sale at the
+tail - end of the gas processing plant
+floor & cap of $ 15 . 50 - $ 27 . 00 / bbl
+price movement : + / - $ 1 . 00 / bbl from the $ 18 / bbl base price ( on a 3 mo .
+rolling average ) equals + / - $ 0 . 145 / mmbtu fixed on a quarterly basis
+guarantees : same protection we ' re providing the lng suppliers under the
+trust retention account
+i appreciate everyone ' s help in submitting this offer .
+thanks ,
+doug

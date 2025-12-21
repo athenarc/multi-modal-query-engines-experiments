@@ -1,70 +1,46 @@
-attached is the presentation that jeff reviewed last week in the meeting .
-- - - - - - - - - - - - - - - - - - - - - - forwarded by brenda f herod / hou / ect on 06 / 27 / 2000
-08 : 39 pm - - - - - - - - - - - - - - - - - - - - - - - - - - -
-jeff johnson @ enron
-06 / 19 / 2000 05 : 34 pm
-to : beth perlman / hou / ect @ ect , bryce baxter / hou / ect @ ect , brent a
-price / hou / ect @ ect , leslie reeves / hou / ect @ ect , laura e scott / cal / ect @ ect ,
-sheila glover / hou / ect @ ect , jefferson d sorenson / hou / ect @ ect , robert
-superty / hou / ect @ ect , brenda f herod / hou / ect @ ect , kenneth m
-harmon / hou / ect @ ect , dave nommensen / hou / ect @ ect , regan m smith / hou / ect @ ect ,
-laray . odum @ luminant . com , nadeem . abbasi @ luminant . com , scott
-williamson / hou / ect @ ect , paul f poellinger / hou / ect @ ect , john
-simmons / na / enron @ enron , chris hanz / corp / enron @ enron , sally beck / hou / ect @ ect ,
-rebecca ford / hou / ect @ ect
-cc : angelina v lorio / hou / ect @ ect , john paskin / lon / ect @ ect
-subject : wed unify mtg 2 : 00 - 2 allen center , 12 th floor conf room
-please note that the wed meeting will be held as planned from 2 : 00 - 4 : 00 pm in
-the 2 allen center in the 12 th floor forum conference room .
-the room entrance is just off the elevator bank foyer .
-here is the draft of the presentation that we will discuss on wednesday . we
-are interested in your input and feedback in the meeting on wednesday .
-thanks .
-- - - - - - - - - - - - - - - - - - - - - - forwarded by jeff johnson / corp / enron on 06 / 19 / 2000
-05 : 20 pm - - - - - - - - - - - - - - - - - - - - - - - - - - -
-alarm enabled : an alarm will occur on 06 / 21 / 2000 01 : 55 pm
-calendar entry
-brief description :
-date :
-time :
-unify system - - problems and proposed immediate projects . two allen center ,
-12 th floor forum
-06 / 21 / 2000
-02 : 00 pm - 04 : 00 pm
-detailed description :
-the meeting will be held in two allen center on the 12 th floor in the large
-conference room ( called the forum ) . the room entrance is just off the
-elevator bank in the foyer .
-we believe that we have an approach to immediately begin to address key
-performance issues in the unify system .
-to be successful with the proposed projects , we need your input , sponsorship
-and participation . angie lorio will find a location and will publish as soon
-as possible .
-the proposed agenda is as follows :
-i . unify - - current state , strengths , issues
-ii . conceptual overview of proposed solutions
-organization building
-performance monitoring team
-sybase 12 upgrade
-sql server testing
-middle tier rearchitecture project
-scoping for a re - write effort
-iii . solutions proposals / plans for immediate review / kickoff
-proposed scope
-assumptions
-high timelines / cost estimates
-staffing
-iv . facilitated discussion on unify
-future growth / changes required for unify
-new project prioritization
-invitations have been sent to : beth perlman / hou / ect @ ect , bryce
-baxter / hou / ect @ ect , brent a price / hou / ect @ ect , leslie reeves / hou / ect @ ect ,
-laura e scott / cal / ect @ ect , sheila glover / hou / ect @ ect , jefferson d
-sorenson / hou / ect @ ect , robert superty / hou / ect @ ect , brenda f herod / hou / ect @ ect ,
-kenneth m harmon / hou / ect @ ect , dave nommensen / hou / ect @ ect , regan m
-smith / hou / ect @ ect , laray . odum @ luminant . com , nadeem . abbasi @ luminant . com , scott
-williamson / hou / ect @ ect , paul f poellinger / hou / ect @ ect
-optional invitees : chris hanz / corp / enron @ enron , john simmons / na / enron @ enron ,
-angie lorio
-this meeting repeats starting on ( if the date occurs on a weekend the
-meeting ) .
+eia predicts supply shortfall will linger through winter
+the energy information administration said yesterday in its september
+short - term energy outlook it is projecting natural gas prices at the wellhead
+will increase by about 87 % this winter ( october - march ) compared to last
+winter . residential prices for gas are expected to rise on average by 27 %
+compared to last year . for the entire year , the average wellhead price for
+natural gas is projected to be $ 3 . 40 / mcf , the highest annual wellhead price
+on record ( in inflation - adjusted terms , it would be the highest annual
+average price since 1985 ) .
+the short - term supply constraints that are currently hindering the industry ' s
+ability to meet storage and power generation demand at the same time are
+likely to continue into the heating season , eia said . storage levels could
+end up being about 8 % below the five - year average of about 3 , 000 bcf by the
+start of winter if net injections continue at 10 % below historically average
+rates through the remainder of the refill season .
+the effects of increased drilling for gas are not expected to appear in the
+form of significantly increased production until after the next heating
+season , according to the agency ' s report .
+" for now , we are continuing to maintain a conservative view of possible
+increases in domestic gas production for 2000 and 2001 , with assumed
+increases of 0 . 5 % and 1 % , respectively , for this year and next . . . , " the eia
+report stated . " on the other hand , the u . s . natural gas rig count on aug . 25
+was at a recent high of 794 rigs . exploration and production budgets for many
+natural gas producers are expected to increase sharply in 2000 and 2001 ,
+spurred by higher prices and greatly improved current and expected revenues
+from producing assets . also on the positive side , data from the texas
+railroad commission suggest that , through may , year 2000 gas production
+increased , if only slightly ( 0 . 4 % ) . this signifies a turnaround ( however
+modest ) in a key producing region . very high gas drilling rates , including a
+record - setting pace in deep offshore gulf of mexico , confirm that
+increasingly positive results for domestic gas production are under way . "
+imports are projected to rise by about 12 % next year primarily because of the
+1 . 35 bcf / d alliance pipeline coming on line next month .
+meanwhile the demand outlook remains bullish at 4 . 2 % annual growth . in 2001 ,
+however , the forecast has been revised downward to 2 . 5 % growth because of
+higher than expected natural gas prices . the industrial sector is the leading
+sector for demand increases in 2000 at 9 . 3 % , while electric utility demand is
+expected to decline by 4 . 0 % primarily because of power plant sales . for the
+power generation sector as a whole , gas demand is expected to grow 6 . 5 % this
+year and 1 . 5 % in 2001 . eia said the reduced growth rate next year is largely
+due to the reversal in relative prices of fuel oil and natural gas , which
+began in august , with fuel oil gaining the price advantage as gas prices
+continued to rise .
+gas demand this winter is expected to be up by 5 . 7 % compared to last winter
+if weather is normal . normal weather implies a 12 % rise in heating
+degree - days compared with last winter .

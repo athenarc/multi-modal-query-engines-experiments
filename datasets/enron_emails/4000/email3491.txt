@@ -1,31 +1,6 @@
-hi . this is the qmail - send program at hostcompanyl 00 . com .
-i ' m afraid i wasn ' t able to deliver your message to the following addresses .
-this is a permanent error ; i ' ve given up . sorry it didn ' t work out .
-:
-sorry , no mailbox here by that name . ( # 5 . 1 . 1 )
-- - - below this line is a copy of the message .
-return - path :
-received : ( qmail 3667 invoked from network ) ; 19 jul 2005 10 : 57 : 33 - 0000
-received : from unknown ( helo mailwisconsin . com ) ( 221 . 239 . 212 . 243 )
-by hostcompanyl 00 . com with smtp ; 19 jul 2005 10 : 57 : 33 - 0000
-received : from 205 . 214 . 42 . 66
-( squirrelmail authenticated user projecthoneypot @ projecthoneypot . org ) ;
-by mailwisconsin . com with http id j 87 gzo 24815767 ;
-tue , 19 jul 2005 10 : 57 : 46 + 0000
-message - id :
-date : tue , 19 jul 2005 10 : 57 : 46 + 0000
-subject : just to her . . .
-from : " barry castillo "
-to : info @ dbhaynes . com
-user - agent : squirrelmail / 1 . 4 . 3 a
-x - mailer : squirrelmail / 1 . 4 . 3 a
-mime - version : 1 . 0
-content - type : text / html ; charset = iso - 8859 - 1
-content - transfer - encoding : 8 bit
-x - priority : 3 ( normal )
-importance : normal
-soft viagra at $ 1 . 62 per dose
-ready to boost your sex life ? positive ?
-time to do it right now !
-order soft viagra at incredibly low prices
-starting at $ 1 . 99 per dose ! unbeiivable !
+ozzie :
+as a follow up to our phone conversation , how about scheduling the ft . pierce project review meeting during the second week in april ? the objective of the meeting is to look at the technical risk in the deal and the mitigation measures we taking . the intended outcome is to ensure all related enron entities are supportive of the transaction and have had the opportunity to ask questions . this will reduce the chance that we will run into objections down the road on " technical risks " as we begin to ramp up our capital commitments . we had a similar meeting with the electrobolt team in enron s . america , that was very productive and accomplished the above objectives .
+do you have a project presentation that you ( and / or the lead developer ) could discuss with the above team ? as many of the technical risk issues are also tied to commercial aspects of the deal we should also cover these areas as well ( e . g . , commercial objectives and obligations driving the technical design and implementation strategy ) .
+one of the key aspects of the project to discuss is the schedule risk and our strategy for securing a capable construction contractor for the job . let me know as to your availability , and who else you think should attend the meeting .
+thanks ,
+brian

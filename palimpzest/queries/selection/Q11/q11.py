@@ -18,7 +18,7 @@ model = getattr(Model, f"{args.provider.upper()}_{args.model.replace(':', '_').r
 load_dotenv()
 
 if args.wandb:
-    run_name=f"palimpzest_Q11_filter_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name=f"palimpzest_Q11_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
@@ -26,20 +26,19 @@ if args.wandb:
         group="Selection",
     )
 
-player_names = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)['Player Name']
-reports = pz.MemoryDataset(id="player_names", vals=player_names)
-reports = reports.sem_filter("The player is from America.")
+df_movies = pd.read_csv("datasets/fever/fever.csv")[['id', 'claim']].head(args.size).rename(columns={'id': 'id_'})
+movies = pz.MemoryDataset(id="movies", vals=df_movies)
+movies = movies.sem_filter("The claim is valid.")
 
 config = pz.QueryProcessorConfig(
     available_models=[model],
 )
 
-output = reports.run(config=config)
-output_df = output.to_df()
+output = movies.run(config=config)
+output_df = output.to_df().rename(columns={'id_': 'id'})
 
-output_file = f"evaluation/selection/Q11/results/palimpzest_Q11_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+output_file = f"evaluation/selection/Q11/results/palimpzest_Q11_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
 output_df.to_csv(output_file)
-
 
 with open('statistics/selection/Q11.log', 'a') as file:
     file.write(f"System: Palimpzest\n")

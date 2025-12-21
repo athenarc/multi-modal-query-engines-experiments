@@ -1,16 +1,9 @@
-gentlemen ,
-below is a plan of action for moving along with the var methodology change
-related to forward - forward volatility :
-1 . finalize the methodology proposed ( research / market risk )
-- determine the time period used to calculated forward - forward vols vs .
-correlations ( 20 days vs . 60 days )
-- stabilize the calculation for curves and time periods where the curve does
-not change based on historical prices , implying volatility of 0 %
-2 . get approval for the methodology change from rick buy ( see draft of the
-memo attached ) - john lavorato and john sherriff
-3 . develop and implement the new methodology in a stage environment
-( research / it )
-4 . test the new methodology ( market risk , traders )
-5 . migrate into production ( research / it )
-please let me know if this is reasonable and meets everyone ' s expectations .
-vlady .
+thinking of breathing new life into your business ?
+start from revamping its front - end - logo and visuai identity .
+loqodentity offers creative custom design of loqos ,
+stationery and web - sites . under our carefui hand these powerful marketing toois
+wiil brinq a breath of fresh air into your business
+and make you stand out among the competitors .
+you are just a click
+away from your future success . ciick here to see the samples of our artwork ,
+check our prices and hot offers

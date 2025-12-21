@@ -1,24 +1,69 @@
-there are two fields of gas that i am having difficulty with in the unify
-system .
-1 . cage ranch - since there is no processing agreement that accomodates this
-gas on king ranch , it is my understanding hpl is selling the liquids and
-king ranch is re - delivering to stratton . it is also my understanding that
-there is a . 05 cent fee
-to deliver this gas . we need a method to accomodate the volume flow on hpl
-at meter 415 and 9643 . this gas
-will not be reflected on trans . usage ticket # 123395 and # 95394 since it is
-not being nominated from a processing agreement . we either , need to input
-a point nom ( on hpl or krgp ) at these meters to match the nom at meter 9610 ,
-or a deal for purchase and sale ( if king ranch is taking title to the gas )
-needs to be input into sitara at these meters with the appropriate rate . i
-have currently input a point nom on krgp to accomodate this flow , so we can
-divert some of this gas to the current interstate sales that are being made .
-2 . forest oil - there is a processing agreement that will accomodate flow
-from the meter ( 6396 ) into king ranch . it is my
-understanding that this agreement was originally setup until texaco had
-their own processing agreement . i need confirmation that the gas from this
-meter should be nominated on contract # ( 96006681 ) and that this agreement
-should have been reassigned to hplc . ( it is currently still under hplr ) .
-if this gas is not nominated on the above transport agreement , then once
-again we need to accomodate the flow volume on the hpl pipe with either a
-point nom or a sitara deal at meters 415 and 9643 .
+pre style = font - face : arialhello friend ,
+hope you are doing great and sound ? i am dr . ronald
+matheson barrister at law and attorney to late sir mark
+stephanopoulos , a greek merchant otherwise known as my
+client who was based in the united kingdom and died of
+complications from injuries sustained after a ghastly
+motor accident .
+as the attorney to sir mark stephanopoulos i was his
+confidant as he shared with me virtually everything
+about himself , his business and family . i was his
+attorney for 15 years and during that period i wrote
+his will and was also named as the executor , which has
+since been fulfilled . i am also aware due to my
+closeness to him that the amount ten million pounds he
+deposited with a bank in europe was not willed out . he
+told me about this on his sick bed and even instructed
+that i should prepare a codicil to that effect ,
+however before i could finish my work he had died .
+after his death , funeral and subsequent execution of
+his will i went into action to ascertain the
+information passed unto me by my client . my
+investigation conformed to the information ; at that
+point i knew i had to do something to move the funds
+out of the bank and knowing that i cannot do this
+alone i have decided to contact you and seek your
+assistance and acceptance to be the next of kin to the
+estate .
+aside my humble self and you , the relationship manager
+( account officer ) of my client knows about this , for
+he was very helpful during my discreet investigation ,
+through him i was able to see the deposit paper work
+of the money which confirmed that there is no next of
+kin to the funds . it is necessary for us to move the
+money out of the bank on time because if we do not do
+this within the next two years the bank would regard
+the money as sundry funds , which would give them the
+right to claim the money .
+i cannot move the money in my name because he is my
+client , for it could arose suspicion , his account
+officer cannot do the same , hence the importance of
+your assistance . have my assurance that there is
+nothing to fear about , as we also need your assurance
+that you would work with me without fear or favour to
+achieve our desired objective . the legal back up is no
+problem for i would be responsible . since the codicil
+was not ready before his death , letter of
+administration without will would be secured from the
+probate office , with this letter i would personally
+apply on your behalf to the bank for the release of
+the funds to you .
+what i require from you to enable us achieve the above
+are your ;
+names
+address
+date of birth
+telephone and fax numbers
+upon receipt of a confirmation of acceptance from you
+a sharing ratio would be worked out between the three
+of us and communicated to you along with my telephone
+number . in the light of above , your positive responses
+would be appreciated through my email
+( mathesono 44 @ netscape . com )
+take care and have a nice day .
+sincerely ,
+ronald matheson
+mathwood associates . / pre
+hrfont color = blue size = - 1 emthis message was sent using gonowmail / em
+strongemuwhy go later . . . / u / em when you canemu gonow ! / u / em / strong
+get free email today with ustronga href = http : / / djmart . unfranchise . comfont color = blue size = - 1 gonowmail . com / font / a / strong / u / font

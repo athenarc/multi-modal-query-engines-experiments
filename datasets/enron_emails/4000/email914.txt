@@ -1,8 +1,3 @@
-depends where they insert it
-- - - - - original message - - - - -
-from : nettelton , marcus
-sent : friday , november 30 , 2001 11 : 16 am
-to : kitchen , louise ; port , david ; wallumrod , ellen
-subject : my new appointment is announced ! !
-sec ' s pitt promises swift probe into enron
-dow jones news service , 11 / 30 / 01
+start date : 12 / 21 / 01 ; hourahead hour : 12 ; no ancillary schedules awarded . no variances detected .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2001122112 . txt

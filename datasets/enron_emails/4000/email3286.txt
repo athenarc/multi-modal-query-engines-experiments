@@ -1,1 +1,8 @@
-paramount sales of costa rica 12000 biscayne blvd . , ste . 509 north miami , fl 33181 this e - mail message is an advertisement and / or solicitation .
+the original message was received at tue , 19 jul 2005 04 : 59 : 07 - 0600
+from pc - 202 - 169 - 136 - 140 . cable . kumin . ne . jp [ 202 . 169 . 136 . 140 ]
+- - - - - the following addresses had permanent fatal errors - - - - -
+( reason : 550 unknown user )
+- - - - - transcript of session follows - - - - -
+. . . while talking to mail . auracom . com . :
+> > > rcpt to :
+550 5 . 1 . 1 . . . user unknown

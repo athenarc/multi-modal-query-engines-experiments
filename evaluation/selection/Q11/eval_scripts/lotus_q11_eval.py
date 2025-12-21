@@ -9,47 +9,33 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 parser.add_argument("-o", "--opt", action='store_true', help="Evaluate optimized instead of default implementation of sem filet")
 args = parser.parse_args()
 
-def count_true_positives(df):
-    if (df['_merge'] == 'both').any():
-        return len(df[(df['_merge'] == 'both') & df.apply(lambda row: pd.notna(row['nationality_pred']) and pd.notna(row['nationality_gt']) and row['nationality_pred'] in row['nationality_gt'], axis=1)])
-    return 0
+def compute_metrics(df):
+    negative_gt = df['label_gt'].isin(['NOT ENOUGH INFO', 'REFUTES'])
 
-def count_false_positives(df):
-    if (df['_merge'] == 'both').any():
-        return len(df[(df['_merge'] == 'both') & df.apply(lambda row: pd.notna(row['nationality_pred']) and pd.notna(row['nationality_gt']) and row['nationality_pred'] not in row['nationality_gt'] and row['nationality_pred'] == "American", axis=1)])
-    return 0
+    tp = len(df[(df['label_gt'] == 'SUPPORTS') & (df['label_pred'] == 'SUPPORTS')])
+    fp = len(df[negative_gt & (df['label_pred'] == 'SUPPORTS')])
+    tn = len(df[negative_gt &(df['label_pred'] != 'SUPPORTS')])
+    fn = len(df[(df['label_gt'] == 'SUPPORTS') &(df['label_pred'] != 'SUPPORTS')])
 
-def count_true_negatives(df):
-    if (df['_merge'] == 'left_only').any():
-        return len(df[(df['_merge'] == 'left_only') & (~df['nationality_gt'].str.contains("American", na=False))])
-    return len(df[(df['nationality'] != 'American')])
-
-def count_false_negatives(df):
-    if (df['_merge'] == 'left_only').any():
-        return len(df[(df['_merge'] == 'left_only') & (df['nationality_gt'].str.contains("American", na=False))])
-    return len(df[df['nationality'] == 'American'])
+    return tp, fp, tn, fn
 
 if __name__ == "__main__":
     implementation = "cascades" if args.opt else "default"
 
     results_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_{implementation}_{(args.model.replace('/', '_')).replace(':', '_')}_{args.provider}_{args.size}.csv"
 
-    player_evidence = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-    player_evidence = player_evidence[['Player Name', 'nationality']]
+    claims = pd.read_csv("datasets/fever/fever.csv")[['id', 'claim', 'label']].head(args.size)
 
     if os.stat(results_file).st_size == 0:
-        lotus_res_default = pd.DataFrame(columns=['Player Name', 'nationality'])
+        lotus_res = pd.DataFrame(columns=['id', 'claim'])
     else:
-        lotus_res_default = pd.read_csv(results_file)
-        lotus_res_default = lotus_res_default.rename(columns={'player_name' : 'Player Name'})
-        lotus_res_default['nationality'] = 'American'
+        lotus_res = pd.read_csv(results_file, index_col=0)
+        lotus_res['label'] = "SUPPORTS"
 
-    df = player_evidence.merge(lotus_res_default, on=['Player Name'], how='outer', suffixes=('_gt', '_pred'), indicator=True)
+    df = claims.merge(lotus_res, on=['id'], how='outer', suffixes=('_gt', '_pred'), indicator=True)
 
-    tp = count_true_positives(df)
-    fp = count_false_positives(df)
-    tn = count_true_negatives(df)
-    fn = count_false_negatives(df)
+    tp, fp, tn, fn = compute_metrics(df)    
+    assert(tp+tn+fp+fn == args.size)
 
     with open('statistics/selection/Q11.log', 'a') as file:
         file.write(f"True Positives: {tp}\n")

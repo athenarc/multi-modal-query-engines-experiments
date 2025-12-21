@@ -9,39 +9,28 @@ parser.add_argument("-o", "--opt", action='store_true', help="Evaluate optimized
 
 args = parser.parse_args()
 
-def count_true_positives(df):
-    true_positives = df[(df['sentiment_gt'] == 'positive') & (df['sentiment_pred'] == 'positive')]
-    return len(true_positives)
-
-def count_false_positives(df):
-    false_positives = df[(df['sentiment_gt'] == 'negative') & (df['sentiment_pred'] == 'positive')]
-    return len(false_positives)
-
-def count_true_negatives(df):
-    true_negatives = df[(df['_merge'] == 'left_only') & (df['sentiment_gt'] == 'negative')]
-    return len(true_negatives)
-
-def count_false_negatives(df):
-    false_negatives = df[(df['_merge'] == 'left_only') & (df['sentiment_gt'] == 'positive')]
-    return len(false_negatives)
-
+def compute_metrics(df):
+    tp = len(df[(df['sentiment_gt'] == 'positive') & (df['sentiment_pred'] == 'positive')])
+    fp = len(df[(df['sentiment_gt'] == 'negative') & (df['sentiment_pred'] == 'positive')])
+    tn = len(df[(df['_merge'] == 'left_only') & (df['sentiment_gt'] == 'negative')])
+    fn = len(df[(df['_merge'] == 'left_only') & (df['sentiment_gt'] == 'positive')])
+    return tp, fp, tn, fn
 
 if __name__ == "__main__":
     implementation = "cascades" if args.opt else "default"
 
     results_file = f"evaluation/selection/Q9/results/lotus_Q9_filter_{implementation}_{(args.model.replace('/', '_')).replace(':', '_')}_{args.provider}_{args.size}.csv"
 
-    imdb_dataset = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
-    lotus_res = pd.read_csv(results_file)
+    imdb_dataset = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").drop_duplicates().head(args.size)
+
+    lotus_res = pd.read_csv(results_file, index_col=0)
 
     lotus_res["sentiment"] = "positive"
 
     df = imdb_dataset.merge(lotus_res, on="review", how="outer", suffixes=('_gt', '_pred'), indicator=True)
 
-    tp = count_true_positives(df)
-    fp = count_false_positives(df)
-    tn = count_true_negatives(df)
-    fn = count_false_negatives(df)
+    tp, fp, tn, fn = compute_metrics(df)
+    assert(tp+tn+fp+fn == args.size)
 
     with open('statistics/selection/Q9.log', 'a') as file:
         file.write(f"True Positives: {tp}\n")

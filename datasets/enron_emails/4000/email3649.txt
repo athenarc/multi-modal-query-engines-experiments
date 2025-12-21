@@ -1,3 +1,5 @@
-i have written a c + + code to do the following : for a given curve ,
-the code will filter out the seasonal factor . it then fits the deseasoned
-curve to a smooth function of the form f ( t ) = a + a / ( t + b ) c , with 00 , which is useful in calculating forward - forward ? vol . ? the outputs are season patterns ( 2 different patterns are allowed ) ? and the smoothed curve . one can then calculate forward - forward vol ? from the smoothed curve and superimpose the seasonal factors back ? onto the curve . ? ? this procedure is not useful for var calcuation . however , i believe it ? is useful for other situations which require the knowledge of seasonal ? forward - forward vols . for example , in power plant valuation and ? credit exposure simulations , it would reflect the reality more closely ? if we add seasonality to our forward - forward vol in simulating the forward ? prices . ? ? attached are the spreadsheet and xll file . i will forward the c code if ? any of you is interested . ? ? alex ? ?
+bill ,
+dispatcher training session 2 scheduled for july 10 - 13 , 2001 in salt lake city , utah has been cancelled ( with only 11 people signed up and only three people with hotel reservations ) . if you have made reservations , be sure to cancel them asap .
+bert meyers and mark guzman were registered for this class .
+there are currently six spaces available in the session 2 scheduled for july 17 - 20 , 2001 in folsom , ca . please contact danielle at danielle @ wscc . com or ( 801 ) 582 - 0353 if you would like to attend this class . preference will be given to those who were enrolled in the july 10 - 13 , 2001 class for the remaining spaces .
+danielle gardner ph : ( 801 ) 582 - 0353 fax : ( 801 ) 582 - 3918 em : danielle @ wscc . com

@@ -1,2 +1,6 @@
-louise , as of today there is $ 722 , 572 in schedule c for the tbg settlement . the material that i provided to you showed $ 1 mm dollars in schedule c . the $ 1 mm is actually an estimate that includes payments from tbg for sept and oct deliveries that have not yet been received . the amount of those payments that are attributable to schedule c is $ 277 , 428 which will bring schedule c up to the $ 1 mm at the time of settlement . i am told that the value should be under " intra , east - north , or east - northeast or scott neal " . i have been assured that the $ is there .
-frank
+the copy of the auction results that you got at yesterday ' s meeting is
+incorrect . what happened was when i tried to sort the entire page , i only
+highlighted the related column and expected excel 98 would sort the whole
+page . ( as steve told me before , i should highlight the whole thing if i try
+to do sorting in excel ) . i appolized for the misleading and have redone the
+whole thing . thanks for the patience . wish you all have a great weekend .

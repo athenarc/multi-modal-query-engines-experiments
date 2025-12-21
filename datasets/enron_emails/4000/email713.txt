@@ -1,15 +1,30 @@
-all :
-attached you will find a list that reflects your seat assignments for business continuity planning ( bcp ) . these seats are located on the 30 th and 31 st floors of enron center north ( ecn ) . as previously communicated , you will report to these designated seats in the event of an outage in ecs .
-the exception to this is as follows :
-if your seat assignment is located on the 31 st floor , you will report to your original location that you occupied prior to your move into ecs . this will hold true until the monday after thanksgiving , as we will have the 31 st floor seats set up at that time .
-testing :
-once you have moved to ecs , if you would like to test your bcp location , you will be able to test your seat for functionality every thursday from 3 - 6 pm . testing is not required , but is highly recommended .
-if anyone has any questions or concerns about these procedures , please feel free to contact me at any time .
-regards ,
-stephen r . harrington
-technical project manager , ecs project
-enron net works , llc
-w : 713 - 853 - 7619
-p : 877 - 651 - 7361
-c : 713 - 444 - 7279
-stephen . harrington @ enron . com
+just want to confirm the march midcon volumes for mobil :
+3 / 21 28 , 271
+3 / 22 26 , 221
+3 / 23 24 , 459
+3 / 24 30 , 000
+3 / 25 30 , 000
+3 / 26 26 , 852
+3 / 27 30 , 000
+3 / 28 30 , 000
+3 / 29 30 , 000
+3 / 30 20 , 164
+3 / 31 12 , 365
+total 288 , 332 mmbtu
+this is what i saw in pops - please let me know if there should be any
+different volumes / days .
+thanks for your help .
+rebecca
+- - - - - - - - - - - - - - - - - - - - - - forwarded by rebecca griffin / na / enron on 04 / 02 / 2001
+10 : 49 am - - - - - - - - - - - - - - - - - - - - - - - - - - -
+from : lee l papayoti @ ect on 03 / 21 / 2001 01 : 58 pm
+to : rebecca griffin / na / enron @ enron
+cc : daren j farmer / hou / ect @ ect
+subject : mobil beaumont - marol
+rebecca
+for mobil in march , beginning on march 21 , hpl started delivering 30 , 000 / d
+for midcon ( just like we did in dec and jan , and maybe in feb too )
+check with daren farmer when you get ready to do the flash invoice on the
+first to confirm the midcon volume amounts and dates
+thanks ! ! ! ! !
+lee

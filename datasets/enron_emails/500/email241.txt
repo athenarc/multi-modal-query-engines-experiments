@@ -1,20 +1,17 @@
-- - - - - - - - - - - - - - - - - - - - - - forwarded by edward d gottlob / hou / ect on 11 / 02 / 2000
-10 : 58 am - - - - - - - - - - - - - - - - - - - - - - - - - - -
-brian redmond
-11 / 02 / 2000 10 : 30 am
-to : tom shelton / hou / ect @ ect , steve hpl schneider / hou / ect @ ect , thomas a
-martin / hou / ect @ ect , jim schwieger / hou / ect @ ect , edward d gottlob / hou / ect @ ect ,
-james mckay / hou / ect @ ect
-cc :
-subject : texas energy reliability council meeting
-team ,
-on 15 november , steve and tom s . will represent hpl at a meeting of the texas
-energy reliability council hosted by commissioner michael williams to discuss
-the outlook for gas supply and demand in texas this winter . i will dial in
-by phone once i am free from another meeting that morning .
-tom s . can you find out more detail as to what we need to be ready to
-discuss and then coordinate with the appropriate hpl people to ensure we are
-prepared at the meeting . specifically , does james or anyone else need to
-attend or be on the call ?
-thanks ,
-brian
+read very carefully
+your migration date is : today ! !
+please make sure you are connected to the network before you launch this
+application .
+click the button only once !
+if a pop - up box appears , prompting you to " abort , cancel or trust signer "
+please select trust signer . this box may appear multiple times . please
+select trust signer for every instance .
+please note : you will not notice any change to your existing personal
+address book , journal entries , private folder structure or calendar after
+running this application . any information you add to your personal address
+book , journal entries or calendar after you process this tool will need to be
+manually imported into outlook after you are migrated .
+failure to run this application will result in your data not being imported
+to outlook .
+thank you for your cooperation ,
+outlook 2000 migration team

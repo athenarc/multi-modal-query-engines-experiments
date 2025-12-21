@@ -1,37 +1,26 @@
-hi . this is the qmail - send program at vwsol 03 . fast . net .
-i ' m afraid i wasn ' t able to deliver your message to the following addresses .
-this is a permanent error ; i ' ve given up . sorry it didn ' t work out .
-:
-207 . 115 . 20 . 20 does not like recipient .
-remote host said : 553 5 . 3 . 0 . . . addressee unknown , relay = [ 209 . 92 . 50 . 59 ]
-giving up on 207 . 115 . 20 . 20 .
-- - - below this line is a copy of the message .
-return - path :
-received : ( qmail 31926 invoked by uid 7402 ) ; 19 jul 2005 10 : 57 : 30 - 0000
-delivered - to : nanoinkc - catchall - addr @ nanoink . com
-received : ( qmail 22117 invoked by uid 7402 ) ; 19 jul 2005 10 : 57 : 30 - 0000
-delivered - to : nanoinkc - info @ nanoink . com
-received : ( qmail 22111 invoked from network ) ; 19 jul 2005 10 : 57 : 27 - 0000
-received : from unknown ( helo mailwisconsin . com ) ( 62 . 135 . 9 . 79 )
-by vwsol 03 . fast . net with smtp ; 19 jul 2005 10 : 57 : 27 - 0000
-received : from 205 . 214 . 42 . 66
-( squirrelmail authenticated user projecthoneypot @ projecthoneypot . org ) ;
-by mailwisconsin . com with http id j 87 gzo 24817161 ;
-tue , 19 jul 2005 10 : 57 : 46 + 0000
-message - id :
-date : tue , 19 jul 2005 10 : 57 : 46 + 0000
-subject : just to her . . .
-from : " barry castillo "
-to : info @ nanoink . com
-user - agent : squirrelmail / 1 . 4 . 3 a
-x - mailer : squirrelmail / 1 . 4 . 3 a
-mime - version : 1 . 0
-content - type : text / html ; charset = iso - 8859 - 1
-content - transfer - encoding : 8 bit
-x - priority : 3 ( normal )
-importance : normal
-soft viagra at $ 1 . 62 per dose
-ready to boost your sex life ? positive ?
-time to do it right now !
-order soft viagra at incredibly low prices
-starting at $ 1 . 99 per dose ! unbeiivable !
+licensed experts in a timely manner will check your case profile . it is
+complimentary as you place the or - der .
+check our weekly special items . and cut down the expenses on taablets
+significantly .
+i found your web is eye - catching . wide range of remedy selection .
+economical prices . 48 hrs delivery . top up prescripts at zero charges .
+gratis consultations with licensed specialist . brilliant . ¨ c mary olsen in
+nj .
+log on to on - line tracking systems to update your shipments .
+accurate , timely and efficient . that ¡ ¯ s our assured pledge to you . check
+our reduced prices on all the items you require . weekly specials .
+browse our cyberzone for quality tablets . we offer them at the very best
+price .
+http : / / whom . o . honordeeds . com / 8 tl /
+to dine with them ; but she could not bear to have the difference of style ,
+under the mixed plea of a headache of her own , and some return
+but in front of the tan - yard , close to the entrance , stood a little girl
+clothed in rags , very pretty to look at , with curly hair , and eyes so blue
+and clear that it was a pleasure to look into them . the child said not a
+word , nor did she cry ; but each time the little door was opened she gave a
+long , long look into the yard . she had not a button - that she knew right
+well , and therefore she remained standing sorrowfully outside , till all the
+others had seen the grave and had gone away ; then she sat down , held her
+little brown hands before her eyes , and burst into tears ; this girl alone
+had not seen puggie ' s grave . it was a grief as great to her as any grown
+person can experience .

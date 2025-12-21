@@ -9,39 +9,29 @@ parser.add_argument("-o", "--opt", action='store_true', help="Evaluate optimized
 
 args = parser.parse_args()
 
-def count_true_positives(df):
-    true_positives = df[(df['Spam/Ham_gt'] == 'spam') & (df['Spam/Ham_pred'] == 'spam')]
-    return len(true_positives)
-
-def count_false_positives(df):
-    false_positives = df[(df['Spam/Ham_gt'] == 'ham') & (df['Spam/Ham_pred'] == 'spam')]
-    return len(false_positives)
-
-def count_true_negatives(df):
-    true_negatives = df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'ham')]
-    return len(true_negatives)
-
-def count_false_negatives(df):
-    false_negatives = df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'spam')]
-    return len(false_negatives)
-
+def compute_metrics(df):
+    tp = len(df[(df['Spam/Ham_gt'] == 'spam') & (df['Spam/Ham_pred'] == 'spam')])
+    fp = len(df[(df['Spam/Ham_gt'] == 'ham') & (df['Spam/Ham_pred'] == 'spam')])
+    tn = len(df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'ham')])
+    fn = len(df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'spam')])
+    return tp, fp, tn, fn
 
 if __name__ == "__main__":
     implementation = "cascades" if args.opt else "default"
 
     results_file = f"evaluation/selection/Q10/results/lotus_Q10_filter_{implementation}_{(args.model.replace('/', '_')).replace(':', '_')}_{args.provider}_{args.size}.csv"
 
-    enron_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Message ID', 'Message', 'Spam/Ham']]
+    enron_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Message', 'Spam/Ham']]
     lotus_res = pd.read_csv(results_file, index_col=0)
 
     lotus_res["Spam/Ham"] = "spam"
 
     df = enron_emails.merge(lotus_res, on="Message", how="outer", suffixes=('_gt', '_pred'), indicator=True)
 
-    tp = count_true_positives(df)
-    fp = count_false_positives(df)
-    tn = count_true_negatives(df)
-    fn = count_false_negatives(df)
+    tp, fp, tn, fn = compute_metrics(df)
+    assert(tp+tn+fp+fn == args.size)
+
+    # print(tp+tn+fp+fn)
 
     with open('statistics/selection/Q10.log', 'a') as file:
         file.write(f"True Positives: {tp}\n")

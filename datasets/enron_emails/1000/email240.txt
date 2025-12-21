@@ -1,106 +1,85 @@
-mike ,
-thanks for your message . you are on point as to my intent . from the
-discussion i had with andy last week , there seems to be several similarities
-between the metals business and industrial markets . i believe the blueprint
-that is forthcoming will provide more insight that will be helpful to you
-all . we would love to share this with you , and also discuss your system
-direction . there may be some opportunities for us to work together on the
-development . i would like to have a discussion to talk about next steps , and
-believe andy is planning to initiate this after he returns from holiday . let
-me know if you have some other ideas .
-i ' m sorry that we didn ' t have a chance to get together last week while i was
-in london . my trip was very short , and i kept missing you when i went to
-your desk . i ' ll plan some time with you when i ' m there next time .
-mike jordan
-01 / 24 / 2001 07 : 51 am
-to : brenda f herod / hou / ect @ ect
-cc : sally beck / hou / ect @ ect
-subject : re : metals
-brenda
-it strikes me that the planning documentation could be enormously useful to
-us in backtesting our existing processes and determining any potential
-overlaps
-is there any obstacle to access to this information ?
-enron capital & trade resources corp .
-from : brenda f herod 23 / 01 / 2001 23 : 40
-to : andrew cornfield / lon / ect @ ect
-cc : mike jordan / lon / ect @ ect , paul wallace / lon / ect @ ect , john
-jacobsen / hou / ect @ ect , roy lipsett / hou / ect @ ect , michael e moscoso / hou / ect @ ect ,
-kristen j hanson / hou / ect @ ect , yvette g connevey / corp / enron @ enron , jill
-lafave / enron @ enronxgate , delmar davis / enron @ enronxgate , daniel
-hamilton / enron @ enronxgate
-subject : re : metals
-andy ,
-thanks so much for your message . i had you on my " to do " list today to
-follow - up from our conversation last week . i appreciate your responses , and
-will follow - up as needed .
-just to recap eim ' s current inititives .
- ( pwc ) was engaged in 10 / 00 to develop a business plan
-for tactical and strategic solutions for the projected growth in the physical
-business . in 11 / 00 , aa was engaged to develop a " blueprint " of eim major
-processes ( deal execution , deal capture , risk management , logistics ,
-settlements and financial reporting ) , down to level 2 processes . the
-initiatives have been combined into one team focused on delivering the
-" blueprint " , a gap analysis of enron systems to business needs and
-recommended systems . a complete " roadmap " should be laid out with a
-0 - 3 months , 4 - 6 months , 7 - 9 months and 10 - 12 months timeline . the plan
-addresses tactical also .
-our overall objective : build an infrastructure ( people , processes and
-systems ) that is scalable and supports the trading business of eim . the
-current industries are forest products and steel . however , additional
-industries may be added . the targeted infrastructure would require little
-change to support new industries .
-the delieverable is expected by the end of 2 / 01 . we ' d be happy to visit with
-you all ( video conference or houston , . . . . ) to give you more information . let
-me know how to proceed .
-thanks again for your time . since i wasn ' t able to attend the controllers '
-conference last 10 / 00 , i ' m glad i got to meet you last week . stay in touch .
-brenda
-to : brenda f herod / hou / ect @ ect
-cc : mike jordan / lon / ect @ ect , paul wallace / lon / ect @ ect
-subject : metals
-brenda
-as discussed at our meeting last week there are a few areas of commonality
-between enron metals and eim that should allow leverage off common goals .
-in particular i promised info on a few areas :
-project q assessment
-a lot of the issues raised in the report are particular to enron metals
-( being to do with interfaces with our as 400 ysstem ) however high level issues
-which formed part of the decision to not develop this for enron metals were :
-q is over specified for metals . traffic / logistics for metals is less
-complex than oil & coal .
-metals process tends towards buy > store > sell whereas for liquids the storage
-is not as prevelant
-metals logistics typically involves trucks whereas liquids is ship / barge
-2 . inventory controls
-again the reports produced here have been very specific to enron metals . paul
-wallace a manager in the co - ordination function is working extensively on
-developing the controls in this area . i would suggest that you contact paul
-directly if you wish to discuss specific areas or inventory controls in
-general .
-3 . funding of inventory
-we have a structured finance facility here in london . the deal is specific to
-enron metals markets in that it works by reference to lme prices as these are
-the base index for all the positions placed in the facility . if structured
-financing is sort for eim then it would be appropriate to talk to either
-david tregar ( metals commercial ) or bill appleby ( global finance ) as an intro
-to the issues faced .
-4 . curve management process
-the markets in which our merchanting division trades are based on the lme
-curves but are linked to a large number of basis curves for quality and
-location . given the vast number we have opted to break down the markets by
-brand group and port location . e . g . for copper this means we have a grid with
-5 brand groups and 3 sets of port groups ( 13 for europe , 7 for the us and 6
-for the far east ) . the maintaince & price testing of the grids is made
-manageable by the fact the premiums only need be entered for brand and port
-groups by the traders yet prices can be tested by reference to node points
-i . e . price of specific brand at a given location which can be checked to a
-market quote .
-5 . re recruitment of paper traders
-i haven ' t been able to contact him but i recall that the brother of david
-rosenblum , one of the metals traders in chicago , is a trader of recylced
-paper .
-i ' ll keep you posted on long term system development plans here in london .
-i ' d appreciate same for eim .
-regards
-andy
+traders ' monthly alert
+january pick ( bmxg ) exploded from . 20 to 2 . 07 ,
+a gain of over 900 % in 6 days ( 1 / 18 - 1 / 24 ) !
+our next pick is an incredible find that will
+outperform all others based on their solid
+numbers , huge sales backlog , $ 2 billion in
+financing , low outstanding shares , and a deal
+with chinese government - run companies totaling
+$ 10 billion !
+urgent buy at any price :
+global environmental energy corp .
+otcbb - geec
+current price - 1 . 90
+running to - 6 . 00
+geec is cbs marketwatch . com ' s # 1 best performer in the dj
+diversified industrials index in the last 2 months . this
+is a dow jones industry index that also contains 3 m , ge ,
+and honeywell .
+we are sending this urgent investor bulletin revealing the
+most undervalued pick on the otcbb to our millions of
+subscribers for substantial profits immediately !
+geec has experienced a recent spike in price and volume
+indicating heavy accumulation of shares . this is a sign of
+even bigger things to come for this emerging world leader
+in the conversion of waste materials into electrical energy ,
+an industry with such high global demand that it is impossible
+to assign a value to the size of the market .
+geec is utilizing the unique proprietary technology of their
+biosphere process system for the disposal of a wide variety
+of waste products at 5 to 7 tons per hour , making a major
+impact on the global waste problem . this profitable and
+environmentally safe process converts into clean , green
+electricity such waste materials as municipal solid waste ,
+agricultural wastes , forestry wastes , medical wastes ,
+industrial wastes , sewage sludge , shale oil , sour natural
+gas , and the huge market of used tires .
+geec generates 5 to 10 mega - watts per hour of electricity
+from the waste conversion on a continuous basis which is
+then sold to replenish the local or national grid .
+the biosphere process succeeds in filling an urgent worldwide
+need for cost - effective renewable energy sources and a
+corresponding universal need to solve critical problems in the
+disposal of waste . geec has secured international acceptance
+for a revolutionary product designed to significantly impact
+the global waste problem while a major push for generating
+electricity from alternative sources continues to be the hot
+topic due to shortages and massive power failures .
+geec just announced a $ 10 billion , 5 - year joint venture with
+chinese government - operated companies , including yanzhou coal
+mining ( nyse - yzc , $ 74 ) . the deal is structured to have 1 , 300
+geec biosphere systems deployed throughout china to fulfill
+an urgent need for waste disposal and energy generation , two
+critical areas for a country with a population exceeding 1 . 3
+billion people . as china ' s rapid economic advance continues ,
+a shortfall of 500 million kilowatts exists annually , prompting
+periodic blackouts in all chinese provinces . geec is in line
+to profit substantially while providing relief from unmanageable
+municpal solid waste disposal and simultaneously helping china
+meet its energy needs .
+the forecast for geec is crystal clear , and this is just the tip
+of the iceberg for this emerging worldwide leader where shares
+should be added immediately to every portfolio . we expect a
+continuous flow of huge news announcements while shares still
+represent an uncommon value for a company of this caliber . look
+for the continuation of strong positive developments that will
+ignite geec , which earns our highest rating for the most
+explosive gains on wall street .
+traders ' monthly alert ( tma ) is not a registered investment
+advisor or broker dealer . certain statements contained in this
+newsletter may be forward - looking statements within the meaning
+of the private securities litigation reform act of 1995 . such
+terms as expect , believe , may , will , and intend or
+similar terms may identify these statements . past performance
+is not an indicator of future results . this is not an offer to
+buy or sell securities . tma is an independent publication that
+was paid nine thousand dollars by a third party for the
+continuing coverage and dissemination of this company information .
+investors are advised to seek proper guidance from a financial
+advisor or a registered financial broker . investors should use
+the information provided in this newsletter as a starting point
+for gathering additional information on the profiled company to
+allow the investor to form their own opinion regarding investment .
+investing in micro - cap securities is highly speculative and
+carries an extremely high degree of risk and may result in the
+loss of some or all of the investment .

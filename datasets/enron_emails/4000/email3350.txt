@@ -1,12 +1,3 @@
-dear subscriber ,
-- - free pre script i on with every order
-- - lowest prices
-- - the best customer service
-- - fastest delivery
-- - no hidden fees
-- - order online confidentially
-- - no prior doctor ' s visit needed ! !
-check out the selection - - http : / / ftz . 395 sfr . com
-( if you can ' t click the above link , please copy this link and paste it in your browser )
-have a good day
-paulette ayers
+start date : 1 / 14 / 02 ; hourahead hour : 3 ; no ancillary schedules awarded . no variances detected .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2002011403 . txt

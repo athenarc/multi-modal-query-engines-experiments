@@ -1,5 +1,4 @@
-18 pale dawn pl
-936 271 3283
-look for capstone - off of research . there are other turns but that will get
-you in the ball park on the map .
-see you monday !
+the unix server that unify production runs on ( proton ) went down this
+morning . the unix team is working on it . i will let you know as soon as
+unify is available .
+d . n .

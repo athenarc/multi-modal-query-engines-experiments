@@ -1,31 +1,7 @@
-hi . this is the qmail - send program at sys 25 . 3 fn . net .
-i ' m afraid i wasn ' t able to deliver your message to the following addresses .
-this is a permanent error ; i ' ve given up . sorry it didn ' t work out .
-:
-this address no longer accepts mail .
-- - - below this line is a copy of the message .
-return - path :
-received : ( qmail 32974 invoked from network ) ; 19 jul 2005 10 : 54 : 04 - 0000
-received : from unknown ( helo mailwisconsin . com ) ( 211 . 245 . 27 . 66 )
-by 216 . 195 . 34 . 33 with smtp ; 19 jul 2005 10 : 54 : 04 - 0000
-received : from 205 . 214 . 42 . 66
-( squirrelmail authenticated user projecthoneypot @ projecthoneypot . org ) ;
-by mailwisconsin . com with http id j 87 gzo 09359984 ;
-tue , 19 jul 2005 10 : 57 : 46 + 0000
-message - id :
-date : tue , 19 jul 2005 10 : 57 : 46 + 0000
-subject : just to her . . .
-from : " barry castillo "
-to : info @ adultpaysites . info
-user - agent : squirrelmail / 1 . 4 . 3 a
-x - mailer : squirrelmail / 1 . 4 . 3 a
-mime - version : 1 . 0
-content - type : text / html ; charset = iso - 8859 - 1
-content - transfer - encoding : 8 bit
-x - priority : 3 ( normal )
-importance : normal
-soft viagra at $ 1 . 62 per dose
-ready to boost your sex life ? positive ?
-time to do it right now !
-order soft viagra at incredibly low prices
-starting at $ 1 . 99 per dose ! unbelivabie !
+our art team creates a custom logo for you , based on your needs . years of experience have taught us how to create a logo that makes a statement that is unique to you .
+in a profe ssional manner we learn about your image and how you would like the world to perceive you and your company . with this information we then create a logo that is not only unique but reflects the purpose of you and your company .
+for value and a logo that reflects your image , take a few minutes and visit try logos !
+http : / / wwwl . try - logos - inc . biz /
+sincerely ,
+logo design team
+http : / / wwwl . try - logos - inc . biz / uns . php

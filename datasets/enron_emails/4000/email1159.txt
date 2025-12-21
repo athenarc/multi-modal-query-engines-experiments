@@ -1,8 +1,15 @@
-ken of rdi and i have gone through his model together and i have a clear idea
-of how it ' s going step by step . i believe we can almost start recoding now .
-i need a c programmer who ' s familiar with access data base .
-i . e . , he ( or she ) knows how to extract data from an access data table ( of
-certain format ) and output the results into an access data table of certain
-format . once the programmer is assigned , i will go through the model
-with him and incorporate his ideas and ken ' s , then we can start coding .
-alex
+rakesh ,
+thanks . i took a quick look at the spreadsheet and i agree
+with your approach .
+i shall spend more time looking at it over the weekend
+and if i see a problem i shall call you on monday .
+vince
+rakesh bharati @ enron
+03 / 23 / 2001 06 : 44 pm
+to : vkaminski @ aol . com
+cc : vince j kaminski / hou / ect @ ect , paulo issler / hou / ect @ ect
+subject : the spreadsheet for talon deal
+vince ,
+here is the spreadsheet for your review .
+thanks .
+rakesh

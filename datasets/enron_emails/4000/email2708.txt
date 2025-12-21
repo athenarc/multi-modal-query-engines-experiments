@@ -1,16 +1,5 @@
-start date : 2 / 5 / 02 ; hourahead hour : 20 ; no ancillary schedules awarded . no variances detected .
-log messages :
-parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2002020520 . txt
-! ! ! general sql error .
-couldn ' t update ; currently locked .
-table
-- - - - energy import / export schedule - - - -
-* * * final schedule not found for preferred schedule .
-details :
-trans _ type : final
-sc _ id : ectstnw
-mkt _ type : 2
-trans _ date : 2 / 5 / 02
-tie _ point : malin _ 5 _ rndmtn
-interchg _ id : enrj _ ciso _ 3000
-engy _ type : firm
+louise :
+the base model was too large to send via e - mail , so i placed it into the common directory located at o : \ _ dropbox \ dodger . the file name is cash _ brooklynnavyyard _ 070601 , v 4 . if you need help pulling it out of the dropbox , give me a call and i will walk upstairs to bring it up .
+i also included the model output from power commodity structuring ' s analysis of the transaction upsides . attached is a draft of the dash ( please note rac has not officially signed off ) . please let me know if you would like to see anything else .
+thanks -
+bill

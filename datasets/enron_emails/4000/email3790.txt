@@ -1,39 +1,42 @@
-here is the list that steve mentioned in the staff meeting this morning .
-please review and let me know of any concerns .
-ray
-- - - - - - - - - - - - - - - - - - - - - - forwarded by ray stelly / et & s / enron on 08 / 21 / 2000 11 : 59
-am - - - - - - - - - - - - - - - - - - - - - - - - - - -
-steve gilbert
-08 / 21 / 2000 08 : 07 am
-to : jo williams / et & s / enron @ enron , lindy donoho / et & s / enron @ enron
-cc : ray stelly / et & s / enron @ enron , john fiscus / et & s / enron @ enron , david
-clements / et & s / enron @ enron , mike zabawa / et & s / enron @ enron , steven
-harris / et & s / enron @ enron , dave neubauer / et & s / enron @ enron
-subject : 2001 plan locations
-at the 2001 - 2003 capital ( officer review ) meeting marketing agreed to review
-the operations capital budget in order to confirm that the expenditures were
-consistent with the business plan . ( i . e . from a marketing perspective , are we
-spending our capital dollars where we anticipate doing transactions ) in
-order to help this process , attached is the plan with locations identified .
-please review this list for any inconsistencies and inform dave clements of
-any concerns . if at all possible , provide your comments by close of business
-tuesday , august 22 nd .
-thank you
-- - - - - - - - - - - - - - - - - - - - - - forwarded by steve gilbert / et & s / enron on 08 / 21 / 2000
-07 : 50 am - - - - - - - - - - - - - - - - - - - - - - - - - - -
-from : mike zabawa 08 / 17 / 2000 03 : 52 pm
-to : steve gilbert / et & s / enron @ enron
-cc : david clements / et & s / enron @ enron , diane gotto / et & s / enron @ enron
-subject : 2001 plan locations
-let me try this again
-- - - - - - - - - - - - - - - - - - - - - - forwarded by mike zabawa / et & s / enron on 08 / 17 / 2000
-03 : 51 pm - - - - - - - - - - - - - - - - - - - - - - - - - - -
-from : mike zabawa 08 / 17 / 2000 03 : 51 pm
-to : steve gilbert / et & s / enron @ enron
-cc : david clements / et & s / enron @ enron , diane gotto / et & s / enron @ enron
-subject : 2001 plan locations
-steve ,
-attached is the spreadsheet that lists the location etc . of the operations
-group projects for the 2001 plan . please let us know when you would like to
-get together to discuss .
-mike
+hi kirstee ,
+thanks again for all your work on mg . one think to double check is units .
+please , make sure that the prices are quoted in the same units our positions
+come in .
+one potential source of confusion arises from the fact that we are dealing
+with different
+cultures ( metric system vs . english measures ) .
+vince
+enron capital & trade resources corp . - europe
+from : kirstee hewitt 08 / 03 / 2000 11 : 31 am
+to : vince j kaminski / hou / ect @ ect
+cc :
+subject : var for cob 2 nd aug 2000
+hi vince ,
+i was waiting for a comment about the email below before sending it to the
+full mailing list . basically it suggests that the
+copper option position may well have increased the var by more than $ 500 , 000 .
+however , given that the portfoilo has also
+changed from the lst of august it is difficult to asses the actual change due
+to the option only .
+regards
+kirstee
+- - - - - - - - - - - - - - - - - - - - - - forwarded by kirstee hewitt / lon / ect on 03 / 08 / 2000
+17 : 29 - - - - - - - - - - - - - - - - - - - - - - - - - - -
+enron europe
+from : kirstee hewitt 03 / 08 / 2000 16 : 29
+to : cantekin dincerler / hou / ect @ ect , grant masson / hou / ect @ ect
+cc :
+subject : var for cob 2 nd aug 2000
+hi all ,
+the cu option position has entered the mg books for the 2 nd aug . the delta is
+35299 $ / mt for dec 2000 . the cu var has gone up
+from $ 2 , 245 , 000 to $ 3 , 306 , 000 . i estimated that the portfolio for the lst
+would increase to approx $ 3 , 039 , 000 so this seems sensible .
+the overall var change is from $ 4 , 780 , 796 to $ 5 , 991 , 569 . again , the estimate
+for the lst aug was for an increase in var to ~ $ 5 , 476 , 000 .
+all estimates were based on a delta of 32 , 0004 / dmt .
+there has also been some increase in the var for aluminium which will effect
+the overall total .
+a summary is as follows :
+regards ,
+kirstee

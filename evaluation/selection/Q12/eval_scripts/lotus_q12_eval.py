@@ -8,38 +8,33 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 parser.add_argument("-o", "--opt", action='store_true', help="Evaluate optimized instead of default implementation of sem filet")
 args = parser.parse_args()
 
-def count_true_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['Points_gt'] == df['Points_pred']) & (df['Points_gt'] == 15.0)])
+def compute_metrics(df):
+    tp = len(df[(df['_merge'] == 'both') & (df['Points_gt'] == df['Points_pred']) & (df['Points_gt'] == 15.0)])
+    fp = len(df[(df['_merge'] == 'both') & (df['Points_gt'] != df['Points_pred']) & (df['Points_pred'] == 15.0)])
+    tn = len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] != 15.0)])
+    fn = len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] == 15.0)])
+    return tp, fp, tn, fn
 
-def count_false_positives(df):
-    return len(df[(df['_merge'] == 'both') & (df['Points_gt'] != df['Points_pred']) & (df['Points_pred'] == 15.0)])
-
-def count_true_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] != 15.0)])
-
-def count_false_negatives(df):
-    return len(df[(df['_merge'] == 'left_only') & (df['Points_gt'] == 15.0)])
 
 if __name__ == "__main__":
     implementation = "cascades" if args.opt else "default"
 
     player_labels = pd.read_csv("datasets/rotowire/player_labels.csv")
-    reports_with_players = pd.read_csv("datasets/rotowire/reports_with_player_names/reports_with_players.csv").head(args.size)
+    reports_with_players = pd.read_csv("datasets/rotowire/reports_with_player_names/reports_with_players.csv")
     player_labels = player_labels.merge(reports_with_players, on=["Player Name", "Game ID"], how="inner")
-    player_labels = player_labels[['Player Name', 'Points']]
+    player_labels = player_labels[['Game ID', 'Player Name', 'Points']].head(args.size)
 
     results_file = f"evaluation/selection/Q12/results/lotus_Q12_filter_{implementation}_{(args.model.replace('/', '_')).replace(':', '_')}_{args.provider}_{args.size}.csv"
 
     lotus_res_default = pd.read_csv(results_file)
-    lotus_res_default = lotus_res_default.drop(columns=["Report", "Game ID"])
+    lotus_res_default = lotus_res_default.drop(columns=["Report"])
     lotus_res_default['Points'] = 15.0
 
-    df = player_labels.merge(lotus_res_default, on=["Player Name"], how="outer", suffixes=('_gt', '_pred'), indicator=True)
+    df = player_labels.merge(lotus_res_default, on=["Game ID", "Player Name"], how="outer", suffixes=('_gt', '_pred'), indicator=True)
 
-    tp = count_true_positives(df)
-    fp = count_false_positives(df)
-    tn = count_true_negatives(df)
-    fn = count_false_negatives(df)
+    tp, fp, tn, fn = compute_metrics(df)
+    assert(tp + fp + tn + fn == args.size)
+
 
     with open('statistics/selection/Q12.log', 'a') as file:
         file.write(f"True Positives: {tp}\n")

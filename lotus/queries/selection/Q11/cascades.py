@@ -1,3 +1,4 @@
+from datetime import datetime
 import pandas as pd
 import lotus
 from lotus.models import LM
@@ -14,6 +15,8 @@ parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gem
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
+helper_model = "meta-llama/Llama-3.1-8B-Instruct"
+
 if args.wandb:
     run_name = f"lotus_Q11_filter_cascades_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
@@ -28,34 +31,34 @@ if (args.provider == 'ollama'):
 elif args.provider == 'vllm':
     lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
-helper_lm = LM(model="hosted_vllm/meta-llama/Llama-3.1-8B-Instruct", api_base="http://localhost:5001/v1", api_key="dummy")
+helper_lm = LM(model=f"hosted_vllm/{helper_model}", api_base="http://localhost:5001/v1", api_key="dummy")
 
 lotus.settings.configure(lm=lm, helper_lm=helper_lm)
-df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-df_players = pd.DataFrame(df_players['Player Name'])
+df_claims = pd.DataFrame(pd.read_csv("datasets/fever/fever.csv")[['id', 'claim']].head(args.size))
 
-user_instruction = "{Player Name} is from America."
+user_instruction = "Is the claim {claim} valid?"
 
 cascade_args = CascadeArgs(recall_target=0.9, precision_target=0.9, sampling_percentage=0.2, failure_probability=0.1)
 
 start = time.time()
-df = df_players.sem_filter(user_instruction, cascade_args=cascade_args)
+df = df_claims.sem_filter(user_instruction, cascade_args=cascade_args)
 exec_time = time.time() - start
 
-if args.wandb:
-    if args.provider == 'ollama':
-        output_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_cascades_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-    elif args.provider =='vllm':
-        output_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_cascades_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
-        
-    df.to_csv(output_file)
+output_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_cascades_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
+df.to_csv(output_file)
 
+with open('statistics/selection/Q11.log', 'a') as file:
+    file.write(f"System: Lotus (sem_filter -- optimized)\n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    # file.write("Total LLM calls: " + str(args.size) + "\n")
+
+if args.wandb:
     wandb.log({
         "result_table": wandb.Table(dataframe=df),
         "execution_time": exec_time
     })
 
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)

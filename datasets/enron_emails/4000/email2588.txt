@@ -1,11 +1,4 @@
-if you would like , the team will be prepared to show live demonstrations of
-the latest versions of all four commoditylogic modules next thursday ,
-december 21 st . this would probably require about 2 hours . the versions
-displayed will be :
-financial management module 2 . 0
-financial invoice exchange 1 . 1
-confirm central 1 . 0
-contract exchange 1 . 0
-please let us know if you are interested in attending .
-all the best ,
-tom
+darren :
+please change the demand fee for 12 / 00 on deal 529856 from $ 918 , 566 . 13 to $ 889 , 757 . 13 . we had a volume adjustment .
+thanks ,
+megan

@@ -1,7 +1,3 @@
-hi cath
-can you do me a favour ? sally is proposing eugenio for the risk manager role
-in the japan office . joe hirl has asked me to track down his most recent
-performance reviews . can you get hold of copies asap and fax them to me ( 63
-2 9229 2352 ) ?
-thanks and regards
-phil
+start date : 12 / 18 / 01 ; hourahead hour : 20 ; no ancillary schedules awarded . no variances detected .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2001121820 . txt

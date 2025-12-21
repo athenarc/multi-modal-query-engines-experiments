@@ -1,11 +1,12 @@
-just wanted to confirm our meeting in pdx tomorrow @ 1 p . m . the following is just a brief checklist of hafslund ' s current / potential needs / wants on mw ' s ranging in size from 10 to 150 mw :
-* realtime dispatchability of our firm power contracts .
-* day ahead parking / lending services at major hubs ( pv , mid c , cali )
-* ancillary services bidding from our cogen / qf contracts .
-* optionality of services . . . i . e . some days hafslund may not need enron ' s services .
-looking for enron ' s price on the bundled services or individual service . would it be a fixed price per mw ? percentage of power sales per mw ? sliding scale based on mw volume and # of services provided ? etc . . . .
-let me know if you have questions or concerns or if thursday ' s meeting no longer works for you .
-regards ,
-scott mckinney
-hafslund energy trading
-( 206 ) 436 - 0640
+louise -
+just wanted to give you an update on where we stand with this company :
+as you read from tommy ' s due diligence summary there are numerous issues with the technology , but the collection of realtime capacity offers / awards , critical notices and historical database does have value for enron .
+what we have to determine is :
+1 . the value of the software / hardware ( as it exists today )
+2 . the price we are willing to pay to capacity center to provide the operational services needed to run the system ( for one year )
+3 . the price to charge skipping stone ( the parent ) for ad hoc reporting access to the historical database to support their consulting service business
+4 . are we comfortable with the legal structure of the historical database with the " national registry of capacity rights "
+tommy is working up his opinion on what the answer to numbers one and two should be . steve van hooser will be looking into number four .
+i expect to throw an proposal back to capacity center / skipping stone when i return from vacation in two weeks . i am also expecting to hear back from danny mccarty on the pipelines ' willingness to join in on the purchase of this company .
+please call me if you have any comments .
+julie : - )

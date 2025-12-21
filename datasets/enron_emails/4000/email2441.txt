@@ -1,4 +1,17 @@
-i am out of the office on vacation thursday , december 20 th - friday , december 21 st . i will be in town and can be reached by cell phone over the next few days ( 713 - 417 - 1591 ) . on wednesday , december 26 - friday , december 28 ( following christmas ) , i will be in new york . my contact number / hotel while in new york is listed on the attached in the event something critical should arise .
-i am attaching for your convenience a " holiday key contact " list for operations for the business units .
-have a safe and wonderful holiday !
-- - sally
+we have placed the cpr pipeline exchange activity report into the sitara
+production reporting . please let me know if
+you have any questions . this report gves you the volume activity of a given
+business unit , on all or selectied pipes , for
+given flow dates . please rememeber that this report is originating from the
+sitara database .
+you all have access to run reports in sitara . you can run reports by
+clicking the last icon ( blue one ) from the sitara launchpad .
+you may have to logout of sitara to compeletely to see the icon .
+* once you are able to access the web site from the icon , click on reports .
+* login using your sitara login and password .
+* select the specialized / exceptions category from the drop down menu .
+* run the cpr pipeline exchange activity report . you will have to select a
+business unit , flow date and optionally pipe .
+if you have any problems running this report , let me know at x 37913 .
+thanks ,
+hunaid

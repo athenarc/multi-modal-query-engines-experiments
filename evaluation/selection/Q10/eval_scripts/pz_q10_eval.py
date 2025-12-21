@@ -7,40 +7,29 @@ parser.add_argument("-m", "--model", nargs='?', default='gemma3:12b', const='gem
 parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='ollama', type=str, help="The provider of the model")
 args = parser.parse_args()
 
-def count_true_positives(df):
-    true_positives = df[(df['Spam/Ham_gt'] == 'spam') & (df['Spam/Ham_pred'] == 'spam')]
-    return len(true_positives)
-
-def count_false_positives(df):
-    false_positives = df[(df['Spam/Ham_gt'] == 'ham') & (df['Spam/Ham_pred'] == 'spam')]
-    return len(false_positives)
-
-def count_true_negatives(df):
-    true_negatives = df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'ham')]
-    return len(true_negatives)
-
-def count_false_negatives(df):
-    false_negatives = df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'spam')]
-    return len(false_negatives)
+def compute_metrics(df):
+    tp = len(df[(df['Spam/Ham_gt'] == 'spam') & (df['Spam/Ham_pred'] == 'spam')])
+    fp = len(df[(df['Spam/Ham_gt'] == 'ham') & (df['Spam/Ham_pred'] == 'spam')])
+    tn = len(df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'ham')])
+    fn = len(df[(df['_merge'] == 'left_only') & (df['Spam/Ham_gt'] == 'spam')])
+    return tp, fp, tn, fn
 
 
 if __name__ == "__main__":
 
     results_file = f"evaluation/selection/Q10/results/palimpzest_Q10_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
 
-    enron_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Message ID', 'Message', 'Spam/Ham']]
+    enron_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Message', 'Spam/Ham']]
+
     pz_results = pd.read_csv(results_file, index_col=0)
-    print(pz_results['contents'])
 
     pz_results["Spam/Ham"] = "spam"
     pz_results = pz_results.drop(columns=["filename"]).rename(columns={"contents": "Message"})
 
     df = enron_emails.merge(pz_results, on="Message", how="outer", suffixes=('_gt', '_pred'), indicator=True)
 
-    tp = count_true_positives(df)
-    fp = count_false_positives(df)
-    tn = count_true_negatives(df)
-    fn = count_false_negatives(df)
+    tp, fp, tn, fn = compute_metrics(df)
+    assert(tp+tn+fp+fn == args.size)
 
     with open('statistics/selection/Q10.log', 'a') as file:
         file.write(f"True Positives: {tp}\n")

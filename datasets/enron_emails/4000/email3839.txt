@@ -1,51 +1,54 @@
-hi anita ,
-how are you ? i arrived yesterday late morning from the london gatwick
-airport . due to rush hour traffic , etc . it took a while to get into the city
-to the hotel .
-also , due to may day ( may lst ) protests / riots , etc . , the hotel management
-strongly recommended that we remain in the hotel .
-however , i am in the office today . i can be reached via email or via
-telephone at 44 ( 0 ) 207 783 5647 .
-take care ,
-iris
-- - - - - original message - - - - -
-from : dupont , anita
-sent : tuesday , may 01 , 2001 5 : 23 pm
-to : mmumford @ enron . com
-cc : mack , iris ; crenshaw , shirley
-subject : i . m . mack 30 apr - 15 may * * plse review for accuracy * * agent ce / ce
-booking ref x 7 w 882 mack / iris eb 1972 enron corp
-importance : high
-see iris ' s itinerary below . i thought her initial plan was to land this
-morning and come in to enron house in early afternoon . see itinerary for
-phone number of hotel . let me know if i can help in any
-other way . thanks . anita
-service date from to depart
-arrive
-continental airlines 30 apr houston tx london gatwick 350 p
-655 a
-co 34 j mon g . bush iah gatwick 01 may
-terminal dom terminal s
-dinner / snack non stop
-reservation confirmed 9 : 05 duration
-vegetarian meal , non - dairy confirmed
-aircraft : boeing 777 - 200 / 300
-hotel 30 apr athenaeum hotel and apartments
-11 may 116 piccadilly
-london england , wlv obj
-united kingdom
-telephone : 44 - ( 0 ) - 207 - 499 - 3464
-fax : 44 - ( 0 ) - 207 - 493 - 1860
-confirmation : claire 25 apr
-rate : rac gbp 270 . 00 per night
-guarantee given
-prereg actual arr lmay 655 am apartment
-to avoid billing cancel by 6 pm 24 hrs prior
-continental airlines 11 may london gatwick houston tx 1200 n
-415 p
-co 5 j fri gatwick g . bush iah
-terminal s terminal dom
-lunch / snack non stop
-reservation confirmed 10 : 15 duration
-vegetarian meal , non - dairy confirmed
-aircraft : boeing 777 - 200 / 300
+please see the attached comment at the bottom of this string of e - mails .
+the privilege of using enron ' s balance sheet comes with the responsibility to
+adequately report the risk in the form that has been agreed to .
+it is appalling to me that we are currently incapable of calculating var in a
+product that has been approved for trading for several months . it is equally
+appalling that the support staff continues to be so unaware of the importance
+of this that the comments below could even be considered reasonable .
+obviously , the individual who made the comment is hardly responsible . it
+lies with both commercial and commercial support management . i know that
+airing this out in such a broad way appears to be harsh . this is not the
+point . this is not an isolated problem . it is not just pertaining to
+europe . please do not feel singled out . but the scrutiny and pressure on var
+as a measure of risk continues to grow at fast pace . we can hardly make any
+progress if this is the pervasive attitude . let ' s knock this stuff out one
+at a time .
+ted
+oliver gaylard
+06 / 26 / 2000 08 : 34 am
+to : david port / market risk / corp / enron @ enron
+cc : chris abel / hou / ect @ ect , michael e moscoso / hou / ect @ ect , david a wall / risk
+mgmt / lon / ect @ ect , ted murphy / hou / ect @ ect
+subject : re : var for credit trading
+the var engine for credit trading is being built by research in london and it
+is intended that var be run daily as soon as they have produced / signed off on
+this .
+oliver
+from : david port @ enron
+26 / 06 / 2000 14 : 24
+to : chris abel / hou / ect @ ect
+cc : michael e moscoso / hou / ect @ ect , david a wall / risk mgmt / lon / ect @ ect , oliver
+gaylard / lon / ect @ ect , ted murphy / hou / ect @ ect
+subject : re : var for credit trading
+my view : prove its insignificant by calculating it every day , that ' s why the
+board approved the limit .
+dp
+chris abel @ ect
+06 / 23 / 2000 07 : 41 am
+to : david port / market risk / corp / enron @ enron
+cc : michael e moscoso / hou / ect @ ect
+subject : var for credit trading
+fyi
+- - - - - - - - - - - - - - - - - - - - - - forwarded by chris abel / hou / ect on 06 / 23 / 2000 07 : 38 am
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+mary thambiah
+06 / 23 / 2000 03 : 29 am
+to : chris abel / hou / ect @ ect
+cc : david a wall / risk mgmt / lon / ect @ ect
+subject : var for credit trading
+hi chris
+i talked with david yesterday and we don ' t think the risk is significant
+enough to start calculating a var number . however if you have any queries
+feel free to give him a call .
+rgds
+mary

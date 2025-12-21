@@ -1,12 +1,10 @@
-invoices
-attached is the file to be used for demand invoice verification for january 2002 capacity release transactions . if you have any questions , please feel free to contact me .
-fyi - based on the flash invoices i generated last night for the capacity release transactions and global settlement contracts , please note the following :
-ena k # 24924 res - manual rate adjustment is needed for the 50 / 50 split of marketing fees for capacity released to burlington
-conoco k # 20748 res - delete the thoreau to e . thoreau line item
-conoco k # 20835 comm - delete authorized overrun line items and roll volumes up to the commodity charge type
-texaco k # 25923 / 25924 comm - when verifying fuel rate of 4 . 5 % between the lateral and mainline contract sched volumes , there is a ldifference that could not be attributed to rounding . need to verify if difference is caused by makeup volumes ; and if delivery makeup scheduled , then invoice should be adjusted accordingly .
-please remember that the notes above are based on data as of 2 / 26 / 02 . i will review again on the lst .
-schedulers - please provide a final copy of the delivery tolerance report to both me and marketing so it can be determined if makeup will affect the rate to be charged [ some contracts are based on calculations , especially when charging incremental fees for alternate point usage ] .
-thanks ,
-elizabeth
-x 3 - 6928
+sav . e 7 . 0 . % on r . x medicatio . n today !
+orde . r all your r . x me . dication directly from f . da - approved manufacturers in india .
+over 60 p . roducts to choose from .
+sav . e up to 7 . 0 . % on your r . x dr . ugs .
+average shippin . g from india takes 2 - 4 weeks .
+however our p . rices and quality make it worth the wait .
+all package . s are shippe . d discreetly by airmail wor . ldwide .
+choose your medicatio . n , point , click , ord . er and you ' re done . your medica . tion is on it ' s way . no prescripti . on required !
+click here now !
+re . move

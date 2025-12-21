@@ -1,93 +1,43 @@
-vince ,
-please send a package of article reprints to the attention of joan payne at
-the following address :
-joan payne
-department of finance
-e . j . ourso college of business administration
-louisiana state university
-2163 ceba
-baton rouge , la 70803
-in your package , please indicate which presentation each reprint is
-intended for ; i . e . , whether it is for student consumption on thursday
-afternoon or finance faculty / doctoral student consumption on friday
-morning . joan can make sure that we get the right number of copies
-produced for the respective audiences .
-concerning powerpoints - - just email these files to me and if it is all
-right with you i will make them available for download by the faculty and
-students on the class and research seminar webpages .
-thanks again for being willing to visit lsu and present your knowledge to
-our faculty and students .
-sincerely ,
-jim garven
-at 01 : 39 pm 1 / 18 / 2000 + 0000 , you wrote :
-> jim ,
->
-> i can send you copies of the reprints of some papers i wrote
-> or co - authored . please , let me know how many copies do you need .
->
-> i shall prepare power point presentations for the student meeting
-> and for the faculty meeting .
->
-> for the students : review of my group ( things we work on ) with an intention
-> of generating some interest among the students and soliciting resumes .
->
-> for the faculty meeting : challenges that energy markets pose to financial
-> modeling .
-> i shall be able to e - mail the power point presentations later this month .
->
-> vince
->
->
->
->
->
-> jim garven on 01 / 17 / 2000 04 : 00 : 25 pm
->
-> to : vince j kaminski / hou / ect @ ect
-> cc :
-> subject : re : lsu seminar visit
->
->
->
-> dear vince ,
->
-> would you mind emailing to me a short biography / vita sometime when you get
-> a chance ? also , if you have a paper to circulate or any powerpoint slides
-> that you ' ll want to use either in your presentations to my students
-> thursday afternoon , 2 / 3 , or to the faculty seminar on friday morning , 2 / 4 ,
-> please email these to me . this would be greatly appreciated .
->
-> my colleagues and i are looking forward to your visit on feb . 3 - 4 to lsu .
->
-> sincerely ,
->
-> jim garven
->
->
-> james r . garven
-> william h . wright , jr . endowed chair for financial services
-> department of finance
-> 2158 ceba
-> e . j . ourso college of business administration
-> louisiana state university
-> baton rouge , la 70803 - 6308
->
-> voice ( 225 ) 388 - 0477 | fax : ( 800 ) 859 - 6361
->
-> e - mail : jgarven @ lsu . edu
-> home page : http : / / garven . lsu . edu
-> vita : http : / / garven . lsu . edu / dossier . html
-> research paper archive : http : / / garven . lsu . edu / research . html
-james r . garven
-william h . wright , jr . endowed chair for financial services
-department of finance
-2158 ceba
-e . j . ourso college of business administration
-louisiana state university
-baton rouge , la 70803 - 6308
-voice ( 225 ) 388 - 0477 | fax : ( 800 ) 859 - 6361
-e - mail : jgarven @ lsu . edu
-home page : http : / / garven . lsu . edu
-vita : http : / / garven . lsu . edu / dossier . html
-research paper archive : http : / / garven . lsu . edu / research . html
-- attl . htm
+we are currently in the process of creating a website for each of the book
+administrators to maintain the active / inactive status of their books . this
+website will also will allow the book administrators to check their post id ' s
+against active books . all books will be identified by book administrator and
+trading group . the attached spreadsheet lists every book in risktrac ,
+provides what we currently believe the status ( active / inactive ) to be for
+most books and some commodity codes associated with those books .
+additionally , there are two columns for book administrators and trading
+groups , which are both empty .
+in order for us to load the website with the most accurate data , we need for
+each of you , as heads of your respective groups , to identify which books
+belong to your book administrators and update the respective fields
+associated with those books . refer to the following rules for updating
+certain fields :
+1 ) the book status should be active , inactive or archive . if a book has any
+deals / positions that should be officialized , might affect var , and / or might
+affect credit exposure then the book should have an active status . if the
+book has no deals / positions , but the intent is to use the book sometime in
+the near future , then the book should have an inactive status . if there are
+no plans to continue using the book then it should have an archive status .
+periodically , books marked as archive will be removed from the website and
+archived . a request can be made to the risk controls group to have the book
+unarchived and placed back on the website .
+any books that do not have a status updated will default to active . any new
+books set up and placed on the website will default to active .
+2 ) the last officialized and commodity code columns are provided to help you
+and your group identify which books are yours and the book ' s status .
+3 ) the trading group column should have your name next to each of the books
+that your book administrators own . this will allow you to query all books in
+your trading group to check if all active books have post id ' s or if an
+inactive book has a post id .
+4 ) the book administrator column should have the name of the book
+administrator responsible for the book . this will allow you and the book
+administrator to look at individual book administrator ' s books and post id ' s .
+once this website is up and running , each book administrator will be required
+to update the status of each of their books on a daily basis and the book
+administrator on an as needed basis . all of these changes will be made
+directly on the website .
+we are trying to get this process in place as quickly as possible , so please
+return this information at your earliest convenience to my attention . you
+may call me at x 33102 with any questions .
+thanks ,
+chris abel

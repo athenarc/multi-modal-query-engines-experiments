@@ -5,7 +5,7 @@ from lotus.types import CascadeArgs
 import time
 import wandb
 import argparse
-from datateime import datetime
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -29,13 +29,12 @@ elif args.provider == 'vllm':
     lm = LM("hosted_vllm/" + args.model, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
 
 lotus.settings.configure(lm=lm)
-df_players = pd.read_csv("datasets/rotowire/player_evidence_mine.csv").head(args.size)
-df_players = pd.DataFrame(df_players['Player Name'])
+df_claims = pd.DataFrame(pd.read_csv("datasets/fever/fever.csv")[['id', 'claim']].head(args.size))
 
-user_instruction = "{Player Name} is from America."
+user_instruction = "Is the claim {claim} valid?"
 
 start = time.time()
-df = df_players.sem_filter(user_instruction)
+df = df_claims.sem_filter(user_instruction)
 exec_time = time.time() - start
 
 output_file = f"evaluation/selection/Q11/results/lotus_Q11_filter_default_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"

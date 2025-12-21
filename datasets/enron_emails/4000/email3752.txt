@@ -1,45 +1,27 @@
-trade counts by 8 : 40 am :
-trade date na gas na power total trade cnt
-11 / 13 / 2001 1009 552 2131
-11 / 12 / 2001 1126 430 2269
-11 / 11 / 2001 7 2 9
-11 / 10 / 2001 5 8 13
-11 / 9 / 2001 744 461 1831
-11 / 8 / 2001 1085 503 2086
-11 / 7 / 2001 1111 800 2605
-11 / 6 / 2001 1289 908 2763
-11 / 5 / 2001 1155 888 2594
-11 / 4 / 2001 4 3 7
-11 / 3 / 2001 2 16 18
-11 / 2 / 2001 1441 629 2547
-11 / 1 / 2001 1308 813 2806
-10 / 31 / 2001 1258 888 2641
-10 / 30 / 2001 1175 634 2284
-10 / 29 / 2001 1360 706 2560
-10 / 27 / 2001 7 0 7
-10 / 26 / 2001 1237 826 2661
-10 / 25 / 2001 1781 944 3194
-10 / 24 / 2001 1433 562 2556
-10 / 23 / 2001 1505 686 2917
-10 / 22 / 2001 1195 819 2676
-10 / 21 / 2001 16 0 16
-10 / 20 / 2001 1 0 1
-10 / 19 / 2001 1548 751 2997
-10 / 18 / 2001 1124 738 2560
-10 / 17 / 2001 1260 736 2638
-10 / 16 / 2001 1060 721 2403
-10 / 15 / 2001 825 641 1967
-10 / 14 / 2001 3 5 9
-10 / 13 / 2001 3 6 9
-10 / 12 / 2001 1145 637 2300
-10 / 11 / 2001 998 694 2208
-10 / 10 / 2001 900 637 2047
-10 / 9 / 2001 849 671 2047
-10 / 8 / 2001 863 575 2029
-10 / 7 / 2001 3 0 3
-10 / 6 / 2001 4 2 6
-10 / 5 / 2001 973 694 2151
-10 / 4 / 2001 1308 821 2666
-10 / 3 / 2001 1281 695 2332
-10 / 2 / 2001 875 677 1936
-10 / 1 / 2001 1090 633 2190
+agreement with dwr
+in what will likely be viewed as a fairly shocking event , the california puc today voted down davis ' proposed rate agreement between dwr and the cpuc .
+the vote was 4 - 1 , with the two republicans voting with davis ' hand - picked appointees lynch and wood .
+davis ' proposal was introduced at the meeting by another davis appointee - - geoff brown - - who made a lengthy speech about why california would experience economic and political destruction if the puc did not approve davis ' proposed rate agreement .
+what is davis ' proposed rate agreement between dwr and the cpuc ?
+it would remove all puc authority to review any contracts between dwr with suppliers .
+it would require the puc to pass through to utility rates all dwr power contract costs , no questions asked .
+what are the implications of the move by the puc to reject davis ' proposal ?
+with the vote , it remains unclear how california / dwr will pay for the dwr power contracts .
+the political pressure to re - negotiate - - or break - - the dwr power contracts is likely to intensify considerably .
+it remains unclear how california / dwr will pay for the $ 12 . 5 b in bonds the treasurer has unsuccessfully attempted to issue for past several months .
+under the structure devised by davis , the revenues flowing from the cpuc / dwr rate agreement would be used to both 1 ) pay for the dwr power contracts and 2 ) service the bonds the treasurer is trying to issue to repay california ' s general fund for spot and other short term power purchased by dwr since january .
+in short , there is no clear indication of how california will pay for dwr contracts or issue the bonds .
+safe to say that today ' s puc vote has seriously embarrassed davis , and left his approach to " solving " california electricity crisis in shambles .
+what next ?
+a broad left - right coalition of energy interests supported a bill ( 18 xx ) that passed the legislature with broad bi - partisan support .
+the bill would create a " dedicated rate component " on every customers bill to service the $ 12 . 5 b in bonds that the treasurer wants to issue .
+proponents of the bill - - and just about everyone else - - argue that the " dedicated rate component " is a signficantly more efficient way to raise the debt california needs to plug the hole in its budget .
+the bill is silent , however , on how california would pay for the dwr contracts , and the bill ' s opponents claim that the power suppliers will sue as a result .
+all four puc commissioners who voted against the davis rate agreement today urged davis to sign the bill . the left - right coalition ( from nader types to oil companies ) is also working hard to get davis to sign it .
+davis has said that he will veto the bill on the advice of the treasurer and bond counsel .
+given today ' s vote , however , davis may have no alternative than to sign the bill if he wants to get the bonds issued and the state budget repaid .
+update on edison bailout
+still appears that chances are very small that edison and davis will succeed in getting the legislature to vote for an edison bailout when it returns for another " special " session next tuesday .
+if you have any questions , just let us know .
+best ,
+jeff

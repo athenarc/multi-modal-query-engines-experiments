@@ -1,11 +1,9 @@
-the good news is that september vars are little changed from the june numbers .
-the bad news is that the new power company went public in october . the stock
-is very volatile ( about 180 % per year ) . the warrants we inserted into the
-hawaii 125 - 0 mcgarret swaps are hugely in the money and will therefore have
-substantial var . var for the total return swaps will probably be over $ 30
-million in october .
-additionally , you will notice a huge trading commodities var for august ( $ 79
-million ) . this will require some explanation when we report high monthly var
-at year - end .
-regards ,
-eugenio
+the original message was received at tue , 19 jul 2005 10 : 58 : 37 gmt
+from [ 211 . 245 . 27 . 66 ]
+- - - - - the following addresses had permanent fatal errors - - - - -
+( reason : 550 5 . 1 . 1 user unknown )
+- - - - - transcript of session follows - - - - -
+. . . while talking to localhost :
+> > > data
+. . . user unknown
+< < < 503 5 . 5 . 1 no recipients

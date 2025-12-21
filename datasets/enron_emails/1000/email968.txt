@@ -1,16 +1,7 @@
-transwestern ' s average deliveries to california were 1112 mmbtu / d ( 102 % ) , with san juan lateral throughput at 825 mmbtu / d and rio puerco at 0 mmbtu / d . total east deliveries averaged 310 mmbtu / d .
-el paso ' s average deliveries to california were 2274 mmbtu / d ( 78 % ) :
-- pg & etop , capacity of 1140 mmbtu / d , deliveries of 505 mmbtu / d ( 44 % )
-- socalehr , capacity 1252 mmbtu / d , deliveries of 1233 mmbtu / d ( 98 % )
-- socaltop , capacity 536 mmbtu / d , deliveries of 536 mmbtu / d ( 100 % )
-friday ' s posted gas daily prices :
-socal gas , large pkgs 9 . 41
-pg & e , large pkgs 9 . 185
-tw san juan n / a
-tw permian 4 . 765
-friday ' s enron online bases :
-apr - oct nov - mar
-perm - ca 3 . 72 2 . 92
-sj - ca 4 . 12 3 . 22
-sj - waha . 31 . 20
-perm - waha . 09 . 10
+michael
+a table ( table 2 ) has been added with probabilities for rab > x , fx > y . at
+the current currency level , approx 1 . 5 , all the numbers are multiplied by 1 / 2
+because the currency is equally likely to rise or fall . this may give a
+pessimetic view of achieving a given stock price .
+let me know when you want to get togetrher .
+bob

@@ -1,3 +1,3 @@
-name - brand software at low , low , low , low prices
-everything comes to him who hustles while he waits .
-many would be cowards if they had courage enough .
+start date : 12 / 20 / 01 ; hourahead hour : 12 ; no ancillary schedules awarded . no variances detected .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2001122012 . txt

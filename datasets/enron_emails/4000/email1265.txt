@@ -1,8 +1,38 @@
-chaps ,
-louise and ews contingent have reconvened on our commercial vp ' s and have agreed to moving the following back up to the lst category as a starting point for monday :
-parquet
-zufferli
-lawyer
-tycholiz
-please make that change .
-david
+start date : 1 / 21 / 02 ; hourahead hour : 10 ; hourahead schedule download failed . manual intervention required .
+log messages :
+parsing file - - > > o : \ portland \ westdesk \ california scheduling \ iso final schedules \ 2002012110 . txt
+error : dbcaps 97 data : cannot perform this operation on a closed database
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+error : dbcaps 97 data : cannot perform this operation on a closed database
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+error : dbcaps 97 data : cannot perform this operation on a closed database
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+error : dbcaps 97 data : cannot perform this operation on a closed database
+error : dbcaps 97 data : cannot perform this operation on a closed database
+error : dbcaps 97 data : cannot perform this operation on a closed database
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+! ! ! unknown database .
+alias : dbcaps 97 data
+error : dbcaps 97 data : cannot perform this operation on a closed database

@@ -5,7 +5,7 @@ from lotus.types import CascadeArgs
 import time
 import wandb
 import argparse
-from datetime import datetime``
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--wandb", action='store_true', help="Enables wandb report")
@@ -37,7 +37,7 @@ start = time.time()
 df = df_players.sem_filter(user_instruction)
 exec_time = time.time() - start
 
-output_file = f"evaluation/selection/Q6/results/lotus_Q6_filter_default_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
+output_file = f"evaluation/selection/Q12/results/lotus_Q12_filter_default_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
 df.to_csv(output_file)
 
 with open('statistics/selection/Q12.log', 'a') as file:
