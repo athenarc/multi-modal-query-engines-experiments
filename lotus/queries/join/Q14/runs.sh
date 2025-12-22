@@ -11,11 +11,12 @@ if [[ "$provider" != "ollama" && "$provider" != "vllm" ]]; then
     exit 1
 fi
 
-sizes=(10)
+# sizes=(10 20 30 40 50)
+sizes=(10 20)
 
 models_ollama=("gemma3:12b")
-models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
-# models_vllm=("Qwen/Qwen3-8B")
+# models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
+models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 
 
 # Select models based on provider

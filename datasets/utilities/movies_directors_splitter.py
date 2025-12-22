@@ -9,6 +9,6 @@ directors_63 = merged['director_name'].head(63)
 
 directors_63.to_csv("datasets/movies_directors/directors_63.csv", index=False)
 
-for size in [10, 25, 40, 50, 60]:
+for size in [10, 20, 30, 40, 50]:
     movies_ = merged.sample(size)[["title", "director_name"]]
     movies_.to_csv(f"datasets/movies_directors/movies_directors_split_{size}.csv", index=False)

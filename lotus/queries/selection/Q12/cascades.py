@@ -36,7 +36,7 @@ lotus.settings.configure(lm=lm, helper_lm=helper_lm)
 
 df_players = pd.read_csv(f"datasets/rotowire/reports_with_player_names/reports_with_players.csv").head(args.size)
 
-user_instruction = "{Player Name} had 17 points in game {Report}."
+user_instruction = "{Player Name} had 15 points in game {Report}."
 
 cascade_args = CascadeArgs(recall_target=0.9, precision_target=0.9, sampling_percentage=0.2, failure_probability=0.1)
 

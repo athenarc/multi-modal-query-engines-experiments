@@ -12,7 +12,7 @@ if [[ "$provider" != "ollama" && "$provider" != "vllm" ]]; then
     exit 1
 fi
 
-sizes=(1000 4000)
+sizes=(500 1000 2000 4000)
 
 models_ollama=("llama3.3:70b")
 models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
@@ -32,9 +32,9 @@ for size in "${sizes[@]}"; do
         echo "Evaluating Lotus-default, Q12 with -s $size and -m $model executed from Lotus"
         python evaluation/selection/Q12/eval_scripts/lotus_q12_eval.py -s $size -m $model -p $provider
 
-        # echo "Running Lotus-cascades, Q12 with -s $size and -m $model"
-        # python lotus/queries/selection/Q12/cascades.py --wandb  -s $size -m $model -p $provider
-        # echo "Evaluating Lotus-cascades, Q12 with -s $size and m $model executed from Lotus"
-        # python evaluation/selection/Q12/eval_scripts/lotus_q12_eval.py -o -s $size -m $model -p $provider
+        echo "Running Lotus-cascades, Q12 with -s $size and -m $model"
+        python lotus/queries/selection/Q12/cascades.py --wandb  -s $size -m $model -p $provider
+        echo "Evaluating Lotus-cascades, Q12 with -s $size and m $model executed from Lotus"
+        python evaluation/selection/Q12/eval_scripts/lotus_q12_eval.py -o -s $size -m $model -p $provider
     done
 done

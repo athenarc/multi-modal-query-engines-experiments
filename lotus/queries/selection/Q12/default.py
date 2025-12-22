@@ -31,7 +31,7 @@ elif args.provider == 'vllm':
 lotus.settings.configure(lm=lm)
 df_players = pd.read_csv(f"datasets/rotowire/reports_with_player_names/reports_with_players.csv").head(args.size)
 
-user_instruction = "{Player Name} had 17 points in game {Report}."
+user_instruction = "{Player Name} had 15 points in game {Report}."
 
 start = time.time()
 df = df_players.sem_filter(user_instruction)

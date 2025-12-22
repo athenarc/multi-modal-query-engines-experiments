@@ -16,6 +16,19 @@ lotus_res = pd.read_csv(results_file, index_col=0)
 
 df = df_movies_directors.merge(lotus_res, on=['title', 'director_name'], how='outer', indicator=True)
 
-accuracy = len(df[df['_merge'] == 'both']) / lotus_res.shape[0]
+tp = len(df[df['_merge'] == 'both'])
+fp = len(df[df['_merge'] == 'right_only'])
+fn = len(df[df['_merge'] == 'left_only'])
 
-print(f"Accuracy : {accuracy:.3f}")
+precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+
+print(f"Precision: {precision:.2f}")
+print(f"Recall: {recall:.2f}")
+print(f"F1 Score: {f1:.2f}")
+
+
+# with open('statistics/join/Q14.log', 'a') as file:
+#     file.write(f"Accuracy: {accuracy:.2f}" + "\n")
+#     file.write("------------------------------------------------------\n\n\n")

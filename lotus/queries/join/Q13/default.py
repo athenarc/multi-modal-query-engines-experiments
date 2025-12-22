@@ -35,11 +35,11 @@ lotus.settings.configure(lm=model)
 instruction = "The paper {paper_title:left} cites the paper {cited_paper_title:right} in its related work section {related_works_section:left}."
 start = time.time()
 df = df_papers.sem_join(df_cited_papers, instruction)
+df = df[['arxiv_id', 'cited_paper_title']]
 exec_time = time.time() - start
 
-output_file = f"evaluation/join/Q13/results/lotus_Q13_join_default_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
+output_file = f"evaluation/join/Q13/results/lotus_Q13_join_{args.model.replace(':', '_').replace('/', '_')}_{args.provider}_{args.size}.csv"
 df.to_csv(output_file)
-
 with open('statistics/join/Q13.log', 'a') as file:
     file.write(f"System: Lotus (sem_join -- default)\n")
     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
