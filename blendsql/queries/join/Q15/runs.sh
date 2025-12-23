@@ -12,6 +12,7 @@ if [[ "$provider" != "ollama" && "$provider" != "vllm" ]]; then
 fi
 
 sizes=(10 20 30 40 50)
+# sizes=(10 20)
 
 models_ollama=("gemma3:12b")
 models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
@@ -25,12 +26,11 @@ else
     models=("${models_vllm[@]}")
 fi
 
-# Run default.py
 for size in "${sizes[@]}"; do
     for model in "${models[@]}"; do
-        echo "Running Lotus-default, Q13 with -s $size and -m $model"
-        python lotus/queries/join/Q13/default.py --wandb -s $size -m $model -p $provider
-        echo "Evaluating Lotus-default, Q13 with -s $size and m $model executed from Lotus"
-        python evaluation/join/Q13/eval_scripts/q13_eval.py --system lotus -s $size -m $model -p $provider
+        echo "Running BlendSQL, Q15 with -s $size and -m $model"
+        python blendsql/queries/join/Q15/q15.py --wandb  -s $size -m $model -p $provider
+        echo "Evaluating BlendSQL, Q15 with -s $size and m $model"
+        python evaluation/join/Q15/eval_scripts/q15_eval.py --system blendsql -s $size -m $model -p $provider
     done
 done

@@ -15,7 +15,7 @@ parser.add_argument("-p", "--provider", nargs='?', default='ollama', const='olla
 args = parser.parse_args()
 
 if args.wandb:
-    run_name = f"blendsql_Q14_join_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
+    run_name = f"blendsql_Q15_join_{args.model.replace(':', '_')}_{args.provider}_{args.size}"
 
     wandb.init(
         project="SQE_experiments",
@@ -23,13 +23,12 @@ if args.wandb:
         group="Join",
     )
 
-# Load reports dataset
-df_papers = pd.read_csv("datasets/deepscholar-bench/paper_content.csv")[['arxiv_id', 'paper_title', 'related_works_section']].head(args.size)
-df_cited_papers = pd.read_csv("datasets/deepscholar-bench/cited_papers_63.csv")
+df_movies = pd.read_csv(f"datasets/movies_directors/movies_directors_split_{args.size}.csv")[['title']]
+df_directors = pd.DataFrame(pd.read_csv("datasets/movies_directors/directors_63.csv"))
 
 db = {
-    "Papers": pd.DataFrame(df_papers),
-    "CitedPapers": pd.DataFrame(df_cited_papers)
+    "Movies": pd.DataFrame(df_movies),
+    "Directors": pd.DataFrame(df_directors)
 }
 
 if args.provider == 'ollama':
@@ -51,12 +50,12 @@ start = time.time()
 smoothie = bsql.execute(
     """
         SELECT *
-        FROM Papers p
-        JOIN CitedPapers cp ON {{
+        FROM Movies m
+        JOIN Directors d ON {{
             LLMJoin(
-                p.related_works_section,
-                cp.cited_paper_title,
-                join_criteria='The related works section of the paper mentions the cited paper title.',
+                m.title,
+                d.director_name,
+                join_criteria='The movie is directed by the director.',
             )
         }} 
     """,
@@ -65,10 +64,10 @@ smoothie = bsql.execute(
 
 exec_time = time.time()-start
 
-output_file = f"evaluation/join/Q14/results/blendsql_Q14_join_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+output_file = f"evaluation/join/Q15/results/blendsql_Q15_join_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 smoothie.df.to_csv(output_file)
 
-with open('statistics/join/Q14.log', 'a') as file:
+with open('statistics/join/Q15.log', 'a') as file:
     file.write(f"System: BlendSQL (LLMJoin)\n")
     file.write(f"Timestamp: {time.strftime('%Y-%m-%dT%H:%M:%S')}\n")
     file.write(f"Model: {args.model}\n")

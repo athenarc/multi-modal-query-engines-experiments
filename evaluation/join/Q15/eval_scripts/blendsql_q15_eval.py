@@ -12,9 +12,9 @@ df_directors = pd.read_csv("datasets/movies_directors/directors.csv")
 df_movies_directors = df_movies.merge(df_directors, left_on=['director_id'], right_on=['id'])[['title', 'director_name']]
 
 if args.provider == 'ollama':
-    results_file = f"evaluation/join/Q14/results/blendsql_Q14_join_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/join/Q15/results/blendsql_Q15_join_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider == 'vllm':
-    results_file = f"evaluation/join/Q14/results/blendsql_Q14_join_{args.model.replace('/', ':')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/join/Q15/results/blendsql_Q15_join_{args.model.replace('/', ':')}_{args.provider}_{args.size}.csv"
 
 blendsql_res = pd.read_csv(results_file)[['title', 'director_name']]
 

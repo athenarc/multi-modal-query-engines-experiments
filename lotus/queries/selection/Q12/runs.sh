@@ -32,9 +32,9 @@ for size in "${sizes[@]}"; do
         echo "Evaluating Lotus-default, Q12 with -s $size and -m $model executed from Lotus"
         python evaluation/selection/Q12/eval_scripts/lotus_q12_eval.py -s $size -m $model -p $provider
 
-        echo "Running Lotus-cascades, Q12 with -s $size and -m $model"
-        python lotus/queries/selection/Q12/cascades.py --wandb  -s $size -m $model -p $provider
-        echo "Evaluating Lotus-cascades, Q12 with -s $size and m $model executed from Lotus"
-        python evaluation/selection/Q12/eval_scripts/lotus_q12_eval.py -o -s $size -m $model -p $provider
+        # echo "Running Lotus-cascades, Q12 with -s $size and -m $model"
+        # python lotus/queries/selection/Q12/cascades.py --wandb  -s $size -m $model -p $provider
+        # echo "Evaluating Lotus-cascades, Q12 with -s $size and m $model executed from Lotus"
+        # python evaluation/selection/Q12/eval_scripts/lotus_q12_eval.py -o -s $size -m $model -p $provider
     done
 done

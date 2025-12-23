@@ -1,3 +1,4 @@
 #!/bin/bash
 
-./palimpzest/queries/selection/Q11/runs.sh ollama
+./blendsql/queries/join/Q14/runs.sh vllm
+./blendsql/queries/join/Q15/runs.sh vllm

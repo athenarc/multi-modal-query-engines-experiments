@@ -11,12 +11,12 @@ if [[ "$provider" != "ollama" && "$provider" != "vllm" ]]; then
     exit 1
 fi
 
-# sizes=(10 20 30 40 50)
-sizes=(10 20)
+sizes=(10 20 30 40 50)
+# sizes=(10)
 
 models_ollama=("gemma3:12b")
-# models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
-models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
+models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
+# models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 
 
 # Select models based on provider
@@ -30,8 +30,8 @@ fi
 for size in "${sizes[@]}"; do
     for model in "${models[@]}"; do
         echo "Running Lotus-default, Q14 with -s $size and -m $model"
-        python lotus/queries/join/Q14/default.py --wandb  -s $size -m $model -p $provider
+        python lotus/queries/join/Q14/default.py --wandb -s $size -m $model -p $provider
         echo "Evaluating Lotus-default, Q14 with -s $size and m $model executed from Lotus"
-        python evaluation/join/Q14/eval_scripts/lotus_q14_eval.py -s $size -m $model -p $provider
+        python evaluation/join/Q14/eval_scripts/q14_eval.py --system lotus -s $size -m $model -p $provider
     done
 done
