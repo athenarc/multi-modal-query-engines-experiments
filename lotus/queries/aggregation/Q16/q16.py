@@ -1,3 +1,4 @@
+from datetime import datetime
 import pandas as pd
 import lotus
 from lotus.models import LM
@@ -31,16 +32,22 @@ lotus.settings.configure(lm=model)
 df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)[['review']]
 
 start = time.time()
-df = df_reviews.sem_agg("Do positive or negative reviews prevail? from all {review}. Return 1 for positive or 0 for negative **and only that**.")
+answer = df_reviews.sem_agg("Count all the positive {review}. Return **only** an integer.")
 exec_time = time.time() - start
+
+with open('statistics/aggregation/Q16.log', 'a') as file:
+    file.write(f"System: Lotus \n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write(f"Answer: {answer}\n")
+    # file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
+
 
 if args.wandb:
     wandb.log({
-        "result": wandb.Table(dataframe=df),
+        "result": wandb.Table(dataframe=answer),
         "execution_time": exec_time
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)

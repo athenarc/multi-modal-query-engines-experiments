@@ -5,7 +5,8 @@ directors = pd.read_csv("datasets/movies_directors/directors.csv", index_col=0)
 
 merged = movies.merge(directors, left_on="director_id", right_on="id", how="inner", indicator=True)
 
-directors_63 = merged['director_name'].head(63)
+# Get unique director names and then take the first 63 unique
+directors_63 = merged['director_name'].drop_duplicates().head(63)
 
 directors_63.to_csv("datasets/movies_directors/directors_63.csv", index=False)
 

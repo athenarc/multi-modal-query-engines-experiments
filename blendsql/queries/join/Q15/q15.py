@@ -24,7 +24,10 @@ if args.wandb:
     )
 
 df_movies = pd.read_csv(f"datasets/movies_directors/movies_directors_split_{args.size}.csv")[['title']]
+
+# print(df_movies)
 df_directors = pd.DataFrame(pd.read_csv("datasets/movies_directors/directors_63.csv"))
+print(df_directors)
 
 db = {
     "Movies": pd.DataFrame(df_movies),
@@ -33,11 +36,11 @@ db = {
 
 if args.provider == 'ollama':
     model = LiteLLM(args.provider + '/' + args.model, 
-                    config={"timeout" : 50000, "cache": False},
+                    config={"timeout" : 5000000, "cache": False},
                     caching=False)
 elif args.provider == 'vllm':
     model = LiteLLM("hosted_vllm/" + args.model, 
-                    config={"api_base": "http://localhost:5001/v1", "timeout": 50000, "cache": False}, 
+                    config={"api_base": "http://localhost:5001/v1", "timeout": 5000000, "cache": False}, 
                     caching=False)
     
 bsql = BlendSQL(
@@ -59,13 +62,15 @@ smoothie = bsql.execute(
             )
         }} 
     """,
-    infer_gen_constraints=True,
+    infer_gen_constraints=False,
 )
 
 exec_time = time.time()-start
 
-output_file = f"evaluation/join/Q15/results/blendsql_Q15_join_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+output_file = f"evaluation/join/Q15/results/blendsql_Q15_join_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv"
 smoothie.df.to_csv(output_file)
+
+# print(exec_time)
 
 with open('statistics/join/Q15.log', 'a') as file:
     file.write(f"System: BlendSQL (LLMJoin)\n")

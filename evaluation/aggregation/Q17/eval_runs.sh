@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sizes=(1000 10000 30000)
+sizes=(100 200 400 600 728)
 
 for size in "${sizes[@]}"; do
     echo "Evaluating with -s $size and -m $model"

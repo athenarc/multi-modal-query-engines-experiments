@@ -52,7 +52,7 @@ smoothie = bsql.execute(
     """
         SELECT {{
             LLMQA(
-                'Do positive or negative reviews prevail? Return 1 for positive or 0 for negative **and only that**.',
+                'Count positive reviews. Return **only** a number.',
                 context=Reviews.review,
             )
         }} AS Answer

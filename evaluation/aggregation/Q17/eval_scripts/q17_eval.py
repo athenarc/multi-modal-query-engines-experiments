@@ -7,6 +7,6 @@ args = parser.parse_args()
 
 enron_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")
 
-enron_emails = pd.DataFrame(enron_emails['Spam/Ham'].value_counts())
-
-print(enron_emails.loc[enron_emails['count'].idxmax()])
+enron_emails = enron_emails['Spam/Ham'].value_counts()
+spam_count = enron_emails.get('spam', 0)
+print(spam_count)

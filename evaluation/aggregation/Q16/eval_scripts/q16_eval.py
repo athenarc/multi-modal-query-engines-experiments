@@ -7,6 +7,10 @@ args = parser.parse_args()
 
 imdb_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
 
-imdb_reviews = pd.DataFrame(imdb_reviews['sentiment'].value_counts())
+imdb_reviews = imdb_reviews['sentiment'].value_counts()
+positive_count = imdb_reviews.get('positive', 0)
 
-print(imdb_reviews.loc[imdb_reviews['count'].idxmax()])
+with open('statistics/aggregation/Q16.log', 'a') as file:
+    file.write(f"Ground Truth Answer: {positive_count}" + "\n")
+    file.write("------------------------------------------------------\n\n\n")
+
