@@ -29,7 +29,9 @@ elif args.provider == 'vllm':
 
 lotus.settings.configure(lm=model)
 
-df_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)[['review']]
+df_reviews_sample = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").sample(args.size)
+df_reviews_sample.to_csv(f"datasets/imdb_reviews/imdb_reviews_sampled_{args.size}.csv", index=False)
+df_reviews = df_reviews_sample[['review']]
 
 start = time.time()
 answer = df_reviews.sem_agg("Count all the positive {review}. Return **only** an integer.")

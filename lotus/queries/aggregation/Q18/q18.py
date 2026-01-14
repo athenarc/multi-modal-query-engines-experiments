@@ -1,3 +1,4 @@
+from datetime import datetime
 import pandas as pd
 import lotus
 from lotus.models import LM
@@ -31,16 +32,22 @@ lotus.settings.configure(lm=model)
 df_reviews = pd.read_csv("datasets/rotowire/reports_table.csv").head(args.size)
 
 start = time.time()
-df = df_reviews.sem_agg("Which player had the most triple-doubles across all the games described from all {Report}. **Return only the name**.")
+df = df_reviews.sem_agg("Which player had the most triple-doubles across all the games described from all {Report}. **Return only the name** or - if no player had any triple-doubles.")
 exec_time = time.time() - start
+
+with open('statistics/aggregation/Q18.log', 'a') as file:
+    file.write(f"System: Lotus \n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write(f"Answer: {df}\n")
+    # file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
+
 
 if args.wandb:
     wandb.log({
         "result": wandb.Table(dataframe=df),
         "execution_time": exec_time
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)

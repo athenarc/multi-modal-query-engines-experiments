@@ -11,11 +11,11 @@ if [[ "$provider" != "ollama" && "$provider" != "vllm" ]]; then
     exit 1
 fi
 
-sizes=(100 200 400 600 728)
+sizes=(10 20 30 40 50 60)
 
-models_ollama=("gemma3:12b")
-models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
+models_ollama=("gemma3:12b-128k")
 # models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
+models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
 
 
 # Select models based on provider
@@ -30,5 +30,6 @@ for size in "${sizes[@]}"; do
     for model in "${models[@]}"; do
         echo "Running Lotus, Q17 with -s $size and -m $model"
         python lotus/queries/aggregation/Q17/q17.py --wandb -s $size -m $model -p $provider
+        python evaluation/aggregation/Q17/eval_scripts/q17_eval.py --size $size
     done
 done

@@ -5,7 +5,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-s", "--size", nargs='?', default=1000, const=1000, type=int, help="The input size")
 args = parser.parse_args()
 
-imdb_reviews = pd.read_csv("datasets/imdb_reviews/imdb_reviews.csv").head(args.size)
+imdb_reviews = pd.read_csv(f"datasets/imdb_reviews/imdb_reviews_sampled_{args.size}.csv")
 
 imdb_reviews = imdb_reviews['sentiment'].value_counts()
 positive_count = imdb_reviews.get('positive', 0)

@@ -22,7 +22,17 @@ triple_double_counts = player_labels[player_labels["Triple Double"]] \
     .size() \
     .reset_index(name="Triple Double Count")
 
+if triple_double_counts.empty:
+    with open('statistics/aggregation/Q18.log', 'a') as file:
+        file.write("Ground Truth Answer: No player with triple doubles\n")
+        file.write("------------------------------------------------------\n\n\n")
+    exit()
+    
 best_player = triple_double_counts.sort_values("Triple Double Count", ascending=False).iloc[0]
 
 print("Most triple doubles:", best_player["Player Name"])
 print("Count:", best_player["Triple Double Count"])
+
+with open('statistics/aggregation/Q18.log', 'a') as file:
+    file.write(f"Ground Truth Answer: {best_player['Player Name']} with {best_player['Triple Double Count']} triple doubles" + "\n")
+    file.write("------------------------------------------------------\n\n\n")

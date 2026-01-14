@@ -23,7 +23,9 @@ if args.wandb:
         group="Aggregation",
     )
 
-df_emails = pd.read_csv(f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv")[['Subject', 'Message']]
+df_emails_sample = pd.read_csv(f"datasets/enron_emails/enron_spam_data.csv").sample(args.size)
+df_emails_sample.to_csv(f"datasets/enron_emails/enron_emails_sample_{args.size}.csv", index=False)
+df_emails = df_emails_sample[['Subject', 'Message']]
 
 if args.provider == 'ollama':
     model=LiteLLM(args.provider + '/' + args.model, config={"timeout": 50000}, caching=False)
@@ -56,13 +58,17 @@ smoothie = bsql.execute(
 
 exec_time = time.time()-start
 
+with open('statistics/aggregation/Q17.log', 'a') as file:
+    file.write(f"System: BlendSQL (LLMQA)\n")
+    file.write(f"Timestamp: {time.strftime('%Y-%m-%dT%H:%M:%S')}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write(f"Result: {smoothie.df['Answer'].iloc[0]}" + "\n")
+
 if args.wandb:
     wandb.log({
         "result": wandb.Table(dataframe=smoothie.df),
         "execution_time": exec_time
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", smoothie.df)
-    print("Execution time: ", exec_time)

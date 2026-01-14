@@ -11,8 +11,8 @@ if [[ "$provider" != "ollama" && "$provider" != "vllm" ]]; then
     exit 1
 fi
 
-# sizes=(10 20 30 40 50)
-sizes=(10)
+sizes=(10 20 30 40 50)
+# sizes=(10)
 
 models_ollama=("gemma3:12b")
 models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
@@ -29,7 +29,7 @@ fi
 for size in "${sizes[@]}"; do
     for model in "${models[@]}"; do
         echo "Running BlendSQL, Q15 with -s $size and -m $model"
-        python blendsql/queries/join/Q15/q15.py  -s $size -m $model -p $provider
+        python blendsql/queries/join/Q15/q15.py --wandb -s $size -m $model -p $provider
         echo "Evaluating BlendSQL, Q15 with -s $size and m $model"
         python evaluation/join/Q15/eval_scripts/q15_eval.py --system blendsql -s $size -m $model -p $provider
     done

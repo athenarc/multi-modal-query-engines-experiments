@@ -1,3 +1,4 @@
+from datetime import datetime
 import pandas as pd
 import lotus
 from lotus.models import LM
@@ -29,19 +30,28 @@ elif args.provider == 'vllm':
 lotus.settings.configure(lm=model)
 
 input_filename = f"datasets/enron_emails/enron_emails_shuffled_{args.size}.csv"
-df_reviews = pd.read_csv(input_filename)[['Message']]
+
+df_emails_sample = pd.read_csv("datasets/enron_emails/enron_spam_data.csv").sample(args.size)
+df_emails_sample.to_csv(input_filename, index=False)
+df_emails = pd.read_csv(input_filename)[['Message']]
 
 start = time.time()
-df = df_reviews.sem_agg("Count all spam {Message}. Return **only** an integer.")
+df = df_emails.sem_agg("Count all spam {Message}. Return **only** an integer.")
 exec_time = time.time() - start
+
+with open('statistics/aggregation/Q17.log', 'a') as file:
+    file.write(f"System: Lotus \n")
+    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+    file.write(f"Model: {args.model}\n")
+    file.write(f"Input Size: {args.size}\n")
+    file.write(f"Execution Time: {exec_time:.2f}\n")
+    file.write(f"Answer: {df}\n")
+    # file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
+
 
 if args.wandb:
     wandb.log({
         "result": wandb.Table(dataframe=df),
         "execution_time": exec_time
     })
-
     wandb.finish()
-else:
-    print("Result:\n\n", df)
-    print("Execution time: ", exec_time)
