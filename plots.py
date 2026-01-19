@@ -173,12 +173,12 @@ def plot_case_1_6():
     plt.tight_layout(rect=[0, 0.05, 1, 1])
     plt.savefig('figures/case_1_6_individual.png', dpi=300)
 
-    # Aggregate
+    # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
-    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Exec. Time", "Accuracy"]):
+    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
-        ax.set_title(f"Avg. {tit} (Q1-Q6)", fontweight='bold')
+        ax.set_title(f"{tit} (Q1-Q6)", fontweight='bold')
         if y_v == "Accuracy": ax.set_ylim(0, 1.05)
         ax.get_legend().remove()
     
@@ -214,11 +214,11 @@ def plot_case_7_8():
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy", "F1"]].mean().reset_index()
     fig, axes = plt.subplots(1, 3, figsize=(20, 7))
-    metrics, titles = ["Time", "Accuracy", "F1"], ["Avg Exec. Time", "Avg Accuracy", "Avg F1 Score"]
+    metrics, titles = ["Time", "Accuracy", "F1"], ["Average Execution Time", "Average Accuracy", "Average F1 Score"]
 
     for i, (metric, title) in enumerate(zip(metrics, titles)):
         sns.lineplot(data=agg, x="Input Size", y=metric, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=axes[i], legend=True)
-        axes[i].set_title(title, fontweight='bold')
+        axes[i].set_title(f"{title} (Q7-Q8)", fontweight='bold')
         if metric == "Time": axes[i].set_yscale('log')
         else: axes[i].set_ylim(0, 1.05)
         axes[i].get_legend().remove()
@@ -253,9 +253,9 @@ def plot_case_9_12():
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
-    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Avg Exec. Time", "Avg Accuracy"]):
+    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
-        ax.set_title(f"Avg. {tit} (Q9-Q12 Filter)", fontweight='bold')
+        ax.set_title(f"{tit} (Q9-Q12)", fontweight='bold')
         if y_v == "Time": ax.set_yscale('log')
         else: ax.set_ylim(0.7, 1.05)
         ax.get_legend().remove()
@@ -290,9 +290,9 @@ def plot_optimized_9_12():
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
-    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Avg Exec. Time", "Avg Accuracy"]):
+    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
-        ax.set_title(f"Avg. {tit} (Lotus Optimization)", fontweight='bold')
+        ax.set_title(f"{tit} (Lotus Optimization)", fontweight='bold')
         if y_v == "Time": ax.set_yscale('log')
         else: ax.set_ylim(0.7, 1.05)
         ax.get_legend().remove()
@@ -327,9 +327,9 @@ def plot_case_13_15():
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
-    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Avg Exec. Time", "Avg Accuracy"]):
+    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
-        ax.set_title(f"Avg. {tit}", fontweight='bold')
+        ax.set_title(f"{tit}", fontweight='bold')
         if y_v == "Time": ax.set_yscale('log')
         else: ax.set_ylim(-0.05, 1.05)
         ax.get_legend().remove()
@@ -381,11 +381,11 @@ def plot_case_16_18():
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
     
-    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Avg Exec. Time", "Avg Accuracy"]):
+    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", 
                      palette=palette, markers=markers, dashes=dashes, markersize=12, 
                      ax=ax, legend=True)
-        ax.set_title(f"Avg. {tit}", fontweight='bold')
+        ax.set_title(f"{tit}", fontweight='bold')
         ax.set_xlabel("Input Size")
         ax.set_ylabel(y_v if y_v == "Time" else "Accuracy")
         
