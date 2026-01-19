@@ -79,29 +79,29 @@ smoothie = bsql.execute(
 
 exec_time = time.time() - start
 
-if args.provider == 'ollama':
-    output_file = f"evaluation/derivation/Q1/results/blendsql_Q1_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
-elif args.provider =='vllm':
-    output_file = f"evaluation/derivation/Q1/results/blendsql_Q1_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+# if args.provider == 'ollama':
+#     output_file = f"evaluation/derivation/Q1/results/blendsql_Q1_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+# elif args.provider =='vllm':
+#     output_file = f"evaluation/derivation/Q1/results/blendsql_Q1_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
-output_df = smoothie.df.rename(columns={"Game_ID": "Game ID", "player_name": "Player Name"})
-output_df.to_csv(f"evaluation/derivation/Q1/results/blendsql_Q1_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
+# output_df = smoothie.df.rename(columns={"Game_ID": "Game ID", "player_name": "Player Name"})
+# output_df.to_csv(f"evaluation/derivation/Q1/results/blendsql_Q1_{args.model.replace('/', '_').replace(':', '_')}_{args.provider}_{args.size}.csv")
 
-total_LLM_calls = args.size
+# total_LLM_calls = args.size
 
-with open('statistics/derivation/Q1.log', 'a') as file:
-    file.write(f"System: BlendSQL\n")
-    file.write(f"Timestamp: {datetime.now().isoformat()}\n")
-    file.write(f"Model: {args.model}\n")
-    file.write(f"Input Size: {args.size}\n")
-    file.write(f"Execution Time: {exec_time:.2f}\n")
-    file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
+# with open('statistics/derivation/Q1.log', 'a') as file:
+#     file.write(f"System: BlendSQL\n")
+#     file.write(f"Timestamp: {datetime.now().isoformat()}\n")
+#     file.write(f"Model: {args.model}\n")
+#     file.write(f"Input Size: {args.size}\n")
+#     file.write(f"Execution Time: {exec_time:.2f}\n")
+#     file.write("Total LLM calls: " + str(total_LLM_calls) + "\n")
 
 
-if args.wandb:
-    wandb.log({
-        "result_table": wandb.Table(dataframe=smoothie.df),
-        "execution_time": exec_time,
-        "total_LLM_calls": total_LLM_calls,
-    })
-    wandb.finish()
+# if args.wandb:
+#     wandb.log({
+#         "result_table": wandb.Table(dataframe=smoothie.df),
+#         "execution_time": exec_time,
+#         "total_LLM_calls": total_LLM_calls,
+#     })
+#     wandb.finish()

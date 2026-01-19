@@ -1,5 +1,6 @@
 .vsocde/
 wandb/
+logs/
 *.DS_Store
 *.log
 *.out

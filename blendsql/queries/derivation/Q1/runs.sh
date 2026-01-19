@@ -5,7 +5,7 @@ models_vllm=("meta-llama/Llama-3.1-8B-Instruct")
 # models_dev=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
 models_dev=("gemma3:12b")
 # sizes_dev=(50 100 200 300 500)
-sizes_dev=(50)
+sizes_dev=(10)
 
 dev="${1:-}"
 
@@ -27,9 +27,9 @@ else
     for size in "${sizes_dev[@]}"; do
         for model in "${models_dev[@]}"; do
             echo "Running Q1 with -s $size and m $model"
-            python blendsql/queries/derivation/Q1/q1.py --wandb -s $size -m $model -p ollama
-            echo "Evaluating Q1 with -s $size and m $model executed from blendsql"
-            python evaluation/derivation/Q1/eval_scripts/blendsql_q1_eval.py  -s $size -m $model -p ollama
+            python blendsql/queries/derivation/Q1/q1.py -s $size -m $model -p ollama
+            # echo "Evaluating Q1 with -s $size and m $model executed from blendsql"
+            # python evaluation/derivation/Q1/eval_scripts/blendsql_q1_eval.py  -s $size -m $model -p ollama
         done
     done
 fi
