@@ -304,7 +304,7 @@ def plot_optimized_9_12():
 
 def plot_case_13_15():
     print("Generating Case 13-15 (Join)...")
-    df = pd.DataFrame(data_13_15, columns=["Query", "System", "Operator", "Input Size", "Time", "Accuracy"])
+    df = pd.DataFrame(data_13_15, columns=["Query", "System", "Operator", "Input Size", "Time", "F1-Score"])
     df["Label"] = df["System"] + " (" + df["Operator"] + ")"
     palette, markers, dashes = get_style_params(df["Label"].unique())
     
@@ -315,7 +315,7 @@ def plot_case_13_15():
         sns.lineplot(data=q_df, x="Input Size", y="Time", hue="Label", style="Label", palette=palette, dashes=dashes, markers=markers, markersize=10, ax=axes[0, i], legend=(i==0))
         axes[0, i].set_yscale('log')
         axes[0, i].set_title(f"{q}", fontweight='bold', pad=20)
-        sns.lineplot(data=q_df, x="Input Size", y="Accuracy", hue="Label", style="Label", palette=palette, dashes=dashes, markers=markers, markersize=10, ax=axes[1, i], legend=False)
+        sns.lineplot(data=q_df, x="Input Size", y="F1-Score", hue="Label", style="Label", palette=palette, dashes=dashes, markers=markers, markersize=10, ax=axes[1, i], legend=False)
         axes[1, i].set_ylim(-0.05, 1.05)
 
     handles, labels = axes[0, 0].get_legend_handles_labels()
@@ -325,9 +325,9 @@ def plot_case_13_15():
     plt.savefig('figures/case_13_15_join_individual.png', dpi=300)
 
     # --- Aggregate Plot ---
-    agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
+    agg = df.groupby(["Label", "Input Size"])[["Time", "F1-Score"]].mean().reset_index()
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
-    for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
+    for ax, y_v, tit in zip([ax1, ax2], ["Time", "F1-Score"], ["Average Execution Time", "Average F1-Score"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
         ax.set_title(f"{tit}", fontweight='bold')
         if y_v == "Time": ax.set_yscale('log')
