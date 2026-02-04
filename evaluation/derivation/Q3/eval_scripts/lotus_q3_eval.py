@@ -15,15 +15,14 @@ team_labels = pd.read_csv("datasets/rotowire/team_labels.csv")[['Game ID', 'Team
 operator = "extract" if args.extract else "map"
 
 if args.provider == 'ollama' or args.provider == 'transformers':
-    results_file = f"evaluation/derivation/Q3/results/lotus_Q3_extract_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q3/results/lotus_Q3_{operator}_{args.model.replace(':', '_')}_{args.provider}_{args.size}.csv"
 elif args.provider == 'vllm':
-    results_file = f"evaluation/derivation/Q3/results/lotus_Q3_extract_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
+    results_file = f"evaluation/derivation/Q3/results/lotus_Q3_{operator}_{args.model.replace('/', '_')}_{args.provider}_{args.size}.csv"
 
 
 winners = team_labels.loc[team_labels.groupby("Game ID")["Total points"].idxmax()][["Game ID", "Total points"]].rename(columns={"Total points": "points"})
 
 df_lotus = pd.read_csv(results_file, index_col=0)[['Game ID', 'points']].fillna(-1)
-print(df_lotus)
 df = df_lotus.merge(winners, on='Game ID', how='outer')
 
 df["match"] = df.apply(
@@ -32,8 +31,6 @@ df["match"] = df.apply(
     ) if (pd.to_numeric(row["points_x"], errors='coerce') is not np.nan and pd.to_numeric(row["points_y"], errors='coerce') is not np.nan) else False,
     axis=1
 )
-
-df.to_csv("problem.csv")
 
 accuracy = df['match'].mean()
 with open('statistics/derivation/Q3.log', 'a') as file:

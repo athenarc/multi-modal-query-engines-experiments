@@ -16,18 +16,18 @@ fi
 # Validate query list
 queries=("$@")
 if [[ ${#queries[@]} -eq 0 ]]; then # Run them all by default
-    queries=(9 10 11 12)
+    queries=(1 2 3 4 5 6 7 8)
 fi
 
 for q in "${queries[@]}"; do
-    if [[ "$q" != "9" && "$q" != "10" && "$q" != "11" && "$q" != "12" ]]; then
-        echo "Error: Unsupported query number '$q'. Supported queries are 9, 10, 11, 12."
+    if [[ "$q" != "1" && "$q" != "2" && "$q" != "3" && "$q" != "4" && "$q" != "5" && "$q" != "6" && "$q" != "7" && "$q" != "8" ]]; then
+        echo "Error: Unsupported query number '$q'. Supported queries are 1, 2, 3, 4, 5, 6, 7, 8."
         exit 1
     fi
 done
 
 # Experiments
-sizes_dev=(50 100 200 300 500)
+sizes=(50 100 200 300 500)
 models_ollama=("gemma3:12b")
 models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
 
