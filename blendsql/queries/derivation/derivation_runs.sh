@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage: ./run_queries.sh <provider> <query_numbers...>
-# Example: ./run_queries.sh ollama 16 17
+# Example: ./run_queries.sh ollama 1 3 4
 
 provider="$1"
 shift 
@@ -16,19 +16,19 @@ fi
 # Validate query list
 queries=("$@")
 if [[ ${#queries[@]} -eq 0 ]]; then # Run them all by default
-    queries=(16 17 18)
+    queries=(1 2 3 4 5 6 7 8)
 fi
 
 for q in "${queries[@]}"; do
-    if [[ "$q" != "16" && "$q" != "17" && "$q" != "18" ]]; then
-        echo "Error: Unsupported query number '$q'. Supported queries are 16, 17, 18."
+    if [[ "$q" != "1" && "$q" != "2" && "$q" != "3" && "$q" != "4" && "$q" != "5" && "$q" != "6" && "$q" != "7" && "$q" != "8" ]]; then
+        echo "Error: Unsupported query number '$q'. Supported queries are 1, 2, 3, 4, 5, 6, 7, 8."
         exit 1
     fi
 done
 
 # Experiments
-sizes=(10 20 30 40 50 60)
-models_ollama=("gemma3:12b-128k")
+sizes_dev=(50 100 200 300 500)
+models_ollama=("gemma3:12b")
 models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
 
 if [[ "$provider" == "ollama" ]]; then

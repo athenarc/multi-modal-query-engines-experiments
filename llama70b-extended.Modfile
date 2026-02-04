@@ -1,2 +1,0 @@
-FROM llama3.3:70b
-PARAMETER num_ctx 100000
