@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Usage: ./selection_runs.sh <provider> <query_numbers...>
-# Example: ./selection_runs.sh vllm 9 10 11
+# Usage: ./derivation_runs.sh <provider> <query_numbers...>
+# Example: ./derivation_runs.sh vllm 3 5 8
 
 provider="$1"
 shift 

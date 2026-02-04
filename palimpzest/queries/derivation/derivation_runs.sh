@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage: ./derivation_runs.sh <provider> <query_numbers...>
-# Example: ./derivation_runs.sh ollama 1 3 4
+# Example: ./derivation_runs.sh vllm 1 3 6 8
 
 provider="$1"
 shift 
@@ -16,12 +16,12 @@ fi
 # Validate query list
 queries=("$@")
 if [[ ${#queries[@]} -eq 0 ]]; then # Run them all by default
-    queries=(1 2 3 4 5 6 7 8)
+    queries=(1 3 4 6 7 8)
 fi
 
 for q in "${queries[@]}"; do
-    if [[ "$q" != "1" && "$q" != "2" && "$q" != "3" && "$q" != "4" && "$q" != "5" && "$q" != "6" && "$q" != "7" && "$q" != "8" ]]; then
-        echo "Error: Unsupported query number '$q'. Supported queries are 1, 2, 3, 4, 5, 6, 7, 8."
+    if [[ "$q" != "1" && "$q" != "3" && "$q" != "4" && "$q" != "6" && "$q" != "7" && "$q" != "8" ]]; then
+        echo "Error: Unsupported query number '$q'. Supported queries are 1, 3, 4, 6, 7, 8."
         exit 1
     fi
 done
@@ -44,11 +44,12 @@ for qnum in "${queries[@]}"; do
     for size in "${sizes[@]}"; do
         for model in "${models[@]}"; do
             echo "----------------------------------------------------------"
-            echo "Running BlendSQL $Q_dir: size=$size, model=$model, provider=$provider"
+            echo "Running Palimpzest $Q_dir: size=$size, model=$model, provider=$provider"
             echo "----------------------------------------------------------"
             
-            python "blendsql/queries/derivation/$Q_dir/${query}.py" --wandb -s "$size" -m "$model" -p "$provider"
-            python "evaluation/derivation/$Q_dir/eval_scripts/blendsql_${query}_eval.py" --size "$size"
+            python "palimpzest/queries/derivation/$Q_dir/${query}.py" --wandb -s "$size" -m "$model" -p "$provider"
+            python "evaluation/derivation/$Q_dir/eval_scripts/palimpzest_${query}_eval.py" --size "$size" -m $model -p $provider
+            
         done
     done
 done
