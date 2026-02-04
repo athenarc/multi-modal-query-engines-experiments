@@ -7,10 +7,6 @@ import os
 if not os.path.exists('figures'):
     os.makedirs('figures')
 
-# ==========================================
-# 1. GLOBAL MASTER STYLING CONFIGURATION
-# ==========================================
-# Unified mapping for all possible System (Operator) combinations
 STYLE_MAP = {
     "Lotus (sem_map)":            {"color": "#1f77b4", "dash": (1, 0),   "marker": "o"}, # Solid Blue
     "Lotus (sem_extract)":        {"color": "#4eb3d3", "dash": (4, 1.5), "marker": "s"}, # Dashed Cyan
@@ -33,12 +29,10 @@ def get_style_params(labels):
     dashes = {l: STYLE_MAP[l]["dash"] for l in labels if l in STYLE_MAP}
     return palette, markers, dashes
 
-sns.set_context("paper", font_scale=1.5)
+sns.set_context("paper", font_scale=2.2, rc={"lines.linewidth": 2.5})
 sns.set_style("whitegrid", {'grid.linestyle': '--'})
+plt.rcParams.update({'font.weight': 'bold', 'axes.labelweight': 'bold'})
 
-# ==========================================
-# 2. DATASETS DEFINITION
-# ==========================================
 data_1_6 = [
     # Q1
     ["Q1", "Lotus", "sem_map", 50, 15.92, 0.71], ["Q1", "Lotus", "sem_map", 100, 25.98, 0.64], ["Q1", "Lotus", "sem_map", 200, 61.93, 0.57], ["Q1", "Lotus", "sem_map", 300, 91.12, 0.52], ["Q1", "Lotus", "sem_map", 500, 132.00, 0.37], 
@@ -147,86 +141,135 @@ data_16_18 = [
     ["Q18", "Lotus", "sem_agg", 10, 1.46, 0.00],["Q18", "Lotus", "sem_agg", 20, 1.34, 0.00],["Q18", "Lotus", "sem_agg", 30, 1.38, 0.00],["Q18", "Lotus", "sem_agg", 40, np.nan, np.nan],["Q18", "Lotus", "sem_agg", 50, np.nan, np.nan],["Q18", "Lotus", "sem_agg", 60, np.nan, np.nan],
     ["Q18", "BlendSQL", "LLMQA", 10, 0.99, 0.00],["Q18", "BlendSQL", "LLMQA", 20, 1.00, 0.00],["Q18", "BlendSQL", "LLMQA", 30, 2.37, 0.00],["Q18", "BlendSQL", "LLMQA", 40, np.nan, np.nan],["Q18", "BlendSQL", "LLMQA", 50, np.nan, np.nan],["Q18", "BlendSQL", "LLMQA", 60, np.nan, np.nan]
 ]
-# ==========================================
-# 3. PLOTTING FUNCTIONS
-# ==========================================
 
 def plot_case_1_6():
-    print("Generating Case 1-6 (1st & 2nd Derivation Cases)...")
+    print("Generating Case 1-6 (Derivation -- 1st & 2nd Cases)...")
     df = pd.DataFrame(data_1_6, columns=["Query", "System", "Operator", "Input Size", "Time", "Accuracy"])
     df["Label"] = df["System"] + " (" + df["Operator"] + ")"
     palette, markers, dashes = get_style_params(df["Label"].unique())
+    fig, axes = plt.subplots(3, 4, figsize=(20, 15), sharex=True)
+    queries = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"]
     
-    # Individual Grid
-    fig, axes = plt.subplots(4, 3, figsize=(16, 15), sharex=True)
-    for idx, q in enumerate(["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"]):
-        col, row = idx % 3, (0 if idx < 3 else 2)
-        q_df = df[df["Query"] == q]
-        sns.lineplot(data=q_df, x="Input Size", y="Time", hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=8, ax=axes[row, col], legend=False)
-        axes[row, col].set_title(f"{q}", fontweight='bold')
-        sns.lineplot(data=q_df, x="Input Size", y="Accuracy", hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=8, ax=axes[row+1, col], legend=(idx==0))
-        axes[row+1, col].set_ylim(0, 1.05)
+    handles, labels = [], []
 
-    handles, labels = axes[1, 0].get_legend_handles_labels()
-    axes[1, 0].get_legend().remove()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=4, frameon=True)
-    plt.tight_layout(rect=[0, 0.05, 1, 1])
+    for idx, q in enumerate(queries):
+        row = idx // 2
+        # If Q1, Q3, Q5 -> col 0 & 1. If Q2, Q4, Q6 -> col 2 & 3
+        col_base = 0 if idx % 2 == 0 else 2 
+        
+        q_df = df[df["Query"] == q]
+        
+        # --- Plot Time ---
+        show_leg = (idx == 0)
+        ax_time = axes[row, col_base]
+        sns.lineplot(data=q_df, x="Input Size", y="Time", hue="Label", style="Label", 
+                     palette=palette, markers=markers, dashes=dashes, markersize=10, 
+                     ax=ax_time, legend=show_leg)
+        
+        ax_time.set_title(f"{q}", fontweight='bold', fontsize=25)
+        ax_time.set_ylabel("Time", fontsize=25)
+        
+        # Capture handles from the first plot then hide its legend
+        if show_leg:
+            handles, labels = ax_time.get_legend_handles_labels()
+            ax_time.get_legend().remove()
+
+        # --- Plot Accuracy ---
+        ax_acc = axes[row, col_base + 1]
+        sns.lineplot(data=q_df, x="Input Size", y="Accuracy", hue="Label", style="Label", 
+                     palette=palette, markers=markers, dashes=dashes, markersize=10, 
+                     ax=ax_acc, legend=False)
+        
+        ax_acc.set_title(f"{q}", fontweight='bold', fontsize=25)
+        ax_acc.set_ylim(0, 1.05)
+        ax_acc.set_ylabel("Accuracy", fontsize=25)
+        # Global Legend
+    if labels:
+        fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, -0.005), 
+                   ncol=2, frameon=True, fontsize=23)
+
+    plt.tight_layout(rect=[0, 0.07, 1, 1])
     plt.savefig('figures/case_1_6_individual.png', dpi=300)
 
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 6))
     for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
-        ax.set_title(f"{tit} (Q1-Q6)", fontweight='bold')
+        ax.set_title(f"{tit}", fontweight='bold', fontsize=20)
         if y_v == "Accuracy": ax.set_ylim(0, 1.05)
         ax.get_legend().remove()
     
     handles, labels = ax1.get_legend_handles_labels()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=4, frameon=True)
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, -0.017), ncol=2, frameon=True, fontsize=18)
     plt.tight_layout(rect=[0, 0.12, 1, 1])
     plt.savefig('figures/case_1_6_aggregate.png', dpi=300)
+    
 
 def plot_case_7_8():
-    print("Generating Case 7-8 (Third Derivation Case)...")
+    print("Generating Case 7-8 (Derivation -- 3rd Case)...")
     df = pd.DataFrame(data_7_8, columns=["Query", "System", "Operator", "Input Size", "Time", "F1", "Accuracy"])
     df["Label"] = df["System"] + " (" + df["Operator"] + ")"
     palette, markers, dashes = get_style_params(df["Label"].unique())
     
-    # --- Individual Grid ---
-    fig, axes = plt.subplots(3, 2, figsize=(12, 14), sharex=True)
-    for i, q in enumerate(["Q7", "Q8"]):
-        q_df = df[df["Query"] == q]
-        for row, metric in enumerate(["Time", "Accuracy", "F1"]):
-            ax = axes[row, i]
-            sns.lineplot(data=q_df, x="Input Size", y=metric, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=10, ax=ax, legend=(i==0 and row==0))
-            if row == 0: 
-                ax.set_yscale('log')
-                ax.set_title(f"{q}", fontweight='bold', pad=20)
-            else: ax.set_ylim(0, 1.05)
+    # 2 rows (Queries), 3 columns (Metrics)
+    fig, axes = plt.subplots(2, 3, figsize=(20, 10), sharex=True)
+    queries = ["Q7", "Q8"]
+    metrics = ["Time", "Accuracy", "F1"]
     
+    for i, q in enumerate(queries):
+        q_df = df[df["Query"] == q]
+        for j, metric in enumerate(metrics):
+            ax = axes[i, j]
+            show_legend = (i == 0 and j == 0)
+            
+            sns.lineplot(data=q_df, x="Input Size", y=metric, hue="Label", style="Label", 
+                         palette=palette, markers=markers, dashes=dashes, markersize=10, 
+                         ax=ax, legend=show_legend)
+            
+            if i == 0:
+                ax.set_title(f"{metric}", fontweight='bold', fontsize=22, pad=15)
+            
+            if j == 0:
+                ax.set_ylabel("Time", fontsize=18, fontweight='bold')
+                ax.set_yscale('log')
+                
+                ax.text(-0.5, 0.5, q, transform=ax.transAxes, 
+                        fontsize=25, fontweight='bold', rotation=0,
+                        va='center', ha='right')
+            else:
+                ax.set_ylabel(metric, fontsize=18)
+                ax.set_ylim(0, 1.05)
+
+    # Global Legend
     handles, labels = axes[0, 0].get_legend_handles_labels()
-    axes[0, 0].get_legend().remove()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=5, frameon=True)
-    plt.tight_layout(rect=[0, 0.08, 1, 1])
+    if axes[0, 0].get_legend():
+        axes[0, 0].get_legend().remove()
+        
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.6, -0.01), 
+               ncol=3, frameon=True, fontsize=21)
+    
+    # Increase the first value in rect (0.1) to make room for the Q7/Q8 text
+    plt.tight_layout(rect=[0.1, 0.08, 1, 1])
     plt.savefig('figures/case_7_8_individual.png', dpi=300)
 
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy", "F1"]].mean().reset_index()
-    fig, axes = plt.subplots(1, 3, figsize=(20, 7))
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
     metrics, titles = ["Time", "Accuracy", "F1"], ["Average Execution Time", "Average Accuracy", "Average F1 Score"]
 
     for i, (metric, title) in enumerate(zip(metrics, titles)):
         sns.lineplot(data=agg, x="Input Size", y=metric, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=axes[i], legend=True)
-        axes[i].set_title(f"{title} (Q7-Q8)", fontweight='bold')
+        axes[i].set_title(f"{title}", fontweight='bold', fontsize=20)
         if metric == "Time": axes[i].set_yscale('log')
         else: axes[i].set_ylim(0, 1.05)
         axes[i].get_legend().remove()
 
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=5, frameon=True)
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.0), ncol=3, frameon=True, fontsize=18)
     plt.tight_layout(rect=[0, 0.15, 1, 1])
     plt.savefig('figures/case_7_8_aggregate.png', dpi=300)
+
 
 def plot_case_9_12():
     print("Generating Case 9-12 (Filter)...")
@@ -235,33 +278,33 @@ def plot_case_9_12():
     palette, markers, dashes = get_style_params(df["Label"].unique())
     
     # --- Individual Grid ---
-    fig, axes = plt.subplots(2, 4, figsize=(20, 11), sharex=True)
+    fig, axes = plt.subplots(2, 4, figsize=(15, 7), sharex=True)
     for i, q in enumerate(["Q9", "Q10", "Q11", "Q12"]):
         q_df = df[df["Query"] == q]
         sns.lineplot(data=q_df, x="Input Size", y="Time", hue="Label", style="Label", palette=palette, dashes=dashes, markers=markers, markersize=10, ax=axes[0, i], legend=(i==0))
         axes[0, i].set_yscale('log')
-        axes[0, i].set_title(f"{q}", fontweight='bold', pad=20)
+        axes[0, i].set_title(f"{q}", fontweight='bold', pad=20, fontsize=25)
         sns.lineplot(data=q_df, x="Input Size", y="Accuracy", hue="Label", style="Label", palette=palette, dashes=dashes, markers=markers, markersize=10, ax=axes[1, i], legend=False)
         axes[1, i].set_ylim(0.7, 1.05)
 
     handles, labels = axes[0, 0].get_legend_handles_labels()
     axes[0, 0].get_legend().remove()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=2, frameon=True)
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, -0.01), ncol=2, frameon=True, fontsize=23)
     plt.tight_layout(rect=[0, 0.07, 1, 1])
     plt.savefig('figures/case_9_12_individual.png', dpi=300)
 
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9, 4.5))
     for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
-        ax.set_title(f"{tit} (Q9-Q12)", fontweight='bold')
+        ax.set_title(f"{tit}", fontweight='bold', fontsize=18)
         if y_v == "Time": ax.set_yscale('log')
         else: ax.set_ylim(0.7, 1.05)
         ax.get_legend().remove()
     
     handles, labels = ax1.get_legend_handles_labels()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=2, frameon=True)
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.00), ncol=2, frameon=True, fontsize=20)
     plt.tight_layout(rect=[0, 0.12, 1, 1])
     plt.savefig('figures/case_9_12_aggregate.png', dpi=300)
 
@@ -292,7 +335,7 @@ def plot_optimized_9_12():
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
     for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
-        ax.set_title(f"{tit} (Lotus Optimization)", fontweight='bold')
+        ax.set_title(f"{tit} (Lotus Optimization)", fontweight='bold', fontsize=18)
         if y_v == "Time": ax.set_yscale('log')
         else: ax.set_ylim(0.7, 1.05)
         ax.get_legend().remove()
@@ -309,24 +352,24 @@ def plot_case_13_15():
     palette, markers, dashes = get_style_params(df["Label"].unique())
     
     # --- Individual Grid ---
-    fig, axes = plt.subplots(2, 3, figsize=(18, 11), sharex=True)
+    fig, axes = plt.subplots(2, 3, figsize=(13, 7), sharex=True)
     for i, q in enumerate(["Q13", "Q14", "Q15"]):
         q_df = df[df["Query"] == q]
         sns.lineplot(data=q_df, x="Input Size", y="Time", hue="Label", style="Label", palette=palette, dashes=dashes, markers=markers, markersize=10, ax=axes[0, i], legend=(i==0))
         axes[0, i].set_yscale('log')
-        axes[0, i].set_title(f"{q}", fontweight='bold', pad=20)
+        axes[0, i].set_title(f"{q}", fontweight='bold', pad=20, fontsize=25)
         sns.lineplot(data=q_df, x="Input Size", y="F1-Score", hue="Label", style="Label", palette=palette, dashes=dashes, markers=markers, markersize=10, ax=axes[1, i], legend=False)
         axes[1, i].set_ylim(-0.05, 1.05)
 
     handles, labels = axes[0, 0].get_legend_handles_labels()
     axes[0, 0].get_legend().remove()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=2, frameon=True)
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, -0.01), ncol=2, frameon=True, fontsize=23)
     plt.tight_layout(rect=[0, 0.07, 1, 1])
     plt.savefig('figures/case_13_15_join_individual.png', dpi=300)
 
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "F1-Score"]].mean().reset_index()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
     for ax, y_v, tit in zip([ax1, ax2], ["Time", "F1-Score"], ["Average Execution Time", "Average F1-Score"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", palette=palette, markers=markers, dashes=dashes, markersize=12, ax=ax, legend=True)
         ax.set_title(f"{tit}", fontweight='bold')
@@ -335,7 +378,7 @@ def plot_case_13_15():
         ax.get_legend().remove()
     
     handles, labels = ax1.get_legend_handles_labels()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=2, frameon=True)
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.0), ncol=2, frameon=True)
     plt.tight_layout(rect=[0, 0.12, 1, 1])
     plt.savefig('figures/case_13_15_join_aggregate.png', dpi=300)
 
@@ -347,7 +390,7 @@ def plot_case_16_18():
     palette, markers, dashes = get_style_params(df["Label"].unique())
     
     # --- Individual Grid ---
-    fig, axes = plt.subplots(2, 3, figsize=(18, 11), sharex=True)
+    fig, axes = plt.subplots(2, 3, figsize=(12, 7), sharex=True)
     queries = ["Q16", "Q17", "Q18"]
     
     for i, q in enumerate(queries):
@@ -357,8 +400,8 @@ def plot_case_16_18():
         sns.lineplot(data=q_df, x="Input Size", y="Time", hue="Label", style="Label", 
                      palette=palette, dashes=dashes, markers=markers, markersize=10, 
                      ax=axes[0, i], legend=(i==0))
-        axes[0, i].set_title(f"{q}", fontweight='bold', pad=20)
-        axes[0, i].set_ylabel("Time (s)")
+        axes[0, i].set_title(f"{q}", fontweight='bold', pad=20, fontsize=25)
+        axes[0, i].set_ylabel("Time")
         
         # Accuracy Plot
         sns.lineplot(data=q_df, x="Input Size", y="Accuracy", hue="Label", style="Label", 
@@ -372,20 +415,20 @@ def plot_case_16_18():
     handles, labels = axes[0, 0].get_legend_handles_labels()
     if axes[0, 0].get_legend():
         axes[0, 0].get_legend().remove()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=2, frameon=True)
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, -0.01), ncol=2, frameon=True, fontsize=25)
     
     plt.tight_layout(rect=[0, 0.07, 1, 1])
     plt.savefig('figures/case_16_18_agg_individual.png', dpi=300)
 
     # --- Aggregate Plot ---
     agg = df.groupby(["Label", "Input Size"])[["Time", "Accuracy"]].mean().reset_index()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 5))
     
     for ax, y_v, tit in zip([ax1, ax2], ["Time", "Accuracy"], ["Average Execution Time", "Average Accuracy"]):
         sns.lineplot(data=agg, x="Input Size", y=y_v, hue="Label", style="Label", 
                      palette=palette, markers=markers, dashes=dashes, markersize=12, 
                      ax=ax, legend=True)
-        ax.set_title(f"{tit}", fontweight='bold')
+        ax.set_title(f"{tit}", fontweight='bold', fontsize=25)
         ax.set_xlabel("Input Size")
         ax.set_ylabel(y_v if y_v == "Time" else "Accuracy")
         
@@ -396,14 +439,11 @@ def plot_case_16_18():
         ax.get_legend().remove()
     
     handles, labels = ax1.get_legend_handles_labels()
-    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, 0.02), ncol=2, frameon=True)
+    fig.legend(handles, labels, loc='lower center', bbox_to_anchor=(0.5, -0.01), ncol=2, frameon=True, fontsize=25)
     
     plt.tight_layout(rect=[0, 0.12, 1, 1])
     plt.savefig('figures/case_16_18_agg_aggregate.png', dpi=300)
 
-# ==========================================
-# 4. EXECUTION
-# ==========================================
 if __name__ == "__main__":
     plot_case_1_6()
     plot_case_7_8()
