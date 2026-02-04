@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage: ./run_queries.sh <provider> <query_numbers...>
-# Example: ./run_queries.sh ollama 1 3 4
+# Example: ./run_queries.sh ollama 13 15
 
 provider="$1"
 shift 
@@ -16,18 +16,18 @@ fi
 # Validate query list
 queries=("$@")
 if [[ ${#queries[@]} -eq 0 ]]; then # Run them all by default
-    queries=(1 2 3 4 5 6 7 8)
+    queries=(13 14 15)
 fi
 
 for q in "${queries[@]}"; do
-    if [[ "$q" != "1" && "$q" != "2" && "$q" != "3" && "$q" != "4" && "$q" != "5" && "$q" != "6" && "$q" != "7" && "$q" != "8" ]]; then
-        echo "Error: Unsupported query number '$q'. Supported queries are 1, 2, 3, 4, 5, 6, 7, 8."
+    if [[ "$q" != "13" && "$q" != "14" && "$q" != "15" ]]; then
+        echo "Error: Unsupported query number '$q'. Supported queries are 13, 14, 15."
         exit 1
     fi
 done
 
 # Experiments
-sizes_dev=(50 100 200 300 500)
+sizes=(10 20 30 40 50)
 models_ollama=("gemma3:12b")
 models_vllm=("RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8")
 
@@ -47,8 +47,8 @@ for qnum in "${queries[@]}"; do
             echo "Running BlendSQL $Q_dir: size=$size, model=$model, provider=$provider"
             echo "----------------------------------------------------------"
             
-            python "blendsql/queries/derivation/$Q_dir/${query}.py" --wandb -s "$size" -m "$model" -p "$provider"
-            python "evaluation/derivation/$Q_dir/eval_scripts/${query}_eval.py" --size "$size"
+            python "blendsql/queries/join/$Q_dir/${query}.py" --wandb -s "$size" -m "$model" -p "$provider"
+            python "evaluation/join/$Q_dir/eval_scripts/${query}_eval.py" --size "$size"
         done
     done
 done
