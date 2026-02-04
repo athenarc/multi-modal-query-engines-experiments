@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Usage: ./run_queries.sh <provider> <query_numbers...>
-# Example: ./run_queries.sh ollama 13 15
+# Usage: ./join_runs.sh <provider> <query_numbers...>
+# Example: ./join_runs.sh ollama 13 15
 
 provider="$1"
 shift 
@@ -48,7 +48,7 @@ for qnum in "${queries[@]}"; do
             echo "----------------------------------------------------------"
             
             python "blendsql/queries/join/$Q_dir/${query}.py" --wandb -s "$size" -m "$model" -p "$provider"
-            python "evaluation/join/$Q_dir/eval_scripts/${query}_eval.py" --size "$size"
+            python "evaluation/join/$Q_dir/eval_scripts/${query}_eval.py" --system blendsql --size "$size" -m $model -p $provider
         done
     done
 done

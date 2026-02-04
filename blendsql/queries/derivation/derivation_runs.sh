@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Usage: ./run_queries.sh <provider> <query_numbers...>
-# Example: ./run_queries.sh ollama 1 3 4
+# Usage: ./derivation_runs.sh <provider> <query_numbers...>
+# Example: ./derivation_runs.sh ollama 1 3 4
 
 provider="$1"
 shift 

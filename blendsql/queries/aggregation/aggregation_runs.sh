@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Usage: ./run_queries.sh <provider> <query_numbers...>
-# Example: ./run_queries.sh ollama 16 17
+# Usage: ./aggregation_runs.sh <provider> <query_numbers...>
+# Example: ./aggregation_runs.sh ollama 16 17
 
 provider="$1"
 shift 
