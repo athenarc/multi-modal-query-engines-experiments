@@ -127,10 +127,22 @@ def create_game_summaries_df(dataset):
         else:
             summary = "No summary available"
 
-        #TODO: add (1) winner team name, (2) winner total points, (3) sum of scored points by both teams
-        
+        home = (row['teams']['home']['name'], int(row['teams']['home']['line_score']['game']['PTS']))
+        vis = (row['teams']['vis']['name'], int(row['teams']['vis']['line_score']['game']['PTS']))
+
+        if home[1] > vis[1]:
+            winner_team = home[0]
+            winner_points = home[1]
+        else:
+            winner_team = vis[0]
+            winner_points = vis[1]
+        total_points = home[1] + vis[1]
+
         game_summaries.append({
             "sportsett_id": game_id,
+            "winner_team": winner_team,
+            "winner_points": winner_points,
+            "total_points": total_points,
             "summary": summary
         })
     
@@ -153,3 +165,5 @@ if __name__ == "__main__":
     filtered_summaries = process_and_filter_sportssett(dataset['test'])
     
     align_summaries_to_nba_players(filtered_summaries)
+
+    create_game_summaries_df(dataset['test'])
