@@ -1,0 +1,140 @@
+Ground Truth Answer: 5
+------------------------------------------------------
+
+
+Ground Truth Answer: 11
+------------------------------------------------------
+
+
+Ground Truth Answer: 10
+------------------------------------------------------
+
+
+System: BlendSQL (LLMQA)
+Timestamp: 2026-01-12T15:00:41
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 40
+Execution Time: 5.58
+Result: 0
+Ground Truth Answer: 20
+------------------------------------------------------
+
+
+Ground Truth Answer: 27
+------------------------------------------------------
+
+
+Ground Truth Answer: 28
+------------------------------------------------------
+
+
+System: BlendSQL (LLMQA)
+Timestamp: 2026-01-12T15:01:12
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 10
+Execution Time: 2.53
+Result: 0
+Ground Truth Answer: 5
+------------------------------------------------------
+
+
+System: BlendSQL (LLMQA)
+Timestamp: 2026-01-12T15:01:27
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 20
+Execution Time: 3.95
+Result: 0
+Ground Truth Answer: 10
+------------------------------------------------------
+
+
+System: BlendSQL (LLMQA)
+Timestamp: 2026-01-12T15:01:42
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 30
+Execution Time: 4.91
+Result: 0
+Ground Truth Answer: 11
+------------------------------------------------------
+
+
+System: BlendSQL (LLMQA)
+Timestamp: 2026-01-12T15:01:59
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 40
+Execution Time: 7.60
+Result: 1
+Ground Truth Answer: 27
+------------------------------------------------------
+
+
+System: BlendSQL (LLMQA)
+Timestamp: 2026-01-12T15:02:17
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 8.32
+Result: 0
+Ground Truth Answer: 22
+------------------------------------------------------
+
+
+
+System: Lotus 
+Timestamp: 2026-01-12T15:36:26.016464
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 10
+Execution Time: 2.09
+Answer:   _output
+0       3
+Ground Truth Answer: 5
+------------------------------------------------------
+
+
+System: Lotus 
+Timestamp: 2026-01-12T15:36:43.932408
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 20
+Execution Time: 4.76
+Answer:   _output
+0       7
+Ground Truth Answer: 10
+------------------------------------------------------
+
+
+System: Lotus 
+Timestamp: 2026-01-12T15:37:03.571522
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 30
+Execution Time: 6.53
+Answer:   _output
+0       8
+Ground Truth Answer: 11
+------------------------------------------------------
+
+
+System: Lotus 
+Timestamp: 2026-01-12T15:37:23.615155
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 40
+Execution Time: 6.09
+Answer:   _output
+0      23
+Ground Truth Answer: 27
+------------------------------------------------------
+
+
+System: Lotus 
+Timestamp: 2026-01-12T15:37:49.753934
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 7.96
+Answer:   _output
+0      32
+Ground Truth Answer: 22
+------------------------------------------------------
+
+
+Ground Truth Answer: 32
+------------------------------------------------------
+
+

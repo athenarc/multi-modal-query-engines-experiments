@@ -1,0 +1,124 @@
+,Game ID,Team Name,wins,losses,total_points
+0,0.0,Atlanta Hawks,46,12,95
+1,0.0,Orlando Magic,-1,41,-1
+2,0.0,Miami Heat,46,12,95
+3,0.0,Charlotte Hornets,3,-1,-1
+4,0.0,Toronto Raptors,46,12,95
+5,0.0,Charlotte Hornets,3,-1,-1
+6,0.0,Atlanta Hawks,46,12,95
+7,0.0,Orlando Magic,-1,41,-1
+8,0.0,Miami Heat,46,12,95
+9,0.0,Charlotte Hornets,3,-1,-1
+10,0.0,Toronto Raptors,46,12,95
+11,1.0,Milwaukee Bucks,18,17,95
+12,1.0,New York Knicks,-31,-1,-1
+13,2.0,"Grizzlies,Suns",50,3,102
+14,3.0,Toronto Raptors,29,17,114
+15,3.0,Detroit Pistons,17,28,-1
+16,4.0,Detroit Pistons,30,29,102
+17,4.0,Milwaukee Bucks,-1,-1,-1
+18,5.0,Milwaukee Bucks,8,3,-1
+19,5.0,Cleveland Cavaliers,8,13,-1
+20,6.0,Cleveland Cavaliers,40,0,101
+21,6.0,Boston Celtics,40,4,101
+22,7.0,Oklahoma City Thunder,8,13,114
+23,7.0,Milwaukee Bucks,-1,-1,-1
+24,9.0,New York Knicks,-1,-1,-1
+25,9.0,Los Angeles Lakers,-1,-1,-1
+26,10.0,"Raptors,Bucks",28,40,90
+27,11.0,Memphis Grizzlies,-1,-1,-1
+28,11.0,Minnesota Timberwolves,-1,-1,-1
+29,12.0,Brooklyn Nets,-1,-1,-1
+30,12.0,Washington Wizards,-1,-1,-1
+31,13.0,Washington Wizards,-1,-1,-1
+32,13.0,Los Angeles Lakers,37,42,117
+33,13.0,Staples Center,37,42,117
+34,13.0,John Wall,-1,-1,-1
+35,13.0,D’Angelo Russell,37,42,117
+36,13.0,Marcin Gortat,-1,-1,-1
+37,13.0,Kobe Bryant,37,42,117
+38,13.0,Utah Jazz,-1,-1,-1
+39,13.0,Golden State Warriors,-1,-1,-1
+40,13.0,Detroit Pistons,-1,-1,-1
+41,14.0,Cleveland Cavaliers,36,37,101
+42,14.0,Washington Wizards,36,37,101 - 88
+43,15.0,Los Angeles Lakers,53,29,113
+44,15.0,Denver Nuggets,53,29,113
+45,16.0,"Dallas,Portland",5,23,111
+46,17.0,Miami Heat,20,30,108
+47,17.0,Toronto Raptors,20,30,108
+48,18.0,,-1,-1,-1
+49,19.0,"Magic,Pacers",20,-1,20
+50,20.0,Memphis Grizzlies,-1,-1,-1
+51,20.0,Dallas Mavericks,-1,-1,-1
+52,21.0,Rockets,-1,-1,-1
+53,21.0,Mavericks,7,1,110
+54,22.0,Nuggets,-1,-1,-1
+55,22.0,Timberwolves,-1,-1,-1
+56,23.0,New Orleans Pelicans,15,28,101
+57,23.0,Milwaukee Bucks,15,20,110
+58,24.0,Los Angeles Clippers,37,30,85
+59,24.0,New Orleans Pelicans,37,30,-1
+60,25.0,Washington Wizards,14,8,120
+61,25.0,Indiana Pacers,7,-1,120
+62,26.0,Memphis Grizzlies,-1,-1,-1
+63,26.0,Utah Jazz,19,19,118
+64,27.0,Portland Trail Blazers,37,24,94
+65,27.0,Washington Wizards,37,24,94
+66,28.0,Oklahoma City Thunder,19,25,108
+67,28.0,New York Knicks,19,25,108
+68,29.0,Utah Jazz,32,25,116
+69,29.0,Sacramento Kings,32,23,-1
+70,30.0,Charlotte Hornets,18,33,102
+71,30.0,Utah Jazz,18,33,102
+72,31.0,Golden State Warriors,52,-1,-1
+73,31.0,Cleveland Cavaliers,19,22,124
+74,32.0,Memphis Grizzlies,28,1,89
+75,32.0,Philadelphia 76ers,28,1,89
+76,33.0,San Antonio Spurs,31,12,101
+77,33.0,Dallas Mavericks,-1,-1,-1
+78,34.0,Houston Rockets,14,3,-1
+79,34.0,Miami Heat,14,3,-1
+80,34.0,Memphis Grizzlies,14,3,-1
+81,34.0,Golden State Warriors,14,3,-1
+82,34.0,San Antonio Spurs,14,3,-1
+83,34.0,Charlotte Hornets,14,3,-1
+84,35.0,Sacramento Kings,50,-1,-1
+85,35.0,Oklahoma City Thunder,50,-1,108
+86,36.0,Phoenix Suns,6,9,116
+87,36.0,Minnesota Timberwolves,6,9,116
+88,37.0,Philadelphia 76ers,34,32,106
+89,37.0,Utah Jazz,34,32,106
+90,37.0,Indiana Pacers,34,32,106
+91,37.0,Cleveland Cavaliers,34,32,106
+92,38.0,Sacramento Kings,-1,-1,-1
+93,38.0,Toronto Raptors,-1,-1,-1
+94,40.0,Suns,1,-1,96
+95,40.0,Kings,1,-1,96
+96,41.0,Chicago Bulls,15,56,126
+97,41.0,Los Angeles Clippers,15,56,126
+98,42.0,Memphis Grizzlies,-1,-1,-1
+99,42.0,Brooklyn Nets,-1,-1,-1
+100,43.0,Miami Heat,8,3,105
+101,43.0,Houston Rockets,-1,-1,-1
+102,44.0,Pelicans,34,23,112
+103,44.0,Detroit,34,23,112
+104,45.0,Denver Nuggets,25,32,117
+105,45.0,New Orleans Pelicans,-1,-1,-1
+106,46.0,Warriors,1,-1,-1
+107,46.0,Lakers,1,-1,-1
+108,47.0,Houston Rockets,-1,-1,-1
+109,47.0,Phoenix Suns,-1,-1,-1
+110,48.0,,-1,-1,-1
+111,49.0,Atlanta Hawks,-1,-1,-1
+112,49.0,Detroit Pistons,-1,-1,-1
+113,50.0,,20,26,121
+114,51.0,,6,5,99
+115,,Warriors,-1,-1,-1
+116,,Warriors,-1,-1,-1
+117,,Clippers,-1,-1,-1
+118,,Clippers,-1,-1,-1
+119,,Brooklyn Nets,-1,-1,-1
+120,,Brooklyn Nets,-1,-1,-1
+121,,Phoenix Suns,-1,-1,-1
+122,,Phoenix Suns,-1,-1,-1

@@ -1,0 +1,16 @@
+,arxiv_id,cited_paper_title
+10,2505.22757v1,Curriculum learning
+11,2506.02853v1,MHFormer: Multi-Hypothesis Transformer for 3D Human Pose Estimation
+11,2506.02853v1,{GraFormer: Graph-oriented Transformer for {3D} Pose Estimation}
+13,2506.01071v1,Parametric Contrastive Learning
+18,2505.24334v1,Methods for Pruning Deep Neural Networks
+21,2505.22616v1,"Lightning NeRF: Efficient Hybrid Scene Representation for Autonomous
+  Driving"
+34,2505.24835v1,"{MICN:} Multi-scale Local and Global Context Modeling for Long-term
+                  Series Forecasting"
+36,2506.02847v1,Big Bird: Transformers for Longer Sequences
+44,2506.02750v1,FreeKD: Free-direction Knowledge Distillation for Graph Neural Networks
+46,2505.21811v1,$\pi$-net: A parallel information-sharing network for shared-account cross-domain sequential recommendations
+46,2505.21811v1,Big Bird: Transformers for Longer Sequences
+46,2505.21811v1,"BERT4Rec: Sequential Recommendation with Bidirectional Encoder
+  Representations from Transformer"

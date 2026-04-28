@@ -1,0 +1,103 @@
+,arxiv_id,cited_paper_title
+0,2506.02838v1,Effective Policy for Reducing Inequality? The Earned Income Tax Credit and the Distribution of Income
+1,2506.02634v1,Generative Dense Retrieval: Memory Can Be a Burden
+1,2506.02634v1,Big Bird: Transformers for Longer Sequences
+1,2506.02634v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+1,2506.02634v1,{L}ayer{S}kip: Enabling Early Exit Inference and Self-Speculative Decoding
+1,2506.02634v1,Large Language Models as Financial Data Annotators: A Study on Effectiveness and Efficiency
+1,2506.02634v1,Fifer: Tackling Underutilization in the Serverless Era
+1,2506.02634v1,"BERT4Rec: Sequential Recommendation with Bidirectional Encoder
+  Representations from Transformer"
+1,2506.02634v1,Contrastive Decoding: Open-ended Text Generation as Optimization
+1,2506.02634v1,"LoongServe: Efficiently Serving Long-Context Large Language Models with
+  Elastic Sequence Parallelism"
+3,2506.00832v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+3,2506.00832v1,Bootstrap your own latent: A new approach to self-supervised Learning
+3,2506.00832v1,Uncertainty Estimation in Autoregressive Structured Prediction
+3,2506.00832v1,Parametric Contrastive Learning
+3,2506.00832v1,Contrastive Decoding: Open-ended Text Generation as Optimization
+5,2505.24754v1,MAIR: A Massive Benchmark for Evaluating Instructed Retrieval
+9,2505.23353v1,Learned D-AMP: Principled Neural Network based Compressive Image Recovery
+9,2505.23353v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+9,2505.23353v1,Bootstrap your own latent: A new approach to self-supervised Learning
+9,2505.23353v1,AI Index Report
+9,2505.23353v1,Uncertainty Estimation in Autoregressive Structured Prediction
+9,2505.23353v1,Parametric Contrastive Learning
+9,2505.23353v1,"Snapshot Compressive Imaging: Principle, Implementation, Theory,
+  Algorithms and Applications"
+9,2505.23353v1,Relational learning via collective matrix factorization
+10,2505.22757v1,{L}ayer{S}kip: Enabling Early Exit Inference and Self-Speculative Decoding
+10,2505.22757v1,Curriculum learning
+11,2506.02853v1,MHFormer: Multi-Hypothesis Transformer for 3D Human Pose Estimation
+11,2506.02853v1,Graph-Free Knowledge Distillation for Graph Neural Networks
+11,2506.02853v1,Bootstrap your own latent: A new approach to self-supervised Learning
+11,2506.02853v1,{GraFormer: Graph-oriented Transformer for {3D} Pose Estimation}
+11,2506.02853v1,Uncertainty Estimation in Autoregressive Structured Prediction
+11,2506.02853v1,FreeKD: Free-direction Knowledge Distillation for Graph Neural Networks
+11,2506.02853v1,Relational learning via collective matrix factorization
+12,2506.02547v1,Learned D-AMP: Principled Neural Network based Compressive Image Recovery
+12,2506.02547v1,Generative Dense Retrieval: Memory Can Be a Burden
+12,2506.02547v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+12,2506.02547v1,Less data same information for event-based sensors: A bioinspired filtering and data reduction algorithm
+12,2506.02547v1,"Snapshot Compressive Imaging: Principle, Implementation, Theory,
+  Algorithms and Applications"
+13,2506.01071v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+13,2506.01071v1,Bootstrap your own latent: A new approach to self-supervised Learning
+13,2506.01071v1,Parametric Contrastive Learning
+14,2506.01037v1,Learned D-AMP: Principled Neural Network based Compressive Image Recovery
+14,2506.01037v1,Bootstrap your own latent: A new approach to self-supervised Learning
+14,2506.01037v1,Parametric Contrastive Learning
+16,2506.00333v1,"Asymmetric LSH (ALSH) for Sublinear Time Maximum Inner Product Search
+  (MIPS)"
+16,2506.00333v1,Generative Dense Retrieval: Memory Can Be a Burden
+16,2506.00333v1,Big Bird: Transformers for Longer Sequences
+16,2506.00333v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+16,2506.00333v1,MAIR: A Massive Benchmark for Evaluating Instructed Retrieval
+16,2506.00333v1,Bootstrap your own latent: A new approach to self-supervised Learning
+16,2506.00333v1,{L}ayer{S}kip: Enabling Early Exit Inference and Self-Speculative Decoding
+16,2506.00333v1,AI Index Report
+16,2506.00333v1,SimCSE: Simple Contrastive Learning of Sentence Embeddings
+16,2506.00333v1,Open LLM Leaderboard v2
+16,2506.00333v1,"{GP-VTON:} Towards General Purpose Virtual Try-On via Collaborative
+                  Local-Flow Global-Parsing Learning"
+16,2506.00333v1,A Self-boosted Framework for Calibrated Ranking
+16,2506.00333v1,Curriculum learning
+16,2506.00333v1,Uncertainty Estimation in Autoregressive Structured Prediction
+16,2506.00333v1,"Maximize Your Data's Potential: Enhancing LLM Accuracy with Two-Phase
+  Pretraining"
+16,2506.00333v1,Parametric Contrastive Learning
+16,2506.00333v1,Contrastive Decoding: Open-ended Text Generation as Optimization
+16,2506.00333v1,Relational learning via collective matrix factorization
+17,2505.24443v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+17,2505.24443v1,Bootstrap your own latent: A new approach to self-supervised Learning
+17,2505.24443v1,AI Index Report
+17,2505.24443v1,SimCSE: Simple Contrastive Learning of Sentence Embeddings
+17,2505.24443v1,Curriculum learning
+17,2505.24443v1,Uncertainty Estimation in Autoregressive Structured Prediction
+17,2505.24443v1,Parametric Contrastive Learning
+17,2505.24443v1,Deep{W}alk: Online learning of social representations
+18,2505.24334v1,Learned D-AMP: Principled Neural Network based Compressive Image Recovery
+18,2505.24334v1,Generative Dense Retrieval: Memory Can Be a Burden
+18,2505.24334v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+18,2505.24334v1,Bootstrap your own latent: A new approach to self-supervised Learning
+18,2505.24334v1,{L}ayer{S}kip: Enabling Early Exit Inference and Self-Speculative Decoding
+18,2505.24334v1,Methods for Pruning Deep Neural Networks
+18,2505.24334v1,AI Index Report
+18,2505.24334v1,Open LLM Leaderboard v2
+18,2505.24334v1,Impact of cache partitioning on multi-tasking real time embedded systems
+18,2505.24334v1,Parametric Contrastive Learning
+18,2505.24334v1,"Snapshot Compressive Imaging: Principle, Implementation, Theory,
+  Algorithms and Applications"
+19,2505.23290v1,Generative Dense Retrieval: Memory Can Be a Burden
+19,2505.23290v1,Big Bird: Transformers for Longer Sequences
+19,2505.23290v1,Contrastive Losses and Solution Caching for Predict-and-Optimize
+19,2505.23290v1,MAIR: A Massive Benchmark for Evaluating Instructed Retrieval
+19,2505.23290v1,Bootstrap your own latent: A new approach to self-supervised Learning
+19,2505.23290v1,{L}ayer{S}kip: Enabling Early Exit Inference and Self-Speculative Decoding
+19,2505.23290v1,SimCSE: Simple Contrastive Learning of Sentence Embeddings
+19,2505.23290v1,"BERT4Rec: Sequential Recommendation with Bidirectional Encoder
+  Representations from Transformer"
+19,2505.23290v1,Curriculum learning
+19,2505.23290v1,Uncertainty Estimation in Autoregressive Structured Prediction
+19,2505.23290v1,Parametric Contrastive Learning
+19,2505.23290v1,Contrastive Decoding: Open-ended Text Generation as Optimization

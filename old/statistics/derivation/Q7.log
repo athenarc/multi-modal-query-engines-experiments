@@ -1,0 +1,457 @@
+System: Palimpzest
+Timestamp: 2025-12-08T00:57:15.163620
+Model: gemma3:12b
+Input Size: 50
+Execution Time: 1916.52
+Points accuracy: 92.19%
+Assists accuracy: 93.12%
+Total rebounds accuracy: 86.88%
+Blocks accuracy: 93.75%
+Steals accuracy: 91.88%
+Total accuracy: 91.56%
+
+Precision: 0.90
+Recall: 0.90
+
+F1-score: 0.9014084507
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-08T01:54:13.915469
+Model: gemma3:12b
+Input Size: 100
+Execution Time: 3403.82
+Points accuracy: 92.12%
+Assists accuracy: 92.45%
+Total rebounds accuracy: 87.03%
+Blocks accuracy: 93.76%
+Steals accuracy: 90.97%
+Total accuracy: 91.26%
+
+Precision: 0.93
+Recall: 0.93
+
+F1-score: 0.9297709924
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-08T03:48:37.451215
+Model: gemma3:12b
+Input Size: 200
+Execution Time: 6846.89
+Points accuracy: 92.11%
+Assists accuracy: 92.52%
+Total rebounds accuracy: 87.92%
+Blocks accuracy: 94.17%
+Steals accuracy: 92.44%
+Total accuracy: 91.83%
+
+Precision: 0.95
+Recall: 0.95
+
+F1-score: 0.9515246286
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-08T09:09:30.702535
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 560.28
+Points accuracy: 98.59%
+Assists accuracy: 96.90%
+Total rebounds accuracy: 92.11%
+Blocks accuracy: 98.31%
+Steals accuracy: 95.77%
+Total accuracy: 96.34%
+
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 1.0000000000
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-08T09:26:29.717536
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Execution Time: 1004.26
+Points accuracy: 96.49%
+Assists accuracy: 95.88%
+Total rebounds accuracy: 90.84%
+Blocks accuracy: 98.17%
+Steals accuracy: 94.05%
+Total accuracy: 95.08%
+
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 1.0000000000
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-08T09:57:12.711084
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 1827.41
+Points accuracy: 96.63%
+Assists accuracy: 95.07%
+Total rebounds accuracy: 91.54%
+Blocks accuracy: 97.49%
+Steals accuracy: 94.44%
+Total accuracy: 95.04%
+
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 0.9976562500
+------------------------------------------------------
+
+
+System: BlendSQL
+Timestamp: 2025-12-08T10:39:44.687306
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 1823.8936576843262
+Points accuracy: 7.37%
+Assists accuracy: 44.25%
+Total rebounds accuracy: 38.94%
+Blocks accuracy: 76.99%
+Steals accuracy: 62.24%
+Total accuracy: 45.96%
+
+Precision: 0.95
+Recall: 0.95
+F1-score: 0.9522471910
+------------------------------------------------------
+
+System: BlendSQL
+Timestamp: 2025-12-08T12:57:42.504931
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Execution Time: 2427.8995838165283
+Points accuracy: 6.21%
+Assists accuracy: 47.61%
+Total rebounds accuracy: 35.19%
+Blocks accuracy: 77.71%
+Steals accuracy: 58.76%
+Total accuracy: 45.10%
+
+Precision: 0.94
+Recall: 0.94
+F1-score: 0.9443609023
+------------------------------------------------------
+
+System: BlendSQL
+Timestamp: 2025-12-08T11:39:09.190612
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 3046.683725118637
+Points accuracy: 4.95%
+Assists accuracy: 67.33%
+Total rebounds accuracy: 51.49%
+Blocks accuracy: 88.12%
+Steals accuracy: 76.24%
+Total accuracy: 57.62%
+
+Precision: 0.08
+Recall: 0.08
+F1-score: 0.0787831513
+------------------------------------------------------
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-08T14:07:03.175041
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 552.7675006389618
+
+LLM calls for rows: 50
+LLM calls for columns: 1970
+Total LLM calls: 2020
+Points accuracy: 97.25%
+Assists accuracy: 86.54%
+Total rebounds accuracy: 91.21%
+Blocks accuracy: 84.89%
+Steals accuracy: 80.22%
+Total accuracy: 88.02%
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 1.0000000000
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-08T14:12:40.585780
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 325.52762722969055
+
+LLM calls for rows: 50
+LLM calls for columns: 250
+Total LLM calls: 300
+Points accuracy: 97.74%
+Assists accuracy: 93.50%
+Total rebounds accuracy: 91.53%
+Blocks accuracy: 98.59%
+Steals accuracy: 95.48%
+Total accuracy: 95.37%
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 0.9971830986
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-08T14:31:25.612891
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Execution Time: 993.762033700943
+
+LLM calls for rows: 100
+LLM calls for columns: 3665
+Total LLM calls: 3765
+Points accuracy: 95.74%
+Assists accuracy: 84.17%
+Total rebounds accuracy: 89.19%
+Blocks accuracy: 84.63%
+Steals accuracy: 80.37%
+Total accuracy: 86.82%
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 1.0000000000
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-08T14:42:13.118221
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Execution Time: 635.1338453292847
+
+LLM calls for rows: 100
+LLM calls for columns: 500
+Total LLM calls: 600
+Points accuracy: 95.06%
+Assists accuracy: 91.67%
+Total rebounds accuracy: 89.97%
+Blocks accuracy: 98.30%
+Steals accuracy: 94.29%
+Total accuracy: 93.86%
+Precision: 0.99
+Recall: 0.99
+
+F1-score: 0.9863013699
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-08T15:15:41.881123
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 2000.0857679843903
+
+LLM calls for rows: 200
+LLM calls for columns: 7315
+Total LLM calls: 7515
+Points accuracy: 96.08%
+Assists accuracy: 83.63%
+Total rebounds accuracy: 89.85%
+Blocks accuracy: 85.70%
+Steals accuracy: 80.86%
+Total accuracy: 87.23%
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 0.9976993865
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-08T15:37:04.471768
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 1269.229160308838
+
+LLM calls for rows: 200
+LLM calls for columns: 1000
+Total LLM calls: 1200
+Points accuracy: 94.80%
+Assists accuracy: 91.17%
+Total rebounds accuracy: 91.02%
+Blocks accuracy: 97.48%
+Steals accuracy: 94.01%
+Total accuracy: 93.70%
+Precision: 0.99
+Recall: 0.99
+
+F1-score: 0.9890880748
+------------------------------------------------------
+System: Lotus (sem_map)
+Timestamp: 2025-12-08T23:25:24.792875
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 2944.630491733551
+
+LLM calls for rows: 300
+LLM calls for columns: 10980
+Total LLM calls: 11280
+Points accuracy: 0.00%
+Assists accuracy: 81.91%
+Total rebounds accuracy: 89.68%
+Blocks accuracy: 86.66%
+Steals accuracy: 80.07%
+Total accuracy: 67.66%
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 0.9974515800
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-08T23:57:11.828865
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 1893.165747642517
+
+LLM calls for rows: 300
+LLM calls for columns: 1500
+Total LLM calls: 1800
+Points accuracy: 95.09%
+Assists accuracy: 90.71%
+Total rebounds accuracy: 91.44%
+Blocks accuracy: 97.13%
+Steals accuracy: 94.10%
+Total accuracy: 93.70%
+Precision: 0.99
+Recall: 0.99
+
+F1-score: 0.9901808786
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-09T01:16:55.229079
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 4774.955898523331
+
+LLM calls for rows: 500
+LLM calls for columns: 18260
+Total LLM calls: 18760
+Points accuracy: 0.00%
+Assists accuracy: 82.16%
+Total rebounds accuracy: 89.78%
+Blocks accuracy: 86.31%
+Steals accuracy: 80.66%
+Total accuracy: 67.78%
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 0.9981612013
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-09T02:10:31.515165
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 3193.822258710861
+
+LLM calls for rows: 500
+LLM calls for columns: 2500
+Total LLM calls: 3000
+Points accuracy: 95.22%
+Assists accuracy: 91.06%
+Total rebounds accuracy: 0.09%
+Blocks accuracy: 97.19%
+Steals accuracy: 94.34%
+Total accuracy: 75.58%
+Precision: 0.99
+Recall: 0.99
+
+F1-score: 0.9916279070
+------------------------------------------------------
+
+
+System: BlendSQL
+Timestamp: 2025-12-09T17:56:31.755805
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 7305.565796613693
+
+Points accuracy: 7.83%
+Assists accuracy: 45.88%
+Total rebounds accuracy: 29.94%
+Blocks accuracy: 80.02%
+Steals accuracy: 66.44%
+Total accuracy: 46.02%
+
+Precision: 0.84
+Recall: 0.84
+F1-score: 0.8440233236
+------------------------------------------------------
+
+System: BlendSQL
+Timestamp: 2025-12-09T20:27:44.055784
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 9062.823111534119
+
+Points accuracy: 4.18%
+Assists accuracy: 58.93%
+Total rebounds accuracy: 53.36%
+Blocks accuracy: 87.24%
+Steals accuracy: 45.01%
+Total accuracy: 49.74%
+
+Precision: 0.13
+Recall: 0.13
+F1-score: 0.1321275291
+------------------------------------------------------
+
+System: Palimpzest
+Timestamp: 2025-12-10T00:23:30.254002
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 2790.05
+Points accuracy: 96.99%
+Assists accuracy: 94.55%
+Total rebounds accuracy: 92.01%
+Blocks accuracy: 97.15%
+Steals accuracy: 94.55%
+Total accuracy: 95.05%
+
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 0.9974120083
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-10T01:43:51.637621
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 4805.79
+Points accuracy: 96.79%
+Assists accuracy: 94.61%
+Total rebounds accuracy: 92.40%
+Blocks accuracy: 97.20%
+Steals accuracy: 94.61%
+Total accuracy: 95.12%
+
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 0.9981354879
+------------------------------------------------------
+
+

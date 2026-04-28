@@ -1,0 +1,630 @@
+System: Palimpzest
+Timestamp: 2025-12-08T16:02:21.443705
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 170.22
+Wins accuracy: 89.36%
+Losses accuracy: 93.62%
+Total points accuracy: 67.02%
+Total accuracy: 83.33%
+
+Precision: 1.00
+Recall: 1.00
+
+F1-score: 1.0000000000
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-08T16:08:06.482690
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Execution Time: 329.60
+Wins accuracy: 91.30%
+Losses accuracy: 93.48%
+Total points accuracy: 64.13%
+Total accuracy: 82.97%
+
+Precision: 0.99
+Recall: 0.99
+
+F1-score: 0.9891304348
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-08T16:19:09.735049
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 648.29
+Wins accuracy: 91.28%
+Losses accuracy: 93.19%
+Total points accuracy: 61.58%
+Total accuracy: 82.02%
+
+Precision: 0.98
+Recall: 0.98
+
+F1-score: 0.9809264305
+------------------------------------------------------
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-08T18:55:41.062591
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 89.08812999725342
+LLM calls for rows: 50
+LLM calls for columns: 300
+Total LLM calls: 350
+Wins accuracy: 86.96%
+Losses accuracy: 80.43%
+Total points accuracy: 95.65%
+Total accuracy: 87.68%
+Precision: 0.99
+Recall: 0.99
+
+F1-score: 0.9891304348
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-08T18:56:45.982818
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 51.760438680648804
+Total LLM calls: 50
+Wins accuracy: 33.33%
+Losses accuracy: 37.63%
+Total points accuracy: 23.66%
+Total accuracy: 31.54%
+Precision: 0.37
+Recall: 0.37
+
+F1-score: 0.3655913978
+------------------------------------------------------
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-08T19:22:35.687485
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Execution Time: 175.56097793579102
+
+LLM calls for rows: 100
+LLM calls for columns: 603
+Total LLM calls: 703
+Wins accuracy: 86.89%
+Losses accuracy: 75.96%
+Total points accuracy: 96.72%
+Total accuracy: 86.52%
+Precision: 0.98
+Recall: 0.98
+
+F1-score: 0.9836065574
+------------------------------------------------------
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-08T19:24:40.964979
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Execution Time: 111.1461660861969
+Input Size: 100
+Total LLM calls: 100
+Wins accuracy: 28.65%
+Losses accuracy: 30.81%
+Total points accuracy: 19.46%
+Total accuracy: 26.31%
+Precision: 0.28
+Recall: 0.28
+
+F1-score: 0.2756756757
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-08T19:04:27.822284
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 351.75950622558594
+LLM calls for rows: 200
+LLM calls for columns: 1206
+Total LLM calls: 1406
+Wins accuracy: 85.52%
+Losses accuracy: 76.78%
+Total points accuracy: 97.81%
+Total accuracy: 86.70%
+Precision: 0.99
+Recall: 0.99
+
+F1-score: 0.9918032787
+------------------------------------------------------
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-08T19:33:57.526953
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 257.46593499183655
+Total LLM calls: 200
+Wins accuracy: 22.58%
+Losses accuracy: 24.73%
+Total points accuracy: 15.32%
+Total accuracy: 20.88%
+Precision: 0.25
+Recall: 0.25
+
+F1-score: 0.2500000000
+------------------------------------------------------
+
+System: BlendSQL
+Timestamp: 2025-12-08T20:20:46.789351
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 747.1877384185791
+Wins accuracy: 20.43%
+Losses accuracy: 19.35%
+Total points accuracy: 12.90%
+Total accuracy: 17.56%
+
+Precision: 0.20
+Recall: 0.20
+
+F1-score: 0.2043010753
+------------------------------------------------------
+
+System: BlendSQL
+Timestamp: 2025-12-08T20:06:37.751003
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Execution Time: 535.4675405025482
+
+Wins accuracy: 17.49%
+Losses accuracy: 19.67%
+Total points accuracy: 13.11%
+Total accuracy: 16.76%
+
+Precision: 0.57
+Recall: 0.57
+
+F1-score: 0.5683060109
+------------------------------------------------------
+System: BlendSQL
+Timestamp: 2025-12-08T20:55:33.025702
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 1433.1329064369202
+System: BlendSQL
+Timestamp: 2025-12-08T21:06:36.899996
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 1884.7857694625854
+Wins accuracy: 14.52%
+Losses accuracy: 14.25%
+Total points accuracy: 8.22%
+Total accuracy: 12.33%
+
+Precision: 0.51
+Recall: 0.51
+
+F1-score: 0.5095890411
+------------------------------------------------------
+
+
+System: BlendSQL
+Timestamp: 2025-12-10T16:38:58.235926
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 4043.1718351840973
+Wins accuracy: 12.98%
+Losses accuracy: 9.87%
+Total points accuracy: 6.58%
+Total accuracy: 9.81%
+
+Precision: 0.59
+Recall: 0.59
+
+F1-score: 0.5904936015
+------------------------------------------------------
+
+
+System: BlendSQL
+Timestamp: 2025-12-10T21:16:06.829013
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 4594.273168087006
+Wins accuracy: 17.25%
+Losses accuracy: 17.25%
+Total points accuracy: 11.68%
+Total accuracy: 15.39%
+
+Precision: 0.19
+Recall: 0.19
+
+F1-score: 0.1888646288
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-11T00:12:37.686547
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 991.81
+Wins accuracy: 93.07%
+Losses accuracy: 94.53%
+Total points accuracy: 62.59%
+Total accuracy: 83.39%
+
+Precision: 0.98
+Recall: 0.98
+
+F1-score: 0.9799270073
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-11T00:39:19.021775
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 1584.21
+Wins accuracy: 92.51%
+Losses accuracy: 93.72%
+Total points accuracy: 61.23%
+Total accuracy: 82.49%
+
+Precision: 0.97
+Recall: 0.97
+
+F1-score: 0.9713656388
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T05:35:30.706463
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 522.0276231765747
+
+
+LLM calls for rows: 300
+LLM calls for columns: 1812
+Total LLM calls: 2112
+Wins accuracy: 87.36%
+Losses accuracy: 80.22%
+Total points accuracy: 1.10%
+Total accuracy: 56.23%
+Precision: 0.99
+Recall: 0.99
+
+F1-score: 0.9871794872
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-11T05:43:13.608327
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 447.67438769340515
+Total LLM calls: 300
+Wins accuracy: 20.80%
+Losses accuracy: 22.60%
+Total points accuracy: 15.55%
+Total accuracy: 19.65%
+Precision: 0.23
+Recall: 0.23
+
+F1-score: 0.2332730561
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T05:57:38.655741
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 850.9967155456543
+
+
+LLM calls for rows: 500
+LLM calls for columns: 3018
+Total LLM calls: 3518
+Wins accuracy: 87.29%
+Losses accuracy: 80.88%
+Total points accuracy: 1.88%
+Total accuracy: 56.69%
+Precision: 0.98
+Recall: 0.98
+
+F1-score: 0.9779005525
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-11T06:13:34.091594
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 940.1964106559753
+Total LLM calls: 500
+Wins accuracy: 22.00%
+Losses accuracy: 23.53%
+Total points accuracy: 16.67%
+Total accuracy: 20.73%
+Precision: 0.21
+Recall: 0.21
+
+F1-score: 0.2124183007
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T06:35:40.805551
+Model: gemma3:12b
+Input Size: 50
+Execution Time: 121.62634897232056
+
+
+LLM calls for rows: 50
+LLM calls for columns: 297
+Total LLM calls: 347
+Wins accuracy: 89.13%
+Losses accuracy: 88.04%
+Total points accuracy: 94.57%
+Total accuracy: 90.58%
+Precision: 0.98
+Recall: 0.98
+
+F1-score: 0.9782608696
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T06:39:55.348245
+Model: gemma3:12b
+Input Size: 100
+Execution Time: 240.24956822395325
+
+
+LLM calls for rows: 100
+LLM calls for columns: 600
+Total LLM calls: 700
+Wins accuracy: 92.39%
+Losses accuracy: 90.76%
+Total points accuracy: 95.65%
+Total accuracy: 92.93%
+Precision: 0.97
+Recall: 0.97
+
+F1-score: 0.9673913043
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T06:48:11.610540
+Model: gemma3:12b
+Input Size: 200
+Execution Time: 481.32491087913513
+
+
+LLM calls for rows: 200
+LLM calls for columns: 1200
+Total LLM calls: 1400
+Wins accuracy: 90.44%
+Losses accuracy: 90.44%
+Total points accuracy: 96.17%
+Total accuracy: 92.35%
+Precision: 0.95
+Recall: 0.95
+
+F1-score: 0.9535519126
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T07:00:37.361799
+Model: gemma3:12b
+Input Size: 300
+Execution Time: 729.8923647403717
+
+
+LLM calls for rows: 300
+LLM calls for columns: 1800
+Total LLM calls: 2100
+Wins accuracy: 91.94%
+Losses accuracy: 91.58%
+Total points accuracy: 96.52%
+Total accuracy: 93.35%
+Precision: 0.95
+Recall: 0.95
+
+F1-score: 0.9523809524
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T07:20:55.853583
+Model: gemma3:12b
+Input Size: 500
+Execution Time: 1201.8874161243439
+
+
+LLM calls for rows: 500
+LLM calls for columns: 2997
+Total LLM calls: 3497
+Wins accuracy: 91.05%
+Losses accuracy: 91.49%
+Total points accuracy: 95.58%
+Total accuracy: 92.71%
+Precision: 0.94
+Recall: 0.94
+
+F1-score: 0.9403314917
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-11T09:28:49.046296
+Model: gemma3:12b
+Input Size: 50
+Execution Time: 436.11
+Wins accuracy: 85.11%
+Losses accuracy: 85.11%
+Total points accuracy: 37.23%
+Total accuracy: 69.15%
+
+Precision: 0.96
+Recall: 0.96
+
+F1-score: 0.9574468085
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-11T09:44:56.591006
+Model: gemma3:12b
+Input Size: 100
+Execution Time: 950.96
+Wins accuracy: 81.08%
+Losses accuracy: 84.86%
+Total points accuracy: 34.59%
+Total accuracy: 66.85%
+
+Precision: 0.90
+Recall: 0.90
+
+F1-score: 0.8972972973
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-11T10:14:18.048848
+Model: gemma3:12b
+Input Size: 200
+Execution Time: 1743.91
+Wins accuracy: 82.38%
+Losses accuracy: 85.91%
+Total points accuracy: 30.89%
+Total accuracy: 66.40%
+
+Precision: 0.92
+Recall: 0.92
+
+F1-score: 0.9159891599
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-11T11:02:17.666364
+Model: gemma3:12b
+Input Size: 300
+Execution Time: 2862.64
+Wins accuracy: 84.49%
+Losses accuracy: 87.04%
+Total points accuracy: 31.20%
+Total accuracy: 67.58%
+
+Precision: 0.91
+Recall: 0.91
+
+F1-score: 0.9051094891
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-11T12:17:23.838823
+Model: gemma3:12b
+Input Size: 500
+Execution Time: 4488.91
+Wins accuracy: 84.29%
+Losses accuracy: 87.36%
+Total points accuracy: 33.85%
+Total accuracy: 68.50%
+
+Precision: 0.91
+Recall: 0.91
+
+F1-score: 0.9054945055
+------------------------------------------------------
+
+
+Wins accuracy: 89.13%
+Losses accuracy: 88.04%
+Total points accuracy: 94.57%
+Total accuracy: 90.58%
+Precision: 0.98
+Recall: 0.98
+
+F1-score: 0.9782608696
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T13:51:28.466558
+Model: Qwen/Qwen3-8B
+Input Size: 50
+Execution Time: 3111.2384836673737
+
+
+LLM calls for rows: 50
+LLM calls for columns: 3030
+Total LLM calls: 3080
+Wins accuracy: 9.94%
+Losses accuracy: 9.39%
+Total points accuracy: 4.97%
+Total accuracy: 8.10%
+Precision: 0.60
+Recall: 0.60
+
+F1-score: 0.6022099448
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-11T13:52:02.402680
+Model: Qwen/Qwen3-8B
+Input Size: 50
+Execution Time: 16.50623869895935
+Total LLM calls: 50
+Wins accuracy: 27.96%
+Losses accuracy: 30.11%
+Total points accuracy: 15.05%
+Total accuracy: 24.37%
+Precision: 0.19
+Recall: 0.19
+
+F1-score: 0.1935483871
+------------------------------------------------------
+
+
+System: Lotus (sem_map)
+Timestamp: 2025-12-11T14:35:12.126721
+Model: meta-llama/Llama-3.1-8B-Instruct
+Input Size: 50
+Execution Time: 659.0303406715393
+
+
+LLM calls for rows: 50
+LLM calls for columns: 1089
+Total LLM calls: 1139
+Wins accuracy: 3.09%
+Losses accuracy: 2.06%
+Total points accuracy: 3.09%
+Total accuracy: 2.75%
+Precision: 0.75
+Recall: 0.75
+
+F1-score: 0.7525773196
+------------------------------------------------------
+
+
+System: Lotus (sem_extract)
+Timestamp: 2025-12-11T14:36:07.967869
+Model: meta-llama/Llama-3.1-8B-Instruct
+Input Size: 50
+Execution Time: 40.09629273414612
+Total LLM calls: 50
+Wins accuracy: 25.77%
+Losses accuracy: 29.90%
+Total points accuracy: 8.25%
+Total accuracy: 21.31%
+Precision: 0.35
+Recall: 0.35
+
+F1-score: 0.3505154639
+------------------------------------------------------
+
+

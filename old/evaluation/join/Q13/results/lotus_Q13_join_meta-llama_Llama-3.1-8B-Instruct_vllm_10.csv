@@ -1,0 +1,589 @@
+,text,category
+0,How do I locate my card?,card_arrival
+0,How do I locate my card?,card_linking
+0,How do I locate my card?,exchange_rate
+0,How do I locate my card?,card_payment_wrong_exchange_rate
+0,How do I locate my card?,extra_charge_on_statement
+0,How do I locate my card?,pending_cash_withdrawal
+0,How do I locate my card?,fiat_currency_support
+0,How do I locate my card?,card_delivery_estimate
+0,How do I locate my card?,automatic_top_up
+0,How do I locate my card?,card_not_working
+0,How do I locate my card?,exchange_via_app
+0,How do I locate my card?,lost_or_stolen_card
+0,How do I locate my card?,age_limit
+0,How do I locate my card?,pin_blocked
+0,How do I locate my card?,contactless_not_working
+0,How do I locate my card?,top_up_by_bank_transfer_charge
+0,How do I locate my card?,pending_top_up
+0,How do I locate my card?,cancel_transfer
+0,How do I locate my card?,top_up_limits
+0,How do I locate my card?,card_payment_fee_charged
+0,How do I locate my card?,transfer_not_received_by_recipient
+0,How do I locate my card?,supported_cards_and_currencies
+0,How do I locate my card?,getting_virtual_card
+0,How do I locate my card?,card_acceptance
+0,How do I locate my card?,top_up_reverted
+0,How do I locate my card?,balance_not_updated_after_cheque_or_cash_deposit
+0,How do I locate my card?,card_payment_not_recognised
+0,How do I locate my card?,edit_personal_details
+0,How do I locate my card?,why_verify_identity
+0,How do I locate my card?,unable_to_verify_identity
+0,How do I locate my card?,get_physical_card
+0,How do I locate my card?,visa_or_mastercard
+0,How do I locate my card?,topping_up_by_card
+0,How do I locate my card?,disposable_card_limits
+0,How do I locate my card?,compromised_card
+0,How do I locate my card?,atm_support
+0,How do I locate my card?,direct_debit_payment_not_recognised
+0,How do I locate my card?,passcode_forgotten
+0,How do I locate my card?,declined_cash_withdrawal
+0,How do I locate my card?,pending_card_payment
+0,How do I locate my card?,lost_or_stolen_phone
+0,How do I locate my card?,request_refund
+0,How do I locate my card?,declined_transfer
+0,How do I locate my card?,Refund_not_showing_up
+0,How do I locate my card?,declined_card_payment
+0,How do I locate my card?,pending_transfer
+0,How do I locate my card?,terminate_account
+0,How do I locate my card?,card_swallowed
+0,How do I locate my card?,transaction_charged_twice
+0,How do I locate my card?,verify_source_of_funds
+0,How do I locate my card?,transfer_timing
+0,How do I locate my card?,reverted_card_payment?
+0,How do I locate my card?,change_pin
+0,How do I locate my card?,transfer_fee_charged
+0,How do I locate my card?,receiving_money
+0,How do I locate my card?,failed_transfer
+0,How do I locate my card?,transfer_into_account
+0,How do I locate my card?,verify_top_up
+0,How do I locate my card?,getting_spare_card
+0,How do I locate my card?,top_up_by_cash_or_cheque
+0,How do I locate my card?,order_physical_card
+1,"I still have not received my new card, I ordered over a week ago.",card_arrival
+1,"I still have not received my new card, I ordered over a week ago.",card_linking
+1,"I still have not received my new card, I ordered over a week ago.",exchange_rate
+1,"I still have not received my new card, I ordered over a week ago.",card_payment_wrong_exchange_rate
+1,"I still have not received my new card, I ordered over a week ago.",extra_charge_on_statement
+1,"I still have not received my new card, I ordered over a week ago.",pending_cash_withdrawal
+1,"I still have not received my new card, I ordered over a week ago.",fiat_currency_support
+1,"I still have not received my new card, I ordered over a week ago.",card_delivery_estimate
+1,"I still have not received my new card, I ordered over a week ago.",automatic_top_up
+1,"I still have not received my new card, I ordered over a week ago.",card_not_working
+1,"I still have not received my new card, I ordered over a week ago.",exchange_via_app
+1,"I still have not received my new card, I ordered over a week ago.",lost_or_stolen_card
+1,"I still have not received my new card, I ordered over a week ago.",age_limit
+1,"I still have not received my new card, I ordered over a week ago.",pin_blocked
+1,"I still have not received my new card, I ordered over a week ago.",contactless_not_working
+1,"I still have not received my new card, I ordered over a week ago.",top_up_by_bank_transfer_charge
+1,"I still have not received my new card, I ordered over a week ago.",pending_top_up
+1,"I still have not received my new card, I ordered over a week ago.",cancel_transfer
+1,"I still have not received my new card, I ordered over a week ago.",top_up_limits
+1,"I still have not received my new card, I ordered over a week ago.",wrong_amount_of_cash_received
+1,"I still have not received my new card, I ordered over a week ago.",card_payment_fee_charged
+1,"I still have not received my new card, I ordered over a week ago.",transfer_not_received_by_recipient
+1,"I still have not received my new card, I ordered over a week ago.",getting_virtual_card
+1,"I still have not received my new card, I ordered over a week ago.",card_acceptance
+1,"I still have not received my new card, I ordered over a week ago.",top_up_reverted
+1,"I still have not received my new card, I ordered over a week ago.",balance_not_updated_after_cheque_or_cash_deposit
+1,"I still have not received my new card, I ordered over a week ago.",card_payment_not_recognised
+1,"I still have not received my new card, I ordered over a week ago.",edit_personal_details
+1,"I still have not received my new card, I ordered over a week ago.",why_verify_identity
+1,"I still have not received my new card, I ordered over a week ago.",unable_to_verify_identity
+1,"I still have not received my new card, I ordered over a week ago.",get_physical_card
+1,"I still have not received my new card, I ordered over a week ago.",visa_or_mastercard
+1,"I still have not received my new card, I ordered over a week ago.",topping_up_by_card
+1,"I still have not received my new card, I ordered over a week ago.",disposable_card_limits
+1,"I still have not received my new card, I ordered over a week ago.",compromised_card
+1,"I still have not received my new card, I ordered over a week ago.",atm_support
+1,"I still have not received my new card, I ordered over a week ago.",direct_debit_payment_not_recognised
+1,"I still have not received my new card, I ordered over a week ago.",passcode_forgotten
+1,"I still have not received my new card, I ordered over a week ago.",declined_cash_withdrawal
+1,"I still have not received my new card, I ordered over a week ago.",pending_card_payment
+1,"I still have not received my new card, I ordered over a week ago.",lost_or_stolen_phone
+1,"I still have not received my new card, I ordered over a week ago.",request_refund
+1,"I still have not received my new card, I ordered over a week ago.",declined_transfer
+1,"I still have not received my new card, I ordered over a week ago.",Refund_not_showing_up
+1,"I still have not received my new card, I ordered over a week ago.",declined_card_payment
+1,"I still have not received my new card, I ordered over a week ago.",pending_transfer
+1,"I still have not received my new card, I ordered over a week ago.",terminate_account
+1,"I still have not received my new card, I ordered over a week ago.",card_swallowed
+1,"I still have not received my new card, I ordered over a week ago.",transaction_charged_twice
+1,"I still have not received my new card, I ordered over a week ago.",verify_source_of_funds
+1,"I still have not received my new card, I ordered over a week ago.",transfer_timing
+1,"I still have not received my new card, I ordered over a week ago.",reverted_card_payment?
+1,"I still have not received my new card, I ordered over a week ago.",beneficiary_not_allowed
+1,"I still have not received my new card, I ordered over a week ago.",transfer_fee_charged
+1,"I still have not received my new card, I ordered over a week ago.",receiving_money
+1,"I still have not received my new card, I ordered over a week ago.",failed_transfer
+1,"I still have not received my new card, I ordered over a week ago.",transfer_into_account
+1,"I still have not received my new card, I ordered over a week ago.",verify_top_up
+1,"I still have not received my new card, I ordered over a week ago.",getting_spare_card
+1,"I still have not received my new card, I ordered over a week ago.",top_up_by_cash_or_cheque
+1,"I still have not received my new card, I ordered over a week ago.",order_physical_card
+2,I ordered a card but it has not arrived. Help please!,card_arrival
+2,I ordered a card but it has not arrived. Help please!,card_linking
+2,I ordered a card but it has not arrived. Help please!,card_payment_wrong_exchange_rate
+2,I ordered a card but it has not arrived. Help please!,extra_charge_on_statement
+2,I ordered a card but it has not arrived. Help please!,pending_cash_withdrawal
+2,I ordered a card but it has not arrived. Help please!,fiat_currency_support
+2,I ordered a card but it has not arrived. Help please!,card_delivery_estimate
+2,I ordered a card but it has not arrived. Help please!,automatic_top_up
+2,I ordered a card but it has not arrived. Help please!,card_not_working
+2,I ordered a card but it has not arrived. Help please!,exchange_via_app
+2,I ordered a card but it has not arrived. Help please!,lost_or_stolen_card
+2,I ordered a card but it has not arrived. Help please!,contactless_not_working
+2,I ordered a card but it has not arrived. Help please!,top_up_by_bank_transfer_charge
+2,I ordered a card but it has not arrived. Help please!,pending_top_up
+2,I ordered a card but it has not arrived. Help please!,cancel_transfer
+2,I ordered a card but it has not arrived. Help please!,card_payment_fee_charged
+2,I ordered a card but it has not arrived. Help please!,transfer_not_received_by_recipient
+2,I ordered a card but it has not arrived. Help please!,getting_virtual_card
+2,I ordered a card but it has not arrived. Help please!,card_acceptance
+2,I ordered a card but it has not arrived. Help please!,top_up_reverted
+2,I ordered a card but it has not arrived. Help please!,balance_not_updated_after_cheque_or_cash_deposit
+2,I ordered a card but it has not arrived. Help please!,card_payment_not_recognised
+2,I ordered a card but it has not arrived. Help please!,why_verify_identity
+2,I ordered a card but it has not arrived. Help please!,unable_to_verify_identity
+2,I ordered a card but it has not arrived. Help please!,get_physical_card
+2,I ordered a card but it has not arrived. Help please!,visa_or_mastercard
+2,I ordered a card but it has not arrived. Help please!,topping_up_by_card
+2,I ordered a card but it has not arrived. Help please!,disposable_card_limits
+2,I ordered a card but it has not arrived. Help please!,compromised_card
+2,I ordered a card but it has not arrived. Help please!,atm_support
+2,I ordered a card but it has not arrived. Help please!,direct_debit_payment_not_recognised
+2,I ordered a card but it has not arrived. Help please!,passcode_forgotten
+2,I ordered a card but it has not arrived. Help please!,pending_card_payment
+2,I ordered a card but it has not arrived. Help please!,request_refund
+2,I ordered a card but it has not arrived. Help please!,declined_transfer
+2,I ordered a card but it has not arrived. Help please!,Refund_not_showing_up
+2,I ordered a card but it has not arrived. Help please!,declined_card_payment
+2,I ordered a card but it has not arrived. Help please!,pending_transfer
+2,I ordered a card but it has not arrived. Help please!,card_swallowed
+2,I ordered a card but it has not arrived. Help please!,transaction_charged_twice
+2,I ordered a card but it has not arrived. Help please!,verify_source_of_funds
+2,I ordered a card but it has not arrived. Help please!,transfer_timing
+2,I ordered a card but it has not arrived. Help please!,reverted_card_payment?
+2,I ordered a card but it has not arrived. Help please!,beneficiary_not_allowed
+2,I ordered a card but it has not arrived. Help please!,transfer_fee_charged
+2,I ordered a card but it has not arrived. Help please!,receiving_money
+2,I ordered a card but it has not arrived. Help please!,failed_transfer
+2,I ordered a card but it has not arrived. Help please!,transfer_into_account
+2,I ordered a card but it has not arrived. Help please!,verify_top_up
+2,I ordered a card but it has not arrived. Help please!,getting_spare_card
+2,I ordered a card but it has not arrived. Help please!,order_physical_card
+3,Is there a way to know when my card will arrive?,card_arrival
+3,Is there a way to know when my card will arrive?,card_linking
+3,Is there a way to know when my card will arrive?,exchange_rate
+3,Is there a way to know when my card will arrive?,card_payment_wrong_exchange_rate
+3,Is there a way to know when my card will arrive?,extra_charge_on_statement
+3,Is there a way to know when my card will arrive?,pending_cash_withdrawal
+3,Is there a way to know when my card will arrive?,fiat_currency_support
+3,Is there a way to know when my card will arrive?,card_delivery_estimate
+3,Is there a way to know when my card will arrive?,automatic_top_up
+3,Is there a way to know when my card will arrive?,card_not_working
+3,Is there a way to know when my card will arrive?,exchange_via_app
+3,Is there a way to know when my card will arrive?,lost_or_stolen_card
+3,Is there a way to know when my card will arrive?,contactless_not_working
+3,Is there a way to know when my card will arrive?,top_up_by_bank_transfer_charge
+3,Is there a way to know when my card will arrive?,pending_top_up
+3,Is there a way to know when my card will arrive?,cancel_transfer
+3,Is there a way to know when my card will arrive?,top_up_limits
+3,Is there a way to know when my card will arrive?,card_payment_fee_charged
+3,Is there a way to know when my card will arrive?,transfer_not_received_by_recipient
+3,Is there a way to know when my card will arrive?,supported_cards_and_currencies
+3,Is there a way to know when my card will arrive?,getting_virtual_card
+3,Is there a way to know when my card will arrive?,card_acceptance
+3,Is there a way to know when my card will arrive?,top_up_reverted
+3,Is there a way to know when my card will arrive?,balance_not_updated_after_cheque_or_cash_deposit
+3,Is there a way to know when my card will arrive?,card_payment_not_recognised
+3,Is there a way to know when my card will arrive?,edit_personal_details
+3,Is there a way to know when my card will arrive?,why_verify_identity
+3,Is there a way to know when my card will arrive?,unable_to_verify_identity
+3,Is there a way to know when my card will arrive?,get_physical_card
+3,Is there a way to know when my card will arrive?,visa_or_mastercard
+3,Is there a way to know when my card will arrive?,topping_up_by_card
+3,Is there a way to know when my card will arrive?,disposable_card_limits
+3,Is there a way to know when my card will arrive?,compromised_card
+3,Is there a way to know when my card will arrive?,atm_support
+3,Is there a way to know when my card will arrive?,direct_debit_payment_not_recognised
+3,Is there a way to know when my card will arrive?,passcode_forgotten
+3,Is there a way to know when my card will arrive?,declined_cash_withdrawal
+3,Is there a way to know when my card will arrive?,pending_card_payment
+3,Is there a way to know when my card will arrive?,lost_or_stolen_phone
+3,Is there a way to know when my card will arrive?,request_refund
+3,Is there a way to know when my card will arrive?,declined_transfer
+3,Is there a way to know when my card will arrive?,Refund_not_showing_up
+3,Is there a way to know when my card will arrive?,declined_card_payment
+3,Is there a way to know when my card will arrive?,pending_transfer
+3,Is there a way to know when my card will arrive?,card_swallowed
+3,Is there a way to know when my card will arrive?,transaction_charged_twice
+3,Is there a way to know when my card will arrive?,verify_source_of_funds
+3,Is there a way to know when my card will arrive?,transfer_timing
+3,Is there a way to know when my card will arrive?,reverted_card_payment?
+3,Is there a way to know when my card will arrive?,receiving_money
+3,Is there a way to know when my card will arrive?,failed_transfer
+3,Is there a way to know when my card will arrive?,transfer_into_account
+3,Is there a way to know when my card will arrive?,verify_top_up
+3,Is there a way to know when my card will arrive?,getting_spare_card
+3,Is there a way to know when my card will arrive?,top_up_by_cash_or_cheque
+3,Is there a way to know when my card will arrive?,order_physical_card
+4,My card has not arrived yet.,card_arrival
+4,My card has not arrived yet.,card_linking
+4,My card has not arrived yet.,card_payment_wrong_exchange_rate
+4,My card has not arrived yet.,extra_charge_on_statement
+4,My card has not arrived yet.,pending_cash_withdrawal
+4,My card has not arrived yet.,fiat_currency_support
+4,My card has not arrived yet.,card_delivery_estimate
+4,My card has not arrived yet.,automatic_top_up
+4,My card has not arrived yet.,card_not_working
+4,My card has not arrived yet.,exchange_via_app
+4,My card has not arrived yet.,lost_or_stolen_card
+4,My card has not arrived yet.,contactless_not_working
+4,My card has not arrived yet.,top_up_by_bank_transfer_charge
+4,My card has not arrived yet.,pending_top_up
+4,My card has not arrived yet.,cancel_transfer
+4,My card has not arrived yet.,top_up_limits
+4,My card has not arrived yet.,card_payment_fee_charged
+4,My card has not arrived yet.,transfer_not_received_by_recipient
+4,My card has not arrived yet.,getting_virtual_card
+4,My card has not arrived yet.,card_acceptance
+4,My card has not arrived yet.,top_up_reverted
+4,My card has not arrived yet.,balance_not_updated_after_cheque_or_cash_deposit
+4,My card has not arrived yet.,card_payment_not_recognised
+4,My card has not arrived yet.,edit_personal_details
+4,My card has not arrived yet.,why_verify_identity
+4,My card has not arrived yet.,unable_to_verify_identity
+4,My card has not arrived yet.,get_physical_card
+4,My card has not arrived yet.,visa_or_mastercard
+4,My card has not arrived yet.,topping_up_by_card
+4,My card has not arrived yet.,compromised_card
+4,My card has not arrived yet.,atm_support
+4,My card has not arrived yet.,direct_debit_payment_not_recognised
+4,My card has not arrived yet.,passcode_forgotten
+4,My card has not arrived yet.,declined_cash_withdrawal
+4,My card has not arrived yet.,pending_card_payment
+4,My card has not arrived yet.,lost_or_stolen_phone
+4,My card has not arrived yet.,request_refund
+4,My card has not arrived yet.,declined_transfer
+4,My card has not arrived yet.,Refund_not_showing_up
+4,My card has not arrived yet.,declined_card_payment
+4,My card has not arrived yet.,pending_transfer
+4,My card has not arrived yet.,card_swallowed
+4,My card has not arrived yet.,transaction_charged_twice
+4,My card has not arrived yet.,verify_source_of_funds
+4,My card has not arrived yet.,transfer_timing
+4,My card has not arrived yet.,reverted_card_payment?
+4,My card has not arrived yet.,beneficiary_not_allowed
+4,My card has not arrived yet.,transfer_fee_charged
+4,My card has not arrived yet.,receiving_money
+4,My card has not arrived yet.,failed_transfer
+4,My card has not arrived yet.,transfer_into_account
+4,My card has not arrived yet.,verify_top_up
+4,My card has not arrived yet.,getting_spare_card
+4,My card has not arrived yet.,top_up_by_cash_or_cheque
+4,My card has not arrived yet.,order_physical_card
+5,When will I get my card?,card_arrival
+5,When will I get my card?,card_linking
+5,When will I get my card?,exchange_rate
+5,When will I get my card?,card_payment_wrong_exchange_rate
+5,When will I get my card?,extra_charge_on_statement
+5,When will I get my card?,pending_cash_withdrawal
+5,When will I get my card?,fiat_currency_support
+5,When will I get my card?,card_delivery_estimate
+5,When will I get my card?,automatic_top_up
+5,When will I get my card?,card_not_working
+5,When will I get my card?,exchange_via_app
+5,When will I get my card?,lost_or_stolen_card
+5,When will I get my card?,age_limit
+5,When will I get my card?,contactless_not_working
+5,When will I get my card?,top_up_by_bank_transfer_charge
+5,When will I get my card?,pending_top_up
+5,When will I get my card?,cancel_transfer
+5,When will I get my card?,top_up_limits
+5,When will I get my card?,card_payment_fee_charged
+5,When will I get my card?,transfer_not_received_by_recipient
+5,When will I get my card?,supported_cards_and_currencies
+5,When will I get my card?,getting_virtual_card
+5,When will I get my card?,card_acceptance
+5,When will I get my card?,top_up_reverted
+5,When will I get my card?,balance_not_updated_after_cheque_or_cash_deposit
+5,When will I get my card?,card_payment_not_recognised
+5,When will I get my card?,edit_personal_details
+5,When will I get my card?,why_verify_identity
+5,When will I get my card?,unable_to_verify_identity
+5,When will I get my card?,get_physical_card
+5,When will I get my card?,visa_or_mastercard
+5,When will I get my card?,topping_up_by_card
+5,When will I get my card?,disposable_card_limits
+5,When will I get my card?,compromised_card
+5,When will I get my card?,atm_support
+5,When will I get my card?,direct_debit_payment_not_recognised
+5,When will I get my card?,passcode_forgotten
+5,When will I get my card?,declined_cash_withdrawal
+5,When will I get my card?,pending_card_payment
+5,When will I get my card?,lost_or_stolen_phone
+5,When will I get my card?,request_refund
+5,When will I get my card?,declined_transfer
+5,When will I get my card?,Refund_not_showing_up
+5,When will I get my card?,declined_card_payment
+5,When will I get my card?,pending_transfer
+5,When will I get my card?,card_swallowed
+5,When will I get my card?,transaction_charged_twice
+5,When will I get my card?,verify_source_of_funds
+5,When will I get my card?,transfer_timing
+5,When will I get my card?,reverted_card_payment?
+5,When will I get my card?,change_pin
+5,When will I get my card?,transfer_fee_charged
+5,When will I get my card?,receiving_money
+5,When will I get my card?,failed_transfer
+5,When will I get my card?,transfer_into_account
+5,When will I get my card?,verify_top_up
+5,When will I get my card?,getting_spare_card
+5,When will I get my card?,top_up_by_cash_or_cheque
+5,When will I get my card?,order_physical_card
+6,Do you know if there is a tracking number for the new card you sent me?,card_arrival
+6,Do you know if there is a tracking number for the new card you sent me?,card_linking
+6,Do you know if there is a tracking number for the new card you sent me?,exchange_rate
+6,Do you know if there is a tracking number for the new card you sent me?,card_payment_wrong_exchange_rate
+6,Do you know if there is a tracking number for the new card you sent me?,extra_charge_on_statement
+6,Do you know if there is a tracking number for the new card you sent me?,pending_cash_withdrawal
+6,Do you know if there is a tracking number for the new card you sent me?,fiat_currency_support
+6,Do you know if there is a tracking number for the new card you sent me?,card_delivery_estimate
+6,Do you know if there is a tracking number for the new card you sent me?,automatic_top_up
+6,Do you know if there is a tracking number for the new card you sent me?,card_not_working
+6,Do you know if there is a tracking number for the new card you sent me?,exchange_via_app
+6,Do you know if there is a tracking number for the new card you sent me?,lost_or_stolen_card
+6,Do you know if there is a tracking number for the new card you sent me?,age_limit
+6,Do you know if there is a tracking number for the new card you sent me?,contactless_not_working
+6,Do you know if there is a tracking number for the new card you sent me?,top_up_by_bank_transfer_charge
+6,Do you know if there is a tracking number for the new card you sent me?,pending_top_up
+6,Do you know if there is a tracking number for the new card you sent me?,cancel_transfer
+6,Do you know if there is a tracking number for the new card you sent me?,top_up_limits
+6,Do you know if there is a tracking number for the new card you sent me?,wrong_amount_of_cash_received
+6,Do you know if there is a tracking number for the new card you sent me?,card_payment_fee_charged
+6,Do you know if there is a tracking number for the new card you sent me?,transfer_not_received_by_recipient
+6,Do you know if there is a tracking number for the new card you sent me?,supported_cards_and_currencies
+6,Do you know if there is a tracking number for the new card you sent me?,getting_virtual_card
+6,Do you know if there is a tracking number for the new card you sent me?,card_acceptance
+6,Do you know if there is a tracking number for the new card you sent me?,top_up_reverted
+6,Do you know if there is a tracking number for the new card you sent me?,balance_not_updated_after_cheque_or_cash_deposit
+6,Do you know if there is a tracking number for the new card you sent me?,card_payment_not_recognised
+6,Do you know if there is a tracking number for the new card you sent me?,edit_personal_details
+6,Do you know if there is a tracking number for the new card you sent me?,why_verify_identity
+6,Do you know if there is a tracking number for the new card you sent me?,unable_to_verify_identity
+6,Do you know if there is a tracking number for the new card you sent me?,get_physical_card
+6,Do you know if there is a tracking number for the new card you sent me?,visa_or_mastercard
+6,Do you know if there is a tracking number for the new card you sent me?,topping_up_by_card
+6,Do you know if there is a tracking number for the new card you sent me?,disposable_card_limits
+6,Do you know if there is a tracking number for the new card you sent me?,compromised_card
+6,Do you know if there is a tracking number for the new card you sent me?,atm_support
+6,Do you know if there is a tracking number for the new card you sent me?,direct_debit_payment_not_recognised
+6,Do you know if there is a tracking number for the new card you sent me?,passcode_forgotten
+6,Do you know if there is a tracking number for the new card you sent me?,declined_cash_withdrawal
+6,Do you know if there is a tracking number for the new card you sent me?,pending_card_payment
+6,Do you know if there is a tracking number for the new card you sent me?,lost_or_stolen_phone
+6,Do you know if there is a tracking number for the new card you sent me?,request_refund
+6,Do you know if there is a tracking number for the new card you sent me?,declined_transfer
+6,Do you know if there is a tracking number for the new card you sent me?,Refund_not_showing_up
+6,Do you know if there is a tracking number for the new card you sent me?,declined_card_payment
+6,Do you know if there is a tracking number for the new card you sent me?,pending_transfer
+6,Do you know if there is a tracking number for the new card you sent me?,terminate_account
+6,Do you know if there is a tracking number for the new card you sent me?,card_swallowed
+6,Do you know if there is a tracking number for the new card you sent me?,transaction_charged_twice
+6,Do you know if there is a tracking number for the new card you sent me?,verify_source_of_funds
+6,Do you know if there is a tracking number for the new card you sent me?,transfer_timing
+6,Do you know if there is a tracking number for the new card you sent me?,reverted_card_payment?
+6,Do you know if there is a tracking number for the new card you sent me?,change_pin
+6,Do you know if there is a tracking number for the new card you sent me?,transfer_fee_charged
+6,Do you know if there is a tracking number for the new card you sent me?,receiving_money
+6,Do you know if there is a tracking number for the new card you sent me?,failed_transfer
+6,Do you know if there is a tracking number for the new card you sent me?,transfer_into_account
+6,Do you know if there is a tracking number for the new card you sent me?,verify_top_up
+6,Do you know if there is a tracking number for the new card you sent me?,getting_spare_card
+6,Do you know if there is a tracking number for the new card you sent me?,top_up_by_cash_or_cheque
+6,Do you know if there is a tracking number for the new card you sent me?,order_physical_card
+7,i have not received my card,card_arrival
+7,i have not received my card,card_linking
+7,i have not received my card,exchange_rate
+7,i have not received my card,card_payment_wrong_exchange_rate
+7,i have not received my card,extra_charge_on_statement
+7,i have not received my card,pending_cash_withdrawal
+7,i have not received my card,fiat_currency_support
+7,i have not received my card,card_delivery_estimate
+7,i have not received my card,automatic_top_up
+7,i have not received my card,card_not_working
+7,i have not received my card,exchange_via_app
+7,i have not received my card,lost_or_stolen_card
+7,i have not received my card,age_limit
+7,i have not received my card,pin_blocked
+7,i have not received my card,contactless_not_working
+7,i have not received my card,top_up_by_bank_transfer_charge
+7,i have not received my card,pending_top_up
+7,i have not received my card,cancel_transfer
+7,i have not received my card,top_up_limits
+7,i have not received my card,wrong_amount_of_cash_received
+7,i have not received my card,card_payment_fee_charged
+7,i have not received my card,transfer_not_received_by_recipient
+7,i have not received my card,getting_virtual_card
+7,i have not received my card,card_acceptance
+7,i have not received my card,top_up_reverted
+7,i have not received my card,balance_not_updated_after_cheque_or_cash_deposit
+7,i have not received my card,card_payment_not_recognised
+7,i have not received my card,edit_personal_details
+7,i have not received my card,why_verify_identity
+7,i have not received my card,unable_to_verify_identity
+7,i have not received my card,get_physical_card
+7,i have not received my card,visa_or_mastercard
+7,i have not received my card,topping_up_by_card
+7,i have not received my card,disposable_card_limits
+7,i have not received my card,compromised_card
+7,i have not received my card,atm_support
+7,i have not received my card,direct_debit_payment_not_recognised
+7,i have not received my card,passcode_forgotten
+7,i have not received my card,declined_cash_withdrawal
+7,i have not received my card,pending_card_payment
+7,i have not received my card,lost_or_stolen_phone
+7,i have not received my card,request_refund
+7,i have not received my card,declined_transfer
+7,i have not received my card,Refund_not_showing_up
+7,i have not received my card,declined_card_payment
+7,i have not received my card,pending_transfer
+7,i have not received my card,terminate_account
+7,i have not received my card,card_swallowed
+7,i have not received my card,transaction_charged_twice
+7,i have not received my card,verify_source_of_funds
+7,i have not received my card,transfer_timing
+7,i have not received my card,reverted_card_payment?
+7,i have not received my card,change_pin
+7,i have not received my card,beneficiary_not_allowed
+7,i have not received my card,transfer_fee_charged
+7,i have not received my card,receiving_money
+7,i have not received my card,failed_transfer
+7,i have not received my card,transfer_into_account
+7,i have not received my card,verify_top_up
+7,i have not received my card,getting_spare_card
+7,i have not received my card,top_up_by_cash_or_cheque
+7,i have not received my card,order_physical_card
+8,still waiting on that card,card_arrival
+8,still waiting on that card,card_linking
+8,still waiting on that card,exchange_rate
+8,still waiting on that card,card_payment_wrong_exchange_rate
+8,still waiting on that card,extra_charge_on_statement
+8,still waiting on that card,pending_cash_withdrawal
+8,still waiting on that card,fiat_currency_support
+8,still waiting on that card,card_delivery_estimate
+8,still waiting on that card,automatic_top_up
+8,still waiting on that card,card_not_working
+8,still waiting on that card,exchange_via_app
+8,still waiting on that card,lost_or_stolen_card
+8,still waiting on that card,age_limit
+8,still waiting on that card,contactless_not_working
+8,still waiting on that card,top_up_by_bank_transfer_charge
+8,still waiting on that card,pending_top_up
+8,still waiting on that card,cancel_transfer
+8,still waiting on that card,top_up_limits
+8,still waiting on that card,wrong_amount_of_cash_received
+8,still waiting on that card,card_payment_fee_charged
+8,still waiting on that card,transfer_not_received_by_recipient
+8,still waiting on that card,getting_virtual_card
+8,still waiting on that card,card_acceptance
+8,still waiting on that card,top_up_reverted
+8,still waiting on that card,balance_not_updated_after_cheque_or_cash_deposit
+8,still waiting on that card,card_payment_not_recognised
+8,still waiting on that card,edit_personal_details
+8,still waiting on that card,why_verify_identity
+8,still waiting on that card,unable_to_verify_identity
+8,still waiting on that card,get_physical_card
+8,still waiting on that card,visa_or_mastercard
+8,still waiting on that card,topping_up_by_card
+8,still waiting on that card,disposable_card_limits
+8,still waiting on that card,compromised_card
+8,still waiting on that card,atm_support
+8,still waiting on that card,direct_debit_payment_not_recognised
+8,still waiting on that card,passcode_forgotten
+8,still waiting on that card,declined_cash_withdrawal
+8,still waiting on that card,pending_card_payment
+8,still waiting on that card,lost_or_stolen_phone
+8,still waiting on that card,request_refund
+8,still waiting on that card,declined_transfer
+8,still waiting on that card,Refund_not_showing_up
+8,still waiting on that card,declined_card_payment
+8,still waiting on that card,pending_transfer
+8,still waiting on that card,card_swallowed
+8,still waiting on that card,transaction_charged_twice
+8,still waiting on that card,verify_source_of_funds
+8,still waiting on that card,transfer_timing
+8,still waiting on that card,reverted_card_payment?
+8,still waiting on that card,change_pin
+8,still waiting on that card,transfer_fee_charged
+8,still waiting on that card,receiving_money
+8,still waiting on that card,failed_transfer
+8,still waiting on that card,transfer_into_account
+8,still waiting on that card,verify_top_up
+8,still waiting on that card,getting_spare_card
+8,still waiting on that card,top_up_by_cash_or_cheque
+8,still waiting on that card,order_physical_card
+9,Is it normal to have to wait over a week for my new card?,card_arrival
+9,Is it normal to have to wait over a week for my new card?,card_linking
+9,Is it normal to have to wait over a week for my new card?,exchange_rate
+9,Is it normal to have to wait over a week for my new card?,card_payment_wrong_exchange_rate
+9,Is it normal to have to wait over a week for my new card?,extra_charge_on_statement
+9,Is it normal to have to wait over a week for my new card?,pending_cash_withdrawal
+9,Is it normal to have to wait over a week for my new card?,fiat_currency_support
+9,Is it normal to have to wait over a week for my new card?,card_delivery_estimate
+9,Is it normal to have to wait over a week for my new card?,automatic_top_up
+9,Is it normal to have to wait over a week for my new card?,card_not_working
+9,Is it normal to have to wait over a week for my new card?,exchange_via_app
+9,Is it normal to have to wait over a week for my new card?,lost_or_stolen_card
+9,Is it normal to have to wait over a week for my new card?,age_limit
+9,Is it normal to have to wait over a week for my new card?,pin_blocked
+9,Is it normal to have to wait over a week for my new card?,contactless_not_working
+9,Is it normal to have to wait over a week for my new card?,top_up_by_bank_transfer_charge
+9,Is it normal to have to wait over a week for my new card?,pending_top_up
+9,Is it normal to have to wait over a week for my new card?,cancel_transfer
+9,Is it normal to have to wait over a week for my new card?,top_up_limits
+9,Is it normal to have to wait over a week for my new card?,wrong_amount_of_cash_received
+9,Is it normal to have to wait over a week for my new card?,card_payment_fee_charged
+9,Is it normal to have to wait over a week for my new card?,transfer_not_received_by_recipient
+9,Is it normal to have to wait over a week for my new card?,supported_cards_and_currencies
+9,Is it normal to have to wait over a week for my new card?,getting_virtual_card
+9,Is it normal to have to wait over a week for my new card?,card_acceptance
+9,Is it normal to have to wait over a week for my new card?,top_up_reverted
+9,Is it normal to have to wait over a week for my new card?,balance_not_updated_after_cheque_or_cash_deposit
+9,Is it normal to have to wait over a week for my new card?,card_payment_not_recognised
+9,Is it normal to have to wait over a week for my new card?,edit_personal_details
+9,Is it normal to have to wait over a week for my new card?,why_verify_identity
+9,Is it normal to have to wait over a week for my new card?,unable_to_verify_identity
+9,Is it normal to have to wait over a week for my new card?,get_physical_card
+9,Is it normal to have to wait over a week for my new card?,visa_or_mastercard
+9,Is it normal to have to wait over a week for my new card?,topping_up_by_card
+9,Is it normal to have to wait over a week for my new card?,disposable_card_limits
+9,Is it normal to have to wait over a week for my new card?,compromised_card
+9,Is it normal to have to wait over a week for my new card?,atm_support
+9,Is it normal to have to wait over a week for my new card?,direct_debit_payment_not_recognised
+9,Is it normal to have to wait over a week for my new card?,passcode_forgotten
+9,Is it normal to have to wait over a week for my new card?,declined_cash_withdrawal
+9,Is it normal to have to wait over a week for my new card?,pending_card_payment
+9,Is it normal to have to wait over a week for my new card?,lost_or_stolen_phone
+9,Is it normal to have to wait over a week for my new card?,request_refund
+9,Is it normal to have to wait over a week for my new card?,declined_transfer
+9,Is it normal to have to wait over a week for my new card?,Refund_not_showing_up
+9,Is it normal to have to wait over a week for my new card?,declined_card_payment
+9,Is it normal to have to wait over a week for my new card?,pending_transfer
+9,Is it normal to have to wait over a week for my new card?,terminate_account
+9,Is it normal to have to wait over a week for my new card?,card_swallowed
+9,Is it normal to have to wait over a week for my new card?,transaction_charged_twice
+9,Is it normal to have to wait over a week for my new card?,verify_source_of_funds
+9,Is it normal to have to wait over a week for my new card?,transfer_timing
+9,Is it normal to have to wait over a week for my new card?,reverted_card_payment?
+9,Is it normal to have to wait over a week for my new card?,change_pin
+9,Is it normal to have to wait over a week for my new card?,beneficiary_not_allowed
+9,Is it normal to have to wait over a week for my new card?,transfer_fee_charged
+9,Is it normal to have to wait over a week for my new card?,receiving_money
+9,Is it normal to have to wait over a week for my new card?,failed_transfer
+9,Is it normal to have to wait over a week for my new card?,transfer_into_account
+9,Is it normal to have to wait over a week for my new card?,verify_top_up
+9,Is it normal to have to wait over a week for my new card?,getting_spare_card
+9,Is it normal to have to wait over a week for my new card?,top_up_by_cash_or_cheque
+9,Is it normal to have to wait over a week for my new card?,order_physical_card

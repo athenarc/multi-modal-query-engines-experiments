@@ -1,0 +1,123 @@
+System: Lotus (map)
+Timestamp: 2025-12-09T10:19:18.212838
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Total LLM Calls: 50
+Execution Time: 5.80
+Birthdate Accuracy: 18.00%
+Nationality Accuracy: 96.00%
+Total accuracy: 57.00%
+------------------------------------------------------
+
+
+System: Lotus (map)
+Timestamp: 2025-12-09T10:19:40.148982
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Total LLM Calls: 100
+Execution Time: 9.54
+Birthdate Accuracy: 20.00%
+Nationality Accuracy: 95.00%
+Total accuracy: 57.50%
+------------------------------------------------------
+
+
+System: Lotus (map)
+Timestamp: 2025-12-09T10:20:10.853395
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Total LLM Calls: 200
+Execution Time: 18.14
+Birthdate Accuracy: 16.00%
+Nationality Accuracy: 95.50%
+Total accuracy: 55.75%
+------------------------------------------------------
+
+
+System: Lotus (map)
+Timestamp: 2025-12-09T10:20:52.429682
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Total LLM Calls: 300
+Execution Time: 28.81
+Birthdate Accuracy: 18.67%
+Nationality Accuracy: 95.33%
+Total accuracy: 57.00%
+------------------------------------------------------
+
+
+System: Lotus (map)
+Timestamp: 2025-12-09T10:21:37.866608
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Total LLM Calls: 500
+Execution Time: 32.39
+Birthdate Accuracy: 18.38%
+Nationality Accuracy: 95.33%
+Total accuracy: 56.85%
+------------------------------------------------------
+System: BlendSQL
+Timestamp: 2025-12-08T22:11:10.756677
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 28.18
+Total LLM calls: 50
+Birthdate Accuracy: 8.00%
+Nationality Accuracy: 98.00%
+Total accuracy: 53.00%
+------------------------------------------------------
+
+
+System: BlendSQL
+Timestamp: 2025-12-08T22:11:41.016522
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 100
+Execution Time: 26.58
+Total LLM calls: 100
+Birthdate Accuracy: 1.00%
+Nationality Accuracy: 98.00%
+Total accuracy: 49.50%
+------------------------------------------------------
+
+
+System: BlendSQL
+Timestamp: 2025-12-08T22:12:40.677010
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 200
+Execution Time: 56.26
+Total LLM calls: 200
+Birthdate Accuracy: 11.50%
+Nationality Accuracy: 97.50%
+Total accuracy: 54.50%
+------------------------------------------------------
+
+
+System: BlendSQL
+Timestamp: 2025-12-09T10:27:15.906752
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 300
+Execution Time: 67.23
+Total LLM calls: 300
+
+Birthdate Accuracy: 2.33%
+Nationality Accuracy: 96.33%
+Total accuracy: 49.33%
+------------------------------------------------------
+
+
+
+System: BlendSQL
+Timestamp: 2025-12-09T10:28:37.944036
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 72.53
+Total LLM calls: 500
+
+Birthdate Accuracy: 3.43%
+Nationality Accuracy: 97.20%
+Total accuracy: 50.31%
+------------------------------------------------------
+
+
+
+

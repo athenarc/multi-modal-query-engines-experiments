@@ -1,0 +1,2650 @@
+,Game ID,Team Name,wins,losses,total_points
+0,0.0,Atlanta Hawks,46,12,95
+1,0.0,Orlando Magic,19,41,88
+2,1.0,Milwaukee Bucks,18,17,95
+3,1.0,New York Knicks,-1,-1,-1
+4,2.0,Grizzlies,50,-1,-1
+5,2.0,Suns,-1,2,-1
+6,3.0,Toronto Raptors,29,15,114
+7,3.0,Detroit Pistons,-1,-1,-1
+8,4.0,Detroit Pistons,30,29,102
+9,4.0,Milwaukee Bucks,-1,-1,-1
+10,5.0,Milwaukee Bucks,8,8,118
+11,5.0,Cleveland Cavaliers,-1,-1,-1
+12,6.0,Cleveland Cavaliers,40,-1,-1
+13,6.0,Boston Celtics,-1,4,-1
+14,7.0,Oklahoma City Thunder,8,13,114
+15,7.0,Milwaukee Bucks,11,12,101
+16,9.0,New York Knicks,-1,-1,-1
+17,9.0,Los Angeles Lakers,-1,-1,-1
+18,10.0,Raptors,-1,-1,-1
+19,10.0,Bucks,-1,-1,-1
+20,11.0,Memphis Grizzlies,-1,-1,-1
+21,11.0,Minnesota Timberwolves,-1,-1,-1
+22,12.0,Brooklyn Nets,-1,-1,-1
+23,12.0,Washington Wizards,-1,-1,-1
+24,13.0,Washington Wizards,45,34,80
+25,13.0,Los Angeles Lakers,-1,-1,-1
+26,14.0,Cleveland Cavaliers,-1,-1,-1
+27,14.0,Washington Wizards,36,37,101
+28,15.0,Los Angeles Lakers,-1,-1,-1
+29,15.0,Denver Nuggets,-1,-1,-1
+30,16.0,Dallas Mavericks,-1,-1,-1
+31,16.0,Portland Trail Blazers,-1,-1,-1
+32,17.0,Miami Heat,-1,-1,-1
+33,17.0,Toronto Raptors,-1,-1,-1
+34,18.0,Clippers,-1,-1,-1
+35,19.0,Magic,-1,-1,-1
+36,19.0,Pacers,-1,-1,-1
+37,20.0,Memphis Grizzlies,-1,-1,-1
+38,20.0,Dallas Mavericks,-1,-1,-1
+39,21.0,Rockets,-1,-1,-1
+40,21.0,Mavericks,9,6,96
+41,22.0,Nuggets,-1,-1,-1
+42,22.0,Timberwolves,-1,-1,-1
+43,23.0,New Orleans Pelicans,-1,-1,-1
+44,23.0,Milwaukee Bucks,-1,-1,-1
+45,24.0,Los Angeles Clippers,-1,-1,-1
+46,24.0,New Orleans Pelicans,37,30,-1
+47,25.0,Washington Wizards,-1,-1,-1
+48,25.0,Indiana Pacers,-1,-1,-1
+49,26.0,Memphis Grizzlies,-1,-1,-1
+50,26.0,Utah Jazz,-1,-1,-1
+51,27.0,Portland Trail Blazers,-1,-1,-1
+52,27.0,Washington Wizards,-1,-1,-1
+53,28.0,Oklahoma City Thunder,-1,-1,-1
+54,28.0,New York Knicks,-1,-1,-1
+55,29.0,Utah Jazz,-1,-1,-1
+56,29.0,Sacramento Kings,-1,-1,-1
+57,30.0,Charlotte Hornets,-1,-1,-1
+58,30.0,Utah Jazz,18,33,102
+59,31.0,Golden State Warriors,-1,-1,-1
+60,31.0,Cleveland Cavaliers,-1,-1,-1
+61,32.0,Memphis Grizzlies,-1,-1,-1
+62,32.0,Philadelphia 76ers,-1,-1,-1
+63,33.0,San Antonio Spurs,-1,-1,-1
+64,33.0,Dallas Mavericks,-1,-1,-1
+65,34.0,Houston Rockets,-1,-1,-1
+66,34.0,Miami Heat,-1,-1,-1
+67,35.0,Sacramento Kings,-1,-1,-1
+68,35.0,Oklahoma City Thunder,-1,-1,-1
+69,36.0,Phoenix Suns,-1,-1,-1
+70,36.0,Minnesota Timberwolves,-1,-1,-1
+71,37.0,Philadelphia 76ers,-1,-1,-1
+72,37.0,Utah Jazz,-1,-1,-1
+73,38.0,Sacramento Kings,-1,-1,-1
+74,38.0,Toronto Raptors,-1,-1,-1
+75,40.0,Suns,-1,-1,-1
+76,40.0,Kings,1,-1,-1
+77,41.0,Chicago Bulls,-1,-1,-1
+78,41.0,Los Angeles Clippers,-1,-1,-1
+79,42.0,Memphis Grizzlies,-1,-1,-1
+80,42.0,Brooklyn Nets,-1,-1,-1
+81,43.0,Miami Heat,-1,-1,-1
+82,43.0,Houston Rockets,-1,-1,-1
+83,44.0,Pelicans,-1,-1,-1
+84,44.0,Detroit,-1,-1,-1
+85,45.0,Denver Nuggets,-1,-1,-1
+86,45.0,New Orleans Pelicans,-1,-1,-1
+87,46.0,Warriors,-1,-1,-1
+88,46.0,Lakers,-1,-1,-1
+89,47.0,Houston Rockets,-1,-1,-1
+90,47.0,Phoenix Suns,-1,-1,-1
+91,48.0,Portland Trail Blazers,-1,-1,-1
+92,48.0,Los Angeles Lakers,,,
+93,49.0,Atlanta Hawks,-1,-1,-1
+94,49.0,Detroit Pistons,-1,-1,-1
+95,50.0,New York Knicks,-1,-1,-1
+96,50.0,Portland Trail Blazers,20,26,121
+97,51.0,Bulls,-1,-1,-1
+98,51.0,Knicks,-1,-1,-1
+99,52.0,Knicks,7,7,-1
+100,52.0,Bucks,-1,-1,-1
+101,53.0,Toronto Raptors,-1,-1,-1
+102,53.0,Orlando Magic,-1,-1,-1
+103,54.0,Bulls,-1,-1,-1
+104,54.0,Celtics,-1,-1,-1
+105,55.0,Houston Rockets,-1,-1,-1
+106,55.0,Dallas Mavericks,-1,-1,-1
+107,56.0,Denver,-1,-1,-1
+108,56.0,Chicago,1,-1,-1
+109,57.0,Charlotte Hornets,-1,-1,-1
+110,57.0,Miami Heat,-1,-1,-1
+111,58.0,Clippers,-1,-1,-1
+112,58.0,Celtics,-1,-1,-1
+113,59.0,New Orleans Pelicans,-1,-1,-1
+114,59.0,Houston Rockets,-1,-1,-1
+115,60.0,Chicago Bulls,-1,-1,-1
+116,60.0,Orlando Magic,-1,-1,-1
+117,61.0,Hornets,-1,-1,-1
+118,61.0,Bulls,-1,-1,-1
+119,62.0,Atlanta Hawks,-1,-1,-1
+120,62.0,Phoenix Suns,-1,-1,-1
+121,63.0,Timberwolves,-1,-1,-1
+122,63.0,Nets,-1,-1,-1
+123,64.0,Golden State Warriors,-1,-1,-1
+124,64.0,Houston Rockets,-1,-1,-1
+125,65.0,Cleveland Cavaliers,-1,-1,-1
+126,65.0,Indiana Pacers,-1,-1,-1
+127,66.0,Sacramento Kings,-1,-1,-1
+128,66.0,San Antonio Spurs,-1,-1,-1
+129,67.0,San Antonio Spurs,-1,-1,-1
+130,67.0,Memphis Grizzlies,-1,-1,-1
+131,69.0,Miami Heat,-1,-1,-1
+132,69.0,Los Angeles Clippers,-1,-1,-1
+133,70.0,Los Angeles Clippers,-1,-1,-1
+134,70.0,Miami Heat,-1,-1,-1
+135,71.0,Washington Wizards,-1,-1,-1
+136,71.0,Denver Nuggets,-1,-1,-1
+137,72.0,Sacramento Kings,-1,-1,-1
+138,72.0,Washington Wizards,-1,-1,-1
+139,73.0,,-1,-1,-1
+140,74.0,Golden State Warriors,-1,-1,-1
+141,74.0,Bucks,-1,-1,-1
+142,75.0,Los Angeles Clippers,-1,-1,-1
+143,75.0,Boston Celtics,-1,-1,-1
+144,76.0,Oklahoma City Thunder,-1,-1,-1
+145,76.0,Denver Nuggets,-1,-1,-1
+146,77.0,Brooklyn Nets,-1,-1,-1
+147,77.0,Minnesota Timberwolves,-1,-1,-1
+148,78.0,Cavs,-1,-1,-1
+149,78.0,Hornets,-1,-1,-1
+150,79.0,Memphis Grizzlies,-1,-1,-1
+151,79.0,Utah Jazz,-1,-1,-1
+152,80.0,Miami Heat,-1,-1,-1
+153,80.0,Cleveland Cavaliers,,,
+154,81.0,Orlando Magic,-1,-1,-1
+155,81.0,Sacramento Kings,-1,-1,-1
+156,83.0,Suns,-1,-1,-1
+157,83.0,Pistons,-1,-1,-1
+158,84.0,Portland Trail Blazers,-1,-1,-1
+159,84.0,Phoenix Suns,-1,-1,-1
+160,85.0,Dallas Mavericks,-1,-1,-1
+161,85.0,Washington Wizards,-1,-1,-1
+162,86.0,Boston Celtics,-1,-1,-1
+163,86.0,Atlanta Hawks,-1,-1,-1
+164,87.0,Golden State Warriors,-1,-1,-1
+165,87.0,Orlando Magic,-1,-1,-1
+166,88.0,Detroit Pistons,-1,-1,-1
+167,88.0,Brooklyn Nets,-1,-1,-1
+168,89.0,Memphis Grizzlies,-1,-1,-1
+169,89.0,Sacramento Kings,-1,-1,-1
+170,90.0,Los Angeles Clippers,-1,-1,-1
+171,90.0,Denver Nuggets,-1,-1,-1
+172,91.0,Denver,-1,-1,-1
+173,91.0,Knicks,-1,-1,-1
+174,92.0,Denver Nuggets,-1,-1,-1
+175,92.0,Milwaukee Bucks,-1,-1,-1
+176,93.0,Houston Rockets,-1,-1,-1
+177,93.0,Dallas Mavericks,-1,-1,-1
+178,94.0,Philadelphia 76ers,-1,-1,-1
+179,94.0,Minnesota Timberwolves,-1,-1,-1
+180,95.0,Dallas Mavericks,-1,-1,-1
+181,95.0,Brooklyn Nets,-1,-1,-1
+182,96.0,Cleveland Cavaliers,-1,-1,-1
+183,96.0,Atlanta Hawks,-1,-1,-1
+184,97.0,Golden State Warriors,-1,-1,-1
+185,97.0,Utah Jazz,-1,-1,-1
+186,98.0,Brooklyn Nets,-1,-1,-1
+187,98.0,Golden State Warriors,-1,-1,-1
+188,99.0,Portland Trail Blazers,-1,-1,-1
+189,99.0,Miami Heat,-1,-1,-1
+190,100.0,Phoenix Suns,-1,-1,-1
+191,100.0,Indiana Pacers,-1,-1,-1
+192,101.0,Oklahoma City Thunder,-1,-1,-1
+193,101.0,Miami Heat,-1,-1,-1
+194,102.0,Dallas Mavericks,-1,-1,-1
+195,102.0,Utah Jazz,-1,-1,-1
+196,103.0,Suns,-1,-1,-1
+197,103.0,New Orleans,-1,-1,-1
+198,104.0,San Antonio Spurs,-1,-1,-1
+199,104.0,Sacramento Kings,-1,-1,-1
+200,105.0,Los Angeles Clippers,-1,-1,-1
+201,105.0,Orlando Magic,-1,-1,-1
+202,106.0,Portland Trail Blazers,-1,-1,-1
+203,106.0,Golden State Warriors,-1,-1,-1
+204,107.0,Pacers,-1,-1,-1
+205,107.0,Timberwolves,-1,-1,-1
+206,108.0,San Antonio Spurs,48,9,108
+207,108.0,Indiana Pacers,-1,-1,-1
+208,109.0,Utah Jazz,-1,-1,-1
+209,109.0,Miami Heat,-1,-1,-1
+210,110.0,Golden State Warriors,,,
+211,110.0,Los Angeles Lakers,-1,-1,-1
+212,111.0,Detroit Pistons,-1,-1,-1
+213,111.0,Denver Nuggets,-1,-1,-1
+214,112.0,Lakers,-1,-1,-1
+215,112.0,Memphis,-1,-1,-1
+216,113.0,Los Angeles Clippers,-1,-1,-1
+217,113.0,Portland Trail Blazers,-1,-1,-1
+218,114.0,Houston Rockets,-1,-1,-1
+219,114.0,Orlando Magic,-1,-1,-1
+220,115.0,Golden State Warriors,-1,-1,-1
+221,115.0,Memphis Grizzlies,-1,-1,-1
+222,116.0,Memphis Grizzlies,,,
+223,116.0,Portland Trail Blazers,-1,-1,-1
+224,117.0,Toronto Raptors,-1,-1,-1
+225,117.0,Trail Blazers,5,4,-1
+226,118.0,Houston Rockets,29,-1,-1
+227,118.0,Denver Nuggets,-1,-1,-1
+228,119.0,Bulls,-1,-1,-1
+229,119.0,Mavericks,-1,-1,-1
+230,120.0,New Orleans Pelicans,-1,-1,-1
+231,120.0,Milwaukee Bucks,-1,-1,-1
+232,121.0,Los Angeles Clippers,-1,-1,-1
+233,121.0,Miami Heat,-1,-1,-1
+234,124.0,Houston Rockets,49,22,125
+235,124.0,New York Knicks,-1,-1,-1
+236,125.0,San Antonio Spurs,-1,-1,-1
+237,125.0,Sacramento Kings,-1,-1,-1
+238,126.0,Utah Jazz,-1,-1,-1
+239,126.0,Milwaukee Bucks,33,30,-1
+240,127.0,Golden State Warriors,-1,-1,-1
+241,127.0,Orlando Magic,-1,-1,-1
+242,128.0,Boston Celtics,41,30,107
+243,128.0,Atlanta Hawks,-1,-1,-1
+244,129.0,Pistons,-1,-1,-1
+245,129.0,Hawks,-1,-1,-1
+246,130.0,Memphis Grizzlies,-1,-1,-1
+247,130.0,Orlando Magic,-1,-1,-1
+248,131.0,Washington Wizards,-1,-1,-1
+249,131.0,Brooklyn Nets,-1,-1,-1
+250,132.0,Heat,-1,-1,-1
+251,132.0,Bucks,-1,-1,-1
+252,133.0,Bulls,-1,-1,-1
+253,133.0,Blazers,-1,-1,-1
+254,134.0,Los Angeles Clippers,-1,-1,-1
+255,134.0,Chicago Bulls,-1,-1,-1
+256,135.0,Atlanta Hawks,-1,-1,-1
+257,135.0,Miami Heat,-1,-1,-1
+258,136.0,Portland Trail Blazers,-1,-1,-1
+259,136.0,Brooklyn Nets,-1,-1,-1
+260,137.0,New Orleans Pelicans,-1,-1,-1
+261,137.0,Los Angeles Lakers,-1,-1,-1
+262,138.0,Miami Heat,3,-1,-1
+263,138.0,Utah Jazz,-1,-1,-1
+264,139.0,Orlando,-1,-1,-1
+265,139.0,Los Angeles,-1,-1,-1
+266,140.0,Houston Rockets,-1,-1,-1
+267,140.0,Los Angeles Clippers,32,16,120
+268,141.0,San Antonio Spurs,-1,-1,-1
+269,141.0,Philadelphia 76ers,-1,-1,-1
+270,142.0,San Antonio Spurs,-1,-1,-1
+271,142.0,New Orleans Pelicans,-1,-1,-1
+272,143.0,Indiana Pacers,-1,-1,-1
+273,143.0,Orlando Magic,-1,-1,-1
+274,144.0,Washington Wizards,-1,-1,-1
+275,144.0,Los Angeles Clippers,-1,-1,-1
+276,145.0,Portland Trail Blazers,-1,-1,-1
+277,145.0,Sacramento Kings,-1,-1,-1
+278,146.0,Hawks,-1,-1,-1
+279,146.0,Orlando,-1,-1,-1
+280,147.0,Charlotte Hornets,-1,-1,-1
+281,147.0,Detroit Pistons,-1,-1,-1
+282,148.0,Houston Rockets,-1,-1,-1
+283,148.0,Chicago Bulls,-1,-1,-1
+284,149.0,San Antonio Spurs,-1,-1,-1
+285,149.0,Milwaukee Bucks,-1,-1,-1
+286,151.0,Chicago Bulls,-1,-1,-1
+287,151.0,Indiana Pacers,-1,-1,-1
+288,152.0,Miami Heat,-1,-1,-1
+289,152.0,Los Angeles Lakers,-1,-1,-1
+290,153.0,Charlotte Hornets,-1,-1,-1
+291,153.0,Atlanta Hawks,1,-1,-1
+292,154.0,Los Angeles Lakers,-1,-1,-1
+293,154.0,Detroit Pistons,33,32,103
+294,156.0,Warriors,-1,-1,-1
+295,156.0,Sixers,-1,-1,-1
+296,157.0,Phoenix Suns,-1,-1,-1
+297,157.0,Los Angeles Lakers,-1,-1,-1
+298,158.0,Oklahoma City Thunder,-1,-1,-1
+299,158.0,Utah Jazz,-1,-1,-1
+300,159.0,Charlotte Hornets,-1,-1,-1
+301,159.0,Washington Wizards,-1,-1,-1
+302,160.0,Los Angeles Clippers,-1,-1,-1
+303,160.0,San Antonio Spurs,-1,-1,-1
+304,161.0,Spurs,-1,-1,-1
+305,161.0,Raptors,-1,-1,-1
+306,161.0,Nuggets,-1,-1,-1
+307,162.0,Boston Celtics,-1,-1,-1
+308,162.0,Dallas Mavericks,-1,-1,-1
+309,163.0,Dallas Mavericks,-1,-1,-1
+310,163.0,Los Angeles Lakers,-1,-1,-1
+311,164.0,Detroit Pistons,-1,-1,-1
+312,164.0,Phoenix Suns,-1,-1,-1
+313,165.0,Houston Rockets,-1,-1,-1
+314,165.0,Toronto Raptors,-1,-1,-1
+315,166.0,Los Angeles Clippers,-1,-1,-1
+316,166.0,Phoenix Suns,-1,-1,-1
+317,167.0,Memphis Grizzlies,-1,-1,-1
+318,167.0,New Orleans Pelicans,-1,-1,-1
+319,168.0,Cleveland Cavaliers,-1,-1,-1
+320,168.0,Toronto Raptors,-1,-1,-1
+321,169.0,Memphis Grizzlies,-1,-1,-1
+322,169.0,Phoenix Suns,-1,-1,-1
+323,170.0,Golden State Warriors,-1,-1,-1
+324,170.0,Atlanta Hawks,-1,-1,-1
+325,171.0,Atlanta,-1,-1,-1
+326,171.0,Utah,-1,-1,-1
+327,172.0,Dallas Mavericks,-1,-1,-1
+328,172.0,Denver Nuggets,-1,-1,-1
+329,173.0,Cleveland Cavaliers,-1,-1,-1
+330,173.0,Utah Jazz,-1,-1,-1
+331,174.0,Cleveland Cavaliers,-1,-1,-1
+332,174.0,Houston Rockets,-1,-1,-1
+333,175.0,Indiana,-1,-1,-1
+334,175.0,Pistons,-1,-1,-1
+335,176.0,Indiana Pacers,-1,-1,-1
+336,176.0,Milwaukee Bucks,-1,-1,-1
+337,177.0,Miami Heat,-1,-1,-1
+338,177.0,Indiana Pacers,-1,-1,-1
+339,178.0,Washington Wizards,-1,-1,-1
+340,178.0,Chicago Bulls,-1,-1,-1
+341,179.0,Atlanta Hawks,-1,-1,68
+342,179.0,Utah Jazz,,,
+343,180.0,Chicago Bulls,-1,-1,-1
+344,180.0,Orlando Magic,-1,-1,-1
+345,181.0,San Antonio Spurs,-1,-1,-1
+346,181.0,Detroit Pistons,-1,-1,-1
+347,182.0,Golden State Warriors,-1,-1,-1
+348,182.0,Chicago Bulls,-1,-1,-1
+349,183.0,Minnesota Timberwolves,-1,-1,-1
+350,183.0,Oklahoma City Thunder,-1,-1,-1
+351,184.0,Portland Trail Blazers,-1,-1,-1
+352,184.0,Minnesota Timberwolves,-1,-1,-1
+353,185.0,Indiana Pacers,-1,-1,-1
+354,185.0,Cleveland Cavaliers,-1,-1,-1
+355,186.0,Utah Jazz,-1,-1,-1
+356,186.0,Detroit Pistons,-1,-1,-1
+357,187.0,Los Angeles Clippers,-1,-1,-1
+358,187.0,Minnesota Timberwolves,-1,-1,-1
+359,188.0,Oklahoma City Thunder,-1,-1,-1
+360,188.0,Washington Wizards,-1,-1,-1
+361,189.0,San Antonio Spurs,34,19,104
+362,189.0,Denver Nuggets,-1,-1,-1
+363,190.0,Phoenix Suns,-1,-1,-1
+364,190.0,Washington Wizards,-1,-1,-1
+365,191.0,Kings,-1,-1,-1
+366,191.0,Timberwolves,21,45,99
+367,193.0,Indiana Pacers,-1,-1,-1
+368,193.0,Philadelphia 76ers,-1,-1,-1
+369,194.0,Boston Celtics,-1,-1,-1
+370,194.0,New York Knicks,-1,-1,-1
+371,195.0,Utah Jazz,3,4,97
+372,195.0,Detroit Pistons,-1,-1,-1
+373,196.0,Wizards,-1,-1,-1
+374,196.0,Pacers,-1,-1,-1
+375,197.0,Portland Trail Blazers,-1,-1,-1
+376,197.0,Los Angeles Lakers,-1,-1,-1
+377,198.0,Houston Rockets,-1,-1,-1
+378,198.0,Charlotte Hornets,-1,-1,-1
+379,200.0,Golden State Warriors,-1,-1,-1
+380,200.0,Oklahoma City Thunder,-1,-1,-1
+381,201.0,Golden State Warriors,-1,-1,-1
+382,201.0,Sacramento Kings,1,-1,-1
+383,202.0,Utah Jazz,-1,-1,-1
+384,202.0,Milwaukee Bucks,-1,-1,-1
+385,203.0,Los Angeles Clippers,-1,-1,-1
+386,203.0,Chicago Bulls,-1,-1,-1
+387,204.0,Dallas Mavericks,-1,-1,-1
+388,204.0,Milwaukee Bucks,-1,-1,-1
+389,205.0,Brooklyn Nets,-1,-1,-1
+390,205.0,Denver Nuggets,-1,-1,-1
+391,206.0,Dallas Mavericks,-1,-1,-1
+392,206.0,Houston Rockets,-1,-1,-1
+393,207.0,San Antonio,-1,-1,-1
+394,207.0,Boston,-1,-1,-1
+395,208.0,Indiana Pacers,-1,-1,-1
+396,208.0,Los Angeles Clippers,-1,-1,-1
+397,209.0,Atlanta Hawks,-1,-1,-1
+398,209.0,Washington Wizards,-1,-1,-1
+399,210.0,Memphis Grizzlies,-1,-1,-1
+400,210.0,Oklahoma City Thunder,-1,-1,-1
+401,212.0,Golden State Warriors,58,-1,-1
+402,212.0,Phoenix Suns,-1,-1,-1
+403,213.0,Indiana Pacers,-1,-1,-1
+404,213.0,Detroit Pistons,,,
+405,215.0,New Orleans Pelicans,-1,-1,-1
+406,215.0,Milwaukee Bucks,-1,-1,-1
+407,216.0,Memphis Grizzlies,-1,-1,-1
+408,216.0,Portland Trail Blazers,-1,-1,-1
+409,217.0,San Antonio Spurs,-1,-1,-1
+410,217.0,Sacramento Kings,-1,-1,-1
+411,218.0,Cleveland Cavaliers,-1,-1,-1
+412,218.0,Orlando Magic,-1,-1,-1
+413,219.0,Golden Warriors,-1,-1,-1
+414,219.0,Dallas Mavericks,-1,-1,-1
+415,220.0,Boston Celtics,-1,-1,-1
+416,220.0,Utah Jazz,-1,-1,-1
+417,221.0,San Antonio Spurs,-1,-1,-1
+418,221.0,New Orleans Pelicans,-1,-1,-1
+419,222.0,Houston Rockets,-1,-1,-1
+420,222.0,Golden State Warriors,-1,-1,-1
+421,223.0,Indiana Pacers,-1,-1,-1
+422,223.0,Philadelphia 76ers,-1,-1,-1
+423,224.0,Cleveland Cavaliers,-1,-1,-1
+424,224.0,Oklahoma City Thunder,-1,-1,-1
+425,225.0,Milwaukee Bucks,-1,-1,-1
+426,225.0,Minnesota Timberwolves,-1,-1,-1
+427,226.0,Brooklyn Nets,5,7,94
+428,226.0,Toronto Raptors,-1,-1,-1
+429,227.0,New Orleans Pelicans,16,27,-1
+430,227.0,Charlotte Hornets,-1,-1,-1
+431,228.0,Atlanta Hawks,-1,-1,-1
+432,228.0,Brooklyn Nets,-1,-1,-1
+433,229.0,Raptors,-1,-1,-1
+434,229.0,Pacers,-1,-1,-1
+435,230.0,Atlanta Hawks,-1,-1,-1
+436,230.0,New York Knicks,-1,-1,-1
+437,231.0,Memphis Grizzlies,-1,-1,-1
+438,231.0,New Orleans Pelicans,-1,-1,-1
+439,232.0,Oklahoma City Thunder,-1,-1,-1
+440,232.0,Orlando Magic,-1,-1,-1
+441,233.0,Wizards,-1,-1,-1
+442,233.0,Clippers,-1,-1,-1
+443,234.0,Utah Jazz,-1,-1,-1
+444,234.0,Indiana Pacers,-1,-1,-1
+445,235.0,Indiana Pacers,25,34,94
+446,235.0,Brooklyn Nets,-1,-1,-1
+447,236.0,Charlotte Hornets,-1,-1,-1
+448,236.0,Washington Wizards,-1,-1,-1
+449,237.0,Sacramento Kings,-1,-1,-1
+450,237.0,Philadelphia 76ers,-1,-1,-1
+451,238.0,Dallas Mavericks,-1,-1,-1
+452,238.0,Phoenix Suns,-1,-1,-1
+453,239.0,Memphis Grizzlies,-1,-1,-1
+454,239.0,Brooklyn Nets,-1,-1,-1
+455,240.0,Washington Wizards,-1,-1,-1
+456,240.0,Miami Heat,-1,-1,-1
+457,241.0,Grizzlies,-1,-1,-1
+458,241.0,OKC,-1,-1,-1
+459,242.0,Indiana Pacers,-1,-1,-1
+460,242.0,Houston Rockets,-1,-1,-1
+461,243.0,Portland Trail Blazers,-1,-1,-1
+462,243.0,Minnesota Timberwolves,-1,-1,-1
+463,244.0,Sacramento Kings,-1,-1,-1
+464,244.0,Phoenix Suns,-1,-1,-1
+465,245.0,Boston Celtics,-1,-1,-1
+466,245.0,Los Angeles Clippers,16,6,-1
+467,246.0,Spurs,-1,-1,-1
+468,246.0,Trail Blazers,-1,-1,-1
+469,247.0,Chicago Bulls,-1,-1,-1
+470,247.0,Milwaukee Bucks,-1,-1,-1
+471,248.0,Hornets,25,26,108
+472,248.0,Timberwolves,-1,-1,-1
+473,249.0,Atlanta Hawks,-1,-1,-1
+474,249.0,Los Angeles Lakers,-1,-1,-1
+475,250.0,Denver Nuggets,-1,-1,-1
+476,250.0,Charlotte Hornets,-1,-1,-1
+477,251.0,Bulls,-1,-1,-1
+478,251.0,Nets,-1,-1,-1
+479,252.0,Houston,-1,-1,-1
+480,252.0,Phoenix,-1,-1,-1
+481,253.0,Brooklyn,-1,-1,-1
+482,253.0,Memphis,,,
+483,254.0,Boston Celtics,-1,-1,-1
+484,254.0,Phoenix Suns,-1,-1,-1
+485,256.0,Washington Wizards,-1,-1,-1
+486,256.0,Indiana Pacers,-1,-1,-1
+487,257.0,Bulls,-1,-1,-1
+488,257.0,Lakers,-1,-1,-1
+489,258.0,Golden State Warriors,-1,-1,-1
+490,258.0,Atlanta Hawks,-1,-1,-1
+491,259.0,Detroit Pistons,-1,-1,-1
+492,259.0,Oklahoma City Thunder,-1,-1,-1
+493,260.0,Milwaukee Bucks,-1,-1,-1
+494,260.0,Philadelphia 76ers,-1,-1,-1
+495,261.0,Memphis Grizzlies,-1,-1,-1
+496,261.0,Miami Heat,-1,-1,-1
+497,262.0,Magic,-1,-1,-1
+498,262.0,Spurs,-1,-1,-1
+499,263.0,Sacramento Kings,-1,-1,-1
+500,263.0,New York Knicks,-1,-1,-1
+501,264.0,Memphis Grizzlies,-1,-1,-1
+502,264.0,Denver Nuggets,-1,-1,-1
+503,265.0,Brooklyn Nets,-1,-1,-1
+504,265.0,New York Knicks,-1,-1,-1
+505,266.0,Boston Celtics,-1,-1,-1
+506,266.0,Los Angeles Clippers,-1,-1,-1
+507,268.0,Utah Jazz,-1,-1,-1
+508,268.0,Golden State Warriors,-1,-1,-1
+509,269.0,Detroit Pistons,-1,-1,-1
+510,269.0,Cleveland Cavaliers,-1,-1,-1
+511,270.0,Los Angeles Lakers,-1,-1,-1
+512,270.0,Milwaukee Bucks,-1,-1,-1
+513,271.0,Blazers,-1,-1,-1
+514,271.0,Minnesota,-1,-1,-1
+515,272.0,Jazz,-1,-1,-1
+516,272.0,Knicks,-1,-1,-1
+517,273.0,Warriors,-1,-1,-1
+518,273.0,Pistons,3,6,96
+519,275.0,Dallas Mavericks,-1,-1,-1
+520,275.0,San Antonio Spurs,-1,-1,-1
+521,276.0,Phoenix Suns,-1,-1,-1
+522,276.0,Toronto Raptors,-1,-1,-1
+523,277.0,Thunder,,,
+524,277.0,Sixers,-1,-1,-1
+525,278.0,Charlotte Hornets,-1,-1,-1
+526,278.0,Chicago Bulls,-1,-1,-1
+527,279.0,Utah Jazz,-1,-1,-1
+528,279.0,Sacramento Kings,-1,-1,-1
+529,280.0,Charlotte Hornets,-1,-1,-1
+530,280.0,Washington Wizards,-1,-1,-1
+531,281.0,Phoenix Suns,-1,-1,-1
+532,281.0,Los Angeles Clippers,-1,20,-1
+533,282.0,Houston Rockets,-1,-1,-1
+534,282.0,New Orleans Pelicans,-1,-1,-1
+535,283.0,Milwaukee Bucks,-1,-1,-1
+536,283.0,Portland Trail Blazers,-1,-1,-1
+537,284.0,Minnesota Timberwolves,-1,-1,-1
+538,284.0,Sacramento Kings,-1,-1,-1
+539,285.0,Oklahoma City Thunder,-1,-1,-1
+540,285.0,Minnesota Timberwolves,-1,-1,-1
+541,286.0,Milwaukee Bucks,-1,-1,-1
+542,286.0,Philadelphia 76ers,-1,-1,-1
+543,287.0,Miami Heat,-1,-1,-1
+544,287.0,Milwaukee Bucks,-1,-1,-1
+545,288.0,Orlando Magic,-1,-1,-1
+546,288.0,Detroit Pistons,,,
+547,289.0,Brooklyn Nets,-1,19,-1
+548,289.0,Houston Rockets,-1,-1,-1
+549,291.0,Clippers,-1,-1,-1
+550,291.0,Memphis,-1,-1,-1
+551,292.0,Toronto Raptors,24,10,109
+552,292.0,Dallas Mavericks,-1,-1,-1
+553,293.0,Los Angeles Clippers,-1,-1,-1
+554,293.0,Oklahoma City Thunder,1,-1,-1
+555,295.0,Oklahoma City Thunder,-1,-1,-1
+556,295.0,Philadelphia 76ers,-1,-1,-1
+557,296.0,Bucks,-1,-1,-1
+558,296.0,Chicago,-1,-1,-1
+559,297.0,Phoenix Suns,-1,-1,-1
+560,297.0,Miami Heat,-1,-1,-1
+561,298.0,Charlotte Hornets,-1,-1,-1
+562,298.0,Milwaukee Bucks,-1,-1,-1
+563,299.0,Brooklyn Nets,-1,-1,-1
+564,299.0,Oklahoma City Thunder,-1,-1,-1
+565,300.0,Indiana Pacers,-1,-1,-1
+566,300.0,Los Angeles Lakers,-1,-1,-1
+567,301.0,Toronto Raptors,-1,-1,-1
+568,301.0,Memphis Grizzlies,-1,-1,-1
+569,302.0,Oklahoma City,29,12,113
+570,302.0,Dallas Mavericks,-1,-1,-1
+571,303.0,New York Knicks,-1,-1,-1
+572,303.0,Miami Heat,-1,-1,-1
+573,304.0,Los Angeles Clippers,-1,-1,-1
+574,304.0,Utah Jazz,-1,-1,-1
+575,305.0,Miami Heat,-1,-1,-1
+576,305.0,Indiana Pacers,-1,-1,-1
+577,306.0,Mavericks,-1,-1,-1
+578,306.0,Timberwolves,-1,-1,-1
+579,307.0,Washington Wizards,-1,-1,-1
+580,307.0,Brooklyn Nets,-1,-1,-1
+581,308.0,Boston Celtics,-1,-1,-1
+582,308.0,New Orleans Pelicans,-1,-1,-1
+583,309.0,San Antonio Spurs,-1,-1,-1
+584,309.0,Houston Rockets,-1,-1,-1
+585,310.0,Detroit Pistons,-1,-1,-1
+586,310.0,Milwaukee Bucks,-1,-1,-1
+587,311.0,Boston Celtics,-1,-1,-1
+588,311.0,San Antonio Spurs,-1,-1,-1
+589,312.0,76ers,-1,45,-1
+590,312.0,Wizards,-1,-1,-1
+591,314.0,Orlando,-1,-1,-1
+592,314.0,Minnesota,-1,-1,-1
+593,315.0,Oklahoma City Thunder,-1,-1,-1
+594,315.0,Los Angeles Lakers,-1,-1,-1
+595,316.0,Sacramento Kings,-1,-1,-1
+596,316.0,Los Angeles Clippers,-1,-1,-1
+597,317.0,Portland Trail Blazers,-1,-1,-1
+598,317.0,Sacramento Kings,-1,-1,-1
+599,318.0,Milwaukee Bucks,-1,-1,-1
+600,318.0,Portland Trail Blazers,-1,-1,-1
+601,319.0,Minnesota Timberwolves,-1,-1,-1
+602,319.0,Detroit Pistons,-1,-1,-1
+603,320.0,Indiana Pacers,-1,-1,-1
+604,320.0,Brooklyn Nets,-1,-1,-1
+605,321.0,Indiana,-1,-1,-1
+606,321.0,Memphis,-1,-1,-1
+607,322.0,Miami Heat,-1,-1,-1
+608,322.0,Atlanta Hawks,-1,-1,-1
+609,323.0,Dallas Mavericks,-1,-1,-1
+610,323.0,New Orleans Pelicans,-1,-1,-1
+611,324.0,Celtics,-1,-1,-1
+612,324.0,Sixers,-1,-1,-1
+613,325.0,Philadelphia 76ers,,,
+614,325.0,Brooklyn Nets,17,24,-1
+615,326.0,Orlando Magic,-1,-1,-1
+616,326.0,New York Knicks,-1,-1,-1
+617,327.0,Chicago Bulls,-1,-1,-1
+618,327.0,Oklahoma City Thunder,-1,-1,-1
+619,328.0,Toronto Raptors,-1,-1,-1
+620,328.0,Dallas Mavericks,-1,-1,-1
+621,329.0,Washington Wizards,-1,-1,-1
+622,329.0,New York Knicks,-1,-1,-1
+623,331.0,Charlotte Hornets,-1,-1,-1
+624,331.0,Indiana Pacers,-1,-1,-1
+625,332.0,Houston Rockets,-1,-1,-1
+626,332.0,Boston Celtics,3,1,107
+627,333.0,Atlanta Hawks,-1,-1,-1
+628,333.0,Portland Trail Blazers,-1,-1,-1
+629,334.0,Heat,-1,-1,-1
+630,334.0,Hornets,-1,-1,-1
+631,335.0,Utah Jazz,-1,-1,-1
+632,335.0,Portland Trail Blazers,-1,-1,-1
+633,336.0,Denver Nuggets,-1,-1,-1
+634,336.0,Utah Jazz,-1,-1,-1
+635,337.0,Pistons,-1,-1,-1
+636,337.0,Knicks,-1,-1,-1
+637,338.0,Cleveland Cavaliers,-1,-1,-1
+638,338.0,Boston Celtics,-1,-1,-1
+639,339.0,Dallas Mavericks,-1,-1,-1
+640,339.0,Sacramento Kings,-1,-1,-1
+641,340.0,Atlanta Hawks,-1,-1,-1
+642,340.0,Dallas Mavericks,-1,-1,-1
+643,341.0,Atlanta Hawks,-1,21,-1
+644,341.0,Indiana Pacers,-1,-1,-1
+645,342.0,Los Angeles Clippers,-1,-1,-1
+646,342.0,Charlotte Hornets,-1,-1,-1
+647,344.0,Atlanta Hawks,-1,-1,-1
+648,344.0,Washington Wizards,-1,-1,-1
+649,346.0,Chicago Bulls,-1,-1,-1
+650,346.0,Toronto Raptors,-1,-1,-1
+651,347.0,Kings,-1,-1,-1
+652,347.0,Nets,-1,-1,-1
+653,348.0,Los Angeles Clippers,-1,-1,-1
+654,348.0,Philadelphia 76ers,-1,-1,-1
+655,349.0,Miami Heat,-1,-1,-1
+656,349.0,Philadelphia 76ers,-1,-1,-1
+657,350.0,Golden State Warriors,-1,-1,-1
+658,350.0,New Orleans Pelicans,-1,-1,-1
+659,351.0,Thunder,-1,-1,-1
+660,351.0,Jazz,-1,-1,-1
+661,352.0,Dallas,-1,-1,-1
+662,352.0,Orlando,-1,-1,-1
+663,353.0,Washington Wizards,-1,-1,-1
+664,353.0,New York Knicks,-1,-1,-1
+665,354.0,Cleveland Cavaliers,-1,-1,-1
+666,354.0,Oklahoma City Thunder,-1,-1,-1
+667,355.0,Toronto Raptors,-1,-1,-1
+668,355.0,Boston Celtics,-1,-1,-1
+669,356.0,Miami Heat,-1,-1,-1
+670,356.0,Toronto Raptors,-1,-1,-1
+671,357.0,Cavs,-1,-1,-1
+672,357.0,Rockets,-1,-1,-1
+673,358.0,Minnesota Timberwolves,-1,-1,-1
+674,358.0,Denver Nuggets,-1,-1,-1
+675,359.0,Memphis Grizzlies,-1,-1,-1
+676,359.0,New York Knicks,-1,-1,-1
+677,360.0,76ers,-1,-1,-1
+678,360.0,Pelicans,-1,-1,-1
+679,361.0,Utah Jazz,-1,-1,-1
+680,361.0,Los Angeles Lakers,-1,-1,-1
+681,362.0,Sacramento Kings,-1,-1,-1
+682,362.0,Utah Jazz,-1,-1,-1
+683,364.0,Atlanta Hawks,-1,-1,-1
+684,364.0,Philadelphia 76ers,-1,-1,-1
+685,365.0,Orlando Magic,-1,-1,-1
+686,365.0,Milwaukee Bucks,-1,-1,-1
+687,366.0,Denver Nuggets,-1,-1,-1
+688,366.0,Los Angeles Lakers,-1,-1,-1
+689,367.0,Toronto Raptors,-1,-1,-1
+690,367.0,Los Angeles Clippers,-1,-1,-1
+691,368.0,Portland Trail Blazers,-1,-1,-1
+692,368.0,Chicago Bulls,27,29,105
+693,369.0,Houston Rockets,-1,-1,-1
+694,369.0,Minnesota Timberwolves,-1,-1,-1
+695,370.0,Wizards,-1,-1,-1
+696,370.0,Magic,-1,-1,-1
+697,371.0,Celtics,-1,-1,-1
+698,371.0,Hornets,-1,-1,-1
+699,372.0,Brooklyn Nets,-1,-1,-1
+700,372.0,New York Knicks,-1,-1,-1
+701,373.0,Cleveland Cavaliers,-1,-1,-1
+702,373.0,Orlando Magic,-1,-1,-1
+703,374.0,Miami Heat,-1,-1,-1
+704,374.0,New Orleans Pelicans,-1,-1,-1
+705,375.0,,-1,-1,-1
+706,376.0,Utah Jazz,-1,-1,-1
+707,376.0,New York Knicks,-1,-1,-1
+708,377.0,Phoenix Suns,-1,-1,-1
+709,377.0,Brooklyn Nets,-1,-1,-1
+710,378.0,Denver Nuggets,-1,-1,-1
+711,378.0,Indiana Pacers,-1,-1,-1
+712,380.0,Miami Heat,-1,-1,-1
+713,380.0,Detroit Pistons,-1,-1,-1
+714,381.0,Cleveland Cavaliers,-1,-1,-1
+715,381.0,Detroit Pistons,-1,-1,-1
+716,382.0,Bucks,-1,-1,-1
+717,382.0,Suns,-1,-1,-1
+718,383.0,Oklahoma City Thunder,-1,-1,-1
+719,383.0,Sacramento Kings,-1,-1,-1
+720,384.0,Cavs,-1,-1,-1
+721,384.0,Memphis,-1,-1,-1
+722,385.0,Houston,-1,-1,-1
+723,385.0,Phoenix,-1,-1,-1
+724,386.0,Sacramento Kings,-1,-1,-1
+725,386.0,Philadelphia 76ers,-1,-1,-1
+726,387.0,Dallas,-1,-1,-1
+727,387.0,Cavaliers,-1,-1,-1
+728,388.0,Phoenix Suns,-1,-1,-1
+729,388.0,Charlotte Hornets,-1,-1,-1
+730,389.0,Warriors,-1,-1,-1
+731,389.0,Clippers,-1,-1,-1
+732,390.0,Washington Wizards,-1,-1,-1
+733,390.0,Philadelphia 76ers,-1,-1,-1
+734,392.0,Memphis Grizzlies,-1,-1,-1
+735,392.0,Phoenix Suns,-1,-1,-1
+736,393.0,Denver Nuggets,-1,-1,-1
+737,393.0,Golden State Warriors,-1,-1,-1
+738,394.0,Atlanta Hawks,-1,-1,-1
+739,394.0,Cleveland Cavaliers,-1,-1,-1
+740,395.0,Detroit Pistons,-1,-1,-1
+741,395.0,Los Angeles Lakers,-1,-1,-1
+742,396.0,Clippers,-1,-1,-1
+743,396.0,Sixers,-1,-1,-1
+744,397.0,San Antonio Spurs,-1,-1,-1
+745,397.0,Los Angeles Lakers,-1,-1,-1
+746,399.0,Sixers,-1,-1,-1
+747,399.0,Raptors,-1,-1,-1
+748,400.0,Milwaukee Bucks,-1,-1,-1
+749,400.0,Orlando Magic,-1,-1,-1
+750,401.0,Indiana Pacers,-1,-1,-1
+751,401.0,Charlotte Hornets,-1,-1,-1
+752,402.0,Orlando Magic,-1,-1,-1
+753,402.0,Brooklyn Nets,25,35,-1
+754,403.0,Dallas Mavericks,-1,-1,-1
+755,403.0,Toronto Raptors,-1,-1,-1
+756,404.0,Dallas Mavericks,-1,-1,-1
+757,404.0,Los Angeles Lakers,-1,-1,-1
+758,405.0,San Antonio Spurs,-1,-1,-1
+759,405.0,Los Angeles Lakers,-1,-1,-1
+760,406.0,Hornets,-1,-1,-1
+761,406.0,Raptors,-1,-1,-1
+762,407.0,New York Knicks,-1,-1,-1
+763,407.0,Philadelphia 76ers,-1,-1,-1
+764,408.0,Indiana Pacers,-1,-1,-1
+765,408.0,Boston Celtics,-1,-1,-1
+766,409.0,Dallas Mavericks,-1,-1,-1
+767,409.0,Brooklyn Nets,-1,-1,-1
+768,410.0,Sacramento Kings,-1,-1,-1
+769,410.0,Houston Rockets,,,
+770,411.0,Cleveland Cavaliers,-1,-1,-1
+771,411.0,Charlotte Hornets,-1,-1,-1
+772,412.0,Spurs,-1,-1,-1
+773,412.0,Clippers,-1,-1,-1
+774,413.0,Toronto Raptors,-1,-1,-1
+775,413.0,Washington Wizards,-1,-1,-1
+776,414.0,Washington Wizards,-1,-1,-1
+777,414.0,Charlotte Hornets,-1,-1,-1
+778,415.0,Sacramento Kings,-1,-1,-1
+779,415.0,Los Angeles Lakers,-1,-1,-1
+780,416.0,Chicago Bulls,-1,-1,-1
+781,416.0,Detroit Pistons,-1,-1,-1
+782,417.0,Magic,-1,-1,-1
+783,417.0,Thunder,-1,-1,-1
+784,418.0,Minnesota Timberwolves,-1,-1,-1
+785,418.0,Phoenix Suns,-1,-1,-1
+786,419.0,Miami Heat,-1,-1,-1
+787,419.0,Sacramento Kings,-1,-1,-1
+788,420.0,Brooklyn Nets,-1,-1,-1
+789,420.0,Cleveland Cavaliers,-1,-1,-1
+790,421.0,Pistons,-1,-1,-1
+791,421.0,Jazz,-1,-1,-1
+792,422.0,Washington Wizards,-1,-1,-1
+793,422.0,Denver Nuggets,-1,-1,-1
+794,424.0,Toronto Raptors,-1,-1,-1
+795,424.0,Minnesota Timberwolves,-1,-1,-1
+796,425.0,Portland Trail Blazers,-1,-1,-1
+797,425.0,Orlando Magic,-1,-1,-1
+798,426.0,Cleveland Cavaliers,-1,-1,-1
+799,426.0,Detroit Pistons,-1,-1,-1
+800,427.0,Washington Wizards,-1,-1,-1
+801,427.0,Charlotte Hornets,-1,11,-1
+802,428.0,Wizards,-1,-1,-1
+803,428.0,Hawks,-1,-1,-1
+804,429.0,Raptors,13,3,102
+805,429.0,Spurs,-1,-1,-1
+806,430.0,San Antonio Spurs,-1,-1,-1
+807,430.0,Charlotte Hornets,-1,-1,-1
+808,431.0,Oklahoma City Thunder,-1,-1,-1
+809,431.0,Minnesota Timberwolves,-1,-1,-1
+810,432.0,New Orleans Pelicans,-1,-1,-1
+811,432.0,Phoenix Suns,-1,-1,-1
+812,433.0,Rockets,-1,-1,-1
+813,433.0,Suns,-1,-1,-1
+814,434.0,Celtics,-1,-1,-1
+815,434.0,Knicks,-1,-1,-1
+816,435.0,Atlanta Hawks,-1,-1,-1
+817,435.0,Memphis Grizzlies,-1,-1,-1
+818,436.0,,-1,-1,-1
+819,437.0,Miami Heat,-1,-1,-1
+820,437.0,Toronto Raptors,-1,-1,-1
+821,438.0,Golden State Warriors,-1,-1,-1
+822,438.0,Phoenix Suns,-1,-1,-1
+823,440.0,New Orleans Pelicans,-1,-1,-1
+824,440.0,Minnesota Timberwolves,-1,-1,-1
+825,441.0,New York Knicks,-1,-1,-1
+826,441.0,Chicago Bulls,-1,-1,-1
+827,442.0,Detroit Pistons,-1,-1,-1
+828,442.0,Chicago Bulls,-1,-1,-1
+829,443.0,Phoenix Suns,-1,-1,-1
+830,443.0,Philadelphia 76ers,,,
+831,444.0,Boston Celtics,-1,-1,-1
+832,444.0,Miami Heat,-1,-1,-1
+833,445.0,Phoenix Suns,-1,-1,-1
+834,445.0,Orlando Magic,-1,-1,-1
+835,446.0,,-1,-1,-1
+836,447.0,Cleveland Cavaliers,-1,-1,-1
+837,447.0,Charlotte Hornets,-1,-1,-1
+838,448.0,Utah Jazz,-1,-1,-1
+839,448.0,New York Knicks,-1,-1,-1
+840,449.0,Atlanta Hawks,-1,-1,-1
+841,449.0,New Orleans Pelicans,-1,-1,-1
+842,450.0,Utah Jazz,-1,-1,-1
+843,450.0,Philadelphia 76ers,-1,-1,-1
+844,451.0,Oklahoma City Thunder,-1,-1,-1
+845,451.0,Detroit Pistons,-1,-1,-1
+846,452.0,New Orleans Pelicans,-1,-1,-1
+847,452.0,Portland Trail Blazers,35,32,121
+848,453.0,Wizards,-1,-1,-1
+849,453.0,Nets,-1,-1,-1
+850,454.0,Oklahoma City Thunder,-1,-1,-1
+851,454.0,New York Knicks,-1,-1,-1
+852,455.0,Hawks,-1,-1,-1
+853,455.0,Spurs,-1,-1,-1
+854,456.0,Minnesota Timberwolves,-1,-1,-1
+855,456.0,Denver Nuggets,-1,-1,-1
+856,457.0,Los Angeles Clippers,-1,-1,-1
+857,457.0,Cleveland Cavaliers,-1,-1,-1
+858,458.0,Los Angeles Clippers,,,
+859,458.0,Denver Nuggets,-1,-1,-1
+860,459.0,Boston Celtics,-1,-1,-1
+861,459.0,Charlotte Hornets,-1,-1,-1
+862,460.0,Phoenix Suns,-1,-1,-1
+863,460.0,Orlando Magic,-1,-1,-1
+864,461.0,Cleveland Cavaliers,-1,-1,-1
+865,461.0,Denver Nuggets,-1,-1,-1
+866,462.0,Chicago Bulls,-1,-1,-1
+867,462.0,Brooklyn Nets,-1,-1,-1
+868,463.0,Washington Wizards,-1,-1,-1
+869,463.0,New Orleans Pelicans,-1,-1,-1
+870,464.0,Cleveland Cavaliers,-1,-1,-1
+871,464.0,Boston Celtics,-1,-1,-1
+872,465.0,Sacramento Kings,-1,-1,-1
+873,465.0,Memphis Grizzlies,-1,-1,-1
+874,466.0,Chicago Bulls,-1,-1,-1
+875,466.0,Golden State Warriors,-1,-1,-1
+876,467.0,Lakers,-1,-1,-1
+877,467.0,Knicks,-1,-1,-1
+878,468.0,Grizzlies,-1,-1,-1
+879,468.0,Jazz,-1,-1,-1
+880,469.0,Oklahoma City Thunder,-1,-1,-1
+881,469.0,Utah Jazz,-1,-1,-1
+882,470.0,Memphis,-1,-1,-1
+883,470.0,Miami,-1,-1,-1
+884,471.0,Detroit,-1,-1,-1
+885,471.0,Toronto,-1,-1,-1
+886,473.0,Indiana Pacers,-1,-1,-1
+887,473.0,Detroit Pistons,-1,-1,-1
+888,474.0,Thunder,-1,-1,-1
+889,474.0,Kings,-1,-1,-1
+890,475.0,San Antonio Spurs,-1,-1,-1
+891,475.0,Minnesota Timberwolves,-1,-1,-1
+892,476.0,Cleveland Cavaliers,-1,-1,-1
+893,476.0,Utah Jazz,10,10,106
+894,477.0,Sacramento Kings,-1,-1,-1
+895,477.0,Orlando Magic,-1,-1,-1
+896,478.0,Milwaukee,-1,-1,-1
+897,478.0,New York,-1,-1,-1
+898,479.0,Los Angeles Lakers,-1,-1,-1
+899,479.0,Phoenix Suns,-1,-1,-1
+900,480.0,Pacers,-1,-1,-1
+901,480.0,Magic,-1,-1,-1
+902,481.0,Houston Rockets,,,
+903,481.0,New York Knicks,-1,-1,-1
+904,482.0,Toronto Raptors,-1,-1,-1
+905,482.0,Atlanta Hawks,-1,-1,-1
+906,483.0,Utah Jazz,-1,-1,-1
+907,483.0,Houston Rockets,-1,-1,-1
+908,484.0,Phoenix Suns,-1,-1,-1
+909,484.0,Philadelphia 76ers,-1,-1,-1
+910,485.0,Los Angeles Clippers,15,-1,113
+911,485.0,Los Angeles Lakers,-1,-1,-1
+912,486.0,Dallas Mavericks,-1,-1,-1
+913,486.0,Los Angeles Lakers,-1,-1,-1
+914,487.0,Houston Rockets,-1,-1,-1
+915,487.0,Washington Wizards,-1,-1,-1
+916,488.0,Los Angeles Clippers,-1,-1,-1
+917,488.0,Atlanta Hawks,-1,-1,-1
+918,489.0,Dallas,-1,-1,-1
+919,489.0,Brooklyn,-1,-1,-1
+920,490.0,Miami Heat,-1,-1,-1
+921,490.0,Chicago Bulls,30,-1,118
+922,491.0,Sacramento Kings,-1,-1,-1
+923,491.0,New York Knicks,-1,-1,-1
+924,492.0,Denver Nuggets,-1,-1,-1
+925,492.0,New York Knicks,-1,-1,-1
+926,493.0,Miami Heat,-1,-1,-1
+927,493.0,Atlanta Hawks,-1,-1,-1
+928,494.0,Washington Wizards,-1,-1,-1
+929,494.0,Orlando Magic,-1,-1,-1
+930,495.0,Sacramento Kings,-1,-1,-1
+931,495.0,Minnesota Timberwolves,-1,-1,-1
+932,496.0,Washington Wizards,-1,-1,-1
+933,496.0,San Antonio Spurs,-1,-1,-1
+934,497.0,Los Angeles Clippers,-1,-1,-1
+935,497.0,Los Angeles Lakers,-1,-1,-1
+936,498.0,San Antonio Spurs,-1,-1,-1
+937,498.0,Washington Wizards,-1,-1,-1
+938,501.0,,-1,-1,-1
+939,502.0,,-1,-1,-1
+940,503.0,,-1,-1,-1
+941,504.0,,-1,-1,-1
+942,505.0,,-1,-1,-1
+943,506.0,,-1,-1,-1
+944,507.0,,-1,-1,-1
+945,508.0,,-1,-1,-1
+946,509.0,,,,
+947,510.0,,-1,-1,-1
+948,511.0,,-1,-1,-1
+949,512.0,,-1,-1,-1
+950,513.0,,-1,-1,-1
+951,514.0,,,,
+952,515.0,,-1,-1,-1
+953,516.0,,,,
+954,517.0,,-1,-1,-1
+955,518.0,,-1,-1,-1
+956,519.0,,-1,-1,-1
+957,520.0,,-1,-1,-1
+958,521.0,,-1,-1,-1
+959,522.0,,-1,-1,-1
+960,523.0,,-1,-1,-1
+961,524.0,,,,
+962,525.0,,-1,-1,-1
+963,526.0,,-1,-1,-1
+964,527.0,,,,
+965,528.0,,-1,-1,-1
+966,529.0,,-1,-1,-1
+967,,Warriors,-1,-1,-1
+968,,Warriors,-1,-1,-1
+969,,Warriors,-1,-1,-1
+970,,Warriors,-1,-1,-1
+971,,Warriors,-1,-1,-1
+972,,Warriors,-1,-1,-1
+973,,Warriors,-1,-1,-1
+974,,Warriors,-1,-1,-1
+975,,Warriors,-1,-1,-1
+976,,Warriors,-1,-1,-1
+977,,Warriors,-1,-1,-1
+978,,Warriors,-1,-1,-1
+979,,Warriors,-1,-1,-1
+980,,Warriors,-1,-1,-1
+981,,Warriors,-1,-1,-1
+982,,Warriors,-1,-1,-1
+983,,Warriors,-1,-1,-1
+984,,Warriors,-1,-1,-1
+985,,Warriors,-1,-1,-1
+986,,Warriors,-1,-1,-1
+987,,Warriors,-1,-1,-1
+988,,Warriors,-1,-1,-1
+989,,Warriors,-1,-1,-1
+990,,Warriors,-1,-1,-1
+991,,Warriors,-1,-1,-1
+992,,Warriors,-1,-1,-1
+993,,Warriors,-1,-1,-1
+994,,Warriors,-1,-1,-1
+995,,Warriors,-1,-1,-1
+996,,Clippers,-1,-1,-1
+997,,Clippers,-1,-1,-1
+998,,Clippers,-1,-1,-1
+999,,Clippers,-1,-1,-1
+1000,,Clippers,-1,-1,-1
+1001,,Clippers,-1,-1,-1
+1002,,Clippers,-1,-1,-1
+1003,,Clippers,-1,-1,-1
+1004,,Clippers,-1,-1,-1
+1005,,Clippers,-1,-1,-1
+1006,,Clippers,-1,-1,-1
+1007,,Clippers,-1,-1,-1
+1008,,Clippers,-1,-1,-1
+1009,,Clippers,-1,-1,-1
+1010,,Clippers,-1,-1,-1
+1011,,Clippers,-1,-1,-1
+1012,,Clippers,-1,-1,-1
+1013,,Clippers,-1,-1,-1
+1014,,Clippers,-1,-1,-1
+1015,,Clippers,-1,-1,-1
+1016,,Clippers,-1,-1,-1
+1017,,Clippers,-1,-1,-1
+1018,,Clippers,-1,-1,-1
+1019,,Clippers,-1,-1,-1
+1020,,Clippers,-1,-1,-1
+1021,,Clippers,-1,-1,-1
+1022,,Clippers,-1,-1,-1
+1023,,Clippers,-1,-1,-1
+1024,,Clippers,-1,-1,-1
+1025,,Brooklyn Nets,-1,-1,-1
+1026,,Brooklyn Nets,-1,-1,-1
+1027,,Brooklyn Nets,-1,-1,-1
+1028,,Brooklyn Nets,-1,-1,-1
+1029,,Brooklyn Nets,-1,-1,-1
+1030,,Brooklyn Nets,-1,-1,-1
+1031,,Brooklyn Nets,-1,-1,-1
+1032,,Brooklyn Nets,-1,-1,-1
+1033,,Brooklyn Nets,-1,-1,-1
+1034,,Brooklyn Nets,-1,-1,-1
+1035,,Brooklyn Nets,-1,-1,-1
+1036,,Brooklyn Nets,-1,-1,-1
+1037,,Brooklyn Nets,-1,-1,-1
+1038,,Brooklyn Nets,-1,-1,-1
+1039,,Brooklyn Nets,-1,-1,-1
+1040,,Brooklyn Nets,-1,-1,-1
+1041,,Brooklyn Nets,-1,-1,-1
+1042,,Brooklyn Nets,-1,-1,-1
+1043,,Brooklyn Nets,-1,-1,-1
+1044,,Brooklyn Nets,-1,-1,-1
+1045,,Brooklyn Nets,-1,-1,-1
+1046,,Brooklyn Nets,-1,-1,-1
+1047,,Brooklyn Nets,-1,-1,-1
+1048,,Brooklyn Nets,-1,-1,-1
+1049,,Brooklyn Nets,-1,-1,-1
+1050,,Brooklyn Nets,-1,-1,-1
+1051,,Brooklyn Nets,-1,-1,-1
+1052,,Brooklyn Nets,-1,-1,-1
+1053,,Brooklyn Nets,-1,-1,-1
+1054,,Phoenix Suns,-1,-1,-1
+1055,,Phoenix Suns,-1,-1,-1
+1056,,Phoenix Suns,-1,-1,-1
+1057,,Phoenix Suns,-1,-1,-1
+1058,,Phoenix Suns,-1,-1,-1
+1059,,Phoenix Suns,-1,-1,-1
+1060,,Phoenix Suns,-1,-1,-1
+1061,,Phoenix Suns,-1,-1,-1
+1062,,Phoenix Suns,-1,-1,-1
+1063,,Phoenix Suns,-1,-1,-1
+1064,,Phoenix Suns,-1,-1,-1
+1065,,Phoenix Suns,-1,-1,-1
+1066,,Phoenix Suns,-1,-1,-1
+1067,,Phoenix Suns,-1,-1,-1
+1068,,Phoenix Suns,-1,-1,-1
+1069,,Phoenix Suns,-1,-1,-1
+1070,,Phoenix Suns,-1,-1,-1
+1071,,Phoenix Suns,-1,-1,-1
+1072,,Phoenix Suns,-1,-1,-1
+1073,,Phoenix Suns,-1,-1,-1
+1074,,Phoenix Suns,-1,-1,-1
+1075,,Phoenix Suns,-1,-1,-1
+1076,,Phoenix Suns,-1,-1,-1
+1077,,Phoenix Suns,-1,-1,-1
+1078,,Phoenix Suns,-1,-1,-1
+1079,,Phoenix Suns,-1,-1,-1
+1080,,Phoenix Suns,-1,-1,-1
+1081,,Phoenix Suns,-1,-1,-1
+1082,,Phoenix Suns,-1,-1,-1
+1083,,New Orleans Pelicans,-1,-1,-1
+1084,,New Orleans Pelicans,-1,-1,-1
+1085,,New Orleans Pelicans,-1,-1,-1
+1086,,New Orleans Pelicans,-1,-1,-1
+1087,,New Orleans Pelicans,-1,-1,-1
+1088,,New Orleans Pelicans,-1,-1,-1
+1089,,New Orleans Pelicans,-1,-1,-1
+1090,,New Orleans Pelicans,-1,-1,-1
+1091,,New Orleans Pelicans,-1,-1,-1
+1092,,New Orleans Pelicans,-1,-1,-1
+1093,,New Orleans Pelicans,-1,-1,-1
+1094,,New Orleans Pelicans,-1,-1,-1
+1095,,New Orleans Pelicans,-1,-1,-1
+1096,,New Orleans Pelicans,-1,-1,-1
+1097,,New Orleans Pelicans,-1,-1,-1
+1098,,New Orleans Pelicans,-1,-1,-1
+1099,,New Orleans Pelicans,-1,-1,-1
+1100,,New Orleans Pelicans,-1,-1,-1
+1101,,New Orleans Pelicans,-1,-1,-1
+1102,,New Orleans Pelicans,-1,-1,-1
+1103,,New Orleans Pelicans,-1,-1,-1
+1104,,New Orleans Pelicans,-1,-1,-1
+1105,,New Orleans Pelicans,-1,-1,-1
+1106,,New Orleans Pelicans,-1,-1,-1
+1107,,New Orleans Pelicans,-1,-1,-1
+1108,,New Orleans Pelicans,-1,-1,-1
+1109,,New Orleans Pelicans,-1,-1,-1
+1110,,New Orleans Pelicans,-1,-1,-1
+1111,,New Orleans Pelicans,-1,-1,-1
+1112,,Dallas Mavericks,-1,-1,-1
+1113,,Dallas Mavericks,-1,-1,-1
+1114,,Dallas Mavericks,-1,-1,-1
+1115,,Dallas Mavericks,-1,-1,-1
+1116,,Dallas Mavericks,-1,-1,-1
+1117,,Dallas Mavericks,-1,-1,-1
+1118,,Dallas Mavericks,-1,-1,-1
+1119,,Dallas Mavericks,-1,-1,-1
+1120,,Dallas Mavericks,-1,-1,-1
+1121,,Dallas Mavericks,-1,-1,-1
+1122,,Dallas Mavericks,-1,-1,-1
+1123,,Dallas Mavericks,-1,-1,-1
+1124,,Dallas Mavericks,-1,-1,-1
+1125,,Dallas Mavericks,-1,-1,-1
+1126,,Dallas Mavericks,-1,-1,-1
+1127,,Dallas Mavericks,-1,-1,-1
+1128,,Dallas Mavericks,-1,-1,-1
+1129,,Dallas Mavericks,-1,-1,-1
+1130,,Dallas Mavericks,-1,-1,-1
+1131,,Dallas Mavericks,-1,-1,-1
+1132,,Dallas Mavericks,-1,-1,-1
+1133,,Dallas Mavericks,-1,-1,-1
+1134,,Dallas Mavericks,-1,-1,-1
+1135,,Dallas Mavericks,-1,-1,-1
+1136,,Dallas Mavericks,-1,-1,-1
+1137,,Dallas Mavericks,-1,-1,-1
+1138,,Dallas Mavericks,-1,-1,-1
+1139,,Dallas Mavericks,-1,-1,-1
+1140,,Dallas Mavericks,-1,-1,-1
+1141,,Cleveland Cavaliers,-1,-1,-1
+1142,,Cleveland Cavaliers,-1,-1,-1
+1143,,Cleveland Cavaliers,-1,-1,-1
+1144,,Cleveland Cavaliers,-1,-1,-1
+1145,,Cleveland Cavaliers,-1,-1,-1
+1146,,Cleveland Cavaliers,-1,-1,-1
+1147,,Cleveland Cavaliers,-1,-1,-1
+1148,,Cleveland Cavaliers,-1,-1,-1
+1149,,Cleveland Cavaliers,-1,-1,-1
+1150,,Cleveland Cavaliers,-1,-1,-1
+1151,,Cleveland Cavaliers,-1,-1,-1
+1152,,Cleveland Cavaliers,-1,-1,-1
+1153,,Cleveland Cavaliers,-1,-1,-1
+1154,,Cleveland Cavaliers,-1,-1,-1
+1155,,Cleveland Cavaliers,-1,-1,-1
+1156,,Cleveland Cavaliers,-1,-1,-1
+1157,,Cleveland Cavaliers,-1,-1,-1
+1158,,Cleveland Cavaliers,-1,-1,-1
+1159,,Cleveland Cavaliers,-1,-1,-1
+1160,,Cleveland Cavaliers,-1,-1,-1
+1161,,Cleveland Cavaliers,-1,-1,-1
+1162,,Cleveland Cavaliers,-1,-1,-1
+1163,,Cleveland Cavaliers,-1,-1,-1
+1164,,Cleveland Cavaliers,-1,-1,-1
+1165,,Cleveland Cavaliers,-1,-1,-1
+1166,,Cleveland Cavaliers,-1,-1,-1
+1167,,Cleveland Cavaliers,-1,-1,-1
+1168,,Cleveland Cavaliers,-1,-1,-1
+1169,,Cleveland Cavaliers,-1,-1,-1
+1170,,Boston Celtics,-1,-1,-1
+1171,,Boston Celtics,-1,-1,-1
+1172,,Boston Celtics,-1,-1,-1
+1173,,Boston Celtics,-1,-1,-1
+1174,,Boston Celtics,-1,-1,-1
+1175,,Boston Celtics,-1,-1,-1
+1176,,Boston Celtics,-1,-1,-1
+1177,,Boston Celtics,-1,-1,-1
+1178,,Boston Celtics,-1,-1,-1
+1179,,Boston Celtics,-1,-1,-1
+1180,,Boston Celtics,-1,-1,-1
+1181,,Boston Celtics,-1,-1,-1
+1182,,Boston Celtics,-1,-1,-1
+1183,,Boston Celtics,-1,-1,-1
+1184,,Boston Celtics,-1,-1,-1
+1185,,Boston Celtics,-1,-1,-1
+1186,,Boston Celtics,-1,-1,-1
+1187,,Boston Celtics,-1,-1,-1
+1188,,Boston Celtics,-1,-1,-1
+1189,,Boston Celtics,-1,-1,-1
+1190,,Boston Celtics,-1,-1,-1
+1191,,Boston Celtics,-1,-1,-1
+1192,,Boston Celtics,-1,-1,-1
+1193,,Boston Celtics,-1,-1,-1
+1194,,Boston Celtics,-1,-1,-1
+1195,,Boston Celtics,-1,-1,-1
+1196,,Boston Celtics,-1,-1,-1
+1197,,Boston Celtics,-1,-1,-1
+1198,,Boston Celtics,-1,-1,-1
+1199,,Boston Celtics,-1,-1,-1
+1200,,Boston Celtics,-1,-1,-1
+1201,,Boston Celtics,-1,-1,-1
+1202,,Boston Celtics,-1,-1,-1
+1203,,Boston Celtics,-1,-1,-1
+1204,,Boston Celtics,-1,-1,-1
+1205,,Boston Celtics,-1,-1,-1
+1206,,Boston Celtics,-1,-1,-1
+1207,,Boston Celtics,-1,-1,-1
+1208,,Boston Celtics,-1,-1,-1
+1209,,Boston Celtics,-1,-1,-1
+1210,,Boston Celtics,-1,-1,-1
+1211,,Boston Celtics,-1,-1,-1
+1212,,Boston Celtics,-1,-1,-1
+1213,,Boston Celtics,-1,-1,-1
+1214,,Boston Celtics,-1,-1,-1
+1215,,Boston Celtics,-1,-1,-1
+1216,,Boston Celtics,-1,-1,-1
+1217,,Boston Celtics,-1,-1,-1
+1218,,Boston Celtics,-1,-1,-1
+1219,,Boston Celtics,-1,-1,-1
+1220,,Boston Celtics,-1,-1,-1
+1221,,Boston Celtics,-1,-1,-1
+1222,,Boston Celtics,-1,-1,-1
+1223,,Boston Celtics,-1,-1,-1
+1224,,Boston Celtics,-1,-1,-1
+1225,,Boston Celtics,-1,-1,-1
+1226,,Boston Celtics,-1,-1,-1
+1227,,Boston Celtics,-1,-1,-1
+1228,,Orlando Magic,-1,-1,-1
+1229,,Orlando Magic,-1,-1,-1
+1230,,Orlando Magic,-1,-1,-1
+1231,,Orlando Magic,-1,-1,-1
+1232,,Orlando Magic,-1,-1,-1
+1233,,Orlando Magic,-1,-1,-1
+1234,,Orlando Magic,-1,-1,-1
+1235,,Orlando Magic,-1,-1,-1
+1236,,Orlando Magic,-1,-1,-1
+1237,,Orlando Magic,-1,-1,-1
+1238,,Orlando Magic,-1,-1,-1
+1239,,Orlando Magic,-1,-1,-1
+1240,,Orlando Magic,-1,-1,-1
+1241,,Orlando Magic,-1,-1,-1
+1242,,Orlando Magic,-1,-1,-1
+1243,,Orlando Magic,-1,-1,-1
+1244,,Orlando Magic,-1,-1,-1
+1245,,Orlando Magic,-1,-1,-1
+1246,,Orlando Magic,-1,-1,-1
+1247,,Orlando Magic,-1,-1,-1
+1248,,Orlando Magic,-1,-1,-1
+1249,,Orlando Magic,-1,-1,-1
+1250,,Orlando Magic,-1,-1,-1
+1251,,Orlando Magic,-1,-1,-1
+1252,,Orlando Magic,-1,-1,-1
+1253,,Orlando Magic,-1,-1,-1
+1254,,Orlando Magic,-1,-1,-1
+1255,,Orlando Magic,-1,-1,-1
+1256,,Orlando Magic,-1,-1,-1
+1257,,New York Knicks,-1,-1,-1
+1258,,New York Knicks,-1,-1,-1
+1259,,New York Knicks,-1,-1,-1
+1260,,New York Knicks,-1,-1,-1
+1261,,New York Knicks,-1,-1,-1
+1262,,New York Knicks,-1,-1,-1
+1263,,New York Knicks,-1,-1,-1
+1264,,New York Knicks,-1,-1,-1
+1265,,New York Knicks,-1,-1,-1
+1266,,New York Knicks,-1,-1,-1
+1267,,New York Knicks,-1,-1,-1
+1268,,New York Knicks,-1,-1,-1
+1269,,New York Knicks,-1,-1,-1
+1270,,New York Knicks,-1,-1,-1
+1271,,New York Knicks,-1,-1,-1
+1272,,New York Knicks,-1,-1,-1
+1273,,New York Knicks,-1,-1,-1
+1274,,New York Knicks,-1,-1,-1
+1275,,New York Knicks,-1,-1,-1
+1276,,New York Knicks,-1,-1,-1
+1277,,New York Knicks,-1,-1,-1
+1278,,New York Knicks,-1,-1,-1
+1279,,New York Knicks,-1,-1,-1
+1280,,New York Knicks,-1,-1,-1
+1281,,New York Knicks,-1,-1,-1
+1282,,New York Knicks,-1,-1,-1
+1283,,New York Knicks,-1,-1,-1
+1284,,New York Knicks,-1,-1,-1
+1285,,New York Knicks,-1,-1,-1
+1286,,Denver Nuggets,-1,-1,-1
+1287,,Denver Nuggets,-1,-1,-1
+1288,,Denver Nuggets,-1,-1,-1
+1289,,Denver Nuggets,-1,-1,-1
+1290,,Denver Nuggets,-1,-1,-1
+1291,,Denver Nuggets,-1,-1,-1
+1292,,Denver Nuggets,-1,-1,-1
+1293,,Denver Nuggets,-1,-1,-1
+1294,,Denver Nuggets,-1,-1,-1
+1295,,Denver Nuggets,-1,-1,-1
+1296,,Denver Nuggets,-1,-1,-1
+1297,,Denver Nuggets,-1,-1,-1
+1298,,Denver Nuggets,-1,-1,-1
+1299,,Denver Nuggets,-1,-1,-1
+1300,,Denver Nuggets,-1,-1,-1
+1301,,Denver Nuggets,-1,-1,-1
+1302,,Denver Nuggets,-1,-1,-1
+1303,,Denver Nuggets,-1,-1,-1
+1304,,Denver Nuggets,-1,-1,-1
+1305,,Denver Nuggets,-1,-1,-1
+1306,,Denver Nuggets,-1,-1,-1
+1307,,Denver Nuggets,-1,-1,-1
+1308,,Denver Nuggets,-1,-1,-1
+1309,,Denver Nuggets,-1,-1,-1
+1310,,Denver Nuggets,-1,-1,-1
+1311,,Denver Nuggets,-1,-1,-1
+1312,,Denver Nuggets,-1,-1,-1
+1313,,Denver Nuggets,-1,-1,-1
+1314,,Denver Nuggets,-1,-1,-1
+1315,,Atlanta Hawks,-1,-1,-1
+1316,,Atlanta Hawks,-1,-1,-1
+1317,,Atlanta Hawks,-1,-1,-1
+1318,,Atlanta Hawks,-1,-1,-1
+1319,,Atlanta Hawks,-1,-1,-1
+1320,,Atlanta Hawks,-1,-1,-1
+1321,,Atlanta Hawks,-1,-1,-1
+1322,,Atlanta Hawks,-1,-1,-1
+1323,,Atlanta Hawks,-1,-1,-1
+1324,,Atlanta Hawks,-1,-1,-1
+1325,,Atlanta Hawks,-1,-1,-1
+1326,,Atlanta Hawks,-1,-1,-1
+1327,,Atlanta Hawks,-1,-1,-1
+1328,,Atlanta Hawks,-1,-1,-1
+1329,,Atlanta Hawks,-1,-1,-1
+1330,,Atlanta Hawks,-1,-1,-1
+1331,,Atlanta Hawks,-1,-1,-1
+1332,,Atlanta Hawks,-1,-1,-1
+1333,,Atlanta Hawks,-1,-1,-1
+1334,,Atlanta Hawks,-1,-1,-1
+1335,,Atlanta Hawks,-1,-1,-1
+1336,,Atlanta Hawks,-1,-1,-1
+1337,,Atlanta Hawks,-1,-1,-1
+1338,,Atlanta Hawks,-1,-1,-1
+1339,,Atlanta Hawks,-1,-1,-1
+1340,,Atlanta Hawks,-1,-1,-1
+1341,,Atlanta Hawks,-1,-1,-1
+1342,,Atlanta Hawks,-1,-1,-1
+1343,,Atlanta Hawks,-1,-1,-1
+1344,,Brooklyn Nets,-1,-1,-1
+1345,,Brooklyn Nets,-1,-1,-1
+1346,,Brooklyn Nets,-1,-1,-1
+1347,,Brooklyn Nets,-1,-1,-1
+1348,,Brooklyn Nets,-1,-1,-1
+1349,,Brooklyn Nets,-1,-1,-1
+1350,,Brooklyn Nets,-1,-1,-1
+1351,,Brooklyn Nets,-1,-1,-1
+1352,,Brooklyn Nets,-1,-1,-1
+1353,,Brooklyn Nets,-1,-1,-1
+1354,,Brooklyn Nets,-1,-1,-1
+1355,,Brooklyn Nets,-1,-1,-1
+1356,,Brooklyn Nets,-1,-1,-1
+1357,,Brooklyn Nets,-1,-1,-1
+1358,,Brooklyn Nets,-1,-1,-1
+1359,,Brooklyn Nets,-1,-1,-1
+1360,,Brooklyn Nets,-1,-1,-1
+1361,,Brooklyn Nets,-1,-1,-1
+1362,,Brooklyn Nets,-1,-1,-1
+1363,,Brooklyn Nets,-1,-1,-1
+1364,,Brooklyn Nets,-1,-1,-1
+1365,,Brooklyn Nets,-1,-1,-1
+1366,,Brooklyn Nets,-1,-1,-1
+1367,,Brooklyn Nets,-1,-1,-1
+1368,,Brooklyn Nets,-1,-1,-1
+1369,,Brooklyn Nets,-1,-1,-1
+1370,,Brooklyn Nets,-1,-1,-1
+1371,,Brooklyn Nets,-1,-1,-1
+1372,,Brooklyn Nets,-1,-1,-1
+1373,,Utah Jazz,-1,-1,-1
+1374,,Utah Jazz,-1,-1,-1
+1375,,Utah Jazz,-1,-1,-1
+1376,,Utah Jazz,-1,-1,-1
+1377,,Utah Jazz,-1,-1,-1
+1378,,Utah Jazz,-1,-1,-1
+1379,,Utah Jazz,-1,-1,-1
+1380,,Utah Jazz,-1,-1,-1
+1381,,Utah Jazz,-1,-1,-1
+1382,,Utah Jazz,-1,-1,-1
+1383,,Utah Jazz,-1,-1,-1
+1384,,Utah Jazz,-1,-1,-1
+1385,,Utah Jazz,-1,-1,-1
+1386,,Utah Jazz,-1,-1,-1
+1387,,Utah Jazz,-1,-1,-1
+1388,,Utah Jazz,-1,-1,-1
+1389,,Utah Jazz,-1,-1,-1
+1390,,Utah Jazz,-1,-1,-1
+1391,,Utah Jazz,-1,-1,-1
+1392,,Utah Jazz,-1,-1,-1
+1393,,Utah Jazz,-1,-1,-1
+1394,,Utah Jazz,-1,-1,-1
+1395,,Utah Jazz,-1,-1,-1
+1396,,Utah Jazz,-1,-1,-1
+1397,,Utah Jazz,-1,-1,-1
+1398,,Utah Jazz,-1,-1,-1
+1399,,Utah Jazz,-1,-1,-1
+1400,,Utah Jazz,-1,-1,-1
+1401,,Utah Jazz,-1,-1,-1
+1402,,Memphis Grizzlies,-1,-1,-1
+1403,,Memphis Grizzlies,-1,-1,-1
+1404,,Memphis Grizzlies,-1,-1,-1
+1405,,Memphis Grizzlies,-1,-1,-1
+1406,,Memphis Grizzlies,-1,-1,-1
+1407,,Memphis Grizzlies,-1,-1,-1
+1408,,Memphis Grizzlies,-1,-1,-1
+1409,,Memphis Grizzlies,-1,-1,-1
+1410,,Memphis Grizzlies,-1,-1,-1
+1411,,Memphis Grizzlies,-1,-1,-1
+1412,,Memphis Grizzlies,-1,-1,-1
+1413,,Memphis Grizzlies,-1,-1,-1
+1414,,Memphis Grizzlies,-1,-1,-1
+1415,,Memphis Grizzlies,-1,-1,-1
+1416,,Memphis Grizzlies,-1,-1,-1
+1417,,Memphis Grizzlies,-1,-1,-1
+1418,,Memphis Grizzlies,-1,-1,-1
+1419,,Memphis Grizzlies,-1,-1,-1
+1420,,Memphis Grizzlies,-1,-1,-1
+1421,,Memphis Grizzlies,-1,-1,-1
+1422,,Memphis Grizzlies,-1,-1,-1
+1423,,Memphis Grizzlies,-1,-1,-1
+1424,,Memphis Grizzlies,-1,-1,-1
+1425,,Memphis Grizzlies,-1,-1,-1
+1426,,Memphis Grizzlies,-1,-1,-1
+1427,,Memphis Grizzlies,-1,-1,-1
+1428,,Memphis Grizzlies,-1,-1,-1
+1429,,Memphis Grizzlies,-1,-1,-1
+1430,,Memphis Grizzlies,-1,-1,-1
+1431,,New Orleans Pelicans,-1,-1,-1
+1432,,New Orleans Pelicans,-1,-1,-1
+1433,,New Orleans Pelicans,-1,-1,-1
+1434,,New Orleans Pelicans,-1,-1,-1
+1435,,New Orleans Pelicans,-1,-1,-1
+1436,,New Orleans Pelicans,-1,-1,-1
+1437,,New Orleans Pelicans,-1,-1,-1
+1438,,New Orleans Pelicans,-1,-1,-1
+1439,,New Orleans Pelicans,-1,-1,-1
+1440,,New Orleans Pelicans,-1,-1,-1
+1441,,New Orleans Pelicans,-1,-1,-1
+1442,,New Orleans Pelicans,-1,-1,-1
+1443,,New Orleans Pelicans,-1,-1,-1
+1444,,New Orleans Pelicans,-1,-1,-1
+1445,,New Orleans Pelicans,-1,-1,-1
+1446,,New Orleans Pelicans,-1,-1,-1
+1447,,New Orleans Pelicans,-1,-1,-1
+1448,,New Orleans Pelicans,-1,-1,-1
+1449,,New Orleans Pelicans,-1,-1,-1
+1450,,New Orleans Pelicans,-1,-1,-1
+1451,,New Orleans Pelicans,-1,-1,-1
+1452,,New Orleans Pelicans,-1,-1,-1
+1453,,New Orleans Pelicans,-1,-1,-1
+1454,,New Orleans Pelicans,-1,-1,-1
+1455,,New Orleans Pelicans,-1,-1,-1
+1456,,New Orleans Pelicans,-1,-1,-1
+1457,,New Orleans Pelicans,-1,-1,-1
+1458,,New Orleans Pelicans,-1,-1,-1
+1459,,New Orleans Pelicans,-1,-1,-1
+1460,,Minnesota Timberwolves,-1,-1,-1
+1461,,Minnesota Timberwolves,-1,-1,-1
+1462,,Minnesota Timberwolves,-1,-1,-1
+1463,,Minnesota Timberwolves,-1,-1,-1
+1464,,Minnesota Timberwolves,-1,-1,-1
+1465,,Minnesota Timberwolves,-1,-1,-1
+1466,,Minnesota Timberwolves,-1,-1,-1
+1467,,Minnesota Timberwolves,-1,-1,-1
+1468,,Minnesota Timberwolves,-1,-1,-1
+1469,,Minnesota Timberwolves,-1,-1,-1
+1470,,Minnesota Timberwolves,-1,-1,-1
+1471,,Minnesota Timberwolves,-1,-1,-1
+1472,,Minnesota Timberwolves,-1,-1,-1
+1473,,Minnesota Timberwolves,-1,-1,-1
+1474,,Minnesota Timberwolves,-1,-1,-1
+1475,,Minnesota Timberwolves,-1,-1,-1
+1476,,Minnesota Timberwolves,-1,-1,-1
+1477,,Minnesota Timberwolves,-1,-1,-1
+1478,,Minnesota Timberwolves,-1,-1,-1
+1479,,Minnesota Timberwolves,-1,-1,-1
+1480,,Minnesota Timberwolves,-1,-1,-1
+1481,,Minnesota Timberwolves,-1,-1,-1
+1482,,Minnesota Timberwolves,-1,-1,-1
+1483,,Minnesota Timberwolves,-1,-1,-1
+1484,,Minnesota Timberwolves,-1,-1,-1
+1485,,Minnesota Timberwolves,-1,-1,-1
+1486,,Minnesota Timberwolves,-1,-1,-1
+1487,,Minnesota Timberwolves,-1,-1,-1
+1488,,Minnesota Timberwolves,-1,-1,-1
+1489,,Brooklyn Nets,-1,-1,-1
+1490,,Brooklyn Nets,-1,-1,-1
+1491,,Brooklyn Nets,-1,-1,-1
+1492,,Brooklyn Nets,-1,-1,-1
+1493,,Brooklyn Nets,-1,-1,-1
+1494,,Brooklyn Nets,-1,-1,-1
+1495,,Brooklyn Nets,-1,-1,-1
+1496,,Brooklyn Nets,-1,-1,-1
+1497,,Brooklyn Nets,-1,-1,-1
+1498,,Brooklyn Nets,-1,-1,-1
+1499,,Brooklyn Nets,-1,-1,-1
+1500,,Brooklyn Nets,-1,-1,-1
+1501,,Brooklyn Nets,-1,-1,-1
+1502,,Brooklyn Nets,-1,-1,-1
+1503,,Brooklyn Nets,-1,-1,-1
+1504,,Brooklyn Nets,-1,-1,-1
+1505,,Brooklyn Nets,-1,-1,-1
+1506,,Brooklyn Nets,-1,-1,-1
+1507,,Brooklyn Nets,-1,-1,-1
+1508,,Brooklyn Nets,-1,-1,-1
+1509,,Brooklyn Nets,-1,-1,-1
+1510,,Brooklyn Nets,-1,-1,-1
+1511,,Brooklyn Nets,-1,-1,-1
+1512,,Brooklyn Nets,-1,-1,-1
+1513,,Brooklyn Nets,-1,-1,-1
+1514,,Brooklyn Nets,-1,-1,-1
+1515,,Brooklyn Nets,-1,-1,-1
+1516,,Brooklyn Nets,-1,-1,-1
+1517,,Brooklyn Nets,-1,-1,-1
+1518,,Minnesota Timberwolves,-1,-1,-1
+1519,,Minnesota Timberwolves,-1,-1,-1
+1520,,Minnesota Timberwolves,-1,-1,-1
+1521,,Minnesota Timberwolves,-1,-1,-1
+1522,,Minnesota Timberwolves,-1,-1,-1
+1523,,Minnesota Timberwolves,-1,-1,-1
+1524,,Minnesota Timberwolves,-1,-1,-1
+1525,,Minnesota Timberwolves,-1,-1,-1
+1526,,Minnesota Timberwolves,-1,-1,-1
+1527,,Minnesota Timberwolves,-1,-1,-1
+1528,,Minnesota Timberwolves,-1,-1,-1
+1529,,Minnesota Timberwolves,-1,-1,-1
+1530,,Minnesota Timberwolves,-1,-1,-1
+1531,,Minnesota Timberwolves,-1,-1,-1
+1532,,Minnesota Timberwolves,-1,-1,-1
+1533,,Minnesota Timberwolves,-1,-1,-1
+1534,,Minnesota Timberwolves,-1,-1,-1
+1535,,Minnesota Timberwolves,-1,-1,-1
+1536,,Minnesota Timberwolves,-1,-1,-1
+1537,,Minnesota Timberwolves,-1,-1,-1
+1538,,Minnesota Timberwolves,-1,-1,-1
+1539,,Minnesota Timberwolves,-1,-1,-1
+1540,,Minnesota Timberwolves,-1,-1,-1
+1541,,Minnesota Timberwolves,-1,-1,-1
+1542,,Minnesota Timberwolves,-1,-1,-1
+1543,,Minnesota Timberwolves,-1,-1,-1
+1544,,Minnesota Timberwolves,-1,-1,-1
+1545,,Minnesota Timberwolves,-1,-1,-1
+1546,,Minnesota Timberwolves,-1,-1,-1
+1547,,San Antonio Spurs,-1,-1,-1
+1548,,San Antonio Spurs,-1,-1,-1
+1549,,San Antonio Spurs,-1,-1,-1
+1550,,San Antonio Spurs,-1,-1,-1
+1551,,San Antonio Spurs,-1,-1,-1
+1552,,San Antonio Spurs,-1,-1,-1
+1553,,San Antonio Spurs,-1,-1,-1
+1554,,San Antonio Spurs,-1,-1,-1
+1555,,San Antonio Spurs,-1,-1,-1
+1556,,San Antonio Spurs,-1,-1,-1
+1557,,San Antonio Spurs,-1,-1,-1
+1558,,San Antonio Spurs,-1,-1,-1
+1559,,San Antonio Spurs,-1,-1,-1
+1560,,San Antonio Spurs,-1,-1,-1
+1561,,San Antonio Spurs,-1,-1,-1
+1562,,San Antonio Spurs,-1,-1,-1
+1563,,San Antonio Spurs,-1,-1,-1
+1564,,San Antonio Spurs,-1,-1,-1
+1565,,San Antonio Spurs,-1,-1,-1
+1566,,San Antonio Spurs,-1,-1,-1
+1567,,San Antonio Spurs,-1,-1,-1
+1568,,San Antonio Spurs,-1,-1,-1
+1569,,San Antonio Spurs,-1,-1,-1
+1570,,San Antonio Spurs,-1,-1,-1
+1571,,San Antonio Spurs,-1,-1,-1
+1572,,San Antonio Spurs,-1,-1,-1
+1573,,San Antonio Spurs,-1,-1,-1
+1574,,San Antonio Spurs,-1,-1,-1
+1575,,San Antonio Spurs,-1,-1,-1
+1576,,Minnesota Timberwolves,-1,-1,-1
+1577,,Minnesota Timberwolves,-1,-1,-1
+1578,,Minnesota Timberwolves,-1,-1,-1
+1579,,Minnesota Timberwolves,-1,-1,-1
+1580,,Minnesota Timberwolves,-1,-1,-1
+1581,,Minnesota Timberwolves,-1,-1,-1
+1582,,Minnesota Timberwolves,-1,-1,-1
+1583,,Minnesota Timberwolves,-1,-1,-1
+1584,,Minnesota Timberwolves,-1,-1,-1
+1585,,Minnesota Timberwolves,-1,-1,-1
+1586,,Minnesota Timberwolves,-1,-1,-1
+1587,,Minnesota Timberwolves,-1,-1,-1
+1588,,Minnesota Timberwolves,-1,-1,-1
+1589,,Minnesota Timberwolves,-1,-1,-1
+1590,,Minnesota Timberwolves,-1,-1,-1
+1591,,Minnesota Timberwolves,-1,-1,-1
+1592,,Minnesota Timberwolves,-1,-1,-1
+1593,,Minnesota Timberwolves,-1,-1,-1
+1594,,Minnesota Timberwolves,-1,-1,-1
+1595,,Minnesota Timberwolves,-1,-1,-1
+1596,,Minnesota Timberwolves,-1,-1,-1
+1597,,Minnesota Timberwolves,-1,-1,-1
+1598,,Minnesota Timberwolves,-1,-1,-1
+1599,,Minnesota Timberwolves,-1,-1,-1
+1600,,Minnesota Timberwolves,-1,-1,-1
+1601,,Minnesota Timberwolves,-1,-1,-1
+1602,,Minnesota Timberwolves,-1,-1,-1
+1603,,Minnesota Timberwolves,-1,-1,-1
+1604,,Minnesota Timberwolves,-1,-1,-1
+1605,,Brooklyn Nets,-1,-1,-1
+1606,,Brooklyn Nets,-1,-1,-1
+1607,,Brooklyn Nets,-1,-1,-1
+1608,,Brooklyn Nets,-1,-1,-1
+1609,,Brooklyn Nets,-1,-1,-1
+1610,,Brooklyn Nets,-1,-1,-1
+1611,,Brooklyn Nets,-1,-1,-1
+1612,,Brooklyn Nets,-1,-1,-1
+1613,,Brooklyn Nets,-1,-1,-1
+1614,,Brooklyn Nets,-1,-1,-1
+1615,,Brooklyn Nets,-1,-1,-1
+1616,,Brooklyn Nets,-1,-1,-1
+1617,,Brooklyn Nets,-1,-1,-1
+1618,,Brooklyn Nets,-1,-1,-1
+1619,,Brooklyn Nets,-1,-1,-1
+1620,,Brooklyn Nets,-1,-1,-1
+1621,,Brooklyn Nets,-1,-1,-1
+1622,,Brooklyn Nets,-1,-1,-1
+1623,,Brooklyn Nets,-1,-1,-1
+1624,,Brooklyn Nets,-1,-1,-1
+1625,,Brooklyn Nets,-1,-1,-1
+1626,,Brooklyn Nets,-1,-1,-1
+1627,,Brooklyn Nets,-1,-1,-1
+1628,,Brooklyn Nets,-1,-1,-1
+1629,,Brooklyn Nets,-1,-1,-1
+1630,,Brooklyn Nets,-1,-1,-1
+1631,,Brooklyn Nets,-1,-1,-1
+1632,,Brooklyn Nets,-1,-1,-1
+1633,,Brooklyn Nets,-1,-1,-1
+1634,,Oklahoma City Thunder,-1,-1,-1
+1635,,Oklahoma City Thunder,-1,-1,-1
+1636,,Oklahoma City Thunder,-1,-1,-1
+1637,,Oklahoma City Thunder,-1,-1,-1
+1638,,Oklahoma City Thunder,-1,-1,-1
+1639,,Oklahoma City Thunder,-1,-1,-1
+1640,,Oklahoma City Thunder,-1,-1,-1
+1641,,Oklahoma City Thunder,-1,-1,-1
+1642,,Oklahoma City Thunder,-1,-1,-1
+1643,,Oklahoma City Thunder,-1,-1,-1
+1644,,Oklahoma City Thunder,-1,-1,-1
+1645,,Oklahoma City Thunder,-1,-1,-1
+1646,,Oklahoma City Thunder,-1,-1,-1
+1647,,Oklahoma City Thunder,-1,-1,-1
+1648,,Oklahoma City Thunder,-1,-1,-1
+1649,,Oklahoma City Thunder,-1,-1,-1
+1650,,Oklahoma City Thunder,-1,-1,-1
+1651,,Oklahoma City Thunder,-1,-1,-1
+1652,,Oklahoma City Thunder,-1,-1,-1
+1653,,Oklahoma City Thunder,-1,-1,-1
+1654,,Oklahoma City Thunder,-1,-1,-1
+1655,,Oklahoma City Thunder,-1,-1,-1
+1656,,Oklahoma City Thunder,-1,-1,-1
+1657,,Oklahoma City Thunder,-1,-1,-1
+1658,,Oklahoma City Thunder,-1,-1,-1
+1659,,Oklahoma City Thunder,-1,-1,-1
+1660,,Oklahoma City Thunder,-1,-1,-1
+1661,,Oklahoma City Thunder,-1,-1,-1
+1662,,Oklahoma City Thunder,-1,-1,-1
+1663,,Heat,-1,-1,-1
+1664,,Heat,-1,-1,-1
+1665,,Heat,-1,-1,-1
+1666,,Heat,-1,-1,-1
+1667,,Heat,-1,-1,-1
+1668,,Heat,-1,-1,-1
+1669,,Heat,-1,-1,-1
+1670,,Heat,-1,-1,-1
+1671,,Heat,-1,-1,-1
+1672,,Heat,-1,-1,-1
+1673,,Heat,-1,-1,-1
+1674,,Heat,-1,-1,-1
+1675,,Heat,-1,-1,-1
+1676,,Heat,-1,-1,-1
+1677,,Heat,-1,-1,-1
+1678,,Heat,-1,-1,-1
+1679,,Heat,-1,-1,-1
+1680,,Heat,-1,-1,-1
+1681,,Heat,-1,-1,-1
+1682,,Heat,-1,-1,-1
+1683,,Heat,-1,-1,-1
+1684,,Heat,-1,-1,-1
+1685,,Heat,-1,-1,-1
+1686,,Heat,-1,-1,-1
+1687,,Heat,-1,-1,-1
+1688,,Heat,-1,-1,-1
+1689,,Heat,-1,-1,-1
+1690,,Heat,-1,-1,-1
+1691,,Heat,-1,-1,-1
+1692,,Lakers,-1,-1,-1
+1693,,Lakers,-1,-1,-1
+1694,,Lakers,-1,-1,-1
+1695,,Lakers,-1,-1,-1
+1696,,Lakers,-1,-1,-1
+1697,,Lakers,-1,-1,-1
+1698,,Lakers,-1,-1,-1
+1699,,Lakers,-1,-1,-1
+1700,,Lakers,-1,-1,-1
+1701,,Lakers,-1,-1,-1
+1702,,Lakers,-1,-1,-1
+1703,,Lakers,-1,-1,-1
+1704,,Lakers,-1,-1,-1
+1705,,Lakers,-1,-1,-1
+1706,,Lakers,-1,-1,-1
+1707,,Lakers,-1,-1,-1
+1708,,Lakers,-1,-1,-1
+1709,,Lakers,-1,-1,-1
+1710,,Lakers,-1,-1,-1
+1711,,Lakers,-1,-1,-1
+1712,,Lakers,-1,-1,-1
+1713,,Lakers,-1,-1,-1
+1714,,Lakers,-1,-1,-1
+1715,,Lakers,-1,-1,-1
+1716,,Lakers,-1,-1,-1
+1717,,Lakers,-1,-1,-1
+1718,,Lakers,-1,-1,-1
+1719,,Lakers,-1,-1,-1
+1720,,Lakers,-1,-1,-1
+1721,,Charlotte Hornets,-1,-1,-1
+1722,,Charlotte Hornets,-1,-1,-1
+1723,,Charlotte Hornets,-1,-1,-1
+1724,,Charlotte Hornets,-1,-1,-1
+1725,,Charlotte Hornets,-1,-1,-1
+1726,,Charlotte Hornets,-1,-1,-1
+1727,,Charlotte Hornets,-1,-1,-1
+1728,,Charlotte Hornets,-1,-1,-1
+1729,,Charlotte Hornets,-1,-1,-1
+1730,,Charlotte Hornets,-1,-1,-1
+1731,,Charlotte Hornets,-1,-1,-1
+1732,,Charlotte Hornets,-1,-1,-1
+1733,,Charlotte Hornets,-1,-1,-1
+1734,,Charlotte Hornets,-1,-1,-1
+1735,,Charlotte Hornets,-1,-1,-1
+1736,,Charlotte Hornets,-1,-1,-1
+1737,,Charlotte Hornets,-1,-1,-1
+1738,,Charlotte Hornets,-1,-1,-1
+1739,,Charlotte Hornets,-1,-1,-1
+1740,,Charlotte Hornets,-1,-1,-1
+1741,,Charlotte Hornets,-1,-1,-1
+1742,,Charlotte Hornets,-1,-1,-1
+1743,,Charlotte Hornets,-1,-1,-1
+1744,,Charlotte Hornets,-1,-1,-1
+1745,,Charlotte Hornets,-1,-1,-1
+1746,,Charlotte Hornets,-1,-1,-1
+1747,,Charlotte Hornets,-1,-1,-1
+1748,,Charlotte Hornets,-1,-1,-1
+1749,,Charlotte Hornets,-1,-1,-1
+1750,,Toronto Raptors,-1,-1,-1
+1751,,Toronto Raptors,-1,-1,-1
+1752,,Toronto Raptors,-1,-1,-1
+1753,,Toronto Raptors,-1,-1,-1
+1754,,Toronto Raptors,-1,-1,-1
+1755,,Toronto Raptors,-1,-1,-1
+1756,,Toronto Raptors,-1,-1,-1
+1757,,Toronto Raptors,-1,-1,-1
+1758,,Toronto Raptors,-1,-1,-1
+1759,,Toronto Raptors,-1,-1,-1
+1760,,Toronto Raptors,-1,-1,-1
+1761,,Toronto Raptors,-1,-1,-1
+1762,,Toronto Raptors,-1,-1,-1
+1763,,Toronto Raptors,-1,-1,-1
+1764,,Toronto Raptors,-1,-1,-1
+1765,,Toronto Raptors,-1,-1,-1
+1766,,Toronto Raptors,-1,-1,-1
+1767,,Toronto Raptors,-1,-1,-1
+1768,,Toronto Raptors,-1,-1,-1
+1769,,Toronto Raptors,-1,-1,-1
+1770,,Toronto Raptors,-1,-1,-1
+1771,,Toronto Raptors,-1,-1,-1
+1772,,Toronto Raptors,-1,-1,-1
+1773,,Toronto Raptors,-1,-1,-1
+1774,,Toronto Raptors,-1,-1,-1
+1775,,Toronto Raptors,-1,-1,-1
+1776,,Toronto Raptors,-1,-1,-1
+1777,,Toronto Raptors,-1,-1,-1
+1778,,Toronto Raptors,-1,-1,-1
+1779,,Philadelphia 76ers,-1,-1,-1
+1780,,Philadelphia 76ers,-1,-1,-1
+1781,,Philadelphia 76ers,-1,-1,-1
+1782,,Philadelphia 76ers,-1,-1,-1
+1783,,Philadelphia 76ers,-1,-1,-1
+1784,,Philadelphia 76ers,-1,-1,-1
+1785,,Philadelphia 76ers,-1,-1,-1
+1786,,Philadelphia 76ers,-1,-1,-1
+1787,,Philadelphia 76ers,-1,-1,-1
+1788,,Philadelphia 76ers,-1,-1,-1
+1789,,Philadelphia 76ers,-1,-1,-1
+1790,,Philadelphia 76ers,-1,-1,-1
+1791,,Philadelphia 76ers,-1,-1,-1
+1792,,Philadelphia 76ers,-1,-1,-1
+1793,,Philadelphia 76ers,-1,-1,-1
+1794,,Philadelphia 76ers,-1,-1,-1
+1795,,Philadelphia 76ers,-1,-1,-1
+1796,,Philadelphia 76ers,-1,-1,-1
+1797,,Philadelphia 76ers,-1,-1,-1
+1798,,Philadelphia 76ers,-1,-1,-1
+1799,,Philadelphia 76ers,-1,-1,-1
+1800,,Philadelphia 76ers,-1,-1,-1
+1801,,Philadelphia 76ers,-1,-1,-1
+1802,,Philadelphia 76ers,-1,-1,-1
+1803,,Philadelphia 76ers,-1,-1,-1
+1804,,Philadelphia 76ers,-1,-1,-1
+1805,,Philadelphia 76ers,-1,-1,-1
+1806,,Philadelphia 76ers,-1,-1,-1
+1807,,Philadelphia 76ers,-1,-1,-1
+1808,,Brooklyn Nets,-1,-1,-1
+1809,,Brooklyn Nets,-1,-1,-1
+1810,,Brooklyn Nets,-1,-1,-1
+1811,,Brooklyn Nets,-1,-1,-1
+1812,,Brooklyn Nets,-1,-1,-1
+1813,,Brooklyn Nets,-1,-1,-1
+1814,,Brooklyn Nets,-1,-1,-1
+1815,,Brooklyn Nets,-1,-1,-1
+1816,,Brooklyn Nets,-1,-1,-1
+1817,,Brooklyn Nets,-1,-1,-1
+1818,,Brooklyn Nets,-1,-1,-1
+1819,,Brooklyn Nets,-1,-1,-1
+1820,,Brooklyn Nets,-1,-1,-1
+1821,,Brooklyn Nets,-1,-1,-1
+1822,,Brooklyn Nets,-1,-1,-1
+1823,,Brooklyn Nets,-1,-1,-1
+1824,,Brooklyn Nets,-1,-1,-1
+1825,,Brooklyn Nets,-1,-1,-1
+1826,,Brooklyn Nets,-1,-1,-1
+1827,,Brooklyn Nets,-1,-1,-1
+1828,,Brooklyn Nets,-1,-1,-1
+1829,,Brooklyn Nets,-1,-1,-1
+1830,,Brooklyn Nets,-1,-1,-1
+1831,,Brooklyn Nets,-1,-1,-1
+1832,,Brooklyn Nets,-1,-1,-1
+1833,,Brooklyn Nets,-1,-1,-1
+1834,,Brooklyn Nets,-1,-1,-1
+1835,,Brooklyn Nets,-1,-1,-1
+1836,,Brooklyn Nets,-1,-1,-1
+1837,,Oklahoma City Thunder,-1,-1,-1
+1838,,Oklahoma City Thunder,-1,-1,-1
+1839,,Oklahoma City Thunder,-1,-1,-1
+1840,,Oklahoma City Thunder,-1,-1,-1
+1841,,Oklahoma City Thunder,-1,-1,-1
+1842,,Oklahoma City Thunder,-1,-1,-1
+1843,,Oklahoma City Thunder,-1,-1,-1
+1844,,Oklahoma City Thunder,-1,-1,-1
+1845,,Oklahoma City Thunder,-1,-1,-1
+1846,,Oklahoma City Thunder,-1,-1,-1
+1847,,Oklahoma City Thunder,-1,-1,-1
+1848,,Oklahoma City Thunder,-1,-1,-1
+1849,,Oklahoma City Thunder,-1,-1,-1
+1850,,Oklahoma City Thunder,-1,-1,-1
+1851,,Oklahoma City Thunder,-1,-1,-1
+1852,,Oklahoma City Thunder,-1,-1,-1
+1853,,Oklahoma City Thunder,-1,-1,-1
+1854,,Oklahoma City Thunder,-1,-1,-1
+1855,,Oklahoma City Thunder,-1,-1,-1
+1856,,Oklahoma City Thunder,-1,-1,-1
+1857,,Oklahoma City Thunder,-1,-1,-1
+1858,,Oklahoma City Thunder,-1,-1,-1
+1859,,Oklahoma City Thunder,-1,-1,-1
+1860,,Oklahoma City Thunder,-1,-1,-1
+1861,,Oklahoma City Thunder,-1,-1,-1
+1862,,Oklahoma City Thunder,-1,-1,-1
+1863,,Oklahoma City Thunder,-1,-1,-1
+1864,,Oklahoma City Thunder,-1,-1,-1
+1865,,Oklahoma City Thunder,-1,-1,-1
+1866,,Utah Jazz,-1,-1,-1
+1867,,Utah Jazz,-1,-1,-1
+1868,,Utah Jazz,-1,-1,-1
+1869,,Utah Jazz,-1,-1,-1
+1870,,Utah Jazz,-1,-1,-1
+1871,,Utah Jazz,-1,-1,-1
+1872,,Utah Jazz,-1,-1,-1
+1873,,Utah Jazz,-1,-1,-1
+1874,,Utah Jazz,-1,-1,-1
+1875,,Utah Jazz,-1,-1,-1
+1876,,Utah Jazz,-1,-1,-1
+1877,,Utah Jazz,-1,-1,-1
+1878,,Utah Jazz,-1,-1,-1
+1879,,Utah Jazz,-1,-1,-1
+1880,,Utah Jazz,-1,-1,-1
+1881,,Utah Jazz,-1,-1,-1
+1882,,Utah Jazz,-1,-1,-1
+1883,,Utah Jazz,-1,-1,-1
+1884,,Utah Jazz,-1,-1,-1
+1885,,Utah Jazz,-1,-1,-1
+1886,,Utah Jazz,-1,-1,-1
+1887,,Utah Jazz,-1,-1,-1
+1888,,Utah Jazz,-1,-1,-1
+1889,,Utah Jazz,-1,-1,-1
+1890,,Utah Jazz,-1,-1,-1
+1891,,Utah Jazz,-1,-1,-1
+1892,,Utah Jazz,-1,-1,-1
+1893,,Utah Jazz,-1,-1,-1
+1894,,Utah Jazz,-1,-1,-1
+1895,,Hornets,-1,-1,-1
+1896,,Hornets,-1,-1,-1
+1897,,Hornets,-1,-1,-1
+1898,,Hornets,-1,-1,-1
+1899,,Hornets,-1,-1,-1
+1900,,Hornets,-1,-1,-1
+1901,,Hornets,-1,-1,-1
+1902,,Hornets,-1,-1,-1
+1903,,Hornets,-1,-1,-1
+1904,,Hornets,-1,-1,-1
+1905,,Hornets,-1,-1,-1
+1906,,Hornets,-1,-1,-1
+1907,,Hornets,-1,-1,-1
+1908,,Hornets,-1,-1,-1
+1909,,Hornets,-1,-1,-1
+1910,,Hornets,-1,-1,-1
+1911,,Hornets,-1,-1,-1
+1912,,Hornets,-1,-1,-1
+1913,,Hornets,-1,-1,-1
+1914,,Hornets,-1,-1,-1
+1915,,Hornets,-1,-1,-1
+1916,,Hornets,-1,-1,-1
+1917,,Hornets,-1,-1,-1
+1918,,Hornets,-1,-1,-1
+1919,,Hornets,-1,-1,-1
+1920,,Hornets,-1,-1,-1
+1921,,Hornets,-1,-1,-1
+1922,,Hornets,-1,-1,-1
+1923,,Hornets,-1,-1,-1
+1924,,Heat,-1,-1,-1
+1925,,Heat,-1,-1,-1
+1926,,Heat,-1,-1,-1
+1927,,Heat,-1,-1,-1
+1928,,Heat,-1,-1,-1
+1929,,Heat,-1,-1,-1
+1930,,Heat,-1,-1,-1
+1931,,Heat,-1,-1,-1
+1932,,Heat,-1,-1,-1
+1933,,Heat,-1,-1,-1
+1934,,Heat,-1,-1,-1
+1935,,Heat,-1,-1,-1
+1936,,Heat,-1,-1,-1
+1937,,Heat,-1,-1,-1
+1938,,Heat,-1,-1,-1
+1939,,Heat,-1,-1,-1
+1940,,Heat,-1,-1,-1
+1941,,Heat,-1,-1,-1
+1942,,Heat,-1,-1,-1
+1943,,Heat,-1,-1,-1
+1944,,Heat,-1,-1,-1
+1945,,Heat,-1,-1,-1
+1946,,Heat,-1,-1,-1
+1947,,Heat,-1,-1,-1
+1948,,Heat,-1,-1,-1
+1949,,Heat,-1,-1,-1
+1950,,Heat,-1,-1,-1
+1951,,Heat,-1,-1,-1
+1952,,Heat,-1,-1,-1
+1953,,Boston Celtics,-1,-1,-1
+1954,,Boston Celtics,-1,-1,-1
+1955,,Boston Celtics,-1,-1,-1
+1956,,Boston Celtics,-1,-1,-1
+1957,,Boston Celtics,-1,-1,-1
+1958,,Boston Celtics,-1,-1,-1
+1959,,Boston Celtics,-1,-1,-1
+1960,,Boston Celtics,-1,-1,-1
+1961,,Boston Celtics,-1,-1,-1
+1962,,Boston Celtics,-1,-1,-1
+1963,,Boston Celtics,-1,-1,-1
+1964,,Boston Celtics,-1,-1,-1
+1965,,Boston Celtics,-1,-1,-1
+1966,,Boston Celtics,-1,-1,-1
+1967,,Boston Celtics,-1,-1,-1
+1968,,Boston Celtics,-1,-1,-1
+1969,,Boston Celtics,-1,-1,-1
+1970,,Boston Celtics,-1,-1,-1
+1971,,Boston Celtics,-1,-1,-1
+1972,,Boston Celtics,-1,-1,-1
+1973,,Boston Celtics,-1,-1,-1
+1974,,Boston Celtics,-1,-1,-1
+1975,,Boston Celtics,-1,-1,-1
+1976,,Boston Celtics,-1,-1,-1
+1977,,Boston Celtics,-1,-1,-1
+1978,,Boston Celtics,-1,-1,-1
+1979,,Boston Celtics,-1,-1,-1
+1980,,Boston Celtics,-1,-1,-1
+1981,,Boston Celtics,-1,-1,-1
+1982,,Chicago Bulls,-1,-1,-1
+1983,,Chicago Bulls,-1,-1,-1
+1984,,Chicago Bulls,-1,-1,-1
+1985,,Chicago Bulls,-1,-1,-1
+1986,,Chicago Bulls,-1,-1,-1
+1987,,Chicago Bulls,-1,-1,-1
+1988,,Chicago Bulls,-1,-1,-1
+1989,,Chicago Bulls,-1,-1,-1
+1990,,Chicago Bulls,-1,-1,-1
+1991,,Chicago Bulls,-1,-1,-1
+1992,,Chicago Bulls,-1,-1,-1
+1993,,Chicago Bulls,-1,-1,-1
+1994,,Chicago Bulls,-1,-1,-1
+1995,,Chicago Bulls,-1,-1,-1
+1996,,Chicago Bulls,-1,-1,-1
+1997,,Chicago Bulls,-1,-1,-1
+1998,,Chicago Bulls,-1,-1,-1
+1999,,Chicago Bulls,-1,-1,-1
+2000,,Chicago Bulls,-1,-1,-1
+2001,,Chicago Bulls,-1,-1,-1
+2002,,Chicago Bulls,-1,-1,-1
+2003,,Chicago Bulls,-1,-1,-1
+2004,,Chicago Bulls,-1,-1,-1
+2005,,Chicago Bulls,-1,-1,-1
+2006,,Chicago Bulls,-1,-1,-1
+2007,,Chicago Bulls,-1,-1,-1
+2008,,Chicago Bulls,-1,-1,-1
+2009,,Chicago Bulls,-1,-1,-1
+2010,,Chicago Bulls,-1,-1,-1
+2011,,Chicago Bulls,-1,-1,-1
+2012,,Chicago Bulls,-1,-1,-1
+2013,,Chicago Bulls,-1,-1,-1
+2014,,Chicago Bulls,-1,-1,-1
+2015,,Chicago Bulls,-1,-1,-1
+2016,,Chicago Bulls,-1,-1,-1
+2017,,Chicago Bulls,-1,-1,-1
+2018,,Chicago Bulls,-1,-1,-1
+2019,,Chicago Bulls,-1,-1,-1
+2020,,Chicago Bulls,-1,-1,-1
+2021,,Chicago Bulls,-1,-1,-1
+2022,,Chicago Bulls,-1,-1,-1
+2023,,Chicago Bulls,-1,-1,-1
+2024,,Chicago Bulls,-1,-1,-1
+2025,,Chicago Bulls,-1,-1,-1
+2026,,Chicago Bulls,-1,-1,-1
+2027,,Chicago Bulls,-1,-1,-1
+2028,,Chicago Bulls,-1,-1,-1
+2029,,Chicago Bulls,-1,-1,-1
+2030,,Chicago Bulls,-1,-1,-1
+2031,,Chicago Bulls,-1,-1,-1
+2032,,Chicago Bulls,-1,-1,-1
+2033,,Chicago Bulls,-1,-1,-1
+2034,,Chicago Bulls,-1,-1,-1
+2035,,Chicago Bulls,-1,-1,-1
+2036,,Chicago Bulls,-1,-1,-1
+2037,,Chicago Bulls,-1,-1,-1
+2038,,Chicago Bulls,-1,-1,-1
+2039,,Chicago Bulls,-1,-1,-1
+2040,,Houston Rockets,-1,-1,-1
+2041,,Houston Rockets,-1,-1,-1
+2042,,Houston Rockets,-1,-1,-1
+2043,,Houston Rockets,-1,-1,-1
+2044,,Houston Rockets,-1,-1,-1
+2045,,Houston Rockets,-1,-1,-1
+2046,,Houston Rockets,-1,-1,-1
+2047,,Houston Rockets,-1,-1,-1
+2048,,Houston Rockets,-1,-1,-1
+2049,,Houston Rockets,-1,-1,-1
+2050,,Houston Rockets,-1,-1,-1
+2051,,Houston Rockets,-1,-1,-1
+2052,,Houston Rockets,-1,-1,-1
+2053,,Houston Rockets,-1,-1,-1
+2054,,Houston Rockets,-1,-1,-1
+2055,,Houston Rockets,-1,-1,-1
+2056,,Houston Rockets,-1,-1,-1
+2057,,Houston Rockets,-1,-1,-1
+2058,,Houston Rockets,-1,-1,-1
+2059,,Houston Rockets,-1,-1,-1
+2060,,Houston Rockets,-1,-1,-1
+2061,,Houston Rockets,-1,-1,-1
+2062,,Houston Rockets,-1,-1,-1
+2063,,Houston Rockets,-1,-1,-1
+2064,,Houston Rockets,-1,-1,-1
+2065,,Houston Rockets,-1,-1,-1
+2066,,Houston Rockets,-1,-1,-1
+2067,,Houston Rockets,-1,-1,-1
+2068,,Houston Rockets,-1,-1,-1
+2069,,Denver Nuggets,-1,-1,-1
+2070,,Denver Nuggets,-1,-1,-1
+2071,,Denver Nuggets,-1,-1,-1
+2072,,Denver Nuggets,-1,-1,-1
+2073,,Denver Nuggets,-1,-1,-1
+2074,,Denver Nuggets,-1,-1,-1
+2075,,Denver Nuggets,-1,-1,-1
+2076,,Denver Nuggets,-1,-1,-1
+2077,,Denver Nuggets,-1,-1,-1
+2078,,Denver Nuggets,-1,-1,-1
+2079,,Denver Nuggets,-1,-1,-1
+2080,,Denver Nuggets,-1,-1,-1
+2081,,Denver Nuggets,-1,-1,-1
+2082,,Denver Nuggets,-1,-1,-1
+2083,,Denver Nuggets,-1,-1,-1
+2084,,Denver Nuggets,-1,-1,-1
+2085,,Denver Nuggets,-1,-1,-1
+2086,,Denver Nuggets,-1,-1,-1
+2087,,Denver Nuggets,-1,-1,-1
+2088,,Denver Nuggets,-1,-1,-1
+2089,,Denver Nuggets,-1,-1,-1
+2090,,Denver Nuggets,-1,-1,-1
+2091,,Denver Nuggets,-1,-1,-1
+2092,,Denver Nuggets,-1,-1,-1
+2093,,Denver Nuggets,-1,-1,-1
+2094,,Denver Nuggets,-1,-1,-1
+2095,,Denver Nuggets,-1,-1,-1
+2096,,Denver Nuggets,-1,-1,-1
+2097,,Denver Nuggets,-1,-1,-1
+2098,,Phoenix Suns,-1,-1,-1
+2099,,Phoenix Suns,-1,-1,-1
+2100,,Phoenix Suns,-1,-1,-1
+2101,,Phoenix Suns,-1,-1,-1
+2102,,Phoenix Suns,-1,-1,-1
+2103,,Phoenix Suns,-1,-1,-1
+2104,,Phoenix Suns,-1,-1,-1
+2105,,Phoenix Suns,-1,-1,-1
+2106,,Phoenix Suns,-1,-1,-1
+2107,,Phoenix Suns,-1,-1,-1
+2108,,Phoenix Suns,-1,-1,-1
+2109,,Phoenix Suns,-1,-1,-1
+2110,,Phoenix Suns,-1,-1,-1
+2111,,Phoenix Suns,-1,-1,-1
+2112,,Phoenix Suns,-1,-1,-1
+2113,,Phoenix Suns,-1,-1,-1
+2114,,Phoenix Suns,-1,-1,-1
+2115,,Phoenix Suns,-1,-1,-1
+2116,,Phoenix Suns,-1,-1,-1
+2117,,Phoenix Suns,-1,-1,-1
+2118,,Phoenix Suns,-1,-1,-1
+2119,,Phoenix Suns,-1,-1,-1
+2120,,Phoenix Suns,-1,-1,-1
+2121,,Phoenix Suns,-1,-1,-1
+2122,,Phoenix Suns,-1,-1,-1
+2123,,Phoenix Suns,-1,-1,-1
+2124,,Phoenix Suns,-1,-1,-1
+2125,,Phoenix Suns,-1,-1,-1
+2126,,Phoenix Suns,-1,-1,-1
+2127,,Milwaukee,-1,-1,-1
+2128,,Milwaukee,-1,-1,-1
+2129,,Milwaukee,-1,-1,-1
+2130,,Milwaukee,-1,-1,-1
+2131,,Milwaukee,-1,-1,-1
+2132,,Milwaukee,-1,-1,-1
+2133,,Milwaukee,-1,-1,-1
+2134,,Milwaukee,-1,-1,-1
+2135,,Milwaukee,-1,-1,-1
+2136,,Milwaukee,-1,-1,-1
+2137,,Milwaukee,-1,-1,-1
+2138,,Milwaukee,-1,-1,-1
+2139,,Milwaukee,-1,-1,-1
+2140,,Milwaukee,-1,-1,-1
+2141,,Milwaukee,-1,-1,-1
+2142,,Milwaukee,-1,-1,-1
+2143,,Milwaukee,-1,-1,-1
+2144,,Milwaukee,-1,-1,-1
+2145,,Milwaukee,-1,-1,-1
+2146,,Milwaukee,-1,-1,-1
+2147,,Milwaukee,-1,-1,-1
+2148,,Milwaukee,-1,-1,-1
+2149,,Milwaukee,-1,-1,-1
+2150,,Milwaukee,-1,-1,-1
+2151,,Milwaukee,-1,-1,-1
+2152,,Milwaukee,-1,-1,-1
+2153,,Milwaukee,-1,-1,-1
+2154,,Milwaukee,-1,-1,-1
+2155,,Milwaukee,-1,-1,-1
+2156,,Phoenix,-1,-1,-1
+2157,,Phoenix,-1,-1,-1
+2158,,Phoenix,-1,-1,-1
+2159,,Phoenix,-1,-1,-1
+2160,,Phoenix,-1,-1,-1
+2161,,Phoenix,-1,-1,-1
+2162,,Phoenix,-1,-1,-1
+2163,,Phoenix,-1,-1,-1
+2164,,Phoenix,-1,-1,-1
+2165,,Phoenix,-1,-1,-1
+2166,,Phoenix,-1,-1,-1
+2167,,Phoenix,-1,-1,-1
+2168,,Phoenix,-1,-1,-1
+2169,,Phoenix,-1,-1,-1
+2170,,Phoenix,-1,-1,-1
+2171,,Phoenix,-1,-1,-1
+2172,,Phoenix,-1,-1,-1
+2173,,Phoenix,-1,-1,-1
+2174,,Phoenix,-1,-1,-1
+2175,,Phoenix,-1,-1,-1
+2176,,Phoenix,-1,-1,-1
+2177,,Phoenix,-1,-1,-1
+2178,,Phoenix,-1,-1,-1
+2179,,Phoenix,-1,-1,-1
+2180,,Phoenix,-1,-1,-1
+2181,,Phoenix,-1,-1,-1
+2182,,Phoenix,-1,-1,-1
+2183,,Phoenix,-1,-1,-1
+2184,,Phoenix,-1,-1,-1
+2185,,Bulls,-1,-1,-1
+2186,,Bulls,-1,-1,-1
+2187,,Bulls,-1,-1,-1
+2188,,Bulls,-1,-1,-1
+2189,,Bulls,-1,-1,-1
+2190,,Bulls,-1,-1,-1
+2191,,Bulls,-1,-1,-1
+2192,,Bulls,-1,-1,-1
+2193,,Bulls,-1,-1,-1
+2194,,Bulls,-1,-1,-1
+2195,,Bulls,-1,-1,-1
+2196,,Bulls,-1,-1,-1
+2197,,Bulls,-1,-1,-1
+2198,,Bulls,-1,-1,-1
+2199,,Bulls,-1,-1,-1
+2200,,Bulls,-1,-1,-1
+2201,,Bulls,-1,-1,-1
+2202,,Bulls,-1,-1,-1
+2203,,Bulls,-1,-1,-1
+2204,,Bulls,-1,-1,-1
+2205,,Bulls,-1,-1,-1
+2206,,Bulls,-1,-1,-1
+2207,,Bulls,-1,-1,-1
+2208,,Bulls,-1,-1,-1
+2209,,Bulls,-1,-1,-1
+2210,,Bulls,-1,-1,-1
+2211,,Bulls,-1,-1,-1
+2212,,Bulls,-1,-1,-1
+2213,,Bulls,-1,-1,-1
+2214,,Indiana,-1,-1,-1
+2215,,Indiana,-1,-1,-1
+2216,,Indiana,-1,-1,-1
+2217,,Indiana,-1,-1,-1
+2218,,Indiana,-1,-1,-1
+2219,,Indiana,-1,-1,-1
+2220,,Indiana,-1,-1,-1
+2221,,Indiana,-1,-1,-1
+2222,,Indiana,-1,-1,-1
+2223,,Indiana,-1,-1,-1
+2224,,Indiana,-1,-1,-1
+2225,,Indiana,-1,-1,-1
+2226,,Indiana,-1,-1,-1
+2227,,Indiana,-1,-1,-1
+2228,,Indiana,-1,-1,-1
+2229,,Indiana,-1,-1,-1
+2230,,Indiana,-1,-1,-1
+2231,,Indiana,-1,-1,-1
+2232,,Indiana,-1,-1,-1
+2233,,Indiana,-1,-1,-1
+2234,,Indiana,-1,-1,-1
+2235,,Indiana,-1,-1,-1
+2236,,Indiana,-1,-1,-1
+2237,,Indiana,-1,-1,-1
+2238,,Indiana,-1,-1,-1
+2239,,Indiana,-1,-1,-1
+2240,,Indiana,-1,-1,-1
+2241,,Indiana,-1,-1,-1
+2242,,Indiana,-1,-1,-1
+2243,,Denver Nuggets,-1,-1,-1
+2244,,Denver Nuggets,-1,-1,-1
+2245,,Denver Nuggets,-1,-1,-1
+2246,,Denver Nuggets,-1,-1,-1
+2247,,Denver Nuggets,-1,-1,-1
+2248,,Denver Nuggets,-1,-1,-1
+2249,,Denver Nuggets,-1,-1,-1
+2250,,Denver Nuggets,-1,-1,-1
+2251,,Denver Nuggets,-1,-1,-1
+2252,,Denver Nuggets,-1,-1,-1
+2253,,Denver Nuggets,-1,-1,-1
+2254,,Denver Nuggets,-1,-1,-1
+2255,,Denver Nuggets,-1,-1,-1
+2256,,Denver Nuggets,-1,-1,-1
+2257,,Denver Nuggets,-1,-1,-1
+2258,,Denver Nuggets,-1,-1,-1
+2259,,Denver Nuggets,-1,-1,-1
+2260,,Denver Nuggets,-1,-1,-1
+2261,,Denver Nuggets,-1,-1,-1
+2262,,Denver Nuggets,-1,-1,-1
+2263,,Denver Nuggets,-1,-1,-1
+2264,,Denver Nuggets,-1,-1,-1
+2265,,Denver Nuggets,-1,-1,-1
+2266,,Denver Nuggets,-1,-1,-1
+2267,,Denver Nuggets,-1,-1,-1
+2268,,Denver Nuggets,-1,-1,-1
+2269,,Denver Nuggets,-1,-1,-1
+2270,,Denver Nuggets,-1,-1,-1
+2271,,Denver Nuggets,-1,-1,-1
+2272,,Utah Jazz,-1,-1,-1
+2273,,Utah Jazz,-1,-1,-1
+2274,,Utah Jazz,-1,-1,-1
+2275,,Utah Jazz,-1,-1,-1
+2276,,Utah Jazz,-1,-1,-1
+2277,,Utah Jazz,-1,-1,-1
+2278,,Utah Jazz,-1,-1,-1
+2279,,Utah Jazz,-1,-1,-1
+2280,,Utah Jazz,-1,-1,-1
+2281,,Utah Jazz,-1,-1,-1
+2282,,Utah Jazz,-1,-1,-1
+2283,,Utah Jazz,-1,-1,-1
+2284,,Utah Jazz,-1,-1,-1
+2285,,Utah Jazz,-1,-1,-1
+2286,,Utah Jazz,-1,-1,-1
+2287,,Utah Jazz,-1,-1,-1
+2288,,Utah Jazz,-1,-1,-1
+2289,,Utah Jazz,-1,-1,-1
+2290,,Utah Jazz,-1,-1,-1
+2291,,Utah Jazz,-1,-1,-1
+2292,,Utah Jazz,-1,-1,-1
+2293,,Utah Jazz,-1,-1,-1
+2294,,Utah Jazz,-1,-1,-1
+2295,,Utah Jazz,-1,-1,-1
+2296,,Utah Jazz,-1,-1,-1
+2297,,Utah Jazz,-1,-1,-1
+2298,,Utah Jazz,-1,-1,-1
+2299,,Utah Jazz,-1,-1,-1
+2300,,Utah Jazz,-1,-1,-1
+2301,,Los Angeles Clippers,-1,-1,-1
+2302,,Los Angeles Clippers,-1,-1,-1
+2303,,Los Angeles Clippers,-1,-1,-1
+2304,,Los Angeles Clippers,-1,-1,-1
+2305,,Los Angeles Clippers,-1,-1,-1
+2306,,Los Angeles Clippers,-1,-1,-1
+2307,,Los Angeles Clippers,-1,-1,-1
+2308,,Los Angeles Clippers,-1,-1,-1
+2309,,Los Angeles Clippers,-1,-1,-1
+2310,,Los Angeles Clippers,-1,-1,-1
+2311,,Los Angeles Clippers,-1,-1,-1
+2312,,Los Angeles Clippers,-1,-1,-1
+2313,,Los Angeles Clippers,-1,-1,-1
+2314,,Los Angeles Clippers,-1,-1,-1
+2315,,Los Angeles Clippers,-1,-1,-1
+2316,,Los Angeles Clippers,-1,-1,-1
+2317,,Los Angeles Clippers,-1,-1,-1
+2318,,Los Angeles Clippers,-1,-1,-1
+2319,,Los Angeles Clippers,-1,-1,-1
+2320,,Los Angeles Clippers,-1,-1,-1
+2321,,Los Angeles Clippers,-1,-1,-1
+2322,,Los Angeles Clippers,-1,-1,-1
+2323,,Los Angeles Clippers,-1,-1,-1
+2324,,Los Angeles Clippers,-1,-1,-1
+2325,,Los Angeles Clippers,-1,-1,-1
+2326,,Los Angeles Clippers,-1,-1,-1
+2327,,Los Angeles Clippers,-1,-1,-1
+2328,,Los Angeles Clippers,-1,-1,-1
+2329,,Los Angeles Clippers,-1,-1,-1
+2330,,Miami Heat,-1,-1,-1
+2331,,Miami Heat,-1,-1,-1
+2332,,Miami Heat,-1,-1,-1
+2333,,Miami Heat,-1,-1,-1
+2334,,Miami Heat,-1,-1,-1
+2335,,Miami Heat,-1,-1,-1
+2336,,Miami Heat,-1,-1,-1
+2337,,Miami Heat,-1,-1,-1
+2338,,Miami Heat,-1,-1,-1
+2339,,Miami Heat,-1,-1,-1
+2340,,Miami Heat,-1,-1,-1
+2341,,Miami Heat,-1,-1,-1
+2342,,Miami Heat,-1,-1,-1
+2343,,Miami Heat,-1,-1,-1
+2344,,Miami Heat,-1,-1,-1
+2345,,Miami Heat,-1,-1,-1
+2346,,Miami Heat,-1,-1,-1
+2347,,Miami Heat,-1,-1,-1
+2348,,Miami Heat,-1,-1,-1
+2349,,Miami Heat,-1,-1,-1
+2350,,Miami Heat,-1,-1,-1
+2351,,Miami Heat,-1,-1,-1
+2352,,Miami Heat,-1,-1,-1
+2353,,Miami Heat,-1,-1,-1
+2354,,Miami Heat,-1,-1,-1
+2355,,Miami Heat,-1,-1,-1
+2356,,Miami Heat,-1,-1,-1
+2357,,Miami Heat,-1,-1,-1
+2358,,Miami Heat,-1,-1,-1
+2359,,Boston Celtics,-1,-1,-1
+2360,,Boston Celtics,-1,-1,-1
+2361,,Boston Celtics,-1,-1,-1
+2362,,Boston Celtics,-1,-1,-1
+2363,,Boston Celtics,-1,-1,-1
+2364,,Boston Celtics,-1,-1,-1
+2365,,Boston Celtics,-1,-1,-1
+2366,,Boston Celtics,-1,-1,-1
+2367,,Boston Celtics,-1,-1,-1
+2368,,Boston Celtics,-1,-1,-1
+2369,,Boston Celtics,-1,-1,-1
+2370,,Boston Celtics,-1,-1,-1
+2371,,Boston Celtics,-1,-1,-1
+2372,,Boston Celtics,-1,-1,-1
+2373,,Boston Celtics,-1,-1,-1
+2374,,Boston Celtics,-1,-1,-1
+2375,,Boston Celtics,-1,-1,-1
+2376,,Boston Celtics,-1,-1,-1
+2377,,Boston Celtics,-1,-1,-1
+2378,,Boston Celtics,-1,-1,-1
+2379,,Boston Celtics,-1,-1,-1
+2380,,Boston Celtics,-1,-1,-1
+2381,,Boston Celtics,-1,-1,-1
+2382,,Boston Celtics,-1,-1,-1
+2383,,Boston Celtics,-1,-1,-1
+2384,,Boston Celtics,-1,-1,-1
+2385,,Boston Celtics,-1,-1,-1
+2386,,Boston Celtics,-1,-1,-1
+2387,,Boston Celtics,-1,-1,-1
+2388,,Brooklyn Nets,-1,-1,-1
+2389,,Brooklyn Nets,-1,-1,-1
+2390,,Brooklyn Nets,-1,-1,-1
+2391,,Brooklyn Nets,-1,-1,-1
+2392,,Brooklyn Nets,-1,-1,-1
+2393,,Brooklyn Nets,-1,-1,-1
+2394,,Brooklyn Nets,-1,-1,-1
+2395,,Brooklyn Nets,-1,-1,-1
+2396,,Brooklyn Nets,-1,-1,-1
+2397,,Brooklyn Nets,-1,-1,-1
+2398,,Brooklyn Nets,-1,-1,-1
+2399,,Brooklyn Nets,-1,-1,-1
+2400,,Brooklyn Nets,-1,-1,-1
+2401,,Brooklyn Nets,-1,-1,-1
+2402,,Brooklyn Nets,-1,-1,-1
+2403,,Brooklyn Nets,-1,-1,-1
+2404,,Brooklyn Nets,-1,-1,-1
+2405,,Brooklyn Nets,-1,-1,-1
+2406,,Brooklyn Nets,-1,-1,-1
+2407,,Brooklyn Nets,-1,-1,-1
+2408,,Brooklyn Nets,-1,-1,-1
+2409,,Brooklyn Nets,-1,-1,-1
+2410,,Brooklyn Nets,-1,-1,-1
+2411,,Brooklyn Nets,-1,-1,-1
+2412,,Brooklyn Nets,-1,-1,-1
+2413,,Brooklyn Nets,-1,-1,-1
+2414,,Brooklyn Nets,-1,-1,-1
+2415,,Brooklyn Nets,-1,-1,-1
+2416,,Brooklyn Nets,-1,-1,-1
+2417,,Brooklyn Nets,-1,-1,-1
+2418,,Brooklyn Nets,-1,-1,-1
+2419,,Brooklyn Nets,-1,-1,-1
+2420,,Brooklyn Nets,-1,-1,-1
+2421,,Brooklyn Nets,-1,-1,-1
+2422,,Brooklyn Nets,-1,-1,-1
+2423,,Brooklyn Nets,-1,-1,-1
+2424,,Brooklyn Nets,-1,-1,-1
+2425,,Brooklyn Nets,-1,-1,-1
+2426,,Brooklyn Nets,-1,-1,-1
+2427,,Brooklyn Nets,-1,-1,-1
+2428,,Brooklyn Nets,-1,-1,-1
+2429,,Brooklyn Nets,-1,-1,-1
+2430,,Brooklyn Nets,-1,-1,-1
+2431,,Brooklyn Nets,-1,-1,-1
+2432,,Brooklyn Nets,-1,-1,-1
+2433,,Brooklyn Nets,-1,-1,-1
+2434,,Brooklyn Nets,-1,-1,-1
+2435,,Brooklyn Nets,-1,-1,-1
+2436,,Brooklyn Nets,-1,-1,-1
+2437,,Brooklyn Nets,-1,-1,-1
+2438,,Brooklyn Nets,-1,-1,-1
+2439,,Brooklyn Nets,-1,-1,-1
+2440,,Brooklyn Nets,-1,-1,-1
+2441,,Brooklyn Nets,-1,-1,-1
+2442,,Brooklyn Nets,-1,-1,-1
+2443,,Brooklyn Nets,-1,-1,-1
+2444,,Brooklyn Nets,-1,-1,-1
+2445,,Brooklyn Nets,-1,-1,-1
+2446,,Dallas Mavericks,-1,-1,-1
+2447,,Dallas Mavericks,-1,-1,-1
+2448,,Dallas Mavericks,-1,-1,-1
+2449,,Dallas Mavericks,-1,-1,-1
+2450,,Dallas Mavericks,-1,-1,-1
+2451,,Dallas Mavericks,-1,-1,-1
+2452,,Dallas Mavericks,-1,-1,-1
+2453,,Dallas Mavericks,-1,-1,-1
+2454,,Dallas Mavericks,-1,-1,-1
+2455,,Dallas Mavericks,-1,-1,-1
+2456,,Dallas Mavericks,-1,-1,-1
+2457,,Dallas Mavericks,-1,-1,-1
+2458,,Dallas Mavericks,-1,-1,-1
+2459,,Dallas Mavericks,-1,-1,-1
+2460,,Dallas Mavericks,-1,-1,-1
+2461,,Dallas Mavericks,-1,-1,-1
+2462,,Dallas Mavericks,-1,-1,-1
+2463,,Dallas Mavericks,-1,-1,-1
+2464,,Dallas Mavericks,-1,-1,-1
+2465,,Dallas Mavericks,-1,-1,-1
+2466,,Dallas Mavericks,-1,-1,-1
+2467,,Dallas Mavericks,-1,-1,-1
+2468,,Dallas Mavericks,-1,-1,-1
+2469,,Dallas Mavericks,-1,-1,-1
+2470,,Dallas Mavericks,-1,-1,-1
+2471,,Dallas Mavericks,-1,-1,-1
+2472,,Dallas Mavericks,-1,-1,-1
+2473,,Dallas Mavericks,-1,-1,-1
+2474,,Dallas Mavericks,-1,-1,-1
+2475,,Hawks,-1,-1,-1
+2476,,Hawks,-1,-1,-1
+2477,,Hawks,-1,-1,-1
+2478,,Hawks,-1,-1,-1
+2479,,Hawks,-1,-1,-1
+2480,,Hawks,-1,-1,-1
+2481,,Hawks,-1,-1,-1
+2482,,Hawks,-1,-1,-1
+2483,,Hawks,-1,-1,-1
+2484,,Hawks,-1,-1,-1
+2485,,Hawks,-1,-1,-1
+2486,,Hawks,-1,-1,-1
+2487,,Hawks,-1,-1,-1
+2488,,Hawks,-1,-1,-1
+2489,,Hawks,-1,-1,-1
+2490,,Hawks,-1,-1,-1
+2491,,Hawks,-1,-1,-1
+2492,,Hawks,-1,-1,-1
+2493,,Hawks,-1,-1,-1
+2494,,Hawks,-1,-1,-1
+2495,,Hawks,-1,-1,-1
+2496,,Hawks,-1,-1,-1
+2497,,Hawks,-1,-1,-1
+2498,,Hawks,-1,-1,-1
+2499,,Hawks,-1,-1,-1
+2500,,Hawks,-1,-1,-1
+2501,,Hawks,-1,-1,-1
+2502,,Hawks,-1,-1,-1
+2503,,Hawks,-1,-1,-1
+2504,,Nuggets,-1,-1,-1
+2505,,Nuggets,-1,-1,-1
+2506,,Nuggets,-1,-1,-1
+2507,,Nuggets,-1,-1,-1
+2508,,Nuggets,-1,-1,-1
+2509,,Nuggets,-1,-1,-1
+2510,,Nuggets,-1,-1,-1
+2511,,Nuggets,-1,-1,-1
+2512,,Nuggets,-1,-1,-1
+2513,,Nuggets,-1,-1,-1
+2514,,Nuggets,-1,-1,-1
+2515,,Nuggets,-1,-1,-1
+2516,,Nuggets,-1,-1,-1
+2517,,Nuggets,-1,-1,-1
+2518,,Nuggets,-1,-1,-1
+2519,,Nuggets,-1,-1,-1
+2520,,Nuggets,-1,-1,-1
+2521,,Nuggets,-1,-1,-1
+2522,,Nuggets,-1,-1,-1
+2523,,Nuggets,-1,-1,-1
+2524,,Nuggets,-1,-1,-1
+2525,,Nuggets,-1,-1,-1
+2526,,Nuggets,-1,-1,-1
+2527,,Nuggets,-1,-1,-1
+2528,,Nuggets,-1,-1,-1
+2529,,Nuggets,-1,-1,-1
+2530,,Nuggets,-1,-1,-1
+2531,,Nuggets,-1,-1,-1
+2532,,Nuggets,-1,-1,-1
+2533,,San Antonio Spurs,-1,-1,-1
+2534,,San Antonio Spurs,-1,-1,-1
+2535,,San Antonio Spurs,-1,-1,-1
+2536,,San Antonio Spurs,-1,-1,-1
+2537,,San Antonio Spurs,-1,-1,-1
+2538,,San Antonio Spurs,-1,-1,-1
+2539,,San Antonio Spurs,-1,-1,-1
+2540,,San Antonio Spurs,-1,-1,-1
+2541,,San Antonio Spurs,-1,-1,-1
+2542,,San Antonio Spurs,-1,-1,-1
+2543,,San Antonio Spurs,-1,-1,-1
+2544,,San Antonio Spurs,-1,-1,-1
+2545,,San Antonio Spurs,-1,-1,-1
+2546,,San Antonio Spurs,-1,-1,-1
+2547,,San Antonio Spurs,-1,-1,-1
+2548,,San Antonio Spurs,-1,-1,-1
+2549,,San Antonio Spurs,-1,-1,-1
+2550,,San Antonio Spurs,-1,-1,-1
+2551,,San Antonio Spurs,-1,-1,-1
+2552,,San Antonio Spurs,-1,-1,-1
+2553,,San Antonio Spurs,-1,-1,-1
+2554,,San Antonio Spurs,-1,-1,-1
+2555,,San Antonio Spurs,-1,-1,-1
+2556,,San Antonio Spurs,-1,-1,-1
+2557,,San Antonio Spurs,-1,-1,-1
+2558,,San Antonio Spurs,-1,-1,-1
+2559,,San Antonio Spurs,-1,-1,-1
+2560,,San Antonio Spurs,-1,-1,-1
+2561,,San Antonio Spurs,-1,-1,-1
+2562,,Dallas Mavericks,-1,-1,-1
+2563,,Dallas Mavericks,-1,-1,-1
+2564,,Dallas Mavericks,-1,-1,-1
+2565,,Dallas Mavericks,-1,-1,-1
+2566,,Dallas Mavericks,-1,-1,-1
+2567,,Dallas Mavericks,-1,-1,-1
+2568,,Dallas Mavericks,-1,-1,-1
+2569,,Dallas Mavericks,-1,-1,-1
+2570,,Dallas Mavericks,-1,-1,-1
+2571,,Dallas Mavericks,-1,-1,-1
+2572,,Dallas Mavericks,-1,-1,-1
+2573,,Dallas Mavericks,-1,-1,-1
+2574,,Dallas Mavericks,-1,-1,-1
+2575,,Dallas Mavericks,-1,-1,-1
+2576,,Dallas Mavericks,-1,-1,-1
+2577,,Dallas Mavericks,-1,-1,-1
+2578,,Dallas Mavericks,-1,-1,-1
+2579,,Dallas Mavericks,-1,-1,-1
+2580,,Dallas Mavericks,-1,-1,-1
+2581,,Dallas Mavericks,-1,-1,-1
+2582,,Dallas Mavericks,-1,-1,-1
+2583,,Dallas Mavericks,-1,-1,-1
+2584,,Dallas Mavericks,-1,-1,-1
+2585,,Dallas Mavericks,-1,-1,-1
+2586,,Dallas Mavericks,-1,-1,-1
+2587,,Dallas Mavericks,-1,-1,-1
+2588,,Dallas Mavericks,-1,-1,-1
+2589,,Dallas Mavericks,-1,-1,-1
+2590,,Dallas Mavericks,-1,-1,-1
+2591,,Cleveland Cavaliers,-1,-1,-1
+2592,,Cleveland Cavaliers,-1,-1,-1
+2593,,Cleveland Cavaliers,-1,-1,-1
+2594,,Cleveland Cavaliers,-1,-1,-1
+2595,,Cleveland Cavaliers,-1,-1,-1
+2596,,Cleveland Cavaliers,-1,-1,-1
+2597,,Cleveland Cavaliers,-1,-1,-1
+2598,,Cleveland Cavaliers,-1,-1,-1
+2599,,Cleveland Cavaliers,-1,-1,-1
+2600,,Cleveland Cavaliers,-1,-1,-1
+2601,,Cleveland Cavaliers,-1,-1,-1
+2602,,Cleveland Cavaliers,-1,-1,-1
+2603,,Cleveland Cavaliers,-1,-1,-1
+2604,,Cleveland Cavaliers,-1,-1,-1
+2605,,Cleveland Cavaliers,-1,-1,-1
+2606,,Cleveland Cavaliers,-1,-1,-1
+2607,,Cleveland Cavaliers,-1,-1,-1
+2608,,Cleveland Cavaliers,-1,-1,-1
+2609,,Cleveland Cavaliers,-1,-1,-1
+2610,,Cleveland Cavaliers,-1,-1,-1
+2611,,Cleveland Cavaliers,-1,-1,-1
+2612,,Cleveland Cavaliers,-1,-1,-1
+2613,,Cleveland Cavaliers,-1,-1,-1
+2614,,Cleveland Cavaliers,-1,-1,-1
+2615,,Cleveland Cavaliers,-1,-1,-1
+2616,,Cleveland Cavaliers,-1,-1,-1
+2617,,Cleveland Cavaliers,-1,-1,-1
+2618,,Cleveland Cavaliers,-1,-1,-1
+2619,,Cleveland Cavaliers,-1,-1,-1
+2620,,Dallas Mavericks,-1,-1,-1
+2621,,Dallas Mavericks,-1,-1,-1
+2622,,Dallas Mavericks,-1,-1,-1
+2623,,Dallas Mavericks,-1,-1,-1
+2624,,Dallas Mavericks,-1,-1,-1
+2625,,Dallas Mavericks,-1,-1,-1
+2626,,Dallas Mavericks,-1,-1,-1
+2627,,Dallas Mavericks,-1,-1,-1
+2628,,Dallas Mavericks,-1,-1,-1
+2629,,Dallas Mavericks,-1,-1,-1
+2630,,Dallas Mavericks,-1,-1,-1
+2631,,Dallas Mavericks,-1,-1,-1
+2632,,Dallas Mavericks,-1,-1,-1
+2633,,Dallas Mavericks,-1,-1,-1
+2634,,Dallas Mavericks,-1,-1,-1
+2635,,Dallas Mavericks,-1,-1,-1
+2636,,Dallas Mavericks,-1,-1,-1
+2637,,Dallas Mavericks,-1,-1,-1
+2638,,Dallas Mavericks,-1,-1,-1
+2639,,Dallas Mavericks,-1,-1,-1
+2640,,Dallas Mavericks,-1,-1,-1
+2641,,Dallas Mavericks,-1,-1,-1
+2642,,Dallas Mavericks,-1,-1,-1
+2643,,Dallas Mavericks,-1,-1,-1
+2644,,Dallas Mavericks,-1,-1,-1
+2645,,Dallas Mavericks,-1,-1,-1
+2646,,Dallas Mavericks,-1,-1,-1
+2647,,Dallas Mavericks,-1,-1,-1
+2648,,Dallas Mavericks,-1,-1,-1

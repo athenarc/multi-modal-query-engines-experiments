@@ -1,0 +1,77 @@
+,Game ID,Team Name,wins,losses,total_points
+0,0.0,"Atlanta Hawks,Orlando Magic",46,12,95
+1,1.0,"Milwaukee Bucks,New York Knicks",18,17,95
+2,2.0,"Grizzlies,Suns",50,-1,-1
+3,3.0,Toronto Raptors,29,15,114
+4,3.0,Detroit Pistons,-1,-1,-1
+5,4.0,Detroit Pistons,30,29,-1
+6,4.0,Milwaukee Bucks,24,35,-1
+7,5.0,Milwaukee Bucks,8,8,118
+8,5.0,Cleveland Cavaliers,13,3,75
+9,6.0,Cleveland Cavaliers,40,-1,101
+10,6.0,Boston Celtics,-1,4,-1
+11,7.0,Oklahoma City Thunder,8,13,114
+12,7.0,Milwaukee Bucks,11,12,-1
+13,9.0,"New York Knicks,Los Angeles Lakers",-1,-1,-1
+14,10.0,"Raptors,Bucks",-1,-1,-1
+15,11.0,"Memphis Grizzlies,Minnesota Timberwolves",-1,-1,-1
+16,12.0,"Brooklyn Nets,Washington Wizards",-1,-1,-1
+17,13.0,"Washington Wizards,Los Angeles Lakers",45,34,80
+18,14.0,"Cleveland Cavaliers,Washington Wizards",36,37,101
+19,15.0,"Los Angeles Lakers,Denver Nuggets",-1,-1,-1
+20,16.0,"Dallas Mavericks,Portland Trail Blazers",-1,-1,-1
+21,17.0,Miami Heat,-1,-1,-1
+22,17.0,Toronto Raptors,-1,-1,-1
+23,18.0,Clippers,-1,-1,-1
+24,18.0,Clippers,-1,-1,-1
+25,19.0,Magic,-1,-1,-1
+26,19.0,Pacers,-1,-1,-1
+27,20.0,Memphis Grizzlies,-1,-1,-1
+28,20.0,Dallas Mavericks,-1,-1,-1
+29,21.0,Houston,-1,-1,-1
+30,21.0,Dallas,9,6,-1
+31,22.0,"Nuggets,Timberwolves",-1,-1,-1
+32,23.0,"New Orleans Pelicans,Milwaukee Bucks",-1,-1,-1
+33,24.0,"Los Angeles Clippers,New Orleans Pelicans",37,30,85
+34,25.0,"Washington Wizards,Indiana Pacers",-1,-1,-1
+35,26.0,Memphis Grizzlies,-1,-1,-1
+36,26.0,Utah Jazz,-1,-1,-1
+37,27.0,"Portland Trail Blazers,Washington Wizards",-1,-1,-1
+38,28.0,"Oklahoma City Thunder,New York Knicks",-1,-1,-1
+39,29.0,Utah Jazz,-1,-1,-1
+40,29.0,Sacramento Kings,-1,-1,-1
+41,30.0,Charlotte Hornets,-1,-1,-1
+42,30.0,Utah Jazz,18,33,-1
+43,31.0,Golden State Warriors,-1,-1,-1
+44,31.0,Cleveland Cavaliers,-1,-1,-1
+45,32.0,"Memphis Grizzlies,Philadelphia 76ers",-1,-1,-1
+46,33.0,San Antonio Spurs,-1,-1,-1
+47,33.0,Dallas Mavericks,-1,-1,-1
+48,34.0,Houston Rockets,-1,-1,-1
+49,34.0,Miami Heat,-1,-1,-1
+50,35.0,Sacramento Kings,-1,-1,-1
+51,35.0,Oklahoma City Thunder,-1,-1,-1
+52,36.0,"Phoenix Suns,Minnesota Timberwolves",-1,-1,-1
+53,37.0,Philadelphia 76ers,-1,-1,-1
+54,37.0,Utah Jazz,-1,-1,-1
+55,38.0,Sacramento Kings,-1,-1,-1
+56,38.0,Toronto Raptors,-1,-1,-1
+57,40.0,"Phoenix,Sacramento",-1,-1,-1
+58,41.0,"Chicago Bulls,Los Angeles Clippers",-1,-1,-1
+59,42.0,"Memphis Grizzlies,Brooklyn Nets",-1,-1,-1
+60,43.0,"Miami Heat,Houston Rockets",-1,-1,-1
+61,44.0,New Orleans,-1,-1,-1
+62,44.0,Detroit,-1,-1,-1
+63,45.0,"Denver Nuggets,New Orleans Pelicans",-1,-1,-1
+64,46.0,Warriors,-1,-1,-1
+65,46.0,Lakers,-1,-1,-1
+66,47.0,"Houston Rockets,Phoenix Suns",-1,-1,-1
+67,48.0,"Portland Trail Blazers,Los Angeles Lakers",-1,-1,-1
+68,49.0,Atlanta Hawks,-1,-1,-1
+69,49.0,Detroit Pistons,-1,-1,-1
+70,50.0,,-1,-1,-1
+71,51.0,,-1,-1,-1
+72,,"Warriors,Clippers",-1,-1,-1
+73,,"Warriors,Clippers",-1,-1,-1
+74,,"Brooklyn Nets,Phoenix Suns",-1,-1,-1
+75,,"Brooklyn Nets,Phoenix Suns",-1,-1,-1

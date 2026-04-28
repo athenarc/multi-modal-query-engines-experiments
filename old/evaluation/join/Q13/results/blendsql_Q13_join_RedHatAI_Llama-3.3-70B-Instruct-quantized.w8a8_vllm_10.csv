@@ -1,0 +1,11 @@
+,text,left,right,category
+0,still waiting on that card,still waiting on that card,card_arrival,card_arrival
+1,When will I get my card?,When will I get my card?,card_delivery_estimate,card_delivery_estimate
+2,i have not received my card,i have not received my card,card_arrival,card_arrival
+3,Is there a way to know when my card will arrive?,Is there a way to know when my card will arrive?,card_delivery_estimate,card_delivery_estimate
+4,My card has not arrived yet.,My card has not arrived yet.,card_arrival,card_arrival
+5,Is it normal to have to wait over a week for my new card?,Is it normal to have to wait over a week for my new card?,card_delivery_estimate,card_delivery_estimate
+6,"I still have not received my new card, I ordered over a week ago.","I still have not received my new card, I ordered over a week ago.",card_arrival,card_arrival
+7,I ordered a card but it has not arrived. Help please!,I ordered a card but it has not arrived. Help please!,card_arrival,card_arrival
+8,How do I locate my card?,How do I locate my card?,card_arrival,card_arrival
+9,Do you know if there is a tracking number for the new card you sent me?,Do you know if there is a tracking number for the new card you sent me?,card_arrival,card_arrival

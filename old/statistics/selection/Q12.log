@@ -1,0 +1,375 @@
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-16T16:26:24.931269
+Model: llama3.3:70b
+Input Size: 500
+Execution Time: 632.06
+Total LLM calls: 500
+True Positives: 1
+False Positives: 31
+True Negatives: 442
+False Negatives: 26
+Accuracy: 0.89
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- optimized)
+Timestamp: 2025-12-16T16:30:02.821261
+Model: llama3.3:70b
+Input Size: 500
+Execution Time: 202.23
+True Positives: 2
+False Positives: 30
+True Negatives: 443
+False Negatives: 25
+Accuracy: 0.89
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-16T16:50:03.322079
+Model: llama3.3:70b
+Input Size: 1000
+Execution Time: 1186.37
+Total LLM calls: 1000
+True Positives: 1
+False Positives: 59
+True Negatives: 888
+False Negatives: 52
+Accuracy: 0.89
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- optimized)
+Timestamp: 2025-12-16T16:56:21.168641
+Model: llama3.3:70b
+Input Size: 1000
+Execution Time: 362.40
+True Positives: 2
+False Positives: 64
+True Negatives: 883
+False Negatives: 51
+Accuracy: 0.89
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-16T17:38:07.156325
+Model: llama3.3:70b
+Input Size: 2000
+Execution Time: 2490.93
+Total LLM calls: 2000
+True Positives: 1
+False Positives: 110
+True Negatives: 1786
+False Negatives: 103
+Accuracy: 0.89
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- optimized)
+Timestamp: 2025-12-16T17:50:39.524827
+Model: llama3.3:70b
+Input Size: 2000
+Execution Time: 736.42
+True Positives: 3
+False Positives: 128
+True Negatives: 1768
+False Negatives: 101
+Accuracy: 0.89
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-16T19:10:03.400072
+Model: llama3.3:70b
+Input Size: 4000
+Execution Time: 4748.81
+Total LLM calls: 4000
+True Positives: 1
+False Positives: 230
+True Negatives: 3586
+False Negatives: 183
+Accuracy: 0.90
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- optimized)
+Timestamp: 2025-12-16T19:35:20.898479
+Model: llama3.3:70b
+Input Size: 4000
+Execution Time: 1501.72
+True Positives: 6
+False Positives: 321
+True Negatives: 3495
+False Negatives: 178
+Accuracy: 0.88
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-17T00:38:59.753301
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 115.39
+Total LLM calls: 500
+True Positives: 1
+False Positives: 31
+True Negatives: 442
+False Negatives: 26
+Accuracy: 0.89
+------------------------------------------------------
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-17T21:53:18.542655
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 1000
+Execution Time: 227.13
+Total LLM calls: 1000
+True Positives: 1
+False Positives: 59
+True Negatives: 888
+False Negatives: 52
+Accuracy: 0.89
+------------------------------------------------------
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-17T00:51:15.720559
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 2000
+Execution Time: 454.95
+Total LLM calls: 2000
+True Positives: 1
+False Positives: 110
+True Negatives: 1786
+False Negatives: 103
+Accuracy: 0.89
+------------------------------------------------------
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-17T22:08:13.396038
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 4000
+Execution Time: 872.31
+Total LLM calls: 4000
+True Positives: 1
+False Positives: 230
+True Negatives: 3586
+False Negatives: 183
+Accuracy: 0.90
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-17T01:41:21.820446
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 413.28
+True Positives: 27
+False Positives: 4
+True Negatives: 469
+False Negatives: 0
+Accuracy: 0.99
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-17T01:55:23.684142
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 1000
+Execution Time: 810.65
+True Positives: 53
+False Positives: 12
+True Negatives: 935
+False Negatives: 0
+Accuracy: 0.99
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-17T02:21:34.867138
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 2000
+Execution Time: 1555.74
+True Positives: 103
+False Positives: 13
+True Negatives: 1883
+False Negatives: 1
+Accuracy: 0.99
+------------------------------------------------------
+
+
+System: Palimpzest
+Timestamp: 2025-12-17T03:12:34.691030
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 4000
+Execution Time: 3045.36
+True Positives: 183
+False Positives: 38
+True Negatives: 3778
+False Negatives: 1
+Accuracy: 0.99
+------------------------------------------------------
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-22T08:39:08.937336
+Model: llama3.3:70b
+Input Size: 500
+Execution Time: 536.89
+Total LLM calls: 500
+True Positives: 27
+False Positives: 2
+True Negatives: 471
+False Negatives: 0
+Accuracy: 1.00
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- optimized)
+Timestamp: 2025-12-22T08:42:09.712588
+Model: llama3.3:70b
+Input Size: 500
+Execution Time: 165.57
+True Positives: 26
+False Positives: 1
+True Negatives: 472
+False Negatives: 1
+Accuracy: 1.00
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-22T09:00:06.471585
+Model: llama3.3:70b
+Input Size: 1000
+Execution Time: 1061.76
+Total LLM calls: 1000
+True Positives: 53
+False Positives: 2
+True Negatives: 945
+False Negatives: 0
+Accuracy: 1.00
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- optimized)
+Timestamp: 2025-12-22T09:07:43.044735
+Model: llama3.3:70b
+Input Size: 1000
+Execution Time: 440.22
+True Positives: 53
+False Positives: 5
+True Negatives: 942
+False Negatives: 0
+Accuracy: 0.99
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-22T09:43:12.871336
+Model: llama3.3:70b
+Input Size: 2000
+Execution Time: 2114.00
+Total LLM calls: 2000
+True Positives: 102
+False Positives: 4
+True Negatives: 1892
+False Negatives: 2
+Accuracy: 1.00
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- optimized)
+Timestamp: 2025-12-22T09:58:30.758850
+Model: llama3.3:70b
+Input Size: 2000
+Execution Time: 902.93
+True Positives: 102
+False Positives: 11
+True Negatives: 1885
+False Negatives: 2
+Accuracy: 0.99
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-22T11:06:50.981786
+Model: llama3.3:70b
+Input Size: 4000
+Execution Time: 4084.33
+Total LLM calls: 4000
+True Positives: 182
+False Positives: 4
+True Negatives: 3812
+False Negatives: 2
+Accuracy: 1.00
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- optimized)
+Timestamp: 2025-12-22T11:40:26.814312
+Model: llama3.3:70b
+Input Size: 4000
+Execution Time: 2000.31
+True Positives: 182
+False Positives: 18
+True Negatives: 3798
+False Negatives: 2
+Accuracy: 0.99
+------------------------------------------------------
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-22T16:19:25.368870
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 500
+Execution Time: 115.81
+Total LLM calls: 500
+True Positives: 27
+False Positives: 3
+True Negatives: 470
+False Negatives: 0
+Accuracy: 0.99
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-22T16:23:26.771806
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 1000
+Execution Time: 226.21
+Total LLM calls: 1000
+True Positives: 53
+False Positives: 3
+True Negatives: 944
+False Negatives: 0
+Accuracy: 1.00
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-22T16:31:13.258164
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 2000
+Execution Time: 451.06
+Total LLM calls: 2000
+True Positives: 102
+False Positives: 4
+True Negatives: 1892
+False Negatives: 2
+Accuracy: 1.00
+------------------------------------------------------
+
+
+System: Lotus (sem_filter -- default)
+Timestamp: 2025-12-22T16:45:59.032453
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 4000
+Execution Time: 869.83
+Total LLM calls: 4000
+True Positives: 182
+False Positives: 4
+True Negatives: 3812
+False Negatives: 2
+Accuracy: 1.00
+------------------------------------------------------
+
+

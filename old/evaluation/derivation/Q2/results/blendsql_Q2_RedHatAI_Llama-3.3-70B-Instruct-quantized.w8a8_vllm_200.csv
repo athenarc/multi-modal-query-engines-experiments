@@ -1,0 +1,517 @@
+,player_name,_col_1
+0,Mike Miller,Atlanta
+1,Quincy Acy,Río Tercero
+2,Joe Johnson," Silver Spring, Maryland"
+3,Brook Lopez," North Hollywood, California"
+4,Davis Bertans, Valmiera
+5,DeAndre' Bembry," Charlotte, North Carolina"
+6,Okaro White,"Edmonds, Washington"
+7,Deron Williams,"Parkersburg, West Virginia"
+8,Glen Davis,Benin City
+9,Raul Neto,Sant Boi de Llobregat
+10,Kevin Martin,"Newark, New Jersey"
+11,Rudy Gay,"Louisville, Kentucky"
+12,Marquese Chriss,Fort Pierce
+13,Justise Winslow,"To answer the question about the birthplace of the player, I would need to know the birthplace of each player. Based on my research, here are the birthplaces for each player:
+
+Jordan Hamilton - Los Angeles, California
+Jordan McRae - Norfolk, Virginia
+Josh McRoberts - Indianapolis, Indiana
+Josh Richardson - Edmond, Oklahoma
+Justise Winslow - Houston, Texas
+
+So, the answer would be:
+Los Angeles"
+14,Emmanuel Mudiay,East Chicago
+15,Erick Green,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Elijah Millsap - Binghamton, New York
+Emmanuel Mudiay - Kinshasa, Zaire (now known as the Democratic Republic of the Congo)
+Eric Bledsoe - Birmingham, Alabama
+Eric Gordon - Indianapolis, Indiana
+Erick Green - Inwood, New York (or possibly Brooklyn, New York, sources vary)
+
+Given the instruction to return a string containing **only** the birthplace, the answer would be:
+
+Binghamton, New York"
+16,E'Twaun Moore," 
+E'Twaun Moore - East Chicago"
+17,Josh Richardson,"Houston, Texas"
+18,Sergey Karasev,Prince George
+19,Evan Turner,"Birmingham, Alabama"
+20,Isaiah Canaan,Baltimore
+21,Zoran Dragic,Roanoke
+22,Doug McDermott,"To answer the question about the birthplace of each player, I'll need to provide the birthplace for each of the given players. Here are the answers:
+
+Doug McDermott - Grand Forks"
+23,Ray McCallum,Skopje
+24,Jusuf Nurkic,Norfolk
+25,Joel Anthony," Nashville, Tennessee"
+26,Cameron Payne," Memphis, Tennessee"
+27,Troy Williams,Stavropol
+28,Henry Sims,Costa Mesa
+29,Jarell Eddie,Mayagüez
+30,A.J. Price,"To answer the question about the birthplace of each player, I would need to look up the birthplace information for each player. Here are the answers:
+
+
+A.J. Price - Born in Orange, New Jersey
+Aaron Brooks - Born in Seattle, Washington
+Adreian Payne - Born in Dayton, Ohio
+Al Jefferson - Born in Monticello, Mississippi
+Al-Farouq Aminu - Born in Atlanta, Georgia
+
+
+So, the answer is: Orange, New Jersey"
+31,Sebastian Telfair,Baltimore
+32,Francisco Garcia,"Inwood, New York"
+33,Patty Mills,Dayton
+34,Omer Asik,"Mitchell, South Dakota"
+35,Kawhi Leonard,Edmond
+36,Denzel Valentine,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Denzel Valentine - born in Chicago, Illinois
+Deron Williams - born in Parkersburg, West Virginia
+Derrick Rose - born in Chicago, Illinois
+Deyonta Davis - born in Muskegon, Michigan
+Domantas Sabonis - born in Portland, Oregon
+
+So, the answer is: Chicago, Illinois"
+37,Quincy Miller,Chicago
+38,DeAndre Liggins," Chicago, Illinois"
+39,Hollis Thompson,Harvey
+40,Grant Jerrett,Fishers
+41,Josh McRoberts,"Kinna, Sweden"
+42,Gary Harris,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Evan Fournier - Saint-Maurice, France (but I will only return ""Saint-Maurice"")
+Evan Turner - Chicago
+Festus Ezeli - Benin City
+Francisco Garcia - Santo Domingo
+Gary Harris - Fishers
+
+So, the answer is: Saint-Maurice"
+43,Jonas Jerebko," Baltimore, Maryland"
+44,John Henson," Happy Valley, Australia"
+45,Kendall Marshall,Piscataway
+46,PJ Tucker,"Vilnius, Lithuania"
+47,Adreian Payne,"Dayton, Ohio"
+48,Nicolas Batum, Flower Mound
+49,Marc Gasol," Trikala, Greece"
+50,Chase Budinger," Encinitas, California"
+51,Cristiano Felicio," Pouso Alegre, Brazil"
+52,Kevon Looney,"Kelford, North Carolina"
+53,Rajon Rondo,St. Louis
+54,Pau Gasol,Huntington
+55,Martell Webster,Trenton
+56,Brandon Jennings, Compton
+57,Dario Saric, Sibenik
+58,Blake Griffin, Oklahoma City
+59,Malcolm Brogdon," Milwaukee, Wisconsin"
+60,Perry Jones III,"To answer the question about the birthplace of the player, I would need to know the birthplace of each player. Based on my knowledge, here are the answers:
+
+Omer Asik - Bursa, Turkey
+PJ Tucker - Raleigh, North Carolina
+Pablo Prigioni - Río Tercero, Argentina
+Patrick Beverley - Chicago, Illinois
+Patrick McCaw - St. Louis, Missouri
+
+So, the answer would be: Bursa"
+61,Kevin Durant,New Orleans
+62,Joe Ingles," Torrance, California"
+63,Ed Davis," 
+Ed Davis - Washington"
+64,Solomon Hill,Carmel
+65,Deyonta Davis,"Muskegon, Michigan"
+66,Shane Larkin,Meridian
+67,CJ Watson," Las Vegas, Nevada"
+68,Terry Rozier, Waukegan
+69,Carl Landry,"To answer the question about the birthplace of each player, I would need to look up the birthplace information for each player. Based on available data, here are the answers:
+
+Carl Landry - Milwaukee, Wisconsin
+Caron Butler - Racine, Wisconsin
+Chandler Parsons - Casselberry, Florida (near Orlando)
+Channing Frye - White Plains, New York (but grew up in Phoenix, Arizona, however birthplace is what is asked)
+Chase Budinger - Encinitas, California (but near La Jolla, or San Diego)
+
+So the answer is: Milwaukee, Wisconsin"
+70,Timofey Mozgov,Harvey
+71,Reggie Williams,Las Vegas
+72,Robin Lopez,"To answer the question about the birthplace of the player, I would need to look up the birthplace of each player. Here are the answers:
+
+Quincy Acy was born in Tyler, Texas
+Quincy Miller was born in Chicago, Illinois
+Rajon Rondo was born in Louisville, Kentucky
+Rashad Vaughn was born in Minneapolis, Minnesota
+Raul Neto was born in Belo Horizonte, Brazil
+
+So, the answer is: Tyler, Texas"
+73,Russ Smith,"Minneapolis, Minnesota"
+74,J.J. Barea,Memphis
+75,Troy Daniels,Wau
+76,Marcus Smart," Melbourne, Australia"
+77,Briante Weber,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Briante Weber - Chesapeake, Virginia
+Brook Lopez - North Hollywood, California
+CJ McCollum - Canton, Ohio
+CJ Watson - Las Vegas, Nevada
+Cameron Payne - Memphis, Tennessee
+
+So, the answer is: Chesapeake, Virginia"
+78,Danny Granger," New Orleans, Louisiana"
+79,Aaron Brooks,"Seattle, Washington"
+80,Dwyane Wade," 
+Dwyane Wade - Chicago"
+81,Al-Farouq Aminu,"Atlanta, Georgia"
+82,Alan Anderson,"To answer the question about the birthplace of the player, I would need to look up the birthplace of each player. Here are the answers:
+
+Alan Anderson - Minneapolis, Minnesota
+Alex Len - Antratsit, Ukraine
+Allen Crabbe - Los Angeles, California
+Anderson Varejao - Santa Teresa, Brazil
+Andrew Bogut - Melbourne, Australia
+
+So, the answer is: Minneapolis"
+83,Chris Copeland,Orange
+84,Al Jefferson,"Monticello, Mississippi"
+85,Tarik Black, Morgan City
+86,Chris McCullough,Bronx
+87,Elfrid Payton," 
+Elfrid Payton - Gretna
+
+So, the answer is: Grand Forks"
+88,LaMarcus Aldridge," Milwaukee, Wisconsin"
+89,Jason Terry,"To answer the question about the birthplace of the player, I would need to know the birthplace of each player. Based on my general knowledge, here are the answers:
+
+James Harden - Bellflower
+James Michael McAdoo - Norfolk
+Jarell Eddie - Tampa
+Jason Richardson - Saginaw
+Jason Terry - Seattle
+
+So, the answer would be: Bellflower"
+90,Patrick McCaw,Sombor
+91,Pero Antic,Brooklyn
+92,Jordan McRae,"Long Lake, Minnesota"
+93,Jeff Taylor,Tampa
+94,Domantas Sabonis,"Portland, Oregon"
+95,Jon Leuer," Montreal, Canada"
+96,Mindaugas Kuzminskas,"To answer the question about the birthplace of each player, I'll need to provide the birthplace for each of the given players. Here are the answers:
+
+Marc Gasol - Barcelona, Spain
+Marcus Morris - Philadelphia, Pennsylvania
+Marcus Smart - Flower Mound, Texas
+Marcus Thornton - Baton Rouge, Louisiana
+Markel Brown - Peoria, Illinois
+
+So, the answer is: Barcelona"
+97,Jodie Meeks,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Jeff Ayres - Ontario, California
+Jeff Taylor - Nurnberg, Germany
+Jeremy Lin - Torrance, California
+Jerian Grant - Silver Spring, Maryland
+Jodie Meeks - Nashville, Tennessee
+
+So, the answer is: Ontario, California"
+98,Larry Drew II," Trikala, Greece"
+99,Jerian Grant,Seattle
+100,Yogi Ferrell,Seattle
+101,Tristan Thompson,Youngstown
+102,Kyle Anderson,"Greenville, South Carolina"
+103,Markel Brown,Anaheim
+104,Austin Daye,Irvine
+105,Malachi Richardson," Melbourne, Australia
+
+So the output is: Zanesville, Ohio"
+106,Spencer Hawes,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Sergey Karasev was born in St. Petersburg, Russia.
+Sergio Rodriguez was born in San Cristobal de La Laguna, Spain, but more commonly referenced as Tenerife.
+Shane Larkin was born in Cincinnati, Ohio, USA.
+Shawn Long was born in Morgan City, Louisiana, USA.
+Shawn Marion was born in Waukegan, Illinois, USA.
+
+So, the answer is: St. Petersburg"
+107,Marcus Morris," Newark, New Jersey"
+108,Shawn Marion,New York City
+109,Alex Len, Antratsit
+110,Taj Gibson, Cincinnati
+111,Aron Baynes,Gisborne
+112,Larry Sanders," Newark, New Jersey"
+113,Allen Crabbe, Los Angeles
+114,Anthony Bennett,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Anthony Bennett - Toronto, Canada
+Anthony Morrow - Charlotte, North Carolina
+Aron Baynes - Gisborne, New Zealand
+Arron Afflalo - Los Angeles, California
+Austin Daye - Irvine, California
+
+So, the answer is: Toronto"
+115,Joey Dorsey,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Joe Harris - Chelan, Washington
+Joe Ingles - Happy Valley, Australia
+Joe Johnson - Little Rock, Arkansas
+Joel Anthony - Montreal, Canada
+Joey Dorsey - Baltimore, Maryland
+
+So, the answer is: Chelan, Washington"
+116,Kelly Oubre Jr.,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Jusuf Nurkic - Tuzla, Bosnia and Herzegovina
+Karl-Anthony Towns - Piscataway, New Jersey
+Kawhi Leonard - Los Angeles, California
+Kelly Olynyk - Toronto, Ontario
+Kelly Oubre Jr. - New Orleans, Louisiana
+
+So, the answer is: Tuzla"
+117,Gorgui Dieng,Santo Domingo
+118,Will Barton,Chicago
+119,Rashad Vaughn,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Patty Mills - Canberra, Australia
+Pau Gasol - Sant Boi de Llobregat, Spain
+Pero Antic - Skopje, Macedonia
+Perry Jones III - Winchendon, Massachusetts, USA
+Pierre Jackson - Las Vegas, Nevada, USA
+
+So, the answer is: Canberra"
+120,Jeff Ayres,Norfolk
+121,Shawn Long,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Rudy Gay - Brooklyn, New York
+Russ Smith - New York City, New York
+Ryan Hollins - Pasadena, California
+Ryan Kelly - Carmel, New York
+Sebastian Telfair - Brooklyn, New York
+
+So, the answer is: Brooklyn"
+122,Sergio Rodriguez,North Hollywood
+123,Ian Mahinmi,Istanbul
+124,DeAndre Jordan,"To answer the question about the birthplace of each player, I would need to look up the birthplace for each of the given names. Based on available information:
+
+- DeAndre Jordan was born in Houston, Texas
+- DeAndre Liggins was born in Chicago, Illinois
+- DeAndre' Bembry was born in Charlotte, North Carolina
+- Dejounte Murray was born in Seattle, Washington
+- Delon Wright was born in Los Angeles, California
+
+So, the answer would be: Houston, Texas"
+125,Rodney Hood,"Chicago, Illinois"
+126,Anthony Morrow,Charlotte
+127,Karl-Anthony Towns,Indianapolis
+128,Jordan Hamilton,"Raleigh, North Carolina"
+129,Corey Brewer,Portland
+130,Sonny Weems,Brooklyn
+131,Eric Bledsoe,Washington
+132,Ryan Hollins,"Belo Horizonte, Brazil"
+133,Jason Richardson,Villa Rica
+134,Nikola Jokic, Baton Rouge
+135,Derrick Rose,"Chicago, Illinois"
+136,CJ McCollum," Canton, Ohio"
+137,John Wall," Little Rock, Arkansas"
+138,Kevin Garnett,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Kendall Marshall - Born in Dumfries, Virginia
+Kenneth Faried - Born in Newark, New Jersey
+Kent Bazemore - Born in Kelford, North Carolina
+Kevin Durant - Born in Suitland, Maryland
+Kevin Garnett - Born in Greenville, South Carolina
+
+So, the answer is: Dumfries, Virginia"
+139,Chasson Randle,"To answer the question about the birthplace of each player, I would need to look up the birthplace information for each player. Here are the answers based on available data:
+
+Chasson Randle - Rock Island, Illinois
+Chris Copeland - Orange, New Jersey (but some sources say Miami, Florida, however I will use Orange)
+Chris McCullough - Bronx, New York
+Clint Capela - Geneva, Switzerland
+Corey Brewer - Portland, Tennessee (but some sources say Tennessee, however I will use Portland)
+
+Answer: Rock Island"
+140,Joe Harris," Nurnberg, Germany"
+141,D.J. Augustin," New Orleans, Louisiana"
+142,Hedo Turkoglu,Kébémer
+143,Tony Wroten,Memphis
+144,Kyrie Irving,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Zanesville, Ohio"
+145,Stephen Curry, Tenerife
+146,Tony Parker,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given players. Here are the answers:
+
+Taj Gibson - Brooklyn, New York
+Tarik Black - Memphis, Tennessee
+Terry Rozier - Youngstown, Ohio
+Thon Maker - Wau, South Sudan
+Timofey Mozgov - Stavropol, Russia (then part of the Soviet Union, now part of Russia)
+
+So, the answer is: Brooklyn"
+147,Ian Clark,"To answer the question about the birthplace of the player, I would need to look up the birthplace of each player. Here are the answers:
+
+Hassan Whiteside - San Antonio, Texas
+Hedo Turkoglu - Istanbul, Turkey
+Henry Sims - Baltimore, Maryland
+Hollis Thompson - Pasadena, California
+Ian Clark - Memphis, Tennessee
+
+So, the answer is: San Antonio"
+148,Nene, Philadelphia
+149,Ryan Kelly,"To answer the question about the birthplace of each player, I would need to look up the birthplace information for each of the given players. Based on available data:
+
+- Ray McCallum was born in Detroit, Michigan
+- Reggie Bullock was born in Baltimore, Maryland
+- Reggie Williams was born in Prince George, Virginia
+- Robin Lopez was born in North Hollywood, California
+- Rodney Hood was born in Meridian, Mississippi
+
+So, the answer would be: Detroit"
+150,Jae Crowder,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Ian Mahinmi - Rouen, France
+Isaiah Canaan - Biloxi, Mississippi
+Ivica Zubac - Mostar, Bosnia and Herzegovina
+J.J. Barea - Mayagüez, Puerto Rico
+Jae Crowder - Villa Rica, Georgia
+
+So, the answer is: Rouen"
+151,Festus Ezeli,"Indianapolis, Indiana"
+152,James Harden,Biloxi
+153,Evan Fournier,"Kinshasa, Zaire"
+154,Channing Frye," White Plains, New York"
+155,Kenneth Faried,Los Angeles
+156,Dante Exum,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given players. Here are the answers:
+
+Dante Exum - Melbourne, Australia
+Dario Saric - Sibenik, Croatia
+Darren Collison - Rancho Cucamonga, California
+Darrun Hilliard - Bethlehem, Pennsylvania
+Davis Bertans - Valmiera, Latvia
+
+So, the answer is: Melbourne"
+157,Andrew Bogut, Melbourne
+158,Brandan Wright, Nashville
+159,Patrick Beverley,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Nicolas Batum - Lisieux, France
+Nikola Jokic - Sombor, Serbia
+Norris Cole - Dayton, Ohio
+O.J. Mayo - Huntington, West Virginia
+Okaro White - Brooklyn, New York
+
+So, the answer is: Lisieux"
+160,Cory Joseph," Toronto, Ontario"
+161,Ivica Zubac,Pasadena
+162,O.J. Mayo,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Marquese Chriss - Sacramento, California
+Martell Webster - Edmonds, Washington
+Mike Miller - Mitchell, South Dakota
+Mindaugas Kuzminskas - Vilnius, Lithuania
+Nene - São Carlos, Brazil
+
+So, the answer is: Sacramento, California"
+163,Brian Roberts, Toledo
+164,Caron Butler," Racine, Wisconsin"
+165,Arron Afflalo,Los Angeles
+166,Darrun Hilliard, Bethlehem
+167,Clint Capela,Geneva
+168,Pablo Prigioni,"São Carlos, Brazil"
+169,Eric Gordon,Gretna
+170,James Michael McAdoo,Mostar
+171,Tyler Ennis,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Timothe Luwawu-Cabarrot - Cannes, France
+Tobias Harris - Islip, New York
+Tony Allen - Chicago, Illinois
+Tony Parker - Bruges, Belgium
+Tony Wroten - Seattle, Washington
+
+So, the answer is: Cannes"
+172,Pierre Jackson,Raleigh
+173,Hassan Whiteside,Baton Rouge
+174,Giannis Antetokounmpo,Chicago
+175,Cory Jefferson,"To answer the question about the birthplace of each player, I would need to look up the birthplace information for each player. Based on available data, here are the answers:
+
+Cory Jefferson - Killeen, Texas
+Cory Joseph - Toronto, Ontario
+Cristiano Felicio - Pouso Alegre, Brazil
+D.J. Augustin - New Orleans, Louisiana
+Danny Granger - New Orleans, Louisiana
+
+So, the answer is: Killeen, Texas"
+176,Kelly Olynyk,Houston
+177,Thon Maker,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Sheldon McClellan - Miami, Florida
+Solomon Hill - Harvey, Illinois
+Sonny Weems - West Memphis, Arkansas
+Spencer Hawes - Seattle, Washington
+Stephen Curry - Akron, Ohio
+
+So, the answer is: Miami"
+178,Elijah Millsap,Chicago
+179,Greg Monroe,"To answer the question about the birthplace of each player, we need to know the birthplace of each. Based on available information:
+
+- Giannis Antetokounmpo was born in Athens, Greece.
+- Glen Davis was born in Baton Rouge, Louisiana, USA.
+- Gorgui Dieng was born in Kébémer, Senegal.
+- Grant Jerrett was born in Costa Mesa, California, USA.
+- Greg Monroe was born in Harvey, Louisiana, (New Orleans area), USA.
+
+So, the answer would be: Athens"
+180,Dejounte Murray," Seattle, Washington"
+181,Sheldon McClellan,Pasadena
+182,Jonathon Simmons,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+John Henson - Greensboro, North Carolina
+John Wall - Raleigh, North Carolina
+Jon Leuer - Long Lake, Minnesota
+Jonas Jerebko - Kinna, Sweden (also known as Borås, Sweden, but Kinna is more specific)
+Jonathon Simmons - Houston, Texas
+
+So, the answer is: Greensboro, North Carolina"
+183,Delon Wright," Los Angeles, California"
+184,Zaza Pachulia,"To answer the question about the birthplace of the player, I would need to know the birthplace of each player. Based on available information, here are the answers:
+
+Tristan Thompson - Brampton, Ontario, Canada
+Troy Daniels - Roanoke, Virginia, USA
+Troy Williams - Virginia, USA (or Hampton, Virginia, USA - sources may vary)
+Tyler Ennis - Toronto, Ontario, Canada
+Wesley Matthews - Madison, Wisconsin, USA
+
+So, the answer would be:
+Brampton"
+185,Beno Udrih,"To answer the question about the birthplace of each player, I'll need to look up the birthplace for each of the given names. Here are the answers:
+
+Beno Udrih - Celje, Slovenia
+Blake Griffin - Oklahoma City, Oklahoma
+Brandan Wright - Nashville, Tennessee
+Brandon Jennings - Compton, California
+Brian Roberts - Toledo, Ohio
+
+So, the answer is: Celje"
+186,Kent Bazemore,Toronto
+187,Chandler Parsons," Casselberry, Florida"
+188,Tobias Harris,Seattle
+189,Anderson Varejao, Santa Teresa
+190,Reggie Bullock,Winchendon
+191,Will Bynum,Bruges
+192,Norris Cole, Peoria
+193,Kostas Papanikolaou,"Suitland, Maryland"
+194,Timothe Luwawu-Cabarrot,West Memphis
+195,Tony Allen,Akron
+196,Jeremy Lin,Saginaw
+197,Marcus Thornton,"To answer the question about the birthplace of each player, I would need to look up the birthplace information for each player. Here are the answers:
+
+
+LaMarcus Aldridge - Dallas, Texas
+Larry Drew II - Anaheim, California
+Larry Sanders - Fort Pierce, Florida (but he was born in Fort Pierce and raised in Port St. Lucie, so I will use the birthplace) 
+Malachi Richardson - Trenton, New Jersey
+Malcolm Brogdon - Atlanta, Georgia (but he was born in Atlanta and raised in Norcross, so I will use the birthplace)
+
+
+So the answer is: Dallas"
+198,Wesley Matthews,Islip
+199,Darren Collison, Rancho Cucamonga

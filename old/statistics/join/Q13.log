@@ -1,0 +1,220 @@
+System: Lotus (sem_join -- default)
+Timestamp: 2025-12-22T16:48:26.500160
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 10
+Execution Time: 19.83
+Total LLM calls: 630
+Precision: 0.05
+Recall: 1.00
+F1 Score: 0.10
+------------------------------------------------------
+
+
+System: Lotus (sem_join -- default)
+Timestamp: 2025-12-22T16:49:19.259581
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 20
+Execution Time: 38.94
+Total LLM calls: 1260
+Precision: 0.05
+Recall: 1.00
+F1 Score: 0.10
+------------------------------------------------------
+
+
+System: Lotus (sem_join -- default)
+Timestamp: 2025-12-22T16:50:32.445590
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 30
+Execution Time: 58.32
+Total LLM calls: 1890
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: Lotus (sem_join -- default)
+Timestamp: 2025-12-22T16:52:02.760706
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 40
+Execution Time: 75.79
+Total LLM calls: 2520
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: Lotus (sem_join -- default)
+Timestamp: 2025-12-22T16:53:51.930315
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 94.91
+Total LLM calls: 3150
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2025-12-22T20:03:37
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 10
+Execution Time: 13.93
+Precision: 0.05
+Recall: 1.00
+F1 Score: 0.10
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2025-12-22T20:04:15
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 20
+Execution Time: 28.44
+Precision: 0.05
+Recall: 1.00
+F1 Score: 0.10
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2025-12-22T20:05:08
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 30
+Execution Time: 43.82
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2025-12-22T20:06:18
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 40
+Execution Time: 58.68
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2025-12-22T20:07:41
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 73.56
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+### NEW LINEAGE
+
+
+System: Lotus (sem_join -- default)
+Timestamp: 2026-01-12T11:04:09.910451
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 10
+Execution Time: 21.06
+Total LLM calls: 630
+Precision: 0.05
+Recall: 1.00
+F1 Score: 0.10
+------------------------------------------------------
+
+
+Precision: 0.05
+Recall: 1.00
+F1 Score: 0.10
+------------------------------------------------------
+
+
+System: Lotus (sem_join -- default)
+Timestamp: 2026-01-12T11:05:31.698600
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 30
+Execution Time: 56.21
+Total LLM calls: 1890
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: Lotus (sem_join -- default)
+Timestamp: 2026-01-12T11:07:32.286089
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 94.28
+Total LLM calls: 3150
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2026-01-12T13:53:48
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 10
+Execution Time: 13.83
+Precision: 0.05
+Recall: 1.00
+F1 Score: 0.10
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2026-01-12T13:54:26
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 20
+Execution Time: 28.31
+Precision: 0.05
+Recall: 1.00
+F1 Score: 0.10
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2026-01-12T13:55:18
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 30
+Execution Time: 43.56
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2026-01-12T13:56:26
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 40
+Execution Time: 58.50
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
+System: BlendSQL (LLMJoin)
+Timestamp: 2026-01-12T13:57:50
+Model: RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8
+Input Size: 50
+Execution Time: 73.26
+Precision: 0.06
+Recall: 1.00
+F1 Score: 0.11
+------------------------------------------------------
+
+
