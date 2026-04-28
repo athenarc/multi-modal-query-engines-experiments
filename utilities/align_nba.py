@@ -114,6 +114,31 @@ def align_summaries_to_nba_players(df_summaries_players):
     print("-" * 30)
     print("Dataset alignment completed.\nCleaned datasets saved as all_seasons_cleaned.csv and players_summaries.csv under datasets/nba/ directory.")
 
+def create_game_summaries_df(dataset):
+    game_summaries = []
+    
+    for row in dataset:
+        game_id = row.get("sportsett_id")
+
+        if "target" in row and row["target"]:
+            summary = str(row["target"])
+        elif "summaries" in row and isinstance(row["summaries"], list) and len(row["summaries"]) > 0:
+            summary = str(row["summaries"][0])
+        else:
+            summary = "No summary available"
+
+        #TODO: add (1) winner team name, (2) winner total points, (3) sum of scored points by both teams
+        
+        game_summaries.append({
+            "sportsett_id": game_id,
+            "summary": summary
+        })
+    
+    pd.DataFrame(game_summaries).to_csv("datasets/nba/game_summaries.csv", index=False, encoding='utf-8')
+    print("-" * 30)
+    print("Game summaries extracted and saved as game_summaries.csv under datasets/nba/ directory.")
+
+
 if __name__ == "__main__":
     dataset = datasets.load_dataset(
         "parquet", 
