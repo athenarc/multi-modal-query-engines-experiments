@@ -3,8 +3,8 @@ import datasets
 import re
 import unicodedata
 
-def process_and_filter_sportssett(dataset):
-    print("Loading dataset...")
+def create_player_summary_dataset(dataset):
+    print("Creating player summary dataset...")
     
     csv_data = []
     total_players_evaluated = 0
@@ -35,14 +35,12 @@ def process_and_filter_sportssett(dataset):
                 total_players_evaluated += 1
                 player_name = str(player.get("name", "Unknown Player"))
                 
-                # --- FILTERING LOGIC ---
+                # Check if the player's name (or last name) is mentioned in the summary
                 is_mentioned = False
                 
-                # 1. Check if their exact full name is in the summary
                 if player_name in summary:
                     is_mentioned = True
                 else:
-                    # 2. Check last name only (if the player has more than one name part)
                     name_parts = player_name.split(' ', 1)
                     if len(name_parts) > 1:
                         last_name = name_parts[-1]
@@ -70,14 +68,14 @@ def process_and_filter_sportssett(dataset):
                     })
 
     # Convert the list of filtered dictionaries into a pandas DataFrame
-    df = pd.DataFrame(csv_data)
+    df_players_summaries = align_summaries_to_nba_players(pd.DataFrame(csv_data))
     
     print("-" * 30)
     print("Processing and filtering completed.")
     print(f"Original player rows evaluated: {total_players_evaluated}")
-    print(f"Player rows after filtering: {len(df)}")
+    print(f"Player rows after filtering: {df_players_summaries.shape[0]}")
 
-    return df
+    return df_players_summaries
 
 def align_summaries_to_nba_players(df_summaries_players):
     seasons = pd.read_csv("datasets/nba/all_seasons.csv", index_col=0)
@@ -114,6 +112,53 @@ def align_summaries_to_nba_players(df_summaries_players):
     print("-" * 30)
     print("Dataset alignment completed.\nCleaned datasets saved as all_seasons_cleaned.csv and players_summaries.csv under datasets/nba/ directory.")
 
+    return df_summaries_players
+
+def create_team_summary_dataset(dataset):
+    print("Creating team summary dataset...")
+
+    csv_data = []
+
+    print(f"Processing {len(dataset)} games...")
+
+    for row in dataset:
+        game_id = row.get("sportsett_id")
+        
+        # Keep the first summary if "target" is not available
+        if "target" in row and row["target"]:
+            summary = str(row["target"])
+        elif "summaries" in row and isinstance(row["summaries"], list) and len(row["summaries"]) > 0:
+            summary = str(row["summaries"][0])
+        else:
+            summary = "No summary available"
+            
+        teams = row.get("teams", {})
+
+        home = (row['teams']['home']['name'], int(row['teams']['home']['line_score']['game']['PTS']))
+        vis = (row['teams']['vis']['name'], int(row['teams']['vis']['line_score']['game']['PTS']))
+
+        winner_team = home[0] if home[1] > vis[1] else vis[0]
+
+        csv_data.append({
+            "sportsett_id": game_id,
+            "team": home[0],
+            "summary": summary,
+            "is_winner": home[0] == winner_team
+        })
+        csv_data.append({
+            "sportsett_id": game_id,
+            "team": vis[0],
+            "summary": summary,
+            "is_winner": vis[0] == winner_team
+        })
+
+        #TODO: Check if the summary contains the winner team name.
+
+    pd.DataFrame(csv_data).to_csv("datasets/nba/teams_summaries.csv", index=False, encoding='utf-8')
+    print("-" * 30)
+    print("Team-Summary alignment completed.\nDataset saved as teams_summaries.csv under datasets/nba/ directory.")
+
+
 def create_game_summaries_df(dataset):
     game_summaries = []
     
@@ -138,6 +183,10 @@ def create_game_summaries_df(dataset):
             winner_points = vis[1]
         total_points = home[1] + vis[1]
 
+
+        #TODO: Check if the summary contains the winner team name, points, etc.
+
+
         game_summaries.append({
             "sportsett_id": game_id,
             "winner_team": winner_team,
@@ -150,7 +199,6 @@ def create_game_summaries_df(dataset):
     print("-" * 30)
     print("Game summaries extracted and saved as game_summaries.csv under datasets/nba/ directory.")
 
-
 if __name__ == "__main__":
     dataset = datasets.load_dataset(
         "parquet", 
@@ -161,9 +209,6 @@ if __name__ == "__main__":
         }
     )
     
-    # Notice we only need to call the merged function now
-    filtered_summaries = process_and_filter_sportssett(dataset['test'])
-    
-    align_summaries_to_nba_players(filtered_summaries)
-
-    create_game_summaries_df(dataset['test'])
+    # create_player_summary_dataset(dataset['test'])
+    # create_game_summaries_df(dataset['test'])
+    create_team_summary_dataset(dataset['test'])
