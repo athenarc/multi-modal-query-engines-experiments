@@ -1,4 +1,0 @@
-experiment,system,llm,input_size,query_id,class_name,task_name,latency_sec,status,error
-initial_experiment,lotus,ollama,20,q1,derivation,classification,12.854660749435425,success,
-initial_experiment,lotus,ollama,50,q1,derivation,classification,12.50142765045166,success,
-initial_experiment,lotus,ollama,100,q1,derivation,classification,24.483974933624268,success,

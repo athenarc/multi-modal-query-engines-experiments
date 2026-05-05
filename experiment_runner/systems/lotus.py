@@ -10,9 +10,21 @@ class LotusSystem(BaseSystem):
             self.lm = LM(self.llm_provider + '/' + self.model_name)
         elif self.llm_provider == 'vllm':
             self.lm = LM("hosted_vllm/" + self.model_name, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
-        lotus.settings.configure(lm=self.lm)        
+        lotus.settings.configure(lm=self.lm, enable_cache=False)        
 
         print(f"Lotus setup with {self.llm_provider} and model {self.model_name} completed.")
+
+        if self.llm_provider == 'ollama':
+            self._load_ollama_model()
+
+    def _load_ollama_model(self):
+        try:
+            df_warmup = pd.DataFrame({"text": ["hello world"]})
+            # Force an LLM call
+            df_warmup.sem_map("Is this a greeting? {text}")
+            print("Warm-up complete!")
+        except Exception as e:
+            print(f"Warm-up skipped/failed: {e}")
 
     def execute_query(self, class_name: str, query: str, table: str, cols: list, input_size: int) -> dict:
         if class_name == "derivation":
@@ -26,14 +38,3 @@ class LotusSystem(BaseSystem):
             execution_time = time.time() - start_time
 
             return {"result": output_df, "latency": execution_time}
-
-            
-
-        # start_time = time.time()
-        
-        # # TODO: Insert actual Lotus API calls here
-        # # Example: df.lotus.filter(nlq)
-        # result_data = f"Mock Lotus result for {input_size} rows"
-        
-        # execution_time = time.time() - start_time
-        # return {"result": result_data, "latency": execution_time} 

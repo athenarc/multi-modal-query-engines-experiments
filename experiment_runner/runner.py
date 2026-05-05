@@ -24,28 +24,33 @@ class ExperimentRunner:
         with open(path, 'r') as f:
             return yaml.safe_load(f)
 
-    def filter_queries(self) -> List[Query]:
-        filters = self.run_config.get('filters', {})
-        target_class = filters.get('class_name')
-        target_task = filters.get('task_name')
+    # def filter_queries(self) -> List[Query]:
+    #     filters = self.run_config.get('filters', {})
+    #     target_class = filters.get('class_name')
+    #     target_task = filters.get('task_name')
 
-        filtered = self.all_queries
-        if target_class:
-            filtered = [q for q in filtered if q.class_name == target_class]
-        if target_task:
-            filtered = [q for q in filtered if q.task_name == target_task]
+    #     filtered = self.all_queries
+    #     if target_class:
+    #         filtered = [q for q in filtered if q.class_name == target_class]
+    #     if target_task:
+    #         filtered = [q for q in filtered if q.task_name == target_task]
         
-        return filtered
+    #     return filtered
 
     def run(self):
-        queries_to_run = self.filter_queries()
+        queries_to_run = self.all_queries
+
+        valid_llm_configs = []
+        for provider, models in self.run_config.get('llms', {}).items():
+            for model_name in models:
+                valid_llm_configs.append((provider, model_name))
 
         print(f"Starting experiment: {self.run_config['experiment_name']}")
         print(f"Total Queries: {len(queries_to_run)}")
 
-        for system_name, llm_provider in itertools.product(self.run_config['systems'], self.run_config['llm_providers']):
-            # Initialize system once per LLM-Provider combination
-            system_instance = get_system(system_name, llm_provider, self.run_config['model_names'][0])
+        for system_name, (llm_provider, model_name) in itertools.product(self.run_config['systems'], valid_llm_configs):            # Initialize system once per LLM-Provider-Model combination
+            # Initialize system once per LLM-Provider-Model valid combination
+            system_instance = get_system(system_name, llm_provider, model_name)
 
             for query in queries_to_run:
                 print(query.lotus_query)
@@ -53,7 +58,7 @@ class ExperimentRunner:
                 print(f"Executing Query {query.id} ({query.class_name} / {query.task_name})...")
             
                 for input_size in self.run_config['input_sizes']:
-                    print(f"\n--- Running: {system_name.upper()} | {self.run_config['model_names'][0]} |{llm_provider} | Size: {input_size} ---")
+                    print(f"\n--- Running: {system_name.upper()} | {model_name} |{llm_provider} | Size: {input_size} ---")
                     
                     try:
                         system_query = getattr(query, f"{system_name}_query", None)
