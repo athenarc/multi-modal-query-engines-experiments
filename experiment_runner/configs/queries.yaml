@@ -11,4 +11,3 @@ queries:
   #   class_name: extraction
   #   task_name: summarization
   #   nlq: "Extract and summarize the main points from the documents."
-  # ... Add the rest of your 11 queries here
