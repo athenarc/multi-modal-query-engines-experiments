@@ -1,0 +1,13 @@
+experiment_name: "initial_experiment"
+
+# systems: ["lotus", "palimpzest", "blendsql"]
+systems: ["lotus"]
+# llm_providers: ["ollama", "vllm"]
+llm_providers: ["ollama"]
+model_names: ["gemma3:12b"]
+input_sizes: [20, 50, 100]
+
+filters:
+  # class_name: "derivation"   # e.g., only run 'derivation' queries
+  class_name: null
+  task_name: null            # e.g., null means ignore this filter

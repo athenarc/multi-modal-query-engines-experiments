@@ -1,0 +1,14 @@
+queries:
+  - id: q1
+    class_name: derivation
+    task_name: classification
+    nlq: "Which team won the game described in the summary: home or visitor?"
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+    lotus_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
+  
+  # - id: q2
+  #   class_name: extraction
+  #   task_name: summarization
+  #   nlq: "Extract and summarize the main points from the documents."
+  # ... Add the rest of your 11 queries here
