@@ -5,9 +5,14 @@ queries:
     nlq: "Which team won the game described in the summary: home or visitor?"
     table: datasets/nba/game_summaries.csv
     cols: [summary]
+    new_col_name: winner
     lotus_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
   
-  # - id: q2
-  #   class_name: extraction
-  #   task_name: summarization
-  #   nlq: "Extract and summarize the main points from the documents."
+  - id: q2
+    class_name: derivation
+    task_name: reasoning
+    nlq: "Return points scored by the winner team"
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+    lotus_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points."
+    new_col_name: winner_points

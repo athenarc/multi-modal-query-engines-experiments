@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 import time
 
 class BaseSystem(ABC):
@@ -13,7 +13,22 @@ class BaseSystem(ABC):
         """Initialize the connection to Ollama or vLLM."""
         pass
 
-    @abstractmethod
-    def execute_query(self, class_name: str, query: str, table: str, cols: list, input_size: int) -> Dict[str, Any]:
-        """Execute the query and return results and execution time."""
-        pass
+    def execute_query(
+        self,
+        class_name: str,
+        nl_criterion: str,
+        table: str,
+        cols: list,
+        input_size: int,
+        **kwargs,
+    ) -> Dict[str, Any]:
+        """Dispatch to the class-specific execute_<class_name>_query method."""
+        method_name = f"execute_{class_name}_query"
+        
+        if not hasattr(self, method_name):
+            raise NotImplementedError(
+                f"{self.__class__.__name__} does not implement {method_name}"
+            )
+
+        method = getattr(self, method_name)
+        return method(nl_criterion, table, cols, input_size, **kwargs)

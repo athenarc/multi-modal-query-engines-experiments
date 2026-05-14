@@ -3,12 +3,12 @@ experiment_name: "initial_experiment"
 systems: ["lotus"]
 
 llms:
-  ollama: 
-    - "gemma3:12b"
+  # ollama: 
+  #   - "gemma3:12b"
   vllm:
     - "meta-llama/Llama-3.1-8B-Instruct"
 
-input_sizes: [20, 50, 100]
+input_sizes: [100]
 
 filters:
   class_name: null

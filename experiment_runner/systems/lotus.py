@@ -26,15 +26,32 @@ class LotusSystem(BaseSystem):
         except Exception as e:
             print(f"Warm-up skipped/failed: {e}")
 
-    def execute_query(self, class_name: str, query: str, table: str, cols: list, input_size: int) -> dict:
-        if class_name == "derivation":
-            input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
-            
-            start_time = time.time()
+    def execute_derivation_query(
+        self,
+        nl_criterion: str,
+        table: str,
+        cols: list,
+        input_size: int,
+        new_col_name: str
+    ) -> dict:
+        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
 
-            output_df = input_df.sem_map(query)
-            output_df['winner'] = output_df['_map']
+        start_time = time.time()
 
-            execution_time = time.time() - start_time
+        output_df = input_df.sem_map(nl_criterion)
+        output_df[new_col_name] = output_df['_map']
+        output_df.drop(columns=['_map'], inplace=True)
 
-            return {"result": output_df, "latency": execution_time}
+
+        print(f"USAGE::::{nl_criterion}")
+        stats = lotus.settings.lm.stats
+        print(stats)
+
+        # print(f"Total API Calls: {stats.total_calls}") # or simply count the length of df / batch_size
+        # print(f"Prompt Tokens: {stats.prompt_tokens}")
+        # print(f"Completion Tokens: {stats.completion_tokens}")
+        # print(f"Total Tokens: {stats.total_tokens}")
+
+        execution_time = time.time() - start_time
+
+        return {"result": output_df, "latency": execution_time}

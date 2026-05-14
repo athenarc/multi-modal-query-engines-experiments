@@ -12,6 +12,7 @@ class Query(BaseModel):
     nlq: str
     table: str
     cols: List[str]
+    new_col_name: Optional[str] = None
     lotus_query: Optional[str] = None
 
 class ExperimentRunner:
@@ -65,13 +66,14 @@ class ExperimentRunner:
                         if system_query is None:
                             raise ValueError(f"No query defined for {system_name} in query ID {query.id}")
 
-                        output = system_instance.execute_query(query.class_name, system_query, query.table, query.cols, input_size)
+                        output = system_instance.execute_query(query.class_name, system_query, query.table, query.cols, input_size, new_col_name=query.new_col_name)
 
                         # Log successful result
                         self.results.append({
                             "experiment": self.run_config['experiment_name'],
                             "system": system_name,
-                            "llm": llm_provider,
+                            "llm_provider": llm_provider,
+                            "model_name": model_name,
                             "input_size": input_size,
                             "query_id": query.id,
                             "class_name": query.class_name,
@@ -80,13 +82,16 @@ class ExperimentRunner:
                             "status": "success",
                             "error": None
                         })
+
+                        output.get('result').to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
                     except Exception as e:
                         print(f"Error on {query.id}: {str(e)}")
                         # Log failed result
                         self.results.append({
                              "experiment": self.run_config['experiment_name'],
                             "system": system_name,
-                            "llm": llm_provider,
+                            "llm_provider": llm_provider,
+                            "model_name": model_name,
                             "input_size": input_size,
                             "query_id": query.id,
                             "class_name": query.class_name,
