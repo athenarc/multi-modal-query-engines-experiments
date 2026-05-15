@@ -42,16 +42,21 @@ class LotusSystem(BaseSystem):
         output_df[new_col_name] = output_df['_map']
         output_df.drop(columns=['_map'], inplace=True)
 
-
-        print(f"USAGE::::{nl_criterion}")
-        stats = lotus.settings.lm.stats
-        print(stats)
-
-        # print(f"Total API Calls: {stats.total_calls}") # or simply count the length of df / batch_size
-        # print(f"Prompt Tokens: {stats.prompt_tokens}")
-        # print(f"Completion Tokens: {stats.completion_tokens}")
-        # print(f"Total Tokens: {stats.total_tokens}")
-
         execution_time = time.time() - start_time
 
-        return {"result": output_df, "latency": execution_time}
+        stats = lotus.settings.lm.stats
+        
+        input_tokens=stats.physical_usage.prompt_tokens
+        output_tokens=stats.physical_usage.completion_tokens
+        total_tokens=stats.physical_usage.total_tokens
+        total_calls=input_size
+        tokens_throughput = total_tokens / execution_time if execution_time > 0 else 0
+
+        return {"result": output_df, 
+                "latency": execution_time,
+                "input_tokens": input_tokens, 
+                "output_tokens": output_tokens, 
+                "total_tokens": total_tokens, 
+                "total_calls": total_calls, 
+                "tokens_throughput": tokens_throughput
+                }

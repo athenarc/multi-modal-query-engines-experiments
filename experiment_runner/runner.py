@@ -79,6 +79,11 @@ class ExperimentRunner:
                             "class_name": query.class_name,
                             "task_name": query.task_name,
                             "latency_sec": output.get('latency'),
+                            "input_tokens": output.get('input_tokens'),
+                            "output_tokens": output.get('output_tokens'),
+                            "total_tokens": output.get('total_tokens'),
+                            "total_calls": output.get('total_calls'),
+                            "tokens_throughput": output.get('tokens_throughput'),
                             "status": "success",
                             "error": None
                         })
