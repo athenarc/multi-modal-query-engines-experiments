@@ -13,3 +13,4 @@ input_sizes: [50]
 filters:
   class_name: null
   task_name: null
+  query_ids: [q4] 

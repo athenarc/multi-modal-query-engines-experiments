@@ -16,3 +16,21 @@ queries:
     cols: [summary]
     lotus_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points."
     new_col_name: winner_points
+
+  - id: q3
+    class_name: derivation
+    task_name: extraction
+    nlq: "Return points scored by a specific player mentioned in a game summary"
+    table: datasets/nba/players_summaries.csv
+    cols: [player_name, summary]
+    lotus_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points."
+    new_col_name: player_points
+
+  - id: q4
+    class_name: derivation
+    task_name: external_knowledge
+    nlq: "Return the birthplace of a specific player"
+    table: datasets/nba/all_seasons.csv
+    cols: [player_name]
+    lotus_query: "Return the birthplace of {player_name}. Return only the name of the country."
+    new_col_name: birthplace

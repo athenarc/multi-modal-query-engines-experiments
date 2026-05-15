@@ -25,21 +25,30 @@ class ExperimentRunner:
         with open(path, 'r') as f:
             return yaml.safe_load(f)
 
-    # def filter_queries(self) -> List[Query]:
-    #     filters = self.run_config.get('filters', {})
-    #     target_class = filters.get('class_name')
-    #     target_task = filters.get('task_name')
+    def filter_queries(self) -> List[Query]:
+        filters = self.run_config.get('filters', {})
+        target_class = filters.get('class_name')
+        target_task = filters.get('task_name')
+        target_ids = filters.get('query_ids')
 
-    #     filtered = self.all_queries
-    #     if target_class:
-    #         filtered = [q for q in filtered if q.class_name == target_class]
-    #     if target_task:
-    #         filtered = [q for q in filtered if q.task_name == target_task]
+        filtered = self.all_queries
         
-    #     return filtered
+        # Filter by Query IDs (if provided and not empty)
+        if target_ids:
+            filtered = [q for q in filtered if q.id in target_ids]
+            
+        # Filter by Class Name
+        if target_class:
+            filtered = [q for q in filtered if q.class_name == target_class]
+            
+        # Filter by Task Name
+        if target_task:
+            filtered = [q for q in filtered if q.task_name == target_task]
+        
+        return filtered
 
     def run(self):
-        queries_to_run = self.all_queries
+        queries_to_run = self.filter_queries()
 
         valid_llm_configs = []
         for provider, models in self.run_config.get('llms', {}).items():
@@ -47,26 +56,31 @@ class ExperimentRunner:
                 valid_llm_configs.append((provider, model_name))
 
         print(f"Starting experiment: {self.run_config['experiment_name']}")
-        print(f"Total Queries: {len(queries_to_run)}")
+        print(f"Total Queries after filtering: {len(queries_to_run)}")
 
-        for system_name, (llm_provider, model_name) in itertools.product(self.run_config['systems'], valid_llm_configs):            # Initialize system once per LLM-Provider-Model combination
+        if not queries_to_run:
+            print("No queries matched the filters. Exiting.")
+            return
+
+        for system_name, (llm_provider, model_name) in itertools.product(self.run_config['systems'], valid_llm_configs):
             # Initialize system once per LLM-Provider-Model valid combination
             system_instance = get_system(system_name, llm_provider, model_name)
 
             for query in queries_to_run:
                 print(query.lotus_query)
-
                 print(f"Executing Query {query.id} ({query.class_name} / {query.task_name})...")
             
                 for input_size in self.run_config['input_sizes']:
-                    print(f"\n--- Running: {system_name.upper()} | {model_name} |{llm_provider} | Size: {input_size} ---")
+                    print(f"\n--- Running: {system_name.upper()} | {model_name} | {llm_provider} | Size: {input_size} ---")
                     
                     try:
                         system_query = getattr(query, f"{system_name}_query", None)
                         if system_query is None:
                             raise ValueError(f"No query defined for {system_name} in query ID {query.id}")
 
-                        output = system_instance.execute_query(query.class_name, system_query, query.table, query.cols, input_size, new_col_name=query.new_col_name)
+                        output = system_instance.execute_query(
+                            query.class_name, system_query, query.table, query.cols, input_size, new_col_name=query.new_col_name
+                        )
 
                         # Log successful result
                         self.results.append({
@@ -93,7 +107,7 @@ class ExperimentRunner:
                         print(f"Error on {query.id}: {str(e)}")
                         # Log failed result
                         self.results.append({
-                             "experiment": self.run_config['experiment_name'],
+                            "experiment": self.run_config['experiment_name'],
                             "system": system_name,
                             "llm_provider": llm_provider,
                             "model_name": model_name,
@@ -109,6 +123,9 @@ class ExperimentRunner:
             self.save_results()
 
     def save_results(self):
+        if not self.results:
+            return
+            
         df = pd.DataFrame(self.results)
         filename = f"results_{self.run_config['experiment_name']}.csv"
         df.to_csv(filename, index=False)
