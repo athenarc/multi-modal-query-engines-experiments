@@ -44,7 +44,7 @@ def create_player_summary_dataset(dataset):
                     name_parts = player_name.split(' ', 1)
                     if len(name_parts) > 1:
                         last_name = name_parts[-1]
-                        if re.search(r'\b' + re.escape(last_name) + r'\b', summary):
+                        if re.search(r'\b' + re.escape(player_name) + r'\b', summary):
                             is_mentioned = True
                 
                 # Only extract metrics and append to our data list if the player is mentioned
@@ -86,6 +86,9 @@ def align_summaries_to_nba_players(df_summaries_players):
 
     # Remove generation suffixes
     seasons['player_name'] = seasons['player_name'].str.replace(r'\s+(Jr|I|II|III|IV)$', '', regex=True)
+    df_summaries_players['summary'] = df_summaries_players['summary'].str.replace(r'\s*(Jr\.|, Jr\.|Jr,|II)', '', regex=True)
+    df_summaries_players['summary'] = df_summaries_players['summary'].str.replace(r'\s*( Jr )', ' ', regex=True)
+
 
     # Convert all characters to ascii and remove accents
     df_summaries_players['player_name'] = df_summaries_players['player_name'].apply(
@@ -99,6 +102,10 @@ def align_summaries_to_nba_players(df_summaries_players):
         "Sviatoslav Mykhailiuk": "Svi Mykhailiuk",
         "Wesley Iwundu": "Wes Iwundu"
     })
+    df_summaries_players['summary'] = df_summaries_players['summary'].str.replace(r'\bMitch Creek\b', 'Mitchell Creek', regex=True)
+    df_summaries_players['summary'] = df_summaries_players['summary'].str.replace(r'\bMohamed Bamba\b', 'Mo Bamba', regex=True)
+    df_summaries_players['summary'] = df_summaries_players['summary'].str.replace(r'\bSviatoslav Mykhailiuk\b', 'Svi Mykhailiuk', regex=True)
+    df_summaries_players['summary'] = df_summaries_players['summary'].str.replace(r'\bWesley Iwundu\b', 'Wes Iwundu', regex=True)
 
     for player in df_summaries_players['player_name'].unique().tolist():
         if player not in seasons['player_name'].unique().tolist():
@@ -209,6 +216,6 @@ if __name__ == "__main__":
         }
     )
     
-    # create_player_summary_dataset(dataset['test'])
+    create_player_summary_dataset(dataset['test'])
     # create_game_summaries_df(dataset['test'])
-    create_team_summary_dataset(dataset['test'])
+    # create_team_summary_dataset(dataset['test'])

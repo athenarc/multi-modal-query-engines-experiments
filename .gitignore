@@ -9,4 +9,6 @@ old/*.ipynb
 old/parse-answer-errors/
 old/runs.sh
 old/results/
-experiment_runner/systems/__pycache__/*
+experiment_runner/systems/**/*.pyc
+test*
+*.out
