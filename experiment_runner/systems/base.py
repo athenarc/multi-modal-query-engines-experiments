@@ -19,7 +19,7 @@ class BaseSystem(ABC):
         nl_criterion: str,
         table: str,
         cols: list,
-        input_size: int,
+        input_size: Any,
         **kwargs,
     ) -> Dict[str, Any]:
         """Dispatch to the class-specific execute_<class_name>_query method."""
@@ -31,4 +31,8 @@ class BaseSystem(ABC):
             )
 
         method = getattr(self, method_name)
-        return method(nl_criterion, table, cols, input_size, **kwargs)
+        
+        kwargs.setdefault("table", table)
+        kwargs.setdefault("cols", cols)
+        
+        return method(nl_criterion, input_size, **kwargs)

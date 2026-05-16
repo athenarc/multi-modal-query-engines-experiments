@@ -34,3 +34,37 @@ queries:
     cols: [player_name]
     lotus_query: "Return the birthplace of {player_name}. Return only the name of the country."
     new_col_name: birthplace
+
+  - id: q5
+    class_name: selection
+    task_name: classification
+    nlq: "Did the team win the game?"
+    table: datasets/nba/teams_summaries.csv
+    cols: [team, summary]
+    lotus_query: "The {team} won the game described by {summary}."
+
+  - id: q6
+    class_name: selection
+    task_name: reasoning
+    nlq: "The total points (sum) scored by both teams played in the game is greater than 180?"
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+    lotus_query: "The total points (sum) scored by both teams played in the game described by {summary} is greater than 180."
+
+  - id: q7
+    class_name: selection
+    task_name: external_knowledge
+    nlq: "The player's height is less than 190cm."
+    table: datasets/nba/all_seasons_cleaned.csv
+    cols: [player_name]
+    lotus_query: "The height of {player_name} is less than 190cm."
+
+  - id: q8
+    class_name: join
+    task_name: classification
+    nlq: "The summary mentions a specific player"
+    table_left: datasets/nba/game_summaries.csv
+    table_right: datasets/nba/all_seasons_cleaned.csv
+    left_key: summary
+    right_key: player_name
+    lotus_query: "The summary {summary} mentions the player {player_name}."

@@ -10,8 +10,16 @@ class Query(BaseModel):
     class_name: str
     task_name: str
     nlq: str
-    table: str
-    cols: List[str]
+    
+    table: Optional[str] = None
+    cols: Optional[List[str]] = None
+    
+    # Join queries
+    table_left: Optional[str] = None
+    table_right: Optional[str] = None
+    left_key: str = None
+    right_key: str = None
+    
     new_col_name: Optional[str] = None
     lotus_query: Optional[str] = None
 
@@ -67,10 +75,10 @@ class ExperimentRunner:
             system_instance = get_system(system_name, llm_provider, model_name)
 
             for query in queries_to_run:
-                print(query.lotus_query)
                 print(f"Executing Query {query.id} ({query.class_name} / {query.task_name})...")
             
-                for input_size in self.run_config['input_sizes']:
+                for input_size_idx in range(len(self.run_config['input_sizes'])):
+                    input_size = self.run_config['input_sizes'][input_size_idx] if query.class_name != "join" else self.run_config['input_sizes_for_join'][input_size_idx]
                     print(f"\n--- Running: {system_name.upper()} | {model_name} | {llm_provider} | Size: {input_size} ---")
                     
                     try:
@@ -78,8 +86,23 @@ class ExperimentRunner:
                         if system_query is None:
                             raise ValueError(f"No query defined for {system_name} in query ID {query.id}")
 
+                        query_kwargs = {}
+                        if query.class_name == "derivation" and query.new_col_name is not None:
+                            query_kwargs["new_col_name"] = query.new_col_name
+
+                        if query.class_name == "join":
+                            query_kwargs["table_left"] = query.table_left
+                            query_kwargs["table_right"] = query.table_right
+                            query_kwargs["left_key"] = query.left_key
+                            query_kwargs["right_key"] = query.right_key
+
                         output = system_instance.execute_query(
-                            query.class_name, system_query, query.table, query.cols, input_size, new_col_name=query.new_col_name
+                            query.class_name,
+                            system_query,
+                            query.table,
+                            query.cols,
+                            input_size,
+                            **query_kwargs,
                         )
 
                         # Log successful result
