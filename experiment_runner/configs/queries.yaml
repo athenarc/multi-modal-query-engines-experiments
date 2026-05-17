@@ -65,7 +65,7 @@ queries:
     nlq: "The summary mentions a specific player"
     table_left: datasets/nba/game_summaries.csv
     cols_left: [sportsett_id, summary]
-    table_right: datasets/nba/all_seasons_cleaned.csv
+    table_right: datasets/nba/players_summaries.csv
     cols_right: [player_name]
     left_key: summary
     right_key: player_name
