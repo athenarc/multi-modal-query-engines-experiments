@@ -64,7 +64,41 @@ queries:
     task_name: classification
     nlq: "The summary mentions a specific player"
     table_left: datasets/nba/game_summaries.csv
+    cols_left: [sportsett_id, summary]
     table_right: datasets/nba/all_seasons_cleaned.csv
+    cols_right: [player_name]
     left_key: summary
     right_key: player_name
     lotus_query: "The summary {summary} mentions the player {player_name}."
+
+  - id: q9
+    class_name: join
+    task_name: reasoning
+    nlq: "A specific player scored the most points in the game."
+    table_left: datasets/nba/game_summaries.csv
+    cols_left: [sportsett_id, summary]
+    table_right: datasets/nba/players_summaries.csv
+    cols_right: [player_name, points]
+    left_key: summary
+    right_key: player_name
+    lotus_query: "The player {player_name} scored the most points in the game described by {summary}."
+
+  - id: q10
+    class_name: join
+    task_name: external_knowledge
+    nlq: "A specific player went to a specific college."
+    table_left: datasets/nba/players_summaries.csv
+    cols_left: [player_name]
+    table_right: datasets/nba/all_seasons_cleaned.csv
+    cols_right: [college]
+    left_key: player_name
+    right_key: college
+    lotus_query: "The player {player_name} went to {college}."
+
+  - id: q11
+    class_name: aggregation
+    task_name: reasoning
+    nlq: "Which player had the most triple doubles among all given games?"
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+    lotus_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."

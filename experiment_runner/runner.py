@@ -16,7 +16,9 @@ class Query(BaseModel):
     
     # Join queries
     table_left: Optional[str] = None
+    cols_left: Optional[List[str]] = None
     table_right: Optional[str] = None
+    cols_right: Optional[List[str]] = None
     left_key: str = None
     right_key: str = None
     
@@ -71,7 +73,7 @@ class ExperimentRunner:
             return
 
         for system_name, (llm_provider, model_name) in itertools.product(self.run_config['systems'], valid_llm_configs):
-            # Initialize system once per LLM-Provider-Model valid combination
+            # Initialize system once per LLM-Provider-Model combination
             system_instance = get_system(system_name, llm_provider, model_name)
 
             for query in queries_to_run:
@@ -92,8 +94,11 @@ class ExperimentRunner:
 
                         if query.class_name == "join":
                             query_kwargs["table_left"] = query.table_left
-                            query_kwargs["table_right"] = query.table_right
+                            query_kwargs["cols_left"] = query.cols_left
                             query_kwargs["left_key"] = query.left_key
+                            
+                            query_kwargs["table_right"] = query.table_right
+                            query_kwargs["cols_right"] = query.cols_right
                             query_kwargs["right_key"] = query.right_key
 
                         output = system_instance.execute_query(
