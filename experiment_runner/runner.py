@@ -23,7 +23,9 @@ class Query(BaseModel):
     right_key: str = None
     
     new_col_name: Optional[str] = None
+    new_col_type: Optional[str] = str
     lotus_query: Optional[str] = None
+    palimpzest_query: Optional[str] = None
 
 class ExperimentRunner:
     def __init__(self, run_config_path: str, queries_path: str):
