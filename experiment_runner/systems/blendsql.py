@@ -83,7 +83,117 @@ class BlendSQLSystem(BaseSystem):
             }}}} AS {new_col_name}
             FROM Input
             """,
-            infer_gen_constraints=True,
+            infer_gen_constraints=False,
+        )
+
+        execution_time = output.meta.process_time_seconds
+        input_tokens = output.meta.prompt_tokens
+        output_tokens = output.meta.completion_tokens
+        total_tokens = input_tokens + output_tokens
+        total_calls = output.meta.num_generation_calls
+        tokens_throughput = total_tokens / execution_time if execution_time > 0 else 0
+
+        return {"result": output.df(),
+                "latency": output.meta.process_time_seconds,
+                "input_tokens": input_tokens,
+                "output_tokens": output_tokens,
+                "total_tokens": total_tokens,
+                "total_calls": total_calls,
+                "tokens_throughput": tokens_throughput
+                }
+
+    def execute_join_query(
+        self,
+        nl_criterion: str,
+        input_size: list,
+        table_left: str = None,
+        cols_left: list = None,
+        left_key: str = None,
+        table_right: str = None,
+        cols_right: list = None,
+        right_key: str = None,
+        **kwargs
+    ) -> dict:
+        input_df_left = pd.read_csv(f"../{table_left}")[cols_left].head(input_size[0])
+        input_df_right = pd.read_csv(f"../{table_right}")[cols_right].head(input_size[1])
+        
+        database = {
+            "LeftTable" : input_df_left,
+            "RightTable" : input_df_right
+        }
+
+        bsql = BlendSQL(
+            db=database,
+            model=self.model,
+            verbose=True,
+            ingredients={LLMJoin},
+        )
+
+        output = bsql.execute(
+            f"""
+            SELECT *
+            FROM LeftTable l
+            JOIN RightTable r
+            ON {{{{
+                LLMJOIN(
+                    l.{left_key},
+                    r.{right_key},
+                    join_criteria='{nl_criterion}',
+                )
+            }}}}
+            """,
+            infer_gen_constraints=False,
+        )
+
+        execution_time = output.meta.process_time_seconds
+        input_tokens = output.meta.prompt_tokens
+        output_tokens = output.meta.completion_tokens
+        total_tokens = input_tokens + output_tokens
+        total_calls = output.meta.num_generation_calls
+        tokens_throughput = total_tokens / execution_time if execution_time > 0 else 0
+
+        return {"result": output.df(),
+                "latency": output.meta.process_time_seconds,
+                "input_tokens": input_tokens,
+                "output_tokens": output_tokens,
+                "total_tokens": total_tokens,
+                "total_calls": total_calls,
+                "tokens_throughput": tokens_throughput
+                }
+
+    def execute_aggregation_query(
+        self,
+        nl_criterion: str,
+        input_size: int,
+        table: str = None,
+        cols: list = None,
+        **kwargs
+    ) -> dict:
+        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
+        database = {
+            "Input" : input_df
+        }
+
+        bsql = BlendSQL(
+            db=database,
+            model=self.model,
+            verbose=True,
+            ingredients={LLMQA},
+        )
+
+        selected_columns=", ".join(cols)
+
+        output = bsql.execute(
+            f"""
+            SELECT DISTINCT {{{{
+                LLMQA(
+                    '{nl_criterion}',
+                    {selected_columns},
+                )
+            }}}} AS result
+            FROM Input
+            """,
+            infer_gen_constraints=False,
         )
 
         execution_time = output.meta.process_time_seconds

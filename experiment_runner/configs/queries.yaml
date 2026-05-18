@@ -85,6 +85,7 @@ queries:
     left_key: summary
     right_key: player_name
     lotus_query: "The summary {summary} mentions the player {player_name}."
+    blendsql_query: "The summary {summary} mentions the player {player_name}."
 
   - id: q9
     class_name: join
@@ -97,6 +98,7 @@ queries:
     left_key: summary
     right_key: player_name
     lotus_query: "The player {player_name} scored the most points in the game described by {summary}."
+    blendsql_query: "The player {player_name} scored the most points in the game described by {summary}."
     
   - id: q10
     class_name: join
@@ -109,6 +111,7 @@ queries:
     left_key: player_name
     right_key: college
     lotus_query: "The player {player_name} went to {college}."
+    blendsql_query: "The player {player_name} went to {college}."
 
   - id: q11
     class_name: aggregation
@@ -117,3 +120,4 @@ queries:
     table: datasets/nba/game_summaries.csv
     cols: [summary]
     lotus_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."
+    blendsql_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."
