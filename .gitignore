@@ -12,4 +12,4 @@ old/results/
 experiment_runner/systems/**/*.pyc
 test*
 *.out
-experiment_runner/parser-answer-errors
+experiment_runner/parse-answer-errors

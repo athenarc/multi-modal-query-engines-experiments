@@ -8,10 +8,10 @@ llms:
   # vllm:
   #   - "meta-llama/Llama-3.1-8B-Instruct"
 
-input_sizes: [30]
+input_sizes: [20]
 input_sizes_for_join: [[10, 10]]
 
 filters:
   class_name: null
   task_name: null
-  query_ids: [q1] 
+  query_ids: [q5] 
