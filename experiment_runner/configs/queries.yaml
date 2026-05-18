@@ -9,6 +9,7 @@ queries:
     new_col_type: str
     lotus_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
     palimpzest_query: "Which team won the game described in the `summary`? Return only *home* or *visitor*."
+    blendsql_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
 
   - id: q2
     class_name: derivation
@@ -20,6 +21,7 @@ queries:
     new_col_name: winner_points
     new_col_type: int
     palimpzest_query: "Return points scored by the winner team in the game described in the `summary`. Return only the number of points."
+    blendsql_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points."
 
   - id: q3
     class_name: derivation
@@ -31,6 +33,7 @@ queries:
     new_col_name: player_points
     new_col_type: int
     palimpzest_query: "Return points scored by `player_name` in the game described in the `summary`. Return only the number of points."
+    blendsql_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points."
 
   - id: q4
     class_name: derivation
@@ -42,6 +45,7 @@ queries:
     new_col_name: birthplace
     new_col_type: str
     palimpzest_query: "Return the birthplace of `player_name`. Return only the name of the country."
+    blendsql_query: "Return the birthplace of {player_name}. Return only the name of the country."
 
   - id: q5
     class_name: selection

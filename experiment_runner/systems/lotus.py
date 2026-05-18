@@ -3,6 +3,7 @@ import time
 import lotus
 from lotus.models import LM
 import pandas as pd
+from ollama import chat
 
 class LotusSystem(BaseSystem):
     def setup_llm(self):
@@ -19,9 +20,15 @@ class LotusSystem(BaseSystem):
 
     def _load_ollama_model(self):
         try:
-            df_warmup = pd.DataFrame({"text": ["hello world"]})
-            # Force an LLM call
-            df_warmup.sem_map("Is this a greeting? {text}")
+            chat(
+                model=self.model_name,
+                messages=[
+                    {
+                        'role': 'user',
+                        'content': 'Hello'
+                    }
+                ]
+            )
             print("Warm-up complete!")
         except Exception as e:
             print(f"Warm-up skipped/failed: {e}")
