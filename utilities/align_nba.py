@@ -181,13 +181,16 @@ def create_game_summaries_df(dataset):
 
         home = (row['teams']['home']['name'], int(row['teams']['home']['line_score']['game']['PTS']))
         vis = (row['teams']['vis']['name'], int(row['teams']['vis']['line_score']['game']['PTS']))
+        win_home_or_vis = None
 
         if home[1] > vis[1]:
             winner_team = home[0]
             winner_points = home[1]
+            win_home_or_vis = 'home'
         else:
             winner_team = vis[0]
             winner_points = vis[1]
+            win_home_or_vis = 'vis'
         total_points = home[1] + vis[1]
 
 
@@ -196,10 +199,11 @@ def create_game_summaries_df(dataset):
 
         game_summaries.append({
             "sportsett_id": game_id,
+            "summary": summary,
             "winner_team": winner_team,
+            "win_home_or_vis": win_home_or_vis,
             "winner_points": winner_points,
             "total_points": total_points,
-            "summary": summary
         })
     
     pd.DataFrame(game_summaries).to_csv("datasets/nba/game_summaries.csv", index=False, encoding='utf-8')
@@ -216,6 +220,6 @@ if __name__ == "__main__":
         }
     )
     
-    create_player_summary_dataset(dataset['test'])
-    # create_game_summaries_df(dataset['test'])
+    # create_player_summary_dataset(dataset['test'])
+    create_game_summaries_df(dataset['test'])
     # create_team_summary_dataset(dataset['test'])
