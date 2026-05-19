@@ -150,6 +150,8 @@ class SelectionEvaluator(BaseEvaluator):
             'class_name': self.class_name,
             'accuracy': 0.0,
             'recall': 0.0,
+            'precision': 0.0,
+            'f1_score': 0.0,
             'incorrect_predictions': [],
         }
         

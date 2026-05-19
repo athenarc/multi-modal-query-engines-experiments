@@ -4,7 +4,7 @@ import pandas as pd
 from pydantic import BaseModel
 from typing import List, Optional
 from systems import get_system
-from evaluation import DerivationEvaluator
+from evaluation import DerivationEvaluator, SelectionEvaluator
 
 class Query(BaseModel):
     id: str
@@ -29,6 +29,9 @@ class Query(BaseModel):
     palimpzest_query: Optional[str] = None
     blendsql_query: Optional[str] = None
     evaluation_cols: Optional[List[str]] = None
+
+    # Selection queries
+    filtering_col: Optional[str] = None
 
 class ExperimentRunner:
     def __init__(self, run_config_path: str, queries_path: str):
@@ -62,7 +65,26 @@ class ExperimentRunner:
                     return (exact_match_accuracy, similarity_accuracy)
                 else:
                     return (-1, -1)
-                
+
+            if query.class_name == "selection":
+                evaluator = SelectionEvaluator(query_id=query.id, class_name=query.class_name)
+                results = evaluator.evaluate(
+                    predicted_df=predicted_df,
+                    ground_truth_table_name=query.table,
+                    input_size=input_size,
+                    evaluation_cols=query.evaluation_cols,
+                    filtering_col=query.filtering_col
+                )
+    
+                accuracy = results.get('accuracy')
+                recall = results.get('recall')
+                precision = results.get('precision')
+                f1_score = results.get('f1_score')
+
+                if accuracy is not None and recall is not None and precision is not None and f1_score is not None:
+                    return (accuracy, recall, precision, f1_score)
+                else:
+                    return (-1, -1, -1, -1)
         except Exception as e:
             print(f"Error during evaluation: {e}")
             return (-1, -1)
