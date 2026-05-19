@@ -20,15 +20,8 @@ class LotusSystem(BaseSystem):
 
     def _load_ollama_model(self):
         try:
-            chat(
-                model=self.model_name,
-                messages=[
-                    {
-                        'role': 'user',
-                        'content': 'Hello'
-                    }
-                ]
-            )
+            df_warmup = pd.DataFrame({"text": ["hello world"]})
+            df_warmup.sem_map("Is this a greeting? {text}")
             print("Warm-up complete!")
         except Exception as e:
             print(f"Warm-up skipped/failed: {e}")

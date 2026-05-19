@@ -40,77 +40,52 @@ class ExperimentRunner:
         with open(path, 'r') as f:
             return yaml.safe_load(f)
     
-    def _evaluate_results(self, query: Query, predicted_df: pd.DataFrame) -> dict:
-        """Evaluate predicted results against ground truth."""
-        eval_metrics = {
-            'accuracy': None,
-            'partial_match_rate': None,
-            'total_predictions': None,
-            'total_correct': None,
-            'total_partial': None,
-            'quality': 'N/A',
-            'eval_error': None
-        }
+    def _evaluate_results(self, query: Query, predicted_df: pd.DataFrame) -> int:
+        """Evaluate predicted results and return quality metric."""
+        # Only evaluate for derivation tasks
+        if query.class_name != 'derivation':
+            return -1
         
         # Check if ground truth is configured for this query
-        if not query.table or not query.evaluation_cols[-1]:
-            eval_metrics['eval_error'] = "No ground truth configured for this query"
-            return eval_metrics
+        if not query.table:
+            return -1
         
         try:
             # Load ground truth on-the-fly
-            ground_truth_df = pd.read_csv(query.table)
+            ground_truth_df = pd.read_csv(f"../{query.table}")[query.evaluation_cols]
             
-            # Evaluate based on query class
-            if query.class_name == 'derivation':
-                pred_col = query.new_col_name
-                truth_col = query.ground_truth_col
-                
-                if not pred_col:
-                    eval_metrics['eval_error'] = f"No predicted column specified for {query.class_name}"
-                    return eval_metrics
-                
-                if pred_col not in predicted_df.columns:
-                    eval_metrics['eval_error'] = f"Predicted column '{pred_col}' not found in results"
-                    return eval_metrics
-                
-                if truth_col not in ground_truth_df.columns:
-                    eval_metrics['eval_error'] = f"Ground truth column '{truth_col}' not found in {query.table}"
-                    return eval_metrics
-                
-                results = evaluate_derivation_query(
-                    query_id=query.id,
-                    predicted_df=predicted_df,
-                    ground_truth_df=ground_truth_df,
-                    new_col_name=pred_col,
-                    ground_truth_col_name=truth_col,
-                    key_cols=None
-                )
-                
-                eval_metrics['accuracy'] = results.get('accuracy')
-                eval_metrics['partial_match_rate'] = results.get('partial_match_rate')
-                eval_metrics['total_predictions'] = results.get('total_predictions')
-                eval_metrics['total_correct'] = results.get('total_correct')
-                eval_metrics['total_partial'] = results.get('total_partial')
-                eval_metrics['eval_error'] = results.get('error')
-                
-                # Determine quality rating
-                if eval_metrics['accuracy'] is not None:
-                    if eval_metrics['accuracy'] >= 0.8:
-                        eval_metrics['quality'] = 'excellent'
-                    elif eval_metrics['accuracy'] >= 0.6:
-                        eval_metrics['quality'] = 'good'
-                    elif eval_metrics['accuracy'] >= 0.4:
-                        eval_metrics['quality'] = 'fair'
-                    else:
-                        eval_metrics['quality'] = 'poor'
+            pred_col = query.new_col_name
+            truth_col = query.evaluation_cols[-1]  # Last element is the ground truth column
+            
+            if not pred_col:
+                return -1
+
+            if pred_col not in predicted_df.columns:
+                return -1
+            
+            if truth_col not in ground_truth_df.columns:
+                return -1
+            
+            results = evaluate_derivation_query(
+                query_id=query.id,
+                predicted_df=predicted_df,
+                ground_truth_df=ground_truth_df,
+                new_col_name=pred_col,
+                ground_truth_col_name=truth_col,
+                key_cols=None
+            )
+            
+            accuracy = results.get('accuracy')
+            
+            # Return accuracy as quality for derivation tasks
+            if accuracy is not None:
+                return accuracy
             else:
-                eval_metrics['eval_error'] = f"Evaluation not yet implemented for {query.class_name}"
+                return -1
                 
         except Exception as e:
-            eval_metrics['eval_error'] = str(e)
-        
-        return eval_metrics
+            print(f"Error during evaluation: {e}")
+            return -1
 
     def filter_queries(self) -> List[Query]:
         filters = self.run_config.get('filters', {})
@@ -189,7 +164,7 @@ class ExperimentRunner:
 
                         # Evaluate results
                         predicted_result = output.get('result')
-                        eval_metrics = self._evaluate_results(query, predicted_result)
+                        quality = self._evaluate_results(query, predicted_result)
 
                         # Log successful result
                         self.results.append({
@@ -207,44 +182,14 @@ class ExperimentRunner:
                             "total_tokens": output.get('total_tokens'),
                             "total_calls": output.get('total_calls'),
                             "tokens_throughput": output.get('tokens_throughput'),
-                            "accuracy": eval_metrics.get('accuracy'),
-                            "partial_match_rate": eval_metrics.get('partial_match_rate'),
-                            "total_predictions": eval_metrics.get('total_predictions'),
-                            "total_correct": eval_metrics.get('total_correct'),
-                            "total_partial": eval_metrics.get('total_partial'),
-                            "quality": eval_metrics.get('quality'),
-                            "status": "success",
-                            "error": None
+                            "quality": quality
                         })
 
                         predicted_result.to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
                     except Exception as e:
                         print(f"Error on {query.id}: {str(e)}")
-                        # Log failed result
-                        self.results.append({
-                            "experiment": self.run_config['experiment_name'],
-                            "system": system_name,
-                            "llm_provider": llm_provider,
-                            "model_name": model_name,
-                            "input_size": input_size,
-                            "query_id": query.id,
-                            "class_name": query.class_name,
-                            "task_name": query.task_name,
-                            "latency_sec": None,
-                            "input_tokens": None,
-                            "output_tokens": None,
-                            "total_tokens": None,
-                            "total_calls": None,
-                            "tokens_throughput": None,
-                            "accuracy": None,
-                            "partial_match_rate": None,
-                            "total_predictions": None,
-                            "total_correct": None,
-                            "total_partial": None,
-                            "quality": "N/A",
-                            "status": "failed",
-                            "error": str(e)
-                        })
+                        # Log failed result - skip logging since we only want successful results
+                        pass
 
             self.save_results()
 
@@ -256,45 +201,6 @@ class ExperimentRunner:
         filename = f"results_{self.run_config['experiment_name']}.csv"
         df.to_csv(filename, index=False)
         print(f"\nExperiments complete! Results saved to {filename}")
-        
-        # Save detailed statistics
-        self._save_statistics(df)
-    
-    def _save_statistics(self, results_df: pd.DataFrame):
-        """Save aggregated statistics to a file."""
-        stats_filename = f"statistics_{self.run_config['experiment_name']}.csv"
-        
-        # Group by system, class, task, query_id and aggregate metrics
-        stat_cols = ['system', 'class_name', 'task_name', 'query_id']
-        
-        stats = results_df.groupby(stat_cols, as_index=False).agg({
-            'latency_sec': ['mean', 'min', 'max', 'std'],
-            'accuracy': ['mean', 'min', 'max'],
-            'partial_match_rate': ['mean'],
-            'total_predictions': ['first'],
-            'total_correct': ['mean'],
-            'total_partial': ['mean'],
-            'quality': lambda x: x.mode()[0] if len(x.mode()) > 0 else 'N/A',
-            'input_tokens': ['mean'],
-            'output_tokens': ['mean'],
-            'total_tokens': ['mean'],
-            'tokens_throughput': ['mean'],
-            'status': 'count'
-        }).fillna('N/A')
-        
-        # Flatten column names
-        stats.columns = ['_'.join(col).strip('_') if col[1] else col[0] for col in stats.columns.values]
-        stats = stats.rename(columns={'status_count': 'run_count'})
-        
-        stats.to_csv(stats_filename, index=False)
-        print(f"\nStatistics saved to {stats_filename}")
-        
-        # Print summary
-        print("\n" + "=" * 80)
-        print("SUMMARY STATISTICS")
-        print("=" * 80)
-        print(stats.to_string())
-
 
 if __name__ == "__main__":
     runner = ExperimentRunner(

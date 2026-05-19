@@ -48,8 +48,7 @@ class DerivationEvaluator(BaseEvaluator):
     """Evaluator for derivation queries (column generation tasks)."""
     
     def evaluate(self, predicted_df: pd.DataFrame, ground_truth_df: pd.DataFrame,
-                 new_col_name: str, ground_truth_col_name: str, 
-                 key_cols: List[str] = None) -> Dict[str, Any]:
+                 new_col_name: str, ground_truth_col_name: str) -> Dict[str, Any]:
         """
         Evaluate derivation query results by comparing predicted and ground truth columns.
         
@@ -58,7 +57,6 @@ class DerivationEvaluator(BaseEvaluator):
             ground_truth_df: DataFrame with ground truth values
             new_col_name: Name of the predicted column (suffix: _pred if merged)
             ground_truth_col_name: Name of the ground truth column
-            key_cols: Columns to use for aligning rows (if None, uses index alignment)
             
         Returns:
             Dictionary containing:
@@ -73,12 +71,8 @@ class DerivationEvaluator(BaseEvaluator):
         metrics = {
             'query_id': self.query_id,
             'class_name': self.class_name,
-            'total_predictions': 0,
-            'total_correct': 0,
-            'total_partial': 0,
-            'accuracy': 0.0,
-            'partial_match_rate': 0.0,
-            'correct_values': [],
+            'exact_match_accuracy': 0,
+            'similarity_accuracy': 0.0,
             'incorrect_predictions': []
         }
         

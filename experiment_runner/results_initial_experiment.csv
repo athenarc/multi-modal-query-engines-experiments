@@ -1,0 +1,5 @@
+experiment,system,llm_provider,model_name,input_size,query_id,class_name,task_name,latency_sec,input_tokens,output_tokens,total_tokens,total_calls,tokens_throughput,quality
+initial_experiment,lotus,ollama,gemma3:12b,100,q1,derivation,classification,34.35241961479187,49430,218,49648,100,1445.2548192157615,0.69
+initial_experiment,lotus,ollama,gemma3:12b,100,q2,derivation,reasoning,37.87756633758545,99096,613,99709,100,2632.402491525966,1.0
+initial_experiment,lotus,ollama,gemma3:12b,100,q3,derivation,extraction,39.955302000045776,152552,908,153460,100,3840.7918928963218,0.0
+initial_experiment,lotus,ollama,gemma3:12b,100,q4,derivation,external_knowledge,17.807427167892456,160238,1195,161433,100,9065.487028416464,0.02

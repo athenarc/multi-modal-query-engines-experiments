@@ -9,7 +9,8 @@ old/*.ipynb
 old/parse-answer-errors/
 old/runs.sh
 old/results/
-experiment_runner/systems/**/*.pyc
+experiment_runner/systems/__pycache__/
+experiment_runner/systems/__pycache__/
 test*
 *.out
 experiment_runner/parse-answer-errors

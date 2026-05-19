@@ -36,7 +36,7 @@ queries:
     new_col_type: int
     palimpzest_query: "Return points scored by `player_name` in the game described in the `summary`. Return only the number of points."
     blendsql_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points."
-    evaluation_cols: [sportsett_id, player_name, summary, player_points]
+    evaluation_cols: [sportsett_id, player_name, summary, points]
 
   - id: q4
     class_name: derivation

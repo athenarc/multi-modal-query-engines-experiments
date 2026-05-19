@@ -1,17 +1,17 @@
 experiment_name: "initial_experiment"
 
-systems: ["blendsql"]
+systems: ["lotus"]
 
 llms:
-  # ollama: 
-  #   - "gemma3:12b"
-  vllm:
-    - "meta-llama/Llama-3.1-8B-Instruct"
+  ollama: 
+    - "gemma3:12b"
+  # vllm:
+  #   - "meta-llama/Llama-3.1-8B-Instruct"
 
-input_sizes: [10]
+input_sizes: [100]
 input_sizes_for_join: [[10, 10]]
 
 filters:
-  class_name: null
+  class_name: derivation
   task_name: null
-  query_ids: [q11]
+  query_ids: null
