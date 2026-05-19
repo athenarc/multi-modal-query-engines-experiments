@@ -71,7 +71,7 @@ queries:
     filtering_col: total_points_gt_180
     lotus_query: "The total points (sum) scored by both teams played in the game described by {summary} is greater than 180."
     palimpzest_query: "The total points (sum) scored by both teams played in the game described by `summary` is greater than 180."
-    evaluation_cols: [summary, total_points]
+    evaluation_cols: [summary, total_points_gt_180]
 
   - id: q7
     class_name: selection
@@ -82,7 +82,7 @@ queries:
     filtering_col: height_lt_190
     lotus_query: "The height of {player_name} is less than 190cm."
     palimpzest_query: "The height of `player_name` is less than 190cm."
-    evaluation_cols: [player_name, height]
+    evaluation_cols: [player_name, height_lt_190]
 
 
   - id: q8

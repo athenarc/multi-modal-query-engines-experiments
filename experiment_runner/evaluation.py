@@ -202,3 +202,27 @@ class SelectionEvaluator(BaseEvaluator):
             metrics['error'] = str(e)
         
         return metrics
+    
+
+# def evaluate_derivation_query(query_id: str, predicted_df: pd.DataFrame, ground_truth_table_name: str, input_size: int,
+#                               evaluation_cols: List[str], new_col_name: str, ground_truth_col_name: str) -> Dict[str, Any]:
+#     evaluator = DerivationEvaluator(query_id=query_id, class_name='derivation')
+#     return evaluator.evaluate(
+#         predicted_df=predicted_df,
+#         ground_truth_table_name=ground_truth_table_name,
+#         input_size=input_size,
+#         evaluation_cols=evaluation_cols,
+#         new_col_name=new_col_name,
+#         ground_truth_col_name=ground_truth_col_name
+#     )
+
+# def evaluate_selection_query(query_id: str, predicted_df: pd.DataFrame, ground_truth_table_name: str, input_size: int,
+#                              evaluation_cols: List[str], filtering_col: str) -> Dict[str, Any]:
+#     evaluator = SelectionEvaluator(query_id=query_id, class_name='selection')
+#     return evaluator.evaluate(
+#         predicted_df=predicted_df,
+#         ground_truth_table_name=ground_truth_table_name,
+#         input_size=input_size,
+#         evaluation_cols=evaluation_cols,
+#         filtering_col=filtering_col
+#     )
