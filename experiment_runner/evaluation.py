@@ -5,6 +5,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util
 import torch
 
+#TODO: Replace embedding models similarity with LLM as Judge
 
 class BaseEvaluator(ABC):
     """Template base class for query evaluation."""
@@ -58,7 +59,7 @@ class DerivationEvaluator(BaseEvaluator):
                 - similarity_accuracy: Fraction of similarity matches
                 - incorrect_predictions: List of incorrect predictions with their ground truth
         """
-        ground_truth_df = pd.read_csv(f"{ground_truth_table_name}")[evaluation_cols].head(input_size)
+        ground_truth_df = pd.read_csv(f"../{ground_truth_table_name}")[evaluation_cols].head(input_size)
 
         metrics = {
             'query_id': self.query_id,
