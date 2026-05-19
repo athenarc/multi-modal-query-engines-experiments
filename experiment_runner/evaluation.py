@@ -14,14 +14,15 @@ class BaseEvaluator(ABC):
         self.class_name = class_name
 
     @abstractmethod
-    def evaluate(self, predicted_df: pd.DataFrame, ground_truth_df: pd.DataFrame) -> Dict[str, Any]:
+    def evaluate(self, predicted_df: pd.DataFrame, ground_truth_table_name: str, input_size: int) -> Dict[str, Any]:
         """
         Evaluate predicted results against ground truth.
         
         Args:
             predicted_df: DataFrame with predictions
-            ground_truth_df: DataFrame with ground truth values
-            
+            ground_truth_table_name: Name of the CSV file containing ground truth values
+            input_size: Size of the input data
+
         Returns:
             Dictionary with evaluation metrics
         """
@@ -39,14 +40,13 @@ class DerivationEvaluator(BaseEvaluator):
         return cls._model
 
     
-    def evaluate(self, predicted_df, ground_truth_table_name: pd.DataFrame, evaluation_cols: List[str],
+    def evaluate(self, predicted_df, ground_truth_table_name: str, input_size: int, evaluation_cols: List[str],
                  new_col_name: str, ground_truth_col_name: str, similarity_threshold: float = 0.85) -> Dict[str, Any]:
         """
         Evaluate derivation query results by comparing predicted and ground truth columns.
         
         Args:
             predicted_df: DataFrame with predicted new column
-            ground_truth_table_name: Name of the CSV file containing ground truth values
             evaluation_cols: List of columns to load from the ground truth CSV (including the ground truth column)
             new_col_name: Name of the predicted column (suffix: _pred if merged)
             ground_truth_col_name: Name of the ground truth column
@@ -58,7 +58,7 @@ class DerivationEvaluator(BaseEvaluator):
                 - similarity_accuracy: Fraction of similarity matches
                 - incorrect_predictions: List of incorrect predictions with their ground truth
         """
-        ground_truth_df = pd.read_csv(f"{ground_truth_table_name}")[evaluation_cols].head(predicted_df.shape[0])
+        ground_truth_df = pd.read_csv(f"{ground_truth_table_name}")[evaluation_cols].head(input_size)
 
         metrics = {
             'query_id': self.query_id,
@@ -124,7 +124,7 @@ class DerivationEvaluator(BaseEvaluator):
         return metrics
 
 def evaluate_derivation_query(query_id: str, predicted_df: pd.DataFrame, 
-                               ground_truth_table_name: str, evaluation_cols: List[str], new_col_name: str,
+                               ground_truth_table_name: str, input_size: int, evaluation_cols: List[str], new_col_name: str,
                                ground_truth_col_name: str) -> Dict[str, Any]:
     """
     Generic method for evaluating derivation queries.
@@ -133,6 +133,7 @@ def evaluate_derivation_query(query_id: str, predicted_df: pd.DataFrame,
         query_id: Identifier for the query
         predicted_df: DataFrame with predicted new column
         ground_truth_table_name: Name of the CSV file containing ground truth values
+        input_size: Size of the input data to evaluate
         evaluation_cols: List of columns to load from the ground truth CSV (including the ground truth column)
         new_col_name: Name of the predicted column
         ground_truth_col_name: Name of the ground truth column in ground_truth_df
@@ -143,7 +144,8 @@ def evaluate_derivation_query(query_id: str, predicted_df: pd.DataFrame,
     evaluator = DerivationEvaluator(query_id, 'derivation')
     return evaluator.evaluate(
         predicted_df, 
-        ground_truth_table_name, 
+        ground_truth_table_name,
+        input_size,
         evaluation_cols, 
         new_col_name, 
         ground_truth_col_name,

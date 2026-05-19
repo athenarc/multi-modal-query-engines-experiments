@@ -40,7 +40,7 @@ class ExperimentRunner:
         with open(path, 'r') as f:
             return yaml.safe_load(f)
     
-    def _evaluate_results(self, query: Query, predicted_df: pd.DataFrame) -> int:
+    def _evaluate_results(self, query: Query, predicted_df: pd.DataFrame, input_size: int) -> int:
         """Evaluate predicted results and return quality metric."""
         # Only evaluate for derivation tasks
         if query.class_name != 'derivation':
@@ -55,6 +55,7 @@ class ExperimentRunner:
                 query_id=query.id,
                 predicted_df=predicted_df,
                 ground_truth_table_name=query.table,
+                input_size=input_size,
                 evaluation_cols=query.evaluation_cols,
                 new_col_name=query.new_col_name,
                 ground_truth_col_name=query.evaluation_cols[-1],
@@ -151,7 +152,7 @@ class ExperimentRunner:
                         # Evaluate results if input_size <= 100
                         if (input_size <= 100):
                             predicted_result = output.get('result')
-                            quality = self._evaluate_results(query, predicted_result)
+                            quality = self._evaluate_results(query, predicted_result, input_size)
 
                         # Log successful result
                         self.results.append({
