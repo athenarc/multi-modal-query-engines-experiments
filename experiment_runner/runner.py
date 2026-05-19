@@ -51,41 +51,27 @@ class ExperimentRunner:
             return -1
         
         try:
-            # Load ground truth on-the-fly
-            ground_truth_df = pd.read_csv(f"../{query.table}")[query.evaluation_cols]
-            
-            pred_col = query.new_col_name
-            truth_col = query.evaluation_cols[-1]  # Last element is the ground truth column
-            
-            if not pred_col:
-                return -1
-
-            if pred_col not in predicted_df.columns:
-                return -1
-            
-            if truth_col not in ground_truth_df.columns:
-                return -1
-            
             results = evaluate_derivation_query(
                 query_id=query.id,
                 predicted_df=predicted_df,
-                ground_truth_df=ground_truth_df,
-                new_col_name=pred_col,
-                ground_truth_col_name=truth_col,
-                key_cols=None
+                ground_truth_table_name=query.table,
+                evaluation_cols=query.evaluation_cols,
+                new_col_name=query.new_col_name,
+                ground_truth_col_name=query.evaluation_cols[-1],
             )
             
-            accuracy = results.get('accuracy')
+            exact_match_accuracy = results.get('exact_match_accuracy')
+            similarity_accuracy = results.get('similarity_accuracy')
             
             # Return accuracy as quality for derivation tasks
-            if accuracy is not None:
-                return accuracy
+            if exact_match_accuracy is not None and similarity_accuracy is not None:
+                return (exact_match_accuracy, similarity_accuracy)
             else:
-                return -1
+                return (-1, -1)
                 
         except Exception as e:
             print(f"Error during evaluation: {e}")
-            return -1
+            return (-1, -1)
 
     def filter_queries(self) -> List[Query]:
         filters = self.run_config.get('filters', {})
@@ -162,9 +148,10 @@ class ExperimentRunner:
                             **query_kwargs,
                         )
 
-                        # Evaluate results
-                        predicted_result = output.get('result')
-                        quality = self._evaluate_results(query, predicted_result)
+                        # Evaluate results if input_size <= 100
+                        if (input_size <= 100):
+                            predicted_result = output.get('result')
+                            quality = self._evaluate_results(query, predicted_result)
 
                         # Log successful result
                         self.results.append({
@@ -182,7 +169,7 @@ class ExperimentRunner:
                             "total_tokens": output.get('total_tokens'),
                             "total_calls": output.get('total_calls'),
                             "tokens_throughput": output.get('tokens_throughput'),
-                            "quality": quality
+                            "quality": quality,
                         })
 
                         predicted_result.to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)

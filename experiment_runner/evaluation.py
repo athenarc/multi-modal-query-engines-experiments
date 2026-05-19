@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from typing import Dict, Any, Tuple, List
 import pandas as pd
 import numpy as np
+from sentence_transformers import SentenceTransformer, util
+import torch
 
 
 class BaseEvaluator(ABC):
@@ -24,141 +26,116 @@ class BaseEvaluator(ABC):
             Dictionary with evaluation metrics
         """
         pass
-    
-    # def _align_dataframes(self, predicted_df: pd.DataFrame, ground_truth_df: pd.DataFrame, 
-    #                       key_cols: List[str]) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    #     """
-    #     Align two dataframes by key columns to ensure row-by-row comparison.
-        
-    #     Args:
-    #         predicted_df: DataFrame with predictions
-    #         ground_truth_df: DataFrame with ground truth
-    #         key_cols: Columns to use as keys for alignment
-            
-    #     Returns:
-    #         Tuple of aligned dataframes
-    #     """
-    #     # Merge on key columns to ensure alignment
-    #     if key_cols:
-    #         merged = predicted_df.merge(ground_truth_df, on=key_cols, how='inner', suffixes=('_pred', '_truth'))
-    #         return merged
-    #     return None
 
 class DerivationEvaluator(BaseEvaluator):
     """Evaluator for derivation queries (column generation tasks)."""
+
+    _model = None
+
+    @classmethod
+    def _get_model(cls):
+        if cls._model is None:
+            cls._model = SentenceTransformer('all-MiniLM-L6-v2')
+        return cls._model
+
     
-    def evaluate(self, predicted_df: pd.DataFrame, ground_truth_df: pd.DataFrame,
-                 new_col_name: str, ground_truth_col_name: str) -> Dict[str, Any]:
+    def evaluate(self, predicted_df, ground_truth_table_name: pd.DataFrame, evaluation_cols: List[str],
+                 new_col_name: str, ground_truth_col_name: str, similarity_threshold: float = 0.85) -> Dict[str, Any]:
         """
         Evaluate derivation query results by comparing predicted and ground truth columns.
         
         Args:
             predicted_df: DataFrame with predicted new column
-            ground_truth_df: DataFrame with ground truth values
+            ground_truth_table_name: Name of the CSV file containing ground truth values
+            evaluation_cols: List of columns to load from the ground truth CSV (including the ground truth column)
             new_col_name: Name of the predicted column (suffix: _pred if merged)
             ground_truth_col_name: Name of the ground truth column
-            
+            similarity_threshold: Threshold for considering a similarity match
+
         Returns:
             Dictionary containing:
-                - accuracy: Fraction of exact matches
-                - partial_matches: Fraction of partial/substring matches
-                - total_predictions: Total number of predictions
-                - total_correct: Number of correct predictions
-                - total_partial: Number of partial matches
-                - incorrect_values: List of incorrect predictions with their ground truth
+                - exact_match_accuracy: Fraction of exact matches
+                - similarity_accuracy: Fraction of similarity matches
+                - incorrect_predictions: List of incorrect predictions with their ground truth
         """
-        
+        ground_truth_df = pd.read_csv(f"{ground_truth_table_name}")[evaluation_cols].head(predicted_df.shape[0])
+
         metrics = {
             'query_id': self.query_id,
             'class_name': self.class_name,
             'exact_match_accuracy': 0,
             'similarity_accuracy': 0.0,
-            'incorrect_predictions': []
+            'incorrect_predictions_exact_match': [],
+            'incorrect_predictions_semantic_match': [],
         }
         
         try:
-            # Align dataframes if key columns provided
-            if key_cols:
-                merged_df = predicted_df.merge(
-                    ground_truth_df, 
-                    on=key_cols, 
-                    how='inner', 
-                    suffixes=('_pred', '_truth')
-                )
-                pred_col = f"{new_col_name}_pred" if f"{new_col_name}_pred" in merged_df.columns else new_col_name
-                truth_col = f"{ground_truth_col_name}_truth" if f"{ground_truth_col_name}_truth" in merged_df.columns else ground_truth_col_name
-            else:
-                # Use index alignment
-                merged_df = predicted_df.copy()
-                merged_df[ground_truth_col_name] = ground_truth_df[ground_truth_col_name]
-                pred_col = new_col_name
-                truth_col = ground_truth_col_name
+            pred_list = predicted_df[new_col_name].astype(str).tolist()
+            truth_list = ground_truth_df[ground_truth_col_name].astype(str).tolist()
             
-            # Ensure columns exist
-            if pred_col not in merged_df.columns or truth_col not in merged_df.columns:
-                raise ValueError(f"Columns {pred_col} or {truth_col} not found in merged dataframe")
-            
-            metrics['total_predictions'] = len(merged_df)
-            
+            total_predictions = len(pred_list)
+                    
             # Calculate exact matches
-            exact_matches = merged_df[pred_col] == merged_df[truth_col]
-            metrics['total_correct'] = exact_matches.sum()
-            metrics['accuracy'] = metrics['total_correct'] / metrics['total_predictions'] if metrics['total_predictions'] > 0 else 0.0
+            exact_matches = [p == t for p, t in zip(pred_list, truth_list)]
+            total_correct_predictions = sum(exact_matches)
+
+            metrics['exact_match_accuracy'] = total_correct_predictions / total_predictions if total_predictions > 0 else 0.0
+
+            # Calculate semantic similarity matches (e.g., substring match)
+            model = self._get_model()
+            pred_embeddings = model.encode(pred_list, convert_to_tensor=True)
+            truth_embeddings = model.encode(truth_list, convert_to_tensor=True)
+
+            cosine_scores_matrix = util.cos_sim(pred_embeddings, truth_embeddings)
+
+            similarity_scores = cosine_scores_matrix.diag().cpu().numpy()
+            semantic_matches = similarity_scores >= similarity_threshold
+
+            metrics['similarity_accuracy'] = np.mean(semantic_matches) if total_predictions > 0 else 0.0
             
-            # Calculate partial matches (substring matching) for string columns
-            if merged_df[pred_col].dtype == 'object' and merged_df[truth_col].dtype == 'object':
-                partial_matches = merged_df.apply(
-                    lambda row: self._is_substring_match(str(row[pred_col]), str(row[truth_col])),
-                    axis=1
-                )
-                metrics['total_partial'] = partial_matches.sum()
-                metrics['partial_match_rate'] = metrics['total_partial'] / metrics['total_predictions'] if metrics['total_predictions'] > 0 else 0.0
-            
-            # Collect correct and incorrect predictions
-            for idx, row in merged_df.iterrows():
-                pred_val = row[pred_col]
-                truth_val = row[truth_col]
-                
-                if pred_val == truth_val:
-                    metrics['correct_values'].append({
-                        'predicted': pred_val,
-                        'ground_truth': truth_val,
-                        'row_index': idx
+            # Collect incorrect predictions
+            for i, (pred, truth) in enumerate(zip(pred_list, truth_list)):
+                if not exact_matches[i]:
+                    metrics['incorrect_predictions_exact_match'].append({
+                        'row_index': i,
+                        'predicted_row': predicted_df.iloc[i].to_dict(),
+                        'ground_truth_row': ground_truth_df.iloc[i].to_dict(),
+                        'predicted_value': pred,
+                        'ground_truth_value': truth,
+                        'semantic_score': round(float(similarity_scores[i]), 4),
+                        'is_semantic_match': bool(semantic_matches[i])
                     })
-                else:
-                    metrics['incorrect_predictions'].append({
-                        'predicted': pred_val,
-                        'ground_truth': truth_val,
-                        'row_index': idx
+                
+                # Also collect predictions that don't meet semantic similarity threshold
+                if not semantic_matches[i]:
+                    metrics['incorrect_predictions_semantic_match'].append({
+                        'row_index': i,
+                        'predicted_row': predicted_df.iloc[i].to_dict(),
+                        'ground_truth_row': ground_truth_df.iloc[i].to_dict(),
+                        'predicted_value': pred,
+                        'ground_truth_value': truth,
+                        'semantic_score': round(float(similarity_scores[i]), 4),
+                        'is_exact_match': bool(exact_matches[i])
                     })
             
         except Exception as e:
             metrics['error'] = str(e)
         
         return metrics
-    
-    @staticmethod
-    def _is_substring_match(pred_val: str, truth_val: str, case_sensitive: bool = False) -> bool:
-        if not case_sensitive:
-            pred_val = pred_val.lower()
-            truth_val = truth_val.lower()
-        
-        return pred_val in truth_val or truth_val in pred_val
-
 
 def evaluate_derivation_query(query_id: str, predicted_df: pd.DataFrame, 
-                               ground_truth_df: pd.DataFrame, new_col_name: str,
-                               ground_truth_col_name: str, key_cols: List[str] = None) -> Dict[str, Any]:
+                               ground_truth_table_name: str, evaluation_cols: List[str], new_col_name: str,
+                               ground_truth_col_name: str) -> Dict[str, Any]:
     """
     Generic method for evaluating derivation queries.
     
     Args:
         query_id: Identifier for the query
         predicted_df: DataFrame with predicted new column
-        ground_truth_df: DataFrame with ground truth values
+        ground_truth_table_name: Name of the CSV file containing ground truth values
+        evaluation_cols: List of columns to load from the ground truth CSV (including the ground truth column)
         new_col_name: Name of the predicted column
         ground_truth_col_name: Name of the ground truth column in ground_truth_df
-        key_cols: Columns to use for row alignment
         
     Returns:
         Dictionary with evaluation metrics
@@ -166,8 +143,8 @@ def evaluate_derivation_query(query_id: str, predicted_df: pd.DataFrame,
     evaluator = DerivationEvaluator(query_id, 'derivation')
     return evaluator.evaluate(
         predicted_df, 
-        ground_truth_df, 
+        ground_truth_table_name, 
+        evaluation_cols, 
         new_col_name, 
         ground_truth_col_name,
-        key_cols
     )

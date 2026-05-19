@@ -190,7 +190,7 @@ def create_game_summaries_df(dataset):
         else:
             winner_team = vis[0]
             winner_points = vis[1]
-            win_home_or_vis = 'vis'
+            win_home_or_vis = 'visitor'
         total_points = home[1] + vis[1]
 
 
