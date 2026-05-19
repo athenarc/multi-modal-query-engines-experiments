@@ -124,4 +124,81 @@ class DerivationEvaluator(BaseEvaluator):
         
         return metrics
 
-# class Select
+class SelectionEvaluator(BaseEvaluator):
+    """Evaluator for selection queries (filtering tasks)."""
+    
+    def evaluate(self, predicted_df, ground_truth_table_name: str, input_size: int, evaluation_cols: List[str],
+                 filtering_col: str) -> Dict[str, Any]:
+        """
+        Evaluate selection query results by comparing predicted and ground truth filtering results.
+        
+        Args:
+            predicted_df: DataFrame with predicted filtering results
+            evaluation_cols: List of columns to load from the ground truth CSV (including the filtering column)
+            filtering_col: Name of the ground truth filtering column (boolean)
+
+        Returns:
+            Dictionary containing:
+                - recall: Fraction of true positives correctly identified
+                - accuracy: Fraction of correct predictions (both true positives and true negatives)
+                - incorrect_predictions: List of incorrect predictions with their ground truth
+        """
+        ground_truth_df = pd.read_csv(f"../{ground_truth_table_name}")[evaluation_cols].head(input_size)
+
+        metrics = {
+            'query_id': self.query_id,
+            'class_name': self.class_name,
+            'accuracy': 0.0,
+            'recall': 0.0,
+            'incorrect_predictions': [],
+        }
+        
+        try:
+            key_cols = [col for col in evaluation_cols if col != filtering_col]
+
+            df = ground_truth_df.merge(predicted_df, on=key_cols, how='left', indicator=True)
+
+            def get_category(row):
+                if row[filtering_col] == True and row['_merge'] == 'both':
+                    return 'TP'
+                elif row[filtering_col] == False and row['_merge'] == 'left_only':
+                    return 'TN'
+                elif row[filtering_col] == False and row['_merge'] == 'both':
+                    return 'FP'
+                elif row[filtering_col] == True and row['_merge'] == 'left_only':
+                    return 'FN'
+
+            df['category'] = df.apply(get_category, axis=1)
+
+            counts = df['category'].value_counts()
+            tp = counts.get('TP', 0)
+            tn = counts.get('TN', 0)
+            fp = counts.get('FP', 0)
+            fn = counts.get('FN', 0)
+
+            accuracy = (tp + tn) / (tp + tn + fp + fn)
+            recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+            precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+            f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+
+            metrics['accuracy'] = accuracy
+            metrics['recall'] = recall
+            metrics['precision'] = precision
+            metrics['f1_score'] = f1_score
+
+            # Collect incorrect predictions
+            for i, row in df.iterrows():
+                if row['category'] in ['FP', 'FN']:
+                    metrics['incorrect_predictions'].append({
+                        'row_index': i,
+                        'predicted_row': predicted_df.iloc[i].to_dict() if i < len(predicted_df) else None,
+                        'ground_truth_row': ground_truth_df.iloc[i].to_dict() if i < len(ground_truth_df) else None,
+                        'predicted_value': row['_merge'] == 'both',
+                        'ground_truth_value': row[filtering_col],
+                        'category': row['category']
+                    })
+            
+        except Exception as e:
+            metrics['error'] = str(e)
+        
+        return metrics

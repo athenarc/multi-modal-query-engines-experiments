@@ -68,6 +68,7 @@ queries:
     nlq: "The total points (sum) scored by both teams played in the game is greater than 180?"
     table: datasets/nba/game_summaries.csv
     cols: [summary]
+    filtering_col: total_points_gt_180
     lotus_query: "The total points (sum) scored by both teams played in the game described by {summary} is greater than 180."
     palimpzest_query: "The total points (sum) scored by both teams played in the game described by `summary` is greater than 180."
     evaluation_cols: [summary, total_points]
@@ -78,6 +79,7 @@ queries:
     nlq: "The player's height is less than 190cm."
     table: datasets/nba/all_seasons_cleaned.csv
     cols: [player_name]
+    filtering_col: height_lt_190
     lotus_query: "The height of {player_name} is less than 190cm."
     palimpzest_query: "The height of `player_name` is less than 190cm."
     evaluation_cols: [player_name, height]

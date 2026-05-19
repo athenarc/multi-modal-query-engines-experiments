@@ -113,6 +113,7 @@ def align_summaries_to_nba_players(df_summaries_players):
             print(f"Warning: Player '{player}' from SportSett is not in the Kaggle dataset.")
             print()
 
+    seasons['height_lt_190'] = seasons['player_height'] < 190.0
     seasons.to_csv("datasets/nba/all_seasons_cleaned.csv", index=False, encoding='utf-8')
     df_summaries_players.to_csv("datasets/nba/players_summaries.csv", index=False, encoding='utf-8')
     
@@ -203,7 +204,7 @@ def create_game_summaries_df(dataset):
             "winner_team": winner_team,
             "win_home_or_vis": win_home_or_vis,
             "winner_points": winner_points,
-            "total_points": total_points,
+            "total_points_gt_180": total_points > 180,
         })
     
     pd.DataFrame(game_summaries).to_csv("datasets/nba/game_summaries.csv", index=False, encoding='utf-8')
@@ -220,6 +221,6 @@ if __name__ == "__main__":
         }
     )
     
-    # create_player_summary_dataset(dataset['test'])
+    create_player_summary_dataset(dataset['test'])
     create_game_summaries_df(dataset['test'])
-    # create_team_summary_dataset(dataset['test'])
+    create_team_summary_dataset(dataset['test'])
