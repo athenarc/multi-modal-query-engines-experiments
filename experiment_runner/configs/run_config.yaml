@@ -12,6 +12,6 @@ input_sizes: [10]
 input_sizes_for_join: [[10, 10]]
 
 filters:
-  class_name: derivation
+  class_name: selection
   task_name: null
   query_ids: null

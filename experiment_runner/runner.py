@@ -4,7 +4,7 @@ import pandas as pd
 from pydantic import BaseModel
 from typing import List, Optional
 from systems import get_system
-from evaluation import evaluate_derivation_query
+from evaluation import DerivationEvaluator
 
 class Query(BaseModel):
     id: str
@@ -41,34 +41,27 @@ class ExperimentRunner:
             return yaml.safe_load(f)
     
     def _evaluate_results(self, query: Query, predicted_df: pd.DataFrame, input_size: int) -> int:
-        """Evaluate predicted results and return quality metric."""
-        # Only evaluate for derivation tasks
-        if query.class_name != 'derivation':
-            return -1
-        
-        # Check if ground truth is configured for this query
-        if not query.table:
-            return -1
-        
+        """Evaluate predicted results and return quality metric."""        
         try:
-            results = evaluate_derivation_query(
-                query_id=query.id,
-                predicted_df=predicted_df,
-                ground_truth_table_name=query.table,
-                input_size=input_size,
-                evaluation_cols=query.evaluation_cols,
-                new_col_name=query.new_col_name,
-                ground_truth_col_name=query.evaluation_cols[-1],
-            )
-            
-            exact_match_accuracy = results.get('exact_match_accuracy')
-            similarity_accuracy = results.get('similarity_accuracy')
-            
-            # Return accuracy as quality for derivation tasks
-            if exact_match_accuracy is not None and similarity_accuracy is not None:
-                return (exact_match_accuracy, similarity_accuracy)
-            else:
-                return (-1, -1)
+            if query.class_name == 'derivation':
+                evaluator = DerivationEvaluator(query_id=query.id, class_name=query.class_name)
+                results = evaluator.evaluate(
+                    predicted_df=predicted_df,
+                    ground_truth_table_name=query.table,
+                    input_size=input_size,
+                    evaluation_cols=query.evaluation_cols,
+                    new_col_name=query.new_col_name,
+                    ground_truth_col_name=query.evaluation_cols[-1],
+                )
+
+                exact_match_accuracy = results.get('exact_match_accuracy')
+                similarity_accuracy = results.get('similarity_accuracy')
+                
+                # Return accuracy as quality for derivation tasks
+                if exact_match_accuracy is not None and similarity_accuracy is not None:
+                    return (exact_match_accuracy, similarity_accuracy)
+                else:
+                    return (-1, -1)
                 
         except Exception as e:
             print(f"Error during evaluation: {e}")

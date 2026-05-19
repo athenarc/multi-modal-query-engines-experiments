@@ -124,30 +124,4 @@ class DerivationEvaluator(BaseEvaluator):
         
         return metrics
 
-def evaluate_derivation_query(query_id: str, predicted_df: pd.DataFrame, 
-                               ground_truth_table_name: str, input_size: int, evaluation_cols: List[str], new_col_name: str,
-                               ground_truth_col_name: str) -> Dict[str, Any]:
-    """
-    Generic method for evaluating derivation queries.
-    
-    Args:
-        query_id: Identifier for the query
-        predicted_df: DataFrame with predicted new column
-        ground_truth_table_name: Name of the CSV file containing ground truth values
-        input_size: Size of the input data to evaluate
-        evaluation_cols: List of columns to load from the ground truth CSV (including the ground truth column)
-        new_col_name: Name of the predicted column
-        ground_truth_col_name: Name of the ground truth column in ground_truth_df
-        
-    Returns:
-        Dictionary with evaluation metrics
-    """
-    evaluator = DerivationEvaluator(query_id, 'derivation')
-    return evaluator.evaluate(
-        predicted_df, 
-        ground_truth_table_name,
-        input_size,
-        evaluation_cols, 
-        new_col_name, 
-        ground_truth_col_name,
-    )
+# class Select

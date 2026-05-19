@@ -57,8 +57,10 @@ queries:
     nlq: "Did the team win the game?"
     table: datasets/nba/teams_summaries.csv
     cols: [team, summary]
+    filtering_col: is_winner
     lotus_query: "The {team} won the game described by {summary}."
     palimpzest_query: "The `team` won the game described by `summary`."
+    evaluation_cols: [team, summary, is_winner]
 
   - id: q6
     class_name: selection
@@ -68,6 +70,7 @@ queries:
     cols: [summary]
     lotus_query: "The total points (sum) scored by both teams played in the game described by {summary} is greater than 180."
     palimpzest_query: "The total points (sum) scored by both teams played in the game described by `summary` is greater than 180."
+    evaluation_cols: [summary, total_points]
 
   - id: q7
     class_name: selection
@@ -77,6 +80,8 @@ queries:
     cols: [player_name]
     lotus_query: "The height of {player_name} is less than 190cm."
     palimpzest_query: "The height of `player_name` is less than 190cm."
+    evaluation_cols: [player_name, height]
+
 
   - id: q8
     class_name: join
