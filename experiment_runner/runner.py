@@ -4,7 +4,7 @@ import pandas as pd
 from pydantic import BaseModel
 from typing import List, Optional
 from systems import get_system
-from evaluation import DerivationEvaluator, SelectionEvaluator
+from evaluation import DerivationEvaluator, SelectionEvaluator, JoinEvaluator
 
 class Query(BaseModel):
     id: str
@@ -86,9 +86,33 @@ class ExperimentRunner:
                     return (accuracy, recall, precision, f1_score)
                 else:
                     return (-1, -1, -1, -1)
+
+
+            if query.class_name == "join":
+                evaluator = JoinEvaluator(query_id=query.id, class_name=query.class_name)
+                results = evaluator.evaluate(
+                    predicted_df=predicted_df,
+                    table_left_name=query.table_left,
+                    table_right_name=query.table_right,
+                    input_size=input_size,
+                    evaluation_table_name=query.evaluation_table,
+                    evaluation_cols=query.evaluation_cols,
+                    left_key=query.left_key,
+                    right_key=query.right_key
+                )
+
+                recall = results.get('recall')
+                precision = results.get('precision')
+                f1_score = results.get('f1_score')
+
+                if recall is not None and precision is not None and f1_score is not None:
+                    return(recall, precision, f1_score)
+                else:
+                    return(-1, -1, -1)
+
         except Exception as e:
             print(f"Error during evaluation: {e}")
-            return (-1, -1)
+            return -1
 
     def filter_queries(self) -> List[Query]:
         filters = self.run_config.get('filters', {})
@@ -166,7 +190,8 @@ class ExperimentRunner:
                         )
 
                         # Evaluate results if input_size <= 100
-                        if (input_size <= 100):
+                        if ((query.class_name != 'join' and input_size <= 100) or
+                            (query.class_name == 'join' and input_size[0]*input_size[1] <= 100) ):
                             predicted_result = output.get('result')
                             quality = self._evaluate_results(query, predicted_result, input_size)
 
