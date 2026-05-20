@@ -204,6 +204,81 @@ class SelectionEvaluator(BaseEvaluator):
         return metrics
     
 
+    class JoinEvaluator(BaseEvaluator):
+        """Evaluator for join queries (table merging tasks)."""
+        
+        def evaluate(self, predicted_df, left_table_name: str, evaluation_table_name: str, input_size: tuple[int, int], evaluation_cols: List[str],
+                     left_key: str, right_key:str) -> Dict[str, Any]:
+            """
+            Evaluate join query results by comparing predicted and ground truth merged tables.
+            
+            Args:
+                predicted_df: DataFrame with predicted merged results
+                evaluation_cols: List of columns to load from the ground truth CSV (including join key columns)
+                join_key_cols: List of columns used as join keys
+
+            Returns:
+                Dictionary containing:
+                    - precision: Fraction of predicted rows that are correct in the join
+                    - recall: Fraction of true rows correctly identified in the join
+                    - accuracy: Fraction of correct predictions in the join
+                    - f1_score: Harmonic mean of precision and recall
+                    - incorrect_predictions: List of incorrect predictions with their ground truth
+            """
+            left_table_df = pd.read_csv(f"../{left_table_name}").head(input_size[0])[left_key]
+            evaluation_table_df = pd.read_csv(f"../{evaluation_table_name}").head(input_size[0]*input_size[1])[evaluation_cols] # load the maximum possible number of joined rows
+
+            ground_truth_df = left_table_df.merge(evaluation_table_df, on=left_key, how='inner')
+
+            print(ground_truth_df.shape)
+            print(ground_truth_df)        
+
+            metrics = {
+                'query_id': self.query_id,
+                'class_name': self.class_name,
+                'precision': 0.0,
+                'recall': 0.0,
+                'accuracy': 0.0,
+                'f1_score': 0.0,
+                'incorrect_predictions': [],
+            }
+
+            # try:
+            #     if predicted_df == None or len(predicted_df.columns) == 0:
+            #         predicted_df = pd.DataFrame(columns=join_key_cols)
+                
+            #     df = ground_truth_df.merge(predicted_df, on=join_key_cols, how='left', indicator=True)
+
+            #     df['is_correct'] = df['_merge'] == 'both'
+
+            #     tp = df['is_correct'].sum()
+            #     fp = len(df) - tp
+            #     fn = len(ground_truth_df) - tp
+
+            #     precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+            #     recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+            #     accuracy = tp / len(df) if len(df) > 0 else 0
+            #     f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+
+            #     metrics['precision'] = precision
+            #     metrics['recall'] = recall
+            #     metrics['accuracy'] = accuracy
+            #     metrics['f1_score'] = f1_score
+
+            #     for i, row in df.iterrows():
+            #         if not row['is_correct']:
+            #             metrics['incorrect_predictions'].append({
+            #                 'row_index': i,
+            #                 'predicted_row': predicted_df.iloc[i].to_dict() if i < len(predicted_df) else None,
+            #                 'ground_truth_row': ground_truth_df.iloc[i].to_dict() if i < len(ground_truth_df) else None,
+            #                 'is_correct': row['is_correct'],
+            #                 '_merge': row['_merge']
+            #             })
+            # except Exception as e:
+            #     metrics['error'] = str(e)
+
+            return metrics    
+        
 # def evaluate_derivation_query(query_id: str, predicted_df: pd.DataFrame, ground_truth_table_name: str, input_size: int,
 #                               evaluation_cols: List[str], new_col_name: str, ground_truth_col_name: str) -> Dict[str, Any]:
 #     evaluator = DerivationEvaluator(query_id=query_id, class_name='derivation')

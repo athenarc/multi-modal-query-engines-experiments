@@ -22,6 +22,7 @@ class Query(BaseModel):
     cols_right: Optional[List[str]] = None
     left_key: str = None
     right_key: str = None
+    evaluation_table: str = None
     
     new_col_name: Optional[str] = None
     new_col_type: Optional[str] = str

@@ -91,12 +91,14 @@ queries:
     nlq: "The summary mentions a specific player"
     table_left: datasets/nba/game_summaries.csv
     cols_left: [sportsett_id, summary]
-    table_right: datasets/nba/players_summaries.csv
+    table_right: datasets/nba/all_seasons_cleaned.csv
     cols_right: [player_name]
     left_key: summary
     right_key: player_name
     lotus_query: "The summary {summary} mentions the player {player_name}."
     blendsql_query: "The summary {summary} mentions the player {player_name}."
+    evaluation_table: datasets/nba/players_summaries.csv
+    evaluation_cols: [sportsett_id, summary, player_name]
 
   - id: q9
     class_name: join
