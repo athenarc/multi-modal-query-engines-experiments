@@ -147,8 +147,13 @@ def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.cs
     df['rebounds_verified'] = df.progress_apply(lambda r: verify_stat(r, 'total rebounds', r['total_rebounds']), axis=1)
     df = df[df['rebounds_verified'] == 'yes']
 
-    verified_summaries = df[(df['points'] != 0) & (df['assists'] != 0) & (df['total_rebounds'] != 0)]
-    verified_summaries.head(100).drop(columns=['points_verified', 'assists_verified', 'rebounds_verified']).reset_index(drop=True).to_csv(output_csv, index=False)
+    verified_summaries = df[df['points'] != 0]
+    verified_summaries = verified_summaries[verified_summaries['assists'] != 0]
+    verified_summaries = verified_summaries[verified_summaries['total_rebounds'] != 0]
+
+    verified_summaries.head(100).drop(columns=['points_verified', 'assists_verified', 'rebounds_verified']).reset_index(drop=True)
+
+    # verified_summaries.head(100).drop(columns=['points_verified', 'assists_verified', 'rebounds_verified']).reset_index(drop=True).to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
 # Create Game Summaries Table
@@ -240,8 +245,8 @@ def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv"):
 
 
 if __name__ == "__main__":
-    process_player_info()
+    # process_player_info()
     process_player_summaries()
-    process_game_summaries()
-    process_team_summaries()
+    # process_game_summaries()
+    # process_team_summaries()
     print("All tasks completed!")

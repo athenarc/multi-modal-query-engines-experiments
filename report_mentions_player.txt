@@ -1,0 +1,82 @@
+To create these three cases, we will define Table 1 (10 sportsett_ids) and
+Table 2 (10 player_names) for each scenario. The join condition is that a tuple
+(sportsett_id, player_name) must exist in your dataset and have is_mentioned ==
+True.
+
+Here are the optimal setups to guarantee exact join cardinalities of 5, 20,
+and 50.
+
+Case 1: Exactly 5 Joins
+
+To get exactly 5 matches out of 100 possible combinations, we select 10
+consecutive games and 1 player who was mentioned exactly 5 times in that span.
+The other 9 players are selected because they were either flagged as False or
+did not play in those 10 games (yielding 0 joins).
+
+Table 1 (sportsett_id):
+4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930
+
+Table 2 (player_name):
+
+1.  Robert Covington (Matches 5: 4921, 4922, 4923, 4924, 4927)
+2.  Dario Šarić (0 matches: flagged False)
+3.  Furkan Korkmaz (0 matches: flagged False)
+4.  T.J. McConnell (0 matches: flagged False)
+5.  Jonah Bolden (0 matches: flagged False)
+6.  Demetrius Jackson (0 matches: flagged False)
+7.  Shake Milton (0 matches: flagged False)
+8.  Rawle Alkins (0 matches: flagged False)
+9.  Melvin Frazier (0 matches: flagged False)
+10. Isaiah Briscoe (0 matches: flagged False)
+
+Result: 5 total joins.
+
+Case 2: Exactly 20 Joins
+
+Using the same 10 games, we can reach exactly 20 joins by utilizing the star
+players who are mentioned frequently, combined with one player who has a single
+mention, and filling the rest with non-mentioned players.
+
+Table 1 (sportsett_id):
+4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930
+
+Table 2 (player_name):
+
+1.  Joel Embiid (Matches 10: True in all 10 games)
+2.  Ben Simmons (Matches 9: True in all except 4922)
+3.  Amir Johnson (Matches 1: True in 4928 only)
+4.  Dario Šarić (0 matches)
+5.  Furkan Korkmaz (0 matches)
+6.  T.J. McConnell (0 matches)
+7.  Jonah Bolden (0 matches)
+8.  Demetrius Jackson (0 matches)
+9.  Shake Milton (0 matches)
+10. Rawle Alkins (0 matches)
+
+Result: 10 + 9 + 1 + 0 (x7) = 20 total joins.
+
+Case 3: Exactly 50 Joins
+
+Getting exactly 50 is tricky, requiring a highly dense matrix. We alter the list
+of 10 games slightly to capture a window where the 76ers' core starters played
+consistently, combined with the Charlotte Hornets opponent players (who
+the 76ers played twice in this window, yielding 2 mentions each).
+
+Table 1 (sportsett_id):
+4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930, 4931, 4933 (Note: 4932 is
+skipped in favor of 4933 to align the math perfectly).
+
+Table 2 (player_name):
+
+1.  Joel Embiid (Matches 10: True in all 10 games)
+2.  Ben Simmons (Matches 10: True in all 10 games)
+3.  J.J. Redick (Matches 10: True in all 10 games)
+4.  Jimmy Butler (Matches 5: True in 4928, 4929, 4930, 4931, 4933)
+5.  Robert Covington (Matches 3: True in 4923, 4924, 4927)
+6.  Markelle Fultz (Matches 3: True in 4923, 4924, 4927)
+7.  Mike Muscala (Matches 3: True in 4924, 4929, 4933)
+8.  Kemba Walker (Matches 2: True in 4923, 4927 against Hornets)
+9.  Jeremy Lamb (Matches 2: True in 4923, 4927 against Hornets)
+10. Cody Zeller (Matches 2: True in 4923, 4927 against Hornets)
+
+Result: 10 + 10 + 10 + 5 + 3 + 3 + 3 + 2 + 2 + 2 = 50 total joins.
