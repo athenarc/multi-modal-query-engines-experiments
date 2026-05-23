@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 tqdm.pandas(desc="Verification")
 
-client = OpenAI(base_url="http://localhost:5001/v1", api_key="EMPTY")
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="EMPTY")
 
 print("Loading HuggingFace SportSett dataset...")
 sportsett_dataset = datasets.load_dataset(
@@ -66,7 +66,7 @@ def get_summary(row):
         return str(row["summaries"][0])
     return "No summary available"
 
-def llm_verify(prompt, model="meta-llama/Llama-3.1-8B-Instruct"):
+def llm_verify(prompt, model="llama3:8b-instruct-q8_0"):
     try:
         response = client.chat.completions.create(
             model=model,
@@ -144,16 +144,16 @@ def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.cs
     df['assists_verified'] = df.progress_apply(lambda r: verify_stat(r, 'assists', r['assists']), axis=1)
     df = df[df['assists_verified'] == 'yes']
 
+
     df['rebounds_verified'] = df.progress_apply(lambda r: verify_stat(r, 'total rebounds', r['total_rebounds']), axis=1)
     df = df[df['rebounds_verified'] == 'yes']
+    print(df[df['player_name'] == 'Robert Covington'])
 
     verified_summaries = df[df['points'] != 0]
     verified_summaries = verified_summaries[verified_summaries['assists'] != 0]
     verified_summaries = verified_summaries[verified_summaries['total_rebounds'] != 0]
 
-    verified_summaries.head(100).drop(columns=['points_verified', 'assists_verified', 'rebounds_verified']).reset_index(drop=True)
-
-    # verified_summaries.head(100).drop(columns=['points_verified', 'assists_verified', 'rebounds_verified']).reset_index(drop=True).to_csv(output_csv, index=False)
+    verified_summaries.head(100).drop(columns=['points_verified', 'assists_verified', 'rebounds_verified']).reset_index(drop=True).to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
 # Create Game Summaries Table
