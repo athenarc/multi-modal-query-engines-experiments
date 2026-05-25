@@ -1,6 +1,6 @@
 experiment_name: "initial_experiment"
 
-systems: ["lotus"]
+systems: ["blendsql"]
 
 llms:
   # ollama: 
@@ -14,6 +14,6 @@ input_sizes_for_join: [[10, 10]]
 evaluation: True
 
 filters:
-  class_name: null
+  class_name: join
   task_name: null
-  query_ids: [q29, q30]
+  query_ids: null
