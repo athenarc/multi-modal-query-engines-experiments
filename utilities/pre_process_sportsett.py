@@ -1,4 +1,5 @@
 import os
+import unicodedata
 import pandas as pd
 import datasets
 from openai import OpenAI
@@ -117,10 +118,13 @@ def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.cs
                 player_name = str(player.get("name", "Unknown Player"))
                 pts, ast, reb = player.get("PTS", "0"), player.get("AST", "0"), player.get("TREB", "0")
                 
+                is_mentioned = (player_name in summary) or (unicodedata.normalize('NFKD', player_name).encode('ASCII', 'ignore').decode('utf-8') in summary)
+                player_name = unicodedata.normalize('NFKD', player_name).encode('ASCII', 'ignore').decode('utf-8')         
+
                 csv_data.append({
                     "sportsett_id": game_id, "summary": summary, "player_name": player_name,
                     "team": team_name, "points": int(pts), "assists": int(ast), "total_rebounds": int(reb),
-                    "points_gt_20": int(pts) > 20, "is_mentioned": player_name in summary
+                    "points_gt_20": int(pts) > 20, "is_mentioned": is_mentioned
                 })
 
     df = pd.DataFrame(csv_data)
@@ -147,7 +151,6 @@ def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.cs
 
     df['rebounds_verified'] = df.progress_apply(lambda r: verify_stat(r, 'total rebounds', r['total_rebounds']), axis=1)
     df = df[df['rebounds_verified'] == 'yes']
-    print(df[df['player_name'] == 'Robert Covington'])
 
     verified_summaries = df[df['points'] != 0]
     verified_summaries = verified_summaries[verified_summaries['assists'] != 0]
@@ -214,6 +217,21 @@ def process_game_summaries(output_csv="datasets/nba/game_summaries.csv"):
     verified.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
+def process_game_summaries_all(output_csv: str = "datasets/nba/game_summaries_all.csv"):
+    game_summaries = []
+
+    for row in test_data:
+        game_id = row.get("sportsett_id")
+        summary = get_summary(row)
+
+        game_summaries.append({
+            'sportsett_id': game_id, "summary": summary
+        })
+
+    all_summaries = pd.DataFrame(game_summaries)
+    all_summaries.to_csv(output_csv, index=False)
+    print(f"All summaries saved to {output_csv}")
+
 def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv"):
     print("Processing Team Summaries...")
     csv_data = []
@@ -270,6 +288,9 @@ def evaluate_joins(title, gt_df, cases, merge_keys, left_table_name: str, right_
             lpath = os.path.join(cpath, f"{left_table_name}.csv")
             rpath = os.path.join(cpath, f"{right_table_name}.csv")
 
+            if "sportsett_id" in result_df.columns:
+                result_df = result_df.merge(summaries_df, on='sportsett_id')
+
             if left_table_name == "summaries" and "sportsett_id" in df1.columns:
                 df1 = df1.merge(summaries_df, on='sportsett_id')
             elif right_table_name == "summaries" and 'sportsett_id' in df2.columns:
@@ -277,15 +298,12 @@ def evaluate_joins(title, gt_df, cases, merge_keys, left_table_name: str, right_
 
             df1.to_csv(lpath)
             df2.to_csv(rpath)
+            result_df.to_csv(os.path.join(cpath, "ground_truth.csv"))
             
     print()
 
 def evaluate_all_joins():
-    summaries_path = "datasets/nba/game_summaries.csv"
-    if not os.path.exists(summaries_path):
-        print(f"Error: {summaries_path} not found. Ensure process_game_summaries generated it correctly.")
-        return
-    summaries_df = pd.read_csv(summaries_path)[['sportsett_id', 'summary']]
+    summaries_df = pd.read_csv("datasets/nba/game_summaries_all.csv")[['sportsett_id', 'summary']]
 
     # ---------------------------------------------------------
     # 1. Summary mentions Player 
@@ -294,11 +312,11 @@ def evaluate_all_joins():
 
     c1_1 = {
         'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
-        'player_name': ["Robert Covington", "Dario Šarić", "Furkan Korkmaz", "T.J. McConnell", "Jonah Bolden", "Demetrius Jackson", "Shake Milton", "Rawle Alkins", "Melvin Frazier", "Isaiah Briscoe"]
+        'player_name': ["Robert Covington", "Furkan Korkmaz", "Jonah Bolden", "Shake Milton", "Demetrius Jackson", "Rawle Alkins", "Melvin Frazier", "Isaiah Briscoe", "Justin Holiday", "Cameron Payne"]
     }
     c1_2 = {
         'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
-        'player_name': ["Joel Embiid", "Ben Simmons", "Amir Johnson", "Dario Šarić", "Furkan Korkmaz", "T.J. McConnell", "Jonah Bolden", "Demetrius Jackson", "Shake Milton", "Rawle Alkins"]
+        'player_name': ["Joel Embiid", "Ben Simmons", "Amir Johnson", "Furkan Korkmaz", "Jonah Bolden", "Shake Milton", "Demetrius Jackson", "Rawle Alkins", "Melvin Frazier", "Isaiah Briscoe"]
     }
     c1_3 = {
         'sportsett_id': [4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930, 4931, 4933],
@@ -465,10 +483,11 @@ def evaluate_all_joins():
 if __name__ == "__main__":
     os.makedirs("datasets/nba", exist_ok=True)
     
-    # process_player_info()
-    # process_player_summaries()
-    # process_game_summaries()
-    # process_team_summaries()
+    process_game_summaries_all()
+    process_game_summaries()
+    process_player_info()
+    process_player_summaries()
+    process_team_summaries()
     evaluate_all_joins()
     
     print("All pre-processing tasks completed successfully!")
