@@ -113,7 +113,7 @@ class LotusSystem(BaseSystem):
             size_left = size_right = input_size
 
         input_df_left = pd.read_csv(f"../{table_left}")[cols_left].head(size_left)
-        input_df_right = pd.read_csv(f"../{table_right}")[cols_right].head(size_right)[[right_key]]
+        input_df_right = pd.read_csv(f"../{table_right}")[cols_right].head(size_right)
 
         start_time = time.time()
 

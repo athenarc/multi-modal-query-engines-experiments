@@ -233,10 +233,6 @@ class JoinEvaluator(BaseEvaluator):
         cross_df = left_table_df.merge(right_table_df, how='cross')
         ground_truth_df = pd.read_csv(f"../{evaluation_table_name}")[[left_key, right_key]]
 
-        print("cross_df shape: ", cross_df.shape)
-        print("ground_truth_df shape: ", ground_truth_df.shape)
-
-
         metrics = {
             'query_id': self.query_id,
             'class_name': self.class_name,
@@ -250,43 +246,22 @@ class JoinEvaluator(BaseEvaluator):
             if predicted_df is None or len(predicted_df.columns) == 0:
                 predicted_df = pd.DataFrame(columns=[left_key, right_key])
 
+            predicted_gt_df = ground_truth_df.merge(predicted_df, on=[left_key, right_key], how='outer', indicator=True)
 
-            cross_predictions_df = cross_df.merge(predicted_df, on=[left_key, right_key], how='left', indicator=True)
-            cross_predictions_df.rename(columns={'_merge': 'merge_predictions'}, inplace=True)
-
-
-            print("cross_predictions_df:")
-            print(cross_predictions_df)
-
-            cross_predictions_gt_df = cross_predictions_df.merge(ground_truth_df, on=[left_key, right_key], how='left', indicator=True)
-            cross_predictions_gt_df.rename(columns={'_merge': 'merge_gt'}, inplace=True)
-
-            print("cross_predictions_gt_df:")
-            print(cross_predictions_gt_df)
-
-            cross_predictions_df.to_csv("tmp1.csv")
-            cross_predictions_gt_df.to_csv("tmp2.csv")
-
-            tp = ((cross_predictions_gt_df['merge_gt'] == 'both') & (cross_predictions_gt_df['merge_predictions'] == 'both')).sum()
-            fp = ((cross_predictions_gt_df['merge_gt'] == 'left_only') & (cross_predictions_gt_df['merge_predictions'] == 'both')).sum()
-            tn = ((cross_predictions_gt_df['merge_gt'] == 'left_only') & (cross_predictions_gt_df['merge_predictions'] == 'left_only')).sum()
-            fn = ((cross_predictions_gt_df['merge_gt'] == 'both') & (cross_predictions_gt_df['merge_predictions'] == 'left_only')).sum()
-
-            print("TP: ", tp)
-            print("FP: ", fp)
-            print("TN: ", tn)
-            print("FN: ", fn)
+            tp = (predicted_gt_df['_merge'] == 'both').sum()
+            fn = (predicted_gt_df['_merge'] == 'left_only').sum()
+            fp = (predicted_gt_df['_merge'] == 'right_only').sum()
+            tn = input_size[0] * input_size[1] - (tp+fn+fp)
 
             precision = tp / (tp + fp) if (tp + fp) > 0 else 0
             recall = tp / (tp + fn) if (tp + fn) > 0 else 0
             f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
-            accuracy = tp + tn / (tp + tn + fp + fn) if (tp + tn + fp + fn) > 0 else 0
+            accuracy = accuracy = (tp + tn) / (tp + tn + fp + fn) if (tp + tn + fp + fn) > 0 else 0
 
             print("precision: ", precision)
             print("recall: ", recall)
             print("f1_score: ", f1_score)
             print("accuracy: ", accuracy)
-
 
             metrics['precision'] = precision
             metrics['recall'] = recall

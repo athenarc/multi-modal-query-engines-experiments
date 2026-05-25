@@ -180,6 +180,7 @@ class ExperimentRunner:
                             query_kwargs["cols_right"] = query.cols_right
                             query_kwargs["right_key"] = query.right_key
 
+
                         output = system_instance.execute_query(
                             query.class_name,
                             system_query,
@@ -188,12 +189,12 @@ class ExperimentRunner:
                             input_size,
                             **query_kwargs,
                         )
-
-                        # Evaluate results if input_size <= 100
-                        if ((query.class_name != 'join' and input_size <= 100) or
-                            (query.class_name == 'join' and input_size[0]*input_size[1] <= 100) ):
+                        
+                        if self.run_config['evaluation'] == True:
                             predicted_result = output.get('result')
                             quality = self._evaluate_results(query, predicted_result, input_size)
+                        else:
+                            quality = "-"
 
                         # Log successful result
                         self.results.append({
@@ -214,7 +215,8 @@ class ExperimentRunner:
                             "quality": quality,
                         })
 
-                        predicted_result.to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
+                        if self.run_config['evaluation'] == True:
+                            predicted_result.to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
                     except Exception as e:
                         print(f"Error on {query.id}: {str(e)}")
                         # Log failed result - skip logging since we only want successful results

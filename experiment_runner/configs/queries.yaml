@@ -12,7 +12,7 @@ queries:
     blendsql_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
     evaluation_cols: [sportsett_id, summary, win_home_or_vis]
 
-  - id: q2
+  - id: q4
     class_name: derivation
     task_name: reasoning
     nlq: "Return points scored by the winner team"
@@ -25,7 +25,7 @@ queries:
     blendsql_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points."
     evaluation_cols: [sportsett_id, summary, winner_points]
 
-  - id: q3
+  - id: q7
     class_name: derivation
     task_name: extraction
     nlq: "Return points scored by a specific player mentioned in a game summary"
@@ -38,7 +38,7 @@ queries:
     blendsql_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points."
     evaluation_cols: [sportsett_id, player_name, summary, points]
 
-  - id: q4
+  - id: q10
     class_name: derivation
     task_name: external_knowledge
     nlq: "Return the birthplace of a specific player"
@@ -51,7 +51,7 @@ queries:
     blendsql_query: "Return the birthplace of {player_name}. Return only the name of the country."
     evaluation_cols: [player_name, country]
 
-  - id: q5
+  - id: q13
     class_name: selection
     task_name: classification
     nlq: "Did the team win the game?"
@@ -62,7 +62,7 @@ queries:
     palimpzest_query: "The `team` won the game described by `summary`."
     evaluation_cols: [team, summary, is_winner]
 
-  - id: q6
+  - id: q16
     class_name: selection
     task_name: reasoning
     nlq: "The total points (sum) scored by both teams played in the game is greater than 180?"
@@ -73,7 +73,7 @@ queries:
     palimpzest_query: "The total points (sum) scored by both teams played in the game described by `summary` is greater than 180."
     evaluation_cols: [summary, total_points_gt_180]
 
-  - id: q7
+  - id: q19
     class_name: selection
     task_name: external_knowledge
     nlq: "The player's height is less than 190cm."
@@ -85,48 +85,178 @@ queries:
     evaluation_cols: [player_name, height_lt_190]
 
 
-  - id: q8
+  - id: q22
     class_name: join
     task_name: classification
     nlq: "The summary mentions a specific player"
-    table_left: datasets/nba/game_summaries.csv
+
+    table_left: datasets/nba/join_tables/summary_mentions_player/case_3/summaries.csv
     cols_left: [sportsett_id, summary]
-    table_right: datasets/nba/all_seasons_cleaned.csv
-    cols_right: [player_name]
     left_key: summary
+
+    table_right: datasets/nba/join_tables/summary_mentions_player/case_3/players.csv
+    cols_right: [player_name]
     right_key: player_name
-    lotus_query: "The summary {summary} mentions the player {player_name}."
-    blendsql_query: "The summary {summary} mentions the player {player_name}."
-    evaluation_table: datasets/nba/players_summaries.csv
+
+    evaluation_table: datasets/nba/join_tables/summary_mentions_player/case_3/ground_truth.csv
     evaluation_cols: [sportsett_id, summary, player_name]
 
-  - id: q9
+    lotus_query: "The summary {summary} mentions the player {player_name}."
+    blendsql_query: "The summary {summary} mentions the player {player_name}."
+
+  - id: q23
+    class_name: join
+    task_name: classification
+    nlq: "The summary mentions a specific team"
+
+    table_left: datasets/nba/join_tables/summary_mentions_team/case_2/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
+
+    table_right: datasets/nba/join_tables/summary_mentions_team/case_2/teams.csv
+    cols_right: [team_name]
+    right_key: team_name
+
+    evaluation_table: datasets/nba/join_tables/summary_mentions_team/case_2/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, team_name]
+
+    lotus_query: "The summary {summary} mentions the team {team_name}."
+    blendsql_query: "The summary {summary} mentions the player {player_name}."
+
+  - id: q24
+    class_name: join
+    task_name: classification
+    nlq: "The team won the game described by the summary."
+
+    table_left: datasets/nba/join_tables/team_won_game/case_2/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
+
+    table_right: datasets/nba/join_tables/team_won_game/case_2/teams.csv
+    cols_right: [team_name]
+    right_key: team_name
+
+    evaluation_table: datasets/nba/join_tables/team_won_game/case_2/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, team_name]
+
+    lotus_query: "The team {team_name} won the game described by the summary {summary}."
+    blendsql_query: "The team {team_name} won the game described by the summary {summary}."
+
+  - id: q25
     class_name: join
     task_name: reasoning
     nlq: "A specific player scored the most points in the game."
-    table_left: datasets/nba/game_summaries.csv
+
+    table_left: datasets/nba/join_tables/player_max_points/case_1/summaries.csv
     cols_left: [sportsett_id, summary]
-    table_right: datasets/nba/players_summaries.csv
-    cols_right: [player_name, points]
     left_key: summary
+
+    table_right: datasets/nba/join_tables/player_max_points/case_1/players.csv
+    cols_right: [player_name]
     right_key: player_name
+
+    evaluation_table: datasets/nba/join_tables/player_max_points/case_1/ground_truth.csv
+    evalution_cols: [sportsett_id, summary, player_name]
+
     lotus_query: "The player {player_name} scored the most points in the game described by {summary}."
     blendsql_query: "The player {player_name} scored the most points in the game described by {summary}."
+
+  - id: q26
+    class_name: join
+    task_name: reasoning
+    nlq: "A specific player had the most assists in the game."
+
+    table_left: datasets/nba/join_tables/player_max_assists/case_2/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
+
+    table_right: datasets/nba/join_tables/player_max_points/case_2/players.csv
+    cols_right: [player_name]
+    right_key: player_name
+
+    evaluation_table: datasets/nba/join_tables/player_max_assists/case_2/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, player_name]
+
+    lotus_query: "The player {player_name} had the most assists in the game described by {summary}."
+    blendsql_query: "The player {player_name} had the most assists in the game described by {summary}."
+
+  - id: q27
+    class_name: join
+    task_name: reasoning
+    nlq: "A specific player had the most rebounds in the game."
+
+    table_left: datasets/nba/join_tables/player_max_rebounds/case_2/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
+
+    table_right: datasets/nba/join_tables/player_max_points/case_2/players.csv
+    cols_right: [player_name]
+    right_key: player_name
+
+    evaluation_table: datasets/nba/join_tables/player_max_rebounds/case_2/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, player_name]
+
+    lotus_query: "The player {player_name} had the most tota rebounds in the game described by {summary}."
+    blendsql_query: "The player {player_name} had the most tota rebounds in the game described by {summary}."
     
-  - id: q10
+  - id: q28
     class_name: join
     task_name: external_knowledge
-    nlq: "A specific player went to a specific college."
-    table_left: datasets/nba/players_summaries.csv
+    nlq: "Player went to College."
+
+    table_left: datasets/nba/join_tables/player_college/case_2/players.csv
     cols_left: [player_name]
-    table_right: datasets/nba/all_seasons_cleaned.csv
-    cols_right: [college]
     left_key: player_name
+
+    table_right: datasets/nba/join_tables/player_college/case_2/colleges.csv
+    cols_right: [college]
     right_key: college
+
+    evaluation_table: datasets/nba/join_tables/player_college/case_2/ground_truth.csv
+    evaluation_cols: [player_name, college]
+
     lotus_query: "The player {player_name} went to {college}."
     blendsql_query: "The player {player_name} went to {college}."
 
-  - id: q11
+  - id: q29
+    class_name: join
+    task_name: external_knowledge
+    nlq: "Player was over 22 years old in a specific season."
+
+    table_left: datasets/nba/join_tables/player_over_22/case_2/players.csv
+    cols_left: [player_name]
+    left_key: player_name
+
+    table_right: datasets/nba/join_tables/player_over_22/case_2/seasons.csv
+    cols_right: [season]
+    right_key: season
+
+    evaluation_table: datasets/nba/join_tables/player_over_22/case_2/ground_truth.csv
+    evaluation_cols: [player_name, season]
+
+    lotus_query: "The player {player_name} was over 22 years old in season {season}."
+    blendsql_query: "The player {player_name} was over 22 years old in season {season}."
+  
+  - id: q30
+    class_name: join
+    task_name: external_knowledge
+    nlq: "Player was born in Country."
+
+    table_left: datasets/nba/join_tables/player_country/case_2/players.csv
+    cols_left: [player_name]
+    left_key: player_name
+
+    table_right: datasets/nba/join_tables/player_country/case_2/countries.csv
+    cols_right: [country]
+    right_key: country
+
+    evaluation_table: datasets/nba/join_tables/player_country/case_2/ground_truth.csv
+    evaluation_cols: [player_name, country]
+
+    lotus_query: "The player {player_name} was born in {country}."
+    blendsql_query: "The player {player_name} was born in {country}."
+
+  - id: q31
     class_name: aggregation
     task_name: reasoning
     nlq: "Which player had the most triple doubles among all given games?"

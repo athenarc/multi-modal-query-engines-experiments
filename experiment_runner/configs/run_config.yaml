@@ -3,15 +3,17 @@ experiment_name: "initial_experiment"
 systems: ["lotus"]
 
 llms:
-  ollama: 
-    - "gemma3:12b"
-  # vllm:
-  #   - "meta-llama/Llama-3.1-8B-Instruct"
+  # ollama: 
+  #   - "gemma3:12b"
+  vllm:
+    - "meta-llama/Llama-3.1-8B-Instruct"
 
 input_sizes: [10]
-input_sizes_for_join: [[5, 5]]
+input_sizes_for_join: [[10, 10]]
+
+evaluation: True
 
 filters:
   class_name: null
   task_name: null
-  query_ids: [q8]
+  query_ids: [q29, q30]
