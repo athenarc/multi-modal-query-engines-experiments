@@ -20,6 +20,7 @@ sportsett_dataset = datasets.load_dataset(
 )
 test_data = sportsett_dataset['test']
 
+# Constants
 NBA_TEAMS = {
     'HOU': 'Houston Rockets', 'DEN': 'Denver Nuggets', 'OKC': 'Oklahoma City Thunder',
     'MIA': 'Miami Heat', 'WAS': 'Washington Wizards', 'LAL': 'Los Angeles Lakers',
@@ -60,9 +61,9 @@ COUNTRY_TO_CONTINENT = {
     'Colombia': 'America', 'Portugal': 'Europe'
 }
 
-# ==========================================
+sportsett_id_lookup = {row['sportsett_id']: row for row in test_data}
+
 # Helpers
-# ==========================================
 def get_summary(row):
     if "target" in row and row["target"]:
         return str(row["target"])
@@ -82,7 +83,15 @@ def llm_verify(prompt, model="llama3:8b-instruct-q8_0"):
     except Exception as e:
         print(f"Error during LLM verification: {e}")
         return "no"
+    
+def get_next_opponent(team_data):
+    next_game_id = team_data['next_game_id']
+    if next_game_id in sportsett_id_lookup:
+        next_row = sportsett_id_lookup[next_game_id]
+        return next_row['teams']['home']['name'] if next_row['teams']['home']['name'] != team_data['name'] else next_row['teams']['vis']['name']
+    return None
 
+# Core Pre-Processing Methods
 def process_player_info(input_csv="datasets/nba/all_seasons.csv", output_csv="datasets/nba/players_info.csv"):
     print("Processing Player Info...")
     stats = pd.read_csv(input_csv, index_col=0)
@@ -163,18 +172,9 @@ def process_game_summaries(output_csv="datasets/nba/game_summaries.csv"):
     print("Processing Game Summaries...")
     game_summaries = []
     
-    sportsett_id_lookup = {row['sportsett_id']: row for row in test_data}
-
     for row in test_data.select(range(200)):
         game_id = row.get("sportsett_id")
         summary = get_summary(row)
-
-        def get_next_opponent(team_data):
-            next_game_id = team_data['next_game_id']
-            if next_game_id in sportsett_id_lookup:
-                next_row = sportsett_id_lookup[next_game_id]
-                return next_row['teams']['home']['name'] if next_row['teams']['home']['name'] != team_data['name'] else next_row['teams']['vis']['name']
-            return None
 
         home = row['teams']['home']
         vis = row['teams']['vis']
@@ -232,7 +232,7 @@ def process_game_summaries_all(output_csv: str = "datasets/nba/game_summaries_al
     all_summaries.to_csv(output_csv, index=False)
     print(f"All summaries saved to {output_csv}")
 
-def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv"):
+def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv", output_csv_all="datasets/nba/teams_summaries_all.csv"):
     print("Processing Team Summaries...")
     csv_data = []
 
@@ -258,6 +258,32 @@ def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv"):
 
     pd.DataFrame(csv_data).to_csv(output_csv, index=False, encoding='utf-8')
     print(f"Saved to {output_csv}")
+
+    csv_data = []
+
+    for row in test_data.select(range(50)):
+        game_id = row.get("sportsett_id")
+        summary = get_summary(row)
+
+        home_name = row['teams']['home']['name']
+        vis_name = row['teams']['vis']['name']
+        
+        home_next_opponent = row['teams']['home']['next_game']['opponent_name']
+        vis_next_opponent = row['teams']['vis']['next_game']['opponent_name']
+
+        for team in [home_name, vis_name, home_next_opponent, vis_next_opponent]:
+            if team is not None and team in summary:
+                csv_data.append({
+                    "sportsett_id": game_id,
+                    "team": team,
+                    "summary": summary
+                })
+    pd.DataFrame(csv_data).to_csv(output_csv_all, index=False)   
+    print(f"Saved to {output_csv_all}") 
+    
+
+
+        
 
 def evaluate_joins(title, gt_df, cases, merge_keys, left_table_name: str, right_table_name: str, summaries_df, filter_query=None):
     query_folder = f"datasets/nba/join_tables/{title}"
@@ -327,20 +353,16 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 2. Summary mentions Team
     # ---------------------------------------------------------
-    gt_df_2 = pd.read_csv("datasets/nba/teams_summaries.csv")[['sportsett_id', 'team']].rename(columns={'team': 'team_name'})
+    gt_df_2 = pd.read_csv("datasets/nba/teams_summaries_all.csv")[['sportsett_id', 'team']].rename(columns={'team': 'team_name'})
 
-    c2_1 = {
-        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
-        'team_name': ["Bulls", "Magic", "Hawks", "Clippers", "Pistons", "Lakers", "Celtics", "Heat", "Warriors", "Knicks"]
-    }
-    c2_2 = {
-        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
-        'team_name': ["76ers", "Bulls", "Magic", "Hornets", "Hawks", "Clippers", "Pistons", "Jazz", "Suns", "Pelicans"]
-    }
-    c2_3 = {
-        'sportsett_id': [4921, 4921, 4921, 4921, 4921, 4922, 4922, 4922, 4922, 4922],
-        'team_name': ["76ers", "76ers", "76ers", "76ers", "76ers", "Lakers", "Lakers", "Lakers", "Lakers", "Lakers"]
-    }
+    c2_1 = {'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+    'team_name': ["Pistons", "Warriors", "Kings", "Nuggets", "Thunder", "Trail Blazers", "Timberwolves", "Pacers", "Rockets", "Mavericks"]}
+
+    c2_2 = {'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+    'team_name': ["76ers", "Pistons", "Bulls", "Magic", "Clippers", "Warriors", "Kings", "Nuggets", "Thunder", "Trail Blazers"]}
+
+    c2_3 = {'sportsett_id': [4941, 4942, 4943, 4944, 4945, 4946, 4947, 4948, 4949, 4950],
+    'team_name': ["76ers", "76ers", "76ers", "76ers", "Knicks", "Lakers", "Bulls", "Magic", "Clippers", "Hornets"]}
     evaluate_joins("summary_mentions_team", gt_df_2, [c2_1, c2_2, c2_3], ['sportsett_id', 'team_name'], "summaries", "teams", summaries_df)
 
     # ---------------------------------------------------------
@@ -483,10 +505,10 @@ def evaluate_all_joins():
 if __name__ == "__main__":
     os.makedirs("datasets/nba", exist_ok=True)
     
-    process_game_summaries_all()
-    process_game_summaries()
-    process_player_info()
-    process_player_summaries()
+    # process_game_summaries_all()
+    # process_game_summaries()
+    # process_player_info()
+    # process_player_summaries()
     process_team_summaries()
     evaluate_all_joins()
     
