@@ -1,101 +1,101 @@
-player_name,team_name,player_height,country,draft_year,draft_round,season,country_continent,born_in_america,height_lt_200,first_round_drafted
-Usman Garuba,Houston Rockets,203.2,Spain,2021,1,2021-22,Europe,False,False,True
-Vlatko Cancar,Denver Nuggets,203.2,Slovenia,2017,2,2021-22,Europe,False,False,False
-Vit Krejci,Oklahoma City Thunder,203.2,Czech Republic,2020,2,2021-22,Europe,False,False,False
-Victor Oladipo,Miami Heat,193.04,USA,2013,1,2021-22,America,True,True,True
-Vernon Carey Jr.,Washington Wizards,205.74,USA,2020,2,2021-22,America,True,False,False
-Wayne Ellington,Los Angeles Lakers,193.04,USA,2009,1,2021-22,America,True,True,True
-Tyus Jones,Memphis Grizzlies,182.88,USA,2015,1,2021-22,America,True,True,True
-Tyrone Wallace,New Orleans Pelicans,195.58,USA,2016,2,2021-22,America,True,True,False
-Tyrese Maxey,Philadelphia 76ers,187.96,USA,2020,1,2021-22,America,True,True,True
-Tyrese Haliburton,Indiana Pacers,195.58,USA,2020,1,2021-22,America,True,True,True
-Tyrell Terry,Memphis Grizzlies,187.96,USA,2020,2,2021-22,America,True,True,False
-Tyler Herro,Miami Heat,195.58,USA,2019,1,2021-22,America,True,True,True
-Udoka Azubuike,Utah Jazz,213.36,Nigeria,2020,1,2021-22,Africa,False,False,True
-Wendell Carter Jr.,Orlando Magic,208.28,USA,2018,1,2021-22,America,True,False,True
-Ziaire Williams,Memphis Grizzlies,205.74,USA,2021,1,2021-22,America,True,False,True
-Wes Iwundu,Atlanta Hawks,198.12,USA,2017,2,2021-22,America,True,True,False
-Zeke Nnaji,Denver Nuggets,205.74,USA,2020,1,2021-22,America,True,False,True
-Zach LaVine,Chicago Bulls,195.58,USA,2014,1,2021-22,America,True,True,True
-Zach Collins,San Antonio Spurs,210.82,USA,2017,1,2021-22,America,True,False,True
-Xavier Tillman Sr.,Memphis Grizzlies,203.2,USA,2020,2,2021-22,America,True,False,False
-Willy Hernangomez,New Orleans Pelicans,210.82,Spain,2015,2,2021-22,Europe,False,False,False
-Willie Cauley-Stein,Philadelphia 76ers,213.36,USA,2015,1,2021-22,America,True,False,True
-Will Barton,Denver Nuggets,195.58,USA,2012,2,2021-22,America,True,True,False
-Darius Bazley,Oklahoma City Thunder,203.2,USA,2019,1,2021-22,America,True,False,True
-Troy Brown Jr.,Chicago Bulls,198.12,USA,2018,1,2021-22,America,True,True,True
-Evan Fournier,New York Knicks,198.12,France,2012,1,2021-22,Europe,False,True,True
-Evan Mobley,Cleveland Cavaliers,210.82,USA,2021,1,2021-22,America,True,False,True
-Frank Jackson,Detroit Pistons,190.5,USA,2017,2,2021-22,America,True,True,False
-Frank Kaminsky,Phoenix Suns,213.36,USA,2015,1,2021-22,America,True,False,True
-Frank Ntilikina,Dallas Mavericks,193.04,France,2017,1,2021-22,Europe,False,True,True
-Franz Wagner,Orlando Magic,208.28,Germany,2021,1,2021-22,Europe,False,False,True
-Furkan Korkmaz,Philadelphia 76ers,200.66,Turkey,2016,1,2021-22,Asia/Europe,False,False,True
-Gorgui Dieng,Atlanta Hawks,208.28,Senegal,2013,1,2021-22,Africa,False,False,True
-Gordon Hayward,Charlotte Hornets,200.66,USA,2010,1,2021-22,America,True,False,True
-Ty Jerome,Oklahoma City Thunder,195.58,USA,2019,1,2021-22,America,True,True,True
-Goran Dragic,Brooklyn Nets,190.5,Slovenia,2008,2,2021-22,Europe,False,True,False
-Goga Bitadze,Indiana Pacers,213.36,Georgia,2019,1,2021-22,Europe,False,False,True
-Giannis Antetokounmpo,Milwaukee Bucks,210.82,Greece,2013,1,2021-22,Europe,False,False,True
-Georgios Kalaitzakis,Oklahoma City Thunder,200.66,Greece,2021,2,2021-22,Europe,False,False,False
-George King,Dallas Mavericks,198.12,USA,2018,2,2021-22,America,True,True,False
-George Hill,Milwaukee Bucks,193.04,USA,2008,1,2021-22,America,True,True,True
-Gary Trent Jr.,Toronto Raptors,195.58,USA,2018,2,2021-22,America,True,True,False
-Gary Harris,Orlando Magic,193.04,USA,2014,1,2021-22,America,True,True,True
-Georges Niang,Philadelphia 76ers,200.66,USA,2016,2,2021-22,America,True,False,False
-Eric Paschall,Utah Jazz,198.12,USA,2019,2,2021-22,America,True,True,False
-Eric Gordon,Houston Rockets,190.5,USA,2008,1,2021-22,America,True,True,True
-Eric Bledsoe,Portland Trail Blazers,185.42,USA,2010,1,2021-22,America,True,True,True
-Dillon Brooks,Memphis Grizzlies,200.66,Canada,2017,2,2021-22,America,True,False,False
-Didi Louzada,Portland Trail Blazers,195.58,Brazil,2019,2,2021-22,America,True,True,False
-Devonte' Graham,New Orleans Pelicans,185.42,USA,2018,2,2021-22,America,True,True,False
-Domantas Sabonis,Sacramento Kings,210.82,Lithuania,2016,1,2021-22,Europe,False,False,True
-Devin Vassell,San Antonio Spurs,195.58,USA,2020,1,2021-22,America,True,True,True
-Devin Booker,Phoenix Suns,195.58,USA,2015,1,2021-22,America,True,True,True
-Desmond Bane,Memphis Grizzlies,195.58,USA,2020,1,2021-22,America,True,True,True
-Derrick White,Boston Celtics,193.04,USA,2017,1,2021-22,America,True,True,True
-Derrick Rose,New York Knicks,187.96,USA,2008,1,2021-22,America,True,True,True
-Grant Williams,Boston Celtics,198.12,USA,2019,1,2021-22,America,True,True,True
-Donovan Mitchell,Utah Jazz,185.42,USA,2017,1,2021-22,America,True,True,True
-Enes Freedom,Boston Celtics,208.28,Turkey,2011,1,2021-22,Asia/Europe,False,False,True
-Emmanuel Mudiay,Sacramento Kings,190.5,Democratic Republic of the Congo,2015,1,2021-22,Africa,False,True,True
-Elijah Hughes,Portland Trail Blazers,195.58,USA,2020,2,2021-22,America,True,True,False
-Elfrid Payton,Phoenix Suns,190.5,USA,2014,1,2021-22,America,True,True,True
-Ed Davis,Cleveland Cavaliers,205.74,USA,2010,1,2021-22,America,True,False,True
-Donte DiVincenzo,Sacramento Kings,193.04,USA,2018,1,2021-22,America,True,True,True
-Dylan Windler,Cleveland Cavaliers,198.12,USA,2019,1,2021-22,America,True,True,True
-Dwight Howard,Los Angeles Lakers,208.28,USA,2004,1,2021-22,America,True,False,True
-Draymond Green,Golden State Warriors,198.12,USA,2012,2,2021-22,America,True,True,False
-Doug McDermott,San Antonio Spurs,200.66,USA,2014,1,2021-22,America,True,False,True
-Dwight Powell,Dallas Mavericks,208.28,Canada,2014,2,2021-22,America,True,False,False
-Derrick Favors,Oklahoma City Thunder,205.74,USA,2010,1,2021-22,America,True,False,True
-Grayson Allen,Milwaukee Bucks,193.04,USA,2018,1,2021-22,America,True,True,True
-Greg Monroe,Minnesota Timberwolves,208.28,USA,2010,1,2021-22,America,True,False,True
-Jalen Green,Houston Rockets,193.04,USA,2021,1,2021-22,America,True,True,True
-Jalen Johnson,Atlanta Hawks,203.2,USA,2021,1,2021-22,America,True,False,True
-Jalen McDaniels,Charlotte Hornets,205.74,USA,2019,2,2021-22,America,True,False,False
-Jalen Smith,Indiana Pacers,208.28,USA,2020,1,2021-22,America,True,False,True
-Jalen Suggs,Orlando Magic,195.58,USA,2021,1,2021-22,America,True,True,True
-James Bouknight,Charlotte Hornets,193.04,USA,2021,1,2021-22,America,True,True,True
-James Ennis III,Denver Nuggets,198.12,USA,2013,2,2021-22,America,True,True,False
-James Harden,Philadelphia 76ers,195.58,USA,2009,1,2021-22,America,True,True,True
-James Johnson,Brooklyn Nets,200.66,USA,2009,1,2021-22,America,True,False,True
-Jared Butler,Utah Jazz,190.5,USA,2021,2,2021-22,America,True,True,False
-Jaren Jackson Jr.,Memphis Grizzlies,210.82,USA,2018,1,2021-22,America,True,False,True
-Jarred Vanderbilt,Minnesota Timberwolves,205.74,USA,2018,2,2021-22,America,True,False,False
-Jarrett Allen,Cleveland Cavaliers,208.28,USA,2017,1,2021-22,America,True,False,True
-Jarrett Culver,Memphis Grizzlies,198.12,USA,2019,1,2021-22,America,True,True,True
-Jeff Green,Denver Nuggets,203.2,USA,2007,1,2021-22,America,True,False,True
-Jayson Tatum,Boston Celtics,203.2,USA,2017,1,2021-22,America,True,False,True
-Jaylen Nowell,Minnesota Timberwolves,193.04,USA,2019,2,2021-22,America,True,True,False
-Jalen Brunson,Dallas Mavericks,185.42,USA,2018,2,2021-22,America,True,True,False
-Jay Scrubb,Los Angeles Clippers,195.58,USA,2020,2,2021-22,America,True,True,False
-Jaxson Hayes,New Orleans Pelicans,210.82,USA,2019,1,2021-22,America,True,False,True
-Jaylen Brown,Boston Celtics,198.12,USA,2016,1,2021-22,America,True,True,True
-Jakob Poeltl,San Antonio Spurs,215.9,Austria,2016,1,2021-22,Europe,False,False,True
-Jake Layman,Minnesota Timberwolves,203.2,USA,2016,2,2021-22,America,True,False,False
-Isaiah Livers,Detroit Pistons,198.12,USA,2021,2,2021-22,America,True,True,False
-Isaiah Joe,Philadelphia 76ers,193.04,USA,2020,2,2021-22,America,True,True,False
-Isaiah Jackson,Indiana Pacers,208.28,USA,2021,1,2021-22,America,True,False,True
-Isaiah Hartenstein,Los Angeles Clippers,213.36,Germany,2017,2,2021-22,Europe,False,False,False
-Isaac Okoro,Cleveland Cavaliers,195.58,USA,2020,1,2021-22,America,True,True,True
+player_name,team_name,player_height,country,draft_year,draft_round,college,age,season,country_continent,born_in_america,height_lt_200,first_round_drafted
+Usman Garuba,Houston Rockets,203.2,Spain,2021,1,,20.0,2021-22,Europe,False,False,True
+Vlatko Cancar,Denver Nuggets,203.2,Slovenia,2017,2,,25.0,2021-22,Europe,False,False,False
+Vit Krejci,Oklahoma City Thunder,203.2,Czech Republic,2020,2,,22.0,2021-22,Europe,False,False,False
+Victor Oladipo,Miami Heat,193.04,USA,2013,1,Indiana,30.0,2021-22,America,True,True,True
+Vernon Carey Jr.,Washington Wizards,205.74,USA,2020,2,Duke,21.0,2021-22,America,True,False,False
+Wayne Ellington,Los Angeles Lakers,193.04,USA,2009,1,North Carolina,34.0,2021-22,America,True,True,True
+Tyus Jones,Memphis Grizzlies,182.88,USA,2015,1,Duke,26.0,2021-22,America,True,True,True
+Tyrone Wallace,New Orleans Pelicans,195.58,USA,2016,2,California,28.0,2021-22,America,True,True,False
+Tyrese Maxey,Philadelphia 76ers,187.96,USA,2020,1,Kentucky,21.0,2021-22,America,True,True,True
+Tyrese Haliburton,Indiana Pacers,195.58,USA,2020,1,Iowa State,22.0,2021-22,America,True,True,True
+Tyrell Terry,Memphis Grizzlies,187.96,USA,2020,2,Stanford,21.0,2021-22,America,True,True,False
+Tyler Herro,Miami Heat,195.58,USA,2019,1,Kentucky,22.0,2021-22,America,True,True,True
+Udoka Azubuike,Utah Jazz,213.36,Nigeria,2020,1,Kansas,22.0,2021-22,Africa,False,False,True
+Wendell Carter Jr.,Orlando Magic,208.28,USA,2018,1,Duke,23.0,2021-22,America,True,False,True
+Ziaire Williams,Memphis Grizzlies,205.74,USA,2021,1,Stanford,20.0,2021-22,America,True,False,True
+Wes Iwundu,Atlanta Hawks,198.12,USA,2017,2,Kansas State,27.0,2021-22,America,True,True,False
+Zeke Nnaji,Denver Nuggets,205.74,USA,2020,1,Arizona,21.0,2021-22,America,True,False,True
+Zach LaVine,Chicago Bulls,195.58,USA,2014,1,UCLA,27.0,2021-22,America,True,True,True
+Zach Collins,San Antonio Spurs,210.82,USA,2017,1,Gonzaga,24.0,2021-22,America,True,False,True
+Xavier Tillman Sr.,Memphis Grizzlies,203.2,USA,2020,2,Michigan State,23.0,2021-22,America,True,False,False
+Willy Hernangomez,New Orleans Pelicans,210.82,Spain,2015,2,,28.0,2021-22,Europe,False,False,False
+Willie Cauley-Stein,Philadelphia 76ers,213.36,USA,2015,1,Kentucky,28.0,2021-22,America,True,False,True
+Will Barton,Denver Nuggets,195.58,USA,2012,2,Memphis,31.0,2021-22,America,True,True,False
+Darius Bazley,Oklahoma City Thunder,203.2,USA,2019,1,,22.0,2021-22,America,True,False,True
+Troy Brown Jr.,Chicago Bulls,198.12,USA,2018,1,Oregon,22.0,2021-22,America,True,True,True
+Evan Fournier,New York Knicks,198.12,France,2012,1,,29.0,2021-22,Europe,False,True,True
+Evan Mobley,Cleveland Cavaliers,210.82,USA,2021,1,Southern California,21.0,2021-22,America,True,False,True
+Frank Jackson,Detroit Pistons,190.5,USA,2017,2,Duke,24.0,2021-22,America,True,True,False
+Frank Kaminsky,Phoenix Suns,213.36,USA,2015,1,Wisconsin,29.0,2021-22,America,True,False,True
+Frank Ntilikina,Dallas Mavericks,193.04,France,2017,1,,23.0,2021-22,Europe,False,True,True
+Franz Wagner,Orlando Magic,208.28,Germany,2021,1,Michigan,20.0,2021-22,Europe,False,False,True
+Furkan Korkmaz,Philadelphia 76ers,200.66,Turkey,2016,1,,24.0,2021-22,Asia/Europe,False,False,True
+Gorgui Dieng,Atlanta Hawks,208.28,Senegal,2013,1,Louisville,32.0,2021-22,Africa,False,False,True
+Gordon Hayward,Charlotte Hornets,200.66,USA,2010,1,Butler,32.0,2021-22,America,True,False,True
+Ty Jerome,Oklahoma City Thunder,195.58,USA,2019,1,Virginia,24.0,2021-22,America,True,True,True
+Goran Dragic,Brooklyn Nets,190.5,Slovenia,2008,2,,36.0,2021-22,Europe,False,True,False
+Goga Bitadze,Indiana Pacers,213.36,Georgia,2019,1,,22.0,2021-22,Europe,False,False,True
+Giannis Antetokounmpo,Milwaukee Bucks,210.82,Greece,2013,1,,27.0,2021-22,Europe,False,False,True
+Georgios Kalaitzakis,Oklahoma City Thunder,200.66,Greece,2021,2,,23.0,2021-22,Europe,False,False,False
+George King,Dallas Mavericks,198.12,USA,2018,2,Colorado,28.0,2021-22,America,True,True,False
+George Hill,Milwaukee Bucks,193.04,USA,2008,1,Indiana-Purdue Indianapolis,36.0,2021-22,America,True,True,True
+Gary Trent Jr.,Toronto Raptors,195.58,USA,2018,2,Duke,23.0,2021-22,America,True,True,False
+Gary Harris,Orlando Magic,193.04,USA,2014,1,Michigan State,27.0,2021-22,America,True,True,True
+Georges Niang,Philadelphia 76ers,200.66,USA,2016,2,Iowa State,29.0,2021-22,America,True,False,False
+Eric Paschall,Utah Jazz,198.12,USA,2019,2,Villanova,25.0,2021-22,America,True,True,False
+Eric Gordon,Houston Rockets,190.5,USA,2008,1,Indiana,33.0,2021-22,America,True,True,True
+Eric Bledsoe,Portland Trail Blazers,185.42,USA,2010,1,Kentucky,32.0,2021-22,America,True,True,True
+Dillon Brooks,Memphis Grizzlies,200.66,Canada,2017,2,Oregon,26.0,2021-22,America,True,False,False
+Didi Louzada,Portland Trail Blazers,195.58,Brazil,2019,2,,22.0,2021-22,America,True,True,False
+Devonte' Graham,New Orleans Pelicans,185.42,USA,2018,2,Kansas,27.0,2021-22,America,True,True,False
+Domantas Sabonis,Sacramento Kings,210.82,Lithuania,2016,1,Gonzaga,26.0,2021-22,Europe,False,False,True
+Devin Vassell,San Antonio Spurs,195.58,USA,2020,1,Florida State,21.0,2021-22,America,True,True,True
+Devin Booker,Phoenix Suns,195.58,USA,2015,1,Kentucky,25.0,2021-22,America,True,True,True
+Desmond Bane,Memphis Grizzlies,195.58,USA,2020,1,TCU,24.0,2021-22,America,True,True,True
+Derrick White,Boston Celtics,193.04,USA,2017,1,Colorado,27.0,2021-22,America,True,True,True
+Derrick Rose,New York Knicks,187.96,USA,2008,1,Memphis,33.0,2021-22,America,True,True,True
+Grant Williams,Boston Celtics,198.12,USA,2019,1,Tennessee,23.0,2021-22,America,True,True,True
+Donovan Mitchell,Utah Jazz,185.42,USA,2017,1,Louisville,25.0,2021-22,America,True,True,True
+Enes Freedom,Boston Celtics,208.28,Turkey,2011,1,,30.0,2021-22,Asia/Europe,False,False,True
+Emmanuel Mudiay,Sacramento Kings,190.5,Democratic Republic of the Congo,2015,1,,26.0,2021-22,Africa,False,True,True
+Elijah Hughes,Portland Trail Blazers,195.58,USA,2020,2,Syracuse,24.0,2021-22,America,True,True,False
+Elfrid Payton,Phoenix Suns,190.5,USA,2014,1,Louisana-Lafayette,28.0,2021-22,America,True,True,True
+Ed Davis,Cleveland Cavaliers,205.74,USA,2010,1,North Carolina,33.0,2021-22,America,True,False,True
+Donte DiVincenzo,Sacramento Kings,193.04,USA,2018,1,Villanova,25.0,2021-22,America,True,True,True
+Dylan Windler,Cleveland Cavaliers,198.12,USA,2019,1,Belmont,25.0,2021-22,America,True,True,True
+Dwight Howard,Los Angeles Lakers,208.28,USA,2004,1,,36.0,2021-22,America,True,False,True
+Draymond Green,Golden State Warriors,198.12,USA,2012,2,Michigan State,32.0,2021-22,America,True,True,False
+Doug McDermott,San Antonio Spurs,200.66,USA,2014,1,Creighton,30.0,2021-22,America,True,False,True
+Dwight Powell,Dallas Mavericks,208.28,Canada,2014,2,Stanford,30.0,2021-22,America,True,False,False
+Derrick Favors,Oklahoma City Thunder,205.74,USA,2010,1,Georgia Tech,30.0,2021-22,America,True,False,True
+Grayson Allen,Milwaukee Bucks,193.04,USA,2018,1,Duke,26.0,2021-22,America,True,True,True
+Greg Monroe,Minnesota Timberwolves,208.28,USA,2010,1,Georgetown,32.0,2021-22,America,True,False,True
+Jalen Green,Houston Rockets,193.04,USA,2021,1,,20.0,2021-22,America,True,True,True
+Jalen Johnson,Atlanta Hawks,203.2,USA,2021,1,Duke,20.0,2021-22,America,True,False,True
+Jalen McDaniels,Charlotte Hornets,205.74,USA,2019,2,San Diego State,24.0,2021-22,America,True,False,False
+Jalen Smith,Indiana Pacers,208.28,USA,2020,1,Maryland,22.0,2021-22,America,True,False,True
+Jalen Suggs,Orlando Magic,195.58,USA,2021,1,Gonzaga,21.0,2021-22,America,True,True,True
+James Bouknight,Charlotte Hornets,193.04,USA,2021,1,Connecticut,21.0,2021-22,America,True,True,True
+James Ennis III,Denver Nuggets,198.12,USA,2013,2,Cal State-Long Beach,31.0,2021-22,America,True,True,False
+James Harden,Philadelphia 76ers,195.58,USA,2009,1,Arizona State,32.0,2021-22,America,True,True,True
+James Johnson,Brooklyn Nets,200.66,USA,2009,1,Wake Forest,35.0,2021-22,America,True,False,True
+Jared Butler,Utah Jazz,190.5,USA,2021,2,Baylor,21.0,2021-22,America,True,True,False
+Jaren Jackson Jr.,Memphis Grizzlies,210.82,USA,2018,1,Michigan State,22.0,2021-22,America,True,False,True
+Jarred Vanderbilt,Minnesota Timberwolves,205.74,USA,2018,2,Kentucky,23.0,2021-22,America,True,False,False
+Jarrett Allen,Cleveland Cavaliers,208.28,USA,2017,1,Texas-Austin,24.0,2021-22,America,True,False,True
+Jarrett Culver,Memphis Grizzlies,198.12,USA,2019,1,Texas Tech,23.0,2021-22,America,True,True,True
+Jeff Green,Denver Nuggets,203.2,USA,2007,1,Georgetown,35.0,2021-22,America,True,False,True
+Jayson Tatum,Boston Celtics,203.2,USA,2017,1,Duke,24.0,2021-22,America,True,False,True
+Jaylen Nowell,Minnesota Timberwolves,193.04,USA,2019,2,Washington,22.0,2021-22,America,True,True,False
+Jalen Brunson,Dallas Mavericks,185.42,USA,2018,2,Villanova,25.0,2021-22,America,True,True,False
+Jay Scrubb,Los Angeles Clippers,195.58,USA,2020,2,,21.0,2021-22,America,True,True,False
+Jaxson Hayes,New Orleans Pelicans,210.82,USA,2019,1,Texas-Austin,22.0,2021-22,America,True,False,True
+Jaylen Brown,Boston Celtics,198.12,USA,2016,1,California,25.0,2021-22,America,True,True,True
+Jakob Poeltl,San Antonio Spurs,215.9,Austria,2016,1,Utah,26.0,2021-22,Europe,False,False,True
+Jake Layman,Minnesota Timberwolves,203.2,USA,2016,2,Maryland,28.0,2021-22,America,True,False,False
+Isaiah Livers,Detroit Pistons,198.12,USA,2021,2,Michigan,23.0,2021-22,America,True,True,False
+Isaiah Joe,Philadelphia 76ers,193.04,USA,2020,2,Arkansas,22.0,2021-22,America,True,True,False
+Isaiah Jackson,Indiana Pacers,208.28,USA,2021,1,Kentucky,20.0,2021-22,America,True,False,True
+Isaiah Hartenstein,Los Angeles Clippers,213.36,Germany,2017,2,,24.0,2021-22,Europe,False,False,False
+Isaac Okoro,Cleveland Cavaliers,195.58,USA,2020,1,Auburn,21.0,2021-22,America,True,True,True

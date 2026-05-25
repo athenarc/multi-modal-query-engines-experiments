@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import datasets
 from openai import OpenAI
@@ -58,7 +59,9 @@ COUNTRY_TO_CONTINENT = {
     'Colombia': 'America', 'Portugal': 'Europe'
 }
 
+# ==========================================
 # Helpers
+# ==========================================
 def get_summary(row):
     if "target" in row and row["target"]:
         return str(row["target"])
@@ -79,7 +82,6 @@ def llm_verify(prompt, model="llama3:8b-instruct-q8_0"):
         print(f"Error during LLM verification: {e}")
         return "no"
 
-# Create Player Info Table
 def process_player_info(input_csv="datasets/nba/all_seasons.csv", output_csv="datasets/nba/players_info.csv"):
     print("Processing Player Info...")
     stats = pd.read_csv(input_csv, index_col=0)
@@ -89,7 +91,7 @@ def process_player_info(input_csv="datasets/nba/all_seasons.csv", output_csv="da
     stats = stats[~stats['draft_year'].isin(['Undrafted'])]
     stats = stats[~stats['draft_round'].isin(['Undrafted', '0'])]
     
-    stats = stats.head(100)[['player_name', 'team_name', 'player_height', 'country', 'draft_year', 'draft_round', 'season']]
+    stats = stats.head(100)[['player_name', 'team_name', 'player_height', 'country', 'draft_year', 'draft_round', 'college', 'age', 'season']]
     
     stats['country_continent'] = stats['country'].map(COUNTRY_TO_CONTINENT)
     stats['born_in_america'] = stats['country_continent'] == 'America'
@@ -99,7 +101,6 @@ def process_player_info(input_csv="datasets/nba/all_seasons.csv", output_csv="da
     stats.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
-# Create Players-Summaries Table
 def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.csv"):
     print("Processing Player Summaries...")
     csv_data = []
@@ -144,7 +145,6 @@ def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.cs
     df['assists_verified'] = df.progress_apply(lambda r: verify_stat(r, 'assists', r['assists']), axis=1)
     df = df[df['assists_verified'] == 'yes']
 
-
     df['rebounds_verified'] = df.progress_apply(lambda r: verify_stat(r, 'total rebounds', r['total_rebounds']), axis=1)
     df = df[df['rebounds_verified'] == 'yes']
     print(df[df['player_name'] == 'Robert Covington'])
@@ -156,7 +156,6 @@ def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.cs
     verified_summaries.head(100).drop(columns=['points_verified', 'assists_verified', 'rebounds_verified']).reset_index(drop=True).to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
-# Create Game Summaries Table
 def process_game_summaries(output_csv="datasets/nba/game_summaries.csv"):
     print("Processing Game Summaries...")
     game_summaries = []
@@ -188,7 +187,7 @@ def process_game_summaries(output_csv="datasets/nba/game_summaries.csv"):
         total_points = home_pts + vis_pts
         
         game_summaries.append({
-            'sporsett_id': game_id, "summary": summary,
+            'sportsett_id': game_id, "summary": summary,
             "winner_team": winner[0], "winner_points": winner[1],
             "loser_team": loser[0], "loser_points": loser[1],
             "win_home_or_vis": winner[2], "loss_home_or_vis": loser[2],
@@ -215,7 +214,6 @@ def process_game_summaries(output_csv="datasets/nba/game_summaries.csv"):
     verified.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
-# Create Teams-Summaries Table
 def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv"):
     print("Processing Team Summaries...")
     csv_data = []
@@ -243,10 +241,234 @@ def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv"):
     pd.DataFrame(csv_data).to_csv(output_csv, index=False, encoding='utf-8')
     print(f"Saved to {output_csv}")
 
+def evaluate_joins(title, gt_df, cases, merge_keys, left_table_name: str, right_table_name: str, summaries_df, filter_query=None):
+    query_folder = f"datasets/nba/join_tables/{title}"
+    os.makedirs(query_folder, exist_ok=True)
+
+    expected_joins = [5, 20, 50]
+
+    print(f"--- {title} ---")
+    for i, case_data in enumerate(cases, 1):
+        keys = list(case_data.keys())
+        
+        df1 = pd.DataFrame({keys[0]: case_data[keys[0]]})
+        df2 = pd.DataFrame({keys[1]: case_data[keys[1]]})
+        
+        cross_df = df1.merge(df2, how='cross')
+        
+        result_df = cross_df.merge(gt_df, on=merge_keys, how='inner')
+        
+        if filter_query:
+            result_df = result_df.query(filter_query)
+            
+        print(f"Case {i}: {result_df.shape[0]} joins.")
+
+        if result_df.shape[0] == expected_joins[i-1]:
+            cpath = os.path.join(query_folder, f"case_{i}")
+            os.makedirs(cpath, exist_ok=True)
+
+            lpath = os.path.join(cpath, f"{left_table_name}.csv")
+            rpath = os.path.join(cpath, f"{right_table_name}.csv")
+
+            if left_table_name == "summaries" and "sportsett_id" in df1.columns:
+                df1 = df1.merge(summaries_df, on='sportsett_id')
+            elif right_table_name == "summaries" and 'sportsett_id' in df2.columns:
+                df2 = df2.merge(summaries_df, on='sportsett_id')
+
+            df1.to_csv(lpath)
+            df2.to_csv(rpath)
+            
+    print()
+
+def evaluate_all_joins():
+    summaries_path = "datasets/nba/game_summaries.csv"
+    if not os.path.exists(summaries_path):
+        print(f"Error: {summaries_path} not found. Ensure process_game_summaries generated it correctly.")
+        return
+    summaries_df = pd.read_csv(summaries_path)[['sportsett_id', 'summary']]
+
+    # ---------------------------------------------------------
+    # 1. Summary mentions Player 
+    # ---------------------------------------------------------
+    gt_df_1 = pd.read_csv("datasets/nba/players_summaries_all.csv")[['sportsett_id', 'player_name', "is_mentioned"]]
+
+    c1_1 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+        'player_name': ["Robert Covington", "Dario Šarić", "Furkan Korkmaz", "T.J. McConnell", "Jonah Bolden", "Demetrius Jackson", "Shake Milton", "Rawle Alkins", "Melvin Frazier", "Isaiah Briscoe"]
+    }
+    c1_2 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+        'player_name': ["Joel Embiid", "Ben Simmons", "Amir Johnson", "Dario Šarić", "Furkan Korkmaz", "T.J. McConnell", "Jonah Bolden", "Demetrius Jackson", "Shake Milton", "Rawle Alkins"]
+    }
+    c1_3 = {
+        'sportsett_id': [4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930, 4931, 4933],
+        'player_name': ["Joel Embiid", "Ben Simmons", "J.J. Redick", "Jimmy Butler", "Robert Covington", "Markelle Fultz", "Mike Muscala", "Kemba Walker", "Jeremy Lamb", "Cody Zeller"]
+    }
+    evaluate_joins("summary_mentions_player", gt_df_1, [c1_1, c1_2, c1_3], ['sportsett_id', 'player_name'], "summaries", "players", summaries_df, "is_mentioned == True")
+
+    # ---------------------------------------------------------
+    # 2. Summary mentions Team
+    # ---------------------------------------------------------
+    gt_df_2 = pd.read_csv("datasets/nba/teams_summaries.csv")[['sportsett_id', 'team']].rename(columns={'team': 'team_name'})
+
+    c2_1 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+        'team_name': ["Bulls", "Magic", "Hawks", "Clippers", "Pistons", "Lakers", "Celtics", "Heat", "Warriors", "Knicks"]
+    }
+    c2_2 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+        'team_name': ["76ers", "Bulls", "Magic", "Hornets", "Hawks", "Clippers", "Pistons", "Jazz", "Suns", "Pelicans"]
+    }
+    c2_3 = {
+        'sportsett_id': [4921, 4921, 4921, 4921, 4921, 4922, 4922, 4922, 4922, 4922],
+        'team_name': ["76ers", "76ers", "76ers", "76ers", "76ers", "Lakers", "Lakers", "Lakers", "Lakers", "Lakers"]
+    }
+    evaluate_joins("summary_mentions_team", gt_df_2, [c2_1, c2_2, c2_3], ['sportsett_id', 'team_name'], "summaries", "teams", summaries_df)
+
+    # ---------------------------------------------------------
+    # 3. Team won the game
+    # ---------------------------------------------------------
+    gt_df_3 = pd.read_csv("datasets/nba/teams_summaries.csv")[['sportsett_id', 'team', 'is_winner']].rename(columns={'team': 'team_name'})
+
+    c3_1 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4931, 4936, 4937, 4942, 4944],
+        'team_name': ["76ers", "Lakers", "Celtics", "Heat", "Warriors", "Knicks", "Bulls", "Magic", "Spurs", "Suns"]
+    }
+    c3_2 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+        'team_name': ["76ers", "76ers", "Lakers", "Celtics", "Heat", "Warriors", "Knicks", "Bulls", "Magic", "Spurs"]
+    }
+    c3_3 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+        'team_name': ["76ers", "76ers", "76ers", "76ers", "76ers", "Lakers", "Celtics", "Heat", "Warriors", "Knicks"]
+    }
+    evaluate_joins("team_won_game", gt_df_3, [c3_1, c3_2, c3_3], ['sportsett_id', 'team_name'], "summaries", "teams", summaries_df, "is_winner == True")
+
+    # ---------------------------------------------------------
+    # 4. Player scored the most points
+    # ---------------------------------------------------------
+    gt_df_4 = pd.read_csv("datasets/nba/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'points']]
+    gt_df_4["is_top_scorer"] = gt_df_4["points"] == gt_df_4.groupby("sportsett_id")["points"].transform("max")
+
+    c4_1 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4928, 4929, 4931, 4932, 4935, 4939],
+        'player_name': ["Robert Covington", "Joel Embiid", "Kemba Walker", "Ben Simmons", "Jimmy Butler", "Danilo Gallinari", "Joe Ingles", "Trevor Ariza", "Collin Sexton", "Mike Muscala"]
+    }
+    c4_2 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+        'player_name': ["Joel Embiid", "Joel Embiid", "Joel Embiid", "Joel Embiid", "Joel Embiid", "Danilo Gallinari", "Joe Ingles", "Trevor Ariza", "Collin Sexton", "Mike Muscala"]
+    }
+    c4_3 = {
+        'sportsett_id': [4922, 4922, 4922, 4922, 4922, 4925, 4925, 4925, 4925, 4925],
+        'player_name': ["Joel Embiid", "Joel Embiid", "Joel Embiid", "Joel Embiid", "Joel Embiid", "Danilo Gallinari", "Joe Ingles", "Trevor Ariza", "Collin Sexton", "Mike Muscala"]
+    }
+    evaluate_joins("player_max_points", gt_df_4, [c4_1, c4_2, c4_3], ['sportsett_id', 'player_name'], "summaries", "players", summaries_df, "is_top_scorer == True")
+
+    # ---------------------------------------------------------
+    # 5. Player had the most assists
+    # ---------------------------------------------------------
+    gt_df_5 = pd.read_csv("datasets/nba/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'assists']]
+    gt_df_5["max_assists"] = gt_df_5["assists"] == gt_df_5.groupby("sportsett_id")["assists"].transform("max")
+
+    c5_1 = {
+        'sportsett_id': [4922, 4923, 4926, 4937, 4939, 4921, 4924, 4925, 4927, 4928],
+        'player_name': ["J.J. Redick", "Kemba Walker", "Blake Griffin", "Thaddeus Young", "Jimmy Butler", "Robert Covington", "Joel Embiid", "Evan Fournier", "Aaron Gordon", "Markelle Fultz"]
+    }
+    c5_2 = {
+        'sportsett_id': [4921, 4924, 4925, 4927, 4928, 4929, 4930, 4933, 4934, 4935],
+        'player_name': ["Ben Simmons", "Ben Simmons", "Robert Covington", "Joel Embiid", "Evan Fournier", "Aaron Gordon", "Markelle Fultz", "Joe Harris", "Luke Kennard", "John Wall"]
+    }
+    c5_3 = {
+        'sportsett_id': [4921, 4924, 4925, 4927, 4928, 4929, 4930, 4933, 4934, 4935],
+        'player_name': ["Ben Simmons", "Ben Simmons", "Ben Simmons", "Ben Simmons", "Ben Simmons", "Robert Covington", "Joel Embiid", "Evan Fournier", "Aaron Gordon", "Markelle Fultz"]
+    }
+    evaluate_joins("player_max_assists", gt_df_5, [c5_1, c5_2, c5_3], ['sportsett_id', 'player_name'], "summaries", "players", summaries_df, "max_assists == True")
+
+    # ---------------------------------------------------------
+    # 6. Player had the most (total) rebounds
+    # ---------------------------------------------------------
+    gt_df_6 = pd.read_csv("datasets/nba/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'total_rebounds']]
+    gt_df_6["max_rebounds"] = gt_df_6["total_rebounds"] == gt_df_6.groupby("sportsett_id")["total_rebounds"].transform("max")
+
+    c6_1 = {
+        'sportsett_id': [4921, 4922, 4923, 4926, 4932, 4935, 4936, 4937, 4938, 4939],
+        'player_name': ["Kemba Walker", "Aaron Gordon", "Joel Embiid", "Blake Griffin", "Mike Muscala", "Robert Covington", "Bobby Portis", "J.J. Redick", "Evan Fournier", "Markelle Fultz"]
+    }
+    c6_2 = {
+        'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
+        'player_name': ["Joel Embiid", "Joel Embiid", "Joel Embiid", "Joel Embiid", "Robert Covington", "Bobby Portis", "J.J. Redick", "Evan Fournier", "Markelle Fultz", "Kemba Walker"]
+    }
+    c6_3 = {
+        'sportsett_id': [4923, 4923, 4923, 4923, 4923, 4925, 4925, 4925, 4925, 4925],
+        'player_name': ["Joel Embiid", "Joel Embiid", "Joel Embiid", "Joel Embiid", "Joel Embiid", "Robert Covington", "Bobby Portis", "J.J. Redick", "Evan Fournier", "Markelle Fultz"]
+    }
+    evaluate_joins("player_max_rebounds", gt_df_6, [c6_1, c6_2, c6_3], ['sportsett_id', 'player_name'], "summaries", "players", summaries_df, "max_rebounds == True")
+
+    # ---------------------------------------------------------
+    # 7. Player went to College
+    # ---------------------------------------------------------
+    gt_df_7 = pd.read_csv("datasets/nba/players_info.csv")[['player_name', 'college']].dropna(subset=['college'])
+
+    c7_1 = {
+        'college': ["Indiana", "North Carolina", "California", "Iowa State", "Stanford", "Yale", "Harvard", "Princeton", "Brown", "Cornell"],
+        'player_name': ["Victor Oladipo", "Wayne Ellington", "Tyrone Wallace", "Tyrese Haliburton", "Tyrell Terry", "Zach LaVine", "Tyus Jones", "Tyler Herro", "Will Barton", "Frank Kaminsky"]
+    }
+    c7_2 = {
+        'college': ["Duke", "Duke", "Duke", "Duke", "Yale", "Harvard", "Princeton", "Brown", "Cornell", "Dartmouth"],
+        'player_name': ["Vernon Carey Jr.", "Tyus Jones", "Wendell Carter Jr.", "Frank Jackson", "Gary Trent Jr.", "Victor Oladipo", "Wayne Ellington", "Tyrone Wallace", "Tyrese Haliburton", "Tyrell Terry"]
+    }
+    c7_3 = {
+        'college': ["Duke", "Duke", "Duke", "Duke", "Duke", "Kentucky", "Kentucky", "Kentucky", "Kentucky", "Kentucky"],
+        'player_name': ["Vernon Carey Jr.", "Tyus Jones", "Wendell Carter Jr.", "Frank Jackson", "Gary Trent Jr.", "Tyrese Maxey", "Tyler Herro", "Willie Cauley-Stein", "Eric Bledsoe", "Devin Booker"]
+    }
+    evaluate_joins("player_college", gt_df_7, [c7_1, c7_2, c7_3], ['player_name', 'college'], "colleges", "players", summaries_df)
+
+    # ---------------------------------------------------------
+    # 8. Player was over 22 y.o. in season
+    # ---------------------------------------------------------
+    gt_df_8 = pd.read_csv("datasets/nba/all_seasons.csv")[['player_name', 'age', 'season']]
+
+    c8_1 = {
+        'season': ["2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23"],
+        'player_name': ["Shane Battier", "Ray Allen", "Chauncey Billups", "Derek Fisher", "Rashard Lewis", "Randy Livingston", "George Zidek", "Gheorghe Muresan", "Greg Dreiling", "Fred Roberts"]
+    }
+    c8_2 = {
+        'season': ["2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23"],
+        'player_name': ["Manu Ginobili", "Paul Pierce", "Kobe Bryant", "Tim Duncan", "Kevin Garnett", "Steve Nash", "Chauncey Billups", "Randy Livingston", "George Zidek", "Gheorghe Muresan"]
+    }
+    c8_3 = {
+        'season': ["2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23"],
+        'player_name': ["LeBron James", "Stephen Curry", "Chris Paul", "DeMar DeRozan", "Paul Pierce", "Kobe Bryant", "Tim Duncan", "Randy Livingston", "George Zidek", "Gheorghe Muresan"]
+    }
+    evaluate_joins("player_over_22", gt_df_8, [c8_1, c8_2, c8_3], ['player_name', 'season'], "seasons", "players", summaries_df, "age > 22")
+
+    # ---------------------------------------------------------
+    # 9. Player was born in Country
+    # ---------------------------------------------------------
+    gt_df_9 = pd.read_csv("datasets/nba/all_seasons.csv")[['player_name', 'country']]
+
+    c9_1 = {
+        'country': ["China", "Spain", "France", "Argentina", "Brazil", "Italy", "Serbia", "Greece", "Japan", "Senegal"],
+        'player_name': ["Wang Zhi-zhi", "LeBron James", "Kobe Bryant", "Kevin Durant", "Stephen Curry", "James Harden", "Chris Paul", "Russell Westbrook", "Damian Lillard", "Dwyane Wade"]
+    }
+    c9_2 = {
+        'country': ["China", "Dominican Republic", "France", "Spain", "Argentina", "Brazil", "Italy", "Serbia", "Greece", "Japan"],
+        'player_name': ["Yao Ming", "Wang Zhi-zhi", "Felipe Lopez", "Mengke Bateer", "LeBron James", "Kobe Bryant", "Kevin Durant", "Stephen Curry", "James Harden", "Chris Paul"]
+    }
+    c9_3 = {
+        'country': ["Germany", "US Virgin Islands", "Croatia", "France", "Spain", "Argentina", "Brazil", "Italy", "Serbia", "Greece"],
+        'player_name': ["Dirk Nowitzki", "Tim Duncan", "Toni Kukoc", "LeBron James", "Kobe Bryant", "Kevin Durant", "Stephen Curry", "James Harden", "Chris Paul", "Dwyane Wade"]
+    }
+    evaluate_joins("player_country", gt_df_9, [c9_1, c9_2, c9_3], ['player_name', 'country'], "countries", "players", summaries_df)
+
 
 if __name__ == "__main__":
+    os.makedirs("datasets/nba", exist_ok=True)
+    
     # process_player_info()
-    process_player_summaries()
+    # process_player_summaries()
     # process_game_summaries()
     # process_team_summaries()
-    print("All tasks completed!")
+    evaluate_all_joins()
+    
+    print("All pre-processing tasks completed successfully!")
