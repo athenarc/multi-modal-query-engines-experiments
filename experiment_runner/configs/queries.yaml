@@ -1,56 +1,211 @@
 queries:
+
+# DERIVATION QUERIES
   - id: q1
     class_name: derivation
     task_name: classification
-    nlq: "Which team won the game described in the summary: home or visitor?"
+    nlq: "Which team won the game: home or visitor?"
+
     table: datasets/nba/game_summaries.csv
     cols: [summary]
+
     new_col_name: winner
     new_col_type: str
+
+    evaluation_cols: [sportsett_id, summary, win_home_or_vis]
+
     lotus_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
     palimpzest_query: "Which team won the game described in the `summary`? Return only *home* or *visitor*."
     blendsql_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
-    evaluation_cols: [sportsett_id, summary, win_home_or_vis]
+
+  - id: q2
+    class_name: derivation
+    task_name: classification
+    nlq: "Which team lost the game: home or visitor?"
+
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+
+    new_col_name: loser
+    new_col_type: str
+
+    evaluation_cols: [sportsett_id, summary, loss_home_or_vis]
+
+    lotus_query: "Which team loss the game described in the {summary}? Return only *home* or *visitor*."
+    palimpzest_query: "Which team loss the game described in the `summary`? Return only *home* or *visitor*."
+    blendsql_query: "Which team loss the game described in the {summary}? Return only *home* or *visitor*."
+
+  - id: q3
+    class_name: derivation
+    task_name: classification
+    nlq: Was the game defensive (<210 total points) or offensive (>= 210 total points)?
+
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+
+    new_col_name: type_of_game
+    new_col_type: str
+
+    evaluation_cols: [sportsett_id, summary, def_or_off]
+
+    lotus_query: "Was the game described by the summary {summary}, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
+    palimpzest_query: "Was the game described by the summary `summary`, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
+    blendsql_query: "Was the game described by the summary {summary}, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
 
   - id: q4
     class_name: derivation
     task_name: reasoning
     nlq: "Return points scored by the winner team"
+
     table: datasets/nba/game_summaries.csv
     cols: [summary]
-    lotus_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points."
-    new_col_name: winner_points
+
+    new_col_name: winner_points 
     new_col_type: int
-    palimpzest_query: "Return points scored by the winner team in the game described in the `summary`. Return only the number of points."
-    blendsql_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points."
+
     evaluation_cols: [sportsett_id, summary, winner_points]
+
+    lotus_query: "Return points scored by the winner team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
+    palimpzest_query: "Return points scored by the winner team in the game described in the `summary`. Return only the number of points (i.e., an integer)."
+    blendsql_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points (i.e., an integer)."
+
+  - id: q5
+    class_name: derivation
+    task_name: reasoning
+    nlq: "Return points scored by the loser team."
+
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+
+    new_col_name: loser_points
+    new_col_type: int
+
+    evaluation_cols: [sportsett_id, summary, loser_points]
+
+    lotus_query: "Return points scored by the loser team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
+    palimpzest_query: "Return points scored by the loser team in the game described by the `summary`. Return only the number of points (i.e., an integer)."
+    blendsql_query: "Return points scored by the loser team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
+
+  - id: q6
+    class_name: derivation
+    task_name: reasoning
+    nlq: "Return the team name which will be the next opponent of the winner team."
+
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+
+    new_col_name: winner_next_opponent
+    new_col_type: str
+
+    evaluation_cols: [sportsett_id, summary, winner_next_opponent]
+
+    lotus_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in {summary}."
+    palimpzest_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in `summary`."
+    blendsql_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in {summary}."
 
   - id: q7
     class_name: derivation
     task_name: extraction
     nlq: "Return points scored by a specific player mentioned in a game summary"
-    table: datasets/nba/players_summaries.csv
+
+    table: datasets/nba/players_summaries_stats.csv
     cols: [player_name, summary]
-    lotus_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points."
+
     new_col_name: player_points
     new_col_type: int
-    palimpzest_query: "Return points scored by `player_name` in the game described in the `summary`. Return only the number of points."
-    blendsql_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points."
+
     evaluation_cols: [sportsett_id, player_name, summary, points]
+
+    lotus_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points (i.e., an integer)."
+    palimpzest_query: "Return points scored by `player_name` in the game described in the `summary`. Return only the number of points (i.e., an integer)."
+    blendsql_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points (i.e., an integer)."
+
+  - id: q8
+    class_name: derivation
+    task_name: extraction
+    nlq: "Return the number of assists that the player had in the game."
+
+    table: datasets/nba/players_summaries_stats.csv
+    cols: [player_name, summary]
+
+    new_col_name: player_assists
+    new_col_type: int
+
+    evaluation_cols: [sportsett_id, player_name, summary, assists]
+
+    lotus_query: "Return assists that the player {player_name} had in the game described by the summary {summary}. Return only the number of points (i.e., an integer)."
+    palimpzest_query: "Return assists that the player `player_name` had in the game described by the summary `summary`. Return only the number of points (i.e., an integer)."
+    blendsql_query: "Return assists that the player {player_name} had in the game described by the summary {summary}. Return only the number of points (i.e., an integer)."
+
+  - id: q9
+    class_name: derivation
+    task_name: extraction
+    nlq: "Return the number of rebounds that the player had in the game."
+
+    table: datasets/nba/players_summaries_stats.csv
+    cols: [player_name, summary]
+
+    new_col_name: player_rebounds
+    new_col_type: int
+
+    evaluation_cols: [sportsett_id, player_name, summary, total_rebounds]
+
+    lotus_query: "Return total rebounds that the player {player_name} had in the game described by the summary {summary}. Return only the number of points (i.e., an integer)."
+    palimpzest_query: "Return total rebounds that the player `player_name` had in the game described by the summary `summary`. Return only the number of points (i.e., an integer)."
+    blendsql_query: "Return total rebounds that the player {player_name} had in the game described by the summary {summary}. Return only the number of points (i.e., an integer)."
 
   - id: q10
     class_name: derivation
     task_name: external_knowledge
     nlq: "Return the birthplace of a specific player"
-    table: datasets/nba/all_seasons.csv
+
+    table: datasets/nba/players_info.csv
     cols: [player_name]
-    lotus_query: "Return the birthplace of {player_name}. Return only the name of the country."
+
     new_col_name: birthplace
     new_col_type: str
-    palimpzest_query: "Return the birthplace of `player_name`. Return only the name of the country."
-    blendsql_query: "Return the birthplace of {player_name}. Return only the name of the country."
+
     evaluation_cols: [player_name, country]
 
+    lotus_query: "Return the birthplace of {player_name}. Return only the name of the country."
+    palimpzest_query: "Return the birthplace of `player_name`. Return only the name of the country."
+    blendsql_query: "Return the birthplace of {player_name}. Return only the name of the country."
+
+  - id: q11
+    class_name: derivation
+    task_name: external_knowledge
+    nlq: "Return the draft year of the player."
+
+    table: datasets/nba/players_info.csv
+    cols: [player_name]
+
+    new_col_name: draft_year
+    new_col_Type: str
+
+    evaluation_cols: [player_name, draft_year]
+
+    lotus_query: "Return the draft year of {player_name}. Return only the year."
+    palimpzest_query: "Return the draft year of `player_name`. Return only the year."
+    blendsql_query: "Return the draft year of {player_name}. Return only the year."
+
+  - id: q12
+    class_name: derivation
+    task_name: external_knowledge
+    nlq: "Return the team that the player was playing for in season 2021-22."
+
+    table: datasets/nba/players_info.csv
+    cols: [player_name]
+
+    new_col_name: team_in_2021_22
+    new_col_Type: str
+
+    evaluation_cols: [player_name, team_name]
+
+    lotus_query: "Return the team that the player {player_name} was playing for in 2021-22. Return only the name of the team."
+    palimpzest_query: "Return the team that the player `player_name` was playing for in 2021-22. Return only the name of the team."
+    blendsql_query: "Return the team that the player {player_name} was playing for in 2021-22. Return only the name of the team."
+
+# SELECTION QUERIES
   - id: q13
     class_name: selection
     task_name: classification
@@ -177,6 +332,8 @@ queries:
 
     lotus_query: "The player {player_name} was picked in the first draft round."
     palimpzest_query: "The player `player_name` was picked in the first draft round."
+
+# JOIN QUERIES
 
   - id: q22
     class_name: join
@@ -349,6 +506,8 @@ queries:
     lotus_query: "The player {player_name} was born in {country}."
     blendsql_query: "The player {player_name} was born in {country}."
 
+# AGGREGATION QUERIES
+
   - id: q31
     class_name: aggregation
     task_name: reasoning
@@ -357,3 +516,22 @@ queries:
     cols: [summary]
     lotus_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."
     blendsql_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."
+
+  - id: q33
+    class_name: aggregation
+    task_name: reasoning
+    nlq: "Which player scored the most points among all given games?"
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+    lotus_query: "Which player scored the most points among all given games described by {summary}? Return only the name of the player."
+    blendsql_query: "Which player scored the most points among all given games described by {summary}? Return only the name of the player."
+  
+  - id: q33
+    class_name: aggregation
+    task_name: reasoning
+    nlq: "Which player had the most assists among all given games?"
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+    lotus_query: "Which player had the most assists among all given games described by {summary}? Return only the name of the player."
+    blendsql_query: "Which player had the most assists among all given games described by {summary}? Return only the name of the player."
+

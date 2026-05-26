@@ -63,7 +63,7 @@ class ExperimentRunner:
                 
                 # Return accuracy as quality for derivation tasks
                 if exact_match_accuracy is not None and similarity_accuracy is not None:
-                    return (exact_match_accuracy, similarity_accuracy)
+                    return (float(exact_match_accuracy), float(similarity_accuracy))
                 else:
                     return (-1, -1)
 
@@ -106,7 +106,7 @@ class ExperimentRunner:
                 f1_score = results.get('f1_score')
 
                 if recall is not None and precision is not None and f1_score is not None:
-                    return(recall, precision, f1_score)
+                    return(float(recall), float(precision), float(f1_score))
                 else:
                     return(-1, -1, -1)
 

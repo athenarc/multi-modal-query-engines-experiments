@@ -3,7 +3,7 @@ import time
 import pandas as pd
 from ollama import chat
 from blendsql import BlendSQL
-from blendsql.models import VLLM
+from blendsql.models import VLLM, Ollama
 from blendsql.ingredients import LLMMap, LLMQA, LLMJoin
 from dotenv import load_dotenv
 
@@ -11,11 +11,11 @@ load_dotenv()
 
 class BlendSQLSystem(BaseSystem):
     def setup_llm(self):
-        # if self.llm_provider == 'ollama':
-        #     self.model = LiteLLM(self.llm_provider + '/' + self.model_name, 
-        #                     config={"timeout" : 50000, "cache": False},
-        #                     caching=False,
-        #                     env="/data/hdd1/users/jzerv/thesis_repo/.env")
+        if self.llm_provider == 'ollama':
+            self.model = Ollama(self.model_name, 
+                            config={"timeout" : 50000, "cache": False},
+                            caching=False,
+                            env="/data/hdd1/users/jzerv/thesis_repo/.env")
         if self.llm_provider == 'vllm':
             self.model = VLLM(
                 base_url="http://localhost:5001/v1",

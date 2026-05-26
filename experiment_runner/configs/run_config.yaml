@@ -1,6 +1,6 @@
 experiment_name: "initial_experiment"
 
-systems: ["palimpzest"]
+systems: ["blendsql"]
 
 llms:
   ollama: 
@@ -14,6 +14,6 @@ input_sizes_for_join: [[10, 10]]
 evaluation: True
 
 filters:
-  class_name: selection
+  class_name: derivation
   task_name: null
   query_ids: null
