@@ -83,7 +83,7 @@ class ExperimentRunner:
                 f1_score = results.get('f1_score')
 
                 if accuracy is not None and recall is not None and precision is not None and f1_score is not None:
-                    return (accuracy, recall, precision, f1_score)
+                    return (float(accuracy), float(recall), float(precision), float(f1_score))
                 else:
                     return (-1, -1, -1, -1)
 

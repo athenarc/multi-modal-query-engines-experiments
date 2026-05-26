@@ -55,35 +55,128 @@ queries:
     class_name: selection
     task_name: classification
     nlq: "Did the team win the game?"
+
     table: datasets/nba/teams_summaries.csv
     cols: [team, summary]
+
     filtering_col: is_winner
+    evaluation_cols: [team, summary, is_winner]
+
     lotus_query: "The {team} won the game described by {summary}."
     palimpzest_query: "The `team` won the game described by `summary`."
-    evaluation_cols: [team, summary, is_winner]
+
+  - id: q14
+    class_name: selection
+    task_name: classification
+    nlq: "Did the team lost the game?"
+
+    table: datasets/nba/teams_summaries.csv
+    cols: [team, summary]
+
+    filtering_col: is_loser
+    evaluation_cols: [team, summary, is_loser]
+
+    lotus_query: "The {team} lost the game described by {summary}."
+    palimpzest_query: "The `team` lost the game described by `summary`."
+
+  - id: q15
+    class_name: selection
+    task_name: classification
+    nlq: "Does the summary mentions the player?"
+
+    table: datasets/nba/players_summaries_all.csv
+    cols: [player_name, summary]
+
+    filtering_col: is_mentioned
+    evaluation_cols: [player_name, summary, is_mentioned]
+
+    lotus_query: "The summary {summary} mentions the player {player_name}."
+    palimpzest_query: "The summary `summary` mentions the player `player_name`."
 
   - id: q16
     class_name: selection
     task_name: reasoning
     nlq: "The total points (sum) scored by both teams played in the game is greater than 180?"
+
     table: datasets/nba/game_summaries.csv
     cols: [summary]
+
     filtering_col: total_points_gt_180
+    evaluation_cols: [summary, total_points_gt_180]
+
     lotus_query: "The total points (sum) scored by both teams played in the game described by {summary} is greater than 180."
     palimpzest_query: "The total points (sum) scored by both teams played in the game described by `summary` is greater than 180."
-    evaluation_cols: [summary, total_points_gt_180]
+
+  - id: q17
+    class_name: selection
+    task_name: reasoning
+    nlq: "Was the winning margin double-digit?"
+
+    table: datasets/nba/game_summaries.csv
+    cols: [summary]
+
+    filtering_col: double_digit_margin
+    evaluation_cols: [summary, double_digit_margin]
+
+    lotus_query: "The winning margin of game described by {summary} was double-digit."
+    palimpzest_query: "The winning margin of game described by `summary` was double-digit."
+
+  - id: q18
+    class_name: selection
+    task_name: reasoning
+    nlq: "Did the player scored over 20 points in the game?"
+
+    table: datasets/nba/players_summaries.csv
+    cols: [summary, player_name]
+
+    filtering_col: points_gt_20
+    evaluation_cols: [summary, player_name, points_gt_20]
+
+    lotus_query: "The player {player_name} scored over 20 points in the game described by the {summary}."
+    palimpzest_query: "The player `player_name` scored over 20 points in the game described by the `summary`."
+
 
   - id: q19
     class_name: selection
     task_name: external_knowledge
-    nlq: "The player's height is less than 190cm."
-    table: datasets/nba/all_seasons_cleaned.csv
-    cols: [player_name]
-    filtering_col: height_lt_190
-    lotus_query: "The height of {player_name} is less than 190cm."
-    palimpzest_query: "The height of `player_name` is less than 190cm."
-    evaluation_cols: [player_name, height_lt_190]
+    nlq: "The player's height is less than 200cm."
 
+    table: datasets/nba/players_info.csv
+    cols: [player_name]
+
+    filtering_col: height_lt_200
+    evaluation_cols: [player_name, height_lt_200]
+
+    lotus_query: "The height of {player_name} is less than 200cm."
+    palimpzest_query: "The height of `player_name` is less than 200cm."
+
+  - id: q20
+    class_name: selection
+    task_name: external_knowledge
+    nlq: "Was the player born in USA?"
+
+    table: datasets/nba/players_info.csv
+    cols: [player_name]
+
+    filtering_col: born_in_america
+    evaluation_cols: [player_name, born_in_america]
+
+    lotus_query: "The player {player_name} was born in United States of America."
+    palimpzest_query: "The player `player_name` was born in United States of America."
+
+  - id: q21
+    class_name: selection
+    task_name: external_knowledge
+    nlq: "Was the player picked in the first draft round?"
+
+    table: datasets/nba/players_info.csv
+    cols: [player_name]
+
+    filtering_col: first_round_drafted
+    evaluation_cols: [player_name, first_round_drafted]
+
+    lotus_query: "The player {player_name} was picked in the first draft round."
+    palimpzest_query: "The player `player_name` was picked in the first draft round."
 
   - id: q22
     class_name: join

@@ -1,12 +1,12 @@
 experiment_name: "initial_experiment"
 
-systems: ["blendsql"]
+systems: ["palimpzest"]
 
 llms:
-  # ollama: 
-  #   - "gemma3:12b"
-  vllm:
-    - "meta-llama/Llama-3.1-8B-Instruct"
+  ollama: 
+    - "gemma3:12b"
+  # vllm:
+  #   - "meta-llama/Llama-3.1-8B-Instruct"
 
 input_sizes: [10]
 input_sizes_for_join: [[10, 10]]
@@ -14,6 +14,6 @@ input_sizes_for_join: [[10, 10]]
 evaluation: True
 
 filters:
-  class_name: join
+  class_name: selection
   task_name: null
   query_ids: null
