@@ -61,8 +61,6 @@ COUNTRY_TO_CONTINENT = {
     'Colombia': 'America', 'Portugal': 'Europe'
 }
 
-sportsett_id_lookup = {row['sportsett_id']: row for row in test_data}
-
 # Helpers
 def get_summary(row):
     if "target" in row and row["target"]:
@@ -83,16 +81,9 @@ def llm_verify(prompt, model="llama3:8b-instruct-q8_0"):
     except Exception as e:
         print(f"Error during LLM verification: {e}")
         return "no"
-    
-def get_next_opponent(team_data):
-    next_game_id = team_data['next_game_id']
-    if next_game_id in sportsett_id_lookup:
-        next_row = sportsett_id_lookup[next_game_id]
-        return next_row['teams']['home']['name'] if next_row['teams']['home']['name'] != team_data['name'] else next_row['teams']['vis']['name']
-    return None
 
 # Core Pre-Processing Methods
-def process_player_info(input_csv="datasets/nba/all_seasons.csv", output_csv="datasets/nba/players_info.csv"):
+def process_player_info(input_csv="datasets/nba/all_seasons.csv", output_csv="datasets/nba/quality_exps/players_info.csv"):
     print("Processing Player Info...")
     stats = pd.read_csv(input_csv, index_col=0)
     stats = stats[stats['season'] == '2021-22']
@@ -111,7 +102,7 @@ def process_player_info(input_csv="datasets/nba/all_seasons.csv", output_csv="da
     stats.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
-def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.csv"):
+def process_player_summaries(output_csv="datasets/nba/quality_exps/players_summaries_stats.csv"):
     print("Processing Player Summaries...")
     csv_data = []
     
@@ -137,7 +128,7 @@ def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.cs
                 })
 
     df = pd.DataFrame(csv_data)
-    df.to_csv("datasets/nba/players_summaries_all.csv", index=False)
+    df.to_csv("datasets/nba/quality_exps/players_summaries_all.csv", index=False)
     
     df = df[df['is_mentioned'] == True].copy()
 
@@ -168,7 +159,7 @@ def process_player_summaries(output_csv="datasets/nba/players_summaries_stats.cs
     verified_summaries.head(100).drop(columns=['points_verified', 'assists_verified', 'rebounds_verified']).reset_index(drop=True).to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
-def process_game_summaries(output_csv="datasets/nba/game_summaries.csv"):
+def process_game_summaries(output_csv="datasets/nba/quality_exps/game_summaries.csv"):
     print("Processing Game Summaries...")
     game_summaries = []
     
@@ -183,9 +174,9 @@ def process_game_summaries(output_csv="datasets/nba/game_summaries.csv"):
         vis_pts = int(vis['line_score']['game']['PTS'])
 
         if home_pts > vis_pts:
-            winner, loser = (home['name'], home_pts, 'home', get_next_opponent(home)), (vis['name'], vis_pts, 'visitor')
+            winner, loser = (home['name'], home_pts, 'home', home['next_game']['opponent_name']), (vis['name'], vis_pts, 'visitor')
         else:
-            winner, loser = (vis['name'], vis_pts, 'visitor', get_next_opponent(vis)), (home['name'], home_pts, 'home')
+            winner, loser = (vis['name'], vis_pts, 'visitor', vis['next_game']['opponent_name']), (home['name'], home_pts, 'home')
 
         total_points = home_pts + vis_pts
         
@@ -217,7 +208,7 @@ def process_game_summaries(output_csv="datasets/nba/game_summaries.csv"):
     verified.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
-def process_game_summaries_all(output_csv: str = "datasets/nba/game_summaries_all.csv"):
+def process_game_summaries_all(output_csv: str = "datasets/nba/quality_exps/game_summaries_all.csv"):
     game_summaries = []
 
     for row in test_data:
@@ -232,7 +223,7 @@ def process_game_summaries_all(output_csv: str = "datasets/nba/game_summaries_al
     all_summaries.to_csv(output_csv, index=False)
     print(f"All summaries saved to {output_csv}")
 
-def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv", output_csv_all="datasets/nba/teams_summaries_all.csv"):
+def process_team_summaries(output_csv="datasets/nba/quality_exps/teams_summaries.csv", output_csv_all="datasets/nba/quality_exps/teams_summaries_all.csv"):
     print("Processing Team Summaries...")
     csv_data = []
 
@@ -286,7 +277,7 @@ def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv", output
         
 
 def evaluate_joins(title, gt_df, cases, merge_keys, left_table_name: str, right_table_name: str, summaries_df, filter_query=None):
-    query_folder = f"datasets/nba/quality_exps/join_tables/{title}"
+    query_folder = f"datasets/nba/quality_exps/quality_exps/join_tables/{title}"
     os.makedirs(query_folder, exist_ok=True)
 
     expected_joins = [5, 20, 50]
@@ -329,12 +320,12 @@ def evaluate_joins(title, gt_df, cases, merge_keys, left_table_name: str, right_
     print()
 
 def evaluate_all_joins():
-    summaries_df = pd.read_csv("datasets/nba/game_summaries_all.csv")[['sportsett_id', 'summary']]
+    summaries_df = pd.read_csv("datasets/nba/quality_exps/game_summaries_all.csv")[['sportsett_id', 'summary']]
 
     # ---------------------------------------------------------
     # 1. Summary mentions Player 
     # ---------------------------------------------------------
-    gt_df_1 = pd.read_csv("datasets/nba/players_summaries_all.csv")[['sportsett_id', 'player_name', "is_mentioned"]]
+    gt_df_1 = pd.read_csv("datasets/nba/quality_exps/players_summaries_all.csv")[['sportsett_id', 'player_name', "is_mentioned"]]
 
     c1_1 = {
         'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
@@ -353,7 +344,7 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 2. Summary mentions Team
     # ---------------------------------------------------------
-    gt_df_2 = pd.read_csv("datasets/nba/teams_summaries_all.csv")[['sportsett_id', 'team']].rename(columns={'team': 'team_name'})
+    gt_df_2 = pd.read_csv("datasets/nba/quality_exps/teams_summaries_all.csv")[['sportsett_id', 'team']].rename(columns={'team': 'team_name'})
 
     c2_1 = {'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930],
     'team_name': ["Pistons", "Warriors", "Kings", "Nuggets", "Thunder", "Trail Blazers", "Timberwolves", "Pacers", "Rockets", "Mavericks"]}
@@ -368,7 +359,7 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 3. Team won the game
     # ---------------------------------------------------------
-    gt_df_3 = pd.read_csv("datasets/nba/teams_summaries.csv")[['sportsett_id', 'team', 'is_winner']].rename(columns={'team': 'team_name'})
+    gt_df_3 = pd.read_csv("datasets/nba/quality_exps/teams_summaries.csv")[['sportsett_id', 'team', 'is_winner']].rename(columns={'team': 'team_name'})
 
     c3_1 = {
         'sportsett_id': [4921, 4922, 4923, 4924, 4925, 4931, 4936, 4937, 4942, 4944],
@@ -387,7 +378,7 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 4. Player scored the most points
     # ---------------------------------------------------------
-    gt_df_4 = pd.read_csv("datasets/nba/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'points']]
+    gt_df_4 = pd.read_csv("datasets/nba/quality_exps/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'points']]
     gt_df_4["is_top_scorer"] = gt_df_4["points"] == gt_df_4.groupby("sportsett_id")["points"].transform("max")
 
     c4_1 = {
@@ -407,7 +398,7 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 5. Player had the most assists
     # ---------------------------------------------------------
-    gt_df_5 = pd.read_csv("datasets/nba/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'assists']]
+    gt_df_5 = pd.read_csv("datasets/nba/quality_exps/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'assists']]
     gt_df_5["max_assists"] = gt_df_5["assists"] == gt_df_5.groupby("sportsett_id")["assists"].transform("max")
 
     c5_1 = {
@@ -427,7 +418,7 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 6. Player had the most (total) rebounds
     # ---------------------------------------------------------
-    gt_df_6 = pd.read_csv("datasets/nba/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'total_rebounds']]
+    gt_df_6 = pd.read_csv("datasets/nba/quality_exps/players_summaries_stats.csv")[['sportsett_id', 'player_name', 'total_rebounds']]
     gt_df_6["max_rebounds"] = gt_df_6["total_rebounds"] == gt_df_6.groupby("sportsett_id")["total_rebounds"].transform("max")
 
     c6_1 = {
@@ -447,7 +438,7 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 7. Player went to College
     # ---------------------------------------------------------
-    gt_df_7 = pd.read_csv("datasets/nba/players_info.csv")[['player_name', 'college']].dropna(subset=['college'])
+    gt_df_7 = pd.read_csv("datasets/nba/quality_exps/players_info.csv")[['player_name', 'college']].dropna(subset=['college'])
 
     c7_1 = {
         'college': ["Indiana", "North Carolina", "California", "Iowa State", "Stanford", "Yale", "Harvard", "Princeton", "Brown", "Cornell"],
@@ -466,7 +457,7 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 8. Player was over 22 y.o. in season
     # ---------------------------------------------------------
-    gt_df_8 = pd.read_csv("datasets/nba/all_seasons.csv")[['player_name', 'age', 'season']]
+    gt_df_8 = pd.read_csv("datasets/nba/quality_exps/all_seasons.csv")[['player_name', 'age', 'season']]
 
     c8_1 = {
         'season': ["2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23"],
@@ -485,7 +476,7 @@ def evaluate_all_joins():
     # ---------------------------------------------------------
     # 9. Player was born in Country
     # ---------------------------------------------------------
-    gt_df_9 = pd.read_csv("datasets/nba/all_seasons.csv")[['player_name', 'country']]
+    gt_df_9 = pd.read_csv("datasets/nba/quality_exps/all_seasons.csv")[['player_name', 'country']]
 
     c9_1 = {
         'country': ["China", "Spain", "France", "Argentina", "Brazil", "Italy", "Serbia", "Greece", "Japan", "Senegal"],
@@ -504,12 +495,13 @@ def evaluate_all_joins():
 
 if __name__ == "__main__":
     os.makedirs("datasets/nba", exist_ok=True)
+    os.makedirs("datasets/nba/quality_exps", exist_ok=True)
     
     # process_game_summaries_all()
     # process_game_summaries()
     # process_player_info()
-    # process_player_summaries()
-    process_team_summaries()
-    evaluate_all_joins()
+    process_player_summaries()
+    # process_team_summaries()
+    # evaluate_all_joins()
     
     print("All pre-processing tasks completed successfully!")
