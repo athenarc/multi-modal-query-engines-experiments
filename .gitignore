@@ -14,3 +14,5 @@ experiment_runner/systems/__pycache__/
 test*
 *.out
 experiment_runner/parse-answer-errors
+
+datasets/movie/
