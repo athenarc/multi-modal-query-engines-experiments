@@ -286,7 +286,7 @@ def process_team_summaries(output_csv="datasets/nba/teams_summaries.csv", output
         
 
 def evaluate_joins(title, gt_df, cases, merge_keys, left_table_name: str, right_table_name: str, summaries_df, filter_query=None):
-    query_folder = f"datasets/nba/join_tables/{title}"
+    query_folder = f"datasets/nba/quality_exps/join_tables/{title}"
     os.makedirs(query_folder, exist_ok=True)
 
     expected_joins = [5, 20, 50]
