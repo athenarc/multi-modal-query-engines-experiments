@@ -42,7 +42,7 @@ class PalimpzestSystem(BaseSystem):
         new_col_type: type = str,
         **kwargs
     ) -> dict:
-        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
+        input_df = pd.read_csv(table)[cols].head(input_size)
         summaries = pz.MemoryDataset(id=table.split('/')[-1].split('.')[0], vals=input_df)
 
         output = summaries.sem_add_columns(
@@ -89,7 +89,7 @@ class PalimpzestSystem(BaseSystem):
         cols: list = None,
         **kwargs
     ) -> dict:
-        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
+        input_df = pd.read_csv(table)[cols].head(input_size)
         summaries = pz.MemoryDataset(id=table.split('/')[-1].split('.')[0], vals=input_df)
 
         output = summaries.sem_filter(

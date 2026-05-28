@@ -44,14 +44,14 @@ class ExperimentRunner:
         with open(path, 'r') as f:
             return yaml.safe_load(f)
     
-    def _evaluate_results(self, query: Query, predicted_df: pd.DataFrame, input_size: int) -> int:
+    def _evaluate_results(self, query: Query, predicted_df: pd.DataFrame, input_size: int, input_folder="datasets/nba/quality_exps/") -> int:
         """Evaluate predicted results and return quality metric."""        
         try:
             if query.class_name == 'derivation':
                 evaluator = DerivationEvaluator(query_id=query.id, class_name=query.class_name)
                 results = evaluator.evaluate(
                     predicted_df=predicted_df,
-                    ground_truth_table_name=query.table,
+                    ground_truth_table_name= input_folder + query.table,
                     input_size=input_size,
                     evaluation_cols=query.evaluation_cols,
                     new_col_name=query.new_col_name,
@@ -71,7 +71,7 @@ class ExperimentRunner:
                 evaluator = SelectionEvaluator(query_id=query.id, class_name=query.class_name)
                 results = evaluator.evaluate(
                     predicted_df=predicted_df,
-                    ground_truth_table_name=query.table,
+                    ground_truth_table_name= input_folder + query.table,
                     input_size=input_size,
                     evaluation_cols=query.evaluation_cols,
                     filtering_col=query.filtering_col
@@ -92,8 +92,8 @@ class ExperimentRunner:
                 evaluator = JoinEvaluator(query_id=query.id, class_name=query.class_name)
                 results = evaluator.evaluate(
                     predicted_df=predicted_df,
-                    table_left_name=query.table_left,
-                    table_right_name=query.table_right,
+                    table_left_name= input_folder + query.table_left,
+                    table_right_name= input_folder + query.table_right,
                     input_size=input_size,
                     evaluation_table_name=query.evaluation_table,
                     evaluation_cols=query.evaluation_cols,
@@ -150,6 +150,11 @@ class ExperimentRunner:
         if not queries_to_run:
             print("No queries matched the filters. Exiting.")
             return
+        
+        if self.run_config['quality_exps']:
+            input_folder = "../datasets/nba/quality_exps/"
+        else:
+            input_folder = "../datasets/nba/scalability_exps/"
 
         for system_name, (llm_provider, model_name) in itertools.product(self.run_config['systems'], valid_llm_configs):
             # Initialize system once per LLM-Provider-Model combination
@@ -172,11 +177,11 @@ class ExperimentRunner:
                             query_kwargs["new_col_name"] = query.new_col_name
 
                         if query.class_name == "join":
-                            query_kwargs["table_left"] = query.table_left
+                            query_kwargs["table_left"] = input_folder + query.table_left
                             query_kwargs["cols_left"] = query.cols_left
                             query_kwargs["left_key"] = query.left_key
                             
-                            query_kwargs["table_right"] = query.table_right
+                            query_kwargs["table_right"] = input_folder + query.table_right
                             query_kwargs["cols_right"] = query.cols_right
                             query_kwargs["right_key"] = query.right_key
 
@@ -184,13 +189,13 @@ class ExperimentRunner:
                         output = system_instance.execute_query(
                             query.class_name,
                             system_query,
-                            query.table,
+                            input_folder + query.table,
                             query.cols,
                             input_size,
                             **query_kwargs,
                         )
                         
-                        if self.run_config['evaluation'] == True:
+                        if self.run_config['quality_exps'] == True:
                             predicted_result = output.get('result')
                             quality = self._evaluate_results(query, predicted_result, input_size)
                         else:
@@ -215,7 +220,7 @@ class ExperimentRunner:
                             "quality": quality,
                         })
 
-                        if self.run_config['evaluation'] == True:
+                        if self.run_config['quality_exps'] == True:
                             predicted_result.to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
                     except Exception as e:
                         print(f"Error on {query.id}: {str(e)}")

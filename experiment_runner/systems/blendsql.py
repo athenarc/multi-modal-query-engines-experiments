@@ -58,7 +58,7 @@ class BlendSQLSystem(BaseSystem):
         new_col_type: str = 'str',
         **kwargs
     ) -> dict:
-        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
+        input_df = pd.read_csv(table)[cols].head(input_size)
         database = {
             "Input" : input_df
         }
@@ -114,8 +114,8 @@ class BlendSQLSystem(BaseSystem):
         right_key: str = None,
         **kwargs
     ) -> dict:
-        input_df_left = pd.read_csv(f"../{table_left}")[cols_left].head(input_size[0])
-        input_df_right = pd.read_csv(f"../{table_right}")[cols_right].head(input_size[1])
+        input_df_left = pd.read_csv(table_left)[cols_left].head(input_size[0])
+        input_df_right = pd.read_csv(table_right)[cols_right].head(input_size[1])
         
         database = {
             "LeftTable" : input_df_left,
@@ -169,7 +169,7 @@ class BlendSQLSystem(BaseSystem):
         cols: list = None,
         **kwargs
     ) -> dict:
-        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
+        input_df = pd.read_csv(table)[cols].head(input_size)
         database = {
             "Input" : input_df
         }

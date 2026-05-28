@@ -1,12 +1,12 @@
-# from .lotus import LotusSystem
+from .lotus import LotusSystem
 # from .palimpzest import PalimpzestSystem
-from .blendsql import BlendSQLSystem
+# from .blendsql import BlendSQLSystem
 
 def get_system(system_name: str, llm_provider: str, model_name: str):
     systems = {
-        # "lotus": LotusSystem,
+        "lotus": LotusSystem,
         # "palimpzest": PalimpzestSystem,
-        "blendsql": BlendSQLSystem
+        # "blendsql": BlendSQLSystem
     }
     if system_name not in systems:
         raise ValueError(f"System {system_name} not supported.")

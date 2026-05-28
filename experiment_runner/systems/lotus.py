@@ -35,7 +35,7 @@ class LotusSystem(BaseSystem):
         new_col_name: str = None,
         **kwargs
     ) -> dict:
-        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
+        input_df = pd.read_csv(table)[cols].head(input_size)
 
         start_time = time.time()
 
@@ -70,7 +70,7 @@ class LotusSystem(BaseSystem):
         cols: list = None,
         **kwargs
     ) -> dict:
-        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
+        input_df = pd.read_csv(table)[cols].head(input_size)
 
         start_time = time.time()
 
@@ -112,8 +112,8 @@ class LotusSystem(BaseSystem):
         else:
             size_left = size_right = input_size
 
-        input_df_left = pd.read_csv(f"../{table_left}")[cols_left].head(size_left)
-        input_df_right = pd.read_csv(f"../{table_right}")[cols_right].head(size_right)
+        input_df_left = pd.read_csv(table_left)[cols_left].head(size_left)
+        input_df_right = pd.read_csv(table_right)[cols_right].head(size_right)
 
         start_time = time.time()
 
@@ -146,7 +146,7 @@ class LotusSystem(BaseSystem):
         cols: list = None,
         **kwargs
     ) -> dict:
-        input_df = pd.read_csv(f"../{table}")[cols].head(input_size)
+        input_df = pd.read_csv(table)[cols].head(input_size)
 
         start_time = time.time()
 

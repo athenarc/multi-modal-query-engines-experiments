@@ -1,6 +1,6 @@
 experiment_name: "initial_experiment"
 
-systems: ["blendsql"]
+systems: ["lotus"]
 
 llms:
   ollama: 
@@ -11,9 +11,9 @@ llms:
 input_sizes: [10]
 input_sizes_for_join: [[10, 10]]
 
-evaluation: True
+quality_exps: True
 
 filters:
-  class_name: derivation
+  class_name: null
   task_name: null
   query_ids: null
