@@ -36,7 +36,7 @@ class LotusSystem(BaseSystem):
         **kwargs
     ) -> dict:
         input_df = pd.read_csv(table)[cols].head(input_size)
-
+        
         start_time = time.time()
 
         output_df = input_df.sem_map(nl_criterion)

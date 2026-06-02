@@ -62,21 +62,29 @@ class PalimpzestSystem(BaseSystem):
         )
         output = output.run(config=config)
 
-        print(output.execution_stats)
-        
         execution_time = output.execution_stats.total_execution_time
-        input_tokens=output.execution_stats.total_input_tokens
-        output_tokens=output.execution_stats.total_output_tokens
-        total_tokens=output.execution_stats.total_tokens
-        total_calls=input_size
+        input_tokens = 0
+        output_tokens = 0
+        total_tokens = 0
+        total_llm_calls = 0
+
+        # Palimpzest's execution stats are nested, so we need to iterate through them to get the token counts and LLM call counts
+        for _, plan_stats in output.execution_stats.plan_stats.items():
+            for _, op_stats in plan_stats.operator_stats.items():
+                input_tokens += op_stats.input_text_tokens
+                output_tokens += op_stats.output_text_tokens
+        
+                for record_stat in op_stats.record_op_stats_lst:
+                    total_llm_calls += getattr(record_stat, 'total_llm_calls', 0)
+
         tokens_throughput = total_tokens / execution_time if execution_time > 0 else 0
 
         return {"result": output.to_df(), 
                 "latency": execution_time,
                 "input_tokens": input_tokens, 
                 "output_tokens": output_tokens, 
-                "total_tokens": total_tokens, 
-                "total_calls": total_calls,
+                "total_tokens": input_tokens + output_tokens, 
+                "total_calls": total_llm_calls,
                 "tokens_throughput": tokens_throughput
                 }
 
@@ -104,10 +112,19 @@ class PalimpzestSystem(BaseSystem):
         output = output.run(config=config)
         
         execution_time = output.execution_stats.total_execution_time
-        input_tokens=output.execution_stats.total_input_tokens
-        output_tokens=output.execution_stats.total_output_tokens
-        total_tokens=output.execution_stats.total_tokens
-        total_calls=input_size
+        input_tokens=0
+        output_tokens=0
+        total_tokens=0
+        total_calls=0
+
+        for _, plan_stats in output.execution_stats.plan_stats.items():
+            for _, op_stats in plan_stats.operator_stats.items():
+                input_tokens += op_stats.input_text_tokens
+                output_tokens += op_stats.output_text_tokens
+        
+                for record_stat in op_stats.record_op_stats_lst:
+                    total_calls += getattr(record_stat, 'total_llm_calls', 0)
+
         tokens_throughput = total_tokens / execution_time if execution_time > 0 else 0
 
         return {"result": output.to_df(), 

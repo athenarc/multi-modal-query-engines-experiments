@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 tqdm.pandas(desc="Verification")
 
-client = OpenAI(base_url="http://localhost:11434/v1", api_key="EMPTY")
+client = OpenAI(base_url="http://localhost:5001/v1", api_key="EMPTY")
 
 print("Loading HuggingFace SportSett dataset...")
 sportsett_dataset = datasets.load_dataset(
@@ -33,7 +33,9 @@ NBA_TEAMS = {
     'CLE': 'Cleveland Cavaliers', 'DET': 'Detroit Pistons', 'PHX': 'Phoenix Suns',
     'DAL': 'Dallas Mavericks', 'CHA': 'Charlotte Hornets', 'BKN': 'Brooklyn Nets',
     'GSW': 'Golden State Warriors', 'POR': 'Portland Trail Blazers', 'SAC': 'Sacramento Kings',
-    'BOS': 'Boston Celtics', 'MIN': 'Minnesota Timberwolves'
+    'BOS': 'Boston Celtics', 'MIN': 'Minnesota Timberwolves',
+    'VAN': 'Vancouver Grizzlies', 'CHH': 'Charlotte Hornets', 'SEA': 'Seattle SuperSonics',
+    'NJN': 'New Jersey Nets', 'NOH': 'New Orleans Hornets', 'NOK': 'New Orleans/Oklahoma City Hornets'
 }
 
 COUNTRY_TO_CONTINENT = {
@@ -71,7 +73,7 @@ def get_summary(row):
         return str(row["summaries"][0])
     return "No summary available"
 
-def llm_verify(prompt, model="llama3:8b-instruct-q8_0"):
+def llm_verify(prompt, model="meta-llama/Llama-3.1-8B-Instruct"):
     try:
         response = client.chat.completions.create(
             model=model,
@@ -88,6 +90,7 @@ def llm_verify(prompt, model="llama3:8b-instruct-q8_0"):
 def process_player_info(input_csv="datasets/nba/all_seasons.csv", output_csv="datasets/nba/scalability_exps/players_info.csv"):
     print("Processing Player Info...")
     stats = pd.read_csv(input_csv, index_col=0)
+    stats['team_name'] = stats['team_abbreviation'].map(NBA_TEAMS)
         
     stats = stats.head(4000)[['player_name', 'team_name', 'player_height', 'country', 'draft_year', 'draft_round', 'college', 'age', 'season']]
 
@@ -118,8 +121,9 @@ def process_player_summaries(output_csv="datasets/nba/scalability_exps/players_s
                     "team": team_name, "points": int(pts), "assists": int(ast), "total_rebounds": int(reb),
                     "points_gt_20": int(pts) > 20, "is_mentioned": is_mentioned
                 })
-
+    
     df = pd.DataFrame(csv_data)
+    df.head(4000)[['sportsett_id', 'player_name', 'summary']].to_csv("datasets/nba/scalability_exps/players_summaries_all.csv", index=False)
     
     df = df[df['is_mentioned'] == True].copy()
 
@@ -195,11 +199,11 @@ def process_game_summaries(output_csv="datasets/nba/scalability_exps/game_summar
 
     df['winner_opponent_mentioned'] = df.progress_apply(verify_opponent, axis=1)
     
-    verified = df[df['winner_opponent_mentioned'] == 'yes'].head(100).drop(columns=['winner_opponent_mentioned']).reset_index(drop=True)
+    verified = df[df['winner_opponent_mentioned'] == 'yes'].head(4000).drop(columns=['winner_opponent_mentioned']).reset_index(drop=True)
     verified[['sportsett_id', 'summary']].to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
-def process_team_summaries(output_csv="datasets/nba/scalability/teams_summaries.csv", output_csv_all="datasets/nba/scalability/teams_summaries_all.csv"):
+def process_team_summaries(output_csv="datasets/nba/scalability_exps/teams_summaries.csv", output_csv_all="datasets/nba/scalability_exps/teams_summaries_all.csv"):
     print("Processing Team Summaries...")
     csv_data = []
 
@@ -246,10 +250,10 @@ if __name__ == "__main__":
     os.makedirs("datasets/nba", exist_ok=True)
     os.makedirs("datasets/nba/scalability_exps", exist_ok=True)
     
-    process_player_info()
-    process_player_summaries()
+    # process_player_info()
+    # process_player_summaries()
     process_game_summaries()
-    process_team_summaries()
+    # process_team_summaries()
     # evaluate_all_joins()
     
     print("All pre-processing tasks completed successfully!")
