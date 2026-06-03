@@ -359,15 +359,15 @@ queries:
     task_name: classification
     nlq: "The summary mentions a specific team"
 
-    table_left: join_tables/summary_mentions_team/case_2/summaries.csv
+    table_left: join_tables/summary_mentions_team/summaries.csv
     cols_left: [sportsett_id, summary]
     left_key: summary
 
-    table_right: join_tables/summary_mentions_team/case_2/teams.csv
+    table_right: join_tables/summary_mentions_team/teams.csv
     cols_right: [team_name]
     right_key: team_name
 
-    evaluation_table: join_tables/summary_mentions_team/case_2/ground_truth.csv
+    evaluation_table: join_tables/summary_mentions_team/ground_truth.csv
     evaluation_cols: [sportsett_id, summary, team_name]
 
     lotus_query: "The summary {summary} mentions the team {team_name}."
@@ -378,15 +378,15 @@ queries:
     task_name: classification
     nlq: "The team won the game described by the summary."
 
-    table_left: join_tables/team_won_game/case_2/summaries.csv
+    table_left: join_tables/team_won_game/summaries.csv
     cols_left: [sportsett_id, summary]
     left_key: summary
 
-    table_right: join_tables/team_won_game/case_2/teams.csv
+    table_right: join_tables/team_won_game/teams.csv
     cols_right: [team_name]
     right_key: team_name
 
-    evaluation_table: join_tables/team_won_game/case_2/ground_truth.csv
+    evaluation_table: join_tables/team_won_game/ground_truth.csv
     evaluation_cols: [sportsett_id, summary, team_name]
 
     lotus_query: "The team {team_name} won the game described by the summary {summary}."
@@ -397,15 +397,15 @@ queries:
     task_name: reasoning
     nlq: "A specific player scored the most points in the game."
 
-    table_left: join_tables/player_max_points/case_1/summaries.csv
+    table_left: join_tables/player_max_points/summaries.csv
     cols_left: [sportsett_id, summary]
     left_key: summary
 
-    table_right: join_tables/player_max_points/case_1/players.csv
+    table_right: join_tables/player_max_points/players.csv
     cols_right: [player_name]
     right_key: player_name
 
-    evaluation_table: join_tables/player_max_points/case_1/ground_truth.csv
+    evaluation_table: join_tables/player_max_points/ground_truth.csv
     evalution_cols: [sportsett_id, summary, player_name]
 
     lotus_query: "The player {player_name} scored the most points in the game described by {summary}."
@@ -416,15 +416,15 @@ queries:
     task_name: reasoning
     nlq: "A specific player had the most assists in the game."
 
-    table_left: join_tables/player_max_assists/case_2/summaries.csv
+    table_left: join_tables/player_max_assists/summaries.csv
     cols_left: [sportsett_id, summary]
     left_key: summary
 
-    table_right: join_tables/player_max_points/case_2/players.csv
+    table_right: join_tables/player_max_points/players.csv
     cols_right: [player_name]
     right_key: player_name
 
-    evaluation_table: join_tables/player_max_assists/case_2/ground_truth.csv
+    evaluation_table: join_tables/player_max_assists/ground_truth.csv
     evaluation_cols: [sportsett_id, summary, player_name]
 
     lotus_query: "The player {player_name} had the most assists in the game described by {summary}."
@@ -435,15 +435,15 @@ queries:
     task_name: reasoning
     nlq: "A specific player had the most rebounds in the game."
 
-    table_left: join_tables/player_max_rebounds/case_2/summaries.csv
+    table_left: join_tables/player_max_rebounds/summaries.csv
     cols_left: [sportsett_id, summary]
     left_key: summary
 
-    table_right: join_tables/player_max_points/case_2/players.csv
+    table_right: join_tables/player_max_points/players.csv
     cols_right: [player_name]
     right_key: player_name
 
-    evaluation_table: join_tables/player_max_rebounds/case_2/ground_truth.csv
+    evaluation_table: join_tables/player_max_rebounds/ground_truth.csv
     evaluation_cols: [sportsett_id, summary, player_name]
 
     lotus_query: "The player {player_name} had the most tota rebounds in the game described by {summary}."
@@ -454,15 +454,15 @@ queries:
     task_name: external_knowledge
     nlq: "Player went to College."
 
-    table_left: join_tables/player_college/case_2/players.csv
+    table_left: join_tables/player_college/players.csv
     cols_left: [player_name]
     left_key: player_name
 
-    table_right: join_tables/player_college/case_2/colleges.csv
+    table_right: join_tables/player_college/colleges.csv
     cols_right: [college]
     right_key: college
 
-    evaluation_table: join_tables/player_college/case_2/ground_truth.csv
+    evaluation_table: join_tables/player_college/ground_truth.csv
     evaluation_cols: [player_name, college]
 
     lotus_query: "The player {player_name} went to {college}."
@@ -473,15 +473,15 @@ queries:
     task_name: external_knowledge
     nlq: "Player was over 22 years old in a specific season."
 
-    table_left: join_tables/player_over_22/case_2/players.csv
+    table_left: join_tables/player_over_22/players.csv
     cols_left: [player_name]
     left_key: player_name
 
-    table_right: join_tables/player_over_22/case_2/seasons.csv
+    table_right: join_tables/player_over_22/seasons.csv
     cols_right: [season]
     right_key: season
 
-    evaluation_table: join_tables/player_over_22/case_2/ground_truth.csv
+    evaluation_table: join_tables/player_over_22/ground_truth.csv
     evaluation_cols: [player_name, season]
 
     lotus_query: "The player {player_name} was over 22 years old in season {season}."
@@ -492,15 +492,15 @@ queries:
     task_name: external_knowledge
     nlq: "Player was born in Country."
 
-    table_left: join_tables/player_country/case_2/players.csv
+    table_left: join_tables/player_country/players.csv
     cols_left: [player_name]
     left_key: player_name
 
-    table_right: join_tables/player_country/case_2/countries.csv
+    table_right: join_tables/player_country/countries.csv
     cols_right: [country]
     right_key: country
 
-    evaluation_table: join_tables/player_country/case_2/ground_truth.csv
+    evaluation_table: join_tables/player_country/ground_truth.csv
     evaluation_cols: [player_name, country]
 
     lotus_query: "The player {player_name} was born in {country}."

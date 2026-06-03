@@ -1,6 +1,8 @@
 import yaml
 import itertools
 import pandas as pd
+import wandb
+import os
 from pydantic import BaseModel
 from typing import List, Optional
 from systems import get_system
@@ -167,6 +169,14 @@ class ExperimentRunner:
                     input_size = self.run_config['input_sizes'][input_size_idx] if query.class_name != "join" else self.run_config['input_sizes_for_join'][input_size_idx]
                     print(f"\n--- Running: {system_name.upper()} | {model_name} | {llm_provider} | Size: {input_size} ---")
                     
+                    if self.run_config['wandb_report']:
+                        wandb.init(
+                            project = self.run_config['project_name'],
+                            name=f"{system_name.lower()}_{query.task_name}_{query.id}_{llm_provider.lower()}_{model_name.lower()}_{input_size}",
+                            group = query.class_name
+                        )
+
+
                     try:
                         system_query = getattr(query, f"{system_name}_query", None)
                         if system_query is None:
@@ -195,9 +205,9 @@ class ExperimentRunner:
                             **query_kwargs,
                         )
                         
-                        if self.run_config['quality_exps'] == True:
-                            predicted_result = output.get('result')
-                            quality = self._evaluate_results(query, predicted_result, input_size)
+                        if self.run_config['quality_exps']:
+                            predicted_table = output.get('result')
+                            quality = self._evaluate_results(query, predicted_table, input_size)
                         else:
                             quality = "-"
 
@@ -220,8 +230,23 @@ class ExperimentRunner:
                             "quality": quality,
                         })
 
-                        if self.run_config['quality_exps'] == True:
-                            predicted_result.to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
+                        if self.run_config['quality_exps']:
+                            predicted_table.to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
+
+                        if self.run_config['wandb_report']:
+                            wandb.log({
+                                "predicted_table": wandb.Table(dataframe=predicted_table) if self.run_config['quality_exps'] else None,
+                                "execution_time": output.get('latency'),
+                                "input_tokens": output.get('input_tokens'),
+                                "output_tokens": output.get('output_tokens'),
+                                "total_tokens": output.get('total_tokens'),
+                                "total_calls": output.get('total_calls'),
+                                "tokens_throughput": output.get('tokens_throughput'),
+                                "quality": quality
+                            })
+
+                            wandb.finish()
+
                     except Exception as e:
                         print(f"Error on {query.id}: {str(e)}")
                         # Log failed result - skip logging since we only want successful results
@@ -232,9 +257,12 @@ class ExperimentRunner:
     def save_results(self):
         if not self.results:
             return
-            
+        
+        os.makedirs("../results", exist_ok=True)
+        os.makedirs(f"../results/{'quality' if self.run_config['quality_exps'] else 'scalability'}", exist_ok=True)
+        filename = f"../results/{'quality' if self.run_config['quality_exps'] else 'scalability'}/stats_{self.run_config['experiment_name']}.csv"
+
         df = pd.DataFrame(self.results)
-        filename = f"results_{self.run_config['experiment_name']}.csv"
         df.to_csv(filename, index=False)
         print(f"\nExperiments complete! Results saved to {filename}")
 

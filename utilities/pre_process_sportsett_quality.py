@@ -273,9 +273,6 @@ def process_team_summaries(output_csv="datasets/nba/quality_exps/teams_summaries
     print(f"Saved to {output_csv_all}") 
     
 
-
-        
-
 def evaluate_joins(title, gt_df, cases, merge_keys, left_table_name: str, right_table_name: str, summaries_df, filter_query=None):
     query_folder = f"datasets/nba/quality_exps/quality_exps/join_tables/{title}"
     os.makedirs(query_folder, exist_ok=True)

@@ -246,14 +246,82 @@ def process_team_summaries(output_csv="datasets/nba/scalability_exps/teams_summa
     pd.DataFrame(csv_data).to_csv(output_csv_all, index=False)   
     print(f"Saved to {output_csv_all}") 
 
+def create_join_tables(output_dir="datasets/nba/scalability_exps/join_tables/"):
+    print("Creating Join Tables...")
+
+    # Summary mentions player
+    os.makedirs(f"{output_dir}/summary_mentions_player", exist_ok=True)
+    pd.read_csv("datasets/nba/scalability_exps/players_summaries_all.csv")[['sportsett_id', 'summary']].drop_duplicates().to_csv(f"{output_dir}/summary_mentions_player/summaries.csv", index=False)
+    pd.read_csv("datasets/nba/scalability_exps/players_info.csv")['player_name'].to_csv(f"{output_dir}/summary_mentions_player/players.csv", index=False)
+
+    # Summary mentions team
+    os.makedirs(f"{output_dir}/summary_mentions_team", exist_ok=True)
+    pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")[['sportsett_id', 'summary']].drop_duplicates().to_csv(f"{output_dir}/summary_mentions_team/summaries.csv", index=False)
+    pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")['team'].to_csv(f"{output_dir}/summary_mentions_team/teams.csv", index=False)
+
+    # Team won game
+    os.makedirs(f"{output_dir}/team_won_game", exist_ok=True)
+    pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")[['sportsett_id', 'summary']].drop_duplicates().to_csv(f"{output_dir}/team_won_game/summaries.csv", index=False)
+    pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")['team'].to_csv(f"{output_dir}/team_won_game/teams.csv", index=False)
+
+    # Most points, assists, rebounds
+    os.makedirs(f"{output_dir}/player_max_points", exist_ok=True)
+    os.makedirs(f"{output_dir}/player_max_assists", exist_ok=True)
+    os.makedirs(f"{output_dir}/player_max_rebounds", exist_ok=True)
+
+    summaries = pd.read_csv("datasets/nba/scalability_exps/players_summaries_stats.csv")[['sportsett_id', 'summary']].drop_duplicates()
+    players = pd.DataFrame(pd.read_csv("datasets/nba/scalability_exps/players_summaries_stats.csv")['player_name'])
+    
+    summaries.to_csv(f"{output_dir}/player_max_points/summaries.csv", index=False)
+    players.to_csv(f"{output_dir}/player_max_points/players.csv", index=False)
+
+    summaries.to_csv(f"{output_dir}/player_max_assists/summaries.csv", index=False)
+    players.to_csv(f"{output_dir}/player_max_assists/players.csv", index=False)
+
+    summaries.to_csv(f"{output_dir}/player_max_rebounds/summaries.csv", index=False)
+    players.to_csv(f"{output_dir}/player_max_rebounds/players.csv", index=False)
+
+    # Players and Colleges
+    os.makedirs(f"{output_dir}/player_college", exist_ok=True)
+    pd.read_csv("datasets/nba/scalability_exps/players_info.csv")['player_name'].to_csv(f"{output_dir}/player_college/players.csv", index=False)
+    pd.read_csv("datasets/nba/scalability_exps/players_info.csv")['college'].dropna().drop_duplicates().to_csv(f"{output_dir}/player_college/colleges.csv", index=False)
+
+    # Player over 22 years old
+    os.makedirs(f"{output_dir}/player_over_22", exist_ok=True)
+    pd.read_csv("datasets/nba/scalability_exps/players_info.csv")['player_name'].to_csv(f"{output_dir}/player_over_22/players.csv", index=False)
+    seasons = [
+        "1996-97",
+        "1997-98",
+        "1998-99",
+        "1999-00",
+        "2000-01",
+        "2001-02",
+        "2002-03",
+        "2003-04",
+        "2004-05",
+        "2005-06"
+        ]
+
+    # Repeat to reach 50 rows
+    data = (seasons * 5)
+    df = pd.DataFrame({"season": data})
+    df.to_csv(f"{output_dir}/player_over_22/seasons.csv", index=False)
+
+    # Players and countries
+    os.makedirs(f"{output_dir}/player_country", exist_ok=True)
+    pd.read_csv("datasets/nba/scalability_exps/players_info.csv")['player_name'].to_csv(f"{output_dir}/player_country/players.csv", index=False)
+    pd.read_csv("datasets/nba/scalability_exps/players_info.csv")['country'].drop_duplicates().to_csv(f"{output_dir}/player_country/countries.csv", index=False)
+
+
 if __name__ == "__main__":
     os.makedirs("datasets/nba", exist_ok=True)
     os.makedirs("datasets/nba/scalability_exps", exist_ok=True)
     
     # process_player_info()
     # process_player_summaries()
-    process_game_summaries()
+    # process_game_summaries()
     # process_team_summaries()
     # evaluate_all_joins()
+    create_join_tables()
     
     print("All pre-processing tasks completed successfully!")

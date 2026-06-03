@@ -1,4 +1,5 @@
-experiment_name: "initial_experiment"
+project_name: "SQE_exps"
+experiment_name: "palimpzest_selection_scalability"
 
 systems: ["palimpzest"]
 
@@ -9,12 +10,13 @@ llms:
     # - "meta-llama/Llama-3.1-8B-Instruct"
     - "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
 
-input_sizes: [2]
-input_sizes_for_join: [[10, 10]]
+input_sizes: [1000, 2000, 4000]
+input_sizes_for_join: [[20, 50], [40, 50], [80, 50]]
 
 quality_exps: False
+wandb_report: True
 
 filters:
-  class_name: null
+  class_name: selection
   task_name: null
-  query_ids: [q13]
+  query_ids: null
