@@ -33,15 +33,22 @@ class LotusSystem(BaseSystem):
         table: str = None,
         cols: list = None,
         new_col_name: str = None,
+        is_extract_op: bool = False,
         **kwargs
     ) -> dict:
         input_df = pd.read_csv(table)[cols].head(input_size)
         
+        input_cols = cols
+        output_cols = {new_col_name: nl_criterion}
+
         start_time = time.time()
 
-        output_df = input_df.sem_map(nl_criterion)
-        output_df[new_col_name] = output_df['_map']
-        output_df.drop(columns=['_map'], inplace=True)
+        if is_extract_op:
+            output_df = input_df.sem_extract(input_cols, output_cols, extract_quotes=False)
+        else:
+            output_df = input_df.sem_map(nl_criterion)
+            output_df[new_col_name] = output_df['_map']
+            output_df.drop(columns=['_map'], inplace=True)
 
         execution_time = time.time() - start_time
 
