@@ -1,4 +1,6 @@
 .vsocde/
+
+old/
 old/wandb/
 old/logs/
 old/*.DS_Store
@@ -14,5 +16,7 @@ test*
 *.out
 experiment_runner/parse-answer-errors
 experiment_runner/wandb/
+results/
 
-datasets/movie/
+datasets/movies/
+utilities/pre_process_movies.py

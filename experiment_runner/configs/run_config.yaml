@@ -1,5 +1,5 @@
 project_name: "SQE_exps"
-experiment_name: "palimpzest_selection_scalability"
+experiment_name: "palimpzest_derivation"
 
 systems: ["palimpzest"]
 
@@ -8,7 +8,9 @@ llms:
   #   - "gemma3:12b"
   vllm:
     # - "meta-llama/Llama-3.1-8B-Instruct"
-    - "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
+    # - "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
+    # - "google/gemma-3-12b-it"
+    - "Qwen/Qwen3-8B"
 
 input_sizes: [1000, 2000, 4000]
 input_sizes_for_join: [[20, 50], [40, 50], [80, 50]]
@@ -17,6 +19,6 @@ quality_exps: False
 wandb_report: True
 
 filters:
-  class_name: selection
+  class_name: derivation
   task_name: null
   query_ids: null

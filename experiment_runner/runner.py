@@ -230,8 +230,10 @@ class ExperimentRunner:
                             "quality": quality,
                         })
 
-                        if self.run_config['quality_exps']:
-                            predicted_table.to_csv(f"output_{query.id}_{system_name}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
+                        os.makedirs("../results")
+                        os.makedirs("../results/outputs/")
+                        results_path = "../results/outputs/" + "quality" if self.run_config['quality_exps'] else "scalability"
+                        predicted_table.to_csv(f"{results_path}/{system_name}_{query.task_name}_{query.id}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
 
                         if self.run_config['wandb_report']:
                             wandb.log({
@@ -258,12 +260,12 @@ class ExperimentRunner:
         if not self.results:
             return
         
-        os.makedirs("../results", exist_ok=True)
-        os.makedirs(f"../results/{'quality' if self.run_config['quality_exps'] else 'scalability'}", exist_ok=True)
-        filename = f"../results/{'quality' if self.run_config['quality_exps'] else 'scalability'}/stats_{self.run_config['experiment_name']}.csv"
+        os.makedirs("../results/stats", exist_ok=True)
+        os.makedirs(f"../results/stats/{'quality' if self.run_config['quality_exps'] else 'scalability'}", exist_ok=True)
+        filename = f"../results/stats/{'quality' if self.run_config['quality_exps'] else 'scalability'}/stats_{self.run_config['class_name']}.csv"
 
         df = pd.DataFrame(self.results)
-        df.to_csv(filename, index=False)
+        df.to_csv(filename, mode='a', index=False)
         print(f"\nExperiments complete! Results saved to {filename}")
 
 if __name__ == "__main__":
