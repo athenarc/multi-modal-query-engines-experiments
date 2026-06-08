@@ -40,7 +40,6 @@ class ExperimentRunner:
     def __init__(self, run_config_path: str, queries_path: str):
         self.run_config = self._load_yaml(run_config_path)
         self.all_queries = [Query(**q) for q in self._load_yaml(queries_path)['queries']]
-        self.results = []
 
     def _load_yaml(self, path: str):
         with open(path, 'r') as f:
@@ -176,7 +175,6 @@ class ExperimentRunner:
                             group = query.class_name
                         )
 
-
                     try:
                         system_query = getattr(query, f"{system_name}_query", None)
                         if system_query is None:
@@ -195,7 +193,6 @@ class ExperimentRunner:
                             query_kwargs["cols_right"] = query.cols_right
                             query_kwargs["right_key"] = query.right_key
 
-
                         output = system_instance.execute_query(
                             query.class_name,
                             system_query,
@@ -205,14 +202,13 @@ class ExperimentRunner:
                             **query_kwargs,
                         )
                         
+                        predicted_table = output.get('result')
                         if self.run_config['quality_exps']:
-                            predicted_table = output.get('result')
                             quality = self._evaluate_results(query, predicted_table, input_size)
                         else:
                             quality = "-"
 
-                        # Log successful result
-                        self.results.append({
+                        run_stats = {
                             "experiment": self.run_config['experiment_name'],
                             "system": system_name,
                             "llm_provider": llm_provider,
@@ -228,12 +224,23 @@ class ExperimentRunner:
                             "total_calls": output.get('total_calls'),
                             "tokens_throughput": output.get('tokens_throughput'),
                             "quality": quality,
-                        })
+                        }
+                        
+                        self.save_single_result(run_stats)
 
-                        os.makedirs("../results")
-                        os.makedirs("../results/outputs/")
-                        results_path = "../results/outputs/" + "quality" if self.run_config['quality_exps'] else "scalability"
-                        predicted_table.to_csv(f"{results_path}/{system_name}_{query.task_name}_{query.id}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
+                        os.makedirs("../results", exist_ok=True)
+                        os.makedirs("../results/outputs/", exist_ok=True)
+                        if self.run_config['quality_exps']:
+                            results_dir = "../results/outputs/quality"
+                            os.makedirs(results_dir, exist_ok=True)
+                        else:
+                            results_dir = "../results/outputs/scalability"
+                            os.makedirs("../results/outputs/scalability", exist_ok=True)
+
+                        results_dir = f"{results_dir}/{llm_provider}_{model_name.replace('/', '_')}"
+                        os.makedirs(results_dir, exist_ok=True)
+
+                        predicted_table.to_csv(f"{results_dir}/{system_name}_{query.task_name}_{query.id}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
 
                         if self.run_config['wandb_report']:
                             wandb.log({
@@ -251,22 +258,21 @@ class ExperimentRunner:
 
                     except Exception as e:
                         print(f"Error on {query.id}: {str(e)}")
-                        # Log failed result - skip logging since we only want successful results
                         pass
 
-            self.save_results()
+        print("\nAll experiments complete!")
 
-    def save_results(self):
-        if not self.results:
-            return
-        
-        os.makedirs("../results/stats", exist_ok=True)
-        os.makedirs(f"../results/stats/{'quality' if self.run_config['quality_exps'] else 'scalability'}", exist_ok=True)
-        filename = f"../results/stats/{'quality' if self.run_config['quality_exps'] else 'scalability'}/stats_{self.run_config['class_name']}.csv"
+    def save_single_result(self, result_dict: dict):
+        """Saves a single run's statistics by appending to the CSV file immediately."""
+        stats_dir = f"../results/stats/{'quality' if self.run_config['quality_exps'] else 'scalability'}"
+        os.makedirs(stats_dir, exist_ok=True)
+        filename = f"{stats_dir}/stats_{self.run_config['experiment_name']}.csv"
 
-        df = pd.DataFrame(self.results)
-        df.to_csv(filename, mode='a', index=False)
-        print(f"\nExperiments complete! Results saved to {filename}")
+        file_exists = os.path.isfile(filename)
+
+        df = pd.DataFrame([result_dict])
+        df.to_csv(filename, mode='a', index=False, header=not file_exists)
+        print(f"--> Saved stats for {result_dict['query_id']} to {filename}")
 
 if __name__ == "__main__":
     runner = ExperimentRunner(

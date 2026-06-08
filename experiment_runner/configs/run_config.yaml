@@ -1,5 +1,5 @@
 project_name: "SQE_exps"
-experiment_name: "palimpzest_derivation"
+experiment_name: "derivation"
 
 systems: ["palimpzest"]
 
