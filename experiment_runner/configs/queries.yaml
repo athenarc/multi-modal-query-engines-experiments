@@ -1,5 +1,7 @@
 queries:
 
+### NBA CORPUS ###
+
 # DERIVATION QUERIES
   - id: q1
     class_name: derivation
@@ -281,7 +283,7 @@ queries:
     task_name: reasoning
     nlq: "Did the player scored over 20 points in the game?"
 
-    table: players_summaries.csv
+    table: players_summaries_stats.csv
     cols: [summary, player_name]
 
     filtering_col: points_gt_20
@@ -340,15 +342,15 @@ queries:
     task_name: classification
     nlq: "The summary mentions a specific player"
 
-    table_left: join_tables/summary_mentions_player/case_3/summaries.csv
+    table_left: join_tables/summary_mentions_player/summaries.csv
     cols_left: [sportsett_id, summary]
     left_key: summary
 
-    table_right: join_tables/summary_mentions_player/case_3/players.csv
+    table_right: join_tables/summary_mentions_player/players.csv
     cols_right: [player_name]
     right_key: player_name
 
-    evaluation_table: join_tables/summary_mentions_player/case_3/ground_truth.csv
+    evaluation_table: join_tables/summary_mentions_player/ground_truth.csv
     evaluation_cols: [sportsett_id, summary, player_name]
 
     lotus_query: "The summary {summary} mentions the player {player_name}."
@@ -364,14 +366,14 @@ queries:
     left_key: summary
 
     table_right: join_tables/summary_mentions_team/teams.csv
-    cols_right: [team_name]
-    right_key: team_name
+    cols_right: [team]
+    right_key: team
 
     evaluation_table: join_tables/summary_mentions_team/ground_truth.csv
     evaluation_cols: [sportsett_id, summary, team_name]
 
-    lotus_query: "The summary {summary} mentions the team {team_name}."
-    blendsql_query: "The summary {summary} mentions the player {player_name}."
+    lotus_query: "The summary {summary} mentions the team {team}."
+    blendsql_query: "The summary {summary} mentions the team {team}."
 
   - id: q24
     class_name: join
@@ -383,14 +385,14 @@ queries:
     left_key: summary
 
     table_right: join_tables/team_won_game/teams.csv
-    cols_right: [team_name]
-    right_key: team_name
+    cols_right: [team]
+    right_key: team
 
     evaluation_table: join_tables/team_won_game/ground_truth.csv
     evaluation_cols: [sportsett_id, summary, team_name]
 
-    lotus_query: "The team {team_name} won the game described by the summary {summary}."
-    blendsql_query: "The team {team_name} won the game described by the summary {summary}."
+    lotus_query: "The team {team} won the game described by the summary {summary}."
+    blendsql_query: "The team {team} won the game described by the summary {summary}."
 
   - id: q25
     class_name: join
@@ -535,3 +537,530 @@ queries:
     lotus_query: "Which player had the most assists among all given games described by {summary}? Return only the name of the player."
     blendsql_query: "Which player had the most assists among all given games described by {summary}? Return only the name of the player."
 
+# ### ROTTEN TOMATOES CORPUS ###
+# # DERIVATION QUERIES
+#   - id: q34
+#     class_name: derivation
+#     task_name: classification
+#     nlq: "Classify the audience suitability based on the given description of a movie as exactly one of: G (general audience), PG (parentla guidance) and R (restricted)."
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     new_col_name: audience_suitability
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_info, content_rating]
+
+#     lotus_query: "Classify the audience suitability based on the description {movie_info} of the movie as exactly one of: G (general audience), PG (parental guidance) and R (restricted). Return only G, PG or R."
+#     palimpzest_query: "Classify the audience suitability based on the description `movie_info` of the movie as exactly one of: G (general audience), PG (parental guidance) and R (restricted). Return only G, PG or R."
+#     blendsql_query: "Classify the audience suitability based on the description {movie_info} of the movie as exactly one of: G (general audience), PG (parental guidance) and R (restricted). Return only G, PG or R."
+ 
+#   - id: q35
+#     class_name: derivation
+#     task_name: classification
+#     nlq: "Decide whether this review recommends the movie, answering either fresh or rotten."
+
+#     quality_table: reviews_derivation_curated.csv
+#     scalability_table: reviews_curated.csv
+#     cols: [rotten_tomatoes_link, review_content]
+
+#     new_col_name: fresh_or_rotten
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, review_content, review_type]
+
+#     lotus_query: "Decide whether the review {review_content} recommends the movie, answer eith **Fresh** or **Rotten**."
+#     palimpzest_query: "Decide whether the review `review_content` recommends the movie, answer eith **Fresh** or **Rotten**."
+#     blendsql_query: "Decide whether the review {review_content} recommends the movie, answer eith **Fresh** or **Rotten**."
+
+#   - id: q36
+#     class_name: derivation
+#     task_name: classification
+#     nlq: "Classify the movie's genre based on its description as exactly one of: Drama, Comedy, Action, Horror, Romance, Thriller, Documentary, Animation or Other."
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     new_col_name: genre
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, movie_info, genre]
+
+#     lotus_query: "Classify the movie's genre based on its description {movie_info} as exactly one of: Drama, Comedy, Action, Horror, Romance, Thriller Documentary, Animation or Other."
+#     palimpzest_query: "Classify the movie's genre based on its description `movie_info` as exactly one of: Drama, Comedy, Action, Horror, Romance, Thriller Documentary, Animation or Other."
+#     blendsql_query: "Classify the movie's genre based on its description {movie_info} as exactly one of: Drama, Comedy, Action, Horror, Romance, Thriller Documentary, Animation or Other."
+    
+#   - id: q37
+#     class_name: derivation
+#     task_name: reasoning
+#     nlq: "How many actors does the movie description mentions?"
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+    
+#     new_col_name: num_mentioned_actors
+#     new_col_type: int
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, movie_info, num_mentioned_actors]
+
+#     lotus_query: "How many actors does the movie description {movie_info} mentions?"
+#     lotus_query: "How many actors does the movie description `movie_info` mentions?"
+#     blendsql: "How many actors does the movie description {movie_info} mentions?"
+    
+#   - id: q38
+#     class_name: derivation
+#     task_name: reasoning
+#     nlq: "What is the secondary genre of this movie based on its description?"
+
+#     table: movies_multi_genres.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     new_col_name: secondary_genre
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, movie_info, secondary_genre]
+
+#     lotus_query: "What is the secondary genre of this movie based on its description {movie_info}? Return a single-word genre."
+#     palimpzest_query: "What is the secondary genre of this movie based on its description `movie_info`? Return a single-word genre."
+#     blendsql: "What is the secondary genre of this movie based on its description {movie_info}? Return a single-word genre."
+
+#   - id: q39
+#     class_name: derivation
+#     task_name: reasoning
+#     nlq: "What is the real full name of the lead actor of the movie based on its description?"
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     new_col_name: lead_actor
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, movie_info, lead_actor]
+
+#     lotus_query: "What is the full name of the lead actor of movie described by {movie_info}?"
+#     palimpzest_query: "What is the full name of the lead actor of movie described by `movie_info`?"
+#     blendsql_query: "What is the full name of the lead actor of movie described by {movie_info}?"
+
+#   - id: q40
+#     class_name: derivation
+#     task_name: extraction
+#     nlq: "Extract the movie title as it appears in the review."
+
+#     quality_table: reviews_derivation_curated.csv
+#     scalability_table: reviews_curated.csv
+#     cols: [rotten_tomatoes_link, review_content]
+
+#     new_col_name: movie_title
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, review_content, movie_title]
+
+#     lotus_query: "Extrat the movie title as it appears in the review {review_content}."
+#     palimpzest_query: "Extrat the movie title as it appears in the review `review_content`."
+#     blendsql_query: "Extrat the movie title as it appears in the review {review_content}."
+    
+#   - id: q41
+#     class_name: derivation
+#     task_name: extraction
+#     nlq: "Extract the second real full name that movie's description contains"
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_info]
+
+#     new_col_name: second_fullname
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_info, second_fullname]
+
+#     lotus_query: "Extract the second real full name that movie's description {movie_info} contains."
+#     palimpzest_query: "Extract the second real full name that movie's description `movie_info` contains."
+#     blendsql_query: "Extract the second real full name that movie's description {movie_info} contains."
+    
+#   - id: q42
+#     class_name: derivation
+#     task_name: extraction
+#     nlq: "Extract the director's name from the critic consensus review."
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title, critics_consensus]
+
+#     new_col_name: director
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, critics_consensus, directors]
+
+#     lotus_query: "Extract the director's name from the {critic_consensus} review."
+#     palimpzest_query: "Extract the director's name from the {critic_consensus} review."
+#     blendsql_query: "Extract the director's name from the {critic_consensus} review."
+
+#   - id: q43
+#     class_name: derivation
+#     task_name: external_knowledge
+#     nlq: "Return the director of the movie."
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title]
+
+#     new_col_name: director
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, directors]
+
+#     lotus_query: "Return the director of the movie titled {movie_title}."
+#     palimpzest_query: "Return the director of the movie titled `movie_title`."
+#     blendsql_query: "Return the director of the movie titled {movie_title}."
+
+#   - id: q44
+#     class_name: derivation
+#     task_name: external_knowledge
+#     nlq: "Return the original release year of the movie."
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title]
+
+#     new_col_name: release_year
+#     new_col_type: str
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, release_year]
+
+#     lotus_query: "Return the original release year of the movie titled {movie_title}."
+#     palimpzest_query: "Return the original release year of the movie titled `movie_title`."
+#     blendsql_query: "Return the original release year of the movie titled {movie_title}."
+    
+#   - id: q45
+#     class_name: derivation
+#     task_name: external_knowledge
+#     nlq: "Return the duration in minutes of the movie."
+
+#     quality_table: movies_derivation_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title]
+
+#     new_col_name: duration
+#     new_col_type: float
+
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, runtime]
+    
+#     lotus_query: "Return the duration in minutes of the movie titled {movie_title}."
+#     palimpzest_query: "Return the original release year of the movie titled `movie_title`."
+#     blendsql_query: "Return the original release year of the movie titled {movie_title}."
+
+#   # SELECTION QUERIES
+#   - id: q46
+#     class_name: selection
+#     task_name: classification
+#     nlq: "The review is fresh."
+
+#     quality_table: reviews_selection_curated.csv
+#     scalability_table: reviews_curated.csv
+#     cols: [rotten_tomatoes_link, review_content]
+
+#     filtering_col: is_fresh
+#     evaluation_cols: [rotten_tomatoes_link, review_content, is_fresh]
+
+#     lotus_query: "The {review_content} is fresh."
+#     palimpzest_query: "The `review_content` is fresh."
+
+#   - id: q47
+#     class_name: selection
+#     task_name: classification
+#     nlq: "The genre of the movie, based on its description, is Drama."
+
+#     quality_table: movies_class_ext_selection_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     filtering_col: is_drama
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, movie_info, is_drama]
+
+#     lotus_query: "The genre of the movie described by {movie_info} is Drama."
+#     palimpzest_query: "The genre of the movie described by `movie_info` is Drama."
+
+#   - id: q48
+#     class_name: selection
+#     task_name: classification
+#     nlq: "The genre of the movie, based on its description, is Comedy."
+
+#     quality_table: movies_class_ext_selection_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     filtering_col: is_comedy
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, movie_info, is_comedy]
+
+#     lotus_query: "The genre of the movie described by {movie_info} is Comedy."
+#     palimpzest_query: "The genre of the movie described by `movie_info` is Comedy."
+
+
+#   - id: q49
+#     class_name: selection
+#     task_name: reasoning
+#     nlq: "The movie's description mentions some actor's real names."
+
+#     quality_table: movies_reasoning_actor_mentions.csv
+#     scalability_table: actor_mentions.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     filtering_col: mentions_any_actor
+#     evaluation_cols: [rotten_tomatoes_link, movie_info, mentions_any_actor]
+
+#     lotus_query: "The movie description {movie_info} mentions any actor's real names."
+#     palimpzest_query: "The movie description `movie_info` mentions any actor's real names."
+
+#   - id: q50
+#     class_name: selection
+#     task_name: reasoning
+#     nlq: "The movie's description does not mention any real actor's name."
+
+#     quality_table: movies_reaosning_actor_mentions.csv
+#     scalability_table: actor_mentions.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     filtering_col: does_not_mention_any_actor
+#     evaluation_cols: [rotten_tomatoes_link, movie_info, does_not_mention_any_actor]
+
+#     lotus_query: "The movie description {movie_info} does not mention any actor's real names."
+#     palimpzest_query: "The movie description `movie_info` does not mention any actor's real names."
+
+#   - id: q51
+#     class_name: selection
+#     task_name: reasoning
+#     nlq: "The lead actor of the movie is mentioned first in the movie description"
+
+#     quality_table: movies_reasoning_lead_actor_first.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title, movie_info]
+
+#     filtering_col: [lead_actor_first]
+#     evaluation_cols: [rotten_tomatoes_link, movie_info, lead_actor_first]
+
+#     lotus_query: "The lead actor of the movie is mentioned first in the {movie_info}."
+#     palimpzest_query: "The lead actor of the movie is mentioned first in the {movie_info}."
+
+#   - id: q52
+#     class_name: selection
+#     task_name: external_knowledge
+#     nlq: The movie was originally released before 2000.
+
+#     quality_table: movies_class_ext_selection_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title]
+
+#     filtering_col: before_2000
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, before_2000]
+
+#     lotus_query: "The movie described by {movie_info} was originally released before 2000."
+#     palimpzest_query: "The movie described by `movie_info` was originally released before 2000."
+
+#   - id: q53
+#     class_name: selection
+#     task_name: external_knowledge
+#     nlq: The original language of the movie is German.
+
+#     quality_table: movies_class_ext_selection_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title]
+
+#     filtering_col: [written_in_german]
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, written_in_german]
+
+#     lotus_query: "The original language of the movie described by {movie_info} is German."
+#     palimpzest_query: "The original language of the movie described by `movie_info` is German."
+
+#   - id: q54
+#     class_name: selection
+#     task_name: external_knowledge
+#     nlq: The duration of the movie is over 2 hours.
+
+#     quality_table: movies_class_ext_selection_curated.csv
+#     scalability_table: movies_curated.csv
+#     cols: [rotten_tomatoes_link, movie_title]
+
+#     filtering_col: [over_2h]
+#     evaluation_cols: [rotten_tomatoes_link, movie_title, over_2h]
+
+#     lotus_query: "The duration of the movie described by {movie_info} is over two hours."
+#     palimpzest_query: "The duration of the movie described by `movie_info` is over two hours."
+
+# ### JOIN QUERIES
+#   - id: q55
+#     class_name: join
+#     task_name: classification
+#     nlq: The movie description mentions the actor's name.
+
+#     table_left: join_tables/description_mentions_actor/movie_descriptions.csv
+#     cols_left: [rotten_tomatoes_link, movie_title, movie_info]
+#     left_key: movie_info
+
+#     table_right: join_tables/description_mentions_actor/actors.csv
+#     cols_right: [actor]
+#     right_key: actor
+
+#     evaluation_table: join_tables/description_mentions_actor/ground_truth.csv
+#     evaluation_cols: [movie_info, actor]
+
+#     lotus_query: "The movie description {movie_info} mentions the actor's name {actor}."
+#     blendsql: "The movie description {movie_info} mentions the actor's name {actor}."
+  
+#   - id: q56
+#     class_name: join
+#     task_name: classification
+#     nlq: The review critisize the movie.
+
+#     table_left: join_tables/review_critisize_movie/reviews.csv
+#     cols_left: [review_content]
+#     left_key: review_content
+
+#     table_right: join_tables/review_critisize_movie/movies.csv
+#     cols_right: [movie_title]
+#     right_key: movie_title
+
+#     evaluation_table: join_tables/review_critisize_moive/ground_truth.csv
+#     evaluation_cols: [review_content, movie_title]
+
+#     lotus_query: "The review {review_content} critisizes the movie titled {movie_title}."
+#     blendsql_query: "The review {review_content} critisizes the movie titled {movie_title}."
+
+#   - id: q57
+#     class_name: join
+#     task_name: classification
+#     nlq: The review praises the actor.
+
+#     table_left: join_tables/review_praises_actor/reviews.csv
+#     cols_left: [review_content]
+#     left_key: review_content
+
+#     table_right: join_tables/review_praises_actor/actors.csv
+#     cols_right: [actor]
+#     right_key: actor
+
+#     evaluation_table: join_tables/review_praises_actor/ground_truth.csv
+#     evaluation_cols: [review_content, actor]
+
+#     lotus_query: "The review {review_content} praises the actor {actor}."
+#     blendsql_query: "The review {review_content} praises the actor {actor}."
+
+#   - id: q58
+#     class_name: join
+#     task_name: reasoning
+#     nlq: Both movies belong to the same genre.
+
+#     table_left: join_tables/movies_same_genre_audience/movies_1.csv
+#     cols_left: [movie_title_1, movie_info_1]
+#     left_key: movie_info_1
+
+#     table_right: join_tables/movies_same_genre_audience/movies_2.csv
+#     cols_right: [movie_title_2, movie_info_2]
+#     right_key: movie_info_2
+
+#     evaluation_table: join_tables/movies_same_genre_audience/ground_truth.csv
+#     evaluation_cols: [movie_info_1, movie_info_2]
+
+#     lotus_query: "Movie described by {movie_info_1} belongs to the same genre with movie described by {movie_info_2}"
+#     blendsql_query: "Movie described by {movie_info_1} belongs to the same genre with movie described by {movie_info_2}"
+
+#   - id: q59
+#     class_name: join
+#     task_name: reasoning
+#     nlq: Both movies target the same audience tier.
+
+#     table_left: join_tables/movies_same_genre_audience/movies_1.csv
+#     cols_left: [movie_title_1, movie_info_1]
+#     left_key: movie_info_1
+
+#     table_right: join_tables/movies_same_genre_audience/movies_2.csv
+#     cols_right: [movie_title_2, movie_info_2]
+#     right_key: movie_info_2
+
+#     evaluation_table: join_tables/movies_same_genre_audience/ground_truth.csv
+#     evaluation_cols: [movie_info_1, movie_info_2]
+
+#     lotus_query: "Movie described by {movie_info_1} targets the same audience with movie described by {movie_info_2}"
+#     blendsql_query: "Movie described by {movie_info_1} targets the same audience with movie described by {movie_info_2}"
+
+#   - id: q60
+#     class_name: join
+#     task_name: reasoning
+#     nlq: Both reviews recommend the reviewed movies.
+
+#     table_left: join_tables/fresh_reviews/reviews_1.csv
+#     cols_left: [review_content_1]
+#     left_key: review_content_1
+
+#     table_right: join_tables/fresh_reviews/reviews_2.csv
+#     cols_right: [review_content_2]
+#     right_key: review_content_2
+
+#     evaluation_table: join_tables/fresh_reviews/ground_truth.csv
+#     evaluation_cols: [review_content_1, review_content_2]
+
+#     lotus_query: "Both reviews {review_content_1} and {review_content_2} recommend the reviewed movies."
+#     blendsql_query: "Both reviews {review_content_1} and {review_content_2} recommend the reviewed movies."
+
+#   - id: q61
+#     class_name: join
+#     task_name: external_knowledge
+#     nlq: "One of the movies is a sequel of the other."
+
+#     table_left: join_tables/prequel_sequel/prequels.csv
+#     cols_left: [movie_title_1]
+#     left_key: movie_title_1
+
+#     table_right: join_tables/prequel_sequel/sequels.csv
+#     cols_right: [movie_title_2]
+#     left_key: movie_title_2
+
+#     evaluation_table: join_table/prequel_sequel/ground_truth.csv
+#     evaluation_cols: [movie_title_1, movie_title_2]
+
+#     lotus_query: "The movie titled {movie_info_1} is a prequel of movie titled {movie_info_2}."
+#     blendsql_query: "The movie titled {movie_info_1} is a prequel of movie titled {movie_info_2}."
+    
+#   - id: q62
+#     class_name: join
+#     task_name: external_knowledge
+#     nlq: "The movie was directed by the director"
+
+#     table_left: join_tables/movies_directors/movies.csv
+#     cols_left: [movie_title]
+#     left_key: movie_title
+
+#     table_right: join_tables/movies_directors/directors.csv
+#     cols_right: [director]
+#     left_key: director
+
+#     evaluation_table: join_table/movies_directors/ground_truth.csv
+#     evaluation_cols: [movie_title, director]
+
+#     lotus_query: "The movie titled {movie_info} was directed by director named {direcor}."
+#     blendsql_query: "The movie titled {movie_info} was directed by director named {direcor}."
+
+#   - id: q63
+#     class_name: join
+#     task_name: external_knowledge
+#     nlq: "The movie was written by the author"
+
+#     table_left: join_tables/movies_authors/movies.csv
+#     cols_left: [movie_title]
+#     left_key: movie_title
+
+#     table_right: join_tables/movies_authors/authors.csv
+#     cols_right: [author]
+#     left_key: author
+
+#     evaluation_table: join_table/movies_authors/ground_truth.csv
+#     evaluation_cols: [movie_title, author]
+
+#     lotus_query: "The movie titled {movie_info} was written by author named {direcor}."
+#     blendsql_query: "The movie titled {movie_info} was written by author named {direcor}."
+
+    

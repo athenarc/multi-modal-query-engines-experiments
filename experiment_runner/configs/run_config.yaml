@@ -8,9 +8,10 @@ llms:
   #   - "gemma3:12b"
   vllm:
     # - "meta-llama/Llama-3.1-8B-Instruct"
-    # - "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
+    - "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
     # - "google/gemma-3-12b-it"
-    - "Qwen/Qwen3-8B"
+    # - "Qwen/Qwen3-8B"
+
 
 input_sizes: [1000, 2000, 4000]
 input_sizes_for_join: [[20, 50], [40, 50], [80, 50]]
@@ -21,4 +22,6 @@ wandb_report: True
 filters:
   class_name: derivation
   task_name: null
+  query_ids: [q1, q2, q3, q4, q5, q6] 
+  #, q13, q14, q16, q17]
   query_ids: null

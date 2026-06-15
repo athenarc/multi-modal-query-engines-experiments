@@ -15,6 +15,8 @@ class Query(BaseModel):
     nlq: str
     
     table: Optional[str] = None
+    quality_table: Optional[str] = None
+    scalability_table: Optional[str] = None
     cols: Optional[List[str]] = None
     
     # Join queries
@@ -153,7 +155,7 @@ class ExperimentRunner:
             return
         
         if self.run_config['quality_exps']:
-            input_folder = "../datasets/nba/quality_exps/"
+            input_folder = f"../datasets/nba/quality_exps/"
         else:
             input_folder = "../datasets/nba/scalability_exps/"
 
@@ -163,6 +165,9 @@ class ExperimentRunner:
 
             for query in queries_to_run:
                 print(f"Executing Query {query.id} ({query.class_name} / {query.task_name})...")
+
+                if query.table is None:
+                    query.table = query.quality_table if self.run_config['quality_exps'] else  query.scalability_table
             
                 for input_size_idx in range(len(self.run_config['input_sizes'])):
                     input_size = self.run_config['input_sizes'][input_size_idx] if query.class_name != "join" else self.run_config['input_sizes_for_join'][input_size_idx]
@@ -192,6 +197,10 @@ class ExperimentRunner:
                             query_kwargs["table_right"] = input_folder + query.table_right
                             query_kwargs["cols_right"] = query.cols_right
                             query_kwargs["right_key"] = query.right_key
+
+                            query.table = ""    # Does not matter
+
+
 
                         output = system_instance.execute_query(
                             query.class_name,

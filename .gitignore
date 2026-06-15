@@ -18,5 +18,9 @@ experiment_runner/parse-answer-errors
 experiment_runner/wandb/
 results/
 
-datasets/movies/
-utilities/pre_process_movies.py
+datasets/rotten_tomatoes/
+
+utilities/pre_process_movies*
+
+rotten_tomatoes_movies_variation.csv
+tmp.csv

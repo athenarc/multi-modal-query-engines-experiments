@@ -10,7 +10,7 @@ class LotusSystem(BaseSystem):
         if self.llm_provider == 'ollama':
             self.lm = LM(self.llm_provider + '/' + self.model_name)
         elif self.llm_provider == 'vllm':
-            self.lm = LM("hosted_vllm/" + self.model_name, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000)
+            self.lm = LM("hosted_vllm/" + self.model_name, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000, max_batch_size=16)
         lotus.settings.configure(lm=self.lm, enable_cache=False)        
 
         print(f"Lotus setup with {self.llm_provider} and model {self.model_name} completed.")

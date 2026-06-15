@@ -19,6 +19,7 @@ sportsett_dataset = datasets.load_dataset(
     }
 )
 test_data = sportsett_dataset['test']
+validation_data = sportsett_dataset['validation']
 train_data = sportsett_dataset['train']
 data = datasets.concatenate_datasets([test_data, train_data])
 
@@ -123,7 +124,7 @@ def process_player_summaries(output_csv="datasets/nba/scalability_exps/players_s
                 })
     
     df = pd.DataFrame(csv_data)
-    df.head(4000)[['sportsett_id', 'player_name', 'summary']].to_csv("datasets/nba/scalability_exps/players_summaries_all.csv", index=False)
+    df[['sportsett_id', 'player_name', 'summary']].to_csv("datasets/nba/scalability_exps/players_summaries_all.csv", index=False)
     
     df = df[df['is_mentioned'] == True].copy()
 
@@ -156,6 +157,9 @@ def process_player_summaries(output_csv="datasets/nba/scalability_exps/players_s
 
 def process_game_summaries(output_csv="datasets/nba/scalability_exps/game_summaries.csv"):
     print("Processing Game Summaries...")
+    validation_data = sportsett_dataset['validation']
+    data = datasets.concatenate_datasets([test_data, train_data, validation_data])
+
     game_summaries = []
     
     for row in data:
@@ -198,6 +202,9 @@ def process_game_summaries(output_csv="datasets/nba/scalability_exps/game_summar
         return llm_verify(prompt)
 
     df['winner_opponent_mentioned'] = df.progress_apply(verify_opponent, axis=1)
+
+    print("SHAPE")
+    print(df[df['winner_opponent_mentioned'] == 'yes'].shape)
     
     verified = df[df['winner_opponent_mentioned'] == 'yes'].head(4000).drop(columns=['winner_opponent_mentioned']).reset_index(drop=True)
     verified[['sportsett_id', 'summary']].to_csv(output_csv, index=False)
@@ -319,9 +326,8 @@ if __name__ == "__main__":
     
     # process_player_info()
     # process_player_summaries()
-    # process_game_summaries()
+    process_game_summaries()
     # process_team_summaries()
-    # evaluate_all_joins()
-    create_join_tables()
+    # create_join_tables()
     
     print("All pre-processing tasks completed successfully!")
