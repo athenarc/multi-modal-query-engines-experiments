@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 tqdm.pandas(desc="Verification")
 
-client = OpenAI(base_url="http://localhost:11434/v1", api_key="EMPTY")
+client = OpenAI(base_url="http://localhost:5001/v1", api_key="EMPTY")
 
 print("Loading HuggingFace SportSett dataset...")
 sportsett_dataset = datasets.load_dataset(
@@ -69,7 +69,7 @@ def get_summary(row):
         return str(row["summaries"][0])
     return "No summary available"
 
-def llm_verify(prompt, model="llama3:8b-instruct-q8_0"):
+def llm_verify(prompt, model="RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"):
     try:
         response = client.chat.completions.create(
             model=model,
@@ -128,7 +128,7 @@ def process_player_summaries(output_csv="datasets/nba/quality_exps/players_summa
                 })
 
     df = pd.DataFrame(csv_data)
-    df.to_csv("datasets/nba/quality_exps/players_summaries_all.csv", index=False)
+    df[['sportsett_id', 'player_name', 'summary', 'is_mentioned']].to_csv("datasets/nba/quality_exps/players_summaries_all.csv", index=False)
     
     df = df[df['is_mentioned'] == True].copy()
 

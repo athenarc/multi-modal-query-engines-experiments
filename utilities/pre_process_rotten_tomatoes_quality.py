@@ -161,7 +161,7 @@ def create_reviews_dataset(drop_subset_reviews: List[str] = ['review_content'], 
     movies_reviews['title_in_review'] = movies_reviews.apply(lambda row: contains(row, 'movie_title', 'review_content', threshold=85), axis=1)
     movies_reviews = movies_reviews[movies_reviews['title_in_review'] == True].drop_duplicates(subset=['review_content'])
 
-    movies_reviews[['rotten_tomatoes_link', 'review_content', 'movie_title']].head(100).to_csv(f"{output_dir}/reviews_derivation_curated.csv", index=False)
+    movies_reviews[['rotten_tomatoes_link', 'review_content', 'movie_title', 'review_type']].head(100).to_csv(f"{output_dir}/reviews_derivation_curated.csv", index=False)
 
     ### Selection Curation
     # Does the review recommends the movie?
@@ -338,8 +338,8 @@ if __name__ == "__main__":
     os.makedirs("datasets/rotten_tomatoes/quality_exps", exist_ok=True)
 
     # create_movie_dataset()
-    # create_reviews_dataset()
-    create_join_tables()
+    create_reviews_dataset()
+    # create_join_tables()
 
     print("All pre-processing tasks completed successfully!")
 

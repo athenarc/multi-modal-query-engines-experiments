@@ -2,6 +2,7 @@ from .base import BaseSystem
 import time
 import lotus
 from lotus.models import LM
+from lotus.types import ReasoningStrategy
 import pandas as pd
 from ollama import chat
 
@@ -10,7 +11,12 @@ class LotusSystem(BaseSystem):
         if self.llm_provider == 'ollama':
             self.lm = LM(self.llm_provider + '/' + self.model_name)
         elif self.llm_provider == 'vllm':
-            self.lm = LM("hosted_vllm/" + self.model_name, api_base="http://localhost:5001/v1", api_key="dummy", timeout=50000, max_batch_size=16)
+            self.lm = LM("hosted_vllm/" + self.model_name, 
+                         api_base="http://localhost:5001/v1",
+                         api_key="dummy", timeout=50000,
+                         max_batch_size=16,
+                         max_ctx_len=16384,
+                         extra_body={"chat_template_kwargs": {"enable_thinking": False}})
         lotus.settings.configure(lm=self.lm, enable_cache=False)        
 
         print(f"Lotus setup with {self.llm_provider} and model {self.model_name} completed.")
@@ -33,9 +39,11 @@ class LotusSystem(BaseSystem):
         table: str = None,
         cols: list = None,
         new_col_name: str = None,
-        is_extract_op: bool = False,
+        is_extract_op: bool = True,
         **kwargs
     ) -> dict:
+        lotus.settings.lm.reset_stats()
+        
         input_df = pd.read_csv(table)[cols].head(input_size)
         
         input_cols = cols
@@ -46,7 +54,7 @@ class LotusSystem(BaseSystem):
         if is_extract_op:
             output_df = input_df.sem_extract(input_cols, output_cols, extract_quotes=False)
         else:
-            output_df = input_df.sem_map(nl_criterion)
+            output_df = input_df.sem_map(nl_criterion, strategy=ReasoningStrategy.ZS_COT)
             output_df[new_col_name] = output_df['_map']
             output_df.drop(columns=['_map'], inplace=True)
 
@@ -77,11 +85,13 @@ class LotusSystem(BaseSystem):
         cols: list = None,
         **kwargs
     ) -> dict:
+        lotus.settings.lm.reset_stats()
+
         input_df = pd.read_csv(table)[cols].head(input_size)
 
         start_time = time.time()
 
-        output_df = input_df.sem_filter(nl_criterion)
+        output_df = input_df.sem_filter(nl_criterion, strategy=ReasoningStrategy.ZS_COT)
 
         execution_time = time.time() - start_time
 
@@ -114,6 +124,8 @@ class LotusSystem(BaseSystem):
         right_key: str = None,
         **kwargs
     ) -> dict:
+        lotus.settings.lm.reset_stats()
+
         if isinstance(input_size, (list, tuple)) and len(input_size) >= 2:
             size_left, size_right = input_size[0], input_size[1]
         else:
@@ -122,9 +134,12 @@ class LotusSystem(BaseSystem):
         input_df_left = pd.read_csv(table_left)[cols_left].head(size_left)
         input_df_right = pd.read_csv(table_right)[cols_right].head(size_right)
 
+        print(input_df_left)
+        print(input_df_right)
+
         start_time = time.time()
 
-        output_df = input_df_left.sem_join(input_df_right, nl_criterion)
+        output_df = input_df_left.sem_join(input_df_right, nl_criterion, strategy=ReasoningStrategy.ZS_COT)
 
         execution_time = time.time() - start_time
 
@@ -153,6 +168,8 @@ class LotusSystem(BaseSystem):
         cols: list = None,
         **kwargs
     ) -> dict:
+        lotus.settings.lm.reset_stats()
+        
         input_df = pd.read_csv(table)[cols].head(input_size)
 
         start_time = time.time()

@@ -1,11 +1,14 @@
 project_name: "SQE_exps"
-experiment_name: "derivation"
+experiment_name: "lotus_reasoning_rotten"
 
-systems: ["palimpzest"]
+systems: ["lotus"]
+
+dataset: rotten_tomatoes # nba or rotten_tomatoes
 
 llms:
   # ollama: 
   #   - "gemma3:12b"
+  
   vllm:
     # - "meta-llama/Llama-3.1-8B-Instruct"
     - "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
@@ -13,15 +16,15 @@ llms:
     # - "Qwen/Qwen3-8B"
 
 
-input_sizes: [1000, 2000, 4000]
-input_sizes_for_join: [[20, 50], [40, 50], [80, 50]]
+input_sizes: [27]
+input_sizes_for_join: [[10, 10]]
+# input_sizes_for_join: [[20, 50], [40, 50], [80, 50]]
 
-quality_exps: False
+
+quality_exps: True
 wandb_report: True
 
 filters:
-  class_name: derivation
+  class_name: aggregation
   task_name: null
-  query_ids: [q1, q2, q3, q4, q5, q6] 
-  #, q13, q14, q16, q17]
   query_ids: null

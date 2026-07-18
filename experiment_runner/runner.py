@@ -6,6 +6,7 @@ import os
 from pydantic import BaseModel
 from typing import List, Optional
 from systems import get_system
+import traceback
 from evaluation import DerivationEvaluator, SelectionEvaluator, JoinEvaluator
 
 class Query(BaseModel):
@@ -27,16 +28,18 @@ class Query(BaseModel):
     left_key: str = None
     right_key: str = None
     evaluation_table: str = None
-    
-    new_col_name: Optional[str] = None
-    new_col_type: Optional[str] = str
+    evaluation_cols: Optional[List[str]] = None
+
     lotus_query: Optional[str] = None
     palimpzest_query: Optional[str] = None
     blendsql_query: Optional[str] = None
-    evaluation_cols: Optional[List[str]] = None
 
     # Selection queries
     filtering_col: Optional[str] = None
+
+    # Join and Aggregation Queries
+    new_col_name: Optional[str] = None
+    new_col_type: Optional[str] = str
 
 class ExperimentRunner:
     def __init__(self, run_config_path: str, queries_path: str):
@@ -47,26 +50,29 @@ class ExperimentRunner:
         with open(path, 'r') as f:
             return yaml.safe_load(f)
     
-    def _evaluate_results(self, query: Query, predicted_df: pd.DataFrame, input_size: int, input_folder="datasets/nba/quality_exps/") -> int:
+    def _evaluate_results(self, query: Query, system_name: str, predicted_df: pd.DataFrame, input_size: int, input_folder="../datasets/nba/quality_exps/", model_name="RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8") -> int:
         """Evaluate predicted results and return quality metric."""        
         try:
             if query.class_name == 'derivation':
-                evaluator = DerivationEvaluator(query_id=query.id, class_name=query.class_name)
+                evaluator = DerivationEvaluator(query_id=query.id, class_name=query.class_name, llm_as_judge=model_name)
                 results = evaluator.evaluate(
                     predicted_df=predicted_df,
                     ground_truth_table_name= input_folder + query.table,
                     input_size=input_size,
+                    input_cols=query.cols,
                     evaluation_cols=query.evaluation_cols,
                     new_col_name=query.new_col_name,
                     ground_truth_col_name=query.evaluation_cols[-1],
+                    is_pz = system_name == "palimpzest",
+                    nlq=query.nlq
                 )
 
                 exact_match_accuracy = results.get('exact_match_accuracy')
-                similarity_accuracy = results.get('similarity_accuracy')
+                llm_judge_accuracy = results.get('llm_judge_accuracy')
                 
                 # Return accuracy as quality for derivation tasks
-                if exact_match_accuracy is not None and similarity_accuracy is not None:
-                    return (float(exact_match_accuracy), float(similarity_accuracy))
+                if exact_match_accuracy is not None and llm_judge_accuracy is not None:
+                    return (float(exact_match_accuracy), float(llm_judge_accuracy))
                 else:
                     return (-1, -1)
 
@@ -98,7 +104,7 @@ class ExperimentRunner:
                     table_left_name= input_folder + query.table_left,
                     table_right_name= input_folder + query.table_right,
                     input_size=input_size,
-                    evaluation_table_name=query.evaluation_table,
+                    evaluation_table_name= input_folder + query.evaluation_table,
                     evaluation_cols=query.evaluation_cols,
                     left_key=query.left_key,
                     right_key=query.right_key
@@ -112,6 +118,9 @@ class ExperimentRunner:
                     return(float(recall), float(precision), float(f1_score))
                 else:
                     return(-1, -1, -1)
+            
+            if query.class_name == "aggregation":
+                return "manual evaluation required"
 
         except Exception as e:
             print(f"Error during evaluation: {e}")
@@ -154,10 +163,10 @@ class ExperimentRunner:
             print("No queries matched the filters. Exiting.")
             return
         
-        if self.run_config['quality_exps']:
-            input_folder = f"../datasets/nba/quality_exps/"
-        else:
-            input_folder = "../datasets/nba/scalability_exps/"
+        input_folder = (
+            f"../datasets/{self.run_config['dataset']}/"
+            f"{'quality_exps' if self.run_config['quality_exps'] else 'scalability_exps'}/"
+        )
 
         for system_name, (llm_provider, model_name) in itertools.product(self.run_config['systems'], valid_llm_configs):
             # Initialize system once per LLM-Provider-Model combination
@@ -186,8 +195,9 @@ class ExperimentRunner:
                             raise ValueError(f"No query defined for {system_name} in query ID {query.id}")
 
                         query_kwargs = {}
-                        if query.class_name == "derivation" and query.new_col_name is not None:
+                        if (query.class_name == "derivation" or query.class_name == "aggregation") and (query.new_col_name is not None and query.new_col_type is not None):
                             query_kwargs["new_col_name"] = query.new_col_name
+                            query_kwargs["new_col_type"] = query.new_col_type
 
                         if query.class_name == "join":
                             query_kwargs["table_left"] = input_folder + query.table_left
@@ -200,8 +210,6 @@ class ExperimentRunner:
 
                             query.table = ""    # Does not matter
 
-
-
                         output = system_instance.execute_query(
                             query.class_name,
                             system_query,
@@ -213,7 +221,7 @@ class ExperimentRunner:
                         
                         predicted_table = output.get('result')
                         if self.run_config['quality_exps']:
-                            quality = self._evaluate_results(query, predicted_table, input_size)
+                            quality = self._evaluate_results(query, system_name, predicted_table, input_size, input_folder, model_name)
                         else:
                             quality = "-"
 
@@ -249,7 +257,7 @@ class ExperimentRunner:
                         results_dir = f"{results_dir}/{llm_provider}_{model_name.replace('/', '_')}"
                         os.makedirs(results_dir, exist_ok=True)
 
-                        predicted_table.to_csv(f"{results_dir}/{system_name}_{query.task_name}_{query.id}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
+                        predicted_table.to_csv(f"{results_dir}/{system_name}_extract_{query.task_name}_{query.id}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False) # TODO: REMOVE THE EXTRACT
 
                         if self.run_config['wandb_report']:
                             wandb.log({
@@ -267,7 +275,7 @@ class ExperimentRunner:
 
                     except Exception as e:
                         print(f"Error on {query.id}: {str(e)}")
-                        pass
+                        traceback.print_exc()
 
         print("\nAll experiments complete!")
 

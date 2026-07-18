@@ -155,6 +155,21 @@ def process_player_summaries(output_csv="datasets/nba/scalability_exps/players_s
     verified_summaries.head(4000)[['sportsett_id', 'player_name', 'summary']].to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
 
+def create_all_summaries(output_csv="datasets/nba/summaries.csv"):
+    validation_data = sportsett_dataset['validation']
+    data = datasets.concatenate_datasets([test_data, train_data, validation_data])
+
+    game_summaries = [
+        {
+            'sportsett_id': row.get("sportsett_id"),
+            'summary': get_summary(row)
+        }
+        for row in data
+    ]
+    
+    pd.DataFrame(game_summaries).to_csv(output_csv)
+    print(f"Saved to {output_csv}")
+
 def process_game_summaries(output_csv="datasets/nba/scalability_exps/game_summaries.csv"):
     print("Processing Game Summaries...")
     validation_data = sportsett_dataset['validation']
@@ -203,7 +218,6 @@ def process_game_summaries(output_csv="datasets/nba/scalability_exps/game_summar
 
     df['winner_opponent_mentioned'] = df.progress_apply(verify_opponent, axis=1)
 
-    print("SHAPE")
     print(df[df['winner_opponent_mentioned'] == 'yes'].shape)
     
     verified = df[df['winner_opponent_mentioned'] == 'yes'].head(4000).drop(columns=['winner_opponent_mentioned']).reset_index(drop=True)
@@ -263,12 +277,12 @@ def create_join_tables(output_dir="datasets/nba/scalability_exps/join_tables/"):
 
     # Summary mentions team
     os.makedirs(f"{output_dir}/summary_mentions_team", exist_ok=True)
-    pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")[['sportsett_id', 'summary']].drop_duplicates().to_csv(f"{output_dir}/summary_mentions_team/summaries.csv", index=False)
+    pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")[['sportsett_id', 'summary']].rename(columns={"team_name" : "team"}).drop_duplicates().to_csv(f"{output_dir}/summary_mentions_team/summaries.csv", index=False)
     pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")['team'].to_csv(f"{output_dir}/summary_mentions_team/teams.csv", index=False)
 
     # Team won game
     os.makedirs(f"{output_dir}/team_won_game", exist_ok=True)
-    pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")[['sportsett_id', 'summary']].drop_duplicates().to_csv(f"{output_dir}/team_won_game/summaries.csv", index=False)
+    pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")[['sportsett_id', 'summary']].drop_duplicates().rename(columns={"team_name": "team"}).to_csv(f"{output_dir}/team_won_game/summaries.csv", index=False)
     pd.read_csv("datasets/nba/scalability_exps/teams_summaries.csv")['team'].to_csv(f"{output_dir}/team_won_game/teams.csv", index=False)
 
     # Most points, assists, rebounds
@@ -324,9 +338,11 @@ if __name__ == "__main__":
     os.makedirs("datasets/nba", exist_ok=True)
     os.makedirs("datasets/nba/scalability_exps", exist_ok=True)
     
+    create_all_summaries()
+
     # process_player_info()
     # process_player_summaries()
-    process_game_summaries()
+    # process_game_summaries()
     # process_team_summaries()
     # create_join_tables()
     

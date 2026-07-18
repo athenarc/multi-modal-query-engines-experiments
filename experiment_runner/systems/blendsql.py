@@ -5,6 +5,7 @@ from ollama import chat
 from blendsql import BlendSQL
 from blendsql.models import VLLM, Ollama
 from blendsql.ingredients import LLMMap, LLMQA, LLMJoin
+from blendsql import GLOBAL_HISTORY
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -21,8 +22,12 @@ class BlendSQLSystem(BaseSystem):
                 base_url="http://localhost:5001/v1",
                 model=self.model_name,
                 timeout=50000,
-                cache=False
+                cache=False,
+                extra_body={"chat_template_kwargs": {"enable_thinking": False}}
+                
             )
+            if "qwen" in self.model_name.lower():
+                self.model.extra_body["chat_template_kwargs"] = {"enable_thinking": False}
         # elif self.llm_provider == 'transformers':
         #     self.model = TransformersLLM(
         #         "/data/hdd1/users/jzerv/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659",

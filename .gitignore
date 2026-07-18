@@ -18,9 +18,19 @@ experiment_runner/parse-answer-errors
 experiment_runner/wandb/
 results/
 
+convert_results_for_html.py
+
 datasets/rotten_tomatoes/
 
 utilities/pre_process_movies*
 
+rotten_tomatoes_movie_reviews_variation.csv
 rotten_tomatoes_movies_variation.csv
 tmp.csv
+
+figures/
+
+utilities/plot_scripts/
+
+experiments.html
+
