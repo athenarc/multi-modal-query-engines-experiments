@@ -16,20 +16,22 @@ This repository runs the paper's full **66-query benchmark** across three repres
 | **[Palimpzest](https://github.com/mitdbg/palimpzest)** | v1.5.3 |
 | **[BlendSQL](https://github.com/parkervg/blendsql)** | v0.1.26 |
  
-Each engine has its own adapter under `experiment_runner/systems/`, implementing a shared interface (`base.py`), so the same 66 queries are dispatched, executed, and scored consistently across all three rather than each engine getting its own bespoke harness.
+Each SQE has its own adapter under `experiment_runner/systems/`, implementing a shared interface (`base.py`), so the same 66 queries are dispatched, executed, and scored consistently across all three engines.
 
-## Structure
+## Core Structure
 
 ```bash
 .
-├── datasets/               # NBA (SportSett + NBA Players) and Rotten Tomatoes tables
+├── datasets/               # NBA (SportSett + NBA Players Info) and Rotten Tomatoes tables
 ├── experiment_runner/       
 │   ├── systems/            # one adapter per engine (lotus, palimpzest, blendsql) + shared base
-│   ├── configs/            # queries.yaml (the 66 queries) + run_config.yaml (run settings)
-│   ├── evaluation.py       # accuracy / F1 / LLM-as-judge scoring
+│   ├── configs/
+        ├── queries.yaml    
+        └── run_config.yaml
+│   ├── evaluation.py       # quality score per semantic class
 │   └── runner.py           # entry point
 ├── utilities/              # dataset preprocessing & analysis helpers
-├── LICENSE
 └── README.md
 ```
 
+`queries.yaml` holds the 66 query definitions (nlq, class, task, input)
