@@ -1,0 +1,4 @@
+# Towards Semantic Query Engines: Finding a Common Ground [Experiments & Analysis]
+This repository contains the official code for the paper "Towards Semantic Query Engines: Finding a Common Ground".
+The current version aims to experiment with three LLM-based Semantic Query Engines (SQEs): Lotus (v1.2.4), Palimpzest(v1.5.3), BlendSQL(v0.1.26). We evaluate these systems over a unified setting of 18 newly designed queries.
+We manually scrapted all the scripts for creating the corresponding queries for each LLM-based system. For the ELEET system, we include only the evaluation scripts, as we utilized its official implementation for the query execution.

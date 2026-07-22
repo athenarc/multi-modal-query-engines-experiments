@@ -1,9 +1,9 @@
 project_name: "SQE_exps"
-experiment_name: "lotus_reasoning_rotten"
+experiment_name: "experiment_name"
 
-systems: ["lotus"]
+systems: ["lotus"] # lotus, palimpzest or blendsql
 
-dataset: rotten_tomatoes # nba or rotten_tomatoes
+dataset: nba # nba or rotten_tomatoes
 
 llms:
   # ollama: 
@@ -15,16 +15,19 @@ llms:
     # - "google/gemma-3-12b-it"
     # - "Qwen/Qwen3-8B"
 
+# Quality Input Sizes
+# input_sizes: [100]
+# input_sizes_for_join: [[10, 10]]
 
-input_sizes: [27]
-input_sizes_for_join: [[10, 10]]
-# input_sizes_for_join: [[20, 50], [40, 50], [80, 50]]
+# Scalability
+input_sizes: [1000, 2000, 4000]
+input_sizes_for_join: [[20, 50], [40, 50], [80, 50]]
 
 
-quality_exps: True
-wandb_report: True
+quality_exps: False # False (Scalability), True (Quality)
+wandb_report: False
 
 filters:
-  class_name: aggregation
+  class_name: null
   task_name: null
   query_ids: null

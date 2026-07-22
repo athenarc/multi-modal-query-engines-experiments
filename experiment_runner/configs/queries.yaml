@@ -1,569 +1,569 @@
 queries:
 
-### NBA CORPUS ###
+## NBA CORPUS ###
 
-# # DERIVATION QUERIES
-#   - id: q1
-#     class_name: derivation
-#     task_name: classification
-#     nlq: "Which team won the game: home or visitor?"
+# DERIVATION QUERIES
+  - id: q1
+    class_name: derivation
+    task_name: classification
+    nlq: "Which team won the game: home or visitor?"
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     new_col_name: winner
-#     new_col_type: str
+    new_col_name: winner
+    new_col_type: str
 
-#     evaluation_cols: [sportsett_id, summary, win_home_or_vis]
+    evaluation_cols: [sportsett_id, summary, win_home_or_vis]
 
-#     lotus_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
-#     palimpzest_query: "Which team won the game described in the `summary`? Return only *home* or *visitor*."
-#     blendsql_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
+    lotus_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
+    palimpzest_query: "Which team won the game described in the `summary`? Return only *home* or *visitor*."
+    blendsql_query: "Which team won the game described in the {summary}? Return only *home* or *visitor*."
 
-#   - id: q2
-#     class_name: derivation
-#     task_name: classification
-#     nlq: "Which team lost the game: home or visitor?"
+  - id: q2
+    class_name: derivation
+    task_name: classification
+    nlq: "Which team lost the game: home or visitor?"
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     new_col_name: loser
-#     new_col_type: str
+    new_col_name: loser
+    new_col_type: str
 
-#     evaluation_cols: [sportsett_id, summary, loss_home_or_vis]
+    evaluation_cols: [sportsett_id, summary, loss_home_or_vis]
 
-#     lotus_query: "Which team loss the game described in the {summary}? Return only *home* or *visitor*."
-#     palimpzest_query: "Which team loss the game described in the `summary`? Return only *home* or *visitor*."
-#     blendsql_query: "Which team loss the game described in the {summary}? Return only *home* or *visitor*."
+    lotus_query: "Which team loss the game described in the {summary}? Return only *home* or *visitor*."
+    palimpzest_query: "Which team loss the game described in the `summary`? Return only *home* or *visitor*."
+    blendsql_query: "Which team loss the game described in the {summary}? Return only *home* or *visitor*."
 
-#   - id: q3
-#     class_name: derivation
-#     task_name: classification
-#     nlq: Was the game defensive (<210 total points) or offensive (>= 210 total points)?
+  - id: q3
+    class_name: derivation
+    task_name: classification
+    nlq: Was the game defensive (<210 total points) or offensive (>= 210 total points)?
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     new_col_name: type_of_game
-#     new_col_type: str
+    new_col_name: type_of_game
+    new_col_type: str
 
-#     evaluation_cols: [sportsett_id, summary, def_or_off]
+    evaluation_cols: [sportsett_id, summary, def_or_off]
 
-#     lotus_query: "Was the game described by the summary {summary}, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
-#     palimpzest_query: "Was the game described by the summary `summary`, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
-#     blendsql_query: "Was the game described by the summary {summary}, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
+    lotus_query: "Was the game described by the summary {summary}, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
+    palimpzest_query: "Was the game described by the summary `summary`, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
+    blendsql_query: "Was the game described by the summary {summary}, defensive (<210 total points) or offensive (>=210 total points)? Return only *offensive* or *defensive*."
 
-#   - id: q4
-#     class_name: derivation
-#     task_name: reasoning
-#     nlq: "Return points scored by the winner team"
+  - id: q4
+    class_name: derivation
+    task_name: reasoning
+    nlq: "Return points scored by the winner team"
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     new_col_name: winner_points 
-#     new_col_type: int
+    new_col_name: winner_points 
+    new_col_type: int
 
-#     evaluation_cols: [sportsett_id, summary, winner_points]
+    evaluation_cols: [sportsett_id, summary, winner_points]
 
-#     lotus_query: "Return points scored by the winner team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
-#     palimpzest_query: "Return points scored by the winner team in the game described in the `summary`. Return only the number of points (i.e., an integer)."
-#     blendsql_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points (i.e., an integer)."
+    lotus_query: "Return points scored by the winner team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
+    palimpzest_query: "Return points scored by the winner team in the game described in the `summary`. Return only the number of points (i.e., an integer)."
+    blendsql_query: "Return points scored by the winner team in the game described in the {summary}. Return only the number of points (i.e., an integer)."
 
-#   - id: q5
-#     class_name: derivation
-#     task_name: reasoning
-#     nlq: "Return points scored by the loser team."
+  - id: q5
+    class_name: derivation
+    task_name: reasoning
+    nlq: "Return points scored by the loser team."
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     new_col_name: loser_points
-#     new_col_type: int
+    new_col_name: loser_points
+    new_col_type: int
 
-#     evaluation_cols: [sportsett_id, summary, loser_points]
+    evaluation_cols: [sportsett_id, summary, loser_points]
 
-#     lotus_query: "Return points scored by the loser team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
-#     palimpzest_query: "Return points scored by the loser team in the game described by the `summary`. Return only the number of points (i.e., an integer)."
-#     blendsql_query: "Return points scored by the loser team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
+    lotus_query: "Return points scored by the loser team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
+    palimpzest_query: "Return points scored by the loser team in the game described by the `summary`. Return only the number of points (i.e., an integer)."
+    blendsql_query: "Return points scored by the loser team in the game described by the {summary}. Return only the number of points (i.e., an integer)."
 
-#   - id: q6
-#     class_name: derivation
-#     task_name: reasoning
-#     nlq: "Return the team name which will be the next opponent of the winner team."
+  - id: q6
+    class_name: derivation
+    task_name: reasoning
+    nlq: "Return the team name which will be the next opponent of the winner team."
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     new_col_name: winner_next_opponent
-#     new_col_type: str
+    new_col_name: winner_next_opponent
+    new_col_type: str
 
-#     evaluation_cols: [sportsett_id, summary, winner_next_opponent]
+    evaluation_cols: [sportsett_id, summary, winner_next_opponent]
 
-#     lotus_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in {summary}. Return only the name of the team."
-#     palimpzest_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in `summary`. Return only the name of the team."
-#     blendsql_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in {summary}. Return only the name of the team."
+    lotus_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in {summary}. Return only the name of the team."
+    palimpzest_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in `summary`. Return only the name of the team."
+    blendsql_query: "Return the name of the team which will be the next opponent of the winner team, mentioned in {summary}. Return only the name of the team."
 
-#   - id: q7
-#     class_name: derivation
-#     task_name: extraction
-#     nlq: "Return points scored by a specific player mentioned in a game summary"
+  - id: q7
+    class_name: derivation
+    task_name: extraction
+    nlq: "Return points scored by a specific player mentioned in a game summary"
 
-#     table: players_summaries_stats.csv
-#     cols: [player_name, summary]
+    table: players_summaries_stats.csv
+    cols: [player_name, summary]
 
-#     new_col_name: player_points
-#     new_col_type: int
+    new_col_name: player_points
+    new_col_type: int
 
-#     evaluation_cols: [sportsett_id, player_name, summary, points]
+    evaluation_cols: [sportsett_id, player_name, summary, points]
 
-#     lotus_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points (i.e., an integer)."
-#     palimpzest_query: "Return points scored by `player_name` in the game described in the `summary`. Return only the number of points (i.e., an integer)."
-#     blendsql_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points (i.e., an integer)."
+    lotus_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points (i.e., an integer)."
+    palimpzest_query: "Return points scored by `player_name` in the game described in the `summary`. Return only the number of points (i.e., an integer)."
+    blendsql_query: "Return points scored by {player_name} in the game described in the {summary}. Return only the number of points (i.e., an integer)."
 
-#   - id: q8
-#     class_name: derivation
-#     task_name: extraction
-#     nlq: "Return the number of assists that the player had in the game."
+  - id: q8
+    class_name: derivation
+    task_name: extraction
+    nlq: "Return the number of assists that the player had in the game."
 
-#     table: players_summaries_stats.csv
-#     cols: [player_name, summary]
+    table: players_summaries_stats.csv
+    cols: [player_name, summary]
 
-#     new_col_name: player_assists
-#     new_col_type: int
+    new_col_name: player_assists
+    new_col_type: int
 
-#     evaluation_cols: [sportsett_id, player_name, summary, assists]
+    evaluation_cols: [sportsett_id, player_name, summary, assists]
 
-#     lotus_query: "Return assists that the player {player_name} had in the game described by the summary {summary}. Return only the number of assists (i.e., an integer)."
-#     palimpzest_query: "Return assists that the player `player_name` had in the game described by the summary `summary`. Return only the number of assists (i.e., an integer)."
-#     blendsql_query: "Return assists that the player {player_name} had in the game described by the summary {summary}. Return only the number of assists (i.e., an integer)."
+    lotus_query: "Return assists that the player {player_name} had in the game described by the summary {summary}. Return only the number of assists (i.e., an integer)."
+    palimpzest_query: "Return assists that the player `player_name` had in the game described by the summary `summary`. Return only the number of assists (i.e., an integer)."
+    blendsql_query: "Return assists that the player {player_name} had in the game described by the summary {summary}. Return only the number of assists (i.e., an integer)."
 
-#   - id: q9
-#     class_name: derivation
-#     task_name: extraction
-#     nlq: "Return the number of rebounds that the player had in the game."
+  - id: q9
+    class_name: derivation
+    task_name: extraction
+    nlq: "Return the number of rebounds that the player had in the game."
 
-#     table: players_summaries_stats.csv
-#     cols: [player_name, summary]
+    table: players_summaries_stats.csv
+    cols: [player_name, summary]
 
-#     new_col_name: player_rebounds
-#     new_col_type: int
+    new_col_name: player_rebounds
+    new_col_type: int
 
-#     evaluation_cols: [sportsett_id, player_name, summary, total_rebounds]
+    evaluation_cols: [sportsett_id, player_name, summary, total_rebounds]
 
-#     lotus_query: "Return total rebounds that the player {player_name} had in the game described by the summary {summary}. Return only the number of total rebounds (i.e., an integer)."
-#     palimpzest_query: "Return total rebounds that the player `player_name` had in the game described by the summary `summary`. Return only the number of total rebounds (i.e., an integer)."
-#     blendsql_query: "Return total rebounds that the player {player_name} had in the game described by the summary {summary}. Return only the number of total rebounds (i.e., an integer)."
+    lotus_query: "Return total rebounds that the player {player_name} had in the game described by the summary {summary}. Return only the number of total rebounds (i.e., an integer)."
+    palimpzest_query: "Return total rebounds that the player `player_name` had in the game described by the summary `summary`. Return only the number of total rebounds (i.e., an integer)."
+    blendsql_query: "Return total rebounds that the player {player_name} had in the game described by the summary {summary}. Return only the number of total rebounds (i.e., an integer)."
 
-#   - id: q10
-#     class_name: derivation
-#     task_name: external_knowledge
-#     nlq: "Return the birthplace of a specific player"
+  - id: q10
+    class_name: derivation
+    task_name: external_knowledge
+    nlq: "Return the birthplace of a specific player"
 
-#     table: players_info.csv
-#     cols: [player_name]
+    table: players_info.csv
+    cols: [player_name]
 
-#     new_col_name: birthplace
-#     new_col_type: str
+    new_col_name: birthplace
+    new_col_type: str
 
-#     evaluation_cols: [player_name, country]
+    evaluation_cols: [player_name, country]
 
-#     lotus_query: "Return the birthplace of {player_name}. Return only the name of the country."
-#     palimpzest_query: "Return the birthplace of `player_name`. Return only the name of the country."
-#     blendsql_query: "Return the birthplace of {player_name}. Return only the name of the country."
+    lotus_query: "Return the birthplace of {player_name}. Return only the name of the country."
+    palimpzest_query: "Return the birthplace of `player_name`. Return only the name of the country."
+    blendsql_query: "Return the birthplace of {player_name}. Return only the name of the country."
 
-#   - id: q11
-#     class_name: derivation
-#     task_name: external_knowledge
-#     nlq: "Return the draft year of the player."
+  - id: q11
+    class_name: derivation
+    task_name: external_knowledge
+    nlq: "Return the draft year of the player."
 
-#     table: players_info.csv
-#     cols: [player_name]
+    table: players_info.csv
+    cols: [player_name]
 
-#     new_col_name: draft_year
-#     new_col_Type: str
+    new_col_name: draft_year
+    new_col_Type: str
 
-#     evaluation_cols: [player_name, draft_year]
+    evaluation_cols: [player_name, draft_year]
 
-#     lotus_query: "Return the draft year of {player_name}. Return only the year."
-#     palimpzest_query: "Return the draft year of `player_name`. Return only the year."
-#     blendsql_query: "Return the draft year of {player_name}. Return only the year."
+    lotus_query: "Return the draft year of {player_name}. Return only the year."
+    palimpzest_query: "Return the draft year of `player_name`. Return only the year."
+    blendsql_query: "Return the draft year of {player_name}. Return only the year."
 
-#   - id: q12
-#     class_name: derivation
-#     task_name: external_knowledge
-#     nlq: "Return the team that the player was playing for in season 2021-22."
+  - id: q12
+    class_name: derivation
+    task_name: external_knowledge
+    nlq: "Return the team that the player was playing for in season 2021-22."
 
-#     table: players_info.csv
-#     cols: [player_name]
+    table: players_info.csv
+    cols: [player_name]
 
-#     new_col_name: team_in_2021_22
-#     new_col_Type: str
+    new_col_name: team_in_2021_22
+    new_col_Type: str
 
-#     evaluation_cols: [player_name, team_name]
+    evaluation_cols: [player_name, team_name]
 
-#     lotus_query: "Return the team that the player {player_name} was playing for in 2021-22. Return only the name of the team."
-#     palimpzest_query: "Return the team that the player `player_name` was playing for in 2021-22. Return only the name of the team."
-#     blendsql_query: "Return the team that the player {player_name} was playing for in 2021-22. Return only the name of the team."
+    lotus_query: "Return the team that the player {player_name} was playing for in 2021-22. Return only the name of the team."
+    palimpzest_query: "Return the team that the player `player_name` was playing for in 2021-22. Return only the name of the team."
+    blendsql_query: "Return the team that the player {player_name} was playing for in 2021-22. Return only the name of the team."
 
-# # # SELECTION QUERIES
-#   - id: q13
-#     class_name: selection
-#     task_name: classification
-#     nlq: "Did the team win the game?"
+# # SELECTION QUERIES
+  - id: q13
+    class_name: selection
+    task_name: classification
+    nlq: "Did the team win the game?"
 
-#     table: teams_summaries.csv
-#     cols: [team, summary]
+    table: teams_summaries.csv
+    cols: [team, summary]
 
-#     filtering_col: is_winner
-#     evaluation_cols: [team, summary, is_winner]
+    filtering_col: is_winner
+    evaluation_cols: [team, summary, is_winner]
 
-#     lotus_query: "The {team} won the game described by {summary}."
-#     palimpzest_query: "The `team` won the game described by `summary`."
+    lotus_query: "The {team} won the game described by {summary}."
+    palimpzest_query: "The `team` won the game described by `summary`."
 
-#   - id: q14
-#     class_name: selection
-#     task_name: classification
-#     nlq: "Did the team lost the game?"
+  - id: q14
+    class_name: selection
+    task_name: classification
+    nlq: "Did the team lost the game?"
 
-#     table: teams_summaries.csv
-#     cols: [team, summary]
+    table: teams_summaries.csv
+    cols: [team, summary]
 
-#     filtering_col: is_loser
-#     evaluation_cols: [team, summary, is_loser]
+    filtering_col: is_loser
+    evaluation_cols: [team, summary, is_loser]
 
-#     lotus_query: "The {team} lost the game described by {summary}."
-#     palimpzest_query: "The `team` lost the game described by `summary`."
+    lotus_query: "The {team} lost the game described by {summary}."
+    palimpzest_query: "The `team` lost the game described by `summary`."
 
-#   - id: q15
-#     class_name: selection
-#     task_name: classification
-#     nlq: "Does the summary mentions the player?"
+  - id: q15
+    class_name: selection
+    task_name: classification
+    nlq: "Does the summary mentions the player?"
 
-#     table: players_summaries_all.csv
-#     cols: [player_name, summary]
+    table: players_summaries_all.csv
+    cols: [player_name, summary]
 
-#     filtering_col: is_mentioned
-#     evaluation_cols: [player_name, summary, is_mentioned]
+    filtering_col: is_mentioned
+    evaluation_cols: [player_name, summary, is_mentioned]
 
-#     lotus_query: "The summary {summary} mentions the player {player_name}."
-#     palimpzest_query: "The summary `summary` mentions the player `player_name`."
+    lotus_query: "The summary {summary} mentions the player {player_name}."
+    palimpzest_query: "The summary `summary` mentions the player `player_name`."
 
-#   - id: q16
-#     class_name: selection
-#     task_name: reasoning
-#     nlq: "The total points (sum) scored by both teams played in the game is greater than 180?"
+  - id: q16
+    class_name: selection
+    task_name: reasoning
+    nlq: "The total points (sum) scored by both teams played in the game is greater than 180?"
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     filtering_col: total_points_gt_180
-#     evaluation_cols: [summary, total_points_gt_180]
+    filtering_col: total_points_gt_180
+    evaluation_cols: [summary, total_points_gt_180]
 
-#     lotus_query: "The total points (sum) scored by both teams played in the game described by {summary} is greater than 180."
-#     palimpzest_query: "The total points (sum) scored by both teams played in the game described by `summary` is greater than 180."
+    lotus_query: "The total points (sum) scored by both teams played in the game described by {summary} is greater than 180."
+    palimpzest_query: "The total points (sum) scored by both teams played in the game described by `summary` is greater than 180."
 
-#   - id: q17
-#     class_name: selection
-#     task_name: reasoning
-#     nlq: "Was the winning margin double-digit?"
+  - id: q17
+    class_name: selection
+    task_name: reasoning
+    nlq: "Was the winning margin double-digit?"
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     filtering_col: double_digit_margin
-#     evaluation_cols: [summary, double_digit_margin]
+    filtering_col: double_digit_margin
+    evaluation_cols: [summary, double_digit_margin]
 
-#     lotus_query: "The winning margin of game described by {summary} was double-digit."
-#     palimpzest_query: "The winning margin of game described by `summary` was double-digit."
+    lotus_query: "The winning margin of game described by {summary} was double-digit."
+    palimpzest_query: "The winning margin of game described by `summary` was double-digit."
 
-#   - id: q18
-#     class_name: selection
-#     task_name: reasoning
-#     nlq: "Did the player scored over 20 points in the game?"
+  - id: q18
+    class_name: selection
+    task_name: reasoning
+    nlq: "Did the player scored over 20 points in the game?"
 
-#     table: players_summaries_stats.csv
-#     cols: [summary, player_name]
+    table: players_summaries_stats.csv
+    cols: [summary, player_name]
 
-#     filtering_col: points_gt_20
-#     evaluation_cols: [summary, player_name, points_gt_20]
+    filtering_col: points_gt_20
+    evaluation_cols: [summary, player_name, points_gt_20]
 
-#     lotus_query: "The player {player_name} scored over 20 points in the game described by the {summary}."
-#     palimpzest_query: "The player `player_name` scored over 20 points in the game described by the `summary`."
+    lotus_query: "The player {player_name} scored over 20 points in the game described by the {summary}."
+    palimpzest_query: "The player `player_name` scored over 20 points in the game described by the `summary`."
 
 
-#   - id: q19
-#     class_name: selection
-#     task_name: external_knowledge
-#     nlq: "The player's height is less than 200cm."
+  - id: q19
+    class_name: selection
+    task_name: external_knowledge
+    nlq: "The player's height is less than 200cm."
 
-#     table: players_info.csv
-#     cols: [player_name]
+    table: players_info.csv
+    cols: [player_name]
 
-#     filtering_col: height_lt_200
-#     evaluation_cols: [player_name, height_lt_200]
+    filtering_col: height_lt_200
+    evaluation_cols: [player_name, height_lt_200]
 
-#     lotus_query: "The height of {player_name} is less than 200cm."
-#     palimpzest_query: "The height of `player_name` is less than 200cm."
+    lotus_query: "The height of {player_name} is less than 200cm."
+    palimpzest_query: "The height of `player_name` is less than 200cm."
 
-#   - id: q20
-#     class_name: selection
-#     task_name: external_knowledge
-#     nlq: "Was the player born in USA?"
+  - id: q20
+    class_name: selection
+    task_name: external_knowledge
+    nlq: "Was the player born in USA?"
 
-#     table: players_info.csv
-#     cols: [player_name]
+    table: players_info.csv
+    cols: [player_name]
 
-#     filtering_col: born_in_america
-#     evaluation_cols: [player_name, born_in_america]
+    filtering_col: born_in_america
+    evaluation_cols: [player_name, born_in_america]
 
-#     lotus_query: "The player {player_name} was born in United States of America."
-#     palimpzest_query: "The player `player_name` was born in United States of America."
+    lotus_query: "The player {player_name} was born in United States of America."
+    palimpzest_query: "The player `player_name` was born in United States of America."
 
-#   - id: q21
-#     class_name: selection
-#     task_name: external_knowledge
-#     nlq: "Was the player picked in the first draft round?"
+  - id: q21
+    class_name: selection
+    task_name: external_knowledge
+    nlq: "Was the player picked in the first draft round?"
 
-#     table: players_info.csv
-#     cols: [player_name]
+    table: players_info.csv
+    cols: [player_name]
 
-#     filtering_col: first_round_drafted
-#     evaluation_cols: [player_name, first_round_drafted]
+    filtering_col: first_round_drafted
+    evaluation_cols: [player_name, first_round_drafted]
 
-#     lotus_query: "The player {player_name} was picked in the first draft round."
-#     palimpzest_query: "The player `player_name` was picked in the first draft round."
+    lotus_query: "The player {player_name} was picked in the first draft round."
+    palimpzest_query: "The player `player_name` was picked in the first draft round."
 
-# # JOIN QUERIES
+# JOIN QUERIES
 
-#   - id: q22
-#     class_name: join
-#     task_name: classification
-#     nlq: "The summary mentions a specific player"
+  - id: q22
+    class_name: join
+    task_name: classification
+    nlq: "The summary mentions a specific player"
 
-#     table_left: join_tables/summary_mentions_player/summaries.csv
-#     cols_left: [sportsett_id, summary]
-#     left_key: summary
+    table_left: join_tables/summary_mentions_player/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
 
-#     table_right: join_tables/summary_mentions_player/players.csv
-#     cols_right: [player_name]
-#     right_key: player_name
+    table_right: join_tables/summary_mentions_player/players.csv
+    cols_right: [player_name]
+    right_key: player_name
 
-#     evaluation_table: join_tables/summary_mentions_player/ground_truth.csv
-#     evaluation_cols: [sportsett_id, summary, player_name]
+    evaluation_table: join_tables/summary_mentions_player/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, player_name]
 
-#     lotus_query: "The summary {summary} mentions the player {player_name}."
-#     blendsql_query: "The summary {summary} mentions the player {player_name}."
-#     palimpzest_query: "The summary `summary` mentions the player `player_name`."
+    lotus_query: "The summary {summary} mentions the player {player_name}."
+    blendsql_query: "The summary {summary} mentions the player {player_name}."
+    palimpzest_query: "The summary `summary` mentions the player `player_name`."
 
-#   - id: q23
-#     class_name: join
-#     task_name: classification
-#     nlq: "The summary mentions a specific team"
+  - id: q23
+    class_name: join
+    task_name: classification
+    nlq: "The summary mentions a specific team"
 
-#     table_left: join_tables/summary_mentions_team/summaries.csv
-#     cols_left: [sportsett_id, summary]
-#     left_key: summary
+    table_left: join_tables/summary_mentions_team/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
 
-#     table_right: join_tables/summary_mentions_team/teams.csv
-#     cols_right: [team]
-#     right_key: team
+    table_right: join_tables/summary_mentions_team/teams.csv
+    cols_right: [team]
+    right_key: team
 
-#     evaluation_table: join_tables/summary_mentions_team/ground_truth.csv
-#     evaluation_cols: [sportsett_id, summary, team_name]
+    evaluation_table: join_tables/summary_mentions_team/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, team_name]
 
-#     lotus_query: "The summary {summary} mentions the team {team}."
-#     palimpzest_query: "The summary `summary` mentions the team `team`."
-#     blendsql_query: "The summary {summary} mentions the team {team}."
+    lotus_query: "The summary {summary} mentions the team {team}."
+    palimpzest_query: "The summary `summary` mentions the team `team`."
+    blendsql_query: "The summary {summary} mentions the team {team}."
     
 
-#   - id: q24
-#     class_name: join
-#     task_name: classification
-#     nlq: "The team won the game described by the summary."
+  - id: q24
+    class_name: join
+    task_name: classification
+    nlq: "The team won the game described by the summary."
 
-#     table_left: join_tables/team_won_game/summaries.csv
-#     cols_left: [sportsett_id, summary]
-#     left_key: summary
+    table_left: join_tables/team_won_game/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
 
-#     table_right: join_tables/team_won_game/teams.csv
-#     cols_right: [team]
-#     right_key: team
+    table_right: join_tables/team_won_game/teams.csv
+    cols_right: [team]
+    right_key: team
 
-#     evaluation_table: join_tables/team_won_game/ground_truth.csv
-#     evaluation_cols: [sportsett_id, summary, team_name]
+    evaluation_table: join_tables/team_won_game/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, team_name]
 
-#     lotus_query: "The team {team} won the game described by the summary {summary}."
-#     blendsql_query: "The team {team} won the game described by the summary {summary}."
-#     palimpzest_query: "The team `team` won the game described by the summary `summary`."
+    lotus_query: "The team {team} won the game described by the summary {summary}."
+    blendsql_query: "The team {team} won the game described by the summary {summary}."
+    palimpzest_query: "The team `team` won the game described by the summary `summary`."
 
-#   - id: q25
-#     class_name: join
-#     task_name: reasoning
-#     nlq: "A specific player scored the most points in the game."
+  - id: q25
+    class_name: join
+    task_name: reasoning
+    nlq: "A specific player scored the most points in the game."
 
-#     table_left: join_tables/player_max_points/summaries.csv
-#     cols_left: [sportsett_id, summary]
-#     left_key: summary
+    table_left: join_tables/player_max_points/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
 
-#     table_right: join_tables/player_max_points/players.csv
-#     cols_right: [player_name]
-#     right_key: player_name
+    table_right: join_tables/player_max_points/players.csv
+    cols_right: [player_name]
+    right_key: player_name
 
-#     evaluation_table: join_tables/player_max_points/ground_truth.csv
-#     evalution_cols: [sportsett_id, summary, player_name]
+    evaluation_table: join_tables/player_max_points/ground_truth.csv
+    evalution_cols: [sportsett_id, summary, player_name]
 
-#     lotus_query: "The player {player_name} scored the most points in the game described by {summary}."
-#     blendsql_query: "The player {player_name} scored the most points in the game described by {summary}."
-#     palimpzest_query: "The player `player_name` scored the most points in the game described by `summary`."
+    lotus_query: "The player {player_name} scored the most points in the game described by {summary}."
+    blendsql_query: "The player {player_name} scored the most points in the game described by {summary}."
+    palimpzest_query: "The player `player_name` scored the most points in the game described by `summary`."
 
-#   - id: q26
-#     class_name: join
-#     task_name: reasoning
-#     nlq: "A specific player had the most assists in the game."
+  - id: q26
+    class_name: join
+    task_name: reasoning
+    nlq: "A specific player had the most assists in the game."
 
-#     table_left: join_tables/player_max_assists/summaries.csv
-#     cols_left: [sportsett_id, summary]
-#     left_key: summary
+    table_left: join_tables/player_max_assists/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
 
-#     table_right: join_tables/player_max_points/players.csv
-#     cols_right: [player_name]
-#     right_key: player_name
+    table_right: join_tables/player_max_points/players.csv
+    cols_right: [player_name]
+    right_key: player_name
 
-#     evaluation_table: join_tables/player_max_assists/ground_truth.csv
-#     evaluation_cols: [sportsett_id, summary, player_name]
+    evaluation_table: join_tables/player_max_assists/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, player_name]
 
-#     lotus_query: "The player {player_name} had the most assists in the game described by {summary}."
-#     blendsql_query: "The player {player_name} had the most assists in the game described by {summary}."
-#     palimpzest_query: "The player `player_name` had the most assists in the game described by `summary`."
+    lotus_query: "The player {player_name} had the most assists in the game described by {summary}."
+    blendsql_query: "The player {player_name} had the most assists in the game described by {summary}."
+    palimpzest_query: "The player `player_name` had the most assists in the game described by `summary`."
 
-#   - id: q27
-#     class_name: join
-#     task_name: reasoning
-#     nlq: "A specific player had the most rebounds in the game."
+  - id: q27
+    class_name: join
+    task_name: reasoning
+    nlq: "A specific player had the most rebounds in the game."
 
-#     table_left: join_tables/player_max_rebounds/summaries.csv
-#     cols_left: [sportsett_id, summary]
-#     left_key: summary
+    table_left: join_tables/player_max_rebounds/summaries.csv
+    cols_left: [sportsett_id, summary]
+    left_key: summary
 
-#     table_right: join_tables/player_max_points/players.csv
-#     cols_right: [player_name]
-#     right_key: player_name
+    table_right: join_tables/player_max_points/players.csv
+    cols_right: [player_name]
+    right_key: player_name
 
-#     evaluation_table: join_tables/player_max_rebounds/ground_truth.csv
-#     evaluation_cols: [sportsett_id, summary, player_name]
+    evaluation_table: join_tables/player_max_rebounds/ground_truth.csv
+    evaluation_cols: [sportsett_id, summary, player_name]
 
-#     lotus_query: "The player {player_name} had the most tota rebounds in the game described by {summary}."
-#     blendsql_query: "The player {player_name} had the most tota rebounds in the game described by {summary}."
-#     palimpzest_query: "The player `player_name` had the most tota rebounds in the game described by `summary`."
+    lotus_query: "The player {player_name} had the most tota rebounds in the game described by {summary}."
+    blendsql_query: "The player {player_name} had the most tota rebounds in the game described by {summary}."
+    palimpzest_query: "The player `player_name` had the most tota rebounds in the game described by `summary`."
     
-#   - id: q28
-#     class_name: join
-#     task_name: external_knowledge
-#     nlq: "Player went to College."
+  - id: q28
+    class_name: join
+    task_name: external_knowledge
+    nlq: "Player went to College."
 
-#     table_left: join_tables/player_college/players.csv
-#     cols_left: [player_name]
-#     left_key: player_name
+    table_left: join_tables/player_college/players.csv
+    cols_left: [player_name]
+    left_key: player_name
 
-#     table_right: join_tables/player_college/colleges.csv
-#     cols_right: [college]
-#     right_key: college
+    table_right: join_tables/player_college/colleges.csv
+    cols_right: [college]
+    right_key: college
 
-#     evaluation_table: join_tables/player_college/ground_truth.csv
-#     evaluation_cols: [player_name, college]
+    evaluation_table: join_tables/player_college/ground_truth.csv
+    evaluation_cols: [player_name, college]
 
-#     lotus_query: "The player {player_name} went to {college}."
-#     blendsql_query: "The player {player_name} went to {college}."
-#     palimpzest_query: "The player `player_name` went to `college`."
+    lotus_query: "The player {player_name} went to {college}."
+    blendsql_query: "The player {player_name} went to {college}."
+    palimpzest_query: "The player `player_name` went to `college`."
 
-#   - id: q29
-#     class_name: join
-#     task_name: external_knowledge
-#     nlq: "Player was over 22 years old in a specific season."
+  - id: q29
+    class_name: join
+    task_name: external_knowledge
+    nlq: "Player was over 22 years old in a specific season."
 
-#     table_left: join_tables/player_over_22/players.csv
-#     cols_left: [player_name]
-#     left_key: player_name
+    table_left: join_tables/player_over_22/players.csv
+    cols_left: [player_name]
+    left_key: player_name
 
-#     table_right: join_tables/player_over_22/seasons.csv
-#     cols_right: [season]
-#     right_key: season
+    table_right: join_tables/player_over_22/seasons.csv
+    cols_right: [season]
+    right_key: season
 
-#     evaluation_table: join_tables/player_over_22/ground_truth.csv
-#     evaluation_cols: [player_name, season]
+    evaluation_table: join_tables/player_over_22/ground_truth.csv
+    evaluation_cols: [player_name, season]
 
-#     lotus_query: "The player {player_name} was over 22 years old in season {season}."
-#     blendsql_query: "The player {player_name} was over 22 years old in season {season}."
-#     palimpzest_query: "The player `player_name` was over 22 years old in season `season`."
+    lotus_query: "The player {player_name} was over 22 years old in season {season}."
+    blendsql_query: "The player {player_name} was over 22 years old in season {season}."
+    palimpzest_query: "The player `player_name` was over 22 years old in season `season`."
   
-#   - id: q30
-#     class_name: join
-#     task_name: external_knowledge
-#     nlq: "Player was born in Country."
+  - id: q30
+    class_name: join
+    task_name: external_knowledge
+    nlq: "Player was born in Country."
 
-#     table_left: join_tables/player_country/players.csv
-#     cols_left: [player_name]
-#     left_key: player_name
+    table_left: join_tables/player_country/players.csv
+    cols_left: [player_name]
+    left_key: player_name
 
-#     table_right: join_tables/player_country/countries.csv
-#     cols_right: [country]
-#     right_key: country
+    table_right: join_tables/player_country/countries.csv
+    cols_right: [country]
+    right_key: country
 
-#     evaluation_table: join_tables/player_country/ground_truth.csv
-#     evaluation_cols: [player_name, country]
+    evaluation_table: join_tables/player_country/ground_truth.csv
+    evaluation_cols: [player_name, country]
 
-#     lotus_query: "The player {player_name} was born in {country}."
-#     blendsql_query: "The player {player_name} was born in {country}."
-#     palimpzest_query: "The player `player_name` was born in `country`."
+    lotus_query: "The player {player_name} was born in {country}."
+    blendsql_query: "The player {player_name} was born in {country}."
+    palimpzest_query: "The player `player_name` was born in `country`."
 
-# # AGGREGATION QUERIES
+# AGGREGATION QUERIES
 
-#   - id: q31
-#     class_name: aggregation
-#     task_name: reasoning
-#     nlq: "Which player had the most triple doubles among all given games?"
+  - id: q31
+    class_name: aggregation
+    task_name: reasoning
+    nlq: "Which player had the most triple doubles among all given games?"
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
-#     new_col_name: most_triple_doubles_player
-#     new_col_type: str
+    new_col_name: most_triple_doubles_player
+    new_col_type: str
 
-#     lotus_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."
-#     blendsql_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."
-#     palimpzest_query: "Which player had the most triple doubles among all given games described by `summary`? Return only the name of the player."
+    lotus_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."
+    blendsql_query: "Which player had the most triple doubles among all given games described by {summary}? Return only the name of the player."
+    palimpzest_query: "Which player had the most triple doubles among all given games described by `summary`? Return only the name of the player."
 
-#   - id: q32
-#     class_name: aggregation
-#     task_name: reasoning
-#     nlq: "Which player scored the most points among all given games?"
+  - id: q32
+    class_name: aggregation
+    task_name: reasoning
+    nlq: "Which player scored the most points among all given games?"
 
-#     table: game_summaries.csv
-#     cols: [summary]
+    table: game_summaries.csv
+    cols: [summary]
 
 
-#     new_col_name: most_points_player
-#     new_col_type: str
+    new_col_name: most_points_player
+    new_col_type: str
 
-#     lotus_query: "Which player scored the most points among all given games described by {summary}? Return only the name of the player."
-#     blendsql_query: "Which player scored the most points among all given games described by {summary}? Return only the name of the player."
-#     palimpzest_query: "Which player scored the most points among all given games described by `summary`? Return only the name of the player."
+    lotus_query: "Which player scored the most points among all given games described by {summary}? Return only the name of the player."
+    blendsql_query: "Which player scored the most points among all given games described by {summary}? Return only the name of the player."
+    palimpzest_query: "Which player scored the most points among all given games described by `summary`? Return only the name of the player."
 
-#   - id: q33
-#     class_name: aggregation
-#     task_name: reasoning
-#     nlq: "Which player had the most assists among all given games?"
+  - id: q33
+    class_name: aggregation
+    task_name: reasoning
+    nlq: "Which player had the most assists among all given games?"
 
-#     table: game_summaries.csv
-#     cols: [summary]
-#     new_col_name: most_assists_player
-#     new_col_type: str
+    table: game_summaries.csv
+    cols: [summary]
+    new_col_name: most_assists_player
+    new_col_type: str
 
-#     lotus_query: "Which player had the most assists among all given games described by {summary}? Return only the name of the player."
-#     blendsql_query: "Which player had the most assists among all given games described by {summary}? Return only the name of the player."
-#     palimpzest_query: "Which player had the most assists among all given games described by `summary`? Return only the name of the player."
+    lotus_query: "Which player had the most assists among all given games described by {summary}? Return only the name of the player."
+    blendsql_query: "Which player had the most assists among all given games described by {summary}? Return only the name of the player."
+    palimpzest_query: "Which player had the most assists among all given games described by `summary`? Return only the name of the player."
 
 # ### ROTTEN TOMATOES CORPUS ###
 # DERIVATION QUERIES
