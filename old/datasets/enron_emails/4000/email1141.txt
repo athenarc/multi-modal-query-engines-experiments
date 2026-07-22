@@ -1,1 +1,0 @@
-start date : 12 / 12 / 01 ; hourahead hour : 13 ; hourahead schedule download failed . manual intervention required .

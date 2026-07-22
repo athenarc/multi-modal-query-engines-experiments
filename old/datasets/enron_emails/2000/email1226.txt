@@ -1,1 +1,0 @@
-teco tap 45 . 000 / enron

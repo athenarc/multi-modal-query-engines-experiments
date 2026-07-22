@@ -1,4 +1,0 @@
-per our meeting , i added a switch so that the pipeline can accept or reject
-the best bid
-if the best bid is not the cap rate .
-zimin
