@@ -1,0 +1,711 @@
+nohup: ignoring input
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2274: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2274: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+wandb: Currently logged in as: yannis-zervakis (darelab) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_131805-f56mxots
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q16_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/f56mxots
+Starting experiment: selection
+Total Queries after filtering: 3
+Lotus setup with vllm and model RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 completed.
+Executing Query q16 (selection / reasoning)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 1000 ---
+Filtering:   0%|           0/1000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 1000/1000 LM calls [09:22<00:00,  1.78it/s]Filtering: 100%|██████████ 1000/1000 LM calls [09:22<00:00,  1.78it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+2026-07-08 13:27:30,016 - INFO - 	 Failed to parse ermine if the claim is true, we need to calculate the total points scored by both teams. 
+
+The Utah Jazz scored enough points to win, but the exact number is not provided. However, we know the Phoenix Suns scored 92 points. 
+
+Since the Jazz held a 19-point edge by halftime and outscored the Suns 37-18 in the final 12 minutes, and given that the Suns scored 92 points, we can calculate the Jazz's score. 
+
+The Jazz were leading by 19 points at halftime, and the Suns made a 5-point dent in the third quarter. Then, the Jazz outscored the Suns 37-18 in the fourth quarter. 
+
+Let's denote the Jazz's score as J and the Suns' score as S. We already know S = 92.
+
+Given that the Jazz had a 19-point lead at halftime and the Suns scored 21 in the first quarter, and assuming the Jazz scored 26 in the first quarter (as per the 26-21 first-quarter lead), we can calculate the halftime score.
+
+However, we don't need to calculate the exact halftime score. We know the Jazz outscored the Suns 37-18 in the fourth quarter. 
+
+Since the Suns scored 92 points, and we know the Jazz outscored them by 19 at halftime and then by even more after the fourth quarter, let's look at the scoring percentages and the fact that the Jazz had a 56% success rate while limiting the Suns to 41%.
+
+The claim that the total points scored is greater than 180 can be verified by adding the points scored by both teams. We know the Suns scored 92 points. 
+
+To find the Jazz's score, let's look at the provided information again: The Jazz had a 26-21 first-quarter lead, and by halftime, their lead was 19 points. 
+
+Assuming the Suns scored around their average or slightly above in the second quarter (they scored 21 in the first), and considering the Jazz's 56% shooting percentage, it's reasonable to assume the Jazz scored around or above their first-quarter score in the second quarter.
+
+However, we don't need the exact score. We know the Jazz outscored the Suns 37-18 in the fourth quarter, which means the Jazz scored significantly more points than the Suns overall.
+
+Given the information that Rudy Gobert paced the Jazz with a 27-point, 10-rebound double-double, and Derrick Favors and Ricky: defaulting to True
+2026-07-08 13:27:30,016 - INFO - 	 Failed to parse ermine the validity of the claim, we need to calculate the total points scored by both teams. 
+
+The Trail Blazers' points are not explicitly stated in the summary, but we can find the Suns' points and some of the Trail Blazers' individual scores. The Suns' top scorers are mentioned: Troy Daniels with 15 points, Justin Jackson with 14 points, Elie Okobo with 11 points, Deandre Ayton with 11 points, and Richaun Holmes with 9 points. 
+
+Let's add up the points from the Suns players mentioned: 
+15 (Troy Daniels) + 14 (Justin Jackson) + 11 (Elie Okobo) + 11 (Deandre Ayton) + 9 (Richaun Holmes) = 60 points.
+
+However, this is not the total score for the Suns, as other players must have scored as well. The summary does mention that the Trail Blazers had a 62-41 halftime advantage and that they "cruised through the second half." Given the large lead, it's reasonable to assume the final score was significant.
+
+For the Trail Blazers, we have:
+- Damian Lillard with 25 points
+- Jake Layman with 24 points
+- Zach Collins with 10 points
+- Jusuf Nurkic with 9 points
+
+Adding these up: 
+25 (Damian Lillard) + 24 (Jake Layman) + 10 (Zach Collins) + 9 (Jusuf Nurkic) = 68 points.
+
+This is not the total for the Trail Blazers, as other players must have scored. However, we know the Trail Blazers had a significant lead, and their halftime score was 62 points.
+
+Given the halftime score of 62-41, and assuming the second half continued with the Trail Blazers maintaining their lead, let's estimate the final score based on the information provided.
+
+If we consider the Trail Blazers' halftime score of 62 and assume they scored at least another 20-30 points in the second half (a conservative estimate given their performance), their total would be around 82-92 points. For the Suns, if we consider their halftime score of 41 and assume they scored at least another 30-40 points (given the Trail Blazers' large lead and the Suns' attempt to catch up), their total would be around 71-81 points.
+
+Thus, a possible total score range could be:
+- Trail Blazers: 82-92 points
+-: defaulting to True
+wandb: uploading history steps 0-0, summary, console lines 0-55
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 562.57162
+wandb:      input_tokens 504275
+wandb:     output_tokens 75880
+wandb:           quality -
+wandb: tokens_throughput 1031.25537
+wandb:       total_calls 1000
+wandb:      total_tokens 580155
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q16_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_1000 at: https://wandb.ai/darelab/SQE_exps/runs/f56mxots
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_131805-f56mxots/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_132731-94u9q136
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q16_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/94u9q136
+--> Saved stats for q16 to ../results/stats/scalability/stats_selection.csv
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 2000 ---
+Filtering:   0%|           0/2000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 2000/2000 LM calls [18:45<00:00,  1.78it/s]Filtering: 100%|██████████ 2000/2000 LM calls [18:45<00:00,  1.78it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+2026-07-08 13:46:19,358 - INFO - 	 Failed to parse ermine the total points scored, we need to calculate the sum of points scored by both teams. 
+
+The Washington Wizards' points scored by individual players are:
+- Paul Pierce: 22 points
+- John Wall: 21 points
+- Nene: 13 points
+- Bradley Beal: 17 points
+
+Total points scored by the Wizards: 22 + 21 + 13 + 17 = 73 points
+
+The Chicago Bulls' points scored by individual players are:
+- Derrick Rose: 32 points
+- Pau Gasol: 13 points
+- Nikola Mirotic and Taj Gibson (combined): 24 points
+
+Total points scored by the Bulls: 32 + 13 + 24 = 69 points
+
+Total points scored by both teams: 73 (Wizards) + 69 (Bulls) = 142 points
+
+However, the points scored by the individual players listed may not be the total points scored by the teams, as the summary does not provide a comprehensive list of all players who scored. 
+
+Given the score at the half and the third quarter, we can infer some additional information:
+- The Bulls led by six at the half, which means the score at the half was Bulls: (x + 6) and Wizards: x.
+- The Wizards won the third quarter 32-19.
+
+Let's assume the score at the half was close to the points scored by the listed players. Since the Wizards scored 32 points in the third quarter and the Bulls scored 19, the total points scored in the third quarter is 32 + 19 = 51 points.
+
+Considering the points scored in the third quarter and the points scored by the individual players, it seems likely that the total points scored by both teams is greater than the sum of the individual points listed (142 points). However, without the exact score or total points scored by each team, we cannot definitively conclude the total points scored.
+
+But we can look at the score of the third quarter (32-19) and the fact that the Bulls led by 6 at the half. If we assume the first half was relatively even and the second half was higher scoring (as indicated by the 32-19 third quarter), it's possible the total score is higher than 180.
+
+Given the information provided and the typical scoring in an NBA game, it's reasonable to assume the total points scored could be higher than 180, considering the pace of scoring in the third quarter and the overall performance of the players: defaulting to True
+wandb: uploading history steps 0-0, summary, console lines 0-35
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 1126.32196
+wandb:      input_tokens 1052986
+wandb:     output_tokens 154519
+wandb:           quality -
+wandb: tokens_throughput 1072.07801
+wandb:       total_calls 2000
+wandb:      total_tokens 1207505
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q16_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_2000 at: https://wandb.ai/darelab/SQE_exps/runs/94u9q136
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_132731-94u9q136/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_134620-mp7pa15f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q16_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/mp7pa15f
+--> Saved stats for q16 to ../results/stats/scalability/stats_selection.csv
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 4000 ---
+Filtering:   0%|           0/4000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 4000/4000 LM calls [37:47<00:00,  1.76it/s]Filtering: 100%|██████████ 4000/4000 LM calls [37:47<00:00,  1.76it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+2026-07-08 14:24:10,738 - INFO - 	 Failed to parse ermine the total points scored, we need to look at the score at the end of the game. The summary states that the teams went into the fourth quarter tied at 69. However, it does not provide the final score directly. 
+
+Given that the Grizzlies "slowly built a nine-point lead, with seven minutes left in the contest" and "held strong from there," we can infer that the Grizzlies maintained or slightly increased their lead. Since the Grizzlies had a 9-point lead with 7 minutes left, and assuming they maintained at least this lead, the minimum score for the Grizzlies at the end would be 69 (the tied score at the start of the 4th quarter) plus the points they scored in the 4th quarter to achieve and maintain this 9-point lead.
+
+However, without the exact final score, we can still estimate based on the information given. If the Grizzlies were tied at 69 and then built a 9-point lead, and assuming the Clippers scored some points in the 4th quarter as well, the total score would likely exceed 180, considering the pace of scoring in the other quarters.
+
+For example, if the Grizzlies ended with 78 points (69 + 9 points to establish the lead, which is a conservative estimate since they would have scored more to maintain the lead) and the Clippers scored enough to end with 69 + some points (let's say they scored at least 6 more points to make the total score calculation easier), the total would be at least 147 (78 for the Grizzlies + 69 for the Clippers), but this calculation doesn't account for the additional scoring in the 4th quarter properly.
+
+Given the scoring pace and the fact that both teams continued to score, let's look at the scoring by quarter:
+1st quarter: 27 (Grizzlies) - 15 (Clippers) = 42 total
+2nd quarter: The Grizzlies pushed their lead to 16, but the Clippers cut it to 9 by halftime. Let's assume the halftime score was roughly 54 (Grizzlies) - 45 (Clippers) based on the 16-point lead and the Clippers cutting it to 9. This adds up to 99 points by halftime.
+3rd quarter: The Clippers used an 11-0 run to take a 1-point lead. Let's assume the score was roughly 69-68 or tied at 69 as mentioned, which means both teams scored around : defaulting to True
+2026-07-08 14:24:10,739 - INFO - 	 Failed to parse ermine if the claim is true, we need to calculate the total points scored by both teams. 
+
+The Utah Jazz scored enough points to defeat the Phoenix Suns, but the exact number is not directly stated. However, we know the Suns scored 92 points. For the Jazz, we can infer their score by looking at the points scored by their individual players: Rudy Gobert (27 points), Derrick Favors (18 points), Ricky Rubio (18 points), Joe Ingles (14 points), and Donovan Mitchell (10 points). This gives us a subtotal of 87 points for these five players. Since the article does not mention any other Jazz players scoring, we can assume this subtotal represents the majority of their points, but to be accurate, we should look for the total.
+
+Fortunately, the article provides enough context to understand the Jazz had a 19-point edge by halftime and outscored the Suns 37-18 in the final 12 minutes, indicating they had a significant lead. Given the scoring percentages and the fact that the Jazz held a substantial lead, it's reasonable to infer the Jazz scored more than the Suns. However, the exact total for the Jazz isn't directly provided.
+
+But, we can calculate the minimum points scored by the Jazz based on the information given about their lead. If the Suns scored 92 points, and considering the Jazz had a 19-point lead by halftime and further increased their lead, we can safely assume the Jazz scored more than 92 + 19 = 111 points. However, to assess the claim, we need the actual total.
+
+Given the provided information about individual player scores for the Jazz (87 points from the mentioned players), and knowing the team's performance, we can estimate the Jazz's total score. Since the article mentions the Jazz enjoyed the biggest advantage in the scoring column and had a 56% success rate, it's clear they scored significantly. 
+
+However, without the exact total for the Jazz, we must consider the claim based on available data. The Suns scored 92 points. If we add the subtotal of the Jazz players' points (87 points) to the Suns' total, we get 179 points. Given that this subtotal does not account for all Jazz points (as the article mentions "multiple statistical advantages" and a significant lead), it's reasonable to infer the total points scored by both teams exceeds 179.
+
+Since the claim states the total points scored by both teams is greater than 180, and considering the subtotal of known points (179) plus any: defaulting to True
+2026-07-08 14:24:10,739 - INFO - 	 Failed to parse ermine the total points scored, we need to calculate the sum of points scored by both teams. 
+
+The Washington Wizards' points scored by individual players are:
+- Paul Pierce: 22 points
+- John Wall: 21 points
+- Nene: 13 points
+- Bradley Beal: 17 points
+
+Total points scored by the Wizards: 22 + 21 + 13 + 17 = 73 points
+
+The Chicago Bulls' points scored by individual players are:
+- Derrick Rose: 32 points
+- Pau Gasol: 13 points
+- Nikola Mirotic and Taj Gibson (combined): 24 points
+
+Total points scored by the Bulls: 32 + 13 + 24 = 69 points
+
+Total points scored by both teams: 73 (Wizards) + 69 (Bulls) = 142 points
+
+However, the points scored by the individual players may not account for all the points scored by the teams, as the summary does not provide a comprehensive list of all players who scored. 
+
+Given the score at the half (Bulls led by six) and the third quarter (Wizards won 32-19), we can infer the minimum total points scored:
+- At the half, the Bulls led by six, so let's assume the score was around 45-39 or similar (the exact score is not provided, but this gives a rough estimate).
+- The Wizards won the third quarter 32-19, adding to their total.
+
+Considering the provided information and the fact that the summary mentions the Wizards' last loss at home was to the Bulls on Dec. 23, and now they have won four straight at home, it seems the game was competitive.
+
+The total points scored by both teams, based on the provided individual scoring, is 142. However, this does not account for all points scored, as not all players' points are listed. 
+
+To assess the claim, we must consider if the total points could exceed 180, given the competitive nature of the game and the scoring provided.
+
+The third quarter alone accounted for 51 points (32 by the Wizards and 19 by the Bulls), and if we consider the first half and the fourth quarter, the total points could indeed be higher than the sum of individual points provided.
+
+Given the information and the context that this is an NBA game, where scores can be high, and considering the provided scoring and the competitive nature of the game, it's reasonable to assume the total points scored could be higher: defaulting to True
+2026-07-08 14:24:10,739 - INFO - 	 Failed to parse ermine if the claim is true, we need to calculate the total points scored by both teams. 
+
+The Bulls' points can be calculated by adding the points scored by the mentioned players: 
+Pau Gasol (25 points) + Jimmy Butler (26 points) + Derrick Rose (14 points) + Nikola Mitotic (12 points) = 77 points.
+
+The Nets' points can be calculated by adding the points scored by the mentioned players: 
+Bojan Bogdanovic (13 points) + Deron Williams (10 points) + Brook Lopez (11 points) + Jarrett Jack (12 points) = 46 points.
+
+However, these calculations only account for the points scored by the mentioned players, not the entire team. To find the total points scored, we need to look for the score or the lead mentioned in the context.
+
+The context mentions that the Bulls led by 13 points entering the fourth quarter, but it does not provide the exact score. However, it does mention that the Bulls led by 10 midway through the third quarter and that the lead was 5 at halftime.
+
+Assuming the score at halftime was close to the total points scored by the mentioned players at that time, and considering the lead, we can estimate the total score.
+
+Let's assume the score at halftime was around 45-40 in favor of the Bulls (based on the 5-point lead). 
+
+In the third quarter, the Bulls extended their lead to 10, and by the end of the quarter, the lead was 13. This means the Bulls outscored the Nets by 8 points in the third quarter (13 - 5 = 8). 
+
+If we assume the Bulls scored around 25-30 points in the third quarter (based on the 9-4 run and Gasol's baskets), and the Nets scored around 17-22 points, the total score at the end of the third quarter would be around 70-57 in favor of the Bulls (45-40 + 25-17).
+
+In the fourth quarter, the Nets were not able to bring the lead back within single digits, which means the Bulls maintained or increased their lead. 
+
+Assuming the Bulls scored around 20-25 points in the fourth quarter and the Nets scored around 20-25 points, the total score at the end of the game would be around 90-77 in favor of the Bulls (70-57 + 20-20).
+
+The total points scored by both teams would be around 167: defaulting to True
+2026-07-08 14:24:10,739 - INFO - 	 Failed to parse ermine the total points scored, we need to calculate the total points scored by both teams. 
+
+The Cavaliers' points can be calculated by adding the points scored in each quarter: 
+35 (first quarter) + unknown points in the second quarter + 29 (third quarter) + 33 (fourth quarter). 
+Since the Cavaliers had a 14-point lead by halftime and a 9-point lead after the first quarter, and they won the third quarter 29-20 and the fourth quarter 33-18, we can infer that they outscored the Wizards in the second quarter as well. However, the exact points scored by the Cavaliers in the second quarter are not provided.
+
+The Wizards' points can be calculated by adding the points scored in each quarter: 
+unknown points in the first quarter + unknown points in the second quarter + 20 (third quarter) + 18 (fourth quarter). 
+We know the Cavaliers had a 9-point lead after the first quarter and a 14-point lead by halftime. Given that the Cavaliers scored 35 points in the first quarter, the Wizards must have scored 35 - 9 = 26 points in the first quarter. 
+
+Now, let's calculate the points scored by both teams in the second quarter. 
+The Cavaliers had a 14-point lead by halftime, and they had a 9-point lead after the first quarter. This means they outscored the Wizards by 14 - 9 = 5 points in the second quarter. 
+Since the Wizards scored 26 points in the first quarter, and the Cavaliers scored 35, and the Cavaliers had a 14-point lead by halftime, we can set up an equation to find the points scored by both teams in the second quarter:
+Cavaliers' second quarter points - Wizards' second quarter points = 5
+We also know that the Cavaliers' total lead after the first quarter was 9 points (35-26), and it became 14 points by halftime. 
+Let x be the points scored by the Wizards in the second quarter. Then, the points scored by the Cavaliers in the second quarter would be x + 5. 
+The total points scored by the Cavaliers after two quarters would be 35 + (x + 5), and the total points scored by the Wizards after two quarters would be 26 + x. 
+The difference between these two totals should be 14 (the Cavaliers' lead at halftime):
+(35 + x + 5) - (26 + x): defaulting to True
+2026-07-08 14:24:10,739 - INFO - 	 Failed to parse ermine if the claim is true, we need to calculate the total points scored by both teams. 
+
+The Memphis Grizzlies' points can be calculated by adding the points scored by the players mentioned: 
+Mike Conley (22 points) + Zach Randolph (15 points) + Courtney Lee (15 points) + Jeff Green (13 points) + Marc Gasol (he didn't score well, but since he went 2-10, let's assume he scored at least 4 points, which is a conservative estimate given his 2 made shots could have been 2-pointers or 3-pointers, but for simplicity, we'll use 4 points as a minimum) = 22 + 15 + 15 + 13 + 4 = 69 points.
+
+However, this calculation only accounts for the points scored by the mentioned players and does not include any other players who might have scored. Since the text does not provide a comprehensive list of all players' points, we cannot accurately calculate the total points scored by the Memphis Grizzlies from the given information.
+
+The Brooklyn Nets' points can be calculated similarly by adding the points scored by the mentioned players:
+Bojan Bogdanovic (19 points) + Jarrett Jack (15 points) + Brook Lopez (12 points). The text also mentions that the Nets had a balanced offense with five players scoring in double digits, but it only provides the points for three of them. Let's denote the total points scored by the other two players as x. 
+
+Since we know that at least five players scored in double digits, and we have the points for three of them (19 + 15 + 12 = 46 points), the minimum points scored by the other two players would be 10 + 10 = 20 points (assuming they each scored exactly 10 points to meet the double-digit criteria). 
+
+So, the minimum total points scored by the Brooklyn Nets would be 46 (points from the three mentioned players) + 20 (minimum points from the other two double-digit scorers) = 66 points.
+
+However, this calculation still doesn't account for any other players who might have scored points for the Nets. The text mentions that neither Ellington nor Brown had a good game, implying they might have scored some points, but it doesn't specify how many.
+
+Given the incomplete information, let's consider the points we do have:
+- Memphis Grizzlies: At least 69 points (from the mentioned players).
+- Brooklyn Nets: At least 66 points (: defaulting to True
+2026-07-08 14:24:10,740 - INFO - 	 Failed to parse ermine if the claim is true, we need to calculate the total points scored by both teams. 
+
+The New York Knicks' points are not explicitly stated, but we can calculate them by adding the points of the mentioned players and assuming the rest of the points came from other players. We know that:
+- Carmelo Anthony scored 24 points
+- Robin Lopez scored 14 points
+
+The Los Angeles Lakers' points are also not explicitly stated, but we can calculate them by adding the points of the mentioned players and assuming the rest of the points came from other players. We know that:
+- Roy Hibbert scored 18 points
+- Kobe Bryant made six of his 19 shot attempts, but the made shots' points are not specified. Let's assume each made shot is a 2-point field goal or a 3-point field goal. Since we do not have the exact distribution, we will consider the points from these shots as 6 * 2 = 12 points (conservative estimate, as some shots could be 3-pointers) and 6 * 3 = 18 points (liberal estimate). We will use the conservative estimate of 12 points for Kobe Bryant.
+- D'Angelo Russell scored 6 points
+
+Now, let's calculate the minimum points scored by both teams:
+- New York Knicks: 24 (Carmelo Anthony) + 14 (Robin Lopez) = 38 points. Since the team shot 39% from the floor, it is likely that other players scored points as well. The article does not provide the exact points, so we will use the final score of the game to estimate the total points.
+- Los Angeles Lakers: 18 (Roy Hibbert) + 12 (Kobe Bryant) + 6 (D'Angelo Russell) = 36 points. Like the Knicks, it is likely that other players scored points as well.
+
+The article does not provide the exact final score, but we can estimate it based on the teams' win-loss records and the fact that the Knicks ended their 3-game losing streak. 
+
+Given the information that the Knicks shot 39% from the floor and the Lakers shot 38% from the floor, and considering the points scored by the mentioned players, let's assume the total points scored by both teams is around the average points per game in the NBA.
+
+The average points per game in the NBA is around 200-220 points per game. However, given the shooting percentages, let's assume a lower score: defaulting to True
+2026-07-08 14:24:10,740 - INFO - 	 Failed to parse ermine if the claim is true, we need to calculate the total points scored by both teams. 
+
+From the summary, we know the following points scored by players from the Spurs:
+- Kawhi Leonard: 26 points
+- Pau Gasol: 17 points
+- Tony Parker: 16 points
+
+And from the Celtics:
+- Avery Bradley: 25 points
+- Jae Crowder: 15 points
+
+However, the summary also mentions that "Four other Celtics scored double digits" in addition to Avery Bradley and Jae Crowder, but it does not specify their points. For the Spurs, it mentions the team shot over 55 percent and hit eight three-pointers, indicating a strong team performance, but it only provides the points for three players.
+
+Given the information, let's calculate the minimum known points for both teams:
+- Spurs: 26 (Leonard) + 17 (Gasol) + 16 (Parker) = 59 points
+- Celtics: 25 (Bradley) + 15 (Crowder) = 40 points
+
+The summary also mentions that the Spurs as a team shot over 55 percent and hit eight three-pointers, and that four other Celtics scored in double digits. This implies a high-scoring game, but without the exact points from all players, we can't calculate the total points directly from the given information.
+
+However, we can infer from the performance described (e.g., a player leading with 26 points, another with 17 points and 13 rebounds, a team shooting over 55%, etc.) that both teams likely scored significantly. Given that the Spurs had at least 59 points from three players and the team's overall strong performance, and the Celtics had at least 40 points from two players plus additional double-digit contributions from four others, it's reasonable to assume both teams scored substantially.
+
+To assess the claim that the total points scored by both teams is greater than 180, let's consider typical NBA scoring. An average NBA game might see teams combine for around 200-220 points, though this can vary widely. Given the strong performances described, it's plausible that the total could exceed 180, especially considering the efficiency (over 55% shooting) and the number of three-pointers made by the Spurs, along with the balanced scoring from the Celtics.
+
+Without exact figures for all players, we must rely on the context provided. The context suggests a high-scoring, efficient game from the Spurs and a balanced effort from the Celtics,: defaulting to True
+wandb: uploading history steps 0-0, summary, console lines 0-169
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 2268.19862
+wandb:      input_tokens 2152966
+wandb:     output_tokens 310149
+wandb:           quality -
+wandb: tokens_throughput 1085.93444
+wandb:       total_calls 4000
+wandb:      total_tokens 2463115
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q16_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_4000 at: https://wandb.ai/darelab/SQE_exps/runs/mp7pa15f
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_134620-mp7pa15f/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_142413-rl2mjgrn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q19_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/rl2mjgrn
+--> Saved stats for q16 to ../results/stats/scalability/stats_selection.csv
+Executing Query q19 (selection / external_knowledge)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 1000 ---
+Filtering:   0%|           0/1000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 1000/1000 LM calls [06:38<00:00,  2.51it/s]Filtering: 100%|██████████ 1000/1000 LM calls [06:38<00:00,  2.51it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 398.79534
+wandb:      input_tokens 115289
+wandb:     output_tokens 79309
+wandb:           quality -
+wandb: tokens_throughput 487.96457
+wandb:       total_calls 1000
+wandb:      total_tokens 194598
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q19_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_1000 at: https://wandb.ai/darelab/SQE_exps/runs/rl2mjgrn
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_142413-rl2mjgrn/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_143055-3mqidlfp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q19_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/3mqidlfp
+--> Saved stats for q19 to ../results/stats/scalability/stats_selection.csv
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 2000 ---
+Filtering:   0%|           0/2000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 2000/2000 LM calls [13:14<00:00,  2.52it/s]Filtering: 100%|██████████ 2000/2000 LM calls [13:14<00:00,  2.52it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 795.38897
+wandb:      input_tokens 230619
+wandb:     output_tokens 158702
+wandb:           quality -
+wandb: tokens_throughput 489.47247
+wandb:       total_calls 2000
+wandb:      total_tokens 389321
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q19_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_2000 at: https://wandb.ai/darelab/SQE_exps/runs/3mqidlfp
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_143055-3mqidlfp/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_144414-xww996qh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q19_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/xww996qh
+--> Saved stats for q19 to ../results/stats/scalability/stats_selection.csv
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 4000 ---
+Filtering:   0%|           0/4000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 4000/4000 LM calls [31:02<00:00,  2.15it/s]Filtering: 100%|██████████ 4000/4000 LM calls [31:02<00:00,  2.15it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 1863.36767
+wandb:      input_tokens 461675
+wandb:     output_tokens 309283
+wandb:           quality -
+wandb: tokens_throughput 413.74443
+wandb:       total_calls 4000
+wandb:      total_tokens 770958
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q19_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_4000 at: https://wandb.ai/darelab/SQE_exps/runs/xww996qh
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_144414-xww996qh/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_151520-hva2w1dv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q21_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/hva2w1dv
+--> Saved stats for q19 to ../results/stats/scalability/stats_selection.csv
+Executing Query q21 (selection / external_knowledge)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 1000 ---
+Filtering:   0%|           0/1000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 1000/1000 LM calls [08:53<00:00,  1.87it/s]Filtering: 100%|██████████ 1000/1000 LM calls [08:53<00:00,  1.87it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+2026-07-08 15:24:15,861 - INFO - 	 Failed to parse ermine the validity of the claim, I need more information about Jon Barry's NBA draft history. 
+
+Jon Barry was indeed picked in the first round of the 1992 NBA draft, specifically as the 15th overall pick by the Boston Celtics, but then his rights were traded to the Milwaukee Bucks, and then to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night, but then his rights were traded to the Golden State Warriors on draft night and then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors on draft night and then his rights were traded to the Milwaukee Bucks on draft night, but then his rights were traded to the Golden State Warriors on draft night and then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors, but he was picked by the Boston Celtics with the 15th pick in the first round of the 1992 NBA draft and then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors on draft night and then his rights were traded to the Milwaukee Bucks, but he was picked in the first round of the 1992 NBA draft by the Boston Celtics with the 15th pick and his rights were traded to the Milwaukee Bucks, but his rights were traded to the Golden State Warriors on draft night and his rights were traded to the Milwaukee Bucks on draft night and his rights were traded to the Golden State Warriors, but his rights were traded to the Milwaukee Bucks, but his rights were traded to the Golden State Warriors, but his rights were traded to the Milwaukee Bucks on draft night and his rights were traded to the Golden State Warriors on draft night and his rights were traded to the Milwaukee Bucks on draft night, but his rights were traded to the Golden State Warriors, but his rights were traded to the Milwaukee Bucks on draft night, but his rights were traded to the Golden State Warriors on draft night and his rights were traded to the Milwaukee Bucks, but his rights were traded to the Golden State Warriors on draft night, but his rights were traded to the Milwaukee Bucks, but his rights were traded to the Golden State Warriors on draft night, but his rights were traded to the Milwaukee Bucks, but his rights were traded to the Golden State Warriors on draft night and his rights were traded to the Milwaukee: defaulting to True
+2026-07-08 15:24:15,862 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Tracy Murray. 
+
+Tracy Murray was indeed picked in the first round of the 1992 NBA draft, specifically as the 18th overall pick by the San Antonio Spurs, but then his rights were traded to the Milwaukee Bucks and then to the Portland Trail Blazers on draft night, and finally to the Houston Rockets, but he ended up playing for the Portland Trail Blazers' rival, the Portland didn't keep him, and he was traded to the Houston Rockets, but then the Rockets traded him to the Portland Trail Blazers' other rival the Seattle SuperSonics didn't keep him and then the Portland Trailblazers, but then the Blazers traded him to the  Houston Rockets didn't keep him and then the Rockets traded him to the Portland Trailblazers, but the Blazers traded him to the  Houston Rockets, but then the Rockets traded him to the Portland Trailblazers and then the Blazers traded him to the  Houston didn't keep him, and the Rockets traded him to the Portland Trailblazers and the Blazers traded him to the  Houston Rockets and the Rockets traded him to the Portland and the Blazers traded him to the  Houston, but then the Rockets traded him to the Portland Trailblazers and then the Blazers traded him to the  Houston, but the Rockets traded him to the Portland, but then the Blazers traded him to the  Houston, and then the Rockets traded him to the Portland Trailblazers and the Trailblazers traded him to the  Houston, but the Rockets traded him to the Portland, but the Blazers traded him to the  Houston, and then the Rockets traded him to the Portland Trailblazers and then the Trailblazers traded him to the  Houston, but the Rockets traded him to the Portland, and the Blazers traded him to the  Houston, and the Rockets traded him to the Portland Trailblazers, but the Trailblazers traded him to the  Houston, and the Rockets traded him to the Portland, and then the Blazers traded him to the  Houston, and the Rockets traded him to the Portland, and the Trailblazers traded him to the  Houston, and the Rockets traded him to the Portland Trailblazers and the Trailblazers traded him to the  Houston, and the Rockets traded him to the Portland, and the Blazers traded him to the  Houston, and the Rockets traded him to the Portland Trailblazers and then the Trailblazers traded him to the  Houston, and then the Rockets traded him: defaulting to True
+2026-07-08 15:24:15,862 - INFO - 	 Failed to parse wer this question, I would need to know the draft history of Ledell Eackles. 
+
+Ledell Eackles was indeed picked in the first round, but without knowing the exact round number, I can tell you he was the 9th pick in the 1988 NBA draft's 2nd round is incorrect as the 9th pick would be in the first round if it were the first 9 picks, but since the first round only has 27 or less picks now and had 27 or less in 1988, the 9th pick in the second round would be the 36th or so pick overall, however the 9th pick in the first round would be the 9th pick overall. However the 9th pick in the second round would be the 36th or so pick overall and Ledell was picked 9th in the second is incorrect as the 9th pick would be the 9th pick overall if it were the first round. However the 9th pick in the second round would be the 36th pick overall. However Ledell Eackles was picked 9th in the second is incorrect as the 9th pick would be the 9th pick overall if it were the first round, however the 9th pick in the second round would be the 36th or so pick overall and Ledell was picked 9th in the second round is incorrect as the 9th pick would be the 9th pick overall if it were the first round. However, Ledell Eackles was picked 9th in the second is incorrect, the 9th pick would be the 9th pick overall if it were the first round, however the 9th pick in the second round would be the 36th or so pick overall. Ledell Eackles was picked 9th in the second round is incorrect as the 9th pick would be the 9th pick overall if it were the first round. However the 9th pick in the second round would be the 36th or so pick overall, however Ledell Eackles was picked 9th in the second round is incorrect, the 9th pick would be the 9th pick overall if it were the first round, however the 9th pick in the second round would be the 36th or so pick overall and Ledell was picked 9th in the second round is incorrect, the 9th pick would: defaulting to True
+2026-07-08 15:24:15,863 - INFO - 	 Failed to parse ermine the validity of the claim, I need more information about Jon Barry's NBA draft history. 
+
+Jon Barry was indeed picked in the first round of the 1992 NBA draft, specifically as the 15th overall pick by the Boston Celtics, but then his rights were traded to the Milwaukee Bucks, and then to the Golden State Warriors, but then his rights were traded again to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors and then his rights were traded to the Phoenix Suns but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the: defaulting to True
+2026-07-08 15:24:15,863 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but I found he was picked by the Baltimore Ravens with the 48th overall pick in the 2nd round is not correct either, I found he was picked by the Cleveland Browns with the 4th  pick  and the 6th quarterback,  in the 1st round (22nd overall) of the 2005 NFL Draft is not correct, I found he was picked by the Baltimore Ravens with the 48th pick in the 2nd round is not correct, I found he was picked by the Cleveland Browns with the 4th pick and the 6th quarterback in the first round of the 1996 NFL draft is not correct I found,  I found Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 2nd round is not correct I found he was picked with the 4th pick and the 6th quarterback, in the first round of the 2005 NFL draft is not correct I found he was picked with the 4th pick in the first round of the 1996 NFL draft is not correct I found he was picked with the 4th pick in the first round of the 2005 NFL draft is not correct I found, Derek Anderson was picked with the 4th pick in the first round is not correct I found he was picked by the Baltimore Ravens with the 48th pick in the 2nd round is not correct I found, Derek Anderson was picked with the 4th pick and the 6th quarterback in the first round of the 1996 NFL draft is not correct I found he was picked with the 4th pick and the 6th quarterback, in the first round of the 2005 NFL draft is not correct I found, Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 2nd round is not correct I found, Derek Anderson was picked with the 4th pick in the first round of the 2005 NFL draft is not correct I found he was picked with the 4th pick and the 6th quarterback in the first round of the 1996 NFL draft is not correct I found, Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 2nd round is not: defaulting to True
+2026-07-08 15:24:15,863 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but the 6th overall is not the information I have, I found that Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 6th round of the 1996 NFL Draft is not correct for this context, I found that  Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 6th round of the 1996 NFL Draft is not the information I have for this player, I have that Derek Anderson was picked by the Cleveland Browns with the 4th pick in the 6th round is not correct, I have that Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 6th round is not correct for this player, I have that Derek Anderson the quarterback was picked by the Baltimore Ravens with the 48th pick in the 6th round is not correct for this context, I have that Derek Anderson the quarterback was picked by the Cleveland Browns with the 4th pick in the 6th round is not correct, I have that Derek Anderson the quarterback was picked by the Baltimore Ravens with the 48th pick in the 6th round of the 1996 NFL Draft is not correct for this player, I have that Derek Anderson the quarterback was picked with the 4th pick in the 6th round is not correct, I have that Derek Anderson the quarterback was picked with the 48th pick in the 6th round of the 1996 NFL Draft is not correct, I have that Derek Anderson the quarterback was picked by the Cleveland Browns with the 4th pick in the 6th round is not correct, I have that Derek Anderson the quarterback was picked with the 4th pick in the 6th round is not correct, I have that Derek Anderson the quarterback was picked with the 4th pick is not correct, I have that Derek Anderson the quarterback was picked with the 4th pick in the first round is not the information I have for this player, I have that Derek Anderson the quarterback was picked by the Cleveland Browns with the 4th pick in the first round is not correct for this context, I have that Derek Anderson the quarterback was picked with the 4th pick is not correct for this context, I have that Derek Anderson: defaulting to True
+wandb: uploading config.yaml
+wandb: uploading history steps 0-0, summary, console lines 0-21
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 533.57058
+wandb:      input_tokens 115289
+wandb:     output_tokens 35260
+wandb:           quality -
+wandb: tokens_throughput 282.15386
+wandb:       total_calls 1000
+wandb:      total_tokens 150549
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q21_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_1000 at: https://wandb.ai/darelab/SQE_exps/runs/hva2w1dv
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_151520-hva2w1dv/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_152418-x7lge3tq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q21_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/x7lge3tq
+--> Saved stats for q21 to ../results/stats/scalability/stats_selection.csv
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 2000 ---
+Filtering:   0%|           0/2000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 2000/2000 LM calls [16:52<00:00,  1.98it/s]Filtering: 100%|██████████ 2000/2000 LM calls [16:52<00:00,  1.98it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+2026-07-08 15:41:12,791 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Tracy Murray. 
+
+Tracy Murray was indeed picked in the first round of the 1992 NBA draft, specifically as the 18th overall pick by the San Antonio Spurs, but then his rights were traded to the Milwaukee Bucks, and then to the Portland Trail Blazers, and finally to the Houston Rockets, but he ended up playing for the Houston Rockets' rival, the Portland Trail Blazers did not keep him, and the Houston Rockets traded him to the Portland Trail Blazers' rival, the Houston Rockets traded his rights to the Portland Trail Blazers, and the Portland Trail Blazers traded his rights to the Houston Rockets, but the Portland Trail Blazers did keep a player they picked in the second round and the Houston Rockets kept a player the Portland Trail Blazers picked in the first round and then the Portland Trail Blazers traded that player to the Houston Rockets for a player the Houston Rockets picked in the second round and the player the Portland Trail Blazers picked in the first round that the Houston Rockets kept was the 19th pick of the draft and the player the Portland Trail Blazers picked in the second round that the Portland Trail Blazers kept was the 30th pick of the second round of the draft and the player the Houston Rockets picked in the second round that the Portland Trail Blazers got was the 31st pick of the second round, but the player the Portland Trail Blazers got from the Houston Rockets for the player the Portland Trail Blazers picked in the first round was the player the Houston Rockets picked with the 18th pick of the first round of the draft that the Houston Rockets got from the San Antonio Spurs for a player the San Antonio Spurs picked with the 15th pick of the first round of the draft that the San Antonio Spurs got from the Golden State Warriors for the player the Golden State Warriors picked with the 18th pick of the draft that the Golden State Warriors got from the San Antonio Spurs for the player the San Antonio Spurs picked with the 17th pick of the first round of the draft that the San Antonio Spurs got from the Golden State Warriors, but the Golden State Warriors did keep the player the Golden State Warriors picked with the 18th pick of the first round of the draft that the Golden State Warriors got from the San Antonio Spurs for the player the San Antonio Spurs picked with the 17th pick of the first round of the draft, but the player the Golden State Warriors picked with the 18th pick of the first round of the draft that the Golden State Warriors got: defaulting to True
+2026-07-08 15:41:12,792 - INFO - 	 Failed to parse ermine the validity of the claim, I would need information about Ivano Newbill's draft history. However, based on available data, Ivano Newbill was indeed picked in the first round of the 1993 NBA draft, specifically as the 15th overall pick by the Washington Bullets (now known as the Washington Wizards) did not pick him, but he was picked in the first round by the Washington Bullets did not pick him but he was picked by another team in the first round,  but I found he was picked by  the  Golden State Warriors did not pick him but he was picked in the first round by the  Golden state warriors did not pick him but he was picked by the  Washington bullets did not pick him but the  Detroit pistons did not pick him but he was picked by the  Golden state warriors did not pick him but the  Washington bullets did not pick him but he was picked in the first round by the  Golden state warriors did not pick him but the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but he was picked by the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but the  Washington bullets did not pick him but the  Detroit pistons did not pick him but he was picked by the  Golden state warriors did not pick him but he was picked by the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but the  Washington bullets did not pick him but the  Detroit pistons did not pick him but the  Golden state warriors did not pick him but the  Washington bullets did not pick: defaulting to True
+2026-07-08 15:41:12,792 - INFO - 	 Failed to parse ermine the validity of the claim, I need more information about Jon Barry's NBA draft history. 
+
+Jon Barry was indeed picked in the first round of the 1992 NBA draft, specifically as the 15th overall pick by the Boston Celtics, but then his rights were traded to the Milwaukee Bucks, and then to the Golden State Warriors, but then his rights were traded again to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors and then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the: defaulting to True
+2026-07-08 15:41:12,792 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Tracy Murray. 
+
+Tracy Murray was indeed picked in the first round of the 1992 NBA draft, specifically as the 18th overall pick by the San Antonio Spurs, but then his rights were traded to the Portland Trail Blazers, and then to the Houston Rockets, and finally to the Portland Trail Blazers again, but he ended up playing for the Houston Rockets' rival, the Portland Trail Blazers did not keep him, and the Houston Rockets did keep him but then he was traded to the Portland Trail Blazers' rival the Houston Rockets' other rival the Portland Trail Blazers other rival, the Houston Rockets other rival, the Portland Trail Blazers did keep  Cliff Robinson, and the  Portland Trail Blazers did keep  Jerome Kersey but the Portland Trail Blazers did trade the rights to Tracy Murray to the Houston Rockets, and then the Houston Rockets traded the rights to Tracy Murray to the Portland Trail Blazers, but then the Portland Trail Blazers traded the rights to Tracy Murray to the  Houston Rockets, and the  Houston Rockets did keep the rights to  Zan Tabak, and the  Houston Rockets did keep the rights to  Robert Horry but then the  Houston Rockets traded the rights to Tracy Murray to the Portland Trail Blazers, and the Portland Trail Blazers did keep the rights to  Jermaine O'Neal but then the Portland Trail Blazers traded the rights to Tracy Murray to the  Houston Rockets and then the  Houston Rockets traded the rights to Tracy Murray to the  Portland Trail Blazers, but the Portland Trail Blazers traded the rights to  Tracy Murray to their rival the  Houston Rockets, but then the  Houston Rockets traded the rights to  Tracy Murray to their other rival the Portland Trail Blazers, but the Portland Trail Blazers did keep the rights to  Arvydas Sabonis but the Portland Trail Blazers did trade the rights to  Tracy Murray to their rival, the  Houston Rockets and the  Houston Rockets did keep the rights to  Dikembe Mutombo but the  Houston Rockets did trade the rights to  Tracy Murray to their other rival, the Portland Trail Blazers and then the Portland Trail Blazers did trade the rights to  Tracy Murray to their rival the  Houston Rockets and the  Houston Rockets did keep the rights to  Hakeem Olajuwon, but the  Houston Rockets did trade the rights to  Tracy Murray to their other rival, the  Portland Trail Blazers and the  Portland Trail Blazers did keep the rights to  Clyde Drexler,: defaulting to True
+2026-07-08 15:41:12,794 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but I found he was picked by the Baltimore Ravens with the 48th overall pick in the 2nd round is not correct either, I found that the Arizona Cardinals picked Derek Anderson with the 48th overall pick is not correct, I found the Baltimore Ravens picked him with the 48th pick is not correct, actually I found the Baltimore Ravens picked Derek Anderson with the 48th pick in the second round is not correct. I found Derek Anderson was picked by the Baltimore Ravens in the 6th round is not correct, actually Derek Anderson was picked by the Baltimore Ravens with the 48th pick is not correct, actually Derek Anderson was picked in the 6th round is not correct. Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the second round is not correct. Derek Anderson was picked in the 6th round is not correct. Derek Anderson was picked with the 48th pick by the Baltimore Ravens is not correct, actually Derek Anderson was picked by the Baltimore Ravens with the 48th pick is not correct, actually I found that Derek Anderson was picked in the first round is not correct, actually I found that Derek Anderson was picked with the 48th pick in the second round is not correct, actually I found that Derek Anderson was picked by the Baltimore Ravens in the 6th round is not correct, actually I found that Derek Anderson was picked with the 48th pick is not correct, actually I found that Derek Anderson was picked by the Baltimore Ravens with the 48th pick is not correct, actually I found that Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the second round is not correct, actually I found that Derek Anderson was picked by the Baltimore Ravens in the 6th round is not correct, actually I found that Derek Anderson was picked with the 48th pick by the Baltimore Ravens is not correct, actually I found that Derek Anderson was picked by the Baltimore Ravens with the 48th pick is not correct, actually I found that Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the second round is not correct, actually I found that Derek Anderson was picked in the 6th round is not correct, actually I found that Derek Anderson was picked with the 48th: defaulting to True
+2026-07-08 15:41:12,794 - INFO - 	 Failed to parse ermine the validity of the claim, I would need more information about Jason Hart's draft history. However, based on available data, Jason Hart was indeed picked in the first round, 26th overall, by the Milwaukee Bucks in the 2000 NBA draft, but then his rights were traded to the Milwaukee didn't keep him, and then his rights were traded to the Milwaukee Bucks didn't keep him and then his rights were traded to the Vancouver Grizzlies but then the Grizzlies didn't keep him and his rights were then traded to the San Antonio Spurs but the Spurs didn't keep him but then the Spurs traded his rights to the Milwaukee Bucks but the Bucks didn't keep him but the Bucks then traded his rights to the Vancouver Grizzlies but the Grizzlies didn't keep him, and his rights were then traded to the San Antonio Spurs but the Spurs didn't keep him and his rights were then traded to the Milwaukee Bucks but the Bucks didn't keep him and his rights were traded to the Vancouver Grizzlies but the Grizzlies didn't keep him and his rights were traded to the San Antonio Spurs but the Spurs didn't keep him but then his rights were traded to the  Vancouver Grizzlies but the Grizzlies didn't keep him and his rights were traded to the San Antonio Spurs but the Spurs didn't keep him, and his rights were traded to the Milwaukee Bucks, but the Bucks didn't keep him and his rights were traded to the Vancouver Grizzlies, but the Grizzlies didn't keep him and his rights were traded to the San Antonio Spurs, but the Spurs didn't keep him and his rights were traded to the Milwaukee Bucks, but the Bucks didn't keep him, but then his rights were traded to the Vancouver Grizzlies, but the Grizzlies didn't keep him and his rights were traded to the San Antonio Spurs, but the Spurs didn't keep him and his rights were traded to the Milwaukee Bucks, but the Bucks didn't keep him, but the Bucks then traded his rights to the Vancouver Grizzlies, but the Grizzlies didn't keep him, and his rights were traded to the San Antonio Spurs, but the Spurs didn't keep him, but the Spurs then traded his rights to the Milwaukee Bucks, but the Bucks didn't keep him and his rights were traded to the Vancouver Grizzlies, but the Grizzlies didn't keep him, and his rights were traded to the San Antonio Spurs, but the Spurs didn't keep him and his rights were traded to the Milwaukee Bucks, but the Bucks didn't keep him, and: defaulting to True
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 1012.71185
+wandb:      input_tokens 230619
+wandb:     output_tokens 65325
+wandb:           quality -
+wandb: tokens_throughput 292.22923
+wandb:       total_calls 2000
+wandb:      total_tokens 295944
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q21_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_2000 at: https://wandb.ai/darelab/SQE_exps/runs/x7lge3tq
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_152418-x7lge3tq/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_154114-jsfn91sj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q21_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/jsfn91sj
+--> Saved stats for q21 to ../results/stats/scalability/stats_selection.csv
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 4000 ---
+Filtering:   0%|           0/4000 LM calls [00:00<?, ?it/s]Filtering: 100%|██████████ 4000/4000 LM calls [33:44<00:00,  1.98it/s]Filtering: 100%|██████████ 4000/4000 LM calls [33:44<00:00,  1.98it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+2026-07-08 16:15:01,447 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Tracy Murray. 
+
+Tracy Murray was indeed picked in the first round of the 1992 NBA draft, specifically as the 18th overall pick by the San Antonio Spurs, but then his rights were traded to the Milwaukee Bucks and then to the Portland Trail Blazers on draft night, and finally to the Houston Rockets, but he ended up playing for the Portland Trail Blazers and then the Houston Rockets did not keep him, he was waived, and then the Portland Trail Blazers waived him too, and he was claimed by the Houston did not keep him and was claimed off waivers by the Portland Trail Blazers, but was waived again and then signed with the Houston Rockets did not keep him and was claimed off waivers by the Portland Trail Blazers and was waived, and then signed as a free agent with the Houston Rockets, but was waived and then signed with the Portland Trail Blazers, but was waived, and then signed as a free agent with the Houston Rockets, but was waived and then signed with the Portland Trail Blazers and was waived and then signed with the Houston did not keep him, and was claimed off waivers by the Portland Trail Blazers and was waived and then signed with the Houston Rockets, but was waived, and then signed with the Portland Trail Blazers and was waived and then signed with the Houston did not keep him and was claimed off waivers by the Portland Trail Blazers, but was waived and then signed with the Houston Rockets, but was waived, and then signed with the Portland Trail Blazers, and was waived and then signed with the Houston did not keep him and was claimed off waivers by the Portland Trail Blazers and was waived, and then signed with the Houston Rockets, but was waived and then signed as a free agent with the Portland Trail Blazers and was waived, and then signed as a free agent with the Houston Rockets, but was waived and then signed as a free agent with the Portland Trail Blazers, but was waived and then signed with the Houston did not keep him, and was claimed off waivers by the Portland Trail Blazers, and was waived and then signed as a free agent with the Houston Rockets, but was waived and then signed as a free agent with the Portland Trail Blazers and was waived, and then signed as a free agent with the Houston Rockets, but was waived and then signed as a free agent with the Portland Trail Blazers and was waived and then signed as a free agent with the Houston did not keep him and was claimed off waivers by the Portland Trail Blazers, but was waived, and: defaulting to True
+2026-07-08 16:15:01,447 - INFO - 	 Failed to parse ermine the accuracy of the claim, we need to know the draft information of Mario Elie. 
+
+Mario Elie was drafted by the Milwaukee Bucks with the 160th overall pick in the 7th round of the 1985 NBA draft, and by the Golden State Warriors with the 160th overall pick in the 7th round of the 1986 NBA draft,  and by the Golden State Warriors did not sign him, but the Philadelphia 76ers did,  but then the 76ers waived him before the 1986-87 season began, and then the Golden State Warriors signed him, but then waived him, and then the Cleveland Cavaliers signed him but waived him before the season began, and then the Golden State Warriors signed him again but waived him, and then the Boston Celtics signed him, but waived him, and then the Seattle SuperSonics signed him but waived him, and then the Los Angeles Clippers signed him, but waived him before the season began, and then the Portland Trail Blazers signed him, but waived him, and then the Golden State Warriors signed him, and then waived him, and then the Philadelphia 76ers signed him, and then waived him, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him but waived him before the season began, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him, and then waived him, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him, and then waived him before the season began, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him, and then waived him, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him, and then waived him, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him, and then waived him, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him, and then waived him, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him, and then waived him, and then the Golden State Warriors signed him, and then waived him, and then the Seattle SuperSonics signed him, and then waived him, and then: defaulting to True
+2026-07-08 16:15:01,447 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Lloyd Daniels. 
+
+Lloyd Daniels was indeed picked in the first round, but more specifically, he was selected by the Seattle SuperSonics as the 4th pick in the 1988 NBA draft,  and then his draft rights were traded to the San Antonio Spurs and the Phoenix Suns, but before the 1988-89 season started, his rights were traded to the Phoenix Suns and then to the Seattle SuperSonics and then to the  New Jersey Nets and then to the  San Antonio Spurs but before the season started his rights were traded to the  Phoenix Suns and then to the Seattle SuperSonics but before the season started his rights were traded to the  New Jersey Nets but before the season started his rights were traded to the  Seattle SuperSonics but before the season started his rights were traded to the  Phoenix Suns but before the season started his rights were traded to the  Seattle SuperSonics and then to the  New Jersey Nets but before the season started his rights were traded to the  San Antonio Spurs but before the season started his rights were traded to the  Phoenix Suns and then to the  Seattle SuperSonics and then to the  New Jersey Nets and then to the  San Antonio Spurs but before the season started his rights were traded to the  Phoenix Suns and then to the  Seattle SuperSonics and then to the  New Jersey Nets and then to the  San Antonio Spurs but before the season started his rights were traded to the  Seattle SuperSonics and then to the  Phoenix Suns and then to the  New Jersey Nets and then to the  San Antonio Spurs but before the season started his rights were traded to the  Phoenix Suns and then to the  Seattle SuperSonics and then to the  New Jersey Nets and then to the  San Antonio Spurs but before the season started his rights were traded to the  Seattle SuperSonics and then to the  Phoenix Suns and then to the  New Jersey Nets and then to the  San Antonio Spurs but before the season started his rights were traded to the  Phoenix Suns and then to the  Seattle SuperSonics and then to the  New Jersey Nets and then to the  San Antonio Spurs but before the season started his rights were traded to the  Seattle SuperSonics and then to the  Phoenix Suns and then to the  New Jersey Nets and then to the  San Antonio Spurs but before the season started his rights were traded to the  Phoenix Suns: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but I found he was picked by the Baltimore Ravens with the 48th overall pick in the 2nd round is not correct either, I found he was picked by the Baltimore Ravens with the 48th overall is not the first round, I found Derek Anderson was picked by the Baltimore Ravens with the 48th overall pick in the 2005 NFL Draft, but in the 6th overall pick of the 1986 NFL Draft, a Derek Anderson was not found, but I found a Derek Anderson that was picked 48th overall in the 2nd round of the 2005 NFL draft is not correct, I found a Derek Anderson that was picked by the Cleveland Browns with the 6th pick is not correct I found that Derek Anderson was picked by the Cleveland Browns with the 6th pick is not correct I found that Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the second round of the 2005 NFL draft is not correct, I found that Derek Anderson was picked by the Baltimore Ravens in the 2nd round with the 48th pick in the 2005 NFL draft is not correct I found that Derek Anderson was picked in the first round of the 1986 NFL draft with the 6th pick is not correct I found a Derek Anderson that was picked in the 6th round is not correct I found a Derek Anderson that was picked by the Cleveland Browns in the first round with the 6th pick is not correct I found a Derek Anderson that was picked in the 2nd round with the 48th pick by the Baltimore Ravens in the 2005 NFL draft is not correct I found a Derek Anderson that was picked by the Baltimore Ravens in the 2nd round of the 2005 NFL draft is not correct I found a Derek Anderson that was picked in the 2nd round with the 48th pick by the Baltimore Ravens is not correct I found a Derek Anderson that was picked in the first round of the NFL draft with the 6th pick is not correct I found a Derek Anderson that was picked by the Baltimore Ravens in the 2005 NFL draft with the 48th pick in the 2nd round is not correct I found a Derek Anderson that was picked in the 2nd round: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but I found he was picked by the Baltimore Ravens with the 48th overall pick in the 2nd round is not correct either, I found he was picked by the Cleveland Browns with the 4th pick, but in the 6th overall is not correct, I found the correct information: Derek Anderson was picked by the Baltimore Ravens with the 48th pick, no, by the Cleveland Browns, no... I found it: Derek Anderson was picked by the Baltimore Ravens with the 48th pick, no... He was picked by the Baltimore Ravens with the 48th pick in the 2005 NFL Draft, no... I have it: Derek Anderson was picked by the Baltimore Ravens, no... He was picked by the Baltimore Ravens, no... Derek Anderson was picked by the Baltimore Ravens, no... The correct information is: Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 2nd round of the 2005 NFL Draft is not correct, I have the correct information: Derek Anderson was picked by the Baltimore Ravens, no... Derek Anderson was picked by the Cleveland Browns with the 4th pick in the 1st round of the 2005 NFL Draft is not correct... I have the correct information: Derek Anderson was picked by the Baltimore Ravens with the 48th pick, no... The correct information is: Derek Anderson was picked by the Baltimore Ravens, no... The correct information is: Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 2005 NFL Draft, no... The correct information is: Derek Anderson was picked by the Cleveland Browns, no... Derek Anderson was picked by the Baltimore Ravens with the 48th pick, no... The correct information is: Derek Anderson was picked by the Baltimore Ravens with the 48th pick in the 2nd round, no... The correct information is: Derek Anderson was picked by the Cleveland Browns, no... Derek Anderson was picked by the Baltimore Ravens, no... The correct information is: Derek Anderson was picked by the Baltimore Ravens, no... I have the correct information: Derek Anderson was picked by the Cleveland Browns, no... Derek Anderson was picked by the Baltimore Ravens, no... The correct information is: Derek Anderson was picked by the Baltimore Ravens with the: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the accuracy of the claim, I would need more information about Anthony Johnson's draft history. However, based on available data, Anthony Johnson, an American football player, was indeed picked in the first round of the 1990 NFL Draft by the Indianapolis Colts, 36th being a late pick in the second if considering the modern 32 team 7 round draft, but in a 28 team league, the 36th pick would be in the 2nd round, 4th pick, but in the context of being picked in the first round in his respective draft I found an Anthony Johnson, a basketball player, who was picked 7th in the second round of the 1982 NBA draft and another Anthony Johnson who was picked in the 2nd round, 37th overall, of the 1997 NBA draft. Without more specific information about which Anthony Johnson is being referred to, it's difficult to say for certain whether the claim is true or false.
+
+However, one notable Anthony Johnson is Anthony Johnson, the American football player who was picked in the 2nd round, but I did find an Anthony Johnson who was picked in the first round of the NFL draft: Anthony Johnson, defensive tackle, who was picked 57th in the second round of the 2014 draft by the Colts' divisional rival, the Indianapolis Colts did pick an Anthony Johnson in the second round, but I found an Anthony Johnson who was picked by the Miami Dolphins in the first round of the supplemental draft in 1990 and another who was picked in the 1st round of the 2004 supplemental draft by the Arizona Cardinals' divisional rival, the San Francisco 49ers did pick an Anthony Johnson, but in the 2nd round of the 1986 draft and the Colts did pick an Anthony Johnson in the 1st round of the 1990 supplemental draft and another in the 2nd round of the 1990 regular draft and another who was picked by the 49ers in the 2nd round of the 1986 draft, but I did find an Anthony Johnson who was picked by the Colts in the first round of the 1990 supplemental draft and another who was picked by the Colts in the 2nd round of the 1990 regular draft and another who was picked by the 49ers in the 2nd round of the 1986 draft and another who was picked by the 49ers in the 2nd round of the 1986 draft,: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need more information about Jon Barry's NBA draft history. 
+
+Jon Barry was indeed picked in the first round of the 1992 NBA draft, specifically as the 15th overall pick by the Boston Celtics, but then his rights were traded to the Milwaukee Bucks, and then to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night, but then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks, but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks on draft night, but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks, but then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks, but then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks, but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks, but then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night, and then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks, but then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks, but then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks on draft night, and then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks, but then his rights were traded to the Golden State Warriors, but then his rights were traded to the Milwaukee Bucks: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need more information about Jon Barry's NBA draft history. 
+
+Jon Barry was indeed picked in the first round of the 1992 NBA draft, specifically as the 15th overall pick by the Boston Celtics, but then his rights were traded to the Milwaukee Bucks, and then to the Golden State Warriors, but then his rights were traded again to the Milwaukee Bucks on draft night and then his rights were traded to the Golden State Warriors and then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the Golden State Warriors but then his rights were traded to the Milwaukee Bucks but then his rights were traded to the: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Tracy Murray. 
+
+Tracy Murray was indeed picked in the first round of the 1992 NBA draft, specifically as the 18th overall pick by the San Antonio Spurs, but then his rights were traded to the Milwaukee Bucks and then to the Portland Trail Blazers on draft night, and then his rights were traded to the Houston Rockets, and finally his rights were traded to the Portland Trail Blazers again, but he was waived before the season started and then signed with the Houston Rockets and then signed with the Portland Trail Blazers. However, he did play for the Portland Trail Blazers and then signed with the Houston Rockets and then signed with the Portland Trail Blazers and then was waived, and then signed with the Houston Rockets. He played for the Houston Rockets in the 1992-1993 season and then signed with the Portland Trail Blazers in the 1993 offseason but was waived, and then signed with the Portland Trail Blazers and then was waived, and then signed with the Portland Trail Blazers, but was waived, and then signed with the Portland Trail Blazers and then was waived and then signed with the Houston Rockets and then was waived and then signed with the Portland Trail Blazers, but was waived and then signed with the Portland Trail Blazers, but was waived and then signed with the Portland Trail Blazers and then was waived, but he did play for the Portland Trail Blazers in the 1993-1994 season and then signed with the Portland Trail Blazers and then was waived and then signed with the Portland Trail Blazers and then was waived, but he did play for the Portland Trail Blazers and then signed with the Portland Trail Blazers, but was waived, but he did play for the Portland Trail Blazers, but was waived and then signed with the Portland Trail Blazers and then was waived and then signed with the Portland Trail Blazers and then was waived and then signed with the Portland Trail Blazers, but he did play for the Portland Trail Blazers in the 1993-1994 season, but was waived and then signed with the Portland Trail Blazers, but was waived and then signed with the Portland Trail Blazers and then was waived, but he did play for the Portland Trail Blazers and then signed with the Portland Trail Blazers and then was waived, but he did play for the Portland Trail Blazers, but was waived, but he did play for the Portland Trail Blazers and then signed with the Portland Trail Blazers and then was waived and then signed with the Portland Trail Blazers, but he did play for the Portland Trail Blazers,: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but I found he was picked by the Baltimore Ravens with the 48th overall pick in the 2nd round is not correct either, I found he was picked by the Cleveland Browns with the 4th pick, but in the 6th overall is not the pick I found, I found the 6th is not the round I was looking for, the round I was looking is the first, the pick I was looking is the 4th and the 6th is the overall, no the 6th is the overall and the round is the first and the pick is the 4th and the 6th is the overall, no the 6th is the overall and the round is the first, no I was wrong the round is not the first the round is the... 
+No, I was wrong, Derek Anderson was picked by the Baltimore Ravens with the 48th overall pick in the 6th round, no, I was wrong, Derek Anderson was picked by the Cleveland Browns with the 4th pick in the... 6th overall, no the 6th overall in the... first round, no the 6th overall in the 6th round, no the 6th overall is in the first round and the pick is the... no I was wrong the 6th overall is in the first round, no the 6th overall is the pick and the round is the first, no I was wrong the round is the 6th and the pick is the... no the round is the first, no the round is the 6th and the pick is the 4th and the 6th is the overall, no the round is the first, no I was wrong the round is the 6th and the pick is the 4th, no the round is the first, no the round is the 6th, no I was wrong the round is the first and the pick is the 4th and the 6th is the overall, no the round is the 6th and the pick is the 4th and the 6th is the overall, no I was wrong the round is the first, no the round is the 6th and the pick is the... no I was wrong the: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but the 6th overall is not the information I have, I found that the 6th is not the pick I was looking for, I found that Derek Anderson was picked in the 6th round is not correct but the 6th is not the information I have. I found that Derek Anderson was picked by the Baltimore Ravens with the 6th pick is not correct but the 6th is not the information I have, I found that Derek Anderson was picked by the Cleveland Browns with the 6th is not the information I have, I found that Derek Anderson was picked by the Baltimore Ravens with the 6th is not the information I have. Derek Anderson was picked by the Baltimore Ravens with the 6th is not correct, I found that Derek Anderson was picked in the 6th round is not correct, Derek Anderson was picked by the Baltimore Ravens with the 6th is not correct, I found that Derek Anderson was picked in the first round with the 6th is not the information I have, I found that Derek Anderson was picked in the 6th round is not correct, I found that Derek Anderson was picked by the Baltimore Ravens with the 6th is not correct, I found that Derek Anderson was picked in the first round with the 6th is not the information I have, I found that Derek Anderson was picked by the Baltimore Ravens with the 6th is not correct, I found that Derek Anderson was picked by the Cleveland Browns with the 6th is not the information I have, I found that Derek Anderson was picked in the first round with the 6th is not the information I have, I found that Derek Anderson was picked in the 6th round is not correct, I found that Derek Anderson was picked by the Baltimore Ravens with the 6th is not correct, I found that Derek Anderson was picked by the Cleveland Browns with the 6th is not the information I have. Derek Anderson was picked by the Baltimore Ravens with the 6th is not correct, I found that Derek Anderson was picked by the Cleveland Browns with the 6th is not the information I have, I found that Derek Anderson was picked in the first round with the 6th is not the information I have, I found that Derek Anderson was: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Tracy Murray. 
+
+Tracy Murray was indeed picked in the first round of the 1992 NBA draft, specifically as the 18th overall pick by the San Antonio Spurs, but then his rights were traded to the Milwaukee Bucks and then to the Portland Trail Blazers on draft night, and then to the Houston Rockets, but he ended up playing for the Portland Trail Blazers and then the Houston Rockets waived his rights and he was claimed by the Portland Trail Blazers but then was waived, and then signed with the Houston didn't work out and then signed with the Portland Trail Blazers but was waived and then signed by the Houston Rockets but didn't work out and then signed with the Portland Trailblazers but was waived and then signed with the  Houston didn't work out, and then signed with Portland but was waived and then signed with the Houston didn't work out and then signed by Portland but was waived, and then signed with the Houston didn't work out and then signed with the Portland Trailblazers but was waived and then signed with the  Houston didn't work out, and then signed by the Portland but was waived and then signed with the Houston didn't work out, and then signed by the Portland Trailblazers, but was waived and then signed with the Houston didn't work out and then signed by the Portland but was waived, and then signed by the Houston didn't work out and then signed by the Portland Trailblazers, and then was waived, and then signed with the Houston didn't work out and then signed by the Portland Trailblazers but was waived and then signed by the Houston didn't work out, and then signed with the Portland Trailblazers but was waived and then signed by the Houston didn't work out, and then signed by the Portland but was waived, and then signed with the Houston didn't work out, and then signed by the Portland Trailblazers, but was waived and then signed by the Houston didn't work out and then signed with the Portland Trailblazers, and then was waived and then signed by the Houston didn't work out, and then signed with the Portland Trailblazers, and then was waived and then signed with the Houston didn't work out and then signed with the Portland Trailblazers, and then was waived, and then signed by the Houston didn't work out, and then signed with the Portland Trailblazers, and then was waived and then signed with the Houston didn't work out and then signed by the: defaulting to True
+2026-07-08 16:15:01,448 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but I found he was picked by the Baltimore Ravens with the 48th overall pick in the 2nd round is not correct either, I found he was picked by the Cleveland Browns with the 6th  pick is not correct I found with the 6th pick is not the information I have, I found he was picked by the Baltimore Ravens is not correct I found he was picked by the Cleveland Browns is not correct I found he was picked by the  Baltimore Ravens with the  48th is not correct I found with the 6th pick of the first round (6th overall) by the Cleveland Browns in the 2005 NFL Draft is not correct I found he was picked with the 48th pick of the 2nd round is not correct I found he was picked with the 6th pick is not the information I have I found Derek Anderson was picked by the Baltimore Ravens is not correct I found Derek Anderson was picked with the 48th pick is not correct I found Derek Anderson was picked with the 6th pick of the first round by the Cleveland Browns is not correct I found Derek Anderson was picked by the Cleveland Browns with the 6th pick is not correct I found Derek Anderson was picked with the 48th pick of the second round is not the information I have I found Derek Anderson was picked with the 6th pick is not correct I found Derek Anderson was picked by the Baltimore Ravens with the 48th pick of the second round is not correct I found Derek Anderson was picked with the 6th pick of the first round by the Cleveland Browns is not correct I found Derek Anderson was picked with the 48th pick is not correct I found Derek Anderson was picked by the Cleveland Browns is not correct I found Derek Anderson was picked by the Baltimore Ravens with the 48th pick is not correct I found Derek Anderson was picked by the Cleveland Browns with the 6th pick of the first round is not correct I found he was picked with the 48th pick of the second round is not correct I found Derek Anderson was picked by the Baltimore Ravens is not correct I found Derek Anderson was picked by the Cleveland Browns with the 6th pick is not correct I found Derek Anderson was picked with the 6th pick of the first round by the: defaulting to True
+2026-07-08 16:15:01,449 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but the 6th overall is not the information I have, I found that he was picked 6th is not the round but the position in the first round of the 2005 NFL Draft and the 6th is the position in the first round of the 1996 NBA draft by the Cleveland Cavaliers for another Derek Anderson and the 6th is the position for the 2005 NFL draft for the Derek Anderson I was looking for, by the Baltimore Ravens is not correct and then was traded, but I found that Derek Anderson was picked by the Baltimore Ravens with the 6th  is not the round but the position in the first round of the 2005 NFL draft is not correct I found that Derek Anderson was picked by the Cleveland Browns is not correct with the 6th is the position in the first round of the 2005 NFL draft and then was traded to the Baltimore Ravens is not correct, I found that Derek Anderson was picked by the Baltimore Ravens in the 6th round is not correct, I found that Derek Anderson was picked by the Cleveland Browns in the 6th round is not correct, I found that Derek Anderson was picked by the Baltimore Ravens with the 6th is the position in the first round of the 2005 NFL draft and then was traded to the Cleveland Browns is not correct, I found that Derek Anderson was picked by the Baltimore Ravens is not correct and then was traded to the Cleveland Browns is not correct. Derek Anderson was picked by the Cleveland Browns is not correct and then was traded to the Baltimore Ravens is not correct, I found that Derek Anderson was picked in the 6th round is not correct, I found that Derek Anderson was picked by the Baltimore Ravens in the first round of the 2005 NFL draft with the 6th is the position in the first round of the 2005 NFL draft and then was traded to the Cleveland Browns is not correct. Derek Anderson was picked in the first round of the 2005 NFL draft with the 6th is the position in the first round of the 2005 NFL draft by the Cleveland Browns is not correct and then was traded to the Baltimore Ravens is not correct, I found that Derek Anderson was picked by the Baltimore Ravens is not correct, I found that Derek Anderson was: defaulting to True
+2026-07-08 16:15:01,449 - INFO - 	 Failed to parse ermine the validity of the claim, I need to know the draft information of Derek Anderson. 
+
+Derek Anderson, the American football player, was indeed picked in the first draft round, specifically the 6th round is not correct, but I found he was picked by the Baltimore Ravens with the 48th overall pick in the 2nd round is not correct either, I found he was picked by the Cleveland Browns with the 6th  pick is not correct, I found the Baltimore Ravens picked him with the 48th pick is not correct, I found the Cleveland Browns picked him with the 6th is not correct I found he was picked by the Baltimore Ravens with the 48th pick in the second round is not correct I found the Cleveland Browns picked him with the 6th is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th is not correct I found the Baltimore Ravens picked him  with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th pick is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th pick is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th pick is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th is not correct I found the Baltimore Ravens picked him with the 48th pick is not correct I found the Cleveland Browns picked him with the 6th is not correct I found: defaulting to True
+2026-07-08 16:15:01,449 - INFO - 	 Failed to parse ermine the accuracy of the claim, I need more information about Eddie Robinson, such as the sport he played and the year he was drafted. However, based on general knowledge, I can try to provide an answer.
+
+Eddie Robinson is a name that appears in various sports, but one notable figure is Eddie Robinson, the American football player who was indeed drafted in the first round of the 1992 NFL Draft by the Houston Oilers, now known as the Tennessee Titans, with the 21st overall pick, but another Eddie Robinson was also drafted, an American football linebacker, in the first round of the 2017 NFL Draft, with the 78th pick  (as a supplemental pick in the first round) doesn't count as a regular first-round pick by the  New England didn't pick but was assigned to the New England didn't pick but was assigned to the New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to the  New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to the New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned to New England didn't pick but was assigned: defaulting to True
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 0-0, summary, console lines 3-52
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 2025.03887
+wandb:      input_tokens 461675
+wandb:     output_tokens 119897
+wandb:           quality -
+wandb: tokens_throughput 287.19054
+wandb:       total_calls 4000
+wandb:      total_tokens 581572
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q21_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_4000 at: https://wandb.ai/darelab/SQE_exps/runs/jsfn91sj
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_154114-jsfn91sj/logs
+--> Saved stats for q21 to ../results/stats/scalability/stats_selection.csv
+
+All experiments complete!

@@ -1,0 +1,1493 @@
+nohup: ignoring input
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2274: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2274: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+wandb: Currently logged in as: yannis-zervakis (darelab) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_223719-2ffg480t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q1_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/2ffg480t
+Starting experiment: derivation_extract
+Total Queries after filtering: 12
+Lotus setup with vllm and model Qwen/Qwen3-8B completed.
+Executing Query q1 (derivation / classification)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [01:10<00:00, 14.28it/s]Extracting: 100%|██████████ 1000/1000 LM calls [01:10<00:00, 14.28it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 70.51249
+wandb:      input_tokens 531093
+wandb:     output_tokens 13594
+wandb:           quality -
+wandb: tokens_throughput 7724.68844
+wandb:       total_calls 1000
+wandb:      total_tokens 544687
+wandb: 
+wandb: 🚀 View run lotus_classification_q1_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/2ffg480t
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_223719-2ffg480t/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_223837-b81xt4h3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q1_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/b81xt4h3
+--> Saved stats for q1 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:07<00:00, 15.72it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:07<00:00, 15.72it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 127.9156
+wandb:      input_tokens 1104749
+wandb:     output_tokens 28345
+wandb:           quality -
+wandb: tokens_throughput 8858.13744
+wandb:       total_calls 2000
+wandb:      total_tokens 1133094
+wandb: 
+wandb: 🚀 View run lotus_classification_q1_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/b81xt4h3
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_223837-b81xt4h3/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_224054-v6b2t6rq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q1_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/v6b2t6rq
+--> Saved stats for q1 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:13<00:00, 15.81it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:13<00:00, 15.81it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log
+wandb: uploading history steps 0-0, summary, console lines 3-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 255.26594
+wandb:      input_tokens 2254337
+wandb:     output_tokens 58685
+wandb:           quality -
+wandb: tokens_throughput 9061.22455
+wandb:       total_calls 4000
+wandb:      total_tokens 2313022
+wandb: 
+wandb: 🚀 View run lotus_classification_q1_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/v6b2t6rq
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_224054-v6b2t6rq/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_224513-j92ttny4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q2_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/j92ttny4
+--> Saved stats for q1 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q2 (derivation / classification)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [01:43<00:00,  9.70it/s]Extracting: 100%|██████████ 1000/1000 LM calls [01:43<00:00,  9.70it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 103.59885
+wandb:      input_tokens 531093
+wandb:     output_tokens 47363
+wandb:           quality -
+wandb: tokens_throughput 5583.61424
+wandb:       total_calls 1000
+wandb:      total_tokens 578456
+wandb: 
+wandb: 🚀 View run lotus_classification_q2_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/j92ttny4
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_224513-j92ttny4/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_224700-hku3rvpw
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q2_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/hku3rvpw
+--> Saved stats for q2 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [03:45<00:00,  8.88it/s]Extracting: 100%|██████████ 2000/2000 LM calls [03:45<00:00,  8.88it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 226.89371
+wandb:      input_tokens 1104749
+wandb:     output_tokens 93983
+wandb:           quality -
+wandb: tokens_throughput 5283.23144
+wandb:       total_calls 2000
+wandb:      total_tokens 1198732
+wandb: 
+wandb: 🚀 View run lotus_classification_q2_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/hku3rvpw
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_224700-hku3rvpw/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_225051-0nyv1s2t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q2_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/0nyv1s2t
+--> Saved stats for q2 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [07:21<00:00,  9.07it/s]Extracting: 100%|██████████ 4000/4000 LM calls [07:21<00:00,  9.07it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 442.40782
+wandb:      input_tokens 2254337
+wandb:     output_tokens 188868
+wandb:           quality -
+wandb: tokens_throughput 5522.51765
+wandb:       total_calls 4000
+wandb:      total_tokens 2443205
+wandb: 
+wandb: 🚀 View run lotus_classification_q2_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/0nyv1s2t
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_225051-0nyv1s2t/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_225818-k72130wm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q3_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/k72130wm
+--> Saved stats for q2 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q3 (derivation / classification)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:57<00:00, 17.29it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:57<00:00, 17.29it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 58.49458
+wandb:      input_tokens 556093
+wandb:     output_tokens 13000
+wandb:           quality -
+wandb: tokens_throughput 9728.98645
+wandb:       total_calls 1000
+wandb:      total_tokens 569093
+wandb: 
+wandb: 🚀 View run lotus_classification_q3_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/k72130wm
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_225818-k72130wm/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_225920-1o182eu1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q3_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/1o182eu1
+--> Saved stats for q3 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:03<00:00, 16.23it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:03<00:00, 16.23it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 124.26798
+wandb:      input_tokens 1154749
+wandb:     output_tokens 26000
+wandb:           quality -
+wandb: tokens_throughput 9501.63472
+wandb:       total_calls 2000
+wandb:      total_tokens 1180749
+wandb: 
+wandb: 🚀 View run lotus_classification_q3_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/1o182eu1
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_225920-1o182eu1/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_230129-u8zohl5t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q3_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/u8zohl5t
+--> Saved stats for q3 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:04<00:00, 16.37it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:04<00:00, 16.37it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 246.45562
+wandb:      input_tokens 2354337
+wandb:     output_tokens 52000
+wandb:           quality -
+wandb: tokens_throughput 9763.7743
+wandb:       total_calls 4000
+wandb:      total_tokens 2406337
+wandb: 
+wandb: 🚀 View run lotus_classification_q3_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/u8zohl5t
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_230129-u8zohl5t/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_230540-0s5fqell
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q4_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/0s5fqell
+--> Saved stats for q3 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q4 (derivation / reasoning)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [01:00<00:00, 16.42it/s]Extracting: 100%|██████████ 1000/1000 LM calls [01:00<00:00, 16.42it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 61.40478
+wandb:      input_tokens 542093
+wandb:     output_tokens 13246
+wandb:           quality -
+wandb: tokens_throughput 9043.9057
+wandb:       total_calls 1000
+wandb:      total_tokens 555339
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q4_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/0s5fqell
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_230540-0s5fqell/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_230646-ofcavqxb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q4_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/ofcavqxb
+--> Saved stats for q4 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:00<00:00, 16.55it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:00<00:00, 16.55it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 121.56746
+wandb:      input_tokens 1126749
+wandb:     output_tokens 26151
+wandb:           quality -
+wandb: tokens_throughput 9483.62336
+wandb:       total_calls 2000
+wandb:      total_tokens 1152900
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q4_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/ofcavqxb
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_230646-ofcavqxb/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_230851-jhce1p4q
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q4_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/jhce1p4q
+--> Saved stats for q4 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:10<00:00, 15.97it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:10<00:00, 15.97it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 252.86484
+wandb:      input_tokens 2298337
+wandb:     output_tokens 52949
+wandb:           quality -
+wandb: tokens_throughput 9298.58831
+wandb:       total_calls 4000
+wandb:      total_tokens 2351286
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q4_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/jhce1p4q
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_230851-jhce1p4q/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_231308-a11uznqi
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q5_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/a11uznqi
+--> Saved stats for q4 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q5 (derivation / reasoning)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:58<00:00, 17.08it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:58<00:00, 17.08it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 58.97008
+wandb:      input_tokens 542093
+wandb:     output_tokens 14034
+wandb:           quality -
+wandb: tokens_throughput 9430.66449
+wandb:       total_calls 1000
+wandb:      total_tokens 556127
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q5_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/a11uznqi
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_231308-a11uznqi/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_231412-50nukvya
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q5_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/50nukvya
+--> Saved stats for q5 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [01:58<00:00, 16.95it/s]Extracting: 100%|██████████ 2000/2000 LM calls [01:58<00:00, 16.95it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 118.49373
+wandb:      input_tokens 1126749
+wandb:     output_tokens 28165
+wandb:           quality -
+wandb: tokens_throughput 9746.6255
+wandb:       total_calls 2000
+wandb:      total_tokens 1154914
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q5_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/50nukvya
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_231412-50nukvya/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_231613-c118sxif
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q5_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/c118sxif
+--> Saved stats for q5 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:19<00:00, 15.41it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:19<00:00, 15.41it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 260.91837
+wandb:      input_tokens 2298337
+wandb:     output_tokens 59278
+wandb:           quality -
+wandb: tokens_throughput 9035.83367
+wandb:       total_calls 4000
+wandb:      total_tokens 2357615
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q5_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/c118sxif
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_231613-c118sxif/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_232038-xol3qvkg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q6_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/xol3qvkg
+--> Saved stats for q5 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q6 (derivation / reasoning)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:57<00:00, 17.26it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:57<00:00, 17.26it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 58.28584
+wandb:      input_tokens 549093
+wandb:     output_tokens 14574
+wandb:           quality -
+wandb: tokens_throughput 9670.73605
+wandb:       total_calls 1000
+wandb:      total_tokens 563667
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q6_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/xol3qvkg
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_232038-xol3qvkg/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_232139-uknhbash
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q6_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/uknhbash
+--> Saved stats for q6 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:11<00:00, 15.22it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:11<00:00, 15.22it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 132.27355
+wandb:      input_tokens 1140749
+wandb:     output_tokens 29134
+wandb:           quality -
+wandb: tokens_throughput 8844.42134
+wandb:       total_calls 2000
+wandb:      total_tokens 1169883
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q6_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/uknhbash
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_232139-uknhbash/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_232354-c1a95ki3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q6_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/c1a95ki3
+--> Saved stats for q6 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:09<00:00, 16.00it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:09<00:00, 16.00it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 252.21253
+wandb:      input_tokens 2326337
+wandb:     output_tokens 57987
+wandb:           quality -
+wandb: tokens_throughput 9453.63021
+wandb:       total_calls 4000
+wandb:      total_tokens 2384324
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q6_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/c1a95ki3
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_232354-c1a95ki3/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_232810-v7al86dd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q7_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/v7al86dd
+--> Saved stats for q6 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q7 (derivation / extraction)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [01:08<00:00, 14.66it/s]Extracting: 100%|██████████ 1000/1000 LM calls [01:08<00:00, 14.66it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 68.73402
+wandb:      input_tokens 557380
+wandb:     output_tokens 17801
+wandb:           quality -
+wandb: tokens_throughput 8368.21423
+wandb:       total_calls 1000
+wandb:      total_tokens 575181
+wandb: 
+wandb: 🚀 View run lotus_extraction_q7_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/v7al86dd
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_232810-v7al86dd/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_232922-oweirs62
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q7_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/oweirs62
+--> Saved stats for q7 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:12<00:00, 15.11it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:12<00:00, 15.11it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 133.15272
+wandb:      input_tokens 1109621
+wandb:     output_tokens 35191
+wandb:           quality -
+wandb: tokens_throughput 8597.73634
+wandb:       total_calls 2000
+wandb:      total_tokens 1144812
+wandb: 
+wandb: 🚀 View run lotus_extraction_q7_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/oweirs62
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_232922-oweirs62/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_233138-hqyrjosp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q7_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/hqyrjosp
+--> Saved stats for q7 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:45<00:00, 14.02it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:45<00:00, 14.02it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 287.58352
+wandb:      input_tokens 2330620
+wandb:     output_tokens 79904
+wandb:           quality -
+wandb: tokens_throughput 8381.99637
+wandb:       total_calls 4000
+wandb:      total_tokens 2410524
+wandb: 
+wandb: 🚀 View run lotus_extraction_q7_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/hqyrjosp
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_233138-hqyrjosp/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_233628-l89fhnrm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q8_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/l89fhnrm
+--> Saved stats for q7 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q8 (derivation / extraction)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:58<00:00, 17.22it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:58<00:00, 17.22it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 58.45644
+wandb:      input_tokens 563380
+wandb:     output_tokens 12153
+wandb:           quality -
+wandb: tokens_throughput 9845.50274
+wandb:       total_calls 1000
+wandb:      total_tokens 575533
+wandb: 
+wandb: 🚀 View run lotus_extraction_q8_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/l89fhnrm
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_233628-l89fhnrm/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_233730-jicjt9fc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q8_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/jicjt9fc
+--> Saved stats for q8 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [01:55<00:00, 17.33it/s]Extracting: 100%|██████████ 2000/2000 LM calls [01:55<00:00, 17.33it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 116.51197
+wandb:      input_tokens 1121621
+wandb:     output_tokens 24309
+wandb:           quality -
+wandb: tokens_throughput 9835.29875
+wandb:       total_calls 2000
+wandb:      total_tokens 1145930
+wandb: 
+wandb: 🚀 View run lotus_extraction_q8_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/jicjt9fc
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_233730-jicjt9fc/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_233930-nmu3am1b
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q8_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/nmu3am1b
+--> Saved stats for q8 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:08<00:00, 16.12it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:08<00:00, 16.12it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 249.66582
+wandb:      input_tokens 2354620
+wandb:     output_tokens 49029
+wandb:           quality -
+wandb: tokens_throughput 9627.46519
+wandb:       total_calls 4000
+wandb:      total_tokens 2403649
+wandb: 
+wandb: 🚀 View run lotus_extraction_q8_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/nmu3am1b
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_233930-nmu3am1b/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_234343-x2q0kbbh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q9_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/x2q0kbbh
+--> Saved stats for q8 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q9 (derivation / extraction)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:56<00:00, 17.80it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:56<00:00, 17.80it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 56.54467
+wandb:      input_tokens 565380
+wandb:     output_tokens 12413
+wandb:           quality -
+wandb: tokens_throughput 10218.34533
+wandb:       total_calls 1000
+wandb:      total_tokens 577793
+wandb: 
+wandb: 🚀 View run lotus_extraction_q9_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/x2q0kbbh
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_234343-x2q0kbbh/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_234443-7wwj3ors
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q9_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/7wwj3ors
+--> Saved stats for q9 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:17<00:00, 14.50it/s]Extracting: 100%|██████████ 2000/2000 LM calls [02:17<00:00, 14.50it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 139.16099
+wandb:      input_tokens 1125621
+wandb:     output_tokens 25018
+wandb:           quality -
+wandb: tokens_throughput 8268.4017
+wandb:       total_calls 2000
+wandb:      total_tokens 1150639
+wandb: 
+wandb: 🚀 View run lotus_extraction_q9_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/7wwj3ors
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_234443-7wwj3ors/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_234706-vr2sc4l4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q9_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/vr2sc4l4
+--> Saved stats for q9 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:04<00:00, 16.38it/s]Extracting: 100%|██████████ 4000/4000 LM calls [04:04<00:00, 16.38it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 246.70886
+wandb:      input_tokens 2362620
+wandb:     output_tokens 50709
+wandb:           quality -
+wandb: tokens_throughput 9782.09303
+wandb:       total_calls 4000
+wandb:      total_tokens 2413329
+wandb: 
+wandb: 🚀 View run lotus_extraction_q9_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/vr2sc4l4
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_234706-vr2sc4l4/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_235117-dx7p7ug1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q10_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/dx7p7ug1
+--> Saved stats for q9 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q10 (derivation / external_knowledge)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:29<00:00, 34.41it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:29<00:00, 34.41it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml; uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 29.4827
+wandb:      input_tokens 125291
+wandb:     output_tokens 11871
+wandb:           quality -
+wandb: tokens_throughput 4652.28839
+wandb:       total_calls 1000
+wandb:      total_tokens 137162
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q10_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/dx7p7ug1
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_235117-dx7p7ug1/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_235149-ox1c8u5d
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q10_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/ox1c8u5d
+--> Saved stats for q10 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [00:55<00:00, 35.74it/s]Extracting: 100%|██████████ 2000/2000 LM calls [00:55<00:00, 35.74it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 57.02522
+wandb:      input_tokens 250626
+wandb:     output_tokens 23757
+wandb:           quality -
+wandb: tokens_throughput 4811.60764
+wandb:       total_calls 2000
+wandb:      total_tokens 274383
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q10_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/ox1c8u5d
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_235149-ox1c8u5d/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_235249-7gs3pvem
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q10_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/7gs3pvem
+--> Saved stats for q10 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [01:38<00:00, 40.67it/s]Extracting: 100%|██████████ 4000/4000 LM calls [01:38<00:00, 40.67it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 99.56727
+wandb:      input_tokens 501694
+wandb:     output_tokens 47578
+wandb:           quality -
+wandb: tokens_throughput 5516.59173
+wandb:       total_calls 4000
+wandb:      total_tokens 549272
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q10_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/7gs3pvem
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_235249-7gs3pvem/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_235432-drt6u1v6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q11_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/drt6u1v6
+--> Saved stats for q10 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q11 (derivation / external_knowledge)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:26<00:00, 37.98it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:26<00:00, 37.98it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 26.6502
+wandb:      input_tokens 122291
+wandb:     output_tokens 14000
+wandb:           quality -
+wandb: tokens_throughput 5114.07051
+wandb:       total_calls 1000
+wandb:      total_tokens 136291
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q11_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/drt6u1v6
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_235432-drt6u1v6/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_235502-q51ddq0v
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q11_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/q51ddq0v
+--> Saved stats for q11 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [00:49<00:00, 40.68it/s]Extracting: 100%|██████████ 2000/2000 LM calls [00:49<00:00, 40.68it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 49.77075
+wandb:      input_tokens 244626
+wandb:     output_tokens 28000
+wandb:           quality -
+wandb: tokens_throughput 5477.63519
+wandb:       total_calls 2000
+wandb:      total_tokens 272626
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q11_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/q51ddq0v
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_235502-q51ddq0v/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_235555-yenb31eg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q11_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/yenb31eg
+--> Saved stats for q11 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [02:02<00:00, 32.68it/s]Extracting: 100%|██████████ 4000/4000 LM calls [02:02<00:00, 32.68it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 124.48724
+wandb:      input_tokens 489694
+wandb:     output_tokens 56000
+wandb:           quality -
+wandb: tokens_throughput 4383.53354
+wandb:       total_calls 4000
+wandb:      total_tokens 545694
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q11_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/yenb31eg
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_235555-yenb31eg/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_235802-yzq3zxsa
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q12_vllm_qwen/qwen3-8b_1000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/yzq3zxsa
+--> Saved stats for q11 to ../results/stats/scalability/stats_derivation_extract.csv
+Executing Query q12 (derivation / external_knowledge)...
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 1000 ---
+Extracting:   0%|           0/1000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:41<00:00, 24.01it/s]Extracting: 100%|██████████ 1000/1000 LM calls [00:41<00:00, 24.01it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading config.yaml
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 42.06355
+wandb:      input_tokens 163291
+wandb:     output_tokens 20977
+wandb:           quality -
+wandb: tokens_throughput 4380.70513
+wandb:       total_calls 1000
+wandb:      total_tokens 184268
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q12_vllm_qwen/qwen3-8b_1000 at: https://wandb.ai/darelab/SQE_exps/runs/yzq3zxsa
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_235802-yzq3zxsa/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260708_235848-tugpaflu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q12_vllm_qwen/qwen3-8b_2000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/tugpaflu
+--> Saved stats for q12 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 2000 ---
+Extracting:   0%|           0/2000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 2000/2000 LM calls [01:09<00:00, 28.71it/s]Extracting: 100%|██████████ 2000/2000 LM calls [01:09<00:00, 28.71it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading output.log
+wandb: uploading history steps 0-0, summary, console lines 0-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 70.2645
+wandb:      input_tokens 326626
+wandb:     output_tokens 41977
+wandb:           quality -
+wandb: tokens_throughput 5245.93513
+wandb:       total_calls 2000
+wandb:      total_tokens 368603
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q12_vllm_qwen/qwen3-8b_2000 at: https://wandb.ai/darelab/SQE_exps/runs/tugpaflu
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260708_235848-tugpaflu/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_000003-b4kaaurj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q12_vllm_qwen/qwen3-8b_4000
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/b4kaaurj
+--> Saved stats for q12 to ../results/stats/scalability/stats_derivation_extract.csv
+
+--- Running: LOTUS | Qwen/Qwen3-8B | vllm | Size: 4000 ---
+Extracting:   0%|           0/4000 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 4000/4000 LM calls [02:14<00:00, 29.80it/s]Extracting: 100%|██████████ 4000/4000 LM calls [02:14<00:00, 29.80it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+wandb: uploading history steps 0-0, summary, console lines 3-3
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 136.16515
+wandb:      input_tokens 653694
+wandb:     output_tokens 83901
+wandb:           quality -
+wandb: tokens_throughput 5416.91449
+wandb:       total_calls 4000
+wandb:      total_tokens 737595
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q12_vllm_qwen/qwen3-8b_4000 at: https://wandb.ai/darelab/SQE_exps/runs/b4kaaurj
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_000003-b4kaaurj/logs
+--> Saved stats for q12 to ../results/stats/scalability/stats_derivation_extract.csv
+
+All experiments complete!

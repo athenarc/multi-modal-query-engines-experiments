@@ -1,36 +1,25 @@
 .vsocde/
-
-old/
-old/wandb/
-old/logs/
-old/*.DS_Store
-old/*.log
-old/*.out
 .env
-old/*.ipynb
-old/parse-answer-errors/
-old/runs.sh
-old/results/
-experiment_runner/systems/__pycache__/
-test*
-*.out
+
+# Utility directories
 experiment_runner/parse-answer-errors
 experiment_runner/wandb/
-results/
+experiment_runner/systems/__pycache__/
 
-convert_results_for_html.py
+# Rotten Tomatoes Dataset from Kaggle (https://www.kaggle.com/datasets/stefanoleone992/rotten-tomatoes-movies-and-critic-reviews-dataset)
+datasets/rotten_tomatoes/movies.csv
+datasets/rotten_tomatoes/reviews.csv
 
-datasets/rotten_tomatoes/
-
-utilities/pre_process_movies*
-
+# SemBench Rotten Tomatoes Dataset Variation
 rotten_tomatoes_movie_reviews_variation.csv
 rotten_tomatoes_movies_variation.csv
-tmp.csv
 
-figures/
-
+# Experimental Results
+results/
 utilities/plot_scripts/
-
+figures/
+convert_results_for_html.py
 experiments.html
 
+# Old paper's version
+old/ 

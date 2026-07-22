@@ -1,0 +1,552 @@
+nohup: ignoring input
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2274: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/pydantic/_internal/_generate_schema.py:2274: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+wandb: Currently logged in as: yannis-zervakis (darelab) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_093207-kgfd3w3v
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q34_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/kgfd3w3v
+Starting experiment: derivation_extract
+Total Queries after filtering: 12
+Lotus setup with vllm and model RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 completed.
+Executing Query q34 (derivation / classification)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:32<00:00,  3.09it/s]Extracting: 100%|██████████ 100/100 LM calls [00:32<00:00,  3.09it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q34]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q34]:   5%|▌         | 5/100 [00:02<00:51,  1.86it/s]LLM Judge [q34]:  10%|█         | 10/100 [00:04<00:38,  2.34it/s]LLM Judge [q34]:  20%|██        | 20/100 [00:06<00:21,  3.72it/s]LLM Judge [q34]:  25%|██▌       | 25/100 [00:07<00:22,  3.38it/s]LLM Judge [q34]:  39%|███▉      | 39/100 [00:09<00:12,  4.94it/s]LLM Judge [q34]:  44%|████▍     | 44/100 [00:11<00:13,  4.22it/s]LLM Judge [q34]:  46%|████▌     | 46/100 [00:13<00:16,  3.24it/s]LLM Judge [q34]:  53%|█████▎    | 53/100 [00:15<00:13,  3.46it/s]LLM Judge [q34]:  58%|█████▊    | 58/100 [00:16<00:12,  3.27it/s]LLM Judge [q34]:  66%|██████▌   | 66/100 [00:18<00:09,  3.64it/s]LLM Judge [q34]:  67%|██████▋   | 67/100 [00:20<00:12,  2.69it/s]LLM Judge [q34]:  69%|██████▉   | 69/100 [00:22<00:14,  2.21it/s]LLM Judge [q34]:  71%|███████   | 71/100 [00:23<00:15,  1.89it/s]LLM Judge [q34]:  77%|███████▋  | 77/100 [00:25<00:10,  2.26it/s]LLM Judge [q34]:  84%|████████▍ | 84/100 [00:27<00:05,  2.74it/s]LLM Judge [q34]:  85%|████████▌ | 85/100 [00:29<00:07,  2.01it/s]LLM Judge [q34]:  91%|█████████ | 91/100 [00:31<00:03,  2.41it/s]LLM Judge [q34]:  95%|█████████▌| 95/100 [00:33<00:02,  2.37it/s]LLM Judge [q34]:  98%|█████████▊| 98/100 [00:35<00:00,  2.17it/s]LLM Judge [q34]: 100%|██████████| 100/100 [00:37<00:00,  1.80it/s]LLM Judge [q34]: 100%|██████████| 100/100 [00:37<00:00,  2.70it/s]
+wandb: uploading artifact run-kgfd3w3v-predicted_table
+wandb: uploading history steps 0-0, summary, console lines 3-4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 32.43723
+wandb:      input_tokens 28485
+wandb:     output_tokens 4580
+wandb: tokens_throughput 1019.35342
+wandb:       total_calls 100
+wandb:      total_tokens 33065
+wandb: 
+wandb: 🚀 View run lotus_classification_q34_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/kgfd3w3v
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_093207-kgfd3w3v/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_093325-n782ug9g
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q35_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/n782ug9g
+--> Saved stats for q34 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q35 (derivation / classification)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:24<00:00,  4.03it/s]Extracting: 100%|██████████ 100/100 LM calls [00:24<00:00,  4.03it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q35]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q35]:  47%|████▋     | 47/100 [00:01<00:01, 27.24it/s]LLM Judge [q35]:  51%|█████     | 51/100 [00:03<00:03, 12.57it/s]LLM Judge [q35]:  74%|███████▍  | 74/100 [00:05<00:02, 12.88it/s]LLM Judge [q35]:  78%|███████▊  | 78/100 [00:07<00:02,  8.55it/s]LLM Judge [q35]: 100%|██████████| 100/100 [00:07<00:00, 14.28it/s]
+wandb: uploading artifact run-n782ug9g-predicted_table; uploading config.yaml
+wandb: uploading artifact run-n782ug9g-predicted_table
+wandb: uploading history steps 0-0, summary, console lines 3-4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 24.90433
+wandb:      input_tokens 19914
+wandb:     output_tokens 4182
+wandb: tokens_throughput 967.54254
+wandb:       total_calls 100
+wandb:      total_tokens 24096
+wandb: 
+wandb: 🚀 View run lotus_classification_q35_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/n782ug9g
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_093325-n782ug9g/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_093402-u6mhrpqx
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_classification_q36_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/u6mhrpqx
+--> Saved stats for q35 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q36 (derivation / classification)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:22<00:00,  4.37it/s]Extracting: 100%|██████████ 100/100 LM calls [00:22<00:00,  4.37it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q36]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q36]:  21%|██        | 21/100 [00:01<00:06, 12.11it/s]LLM Judge [q36]:  42%|████▏     | 42/100 [00:03<00:04, 12.12it/s]LLM Judge [q36]:  44%|████▍     | 44/100 [00:05<00:07,  7.11it/s]LLM Judge [q36]:  57%|█████▋    | 57/100 [00:06<00:05,  7.27it/s]LLM Judge [q36]:  69%|██████▉   | 69/100 [00:08<00:04,  7.25it/s]LLM Judge [q36]:  75%|███████▌  | 75/100 [00:10<00:04,  5.94it/s]LLM Judge [q36]:  80%|████████  | 80/100 [00:12<00:04,  4.93it/s]LLM Judge [q36]:  89%|████████▉ | 89/100 [00:13<00:02,  5.01it/s]LLM Judge [q36]: 100%|██████████| 100/100 [00:13<00:00,  7.24it/s]
+wandb: uploading artifact run-u6mhrpqx-predicted_table
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 22.95802
+wandb:      input_tokens 27085
+wandb:     output_tokens 3154
+wandb: tokens_throughput 1317.14341
+wandb:       total_calls 100
+wandb:      total_tokens 30239
+wandb: 
+wandb: 🚀 View run lotus_classification_q36_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/u6mhrpqx
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_093402-u6mhrpqx/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_093444-q41vr8d6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q37_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/q41vr8d6
+--> Saved stats for q36 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q37 (derivation / reasoning)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:30<00:00,  3.28it/s]Extracting: 100%|██████████ 100/100 LM calls [00:30<00:00,  3.28it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+2026-07-09 09:35:16,582 - INFO - 	 Failed to parse: {"num_mentioned_actors": 3, "num_mentioned_actors_quote": "Anthony Hopkins", "John Hurt”, “Anne Bancroft”}
+LLM Judge [q37]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q37]:   6%|▌         | 6/100 [00:01<00:28,  3.33it/s]LLM Judge [q37]:  11%|█         | 11/100 [00:03<00:28,  3.15it/s]LLM Judge [q37]:  13%|█▎        | 13/100 [00:05<00:39,  2.20it/s]LLM Judge [q37]:  21%|██        | 21/100 [00:07<00:25,  3.11it/s]LLM Judge [q37]:  29%|██▉       | 29/100 [00:08<00:20,  3.53it/s]LLM Judge [q37]:  30%|███       | 30/100 [00:10<00:27,  2.59it/s]LLM Judge [q37]:  31%|███       | 31/100 [00:12<00:36,  1.89it/s]LLM Judge [q37]:  50%|█████     | 50/100 [00:14<00:10,  4.65it/s]LLM Judge [q37]:  56%|█████▌    | 56/100 [00:16<00:10,  4.24it/s]LLM Judge [q37]:  67%|██████▋   | 67/100 [00:17<00:06,  4.76it/s]LLM Judge [q37]: 100%|██████████| 100/100 [00:17<00:00,  5.57it/s]
+wandb: uploading artifact run-q41vr8d6-predicted_table
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 30.55997
+wandb:      input_tokens 25785
+wandb:     output_tokens 4249
+wandb: tokens_throughput 982.78898
+wandb:       total_calls 100
+wandb:      total_tokens 30034
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q37_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/q41vr8d6
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_093444-q41vr8d6/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_093539-kju9w2ms
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q38_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/kju9w2ms
+--> Saved stats for q37 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q38 (derivation / reasoning)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:21<00:00,  4.71it/s]Extracting: 100%|██████████ 100/100 LM calls [00:21<00:00,  4.71it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q38]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q38]:   1%|          | 1/100 [00:01<02:51,  1.74s/it]LLM Judge [q38]:   2%|▏         | 2/100 [00:03<02:58,  1.82s/it]LLM Judge [q38]:   3%|▎         | 3/100 [00:05<02:59,  1.85s/it]LLM Judge [q38]:   4%|▍         | 4/100 [00:07<02:55,  1.82s/it]LLM Judge [q38]:   5%|▌         | 5/100 [00:09<02:52,  1.81s/it]LLM Judge [q38]:   6%|▌         | 6/100 [00:10<02:48,  1.79s/it]LLM Judge [q38]:   7%|▋         | 7/100 [00:12<02:50,  1.83s/it]LLM Judge [q38]:   8%|▊         | 8/100 [00:14<02:45,  1.80s/it]LLM Judge [q38]:   9%|▉         | 9/100 [00:16<02:44,  1.80s/it]LLM Judge [q38]:  10%|█         | 10/100 [00:18<02:45,  1.84s/it]LLM Judge [q38]:  11%|█         | 11/100 [00:19<02:41,  1.81s/it]LLM Judge [q38]:  12%|█▏        | 12/100 [00:21<02:41,  1.83s/it]LLM Judge [q38]:  13%|█▎        | 13/100 [00:23<02:41,  1.85s/it]LLM Judge [q38]:  14%|█▍        | 14/100 [00:25<02:38,  1.85s/it]LLM Judge [q38]:  15%|█▌        | 15/100 [00:27<02:36,  1.84s/it]LLM Judge [q38]:  16%|█▌        | 16/100 [00:29<02:31,  1.81s/it]LLM Judge [q38]:  17%|█▋        | 17/100 [00:30<02:30,  1.81s/it]LLM Judge [q38]:  18%|█▊        | 18/100 [00:32<02:28,  1.81s/it]LLM Judge [q38]:  19%|█▉        | 19/100 [00:34<02:27,  1.82s/it]LLM Judge [q38]:  20%|██        | 20/100 [00:36<02:27,  1.84s/it]LLM Judge [q38]:  21%|██        | 21/100 [00:38<02:26,  1.85s/it]LLM Judge [q38]:  22%|██▏       | 22/100 [00:40<02:21,  1.82s/it]LLM Judge [q38]:  23%|██▎       | 23/100 [00:41<02:21,  1.84s/it]LLM Judge [q38]:  24%|██▍       | 24/100 [00:43<02:19,  1.84s/it]LLM Judge [q38]:  25%|██▌       | 25/100 [00:45<02:17,  1.83s/it]LLM Judge [q38]:  26%|██▌       | 26/100 [00:47<02:13,  1.80s/it]LLM Judge [q38]:  27%|██▋       | 27/100 [00:49<02:09,  1.78s/it]LLM Judge [q38]:  28%|██▊       | 28/100 [00:50<02:09,  1.79s/it]LLM Judge [q38]:  29%|██▉       | 29/100 [00:52<02:07,  1.80s/it]LLM Judge [q38]:  30%|███       | 30/100 [00:54<02:04,  1.78s/it]LLM Judge [q38]:  31%|███       | 31/100 [00:56<02:02,  1.77s/it]LLM Judge [q38]:  32%|███▏      | 32/100 [00:58<02:01,  1.78s/it]LLM Judge [q38]:  33%|███▎      | 33/100 [00:59<02:01,  1.82s/it]LLM Judge [q38]:  34%|███▍      | 34/100 [01:01<02:01,  1.84s/it]LLM Judge [q38]:  35%|███▌      | 35/100 [01:03<01:57,  1.81s/it]LLM Judge [q38]:  36%|███▌      | 36/100 [01:05<01:54,  1.78s/it]LLM Judge [q38]:  37%|███▋      | 37/100 [01:07<01:51,  1.77s/it]LLM Judge [q38]:  38%|███▊      | 38/100 [01:08<01:52,  1.81s/it]LLM Judge [q38]:  39%|███▉      | 39/100 [01:10<01:50,  1.81s/it]LLM Judge [q38]:  40%|████      | 40/100 [01:12<01:47,  1.79s/it]LLM Judge [q38]:  41%|████      | 41/100 [01:14<01:44,  1.77s/it]LLM Judge [q38]:  42%|████▏     | 42/100 [01:15<01:42,  1.76s/it]LLM Judge [q38]:  43%|████▎     | 43/100 [01:17<01:40,  1.76s/it]LLM Judge [q38]:  44%|████▍     | 44/100 [01:19<01:38,  1.76s/it]LLM Judge [q38]:  45%|████▌     | 45/100 [01:21<01:38,  1.80s/it]LLM Judge [q38]:  46%|████▌     | 46/100 [01:23<01:37,  1.80s/it]LLM Judge [q38]:  47%|████▋     | 47/100 [01:24<01:35,  1.81s/it]LLM Judge [q38]:  48%|████▊     | 48/100 [01:26<01:35,  1.84s/it]LLM Judge [q38]:  49%|████▉     | 49/100 [01:28<01:34,  1.85s/it]LLM Judge [q38]:  50%|█████     | 50/100 [01:30<01:31,  1.84s/it]LLM Judge [q38]:  51%|█████     | 51/100 [01:32<01:29,  1.83s/it]LLM Judge [q38]:  52%|█████▏    | 52/100 [01:34<01:27,  1.83s/it]LLM Judge [q38]:  53%|█████▎    | 53/100 [01:35<01:24,  1.81s/it]LLM Judge [q38]:  54%|█████▍    | 54/100 [01:37<01:24,  1.83s/it]LLM Judge [q38]:  55%|█████▌    | 55/100 [01:39<01:21,  1.82s/it]LLM Judge [q38]:  56%|█████▌    | 56/100 [01:41<01:19,  1.82s/it]LLM Judge [q38]:  57%|█████▋    | 57/100 [01:43<01:19,  1.84s/it]LLM Judge [q38]:  58%|█████▊    | 58/100 [01:45<01:17,  1.84s/it]LLM Judge [q38]:  59%|█████▉    | 59/100 [01:46<01:14,  1.81s/it]LLM Judge [q38]:  60%|██████    | 60/100 [01:48<01:13,  1.83s/it]LLM Judge [q38]:  61%|██████    | 61/100 [01:50<01:11,  1.83s/it]LLM Judge [q38]:  62%|██████▏   | 62/100 [01:52<01:09,  1.83s/it]LLM Judge [q38]:  63%|██████▎   | 63/100 [01:54<01:07,  1.82s/it]LLM Judge [q38]:  64%|██████▍   | 64/100 [01:56<01:05,  1.82s/it]LLM Judge [q38]:  65%|██████▌   | 65/100 [01:57<01:04,  1.84s/it]LLM Judge [q38]:  66%|██████▌   | 66/100 [01:59<01:02,  1.84s/it]LLM Judge [q38]:  67%|██████▋   | 67/100 [02:01<01:00,  1.83s/it]LLM Judge [q38]:  68%|██████▊   | 68/100 [02:03<00:57,  1.80s/it]LLM Judge [q38]:  69%|██████▉   | 69/100 [02:05<00:55,  1.80s/it]LLM Judge [q38]:  70%|███████   | 70/100 [02:06<00:54,  1.81s/it]LLM Judge [q38]:  71%|███████   | 71/100 [02:08<00:52,  1.79s/it]LLM Judge [q38]:  72%|███████▏  | 72/100 [02:10<00:50,  1.80s/it]LLM Judge [q38]:  73%|███████▎  | 73/100 [02:12<00:49,  1.82s/it]LLM Judge [q38]:  74%|███████▍  | 74/100 [02:14<00:47,  1.84s/it]LLM Judge [q38]:  75%|███████▌  | 75/100 [02:16<00:45,  1.84s/it]LLM Judge [q38]:  76%|███████▌  | 76/100 [02:17<00:43,  1.83s/it]LLM Judge [q38]:  77%|███████▋  | 77/100 [02:19<00:41,  1.82s/it]LLM Judge [q38]:  78%|███████▊  | 78/100 [02:21<00:39,  1.80s/it]LLM Judge [q38]:  79%|███████▉  | 79/100 [02:23<00:37,  1.80s/it]LLM Judge [q38]:  80%|████████  | 80/100 [02:25<00:36,  1.81s/it]LLM Judge [q38]:  81%|████████  | 81/100 [02:27<00:34,  1.83s/it]LLM Judge [q38]:  82%|████████▏ | 82/100 [02:28<00:32,  1.83s/it]LLM Judge [q38]:  83%|████████▎ | 83/100 [02:30<00:30,  1.82s/it]LLM Judge [q38]:  84%|████████▍ | 84/100 [02:32<00:28,  1.80s/it]LLM Judge [q38]:  85%|████████▌ | 85/100 [02:34<00:27,  1.83s/it]LLM Judge [q38]:  86%|████████▌ | 86/100 [02:36<00:25,  1.82s/it]LLM Judge [q38]:  87%|████████▋ | 87/100 [02:37<00:23,  1.82s/it]LLM Judge [q38]:  88%|████████▊ | 88/100 [02:39<00:21,  1.80s/it]LLM Judge [q38]:  89%|████████▉ | 89/100 [02:41<00:19,  1.79s/it]LLM Judge [q38]:  90%|█████████ | 90/100 [02:43<00:17,  1.80s/it]LLM Judge [q38]:  91%|█████████ | 91/100 [02:44<00:16,  1.78s/it]LLM Judge [q38]:  92%|█████████▏| 92/100 [02:46<00:14,  1.82s/it]LLM Judge [q38]:  93%|█████████▎| 93/100 [02:48<00:12,  1.84s/it]LLM Judge [q38]:  94%|█████████▍| 94/100 [02:50<00:11,  1.83s/it]LLM Judge [q38]:  95%|█████████▌| 95/100 [02:52<00:09,  1.81s/it]LLM Judge [q38]:  96%|█████████▌| 96/100 [02:54<00:07,  1.83s/it]LLM Judge [q38]:  97%|█████████▋| 97/100 [02:56<00:05,  1.83s/it]LLM Judge [q38]:  98%|█████████▊| 98/100 [02:57<00:03,  1.83s/it]LLM Judge [q38]:  99%|█████████▉| 99/100 [02:59<00:01,  1.85s/it]LLM Judge [q38]: 100%|██████████| 100/100 [03:01<00:00,  1.82s/it]LLM Judge [q38]: 100%|██████████| 100/100 [03:01<00:00,  1.82s/it]
+wandb: uploading artifact run-kju9w2ms-predicted_table; uploading config.yaml
+wandb: uploading artifact run-kju9w2ms-predicted_table
+wandb: uploading history steps 0-0, summary, console lines 3-4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 21.32089
+wandb:      input_tokens 24549
+wandb:     output_tokens 2844
+wandb: tokens_throughput 1284.79622
+wandb:       total_calls 100
+wandb:      total_tokens 27393
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q38_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/kju9w2ms
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_093539-kju9w2ms/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_093909-nvbme7er
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_reasoning_q39_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/nvbme7er
+--> Saved stats for q38 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q39 (derivation / reasoning)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:18<00:00,  5.26it/s]Extracting: 100%|██████████ 100/100 LM calls [00:18<00:00,  5.26it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q39]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q39]:   3%|▎         | 3/100 [00:01<00:55,  1.73it/s]LLM Judge [q39]:  11%|█         | 11/100 [00:03<00:26,  3.35it/s]LLM Judge [q39]:  13%|█▎        | 13/100 [00:05<00:36,  2.36it/s]LLM Judge [q39]:  31%|███       | 31/100 [00:06<00:12,  5.51it/s]LLM Judge [q39]:  33%|███▎      | 33/100 [00:08<00:16,  4.00it/s]LLM Judge [q39]:  39%|███▉      | 39/100 [00:10<00:15,  3.82it/s]LLM Judge [q39]:  44%|████▍     | 44/100 [00:12<00:16,  3.42it/s]LLM Judge [q39]:  58%|█████▊    | 58/100 [00:13<00:08,  4.88it/s]LLM Judge [q39]:  60%|██████    | 60/100 [00:15<00:10,  3.73it/s]LLM Judge [q39]:  66%|██████▌   | 66/100 [00:17<00:09,  3.69it/s]LLM Judge [q39]:  71%|███████   | 71/100 [00:19<00:08,  3.39it/s]LLM Judge [q39]:  77%|███████▋  | 77/100 [00:20<00:06,  3.41it/s]LLM Judge [q39]:  85%|████████▌ | 85/100 [00:22<00:04,  3.73it/s]LLM Judge [q39]:  86%|████████▌ | 86/100 [00:24<00:05,  2.76it/s]LLM Judge [q39]:  92%|█████████▏| 92/100 [00:26<00:02,  2.90it/s]LLM Judge [q39]: 100%|██████████| 100/100 [00:26<00:00,  3.78it/s]
+wandb: uploading artifact run-nvbme7er-predicted_table; uploading config.yaml
+wandb: uploading artifact run-nvbme7er-predicted_table
+wandb: uploading history steps 0-0, summary, console lines 3-4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 19.07352
+wandb:      input_tokens 25385
+wandb:     output_tokens 2251
+wandb: tokens_throughput 1448.92005
+wandb:       total_calls 100
+wandb:      total_tokens 27636
+wandb: 
+wandb: 🚀 View run lotus_reasoning_q39_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/nvbme7er
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_093909-nvbme7er/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_094001-y1tsoodh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q40_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/y1tsoodh
+--> Saved stats for q39 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q40 (derivation / extraction)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:10<00:00,  9.71it/s]Extracting: 100%|██████████ 100/100 LM calls [00:10<00:00,  9.71it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q40]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q40]:  21%|██        | 21/100 [00:01<00:06, 11.67it/s]LLM Judge [q40]:  24%|██▍       | 24/100 [00:03<00:13,  5.79it/s]LLM Judge [q40]:  35%|███▌      | 35/100 [00:05<00:10,  6.15it/s]LLM Judge [q40]:  36%|███▌      | 36/100 [00:06<00:15,  4.02it/s]LLM Judge [q40]:  37%|███▋      | 37/100 [00:08<00:22,  2.81it/s]LLM Judge [q40]:  43%|████▎     | 43/100 [00:10<00:18,  3.07it/s]LLM Judge [q40]:  60%|██████    | 60/100 [00:11<00:07,  5.39it/s]LLM Judge [q40]:  67%|██████▋   | 67/100 [00:13<00:06,  4.95it/s]LLM Judge [q40]: 100%|██████████| 100/100 [00:13<00:00,  7.33it/s]
+wandb: uploading artifact run-y1tsoodh-predicted_table
+wandb: uploading history steps 0-0, summary, console lines 3-4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 10.36684
+wandb:      input_tokens 19114
+wandb:     output_tokens 1432
+wandb: tokens_throughput 1981.89542
+wandb:       total_calls 100
+wandb:      total_tokens 20546
+wandb: 
+wandb: 🚀 View run lotus_extraction_q40_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/y1tsoodh
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_094001-y1tsoodh/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_094031-h166x5pt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q41_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/h166x5pt
+--> Saved stats for q40 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q41 (derivation / extraction)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:14<00:00,  6.99it/s]Extracting: 100%|██████████ 100/100 LM calls [00:14<00:00,  6.99it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q41]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q41]:   1%|          | 1/100 [00:01<02:58,  1.80s/it]LLM Judge [q41]:   2%|▏         | 2/100 [00:03<02:56,  1.80s/it]LLM Judge [q41]:   5%|▌         | 5/100 [00:05<01:27,  1.08it/s]LLM Judge [q41]:   6%|▌         | 6/100 [00:07<01:47,  1.15s/it]LLM Judge [q41]:   8%|▊         | 8/100 [00:08<01:35,  1.04s/it]LLM Judge [q41]:   9%|▉         | 9/100 [00:10<01:49,  1.20s/it]LLM Judge [q41]:  11%|█         | 11/100 [00:12<01:35,  1.07s/it]LLM Judge [q41]:  12%|█▏        | 12/100 [00:14<01:48,  1.23s/it]LLM Judge [q41]:  14%|█▍        | 14/100 [00:15<01:33,  1.09s/it]LLM Judge [q41]:  15%|█▌        | 15/100 [00:17<01:44,  1.23s/it]LLM Judge [q41]:  16%|█▌        | 16/100 [00:19<01:53,  1.35s/it]LLM Judge [q41]:  18%|█▊        | 18/100 [00:21<01:36,  1.17s/it]LLM Judge [q41]:  19%|█▉        | 19/100 [00:22<01:44,  1.30s/it]LLM Judge [q41]:  20%|██        | 20/100 [00:24<01:51,  1.40s/it]LLM Judge [q41]:  21%|██        | 21/100 [00:26<01:55,  1.46s/it]LLM Judge [q41]:  22%|██▏       | 22/100 [00:28<02:00,  1.55s/it]LLM Judge [q41]:  23%|██▎       | 23/100 [00:29<02:04,  1.61s/it]LLM Judge [q41]:  27%|██▋       | 27/100 [00:31<01:04,  1.13it/s]LLM Judge [q41]:  28%|██▊       | 28/100 [00:33<01:14,  1.04s/it]LLM Judge [q41]:  29%|██▉       | 29/100 [00:35<01:23,  1.18s/it]LLM Judge [q41]:  31%|███       | 31/100 [00:36<01:13,  1.06s/it]LLM Judge [q41]:  32%|███▏      | 32/100 [00:38<01:21,  1.20s/it]LLM Judge [q41]:  33%|███▎      | 33/100 [00:40<01:29,  1.34s/it]LLM Judge [q41]:  36%|███▌      | 36/100 [00:42<01:01,  1.04it/s]LLM Judge [q41]:  37%|███▋      | 37/100 [00:43<01:09,  1.10s/it]LLM Judge [q41]:  38%|███▊      | 38/100 [00:45<01:17,  1.25s/it]LLM Judge [q41]:  39%|███▉      | 39/100 [00:47<01:24,  1.39s/it]LLM Judge [q41]:  40%|████      | 40/100 [00:49<01:29,  1.49s/it]LLM Judge [q41]:  41%|████      | 41/100 [00:51<01:34,  1.61s/it]LLM Judge [q41]:  43%|████▎     | 43/100 [00:53<01:15,  1.33s/it]LLM Judge [q41]:  44%|████▍     | 44/100 [00:54<01:22,  1.47s/it]LLM Judge [q41]:  45%|████▌     | 45/100 [00:56<01:25,  1.56s/it]LLM Judge [q41]:  47%|████▋     | 47/100 [00:58<01:08,  1.30s/it]LLM Judge [q41]:  48%|████▊     | 48/100 [01:00<01:14,  1.42s/it]LLM Judge [q41]:  50%|█████     | 50/100 [01:02<01:02,  1.24s/it]LLM Judge [q41]:  51%|█████     | 51/100 [01:04<01:08,  1.41s/it]LLM Judge [q41]:  52%|█████▏    | 52/100 [01:06<01:12,  1.50s/it]LLM Judge [q41]:  53%|█████▎    | 53/100 [01:08<01:15,  1.60s/it]LLM Judge [q41]:  54%|█████▍    | 54/100 [01:09<01:16,  1.66s/it]LLM Judge [q41]:  56%|█████▌    | 56/100 [01:11<00:58,  1.34s/it]LLM Judge [q41]:  57%|█████▋    | 57/100 [01:13<01:02,  1.46s/it]LLM Judge [q41]:  58%|█████▊    | 58/100 [01:15<01:05,  1.57s/it]LLM Judge [q41]:  60%|██████    | 60/100 [01:17<00:52,  1.31s/it]LLM Judge [q41]:  61%|██████    | 61/100 [01:19<00:55,  1.42s/it]LLM Judge [q41]:  64%|██████▍   | 64/100 [01:21<00:37,  1.03s/it]LLM Judge [q41]:  66%|██████▌   | 66/100 [01:23<00:34,  1.02s/it]LLM Judge [q41]:  67%|██████▋   | 67/100 [01:24<00:38,  1.16s/it]LLM Judge [q41]:  68%|██████▊   | 68/100 [01:26<00:41,  1.30s/it]LLM Judge [q41]:  70%|███████   | 70/100 [01:28<00:34,  1.16s/it]LLM Judge [q41]:  71%|███████   | 71/100 [01:30<00:38,  1.31s/it]LLM Judge [q41]:  72%|███████▏  | 72/100 [01:32<00:40,  1.44s/it]LLM Judge [q41]:  73%|███████▎  | 73/100 [01:34<00:41,  1.54s/it]LLM Judge [q41]:  74%|███████▍  | 74/100 [01:35<00:42,  1.62s/it]LLM Judge [q41]:  76%|███████▌  | 76/100 [01:37<00:31,  1.33s/it]LLM Judge [q41]:  77%|███████▋  | 77/100 [01:39<00:33,  1.46s/it]LLM Judge [q41]:  78%|███████▊  | 78/100 [01:41<00:34,  1.56s/it]LLM Judge [q41]:  81%|████████  | 81/100 [01:43<00:20,  1.08s/it]LLM Judge [q41]:  82%|████████▏ | 82/100 [01:45<00:22,  1.23s/it]LLM Judge [q41]:  83%|████████▎ | 83/100 [01:47<00:23,  1.38s/it]LLM Judge [q41]:  85%|████████▌ | 85/100 [01:49<00:18,  1.22s/it]LLM Judge [q41]:  88%|████████▊ | 88/100 [01:50<00:11,  1.07it/s]LLM Judge [q41]:  89%|████████▉ | 89/100 [01:52<00:12,  1.10s/it]LLM Judge [q41]:  90%|█████████ | 90/100 [01:54<00:12,  1.25s/it]LLM Judge [q41]:  91%|█████████ | 91/100 [01:56<00:12,  1.41s/it]LLM Judge [q41]:  92%|█████████▏| 92/100 [01:58<00:12,  1.53s/it]LLM Judge [q41]:  93%|█████████▎| 93/100 [02:00<00:11,  1.61s/it]LLM Judge [q41]:  94%|█████████▍| 94/100 [02:02<00:10,  1.67s/it]LLM Judge [q41]:  98%|█████████▊| 98/100 [02:04<00:01,  1.06it/s]LLM Judge [q41]:  99%|█████████▉| 99/100 [02:05<00:01,  1.11s/it]LLM Judge [q41]: 100%|██████████| 100/100 [02:07<00:00,  1.25s/it]LLM Judge [q41]: 100%|██████████| 100/100 [02:07<00:00,  1.28s/it]
+wandb: uploading artifact run-h166x5pt-predicted_table; uploading config.yaml
+wandb: uploading artifact run-h166x5pt-predicted_table
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 14.36376
+wandb:      input_tokens 24651
+wandb:     output_tokens 1739
+wandb: tokens_throughput 1837.26297
+wandb:       total_calls 100
+wandb:      total_tokens 26390
+wandb: 
+wandb: 🚀 View run lotus_extraction_q41_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/h166x5pt
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_094031-h166x5pt/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_094259-l3hzlk8x
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_extraction_q42_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/l3hzlk8x
+--> Saved stats for q41 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q42 (derivation / extraction)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:22<00:00,  4.43it/s]Extracting: 100%|██████████ 100/100 LM calls [00:22<00:00,  4.43it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q42]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q42]:  14%|█▍        | 14/100 [00:01<00:11,  7.62it/s]LLM Judge [q42]:  26%|██▌       | 26/100 [00:03<00:10,  6.78it/s]LLM Judge [q42]: 100%|██████████| 100/100 [00:03<00:00, 26.52it/s]
+wandb: uploading artifact run-l3hzlk8x-predicted_table
+wandb: uploading artifact run-l3hzlk8x-predicted_table; uploading history steps 0-0, summary, console lines 0-4
+wandb: uploading data
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 22.66119
+wandb:      input_tokens 20155
+wandb:     output_tokens 3321
+wandb: tokens_throughput 1035.95618
+wandb:       total_calls 100
+wandb:      total_tokens 23476
+wandb: 
+wandb: 🚀 View run lotus_extraction_q42_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/l3hzlk8x
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_094259-l3hzlk8x/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_094333-dzkpdl4j
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q43_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/dzkpdl4j
+--> Saved stats for q42 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q43 (derivation / external_knowledge)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:16<00:00,  5.99it/s]Extracting: 100%|██████████ 100/100 LM calls [00:16<00:00,  5.99it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q43]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q43]:   4%|▍         | 4/100 [00:01<00:43,  2.19it/s]LLM Judge [q43]:   8%|▊         | 8/100 [00:03<00:42,  2.18it/s]LLM Judge [q43]:  14%|█▍        | 14/100 [00:05<00:33,  2.60it/s]LLM Judge [q43]:  32%|███▏      | 32/100 [00:07<00:12,  5.35it/s]LLM Judge [q43]:  42%|████▏     | 42/100 [00:09<00:10,  5.36it/s]LLM Judge [q43]: 100%|██████████| 100/100 [00:09<00:00, 10.69it/s]
+wandb: uploading artifact run-dzkpdl4j-predicted_table; uploading config.yaml
+wandb: uploading artifact run-dzkpdl4j-predicted_table
+wandb: uploading history steps 0-0, summary, console lines 0-4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 16.74734
+wandb:      input_tokens 15667
+wandb:     output_tokens 2638
+wandb: tokens_throughput 1093.00957
+wandb:       total_calls 100
+wandb:      total_tokens 18305
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q43_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/dzkpdl4j
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_094333-dzkpdl4j/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_094405-xdwenjrq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q44_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/xdwenjrq
+--> Saved stats for q43 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q44 (derivation / external_knowledge)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:18<00:00,  5.37it/s]Extracting: 100%|██████████ 100/100 LM calls [00:18<00:00,  5.37it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q44]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q44]:   8%|▊         | 8/100 [00:01<00:20,  4.58it/s]LLM Judge [q44]:  10%|█         | 10/100 [00:03<00:35,  2.54it/s]LLM Judge [q44]:  14%|█▍        | 14/100 [00:05<00:35,  2.41it/s]LLM Judge [q44]:  17%|█▋        | 17/100 [00:07<00:38,  2.14it/s]LLM Judge [q44]:  20%|██        | 20/100 [00:08<00:40,  1.99it/s]LLM Judge [q44]:  25%|██▌       | 25/100 [00:10<00:32,  2.29it/s]LLM Judge [q44]:  27%|██▋       | 27/100 [00:12<00:38,  1.92it/s]LLM Judge [q44]:  30%|███       | 30/100 [00:14<00:37,  1.84it/s]LLM Judge [q44]:  32%|███▏      | 32/100 [00:15<00:43,  1.58it/s]LLM Judge [q44]:  39%|███▉      | 39/100 [00:17<00:26,  2.32it/s]LLM Judge [q44]:  44%|████▍     | 44/100 [00:19<00:22,  2.49it/s]LLM Judge [q44]:  50%|█████     | 50/100 [00:21<00:18,  2.78it/s]LLM Judge [q44]:  55%|█████▌    | 55/100 [00:22<00:16,  2.79it/s]LLM Judge [q44]:  58%|█████▊    | 58/100 [00:24<00:17,  2.46it/s]LLM Judge [q44]:  62%|██████▏   | 62/100 [00:26<00:15,  2.40it/s]LLM Judge [q44]:  75%|███████▌  | 75/100 [00:28<00:06,  3.91it/s]LLM Judge [q44]:  92%|█████████▏| 92/100 [00:29<00:01,  5.66it/s]LLM Judge [q44]:  95%|█████████▌| 95/100 [00:31<00:01,  4.48it/s]LLM Judge [q44]:  96%|█████████▌| 96/100 [00:33<00:01,  3.30it/s]LLM Judge [q44]: 100%|██████████| 100/100 [00:35<00:00,  2.99it/s]LLM Judge [q44]: 100%|██████████| 100/100 [00:35<00:00,  2.84it/s]
+wandb: uploading artifact run-xdwenjrq-predicted_table; uploading config.yaml
+wandb: uploading artifact run-xdwenjrq-predicted_table
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 18.69749
+wandb:      input_tokens 15867
+wandb:     output_tokens 2953
+wandb: tokens_throughput 1006.55201
+wandb:       total_calls 100
+wandb:      total_tokens 18820
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q44_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/xdwenjrq
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_094405-xdwenjrq/logs
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: creating run
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/wandb/analytics/sentry.py:263: DeprecationWarning: The `Scope.user` setter is deprecated in favor of `Scope.set_user()`.
+  self.scope.user = {"email": email}
+wandb: Tracking run with wandb version 0.21.1
+wandb: Run data is saved locally in /data/hdd1/users/jzerv/thesis_repo/experiment_runner/wandb/run-20260709_094506-4qgchdr8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lotus_external_knowledge_q45_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100
+wandb: ⭐️ View project at https://wandb.ai/darelab/SQE_exps
+wandb: 🚀 View run at https://wandb.ai/darelab/SQE_exps/runs/4qgchdr8
+--> Saved stats for q44 to ../results/stats/quality/stats_derivation_extract.csv
+Executing Query q45 (derivation / external_knowledge)...
+
+--- Running: LOTUS | RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8 | vllm | Size: 100 ---
+Extracting:   0%|           0/100 LM calls [00:00<?, ?it/s]Extracting: 100%|██████████ 100/100 LM calls [00:11<00:00,  9.02it/s]Extracting: 100%|██████████ 100/100 LM calls [00:11<00:00,  9.02it/s]
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/site-packages/lotus/models/lm.py:355: UserWarning: Error calculating completion cost - cost metrics will be inaccurate. Enable debug logging for details.
+  warnings.warn(
+LLM Judge [q45]:   0%|          | 0/100 [00:00<?, ?it/s]LLM Judge [q45]:   1%|          | 1/100 [00:01<03:12,  1.94s/it]LLM Judge [q45]:   2%|▏         | 2/100 [00:03<03:05,  1.90s/it]LLM Judge [q45]:   3%|▎         | 3/100 [00:05<02:59,  1.85s/it]LLM Judge [q45]:   4%|▍         | 4/100 [00:07<02:55,  1.83s/it]LLM Judge [q45]:   5%|▌         | 5/100 [00:09<02:57,  1.87s/it]LLM Judge [q45]:   6%|▌         | 6/100 [00:11<02:49,  1.80s/it]LLM Judge [q45]:   7%|▋         | 7/100 [00:12<02:48,  1.81s/it]LLM Judge [q45]:   8%|▊         | 8/100 [00:14<02:45,  1.80s/it]LLM Judge [q45]:   9%|▉         | 9/100 [00:16<02:43,  1.80s/it]LLM Judge [q45]:  10%|█         | 10/100 [00:18<02:42,  1.80s/it]LLM Judge [q45]:  11%|█         | 11/100 [00:20<02:44,  1.84s/it]LLM Judge [q45]:  12%|█▏        | 12/100 [00:22<02:42,  1.85s/it]LLM Judge [q45]:  13%|█▎        | 13/100 [00:23<02:41,  1.86s/it]LLM Judge [q45]:  14%|█▍        | 14/100 [00:25<02:38,  1.84s/it]LLM Judge [q45]:  15%|█▌        | 15/100 [00:27<02:35,  1.83s/it]LLM Judge [q45]:  16%|█▌        | 16/100 [00:29<02:32,  1.82s/it]LLM Judge [q45]:  17%|█▋        | 17/100 [00:31<02:30,  1.81s/it]LLM Judge [q45]:  18%|█▊        | 18/100 [00:32<02:28,  1.81s/it]LLM Judge [q45]:  19%|█▉        | 19/100 [00:34<02:26,  1.81s/it]LLM Judge [q45]:  20%|██        | 20/100 [00:36<02:24,  1.80s/it]LLM Judge [q45]:  21%|██        | 21/100 [00:38<02:25,  1.85s/it]LLM Judge [q45]:  22%|██▏       | 22/100 [00:40<02:26,  1.88s/it]LLM Judge [q45]:  23%|██▎       | 23/100 [00:42<02:25,  1.90s/it]LLM Judge [q45]:  24%|██▍       | 24/100 [00:43<02:18,  1.83s/it]LLM Judge [q45]:  25%|██▌       | 25/100 [00:45<02:19,  1.86s/it]LLM Judge [q45]:  26%|██▌       | 26/100 [00:47<02:16,  1.84s/it]LLM Judge [q45]:  27%|██▋       | 27/100 [00:49<02:13,  1.83s/it]LLM Judge [q45]:  28%|██▊       | 28/100 [00:51<02:11,  1.82s/it]LLM Judge [q45]:  29%|██▉       | 29/100 [00:53<02:08,  1.81s/it]LLM Judge [q45]:  30%|███       | 30/100 [00:55<02:09,  1.85s/it]LLM Judge [q45]:  31%|███       | 31/100 [00:56<02:06,  1.84s/it]LLM Judge [q45]:  32%|███▏      | 32/100 [00:58<02:03,  1.82s/it]LLM Judge [q45]:  33%|███▎      | 33/100 [01:00<02:04,  1.86s/it]LLM Judge [q45]:  34%|███▍      | 34/100 [01:02<01:58,  1.80s/it]LLM Judge [q45]:  35%|███▌      | 35/100 [01:04<01:56,  1.80s/it]LLM Judge [q45]:  36%|███▌      | 36/100 [01:05<01:55,  1.80s/it]LLM Judge [q45]:  37%|███▋      | 37/100 [01:07<01:50,  1.76s/it]LLM Judge [q45]:  38%|███▊      | 38/100 [01:09<01:52,  1.81s/it]LLM Judge [q45]:  39%|███▉      | 39/100 [01:11<01:52,  1.85s/it]LLM Judge [q45]:  40%|████      | 40/100 [01:13<01:51,  1.86s/it]LLM Judge [q45]:  41%|████      | 41/100 [01:15<01:49,  1.86s/it]LLM Judge [q45]:  42%|████▏     | 42/100 [01:16<01:46,  1.84s/it]LLM Judge [q45]:  43%|████▎     | 43/100 [01:18<01:45,  1.85s/it]LLM Judge [q45]:  44%|████▍     | 44/100 [01:20<01:44,  1.87s/it]LLM Judge [q45]:  45%|████▌     | 45/100 [01:22<01:41,  1.85s/it]LLM Judge [q45]:  46%|████▌     | 46/100 [01:24<01:39,  1.84s/it]LLM Judge [q45]:  47%|████▋     | 47/100 [01:26<01:37,  1.85s/it]LLM Judge [q45]:  48%|████▊     | 48/100 [01:28<01:35,  1.83s/it]LLM Judge [q45]:  49%|████▉     | 49/100 [01:29<01:33,  1.82s/it]LLM Judge [q45]:  50%|█████     | 50/100 [01:31<01:28,  1.77s/it]LLM Judge [q45]:  51%|█████     | 51/100 [01:33<01:27,  1.78s/it]LLM Judge [q45]:  52%|█████▏    | 52/100 [01:35<01:27,  1.83s/it]LLM Judge [q45]:  53%|█████▎    | 53/100 [01:37<01:27,  1.87s/it]LLM Judge [q45]:  54%|█████▍    | 54/100 [01:38<01:25,  1.85s/it]LLM Judge [q45]:  55%|█████▌    | 55/100 [01:40<01:20,  1.79s/it]LLM Judge [q45]:  56%|█████▌    | 56/100 [01:42<01:20,  1.84s/it]LLM Judge [q45]:  57%|█████▋    | 57/100 [01:44<01:18,  1.83s/it]LLM Judge [q45]:  58%|█████▊    | 58/100 [01:46<01:16,  1.82s/it]LLM Judge [q45]:  59%|█████▉    | 59/100 [01:48<01:15,  1.85s/it]LLM Judge [q45]:  60%|██████    | 60/100 [01:50<01:15,  1.88s/it]LLM Judge [q45]:  61%|██████    | 61/100 [01:51<01:12,  1.86s/it]LLM Judge [q45]:  62%|██████▏   | 62/100 [01:53<01:11,  1.88s/it]LLM Judge [q45]:  63%|██████▎   | 63/100 [01:55<01:10,  1.90s/it]LLM Judge [q45]:  64%|██████▍   | 64/100 [01:57<01:08,  1.91s/it]LLM Judge [q45]:  65%|██████▌   | 65/100 [01:59<01:07,  1.92s/it]LLM Judge [q45]:  66%|██████▌   | 66/100 [02:01<01:04,  1.88s/it]LLM Judge [q45]:  67%|██████▋   | 67/100 [02:03<01:02,  1.89s/it]LLM Judge [q45]:  68%|██████▊   | 68/100 [02:05<01:02,  1.95s/it]LLM Judge [q45]:  69%|██████▉   | 69/100 [02:07<00:59,  1.93s/it]LLM Judge [q45]:  70%|███████   | 70/100 [02:09<00:59,  1.98s/it]LLM Judge [q45]:  71%|███████   | 71/100 [02:11<00:58,  2.00s/it]LLM Judge [q45]:  72%|███████▏  | 72/100 [02:13<00:56,  2.02s/it]LLM Judge [q45]:  73%|███████▎  | 73/100 [02:15<00:53,  1.99s/it]LLM Judge [q45]:  74%|███████▍  | 74/100 [02:17<00:51,  1.97s/it]LLM Judge [q45]:  75%|███████▌  | 75/100 [02:19<00:50,  2.01s/it]LLM Judge [q45]:  76%|███████▌  | 76/100 [02:21<00:48,  2.03s/it]LLM Judge [q45]:  77%|███████▋  | 77/100 [02:23<00:46,  2.04s/it]LLM Judge [q45]:  78%|███████▊  | 78/100 [02:25<00:45,  2.06s/it]LLM Judge [q45]:  79%|███████▉  | 79/100 [02:27<00:42,  2.01s/it]LLM Judge [q45]:  80%|████████  | 80/100 [02:29<00:39,  1.99s/it]LLM Judge [q45]:  81%|████████  | 81/100 [02:31<00:38,  2.02s/it]LLM Judge [q45]:  82%|████████▏ | 82/100 [02:33<00:35,  1.99s/it]LLM Judge [q45]:  83%|████████▎ | 83/100 [02:35<00:34,  2.01s/it]LLM Judge [q45]:  84%|████████▍ | 84/100 [02:37<00:32,  2.04s/it]LLM Judge [q45]:  85%|████████▌ | 85/100 [02:39<00:29,  1.96s/it]LLM Judge [q45]:  86%|████████▌ | 86/100 [02:41<00:27,  1.99s/it]LLM Judge [q45]:  87%|████████▋ | 87/100 [02:43<00:25,  1.98s/it]LLM Judge [q45]:  88%|████████▊ | 88/100 [02:45<00:24,  2.01s/it]LLM Judge [q45]:  89%|████████▉ | 89/100 [02:47<00:22,  2.03s/it]LLM Judge [q45]:  90%|█████████ | 90/100 [02:49<00:19,  1.97s/it]LLM Judge [q45]:  91%|█████████ | 91/100 [02:51<00:17,  1.96s/it]LLM Judge [q45]:  92%|█████████▏| 92/100 [02:53<00:15,  1.95s/it]LLM Judge [q45]:  93%|█████████▎| 93/100 [02:55<00:13,  1.96s/it]LLM Judge [q45]:  94%|█████████▍| 94/100 [02:57<00:11,  2.00s/it]LLM Judge [q45]:  95%|█████████▌| 95/100 [02:59<00:09,  1.98s/it]LLM Judge [q45]:  96%|█████████▌| 96/100 [03:01<00:08,  2.02s/it]LLM Judge [q45]:  97%|█████████▋| 97/100 [03:03<00:05,  1.99s/it]LLM Judge [q45]:  98%|█████████▊| 98/100 [03:05<00:03,  1.97s/it]LLM Judge [q45]:  99%|█████████▉| 99/100 [03:07<00:02,  2.01s/it]LLM Judge [q45]: 100%|██████████| 100/100 [03:09<00:00,  1.93s/it]LLM Judge [q45]: 100%|██████████| 100/100 [03:09<00:00,  1.89s/it]
+wandb: uploading artifact run-4qgchdr8-predicted_table; uploading config.yaml
+wandb: uploading artifact run-4qgchdr8-predicted_table
+wandb: uploading history steps 0-0, summary, console lines 3-4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    execution_time ▁
+wandb:      input_tokens ▁
+wandb:     output_tokens ▁
+wandb: tokens_throughput ▁
+wandb:       total_calls ▁
+wandb:      total_tokens ▁
+wandb: 
+wandb: Run summary:
+wandb:    execution_time 11.16636
+wandb:      input_tokens 16267
+wandb:     output_tokens 1656
+wandb: tokens_throughput 1605.08935
+wandb:       total_calls 100
+wandb:      total_tokens 17923
+wandb: 
+wandb: 🚀 View run lotus_external_knowledge_q45_vllm_redhatai/llama-3.3-70b-instruct-quantized.w8a8_100 at: https://wandb.ai/darelab/SQE_exps/runs/4qgchdr8
+wandb: ⭐️ View project at: https://wandb.ai/darelab/SQE_exps
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260709_094506-4qgchdr8/logs
+--> Saved stats for q45 to ../results/stats/quality/stats_derivation_extract.csv
+
+All experiments complete!
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmp3zdaq1rd'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmpbl_e65h7'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmpwl6pfigu'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmpamr9x8oq'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmp6r1epklk'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmp58uj39p6'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmpp7p_yf73'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmpfuybf6av'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmpwzhupjl9'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmpcv1v_s0n'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmplho6mqh2'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/jzerv/miniconda3/envs/lotus/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmp7iam4m24'>
+  _warnings.warn(warn_message, ResourceWarning)
