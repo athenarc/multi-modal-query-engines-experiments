@@ -179,53 +179,6 @@ class DerivationEvaluator(BaseEvaluator):
             ]
             metrics["llm_judge_accuracy"] = sum(semantic_matches) / total_predictions if total_predictions > 0 else 0.0
   
-
-            # Calculate semantic similarity matches (e.g., substring match)
-            # model = self._get_embedding_model()
-            # pred_embeddings = model.encode(pred_list, convert_to_tensor=True)
-            # print("pred_embeddings")
-            # print(pred_embeddings)
-            # truth_embeddings = model.encode(truth_list, convert_to_tensor=True)
-            # print("truth_embeddings")
-            # print(truth_embeddings)
-            # cosine_scores_matrix = util.cos_sim(pred_embeddings, truth_embeddings)
-            # print("cosine_score_matrix")
-            # print(cosine_scores_matrix)
-            # similarity_scores = cosine_scores_matrix.diag().cpu().numpy()
-            # print("similarity_scores")
-            # print(similarity_scores)
-            # semantic_matches = similarity_scores >= similarity_threshold
-            # print("semantic_matches")
-            # print(semantic_matches)
-
-            # metrics['similarity_accuracy'] = np.mean(semantic_matches) if total_predictions > 0 else 0.0
-
-
-            
-            # # Collect incorrect predictions
-            # for i, (pred, truth) in enumerate(zip(pred_list, truth_list)):
-            #     if not exact_matches[i]:
-            #         metrics['incorrect_predictions_exact_match'].append({
-            #             'row_index': i,
-            #             'predicted_row': predicted_df.iloc[i].to_dict(),
-            #             'ground_truth_row': ground_truth_df.iloc[i].to_dict(),
-            #             'predicted_value': pred,
-            #             'ground_truth_value': truth,
-            #             # 'semantic_score': round(float(similarity_scores[i]), 4),
-            #             # 'is_semantic_match': bool(semantic_matches[i])
-            #         })
-                
-            #     # Also collect predictions that don't meet semantic similarity threshold
-            #     # if not semantic_matches[i]:
-            #     #     metrics['incorrect_predictions_semantic_match'].append({
-            #     #         'row_index': i,
-            #     #         'predicted_row': predicted_df.iloc[i].to_dict(),
-            #     #         'ground_truth_row': ground_truth_df.iloc[i].to_dict(),
-            #     #         'predicted_value': pred,
-            #     #         'ground_truth_value': truth,
-            #     #         'semantic_score': round(float(similarity_scores[i]), 4),
-            #     #         'is_exact_match': bool(exact_matches[i])
-            #     #     })
             for i, (pred, truth) in enumerate(zip(pred_list, truth_list)):
                 jr = judge_results[i]
                 base = {
@@ -383,11 +336,6 @@ class JoinEvaluator(BaseEvaluator):
             recall = tp / (tp + fn) if (tp + fn) > 0 else 0
             f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
             accuracy = accuracy = (tp + tn) / (tp + tn + fp + fn) if (tp + tn + fp + fn) > 0 else 0
-
-                # print("precision: ", precision)
-                # print("recall: ", recall)
-                # print("f1_score: ", f1_score)
-                # print("accuracy: ", accuracy)
 
             metrics['precision'] = precision
             metrics['recall'] = recall

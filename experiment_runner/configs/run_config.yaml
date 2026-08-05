@@ -11,20 +11,20 @@ llms:
   
   vllm:
     # - "meta-llama/Llama-3.1-8B-Instruct"
-    - "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
+    # - "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
     # - "google/gemma-3-12b-it"
-    # - "Qwen/Qwen3-8B"
+    - "Qwen/Qwen3-8B"
 
 # Quality Input Sizes
 # input_sizes: [100]
 # input_sizes_for_join: [[10, 10]]
 
-# Scalability
+# Scalability Ιnput Sizes
 input_sizes: [1000, 2000, 4000]
 input_sizes_for_join: [[20, 50], [40, 50], [80, 50]]
 
 
-quality_exps: False # False (Scalability), True (Quality)
+quality_exps: True # False (Scalability), True (Quality)
 wandb_report: False
 
 filters:

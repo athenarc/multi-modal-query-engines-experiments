@@ -3,11 +3,15 @@ import itertools
 import pandas as pd
 import wandb
 import os
+import sys
 from pydantic import BaseModel
 from typing import List, Optional
 from systems import get_system
 import traceback
 from evaluation import DerivationEvaluator, SelectionEvaluator, JoinEvaluator
+
+JUDGE_MODEL = "RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8"
+
 
 class Query(BaseModel):
     id: str
@@ -45,15 +49,16 @@ class ExperimentRunner:
     def __init__(self, run_config_path: str, queries_path: str):
         self.run_config = self._load_yaml(run_config_path)
         self.all_queries = [Query(**q) for q in self._load_yaml(queries_path)['queries']]
+        self.query_map = {q.id: q for q in self.all_queries}
 
     def _load_yaml(self, path: str):
         with open(path, 'r') as f:
             return yaml.safe_load(f)
     
-    def _evaluate_results(self, query: Query, system_name: str, predicted_df: pd.DataFrame, input_size: int, input_folder="../datasets/nba/quality_exps/", model_name="RedHatAI/Llama-3.3-70B-Instruct-quantized.w8a8") -> int:
+    def _evaluate_results(self, query: Query, system_name: str, predicted_df: pd.DataFrame, input_size: int, input_folder="../datasets/nba/quality_exps/", model_name=JUDGE_MODEL) -> int:
         """Evaluate predicted results and return quality metric."""        
         try:
-            if query.class_name == 'derivation':
+            if query.class_name == 'derivation' and model_name == JUDGE_MODEL:
                 evaluator = DerivationEvaluator(query_id=query.id, class_name=query.class_name, llm_as_judge=model_name)
                 results = evaluator.evaluate(
                     predicted_df=predicted_df,
@@ -76,7 +81,7 @@ class ExperimentRunner:
                 else:
                     return (-1, -1)
 
-            if query.class_name == "selection":
+            elif query.class_name == "selection":
                 evaluator = SelectionEvaluator(query_id=query.id, class_name=query.class_name)
                 results = evaluator.evaluate(
                     predicted_df=predicted_df,
@@ -97,7 +102,7 @@ class ExperimentRunner:
                     return (-1, -1, -1, -1)
 
 
-            if query.class_name == "join":
+            elif query.class_name == "join":
                 evaluator = JoinEvaluator(query_id=query.id, class_name=query.class_name)
                 results = evaluator.evaluate(
                     predicted_df=predicted_df,
@@ -119,8 +124,7 @@ class ExperimentRunner:
                 else:
                     return(-1, -1, -1)
             
-            if query.class_name == "aggregation":
-                return "manual evaluation required"
+            else: return "manual evaluation required"
 
         except Exception as e:
             print(f"Error during evaluation: {e}")
@@ -257,7 +261,7 @@ class ExperimentRunner:
                         results_dir = f"{results_dir}/{llm_provider}_{model_name.replace('/', '_')}"
                         os.makedirs(results_dir, exist_ok=True)
 
-                        predicted_table.to_csv(f"{results_dir}/{system_name}_extract_{query.task_name}_{query.id}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False) # TODO: REMOVE THE EXTRACT
+                        predicted_table.to_csv(f"{results_dir}/{system_name}_{query.task_name}_{query.id}_{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv", index=False)
 
                         if self.run_config['wandb_report']:
                             wandb.log({
@@ -279,6 +283,95 @@ class ExperimentRunner:
 
         print("\nAll experiments complete!")
 
+    def rerun_derivation_evaluations(self, stats_csv_path: Optional[str] = None):
+        """Evaluate derivation queries whose quality was calculated with different model than the judge model."""
+
+        quality_exps = self.run_config['quality_exps']
+
+        if stats_csv_path is None:
+            stats_dir = f"../results/stats/{'quality' if quality_exps else 'scalability'}"
+            stats_csv_path = f"{stats_dir}/stats_{self.run_config['experiment_name']}.csv"
+
+        stats_df = pd.read_csv(stats_csv_path)
+
+        pending_mask = (
+            (stats_df['class_name'] == 'derivation') &
+            (stats_df['quality'] == 'manual evaluation required')
+        )
+        pending_rows = stats_df[pending_mask]
+
+        if pending_rows.empty:
+            return
+
+        input_folder = (
+            f"../datasets/{self.run_config['dataset']}/"
+            f"{'quality_exps' if quality_exps else 'scalability_exps'}/"
+        )
+        outputs_base = f"../results/outputs/{'quality' if quality_exps else 'scalability'}"
+
+        for idx, row in pending_rows.iterrows():
+            query = self.query_map.get(row['query_id'])
+            if query is None:
+                print(f"Query id '{row['query_id']}' not found in queries file, skipping.")
+                continue
+
+            if query.table is None:
+                query.table = query.quality_table if quality_exps else query.scalability_table
+
+            system_name = row['system']
+            llm_provider = row['llm_provider']
+            model_name = row['model_name']
+            input_size = int(row['input_size'])
+            task_name = row['task_name']
+
+            pred_dir = f"{outputs_base}/{llm_provider}_{model_name.replace('/', '_')}"
+            pred_path = (
+                f"{pred_dir}/{system_name}_{task_name}_{query.id}_"
+                f"{llm_provider}_{model_name.replace('/', '_')}_{input_size}.csv"
+            )
+
+            if not os.path.isfile(pred_path):
+                print(f"Prediction file not found, skipping: {pred_path}")
+                continue
+
+            try:
+                predicted_df = pd.read_csv(pred_path)
+
+                evaluator = DerivationEvaluator(
+                    query_id=query.id,
+                    class_name=query.class_name,
+                    llm_as_judge=JUDGE_MODEL,
+                )
+                results = evaluator.evaluate(
+                    predicted_df=predicted_df,
+                    ground_truth_table_name=input_folder + query.table,
+                    input_size=input_size,
+                    input_cols=query.cols,
+                    evaluation_cols=query.evaluation_cols,
+                    new_col_name=query.new_col_name,
+                    ground_truth_col_name=query.evaluation_cols[-1],
+                    is_pz=(system_name == "palimpzest"),
+                    nlq=query.nlq,
+                )
+
+                exact_match_accuracy = results.get('exact_match_accuracy')
+                llm_judge_accuracy = results.get('llm_judge_accuracy')
+
+                if exact_match_accuracy is not None and llm_judge_accuracy is not None:
+                    quality = (float(exact_match_accuracy), float(llm_judge_accuracy))
+                else:
+                    quality = (-1, -1)
+
+                stats_df.at[idx, 'quality'] = str(quality)
+                print(f"Evaluated {query.id} ({system_name}/{llm_provider}/{model_name}, size={input_size}): {quality}")
+
+            except Exception as e:
+                print(f"Error evaluating {row['query_id']} ({system_name}/{llm_provider}/{model_name}): {e}")
+                continue
+
+        stats_df.to_csv(stats_csv_path, index=False)
+        print(f"--> Stats file updated in place: {stats_csv_path}")
+
     def save_single_result(self, result_dict: dict):
         """Saves a single run's statistics by appending to the CSV file immediately."""
         stats_dir = f"../results/stats/{'quality' if self.run_config['quality_exps'] else 'scalability'}"
@@ -296,4 +389,8 @@ if __name__ == "__main__":
         run_config_path="configs/run_config.yaml",
         queries_path="configs/queries.yaml"
     )
-    runner.run()
+
+    if "--rerun-derivations" in sys.argv:
+        runner.rerun_derivation_evaluations()
+    else:
+        runner.run()
