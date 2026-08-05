@@ -36,7 +36,8 @@ Each SQE has its own adapter under `experiment_runner/systems/`, implementing a 
 
 `queries.yaml` holds the 66 query definitions (nlq, class, task, input) and `run_config.yaml` controls which engine(s), model(s), and track (scalability or quality) we target.
 
-<!-- Query catalog table (semantic class breakdown, counts, example NLQs) to be added before camera-ready. -->
+![Alt text](queries_1.png)
+![Alt text](queries_2.png)
 
 ## Reproducibility
 
